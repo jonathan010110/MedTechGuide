@@ -49,14 +49,14 @@ body {
         background-color: #83df9d;
     }
 
-.footer {
+.site-footer {
     background: linear-gradient(90deg, #4a90e2, #1cd8d2);
     color: white;
     text-align: center;
     padding: 1rem 0;
     margin-top: 2rem;
 }
-.footer p {
+.site-footer p {
     margin: 0;
 }
 .content {
