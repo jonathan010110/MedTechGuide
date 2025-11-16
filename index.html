@@ -7,250 +7,228 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="site-header">
+
+<header class="site-header">
+    <div class="container">
+        <h1>MedTechGuide</h1>
+        <p class="subtitle">Medizinische Geräte und MedTech einfach erklärt</p>
+    </div>
+</header>
+
+<nav class="main-nav">
+    <div class="container">
+        <a href="#diabetes">Diabetes</a>
+        <a href="#allergie">Allergie</a>
+        <a href="#herz">Herz-Kreislauf</a>
+        <a href="#bildgebung">Bildgebung</a>
+        <a href="#zukunft">Zukunfts-Technologien</a>
+    </div>
+</nav>
+
+<main class="site-main">
+
+    <section class="intro">
         <div class="container">
-            <h1>MedTechGuide</h1>
-            <p class="subtitle">Medizinische Geräte und MedTech einfach erklärt</p>
+            <h2>Über diese Seite</h2>
+            <p>Auf dieser Website werden verschiedene medizinische Geräte und Technologien vorgestellt.
+                Zu jedem Gerät gibt es eine kurze Erklärung, wofür es verwendet wird.</p>
+            <ul class="intro-list">
+                <li>klassische Geräte wie Blutdruckmessgerät oder EKG,</li>
+                <li>Diagnostik wie Allergietests und Bildgebung,</li>
+                <li>und neue MedTech-Trends wie Exoskelette und Neuro-Chips.</li>
+            </ul>
         </div>
-    </header>
+    </section>
 
-            <nav class="main-nav">
-                <a href="#diabetes">Diabetes</a>
-                <a href="#allergie">Allergie</a>
-                <a href="#herz">Herz-Kreislauf</a>
-                <a href="#bildgebung">Bildgebung</a>
-                <a href="#zukunft">Zukunfts-Technologien</a>
-            </nav>
-        </div>
-    <main class="site-main">
-        <section class="intro">
-            <div class="container">
-                <h2>Über diese Seite</h2>
-                <p>
-                    Auf dieser Website werden verschiedene medizinische Geräte und Technologien vorgestellt.
-                    Zu jedem Gerät gibt es eine kurze Erklärung, wofür es verwendet wird.
-                </p>
-                <ul class="intro-list">
-                    <li>klassische Geräte wie Blutdruckmessgerät oder EKG,</li>
-                    <li>Diagnostik wie Allergietests und Bildgebung,</li>
-                    <li>und neue MedTech-Trends wie Exoskelette und Neuro-Chips.</li>
-                </ul>
-            </div>
-        </section>
-
-        <section id="diabetes" class="category">
-            <div class="container">
-                <div class="category-header">
-                    <span class="category-label label-diabetes">Diabetes</span>
-                    <h2>Diabetes-Geräte</h2>
-                </div>
-                <p class="category-intro">
-                    Geräte, die Menschen mit Diabetes helfen, ihren Blutzucker zu überwachen und Insulin zu dosieren.
-                </p>
-                <div class="device-grid">
-                    <article class="device-card">
-                        <h3>Blutzuckermessgerät</h3>
-                        <p>
-                            Misst den Blutzuckerwert aus einem kleinen Tropfen Blut.
-                            Wird mehrmals täglich zur Kontrolle eingesetzt.
-                        </p>
-                        <ul>
-                            <li><strong>Einsatz:</strong> Zu Hause, unterwegs</li>
-                            <li><strong>Vorteile:</strong> Schnell, einfach zu bedienen</li>
-                        </ul>
-                    </article>
-
-                    <article class="device-card">
-                        <h3>Insulinpumpe</h3>
-                        <p>
-                            Gibt Insulin über einen Katheter in kleinen Mengen ab.
-                            Kann das manuelle Spritzen ersetzen.
-                        </p>
-                        <ul>
-                            <li><strong>Einsatz:</strong> Langzeittherapie</li>
-                            <li><strong>Vorteile:</strong> Genauere Dosierung, mehr Flexibilität</li>
-                        </ul>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section id="allergie" class="category">
-            <div class="container">
-                <div class="category-header">
-                    <span class="category-label label-allergie">Allergie</span>
-                    <h2>Allergie-Diagnostik</h2>
-                </div>
-                <p class="category-intro">
-                    Tests und Geräte, mit denen Allergien auf Pollen, Tierhaare, Lebensmittel oder andere Stoffe erkannt werden.
-                </p>
-                <div class="device-grid">
-                    <article class="device-card">
-                        <h3>Prick-Test</h3>
-                        <p>
-                            Hauttest mit kleinen Mengen von Allergenen. Rötung oder Schwellung
-                            zeigt eine mögliche Allergie.
-                        </p>
-                        <ul>
-                            <li><strong>Einsatz:</strong> Arztpraxis</li>
-                            <li><strong>Hinweis:</strong> Nur durch Fachpersonal</li>
-                        </ul>
-                    </article>
-
-                    <article class="device-card">
-                        <h3>Bluttest im Labor</h3>
-                        <p>
-                            Im Blut werden spezielle Antikörper gemessen, um Allergien
-                            gegen bestimmte Stoffe nachzuweisen.
-                        </p>
-                        <ul>
-                            <li><strong>Einsatz:</strong> Labor</li>
-                            <li><strong>Vorteile:</strong> Viele Allergene testbar</li>
-                        </ul>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section id="herz" class="category">
-            <div class="container">
-                <div class="category-header">
-                    <span class="category-label label-herz">Herz</span>
-                    <h2>Herz-Kreislauf</h2>
-                </div>
-                <p class="category-intro">
-                    Geräte, die Herzfunktion und Blutdruck überwachen und bei Herzproblemen eingesetzt werden.
-                </p>
-                <div class="device-grid">
-                    <article class="device-card">
-                        <h3>Blutdruckmessgerät</h3>
-                        <p>
-                            Misst den Blutdruck mit einer Manschette am Arm oder Handgelenk.
-                        </p>
-                        <ul>
-                            <li><strong>Einsatz:</strong> Zuhause, Arztpraxis</li>
-                            <li><strong>Info:</strong> Wichtig bei Bluthochdruck</li>
-                        </ul>
-                    </article>
-
-                    <article class="device-card">
-                        <h3>EKG-Gerät</h3>
-                        <p>
-                            Zeichnet die elektrische Aktivität des Herzens auf.
-                            Zeigt z.&nbsp;B. Herzrhythmusstörungen.
-                        </p>
-                        <ul>
-                            <li><strong>Einsatz:</strong> Praxis, Krankenhaus</li>
-                            <li><strong>Info:</strong> Elektroden werden auf die Haut geklebt</li>
-                        </ul>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section id="bildgebung" class="category">
-            <div class="container">
-                <div class="category-header">
-                    <span class="category-label label-bildgebung">Bildgebung</span>
-                    <h2>Bildgebende Verfahren</h2>
-                </div>
-                <p class="category-intro">
-                    Geräte, mit denen Ärztinnen und Ärzte in den Körper „hineinschauen“ können, ohne zu operieren.
-                </p>
-                <div class="device-grid">
-                    <article class="device-card">
-                        <h3>Röntgengerät</h3>
-                        <p>
-                            Erstellt mithilfe von Röntgenstrahlung Bilder von Knochen
-                            und bestimmten Geweben.
-                        </p>
-                        <ul>
-                            <li><strong>Einsatz:</strong> Knochenbrüche, Zahnarzt</li>
-                            <li><strong>Hinweis:</strong> Strahlenbelastung, nur wenn nötig</li>
-                        </ul>
-                    </article>
-
-                    <article class="device-card">
-                        <h3>MRT</h3>
-                        <p>
-                            Nutzt starke Magnetfelder, um Schnittbilder des Körpers zu erzeugen –
-                            ohne Röntgenstrahlen.
-                        </p>
-                        <ul>
-                            <li><strong>Einsatz:</strong> Gehirn, Gelenke, Organe</li>
-                            <li><strong>Hinweis:</strong> Problematisch bei manchen Metall-Implantaten</li>
-                        </ul>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section id="zukunft" class="category">
-            <div class="container">
-                <div class="category-header">
-                    <span class="category-label label-zukunft">Zukunft</span>
-                    <h2>Zukunfts-Technologien</h2>
-                </div>
-                <p class="category-intro">
-                    Neue MedTech-Geräte, die heute noch in Entwicklung sind oder gerade erst in die Medizin kommen.
-                </p>
-                <div class="device-grid">
-                    <article class="device-card">
-                        <h3>Exoskelett für Reha</h3>
-                        <p>
-                            Tragbares Gestell mit Motoren, das Patientinnen und Patienten beim Gehen unterstützt.
-                            Wird z.&nbsp;B. nach Schlaganfällen oder Rückenmarksverletzungen eingesetzt.
-                        </p>
-                        <ul>
-                            <li><strong>Einsatz:</strong> Reha-Klinik</li>
-                            <li><strong>Ziel:</strong> Gehen neu lernen, Muskeln aufbauen</li>
-                        </ul>
-                    </article>
-
-                    <article class="device-card">
-                        <h3>Exoskelett für Alltag und Arbeit</h3>
-                        <p>
-                            Unterstützt beim Heben von schweren Lasten oder beim langen Stehen.
-                            Entlastet Muskeln und Gelenke.
-                        </p>
-                        <ul>
-                            <li><strong>Einsatz:</strong> Industrie, Lager, Pflege</li>
-                            <li><strong>Vorteile:</strong> Weniger Überlastung, bessere Ergonomie</li>
-                        </ul>
-                    </article>
-
-                    <article class="device-card">
-                        <h3>Neuro-Chip / Hirnimplantat</h3>
-                        <p>
-                            Kleine Elektroden im Gehirn, die elektrische Signale messen oder beeinflussen.
-                            Können z.&nbsp;B. bei schweren Bewegungsstörungen helfen.
-                        </p>
-                        <ul>
-                            <li><strong>Einsatz:</strong> Parkinson-Therapie, Epilepsie</li>
-                            <li><strong>Hinweis:</strong> Operation nötig, nur für ausgewählte Patienten</li>
-                        </ul>
-                    </article>
-
-                    <article class="device-card">
-                        <h3>Brain-Computer-Interface (BCI)</h3>
-                        <p>
-                            Verbindung zwischen Gehirn und Computer. Hirnsignale werden ausgelesen
-                            und in Steuerbefehle für Geräte übersetzt, z.&nbsp;B. für Prothesen.
-                        </p>
-                        <ul>
-                            <li><strong>Einsatz:</strong> Forschung, Prothesensteuerung</li>
-                            <li><strong>Ziel:</strong> Geräte mit Gedanken steuern</li>
-                        </ul>
-                    </article>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="site-footer">
+    <!-- DIABETES -->
+    <section id="diabetes" class="category">
         <div class="container">
-            <p>© 2025 MedTechGuide – Schulprojekt</p>
+            <div class="category-header">
+                <span class="category-label label-diabetes">Diabetes</span>
+                <h2>Diabetes-Geräte</h2>
+            </div>
+
+            <p class="category-intro">Geräte zur Überwachung des Blutzuckers und zur Insulinabgabe.</p>
+
+            <div class="device-grid">
+
+                <article class="device-card card-diabetes">
+                    <h3>Blutzuckermessgerät</h3>
+                    <p>Misst den Blutzuckerwert aus einem kleinen Tropfen Blut.</p>
+                    <ul>
+                        <li><strong>Einsatz:</strong> Zu Hause, unterwegs</li>
+                        <li><strong>Vorteile:</strong> Schnell, einfach zu bedienen</li>
+                    </ul>
+                </article>
+
+                <article class="device-card card-diabetes">
+                    <h3>Insulinpumpe</h3>
+                    <p>Gibt Insulin über einen Katheter ab und ersetzt oft das Spritzen.</p>
+                    <ul>
+                        <li><strong>Einsatz:</strong> Langzeittherapie</li>
+                        <li><strong>Vorteile:</strong> Genauere Dosierung</li>
+                    </ul>
+                </article>
+
+            </div>
         </div>
-    </footer>
+    </section>
+
+    <!-- ALLERGIE -->
+    <section id="allergie" class="category">
+        <div class="container">
+            <div class="category-header">
+                <span class="category-label label-allergie">Allergie</span>
+                <h2>Allergie-Diagnostik</h2>
+            </div>
+
+            <p class="category-intro">Tests zur Erkennung von Allergien auf Pollen, Tierhaare, Lebensmittel uvm.</p>
+
+            <div class="device-grid">
+
+                <article class="device-card card-allergie">
+                    <h3>Prick-Test</h3>
+                    <p>Kleiner Hauttest zur Erkennung allergischer Reaktionen.</p>
+                    <ul>
+                        <li><strong>Einsatz:</strong> Arztpraxis</li>
+                        <li><strong>Hinweis:</strong> Fachpersonal erforderlich</li>
+                    </ul>
+                </article>
+
+                <article class="device-card card-allergie">
+                    <h3>Bluttest im Labor</h3>
+                    <p>Misst Antikörper im Blut, um Allergien eindeutig nachzuweisen.</p>
+                    <ul>
+                        <li><strong>Einsatz:</strong> Labor</li>
+                        <li><strong>Vorteile:</strong> Viele Allergene testbar</li>
+                    </ul>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- HERZ -->
+    <section id="herz" class="category">
+        <div class="container">
+            <div class="category-header">
+                <span class="category-label label-herz">Herz</span>
+                <h2>Herz-Kreislauf</h2>
+            </div>
+
+            <p class="category-intro">Geräte, die Herzrhythmus und Blutdruck überwachen.</p>
+
+            <div class="device-grid">
+
+                <article class="device-card card-herz">
+                    <h3>Blutdruckmessgerät</h3>
+                    <p>Misst den Blutdruck mit einer Manschette am Arm oder Handgelenk.</p>
+                    <ul>
+                        <li><strong>Einsatz:</strong> Zuhause, Praxis</li>
+                        <li><strong>Info:</strong> Wichtig bei Herzproblemen</li>
+                    </ul>
+                </article>
+
+                <article class="device-card card-herz">
+                    <h3>EKG-Gerät</h3>
+                    <p>Zeichnet die elektrische Aktivität des Herzens auf.</p>
+                    <ul>
+                        <li><strong>Einsatz:</strong> Krankenhaus, Praxis</li>
+                        <li><strong>Info:</strong> Elektroden auf der Haut</li>
+                    </ul>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- BILDGEBUNG -->
+    <section id="bildgebung" class="category">
+        <div class="container">
+            <div class="category-header">
+                <span class="category-label label-bildgebung">Bildgebung</span>
+                <h2>Bildgebende Verfahren</h2>
+            </div>
+
+            <p class="category-intro">Geräte zur Darstellung des Körperinneren.</p>
+
+            <div class="device-grid">
+
+                <article class="device-card card-bildgebung">
+                    <h3>Röntgengerät</h3>
+                    <p>Erstellt Bilder von Knochen und Geweben mithilfe von Röntgenstrahlen.</p>
+                    <ul>
+                        <li><strong>Einsatz:</strong> Unfallchirurgie, Zahnarzt</li>
+                    </ul>
+                </article>
+
+                <article class="device-card card-bildgebung">
+                    <h3>MRT</h3>
+                    <p>Erzeugt detaillierte Schnittbilder durch Magnetfelder – ohne Strahlung.</p>
+                    <ul>
+                        <li><strong>Einsatz:</strong> Gehirn, Gelenke</li>
+                    </ul>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ZUKUNFT -->
+    <section id="zukunft" class="category">
+        <div class="container">
+            <div class="category-header">
+                <span class="category-label label-zukunft">Zukunft</span>
+                <h2>Zukunfts-Technologien</h2>
+            </div>
+
+            <p class="category-intro">Neue Technologien, die MedTech revolutionieren.</p>
+
+            <div class="device-grid">
+
+                <article class="device-card card-zukunft">
+                    <h3>Exoskelett für Reha</h3>
+                    <p>Motorisiertes Gestell, das beim Gehen unterstützt.</p>
+                    <ul>
+                        <li><strong>Einsatz:</strong> Reha-Klinik</li>
+                    </ul>
+                </article>
+
+                <article class="device-card card-zukunft">
+                    <h3>Exoskelett für Arbeit</h3>
+                    <p>Hilft beim Heben schwerer Lasten und schont Gelenke.</p>
+                    <ul>
+                        <li><strong>Einsatz:</strong> Industrie, Pflege</li>
+                    </ul>
+                </article>
+
+                <article class="device-card card-zukunft">
+                    <h3>Neuro-Chip</h3>
+                    <p>Implantat, das Hirnsignale misst oder beeinflusst.</p>
+                    <ul>
+                        <li><strong>Einsatz:</strong> Parkinson, Epilepsie</li>
+                    </ul>
+                </article>
+
+                <article class="device-card card-zukunft">
+                    <h3>Brain-Computer-Interface</h3>
+                    <p>Steuerung von Geräten direkt mit Gedanken.</p>
+                    <ul>
+                        <li><strong>Einsatz:</strong> Prothesensteuerung</li>
+                    </ul>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <p>© 2025 MedTechGuide – Schulprojekt</p>
+    </div>
+</footer>
+
 </body>
 </html>

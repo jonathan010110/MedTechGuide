@@ -5,7 +5,7 @@
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #eef2f7;
+    background-color: #abb6c4;
     color: #222;
     line-height: 1.5;
 }
@@ -17,14 +17,11 @@ body {
     padding: 0 1rem;
 }
 
-/* HEADER */
-
 .site-header {
     background: linear-gradient(90deg, #4a90e2, #1cd8d2);
     color: white;
     text-align: center;
     padding: 1.5rem 0 1.1rem;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
 .site-header h1 {
@@ -36,8 +33,6 @@ body {
     margin: 0.3rem 0 0;
     font-size: 1rem;
 }
-
-/* NAVIGATION – bleibt beim Scrollen fix */
 
 .main-nav {
     position: sticky;
@@ -68,15 +63,11 @@ body {
     transform: scale(1.05);
 }
 
-/* INHALT */
-
 .category {
     border-bottom: 2px solid #b1cae9;
     padding-top: 2rem;
     padding-bottom: 2rem;
 }
-
-/* GERÄTE-KARTEN */
 
 .device-grid {
     display: grid;
@@ -89,13 +80,32 @@ body {
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 1rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     transition: box-shadow 0.2s ease-in-out, transform 0.15s ease;
 }
 
 .device-card:hover {
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
     transform: translateY(-2px);
+}
+
+/* farbige Schatten pro Kategorie */
+.card-diabetes:hover {
+    box-shadow: 0 6px 14px rgba(34, 197, 94, 0.5);
+}
+
+.card-allergie:hover {
+    box-shadow: 0 6px 14px rgba(245, 158, 11, 0.5);
+}
+
+.card-herz:hover {
+    box-shadow: 0 6px 14px rgba(239, 68, 68, 0.5);
+}
+
+.card-bildgebung:hover {
+    box-shadow: 0 6px 14px rgba(59, 130, 246, 0.5);
+}
+
+.card-zukunft:hover {
+    box-shadow: 0 6px 14px rgba(139, 92, 246, 0.5);
 }
 
 .device-card h3 {
@@ -115,22 +125,29 @@ body {
     font-size: 0.9rem;
 }
 
-/* FOOTER */
-
 .site-footer {
     background: linear-gradient(90deg, #4a90e2, #1cd8d2);
     color: white;
     text-align: center;
     padding: 1rem 0;
     margin-top: 2rem;
-    box-shadow: 0 -2px 6px rgba(0,0,0,0.15);
 }
 
 .site-footer p {
     margin: 0;
 }
 
-/* RESPONSIVE */
+.category-label {
+    display: inline-block;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 0.3rem 0.8rem;
+    border-radius: 999px;
+    border: 1px solid #999;
+    margin-bottom: 0.3rem;
+    letter-spacing: 0.5px;
+    background: linear-gradient(90deg, #6d8fb6, #9be0de);
+}
 
 @media (max-width: 600px) {
     .site-header h1 {
@@ -140,15 +157,4 @@ body {
     .subtitle {
         font-size: 0.85rem;
     }
-}
-
-.category-label {
-    display: inline-block;
-    font-size: 1rem;               /* größer */
-    font-weight: bold;             /* fetter & lesbarer */
-    padding: 0.3rem 0.8rem;        /* mehr Platz */
-    border-radius: 999px;          /* pill shape */
-    border: 1px solid #999;        /* dezenter Rand */
-    margin-bottom: 0.3rem;
-    letter-spacing: 0.5px;         /* moderner Look */
 }
