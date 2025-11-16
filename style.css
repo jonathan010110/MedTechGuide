@@ -58,20 +58,29 @@ body {
 }
 .site-footer p {
     margin: 0;
-}
-.content {
-    background-color: white;
-    padding: 1.5rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    margin-top: 2rem;
-}
-.content h2 {
+.device-card h3 {
     margin-top: 0;
+    margin-bottom: 0.4rem;
+    color: #1d4ed8;
 }
-.content img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 1rem auto;
+
+.device-card p {
+    margin: 0 0 0.5rem;
+    font-size: 0.95rem;
+}
+
+.device-card ul {
+    margin: 0;
+    padding-left: 1.1rem;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 600px) {
+    .site-header h1 {
+        font-size: 1.4rem;
+    }
+
+    .subtitle {
+        font-size: 0.85rem;
+    }
 }
