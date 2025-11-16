@@ -16,38 +16,59 @@ body {
     margin: 0 auto;
     padding: 0 1rem;
 }
+
+/* HEADER */
+
 .site-header {
     background: linear-gradient(90deg, #4a90e2, #1cd8d2);
     color: white;
+    text-align: center;
     padding: 1.5rem 0 1.1rem;
-    box-shadow: 0 2px 6px rgba(249, 250, 250, 0.3);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
+
 .site-header h1 {
     margin: 0;
     font-size: 1.8rem;
 }
 
 .subtitle {
-    margin: 0;
-    font-size: 2rem;
+    margin: 0.3rem 0 0;
+    font-size: 1rem;
 }
 
-.main-nav{
+/* NAVIGATION – bleibt beim Scrollen fix */
+
+.main-nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: linear-gradient(90deg, #4a90e2, #1cd8d2);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    padding: 0.6rem 0;
+}
+
+.main-nav .container {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 0.5rem;  
+    gap: 0.6rem;
 }
+
 .main-nav a {
     text-decoration: none;
     color: white;
     padding: 0.5rem 1rem;
-    background-color: linear-gradient(90deg, #4a90e2, #1cd8d2);
     border-radius: 4px;
- }
-    .main-nav a:hover {
-        background-color: #83df9d;
-    }
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.main-nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+/* INHALT */
 
 .category {
     border-bottom: 2px solid #b1cae9;
@@ -55,15 +76,32 @@ body {
     padding-bottom: 2rem;
 }
 
-.site-footer {
-    background: linear-gradient(90deg, #4a90e2, #1cd8d2);
-    color: white;
-    text-align: center;
-    padding: 1rem 0;
-    margin-top: 2rem;
+/* GERÄTE-KARTEN */
+
+.device-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
 }
-.site-footer p {
-    margin: 0;
+
+.device-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: box-shadow 0.2s ease-in-out, transform 0.15s ease;
+}
+
+.device-card:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    transform: translateY(-2px);
+}
+
+.device-card h3 {
+    margin-top: 0;
+    margin-bottom: 0.4rem;
+    color: #1d4ed8;
 }
 
 .device-card p {
@@ -77,6 +115,23 @@ body {
     font-size: 0.9rem;
 }
 
+/* FOOTER */
+
+.site-footer {
+    background: linear-gradient(90deg, #4a90e2, #1cd8d2);
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+    box-shadow: 0 -2px 6px rgba(0,0,0,0.15);
+}
+
+.site-footer p {
+    margin: 0;
+}
+
+/* RESPONSIVE */
+
 @media (max-width: 600px) {
     .site-header h1 {
         font-size: 1.4rem;
@@ -85,35 +140,4 @@ body {
     .subtitle {
         font-size: 0.85rem;
     }
-}
-.device-card {
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-.device-card:hover {
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-}
-.device-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
-}
-.device-image {
-    width: 100%;
-    height: auto;
-    border-radius: 4px;
-    margin-bottom: 0.5rem;
-}
-.device-card h3 {
-    margin-top: 0;
-    margin-bottom: 0.4rem;
-    color: #1d4ed8;
-}
-.device-card p {
-    margin: 0 0 0.5rem;
-    font-size: 0.95rem;
 }
