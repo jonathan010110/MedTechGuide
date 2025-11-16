@@ -76,36 +76,42 @@ body {
 }
 
 .device-card {
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 1rem;
-    transition: box-shadow 0.2s ease-in-out, transform 0.15s ease;
+    background: #f6f9fc;
+    border-radius: 14px;
+    padding: 1.3rem;
+    border: 2px solid transparent;
+    transition: 0.25s ease;
+    box-shadow: 0 0 0 rgba(0,0,0,0);
 }
 
-.device-card:hover {
-    transform: translateY(-2px);
-}
-
-/* farbige Schatten pro Kategorie */
 .card-diabetes:hover {
-    box-shadow: 0 6px 14px rgba(34, 197, 94, 0.5);
+    border-color: #22c55e;
+    box-shadow: 0 0 22px rgba(34,197,94,0.55);
+    transform: translateY(-6px) scale(1.02);
 }
 
 .card-allergie:hover {
-    box-shadow: 0 6px 14px rgba(245, 158, 11, 0.5);
+    border-color: #f59e0b;
+    box-shadow: 0 0 22px rgba(245,158,11,0.55);
+    transform: translateY(-6px) scale(1.02);
 }
 
 .card-herz:hover {
-    box-shadow: 0 6px 14px rgba(239, 68, 68, 0.5);
+    border-color: #ef4444;
+    box-shadow: 0 0 22px rgba(239,68,68,0.55);
+    transform: translateY(-6px) scale(1.02);
 }
 
 .card-bildgebung:hover {
-    box-shadow: 0 6px 14px rgba(59, 130, 246, 0.5);
+    border-color: #3b82f6;
+    box-shadow: 0 0 22px rgba(59,130,246,0.55);
+    transform: translateY(-6px) scale(1.02);
 }
 
 .card-zukunft:hover {
-    box-shadow: 0 6px 14px rgba(139, 92, 246, 0.5);
+    border-color: #8b5cf6;
+    box-shadow: 0 0 22px rgba(139,92,246,0.55);
+    transform: translateY(-6px) scale(1.02);
 }
 
 .device-card h3 {
@@ -125,18 +131,6 @@ body {
     font-size: 0.9rem;
 }
 
-.site-footer {
-    background: linear-gradient(90deg, #4a90e2, #1cd8d2);
-    color: white;
-    text-align: center;
-    padding: 1rem 0;
-    margin-top: 2rem;
-}
-
-.site-footer p {
-    margin: 0;
-}
-
 .category-label {
     display: inline-block;
     font-size: 2rem;
@@ -147,6 +141,18 @@ body {
     margin-bottom: 0.3rem;
     letter-spacing: 0.5px;
     background: linear-gradient(90deg, #6d8fb6, #9be0de);
+}
+
+.site-footer {
+    background: linear-gradient(90deg, #4a90e2, #1cd8d2);
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+.site-footer p {
+    margin: 0;
 }
 
 @media (max-width: 600px) {
