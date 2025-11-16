@@ -137,10 +137,46 @@ body {
     font-weight: bold;
     padding: 0.3rem 0.8rem;
     border-radius: 999px;
-    border: 1px solid #999;
-    margin-bottom: 0.3rem;
-    letter-spacing: 0.5px;
-    background: linear-gradient(90deg, #6d8fb6, #9be0de);
+    border: 2px solid transparent;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.6px;
+    transition: 0.25s ease;
+    background: #f6f9fc;
+}
+
+/* Diabetes – Grün */
+.label-diabetes:hover {
+    border-color: #22c55e;
+    box-shadow: 0 0 22px rgba(34,197,94,0.55);
+    transform: translateY(-4px) scale(1.03);
+}
+
+/* Allergie – Gelb/Orange */
+.label-allergie:hover {
+    border-color: #f59e0b;
+    box-shadow: 0 0 22px rgba(245,158,11,0.55);
+    transform: translateY(-4px) scale(1.03);
+}
+
+/* Herz – Rot */
+.label-herz:hover {
+    border-color: #ef4444;
+    box-shadow: 0 0 22px rgba(239,68,68,0.55);
+    transform: translateY(-4px) scale(1.03);
+}
+
+/* Bildgebung – Blau */
+.label-bildgebung:hover {
+    border-color: #3b82f6;
+    box-shadow: 0 0 22px rgba(59,130,246,0.55);
+    transform: translateY(-4px) scale(1.03);
+}
+
+/* Zukunft – Lila */
+.label-zukunft:hover {
+    border-color: #8b5cf6;
+    box-shadow: 0 0 22px rgba(139,92,246,0.55);
+    transform: translateY(-4px) scale(1.03);
 }
 
 .site-footer {
