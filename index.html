@@ -25,215 +25,67 @@
     </div>
 </nav>
 
-<main class="site-main">
+<div class="container">
 
-   <section class="intro">
-    <div class="container">
-        <div class="intro-box">
-            <h2>Über diese Seite</h2>
-            <p>
-                Auf dieser Website werden verschiedene medizinische Geräte und Technologien vorgestellt.
-                Zu jedem Gerät gibt es eine kurze Erklärung, wofür es verwendet wird.
-            </p>
-            <ul class="intro-list">
-                <li>klassische Geräte wie Blutdruckmessgerät oder EKG,</li>
-                <li>Diagnostik wie Allergietests und Bildgebung,</li>
-                <li>und neue MedTech-Trends wie Exoskelette und Neuro-Chips.</li>
-            </ul>
-        </div>
-    </div>
-</section>
+<div class="intro-card">
+    <h2>Über diese Seite</h2>
+    <p>
+        Auf dieser Website werden verschiedene medizinische Geräte und Technologien vorgestellt.
+        Zu jedem Gerät gibt es eine kurze Erklärung, wofür es verwendet wird.
+    </p>
+</div>
 
+<div class="search-container">
+    <input type="text" id="searchInput" placeholder="🔍 Suche nach Geräten oder Themen..." onkeyup="searchDevices()">
+</div>
 
-    <!-- DIABETES -->
-    <section id="diabetes" class="category">
-        <div class="container">
-            <div class="category-header">
-                <span class="category-label label-diabetes">Diabetes</span>
-                <h2>Diabetes-Geräte</h2>
-            </div>
+<div class="device-grid" id="deviceGrid">
+    <article class="device-card">
+        <h3>Blutzuckermessgerät</h3>
+        <p>Misst Blutzuckerwerte, wichtig für Diabetiker.</p>
+    </article>
+    <article class="device-card">
+        <h3>Insulinpumpe</h3>
+        <p>Gibt Insulin automatisch ab.</p>
+    </article>
+    <article class="device-card">
+        <h3>Prick-Test</h3>
+        <p>Allergietest für Pollen, Tierhaare und Lebensmittel.</p>
+    </article>
+    <article class="device-card">
+        <h3>EKG-Gerät</h3>
+        <p>Misst Herzaktivität, zeigt Herzrhythmusstörungen.</p>
+    </article>
+    <article class="device-card">
+        <h3>Röntgengerät</h3>
+        <p>Erstellt Bilder von Knochen und Gewebe.</p>
+    </article>
+    <article class="device-card">
+        <h3>Exoskelett</h3>
+        <p>Hilft beim Gehen, Reha nach Schlaganfall oder Rückenmarksverletzungen.</p>
+    </article>
+</div>
 
-            <p class="category-intro">Geräte zur Überwachung des Blutzuckers und zur Insulinabgabe.</p>
-
-            <div class="device-grid">
-
-                <article class="device-card card-diabetes">
-                    <h3>Blutzuckermessgerät</h3>
-                    <p>Misst den Blutzuckerwert aus einem kleinen Tropfen Blut.</p>
-                    <ul>
-                        <li><strong>Einsatz:</strong> Zu Hause, unterwegs</li>
-                        <li><strong>Vorteile:</strong> Schnell, einfach zu bedienen</li>
-                    </ul>
-                </article>
-
-                <article class="device-card card-diabetes">
-                    <h3>Insulinpumpe</h3>
-                    <p>Gibt Insulin über einen Katheter ab und ersetzt oft das Spritzen.</p>
-                    <ul>
-                        <li><strong>Einsatz:</strong> Langzeittherapie</li>
-                        <li><strong>Vorteile:</strong> Genauere Dosierung</li>
-                    </ul>
-                </article>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- ALLERGIE -->
-    <section id="allergie" class="category">
-        <div class="container">
-            <div class="category-header">
-                <span class="category-label label-allergie">Allergie</span>
-                <h2>Allergie-Diagnostik</h2>
-            </div>
-
-            <p class="category-intro">Tests zur Erkennung von Allergien auf Pollen, Tierhaare, Lebensmittel uvm.</p>
-
-            <div class="device-grid">
-
-                <article class="device-card card-allergie">
-                    <h3>Prick-Test</h3>
-                    <p>Kleiner Hauttest zur Erkennung allergischer Reaktionen.</p>
-                    <ul>
-                        <li><strong>Einsatz:</strong> Arztpraxis</li>
-                        <li><strong>Hinweis:</strong> Fachpersonal erforderlich</li>
-                    </ul>
-                </article>
-
-                <article class="device-card card-allergie">
-                    <h3>Bluttest im Labor</h3>
-                    <p>Misst Antikörper im Blut, um Allergien eindeutig nachzuweisen.</p>
-                    <ul>
-                        <li><strong>Einsatz:</strong> Labor</li>
-                        <li><strong>Vorteile:</strong> Viele Allergene testbar</li>
-                    </ul>
-                </article>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- HERZ -->
-    <section id="herz" class="category">
-        <div class="container">
-            <div class="category-header">
-                <span class="category-label label-herz">Herz</span>
-                <h2>Herz-Kreislauf</h2>
-            </div>
-
-            <p class="category-intro">Geräte, die Herzrhythmus und Blutdruck überwachen.</p>
-
-            <div class="device-grid">
-
-                <article class="device-card card-herz">
-                    <h3>Blutdruckmessgerät</h3>
-                    <p>Misst den Blutdruck mit einer Manschette am Arm oder Handgelenk.</p>
-                    <ul>
-                        <li><strong>Einsatz:</strong> Zuhause, Praxis</li>
-                        <li><strong>Info:</strong> Wichtig bei Herzproblemen</li>
-                    </ul>
-                </article>
-
-                <article class="device-card card-herz">
-                    <h3>EKG-Gerät</h3>
-                    <p>Zeichnet die elektrische Aktivität des Herzens auf.</p>
-                    <ul>
-                        <li><strong>Einsatz:</strong> Krankenhaus, Praxis</li>
-                        <li><strong>Info:</strong> Elektroden auf der Haut</li>
-                    </ul>
-                </article>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- BILDGEBUNG -->
-    <section id="bildgebung" class="category">
-        <div class="container">
-            <div class="category-header">
-                <span class="category-label label-bildgebung">Bildgebung</span>
-                <h2>Bildgebende Verfahren</h2>
-            </div>
-
-            <p class="category-intro">Geräte zur Darstellung des Körperinneren.</p>
-
-            <div class="device-grid">
-
-                <article class="device-card card-bildgebung">
-                    <h3>Röntgengerät</h3>
-                    <p>Erstellt Bilder von Knochen und Geweben mithilfe von Röntgenstrahlen.</p>
-                    <ul>
-                        <li><strong>Einsatz:</strong> Unfallchirurgie, Zahnarzt</li>
-                    </ul>
-                </article>
-
-                <article class="device-card card-bildgebung">
-                    <h3>MRT</h3>
-                    <p>Erzeugt detaillierte Schnittbilder durch Magnetfelder – ohne Strahlung.</p>
-                    <ul>
-                        <li><strong>Einsatz:</strong> Gehirn, Gelenke</li>
-                    </ul>
-                </article>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- ZUKUNFT -->
-    <section id="zukunft" class="category">
-        <div class="container">
-            <div class="category-header">
-                <span class="category-label label-zukunft">Zukunft</span>
-                <h2>Zukunfts-Technologien</h2>
-            </div>
-
-            <p class="category-intro">Neue Technologien, die MedTech revolutionieren.</p>
-
-            <div class="device-grid">
-
-                <article class="device-card card-zukunft">
-                    <h3>Exoskelett für Reha</h3>
-                    <p>Motorisiertes Gestell, das beim Gehen unterstützt.</p>
-                    <ul>
-                        <li><strong>Einsatz:</strong> Reha-Klinik</li>
-                    </ul>
-                </article>
-
-                <article class="device-card card-zukunft">
-                    <h3>Exoskelett für Arbeit</h3>
-                    <p>Hilft beim Heben schwerer Lasten und schont Gelenke.</p>
-                    <ul>
-                        <li><strong>Einsatz:</strong> Industrie, Pflege</li>
-                    </ul>
-                </article>
-
-                <article class="device-card card-zukunft">
-                    <h3>Neuro-Chip</h3>
-                    <p>Implantat, das Hirnsignale misst oder beeinflusst.</p>
-                    <ul>
-                        <li><strong>Einsatz:</strong> Parkinson, Epilepsie</li>
-                    </ul>
-                </article>
-
-                <article class="device-card card-zukunft">
-                    <h3>Brain-Computer-Interface</h3>
-                    <p>Steuerung von Geräten direkt mit Gedanken.</p>
-                    <ul>
-                        <li><strong>Einsatz:</strong> Prothesensteuerung</li>
-                    </ul>
-                </article>
-
-            </div>
-        </div>
-    </section>
-
-</main>
+</div>
 
 <footer class="site-footer">
-    <div class="container">
-        <p>© 2025 MedTechGuide – Schulprojekt</p>
-    </div>
+    <p>© 2025 MedTechGuide – Schulprojekt</p>
 </footer>
+
+<script>
+function searchDevices() {
+    const input = document.getElementById('searchInput').value.toLowerCase();
+    const cards = document.querySelectorAll('#deviceGrid .device-card');
+    cards.forEach(card => {
+        const text = card.innerText.toLowerCase();
+        if(text.includes(input)) {
+            card.style.display = '';
+        } else {
+            card.style.display = 'none';
+        }
+    });
+}
+</script>
 
 </body>
 </html>
