@@ -2,8 +2,7 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <title>MedTechGuide – Medizinische Geräte erklärt</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedTechGuide</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,17 +10,17 @@
 <header class="site-header">
     <div class="container">
         <h1>MedTechGuide</h1>
-        <p class="subtitle">Medizinische Geräte und MedTech einfach erklärt</p>
+        <p class="subtitle">Medizin & Zukunftstechnologien einfach erklärt</p>
     </div>
 </header>
 
 <nav class="main-nav">
     <div class="container">
-        <a href="#diabetes">Diabetes</a>
-        <a href="#allergie">Allergie</a>
-        <a href="#herz">Herz-Kreislauf</a>
-        <a href="#bildgebung">Bildgebung</a>
-        <a href="#zukunft">Zukunfts-Technologien</a>
+        <a href="index.html">Start</a>
+        <a href="diabetes.html">Diabetes</a>
+        <a href="allergie.html">Allergien</a>
+        <a href="herz.html">Herz-Kreislauf</a>
+        <a href="zukunft.html">Zukunft</a>
     </div>
 </nav>
 
@@ -30,62 +29,36 @@
 <div class="intro-card">
     <h2>Über diese Seite</h2>
     <p>
-        Auf dieser Website werden verschiedene medizinische Geräte und Technologien vorgestellt.
-        Zu jedem Gerät gibt es eine kurze Erklärung, wofür es verwendet wird.
+        Willkommen bei MedTechGuide – deiner Plattform für moderne medizinische Geräte und Technologien.
+        Hier bekommst du Infos zu Diabetes-Technologien, Allergiediagnostik, Herz-Kreislauf-Geräten sowie
+        Zukunftstechnologien wie Neurochips und Exoskeletten.
     </p>
 </div>
 
-<div class="search-container">
-    <input type="text" id="searchInput" placeholder="🔍 Suche nach Geräten oder Themen..." onkeyup="searchDevices()">
-</div>
+<div class="device-grid">
 
-<div class="device-grid" id="deviceGrid">
-    <article class="device-card">
-        <h3>Blutzuckermessgerät</h3>
-        <p>Misst Blutzuckerwerte, wichtig für Diabetiker.</p>
-    </article>
-    <article class="device-card">
-        <h3>Insulinpumpe</h3>
-        <p>Gibt Insulin automatisch ab.</p>
-    </article>
-    <article class="device-card">
-        <h3>Prick-Test</h3>
-        <p>Allergietest für Pollen, Tierhaare und Lebensmittel.</p>
-    </article>
-    <article class="device-card">
-        <h3>EKG-Gerät</h3>
-        <p>Misst Herzaktivität, zeigt Herzrhythmusstörungen.</p>
-    </article>
-    <article class="device-card">
-        <h3>Röntgengerät</h3>
-        <p>Erstellt Bilder von Knochen und Gewebe.</p>
-    </article>
-    <article class="device-card">
-        <h3>Exoskelett</h3>
-        <p>Hilft beim Gehen, Reha nach Schlaganfall oder Rückenmarksverletzungen.</p>
-    </article>
-</div>
+    <a href="diabetes.html" class="device-card">
+        <h3>Diabetes</h3>
+        <p>Sensoren, Insulinpumpen, CGM & künstliche Bauchspeicheldrüsen.</p>
+    </a>
+
+    <a href="allergie.html" class="device-card">
+        <h3>Allergien</h3>
+        <p>Prick-Test, Bluttest, Allergie-Scanner & Diagnostik.</p>
+    </a>
+
+    <a href="herz.html" class="device-card">
+        <h3>Herz-Kreislauf</h3>
+        <p>EKG, Blutdruckgeräte, Herzimplantate & Frühwarnsysteme.</p>
+    </a>
+
+    <a href="zukunft.html" class="device-card">
+        <h3>Zukunfts-Technologien</h3>
+        <p>Exoskelette, Neurochips, BCIs & robotische Medizin.</p>
+    </a>
 
 </div>
-
-<footer class="site-footer">
-    <p>© 2025 MedTechGuide – Schulprojekt</p>
-</footer>
-
-<script>
-function searchDevices() {
-    const input = document.getElementById('searchInput').value.toLowerCase();
-    const cards = document.querySelectorAll('#deviceGrid .device-card');
-    cards.forEach(card => {
-        const text = card.innerText.toLowerCase();
-        if(text.includes(input)) {
-            card.style.display = '';
-        } else {
-            card.style.display = 'none';
-        }
-    });
-}
-</script>
+</div>
 
 </body>
 </html>
