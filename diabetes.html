@@ -1,0 +1,84 @@
+<!-- diabetes.html -->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Diabetes-Technologien</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+    <h1>Diabetes-Technologien</h1>
+    <p class="subtitle">Moderne Systeme für ein besseres Leben</p>
+</header>
+
+<nav class="main-nav">
+    <div class="container">
+        <a href="index.html">Start</a>
+        <a href="allergie.html">Allergien</a>
+        <a href="herz.html">Herz</a>
+        <a href="zukunft.html">Zukunft</a>
+    </div>
+</nav>
+
+<div class="container">
+
+<div class="search-box">
+    <input type="text" id="search" placeholder="🔍 Themen durchsuchen..." onkeyup="searchText()">
+</div>
+
+<div class="intro-card" id="content">
+
+<h2>Einführung</h2>
+<p>
+Diabetes mellitus gehört zu den weltweit häufigsten Stoffwechselerkrankungen. Moderne Technik versucht die Therapie
+so angenehm, sicher und automatisiert wie möglich zu machen. Heute existieren hochentwickelte Blutzuckersensoren,
+Insulinpumpen, Apps, Cloud-Systeme und erste KI-gesteuerte Diabetes-Assistenzsysteme. Die wichtigste Aufgabe von
+Diabetesgeräten ist die Überwachung des Blutzuckerspiegels und die Bereitstellung von Insulin in der passenden Menge.
+</p>
+
+<h2>Blutzuckermessgeräte</h2>
+<p>
+Klassische Blutzuckermessgeräte funktionieren über eine kleine Blutprobe aus der Fingerkuppe. Sie messen den Glukosegehalt
+elektrochemisch und geben meist innerhalb von fünf Sekunden ein Ergebnis aus. Obwohl neuere Sensoren bequemer sind,
+bleibt das klassische Gerät sehr genau, kostengünstig und weltweit eingesetzt.
+</p>
+
+<h2>CGM-Sensoren (Continuous Glucose Monitoring)</h2>
+<p>
+CGM-Systeme messen den Zucker im Gewebe alle 5 Minuten. Dadurch entsteht ein 24/7-Profil, das zeigt,
+wie Mahlzeiten, Stress, Sport oder Schlaf den Blutzucker beeinflussen. Moderne Systeme verfügen über
+Trendpfeile, Alarmfunktionen und können Daten in Echtzeit an Smartphones übertragen.
+</p>
+
+<h2>Insulinpumpen</h2>
+<p>
+Insulinpumpen sind kleine Geräte, die den ganzen Tag über Insulin abgeben. Anders als tägliche Injektionen
+versorgt die Pumpe den Körper kontinuierlich mit einer Grundmenge (Basalrate). Dazu kommt die Bolusgabe, die
+vor Mahlzeiten abgegeben wird. Moderne Pumpen können mit CGM kommunizieren und die Insulinmenge automatisch anpassen.
+</p>
+
+<h2>Zukunft der Diabetes-Technologie</h2>
+<p>
+Die Forschung arbeitet an vollständig implantierbaren Systemen, die Insulinproduktion simulieren können.
+Auch KI-Modelle lernen, wie sich der Blutzucker einer Person verhält, und passen die Therapie automatisch an.
+Das Ziel: weniger manuelle Arbeit für Patienten und mehr Sicherheit im Alltag.
+</p>
+
+</div>
+</div>
+
+<script>
+function searchText() {
+    const input = document.getElementById('search').value.toLowerCase();
+    const elements = document.getElementById('content').querySelectorAll('*');
+    elements.forEach(el => {
+        const text = el.innerText.toLowerCase();
+        el.style.display = text.includes(input) ? '' : 'none';
+    });
+}
+</script>
+
+</body>
+</html>
