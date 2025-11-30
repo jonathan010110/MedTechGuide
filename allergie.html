@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Allergien – Diagnostik & Geräte</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+    <h1>Allergie-Diagnostik</h1>
+    <p class="subtitle">Moderne Methoden zur Erkennung von Allergien</p>
+</header>
+
+<nav class="main-nav">
+    <div class="container">
+        <a href="index.html">Start</a>
+        <a href="diabetes.html">Diabetes</a>
+        <a href="herz.html">Herz-Kreislauf</a>
+        <a href="zukunft.html">Zukunft</a>
+    </div>
+</nav>
+
+<div class="container">
+
+<div class="search-box">
+    <input type="text" id="search" placeholder="🔍 Suche in diesem Thema..." onkeyup="searchText()">
+</div>
+
+<div class="intro-card" id="content">
+
+<h2>Einführung</h2>
+<p>
+Allergien gehören zu den weltweit häufigsten chronischen Erkrankungen. Sie entstehen, wenn das Immunsystem 
+übermäßig auf harmlose Stoffe wie Pollen, Tierhaare, Hausstaubmilben, Schimmel, Nahrungsmittel oder bestimmte 
+Chemikalien reagiert. In Europa ist etwa jeder dritte Mensch betroffen – und die Zahl steigt stetig. 
+Moderne Diagnostik spielt eine entscheidende Rolle, um Allergien schnell, präzise und möglichst schmerzfrei zu erkennen.
+</p>
+
+<h2>Der Prick-Test</h2>
+<p>
+Der Prick-Test ist der Standardtest zur Erkennung von Soforttyp-Allergien (Typ-I-Reaktionen). Dabei werden 
+kleine Tropfen verschiedener Allergene auf die Haut des Unterarms gegeben. Mit einer kleinen Lanzette wird die 
+Haut leicht angeritzt, sodass die Substanz in die obersten Hautschichten gelangen kann. Nach 15–20 Minuten lassen 
+sich allergische Reaktionen wie Schwellungen oder Rötungen an der Haut ablesen. Der Test ist schnell, kostengünstig 
+und sehr zuverlässig bei Pollen, Tierhaaren, Erdnüssen oder Hausstaub.
+</p>
+
+<h2>Bluttests (IgE-Diagnostik)</h2>
+<p>
+Moderne Allergiediagnostik misst spezifische IgE-Antikörper im Blut. Diese Tests sind besonders wichtig, wenn 
+Hauttests nicht möglich sind (z. B. bei Hauterkrankungen, kleinen Kindern oder starker Medikamenteneinnahme). 
+Mit Laborautomatisierung können heute über 200 mögliche Auslöser gleichzeitig analysiert werden. Dadurch lassen 
+sich selbst seltene Allergien erkennen, die durch klassische Tests kaum nachweisbar wären.
+</p>
+
+<h2>Molekulardiagnostik</h2>
+<p>
+Ein neuer Trend ist die molekulare Allergiediagnostik. Statt nur „Allergie gegen Birke“ zu sagen, können moderne 
+Tests unterscheiden, ob jemand auf das gefährliche Protein Ara h 2 (Erdnuss), oder nur auf schwächere Kreuzallergene 
+reagiert, die kaum Symptome machen. Das ermöglicht eine präzisere Einschätzung des Risikos und eine individuellere Therapie.
+</p>
+
+<h2>Digitale Allergie-Scanner</h2>
+<p>
+Neue Geräte, teilweise bereits als Prototypen im Einsatz, analysieren Hautreaktionen digital mit Kameras und KI.  
+Sie erkennen Muster, Farbveränderungen und Hautstrukturen genauer als das menschliche Auge. Dadurch steigt die Genauigkeit, 
+und Ärzt:innen erhalten eine objektive Messung statt einer rein visuellen Beurteilung.
+</p>
+
+<h2>Zukunft der Allergiediagnostik</h2>
+<p>
+Wearables könnten in Zukunft kontinuierlich messen, wie stark eine Person Allergenen ausgesetzt ist. In Kombination 
+mit digitalen Pollenflug- und Feinstaubanalysen sowie Atemluftsensoren entsteht ein präzises Umweltprofil.  
+Ziel der Forschung: Allergieattacken verhindern, bevor sie entstehen – durch KI-basierte Vorhersagen.
+</p>
+
+</div>
+</div>
+
+<script>
+function searchText(){
+    const input = document.getElementById('search').value.toLowerCase();
+    const elements = document.getElementById('content').querySelectorAll('*');
+    elements.forEach(el=>{
+        const text = el.innerText.toLowerCase();
+        el.style.display = text.includes(input) ? '' : 'none';
+    });
+}
+</script>
+
+</body>
+</html>
