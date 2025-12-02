@@ -174,3 +174,32 @@ img{
         font-size:1.15rem;
     }
 }
+
+.section-card {
+    background:white;
+    padding:1.6rem;
+    border-radius:12px;
+    margin-bottom:2rem;
+    box-shadow:0 4px 12px rgba(0,0,0,0.12);
+    border-left:5px solid #4a90e2;
+}
+
+.section-card h2 {
+    font-size:1.6rem;
+    color:#1d4ed8;
+    margin-bottom:0.6rem;
+}
+
+.section-card p {
+    font-size:1.05rem;
+    margin-bottom:0.9rem;
+}
+
+.section-card ul {
+    padding-left:1.2rem;
+    margin-bottom:1rem;
+}
+
+.section-card li {
+    margin-bottom:0.4rem;
+}
