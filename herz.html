@@ -1,92 +1,88 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <title>Herz-Kreislauf – Diagnostik & Geräte</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-
-<header class="site-header">
-    <h1>Herz-Kreislauf-Geräte</h1>
-    <p class="subtitle">Von Blutdruckmessung bis implantierbare Systeme</p>
-</header>
-
-<nav class="main-nav">
+  <head>
+    <meta charset="utf-8" />
+    <title>Herz-Kreislauf</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <h1>Herz-Kreislauf</h1>
+        <p class="subtitle">Überwachung, Implantate & Notfallmedizin</p>
+      </div>
+    </header>
+    <nav class="main-nav">
+      <div class="container">
+        <a href="index.html">Start</a><a href="diabetes.html">Diabetes</a
+        ><a href="allergie.html">Allergien</a
+        ><a href="bildgebung.html">Bildgebung</a
+        ><a href="neurochips.html">Neurochips</a
+        ><a href="exoskelette.html">Exoskelette</a>
+      </div>
+    </nav>
     <div class="container">
-        <a href="index.html">Start</a>
-        <a href="diabetes.html">Diabetes</a>
-        <a href="allergie.html">Allergien</a>
-        <a href="zukunft.html">Zukunft</a>
-        <a href="neurochips.html">Neurochips</a>
-        <a href="exoskelette.html">Exoskelette</a>
+      <div class="search-box">
+        <input
+          id="search"
+          placeholder="🔍 Suche im Herzbereich..."
+          onkeyup="filter()"
+        />
+      </div>
+      <div id="content">
+        <div class="section-card">
+          <h2>Überblick</h2>
+          <p>
+            Herz-Kreislauf-Erkrankungen sind führende Todesursache. Monitoring
+            und Implantate verbessern Prognosen stark.
+          </p>
+          <img class="section-image" src="images/herz-1.jpg" alt="EKG" />
+        </div>
+        <div class="section-card">
+          <h2>Blutdruck & Prävention</h2>
+          <p>
+            Regelmäßiges Messen, Telemedizin und Datenanalyse reduzieren
+            Risiken.
+          </p>
+        </div>
+        <div class="section-card">
+          <h2>EKG & Langzeitüberwachung</h2>
+          <p>
+            Holter- und Event-Recorder finden Rhythmusstörungen, Smartwatches
+            unterstützen bei Vorhofflimmern-Screenings.
+          </p>
+        </div>
+        <div class="section-card">
+          <h2>Schrittmacher & ICDs</h2>
+          <p>
+            Implantate stabilisieren Rhythmus; moderne Geräte sind
+            telemetriefähig und langlebiger.
+          </p>
+        </div>
+        <div class="section-card">
+          <h2>Zukunft</h2>
+          <p>
+            3D-gedruckte Herzmodelle, KI-Auswertung, regenerative Therapien.
+          </p>
+        </div>
+      </div>
     </div>
-</nav>
-
-<div class="container">
-
-<div class="search-box">
-    <input type="text" id="search" placeholder="🔍 Suche in Herz-Themen..." onkeyup="searchText()">
-</div>
-
-<div class="intro-card" id="content">
-
-<h2>Einführung</h2>
-<p>
-Herz-Kreislauf-Erkrankungen sind weltweit die häufigste Todesursache. Deshalb spielen diagnostische und 
-therapeutische Geräte eine zentrale Rolle in der modernen Medizin. Geräte wie Blutdruckmessgeräte, 
-EKG-Systeme, Langzeitüberwachung oder implantierbare Defibrillatoren helfen, Risiken früh zu erkennen 
-und Patienten nachhaltig zu schützen.
-</p>
-
-<h2>Blutdruckmessgeräte</h2>
-<p>
-Der Blutdruck ist einer der wichtigsten Indikatoren für die Herzgesundheit. Moderne Geräte arbeiten automatisch, 
-speichern Messreihen und übertragen Daten per Bluetooth an Apps. Dadurch lassen sich Trends über Wochen 
-oder Monate erkennen. Studien belegen, dass regelmäßiges Selbstmessen das Risiko für Herzinfarkte deutlich reduziert.
-</p>
-
-<h2>EKG & Langzeit-EKG</h2>
-<p>
-Ein EKG zeigt die elektrische Aktivität des Herzens. Klassische 12-Kanal-Geräte werden in Arztpraxen verwendet, 
-während mobile EKGs heute sogar in Smartwatches verbaut sind. Das Langzeit-EKG (Holter-EKG) zeichnet über 
-24–72 Stunden alle Herzschläge auf. Dadurch lassen sich Rhythmusstörungen erkennen, die im kurzen Praxis-EKG 
-nicht sichtbar wären.
-</p>
-<h2>Herzschrittmacher</h2>
-<p>
-Ein Herzschrittmacher gibt elektrische Impulse ab, wenn der Herzschlag zu langsam wird. Moderne Geräte sind 
-telemetriefähig: Ärzte können Daten auslesen, Einstellungen anpassen und Unregelmäßigkeiten erkennen, ohne 
-einen chirurgischen Eingriff durchführen zu müssen.
-</p>
-
-<h2>Implantierbare Defibrillatoren (ICDs)</h2>
-<p>
-Ein ICD erkennt gefährliche Herzrhythmusstörungen wie Kammerflimmern. Im Ernstfall gibt das Gerät einen starken 
-elektrischen Impuls ab, um das Herz zu retten. Neue ICD-Modelle sind kleiner, leichter und langlebiger. 
-Sie warnen Patienten frühzeitig über vibrationsbasierte Signale.
-</p>
-
-<h2>Zukunft: KI & Telemedizin</h2>
-<p>
-Herzdaten können heute permanent in die Cloud hochgeladen werden. KI-Algorithmen erkennen Veränderungen, 
-die Menschen übersehen würden. Dadurch lassen sich Infarkte, Herzschwäche oder Rhythmusstörungen teilweise 
-Tage vorher erkennen. Langfristiges Ziel: Prävention statt Reaktion.
-</p>
-
-</div>
-</div>
-
-<script>
-function searchText(){
-    const input = document.getElementById('search').value.toLowerCase();
-    const elements = document.getElementById('content').querySelectorAll('*');
-    elements.forEach(el=>{
-        const text = el.innerText.toLowerCase();
-        el.style.display = text.includes(input) ? '' : 'none';
-    });
-}
-</script>
-
-</body>
+    <footer class="site-footer">
+      <div class="container"><p>© 2025 MedTechGuide</p></div>
+    </footer>
+    <script>
+      function filter() {
+        const q = document.getElementById("search").value.toLowerCase();
+        document
+          .querySelectorAll("#content .section-card")
+          .forEach(
+            (c) =>
+              (c.style.display = c.innerText.toLowerCase().includes(q)
+                ? ""
+                : "none")
+          );
+      }
+    </script>
+  </body>
 </html>

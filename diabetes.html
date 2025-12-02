@@ -1,74 +1,134 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <title>Diabetes-Technologien</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
+  <head>
+    <meta charset="utf-8" />
+    <title>Diabetes – MedTechGuide</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <h1>Diabetes-Technologien</h1>
+        <p class="subtitle">Sensoren, Pumpen & smarte Therapie</p>
+      </div>
+    </header>
 
-<body>
+    <nav class="main-nav">
+      <div class="container">
+        <a href="index.html">Start</a><a href="allergie.html">Allergien</a
+        ><a href="herz.html">Herz</a><a href="bildgebung.html">Bildgebung</a>
+        <a href="neurochips.html">Neurochips</a
+        ><a href="exoskelette.html">Exoskelette</a
+        ><a href="zukunft.html">Zukunft</a><a href="genetik.html">Genetik</a
+        ><a href="ki-diagnose.html">KI-Diagnose</a>
+      </div>
+    </nav>
 
-<header class="site-header">
-    <h1>Diabetes-Technologien</h1>
-    <p class="subtitle">Moderne Systeme für ein besseres Leben</p>
-</header>
-
-<nav class="main-nav">
     <div class="container">
-        <a href="index.html">Start</a>
-        <a href="allergie.html">Allergien</a>
-        <a href="herz.html">Herz</a>
-        <a href="zukunft.html">Zukunft</a>
-        <a href="neurochips.html">Neurochips</a>
-        <a href="exoskelette.html">Exoskelette</a>
+      <div class="search-box">
+        <input
+          id="search"
+          placeholder="🔍 Suche in Diabetes..."
+          onkeyup="filterContent()"
+        />
+      </div>
+
+      <div id="content">
+        <div class="section-card">
+          <h2>Was ist Diabetes?</h2>
+          <p>
+            Diabetes mellitus ist eine chronische Stoffwechselerkrankung, die
+            durch Fehlregulation des Blutzuckers gekennzeichnet ist.
+            Typ-1-Diabetes entsteht durch Autoimmunzerstörung der
+            insulinproduzierenden Betazellen; Typ-2-Diabetes durch
+            Insulinresistenz kombiniert mit gestörter Insulinsekretion.
+            Langfristig führen unkontrollierte Werte zu Schäden an Augen,
+            Nieren, Nerven und Gefäßen.
+          </p>
+          <ul>
+            <li>Typ 1: insulinabhängig</li>
+            <li>Typ 2: stoffwechselbedingt, oft mit Übergewicht</li>
+            <li>Gestationsdiabetes: während Schwangerschaft</li>
+          </ul>
+          <img
+            class="section-image"
+            src="images/diabetes-1.jpg"
+            alt="Diabetes Gerät"
+          />
+        </div>
+
+        <div class="section-card">
+          <h2>Blutzuckermessgeräte</h2>
+          <p>
+            Handgeräte messen Blutglukose elektrochemisch über Teststreifen.
+            Enzyme (z. B. Glukoseoxidase) wandeln Glukose um und erzeugen einen
+            Strom, der proportional zur Zuckermenge ist. Moderne Geräte
+            speichern Messreihen, geben Trendinfos und synchronisieren per
+            Bluetooth mit Apps.
+          </p>
+          <p>
+            Wichtig: Kalibrierung, Kontaktflächenpflege und korrekte
+            Teststreifen sind entscheidend für Messgenauigkeit.
+          </p>
+        </div>
+
+        <div class="section-card">
+          <h2>Continuous Glucose Monitoring (CGM)</h2>
+          <p>
+            CGM-Sensoren messen interstitielle Glukosewerte kontinuierlich (alle
+            1–5 Minuten). Sie zeigen Trends, Alarmieren vor Hypo/Hyper und
+            liefern Daten für Arztgespräche. Beispiele: Libre, Dexcom. CGM
+            verbessert HbA1c-Werte und reduziert nächtliche Unterzuckerungen.
+          </p>
+          <img
+            class="section-image"
+            src="images/diabetes-2.jpg"
+            alt="CGM Sensor"
+          />
+        </div>
+
+        <div class="section-card">
+          <h2>Insulinpumpen & Closed-Loop</h2>
+          <p>
+            Insulinpumpen geben kontinuierlich Basalinsulin und Bolus für
+            Mahlzeiten. In Hybrid-Closed-Loop Systemen arbeitet ein Algorithmus
+            mit CGM-Daten zusammen, um Insulinabgabe zu optimieren. Algorithmen
+            nutzen Prognosen und Trendanalysen, um Hypoglykämien vorzubeugen.
+          </p>
+          <ul>
+            <li>Basalrate: kontinuierliche Grundabgabe</li>
+            <li>Bolus: Mahlzeitenanpassung</li>
+            <li>Safety: Alarme, manuelle Eingriffe</li>
+          </ul>
+        </div>
+
+        <div class="section-card">
+          <h2>Zukunft & Forschung</h2>
+          <p>
+            Forschung zielt auf implantierbare Sensoren, nicht-invasive
+            Messungen (Tränen, Schweiß), Bioelektronische Therapien und
+            KI-Modelle zur Vorhersage von Glukoseverläufen. Langfristiges Ziel:
+            vollständig automatisierte Systeme, die minimale Eingriffe seitens
+            Nutzer:innen erfordern.
+          </p>
+        </div>
+      </div>
     </div>
-</nav>
 
-<div class="container">
+    <footer class="site-footer">
+      <div class="container"><p>© 2025 MedTechGuide</p></div>
+    </footer>
 
-<div class="search-box">
-    <input type="text" id="search" placeholder="🔍 Suche..." onkeyup="searchText()">
-</div>
-
-<div id="content">
-
-<div class="section-card">
-    <h2>Einführung</h2>
-    <p>Diabetes mellitus gehört zu den weltweit häufigsten chronischen Erkrankungen. Moderne Technologien helfen Menschen, Blutzuckerwerte präziser zu kontrollieren und den Alltag wesentlich zu erleichtern.</p>
-</div>
-
-<div class="section-card">
-    <h2>Blutzuckermessgeräte</h2>
-    <p>Digitale Messgeräte bestimmen innerhalb weniger Sekunden den Blutzuckerwert. Sie funktionieren über enzymatische Reaktionen, die elektrische Signale erzeugen.</p>
-</div>
-
-<div class="section-card">
-    <h2>CGM-Sensoren</h2>
-    <p>CGM-Systeme messen den Zucker im Unterhautfettgewebe alle 5 Minuten. Sie senden die Daten an Handy oder Pumpe und ermöglichen eine lückenlose Überwachung.</p>
-</div>
-
-<div class="section-card">
-    <h2>Insulinpumpen</h2>
-    <p>Moderne Pumpen können Basalraten automatisch anpassen und sogar mit Sensoren gekoppelt werden, sodass eine „künstliche Bauchspeicheldrüse“ entsteht.</p>
-</div>
-
-<div class="section-card">
-    <h2>Zukunft der Diabetes-Tech</h2>
-    <p>Im Fokus steht die vollständige Automatisierung, implantierbare Sensoren, KI-basierte Prognosen und Technologien zur Vorbeugung von Spitzenwerten.</p>
-</div>
-
-</div>
-</div>
-
-<script>
-function searchText(){
-    const input=document.getElementById('search').value.toLowerCase();
-    const els=document.getElementById('content').querySelectorAll('.section-card');
-    els.forEach(el=>{
-        el.style.display = el.innerText.toLowerCase().includes(input) ? "" : "none";
-    });
-}
-</script>
-
-</body>
+    <script>
+      function filterContent() {
+        const q = document.getElementById("search").value.toLowerCase();
+        document.querySelectorAll("#content .section-card").forEach((card) => {
+          card.style.display = card.innerText.toLowerCase().includes(q)
+            ? ""
+            : "none";
+        });
+      }
+    </script>
+  </body>
 </html>

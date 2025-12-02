@@ -1,74 +1,82 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <title>Neurochips & Brain-Computer-Interfaces</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-
-<body>
-
-<header class="site-header">
-    <h1>Neurochips & BCI</h1>
-    <p class="subtitle">Technologie, die das Gehirn verbindet</p>
-</header>
-
-<nav class="main-nav">
+  <head>
+    <meta charset="utf-8" />
+    <title>Neurochips</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <h1>Neurochips & BCI</h1>
+        <p class="subtitle">Hirn-Computer-Schnittstellen</p>
+      </div>
+    </header>
+    <nav class="main-nav">
+      <div class="container">
+        <a href="index.html">Start</a><a href="diabetes.html">Diabetes</a
+        ><a href="allergie.html">Allergien</a><a href="herz.html">Herz</a
+        ><a href="bildgebung.html">Bildgebung</a
+        ><a href="exoskelette.html">Exoskelette</a>
+      </div>
+    </nav>
     <div class="container">
-        <a href="index.html">Start</a>
-        <a href="diabetes.html">Diabetes</a>
-        <a href="allergie.html">Allergien</a>
-        <a href="herz.html">Herz</a>
-        <a href="zukunft.html">Zukunft</a>
-        <a href="exoskelette.html">Exoskelette</a>
+      <div class="search-box">
+        <input id="search" placeholder="🔍 Suche..." onkeyup="filter()" />
+      </div>
+      <div id="content">
+        <div class="section-card">
+          <h2>Einführung</h2>
+          <p>
+            Neurochips übersetzen neuronale Aktivität in digitale Signale.
+            Anwendung: Prothesensteuerung, Therapie von Bewegungsstörungen,
+            Forschung.
+          </p>
+          <img
+            class="section-image"
+            src="images/neurochips-1.jpg"
+            alt="Neurochip"
+          />
+        </div>
+        <div class="section-card">
+          <h2>THS & Anwendungen</h2>
+          <p>
+            Tiefe Hirnstimulation hilft Parkinson-Patienten; andere Ansätze
+            zielen auf Epilepsie-Reduktion oder Depressionstherapie.
+          </p>
+        </div>
+        <div class="section-card">
+          <h2>BCI-Systeme</h2>
+          <p>
+            Invasive vs. nicht-invasive Systeme: trade-off zwischen Präzision
+            und Risiko. Implantate erlauben präzisere Steuerung.
+          </p>
+        </div>
+        <div class="section-card">
+          <h2>Forschung</h2>
+          <p>
+            Nanodrähte, flexible Elektroden und KI verbessern Signalqualität;
+            Ethik & Datenschutz sind sehr wichtig.
+          </p>
+        </div>
+      </div>
     </div>
-</nav>
-
-<div class="container">
-
-<div class="search-box">
-    <input type="text" id="search" placeholder="🔍 Suche..." onkeyup="searchText()">
-</div>
-
-<div id="content">
-
-<div class="section-card">
-    <h2>Einführung</h2>
-    <p>Neurochips verbinden Gehirnaktivität mit Computern oder Maschinen. Sie messen elektrische Signale im Gehirn und übersetzen sie in Steuerbefehle. Diese Technologie ermöglicht neue Therapien bei Lähmungen, Parkinson, Epilepsie und psychischen Erkrankungen.</p>
-</div>
-
-<div class="section-card">
-    <h2>Wie funktionieren Neurochips?</h2>
-    <p>Elektroden registrieren neuronale Aktivität. Ein Chip verstärkt und interpretiert die Signale. Eine Software wandelt sie in Aktionen wie Mausbewegungen, Robotersteuerung oder Kommunikation um. Implantierte Systeme sind präziser als externe EEG-Geräte.</p>
-</div>
-
-<div class="section-card">
-    <h2>Medizinische Anwendungen</h2>
-    <p>Die tiefe Hirnstimulation (THS) hilft bei Parkinson und Depressionen. Gedankengesteuerte Prothesen ermöglichen amputierten Menschen das Greifen. Patienten mit Querschnittslähmung konnten mit BCIs wieder gehen lernen, indem Gehirnsignale direkt an Exoskelette gesendet wurden.</p>
-</div>
-
-<div class="section-card">
-    <h2>BCI-Systeme</h2>
-    <p>BCIs erfassen Gedanken wie „Hand bewegen“ und übertragen diese an Geräte. Die Genauigkeit steigt jedes Jahr durch bessere Sensoren und KI. In Zukunft könnten BCIs Sprachverlust kompensieren, Erinnerungen aufzeichnen oder Gehirn-Cloud-Schnittstellen schaffen.</p>
-</div>
-
-<div class="section-card">
-    <h2>Forschung & Zukunft</h2>
-    <p>Ziel ist eine tiefere Integration zwischen Mensch und Maschine. Firmen arbeiten an flexiblen Chips, die biologisch verträglich sind. Nanodrähte könnten einzelne Neuronen präzise ansteuern. Gleichzeitig müssen Datenschutz und Ethik streng geregelt werden.</p>
-</div>
-
-</div>
-</div>
-
-<script>
-function searchText(){
-    const input=document.getElementById('search').value.toLowerCase();
-    const els=document.getElementById('content').querySelectorAll('.section-card');
-    els.forEach(el=>{
-        el.style.display = el.innerText.toLowerCase().includes(input) ? "" : "none";
-    });
-}
-</script>
-
-</body>
+    <footer class="site-footer">
+      <div class="container"><p>© 2025 MedTechGuide</p></div>
+    </footer>
+    <script>
+      function filter() {
+        const q = document.getElementById("search").value.toLowerCase();
+        document
+          .querySelectorAll("#content .section-card")
+          .forEach(
+            (c) =>
+              (c.style.display = c.innerText.toLowerCase().includes(q)
+                ? ""
+                : "none")
+          );
+      }
+    </script>
+  </body>
 </html>

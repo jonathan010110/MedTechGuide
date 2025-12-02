@@ -1,79 +1,116 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <title>MedTechGuide</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-
-<header class="site-header">
-    <div class="container">
+  <head>
+    <meta charset="utf-8" />
+    <title>MedTechGuide – Start</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
         <h1>MedTechGuide</h1>
-        <p class="subtitle">Medizin & Zukunftstechnologien einfach erklärt</p>
-    </div>
-</header>
+        <p class="subtitle">
+          Medizinische Geräte & Zukunftstechnologien erklärt
+        </p>
+      </div>
+    </header>
 
-<nav class="main-nav">
-    <div class="container">
+    <nav class="main-nav">
+      <div class="container">
         <a href="index.html">Start</a>
         <a href="diabetes.html">Diabetes</a>
         <a href="allergie.html">Allergien</a>
-        <a href="herz.html">Herz-Kreislauf</a>
-        <a href="zukunft.html">Zukunft</a>
-        <a href="neurochips.html">Neurochips & BCI</a>
+        <a href="herz.html">Herz</a>
+        <a href="bildgebung.html">Bildgebung</a>
+        <a href="neurochips.html">Neurochips</a>
         <a href="exoskelette.html">Exoskelette</a>
+        <a href="zukunft.html">Zukunft</a>
+        <a href="genetik.html">Genetik</a>
+        <a href="ki-diagnose.html">KI-Diagnose</a>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="intro-card">
+        <h2>Über diese Seite</h2>
+        <p>
+          MedTechGuide erklärt wichtige medizinische Geräte und Trends. Klicke
+          auf ein Thema, um zur ausführlichen Seite zu gelangen — dort findest
+          du erklärende Texte, Diagramme, Bilder und weiterführende Links.
+        </p>
+        <img
+          class="section-image"
+          src="images/zukunft-1.jpg"
+          alt="MedTech Illustration"
+        />
+      </div>
+
+      <div class="search-box">
+        <input
+          id="searchInput"
+          type="text"
+          placeholder="🔍 Suche nach Thema oder Gerät..."
+        />
+      </div>
+
+      <div class="device-grid">
+        <a class="device-card" href="diabetes.html">
+          <!-- glucose SVG icon inline -->
+          <h3>Diabetes</h3>
+          <p>Sensoren, CGM, Insulinpumpen und smarte Therapien.</p>
+        </a>
+
+        <a class="device-card" href="allergie.html">
+          <h3>Allergien</h3>
+          <p>Prick-Test, IgE-Tests, molekulare Diagnostik.</p>
+        </a>
+
+        <a class="device-card" href="herz.html">
+          <h3>Herz-Kreislauf</h3>
+          <p>EKG, Blutdruck, Schrittmacher, Defibrillatoren.</p>
+        </a>
+
+        <a class="device-card" href="bildgebung.html">
+          <h3>Bildgebung</h3>
+          <p>Röntgen, CT, MRT und Ultraschall — wie Ärzte hineinschauen.</p>
+        </a>
+
+        <a class="device-card" href="neurochips.html">
+          <h3>Neurochips</h3>
+          <p>
+            Brain-Computer Interfaces, tiefe Hirnstimulation, Neuroprothesen.
+          </p>
+        </a>
+
+        <a class="device-card" href="exoskelette.html">
+          <h3>Exoskelette</h3>
+          <p>Reha, Industrie, Alltag – robotische Unterstützung.</p>
+        </a>
+
+        <a class="device-card" href="genetik.html">
+          <h3>Genetik</h3>
+          <p>CRISPR, Gentests und personalisierte Medizin.</p>
+        </a>
+
+        <a class="device-card" href="ki-diagnose.html">
+          <h3>KI-Diagnose</h3>
+          <p>Künstliche Intelligenz für Bildanalyse & Vorhersage.</p>
+        </a>
+
+        <a class="device-card" href="zukunft.html">
+          <h3>Zukunft</h3>
+          <p>Nano-Medizin, Robotik, neue Therapien.</p>
+        </a>
+      </div>
     </div>
-</nav>
 
-<div class="container">
+    <footer class="site-footer">
+      <div class="container">
+        <p>© 2025 MedTechGuide – Schulprojekt</p>
+      </div>
+    </footer>
 
-<div class="intro-card">
-    <h2>Über diese Seite</h2>
-    <p>
-        Willkommen bei MedTechGuide – deiner Plattform für moderne medizinische Geräte und Technologien.
-        Hier bekommst du Infos zu Diabetes-Technologien, Allergiediagnostik, Herz-Kreislauf-Geräten sowie
-        Zukunftstechnologien wie Neurochips und Exoskeletten.
-    </p>
-</div>
-
-<div class="device-grid">
-
-    <a href="diabetes.html" class="device-card">
-        <h3>Diabetes</h3>
-        <p>Sensoren, Insulinpumpen, CGM-Systeme und künstliche Bauchspeicheldrüsen.</p>
-    </a>
-
-    <a href="allergie.html" class="device-card">
-        <h3>Allergien</h3>
-        <p>Prick-Test, IgE-Bluttests, molekulare Diagnostik und digitale Allergie-Scanner.</p>
-    </a>
-
-    <a href="herz.html" class="device-card">
-        <h3>Herz-Kreislauf</h3>
-        <p>EKG, Blutdruckmessgeräte, Herzschrittmacher und ICD-Systeme.</p>
-    </a>
-
-    <a href="zukunft.html" class="device-card">
-        <h3>Zukunftstechnologien</h3>
-        <p>Robotik, Nano-Medizin, KI-Diagnostik, Genetik und medizinische Revolutionen.</p>
-    </a>
-
-    <a href="neurochips.html" class="device-card">
-        <h3>Neurochips & BCI</h3>
-        <p>Hirnimplantate, Gedankensteuerung, tiefe Hirnstimulation und Neuroprothesen.</p>
-    </a>
-
-    <a href="exoskelette.html" class="device-card">
-        <h3>Exoskelette</h3>
-        <p>Reha, Industrie-Assistenz, Alltagshilfen und Zukunft der Mobilität.</p>
-    </a>
-
-</div>
-
-
-</div>
-</div>
-
-</body>
+    <script src="search.js"></script>
+  </body>
 </html>
