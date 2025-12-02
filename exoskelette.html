@@ -1,83 +1,103 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Exoskelette</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<body>
+  <body>
+    <header class="site-header">
+      <h1>Exoskelette</h1>
+      <p class="subtitle">Assistenzsysteme für Mobilität & Kraft</p>
+    </header>
 
-<header class="site-header">
-    <h1>Exoskelette</h1>
-    <p class="subtitle">Assistenzsysteme für Mobilität & Kraft</p>
-</header>
-
-<nav class="main-nav">
-    <div class="container">
+    <nav class="main-nav">
+      <div class="container">
         <a href="index.html">Start</a>
         <a href="diabetes.html">Diabetes</a>
         <a href="allergie.html">Allergien</a>
         <a href="herz.html">Herz</a>
         <a href="zukunft.html">Zukunft</a>
         <a href="neurochips.html">Neurochips</a>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="search-box">
+        <input
+          type="text"
+          id="search"
+          placeholder="🔍 Suche..."
+          onkeyup="searchText()"
+        />
+      </div>
+
+      <div id="content">
+        <div class="section-card">
+          <h2>Einführung</h2>
+          <p>
+            Exoskelette sind robotische Anzüge, die Bewegungen unterstützen oder
+            verstärken. Sie helfen Menschen in der Rehabilitation, im Alltag
+            oder in körperlich belastenden Berufen.
+          </p>
+          <img
+            class="section-image"
+            src="images/exoskelette-1.jpg"
+            alt="Exoskelett Foto"
+          />
+        </div>
+
+        <div class="section-card">
+          <h2>Reha-Exoskelette</h2>
+          <p>
+            Sie unterstützen Patient:innen nach Schlaganfällen oder
+            Rückenmarksverletzungen beim Gehenlernen. Motoren bewegen die Beine,
+            während Sensoren den Fortschritt messen.
+          </p>
+        </div>
+
+        <div class="section-card">
+          <h2>Industrie-Exoskelette</h2>
+          <p>
+            Aktive und passive Anzüge entlasten Rücken und Schultern und
+            reduzieren Langzeitschäden bei schwerer körperlicher Arbeit. Sie
+            werden in Logistik, Pflege und Montage eingesetzt.
+          </p>
+        </div>
+
+        <div class="section-card">
+          <h2>Alltags-Exoskelette</h2>
+          <p>
+            Leichte Modelle helfen älteren Menschen beim Treppensteigen,
+            Aufstehen oder Gehen. Viele Systeme sind unauffällig und unter
+            Kleidung tragbar.
+          </p>
+        </div>
+
+        <div class="section-card">
+          <h2>Zukunft</h2>
+          <p>
+            Neuronale Steuerung durch Gedanken, ultraleichte Materialien und
+            KI-optimierte Bewegungsabläufe machen Exoskelette in Zukunft noch
+            leistungsfähiger.
+          </p>
+        </div>
+      </div>
     </div>
-</nav>
 
-<div class="container">
-
-<div class="search-box">
-    <input type="text" id="search" placeholder="🔍 Suche..." onkeyup="searchText()">
-</div>
-
-<div id="content">
-
-<div class="section-card">
-    <h2>Einführung</h2>
-    <p>Exoskelette sind robotische Anzüge, die Bewegungen unterstützen oder verstärken. Sie helfen Menschen in der Rehabilitation, im Alltag oder in körperlich belastenden Berufen.</p>
-    
-    <div class="section-card">
-    <h2>Einführung</h2>
-    <p>Exoskelette sind robotische Stützsysteme, die Menschen beim Gehen, Heben oder Stabilisieren unterstützen. Sie werden in Reha, Industrie und Alltag eingesetzt.</p>
-
-    <!-- ✔ EXOSKELETT-FOTO WURDE HIER KORREKT EINGEFÜGT -->
-    <img class="section-image" src="images/exoskelette-1.jpg" alt="Exoskelett Foto">
-</div>
-
-</div>
-
-<div class="section-card">
-    <h2>Reha-Exoskelette</h2>
-    <p>Sie unterstützen Patient:innen nach Schlaganfällen oder Rückenmarksverletzungen beim Gehenlernen. Motoren bewegen die Beine, während Sensoren den Fortschritt messen.</p>
-</div>
-
-<div class="section-card">
-    <h2>Industrie-Exoskelette</h2>
-    <p>Aktive und passive Anzüge entlasten Rücken und Schultern und reduzieren Langzeitschäden bei schwerer körperlicher Arbeit. Sie werden in Logistik, Pflege und Montage eingesetzt.</p>
-</div>
-
-<div class="section-card">
-    <h2>Alltags-Exoskelette</h2>
-    <p>Leichte Modelle helfen älteren Menschen beim Treppensteigen, Aufstehen oder Gehen. Viele Systeme sind unauffällig und unter Kleidung tragbar.</p>
-</div>
-
-<div class="section-card">
-    <h2>Zukunft</h2>
-    <p>Neuronale Steuerung durch Gedanken, ultraleichte Materialien und KI-optimierte Bewegungsabläufe machen Exoskelette in Zukunft noch leistungsfähiger.</p>
-</div>
-
-</div>
-</div>
-
-<script>
-function searchText(){
-    const input=document.getElementById('search').value.toLowerCase();
-    const els=document.getElementById('content').querySelectorAll('.section-card');
-    els.forEach(el=>{
-        el.style.display = el.innerText.toLowerCase().includes(input) ? "" : "none";
-    });
-}
-</script>
-
-</body>
+    <script>
+      function searchText() {
+        const input = document.getElementById("search").value.toLowerCase();
+        const els = document
+          .getElementById("content")
+          .querySelectorAll(".section-card");
+        els.forEach((el) => {
+          el.style.display = el.innerText.toLowerCase().includes(input)
+            ? ""
+            : "none";
+        });
+      }
+    </script>
+  </body>
 </html>

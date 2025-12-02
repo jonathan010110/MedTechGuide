@@ -106,7 +106,22 @@
         <p>© 2025 MedTechGuide – Schulprojekt</p>
       </div>
     </footer>
+    <script>
+      const searchInput = document.getElementById("searchInput");
+      const deviceCards = document.querySelectorAll(".device-card");
 
-    <script src="search.js"></script>
+      searchInput.addEventListener("keyup", function () {
+        const query = this.value.toLowerCase();
+        deviceCards.forEach((card) => {
+          const title = card.querySelector("h3").innerText.toLowerCase();
+          const desc = card.querySelector("p").innerText.toLowerCase();
+          if (title.includes(query) || desc.includes(query)) {
+            card.style.display = "";
+          } else {
+            card.style.display = "none";
+          }
+        });
+      });
+  </script>
   </body>
 </html>
