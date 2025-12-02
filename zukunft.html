@@ -29,3 +29,75 @@
 </div>
 
 <div class="intro-card" id="content">
+    <h2>Einführung</h2>
+<p>
+Die Medizin befindet sich im größten technologischen Wandel ihrer Geschichte. Noch nie zuvor gab es 
+so viele Fortschritte in so kurzer Zeit wie heute. Technologien wie Exoskelette, Ki-basierte Diagnostik, 
+Nano-Roboter, genetische Editierung (CRISPR) oder Brain-Computer-Interfaces verändern Diagnostik, Therapie 
+und Rehabilitation radikal. Viele dieser Entwicklungen befinden sich bereits in klinischen Tests und könnten 
+in den nächsten 10–20 Jahren zur Routine werden.
+</p>
+
+<h2>Exoskelette – die Zukunft der Mobilität</h2>
+<p>
+Exoskelette unterstützen Bewegungen durch Motoren, Sensoren und KI. In der Reha helfen sie Patienten nach 
+Schlaganfällen oder Rückenmarksverletzungen, wieder laufen zu lernen. Studien zeigen, dass Exoskelette Muskelaufbau, 
+Nervenregeneration und Koordination deutlich verbessern. In der Industrie werden Exoskelette eingesetzt, 
+um schwere Lasten zu heben und den Rücken zu entlasten. Leichte Alltags-Exoskelette für ältere Menschen 
+stehen bereits kurz vor der Massenproduktion.
+</p>
+
+<h2>Robotische Medizin</h2>
+<p>
+Operationsroboter wie der „Da Vinci“ sind schon heute in vielen Kliniken Standard. Die Zukunft der 
+Robotik geht aber deutlich weiter: autonome Nano-Roboter im Blutkreislauf, die Tumorzellen zerstören, 
+externe Roboterarme, die von Chirurgen per VR gesteuert werden, und kooperative Roboter, die Assistenzaufgaben 
+am Patienten übernehmen. KI-gestützte Roboter könnten eines Tages Standard-OPs selbstständig durchführen, 
+während Ärztinnen und Ärzte nur noch überwachen.
+</p>
+
+<h2>Künstliche Intelligenz in der Diagnostik</h2>
+<p>
+KI-basierte Systeme analysieren bildgebende Verfahren wie MRT, CT oder Röntgen mit einer Präzision, 
+die menschliche Fachkräfte teilweise übertrifft. Algorithmen erkennen Tumore, Herzprobleme oder Entzündungen 
+zu einem früheren Zeitpunkt als klassische Diagnostik. In der Notfallmedizin können KI-Systeme 
+innerhalb von Sekunden lebenswichtige Diagnosen stellen, die früher mehrere Stunden gedauert haben.
+</p>
+
+<h2>Nano-Roboter & Mikromedizin</h2>
+<p>
+Nanotechnologie ermöglicht extrem kleine Roboter, die Medikamente punktgenau an Tumoren abgeben oder 
+verstopfte Arterien reinigen können. Einige Ideen klingen wie Science Fiction: programmierbare Partikel, 
+die Zellen reparieren, oder Nanobot-Schwärme, die Blutungen stoppen. Erste klinische Studien laufen bereits.
+</p>
+
+<h2>Genetische Editierung (CRISPR)</h2>
+<p>
+Mit CRISPR lassen sich Gene verändern, löschen oder reparieren. Das eröffnet Möglichkeiten zur Heilung 
+von Erbkrankheiten wie Sichelzellanämie oder bestimmten Formen von Blindheit. Die Herausforderung liegt 
+in der ethischen Verantwortung und der Sicherheit, da falsche Genveränderungen große Risiken bergen.
+</p>
+
+<h2>Zukunftsausblick</h2>
+<p>
+Medizin wird präziser, individueller und stärker technologiebasiert. Patient:innen bekommen Therapien, 
+die exakt auf ihren Körper zugeschnitten sind. Diagnosen werden schneller, Behandlungen schonender und 
+Ergebnisse besser vorhersehbar. Die Vision: Eine Medizin, die Krankheiten erkennt, bevor Symptome auftreten, 
+und sie behandelt, bevor sie gefährlich werden.
+</p>
+
+</div>
+</div>
+
+<script>
+function searchText(){
+    const input = document.getElementById('search').value.toLowerCase();
+    const elements = document.getElementById('content').querySelectorAll('*');
+    elements.forEach(el=>{
+        const text = el.innerText.toLowerCase();
+        el.style.display = text.includes(input) ? '' : 'none';
+    });
+}
+</script>
+</body>
+</html>
