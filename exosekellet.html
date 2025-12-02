@@ -23,3 +23,57 @@
 </nav>
 
 <div class="container">
+
+<h2>Einführung</h2>
+<p>
+Exoskelette sind tragbare robotische Systeme, die den menschlichen Körper unterstützen oder verstärken.  
+Sie bestehen aus einem Rahmen, Motoren, Sensoren und einer intelligenten Steuerung.  
+In den letzten Jahren haben sie enorme Fortschritte gemacht – von frühen Militär-Prototypen  
+zu modernen medizinischen Geräten, die Menschen mit Lähmungen wieder das Gehen ermöglichen.
+</p>
+
+<h2>Medizinische Exoskelette</h2>
+<p>
+Reha-Exoskelette helfen Patient:innen, die durch Schlaganfälle, Querschnittslähmungen oder neurologische 
+Erkrankungen nicht selbstständig gehen können. Sie führen Bewegungen präzise aus, stimulieren Nervenbahnen  
+und unterstützen Muskelaufbau. KI passt die Unterstützung an die Tagesform an, sodass Patient:innen weder 
+über- noch unterfordert werden.
+</p>
+
+<h2>Industrie-Exoskelette</h2>
+<p>
+In der Industrie reduzieren Exoskelette Rücken-, Schulter- und Armbelastungen. Sie helfen beim Heben von 
+schweren Lasten und schützen vor Überlastungsschäden. Passive Modelle kommen ohne Motor aus und nutzen 
+mechanische Federn. Aktive Exoskelette liefern zusätzliche Kraft über elektrische Motoren oder Hydrauliksysteme.
+</p>
+
+<h2>Alltags-Exoskelette</h2>
+<p>
+Diese Exoskelette sind leicht, kompakt und für ältere Menschen oder Personen mit Gehunsicherheiten gedacht.  
+Sie unterstützen das Aufstehen, Treppensteigen oder Gehen im Alltag. Viele Modelle lassen sich versteckt 
+unter der Kleidung tragen.
+</p>
+
+<h2>Forschung & Zukunft</h2>
+<p>
+Moderne Forschung beschäftigt sich mit neuronaler Steuerung, sodass Exoskelette Bewegungen aus dem Gehirn  
+direkt interpretieren können – ohne Joysticks oder Knöpfe. Auch ultraleichte Materialien wie Carbon und 
+Formgedächtnislegierungen revolutionieren das Gewicht und die Effizienz der Systeme.
+</p>
+
+</div>
+</div>
+
+<script>
+function searchText(){
+    const input = document.getElementById('search').value.toLowerCase();
+    const elements = document.getElementById('content').querySelectorAll('*');
+    elements.forEach(el=>{
+        const text = el.innerText.toLowerCase();
+        el.style.display = text.includes(input) ? '' : 'none';
+    });
+}
+</script>
+
+</body>
+</html>
