@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <title>KI-Diagnose</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <h1>KI-Diagnose</h1>
+        <p class="subtitle">Algorithmen in der Medizin</p>
+      </div>
+    </header>
+    <nav class="main-nav">
+      <div class="container">
+        <a href="index.html">Start</a><a href="diabetes.html">Diabetes</a
+        ><a href="allergie.html">Allergien</a><a href="herz.html">Herz</a
+        ><a href="bildgebung.html">Bildgebung</a
+        ><a href="neurochips.html">Neurochips</a
+        ><a href="exoskelette.html">Exoskelette</a>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="search-box">
+        <input id="search" placeholder="🔍 Suche in KI..." onkeyup="filter()" />
+      </div>
+      <div id="content">
+        <div class="section-card">
+          <h2>Was ist KI in der Medizin?</h2>
+          <p>
+            KI analysiert Datenmengen, erkennt Muster und unterstützt Ärzt:innen
+            bei Diagnosen. Besonders stark in Bildanalyse und prädiktiver
+            Modellierung.
+          </p>
+          <img class="section-image" src="images/ki-1.jpg" alt="AI" />
+        </div>
+        <div class="section-card">
+          <h2>Anwendungen</h2>
+          <p>
+            Früherkennung von Lungenkrebs in CT, Hautkrebs-Erkennung per Bild,
+            Risiko-Scores für Intensivpatienten.
+          </p>
+        </div>
+        <div class="section-card">
+          <h2>Limitierungen & Ethik</h2>
+          <p>
+            Bias in Trainingsdaten, Erklärbarkeit (Blackbox-Problem) und
+            Datenschutz sind zentrale Probleme.
+          </p>
+        </div>
+      </div>
+    </div>
+    <footer class="site-footer">
+      <div class="container"><p>© 2025 MedTechGuide</p></div>
+    </footer>
+    <script>
+      function filter() {
+        const q = document.getElementById("search").value.toLowerCase();
+        document
+          .querySelectorAll("#content .section-card")
+          .forEach(
+            (c) =>
+              (c.style.display = c.innerText.toLowerCase().includes(q)
+                ? ""
+                : "none")
+          );
+      }
+    </script>
+  </body>
+</html>
