@@ -2,14 +2,15 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <title>Exoskelette – Reha, Industrie & Alltag</title>
+    <title>Exoskelette</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
 <header class="site-header">
     <h1>Exoskelette</h1>
-    <p class="subtitle">Roboteranzüge für Bewegung, Kraft & Rehabilitation</p>
+    <p class="subtitle">Assistenzsysteme für Mobilität & Kraft</p>
 </header>
 
 <nav class="main-nav">
@@ -19,58 +20,52 @@
         <a href="allergie.html">Allergien</a>
         <a href="herz.html">Herz</a>
         <a href="zukunft.html">Zukunft</a>
+        <a href="neurochips.html">Neurochips</a>
     </div>
 </nav>
 
 <div class="container">
 
-<h2>Einführung</h2>
-<p>
-Exoskelette sind tragbare robotische Systeme, die den menschlichen Körper unterstützen oder verstärken.  
-Sie bestehen aus einem Rahmen, Motoren, Sensoren und einer intelligenten Steuerung.  
-In den letzten Jahren haben sie enorme Fortschritte gemacht – von frühen Militär-Prototypen  
-zu modernen medizinischen Geräten, die Menschen mit Lähmungen wieder das Gehen ermöglichen.
-</p>
+<div class="search-box">
+    <input type="text" id="search" placeholder="🔍 Suche..." onkeyup="searchText()">
+</div>
 
-<h2>Medizinische Exoskelette</h2>
-<p>
-Reha-Exoskelette helfen Patient:innen, die durch Schlaganfälle, Querschnittslähmungen oder neurologische 
-Erkrankungen nicht selbstständig gehen können. Sie führen Bewegungen präzise aus, stimulieren Nervenbahnen  
-und unterstützen Muskelaufbau. KI passt die Unterstützung an die Tagesform an, sodass Patient:innen weder 
-über- noch unterfordert werden.
-</p>
+<div id="content">
 
-<h2>Industrie-Exoskelette</h2>
-<p>
-In der Industrie reduzieren Exoskelette Rücken-, Schulter- und Armbelastungen. Sie helfen beim Heben von 
-schweren Lasten und schützen vor Überlastungsschäden. Passive Modelle kommen ohne Motor aus und nutzen 
-mechanische Federn. Aktive Exoskelette liefern zusätzliche Kraft über elektrische Motoren oder Hydrauliksysteme.
-</p>
+<div class="section-card">
+    <h2>Einführung</h2>
+    <p>Exoskelette sind robotische Anzüge, die Bewegungen unterstützen oder verstärken. Sie helfen Menschen in der Rehabilitation, im Alltag oder in körperlich belastenden Berufen.</p>
+</div>
 
-<h2>Alltags-Exoskelette</h2>
-<p>
-Diese Exoskelette sind leicht, kompakt und für ältere Menschen oder Personen mit Gehunsicherheiten gedacht.  
-Sie unterstützen das Aufstehen, Treppensteigen oder Gehen im Alltag. Viele Modelle lassen sich versteckt 
-unter der Kleidung tragen.
-</p>
+<div class="section-card">
+    <h2>Reha-Exoskelette</h2>
+    <p>Sie unterstützen Patient:innen nach Schlaganfällen oder Rückenmarksverletzungen beim Gehenlernen. Motoren bewegen die Beine, während Sensoren den Fortschritt messen.</p>
+</div>
 
-<h2>Forschung & Zukunft</h2>
-<p>
-Moderne Forschung beschäftigt sich mit neuronaler Steuerung, sodass Exoskelette Bewegungen aus dem Gehirn  
-direkt interpretieren können – ohne Joysticks oder Knöpfe. Auch ultraleichte Materialien wie Carbon und 
-Formgedächtnislegierungen revolutionieren das Gewicht und die Effizienz der Systeme.
-</p>
+<div class="section-card">
+    <h2>Industrie-Exoskelette</h2>
+    <p>Aktive und passive Anzüge entlasten Rücken und Schultern und reduzieren Langzeitschäden bei schwerer körperlicher Arbeit. Sie werden in Logistik, Pflege und Montage eingesetzt.</p>
+</div>
+
+<div class="section-card">
+    <h2>Alltags-Exoskelette</h2>
+    <p>Leichte Modelle helfen älteren Menschen beim Treppensteigen, Aufstehen oder Gehen. Viele Systeme sind unauffällig und unter Kleidung tragbar.</p>
+</div>
+
+<div class="section-card">
+    <h2>Zukunft</h2>
+    <p>Neuronale Steuerung durch Gedanken, ultraleichte Materialien und KI-optimierte Bewegungsabläufe machen Exoskelette in Zukunft noch leistungsfähiger.</p>
+</div>
 
 </div>
 </div>
 
 <script>
 function searchText(){
-    const input = document.getElementById('search').value.toLowerCase();
-    const elements = document.getElementById('content').querySelectorAll('*');
-    elements.forEach(el=>{
-        const text = el.innerText.toLowerCase();
-        el.style.display = text.includes(input) ? '' : 'none';
+    const input=document.getElementById('search').value.toLowerCase();
+    const els=document.getElementById('content').querySelectorAll('.section-card');
+    els.forEach(el=>{
+        el.style.display = el.innerText.toLowerCase().includes(input) ? "" : "none";
     });
 }
 </script>

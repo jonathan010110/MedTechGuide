@@ -1,5 +1,3 @@
-
-=======
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -7,80 +5,67 @@
     <title>Neurochips & Brain-Computer-Interfaces</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
 <header class="site-header">
     <h1>Neurochips & BCI</h1>
-    <p class="subtitle">Schnittstellen zwischen Gehirn und Technologie</p>
+    <p class="subtitle">Technologie, die das Gehirn verbindet</p>
 </header>
 
 <nav class="main-nav">
     <div class="container">
         <a href="index.html">Start</a>
         <a href="diabetes.html">Diabetes</a>
+        <a href="allergie.html">Allergien</a>
         <a href="herz.html">Herz</a>
         <a href="zukunft.html">Zukunft</a>
+        <a href="exoskelette.html">Exoskelette</a>
     </div>
 </nav>
 
 <div class="container">
 
 <div class="search-box">
-    <input type="text" id="search" placeholder="🔍 Suche im Neurochip-Wissen..." onkeyup="searchText()">
+    <input type="text" id="search" placeholder="🔍 Suche..." onkeyup="searchText()">
 </div>
 
-<div class="intro-card" id="content">
-    
-<h2>Einführung</h2>
-<p>
-Neurochips sind winzige elektronische Implantate, die Gehirnsignale messen, analysieren oder stimulieren.  
-Sie bilden die Grundlage für Brain-Computer-Interfaces (BCIs) und assistive Neurotechnologien, die Menschen 
-mit Lähmungen, neurologischen Erkrankungen oder Sinnesverlust helfen. Forschende arbeiten an Systemen, 
-mit denen Gedanken direkt Computer, Roboterarme oder sogar Exoskelette steuern können.
-</p>
+<div id="content">
 
-<h2>Wie funktionieren Neurochips?</h2>
-<p>
-Ein Neurochip besteht aus Mikroelektroden, die elektrische Aktivität einzelner Nervenzellen registrieren.  
-Im Gehirn senden Neuronen bei jeder Information elektrische Impulse, sogenannte Aktionspotenziale.  
-Der Chip zeichnet diese Muster auf und eine Software interpretiert sie. Bei implantierten Modellen liegen 
-die Elektroden direkt im Gehirngewebe, was besonders präzise Messungen ermöglicht.
-</p>
+<div class="section-card">
+    <h2>Einführung</h2>
+    <p>Neurochips verbinden Gehirnaktivität mit Computern oder Maschinen. Sie messen elektrische Signale im Gehirn und übersetzen sie in Steuerbefehle. Diese Technologie ermöglicht neue Therapien bei Lähmungen, Parkinson, Epilepsie und psychischen Erkrankungen.</p>
+</div>
 
-<h2>Medizinische Anwendungen</h2>
-<p>
-Eine der bekanntesten Therapien ist die tiefe Hirnstimulation (THS), bei der Elektroden bestimmte Regionen 
-im Gehirn elektrisch beeinflussen. Diese Technik hilft bei Parkinson, Epilepsie, Zwangsstörungen und schweren Depressionen.  
-Neuroprothesen nutzen ähnliche Methoden, um gelähmten Menschen Bewegungsfähigkeit zurückzugeben.  
-Beispiel: Ein Patient steuert einen Roboterarm durch reine Gedankensteuerung – möglich dank Neurochip + KI.
-</p>
+<div class="section-card">
+    <h2>Wie funktionieren Neurochips?</h2>
+    <p>Elektroden registrieren neuronale Aktivität. Ein Chip verstärkt und interpretiert die Signale. Eine Software wandelt sie in Aktionen wie Mausbewegungen, Robotersteuerung oder Kommunikation um. Implantierte Systeme sind präziser als externe EEG-Geräte.</p>
+</div>
 
-<h2>BCI – Brain-Computer-Interface</h2>
-<p>
-Ein BCI übersetzt Hirnsignale in Computerbefehle. Das funktioniert entweder invasiv (implantiert)  
-oder nicht-invasiv (Kopfbänder, EEG).  
-Nicht-invasive Systeme sind sicherer, aber unpräziser; implantierte Chips bieten enorme Genauigkeit.  
-Ziel: Menschen wieder Kontrolle über Prothesen, Computer oder sogar Sprache zu geben.
-</p>
+<div class="section-card">
+    <h2>Medizinische Anwendungen</h2>
+    <p>Die tiefe Hirnstimulation (THS) hilft bei Parkinson und Depressionen. Gedankengesteuerte Prothesen ermöglichen amputierten Menschen das Greifen. Patienten mit Querschnittslähmung konnten mit BCIs wieder gehen lernen, indem Gehirnsignale direkt an Exoskelette gesendet wurden.</p>
+</div>
 
-<h2>Forschung & Zukunft</h2>
-<p>
-Der große Traum: Erinnerungen speichern, verlorene Sinne wiederherstellen oder neurodegenerative Erkrankungen stoppen.  
-Fortschritte in Mikroelektronik, KI und Bioengineering machen Neurochips jedes Jahr leistungsfähiger.  
-Einige Firmen arbeiten an Geräten, die Gedanken in Echtzeit verfolgen, Stimmungen erkennen und sogar Depressionen 
-vorhersagen können. Die Zukunft könnte ein direkt vernetztes Gehirn beinhalten – mit Chancen, aber auch großen Risiken.
-</p>
+<div class="section-card">
+    <h2>BCI-Systeme</h2>
+    <p>BCIs erfassen Gedanken wie „Hand bewegen“ und übertragen diese an Geräte. Die Genauigkeit steigt jedes Jahr durch bessere Sensoren und KI. In Zukunft könnten BCIs Sprachverlust kompensieren, Erinnerungen aufzeichnen oder Gehirn-Cloud-Schnittstellen schaffen.</p>
+</div>
+
+<div class="section-card">
+    <h2>Forschung & Zukunft</h2>
+    <p>Ziel ist eine tiefere Integration zwischen Mensch und Maschine. Firmen arbeiten an flexiblen Chips, die biologisch verträglich sind. Nanodrähte könnten einzelne Neuronen präzise ansteuern. Gleichzeitig müssen Datenschutz und Ethik streng geregelt werden.</p>
+</div>
 
 </div>
 </div>
 
 <script>
 function searchText(){
-    const input = document.getElementById('search').value.toLowerCase();
-    const elements = document.getElementById('content').querySelectorAll('*');
-    elements.forEach(el=>{
-        const text = el.innerText.toLowerCase();
-        el.style.display = text.includes(input) ? '' : 'none';
+    const input=document.getElementById('search').value.toLowerCase();
+    const els=document.getElementById('content').querySelectorAll('.section-card');
+    els.forEach(el=>{
+        el.style.display = el.innerText.toLowerCase().includes(input) ? "" : "none";
     });
 }
 </script>
