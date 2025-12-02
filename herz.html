@@ -51,3 +51,40 @@ während mobile EKGs heute sogar in Smartwatches verbaut sind. Das Langzeit-EKG 
 24–72 Stunden alle Herzschläge auf. Dadurch lassen sich Rhythmusstörungen erkennen, die im kurzen Praxis-EKG 
 nicht sichtbar wären.
 </p>
+<h2>Herzschrittmacher</h2>
+<p>
+Ein Herzschrittmacher gibt elektrische Impulse ab, wenn der Herzschlag zu langsam wird. Moderne Geräte sind 
+telemetriefähig: Ärzte können Daten auslesen, Einstellungen anpassen und Unregelmäßigkeiten erkennen, ohne 
+einen chirurgischen Eingriff durchführen zu müssen.
+</p>
+
+<h2>Implantierbare Defibrillatoren (ICDs)</h2>
+<p>
+Ein ICD erkennt gefährliche Herzrhythmusstörungen wie Kammerflimmern. Im Ernstfall gibt das Gerät einen starken 
+elektrischen Impuls ab, um das Herz zu retten. Neue ICD-Modelle sind kleiner, leichter und langlebiger. 
+Sie warnen Patienten frühzeitig über vibrationsbasierte Signale.
+</p>
+
+<h2>Zukunft: KI & Telemedizin</h2>
+<p>
+Herzdaten können heute permanent in die Cloud hochgeladen werden. KI-Algorithmen erkennen Veränderungen, 
+die Menschen übersehen würden. Dadurch lassen sich Infarkte, Herzschwäche oder Rhythmusstörungen teilweise 
+Tage vorher erkennen. Langfristiges Ziel: Prävention statt Reaktion.
+</p>
+
+</div>
+</div>
+
+<script>
+function searchText(){
+    const input = document.getElementById('search').value.toLowerCase();
+    const elements = document.getElementById('content').querySelectorAll('*');
+    elements.forEach(el=>{
+        const text = el.innerText.toLowerCase();
+        el.style.display = text.includes(input) ? '' : 'none';
+    });
+}
+</script>
+
+</body>
+</html>
