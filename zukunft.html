@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Zukunftstechnologien</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<body>
+  <body>
+    <header class="site-header">
+        <div class="container">
+      <h1>Zukunftstechnologien</h1>
+      <p class="subtitle">Die Medizin von morgen</p>
+      </div>
+    </header>
 
-<header class="site-header">
-    <h1>Zukunftstechnologien</h1>
-    <p class="subtitle">Die Medizin von morgen</p>
-</header>
-
-<nav class="main-nav">
-    <div class="container">
+    <nav class="main-nav">
+      <div class="container">
         <a href="index.html">Start</a>
         <a href="diabetes.html">Diabetes</a>
         <a href="allergie.html">Allergien</a>
@@ -24,72 +26,127 @@
         <a href="exoskelette.html">Exoskelette</a>
         <a href="genetik.html">Genetik</a>
         <a href="ki-diagnose.html">KI-Diagnose</a>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="search-box">
+        <input
+          type="text"
+          id="search"
+          placeholder="🔍 Suche..."
+          onkeyup="searchText()"
+        />
+      </div>
+
+      <div id="content">
+        <div class="section-card">
+          <h2>Einführung</h2>
+
+          <p>
+            Die Medizin der Zukunft wird durch Robotik, KI, Nanotechnologie und
+            genetische Verfahren revolutioniert. Viele Technologien sind bereits
+            heute im klinischen Einsatz. Andere stehen kurz davor, die
+            Diagnostik komplett zu verändern. Ziel ist eine Medizin, die
+            Krankheiten erkennt, bevor Symptome auftreten, und Therapien, die
+            perfekt auf einzelne Menschen zugeschnitten sind.
+          </p>
+        </div>
+
+        <div class="section-card">
+          <h2>Überblick</h2>
+          <p>
+            Zukunftstechnologien verbinden Biologie, Robotik, künstliche
+            Intelligenz und Nanomedizin. Sie schaffen diagnostische und
+            therapeutische Möglichkeiten, die weit über das hinausgehen, was
+            heute möglich ist. Ziel ist eine präzise, personalisierte Medizin,
+            die Krankheiten früh erkennt und individueller behandelt.
+          </p>
+
+          <!-- ✔ ZUKUNFT1-FOTO WURDE HIER KORREKT EINGEFÜGT -->
+          <img
+            class="section-image"
+            src="images/zukunft-1.jpg"
+            alt="Zukunftstechnologie"
+          />
+        </div>
+
+        <div class="section-card">
+          <h2>Exoskelette</h2>
+          <p>
+            Exoskelette unterstützen Bewegungen und erlauben Menschen mit
+            Lähmungen, wieder zu stehen oder zu gehen. KI analysiert
+            Bewegungsmuster und passt die Motorunterstützung dynamisch an. Sie
+            werden auch in Industrie und Alltag eingesetzt und könnten in
+            Zukunft komplett gedankengesteuert funktionieren.
+          </p>
+        </div>
+
+        <div class="section-card">
+          <h2>Robotische Medizin</h2>
+          <p>
+            Operationsroboter ermöglichen extrem präzise Eingriffe. Zukünftige
+            Systeme sollen autonom einfache Operationen durchführen können,
+            während Ärzte überwachen. Miniaturisierte Roboter im Blutkreislauf
+            könnten Tumorzellen zielgenau zerstören.
+          </p>
+        </div>
+
+        <div class="section-card">
+          <h2>KI-Diagnostik</h2>
+          <p>
+            Algorithmen erkennen Krankheiten wie Krebs, Herzprobleme oder
+            Lungenentzündungen oft früher als menschliche Fachkräfte. KI kann
+            Millionen Bilder vergleichen und Muster entdecken, die für das Auge
+            unsichtbar sind. Dadurch wird Diagnostik schneller, sicherer und
+            günstiger.
+          </p>
+        </div>
+
+        <div class="section-card">
+          <h2>Nano-Roboter</h2>
+          <p>
+            Nanoroboter sind winzige Maschinen im Blut, die Wirkstoffe gezielt
+            an Orte bringen. Sie könnten Tumore zerstören, Arterien reinigen
+            oder Entzündungen stoppen. Erste Studien zeigen enorme Möglichkeiten
+            für personalisierte Krebsmedizin.
+          </p>
+        </div>
+
+        <div class="section-card">
+          <h2>Genetische Editierung</h2>
+          <p>
+            CRISPR ermöglicht es, Gene zu verändern, zu reparieren oder zu
+            löschen. Das eröffnet völlig neue Behandlungsmöglichkeiten für
+            Erbkrankheiten. Die Forschung ist vielversprechend, aber ethische
+            Fragen bleiben enorm wichtig.
+          </p>
+        </div>
+      </div>
     </div>
-</nav>
 
-
-<div class="container">
-
-<div class="search-box">
-    <input type="text" id="search" placeholder="🔍 Suche..." onkeyup="searchText()">
+<div class="section-card related-links">
+    <h2>Weiterführende Links</h2>
+    <ul>
+        <li><a href="#" target="_blank" id="link1">Link 1 wird automatisch gesetzt</a></li>
+        <li><a href="#" target="_blank" id="link2">Link 2 wird automatisch gesetzt</a></li>
+        <li><a href="#" target="_blank" id="link3">Link 3 wird automatisch gesetzt</a></li>
+    </ul>
 </div>
 
-<div id="content">
 
-<div class="section-card">
-    <h2>Einführung</h2>
-    
-<p>Die Medizin der Zukunft wird durch Robotik, KI, Nanotechnologie und genetische Verfahren revolutioniert. Viele Technologien sind bereits heute im klinischen Einsatz. Andere stehen kurz davor, die Diagnostik komplett zu verändern. Ziel ist eine Medizin, die Krankheiten erkennt, bevor Symptome auftreten, und Therapien, die perfekt auf einzelne Menschen zugeschnitten sind.</p>
-</div>
-
-<div class="section-card">
-    <h2>Überblick</h2>
-    <p>Zukunftstechnologien verbinden Biologie, Robotik, künstliche Intelligenz und Nanomedizin. Sie schaffen diagnostische und therapeutische Möglichkeiten, die weit über das hinausgehen, was heute möglich ist. Ziel ist eine präzise, personalisierte Medizin, die Krankheiten früh erkennt und individueller behandelt.</p>
-
-    <!-- ✔ ZUKUNFT1-FOTO WURDE HIER KORREKT EINGEFÜGT -->
-    <img class="section-image" src="images/zukunft-1.jpg" alt="Zukunftstechnologie">
-
-
-
-</div>
-
-<div class="section-card">
-    <h2>Exoskelette</h2>
-    <p>Exoskelette unterstützen Bewegungen und erlauben Menschen mit Lähmungen, wieder zu stehen oder zu gehen. KI analysiert Bewegungsmuster und passt die Motorunterstützung dynamisch an. Sie werden auch in Industrie und Alltag eingesetzt und könnten in Zukunft komplett gedankengesteuert funktionieren.</p>
-</div>
-
-<div class="section-card">
-    <h2>Robotische Medizin</h2>
-    <p>Operationsroboter ermöglichen extrem präzise Eingriffe. Zukünftige Systeme sollen autonom einfache Operationen durchführen können, während Ärzte überwachen. Miniaturisierte Roboter im Blutkreislauf könnten Tumorzellen zielgenau zerstören.</p>
-</div>
-
-<div class="section-card">
-    <h2>KI-Diagnostik</h2>
-    <p>Algorithmen erkennen Krankheiten wie Krebs, Herzprobleme oder Lungenentzündungen oft früher als menschliche Fachkräfte. KI kann Millionen Bilder vergleichen und Muster entdecken, die für das Auge unsichtbar sind. Dadurch wird Diagnostik schneller, sicherer und günstiger.</p>
-</div>
-
-<div class="section-card">
-    <h2>Nano-Roboter</h2>
-    <p>Nanoroboter sind winzige Maschinen im Blut, die Wirkstoffe gezielt an Orte bringen. Sie könnten Tumore zerstören, Arterien reinigen oder Entzündungen stoppen. Erste Studien zeigen enorme Möglichkeiten für personalisierte Krebsmedizin.</p>
-</div>
-
-<div class="section-card">
-    <h2>Genetische Editierung</h2>
-    <p>CRISPR ermöglicht es, Gene zu verändern, zu reparieren oder zu löschen. Das eröffnet völlig neue Behandlungsmöglichkeiten für Erbkrankheiten. Die Forschung ist vielversprechend, aber ethische Fragen bleiben enorm wichtig.</p>
-</div>
-
-</div>
-</div>
-
-<script>
-function searchText(){
-    const input=document.getElementById('search').value.toLowerCase();
-    const els=document.getElementById('content').querySelectorAll('.section-card');
-    els.forEach(el=>{
-        el.style.display = el.innerText.toLowerCase().includes(input) ? "" : "none";
-    });
-}
-</script>
-
-</body>
+    <script>
+      function searchText() {
+        const input = document.getElementById("search").value.toLowerCase();
+        const els = document
+          .getElementById("content")
+          .querySelectorAll(".section-card");
+        els.forEach((el) => {
+          el.style.display = el.innerText.toLowerCase().includes(input)
+            ? ""
+            : "none";
+        });
+      }
+    </script>
+  </body>
 </html>
