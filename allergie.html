@@ -1,76 +1,166 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-  <meta charset="UTF-8">
-  <title>Diabetes-Technologien</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
-<header class="site-header">
-  <div class="container">
-    <h1>Diabetes-Technologien</h1>
-    <p class="subtitle">Moderne Medizintechnik zur Blutzuckerkontrolle</p>
-  </div>
-</header>
-
+  <head>
+    <meta charset="utf-8" />
+    <title>Allergien</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <h1>Allergie-Diagnostik</h1>
+        <p class="subtitle">Prick-Test, IgE, molekulare Verfahren</p>
+      </div>
+    </header>
 <nav class="main-nav">
-  <div class="container">
-    <a href="index.html">Start</a>
-    <a href="diabetes.html">Diabetes</a>
-    <a href="allergie.html">Allergien</a>
-    <a href="herz.html">Herz</a>
-    <a href="bildgebung.html">Bildgebung</a>
-    <a href="neurochips.html">Neurochips</a>
-    <a href="exoskelette.html">Exoskelette</a>
-    <a href="zukunft.html">Zukunft</a>
-  </div>
+    <div class="container">
+        <a href="index.html">Start</a>
+        <a href="diabetes.html">Diabetes</a>
+        <a href="herz.html">Herz</a>
+        <a href="bildgebung.html">Bildgebung</a>
+        <a href="neurochips.html">Neurochips</a>
+        <a href="exoskelette.html">Exoskelette</a>
+        <a href="zukunft.html">Zukunft</a>
+        <a href="genetik.html">Genetik</a>
+        <a href="ki-diagnose.html">KI-Diagnose</a>
+    </div>
 </nav>
 
-<div class="container">
+    <div class="container">
+      <div class="search-box">
+        <input
+          id="search"
+          placeholder="🔍 Suche in Allergien..."
+          onkeyup="filter()"
+        />
+      </div>
+      <div id="content">
+        <div class="section-card">
+          <h2>Überblick</h2>
+          <p>
+            Allergien sind immunologische Reaktionen auf Umweltstoffe. Symptome
+            reichen von Hautausschlag bis anaphylaktischem Schock. Diagnose ist
+            wichtig, um Auslöser gezielt zu vermeiden oder zu behandeln.
+          </p>
+          <img
+            class="section-image"
+            src="images/allergie-1.jpg"
+            alt="Allergietest"
+          />
+        </div>
 
-  <div class="section-card">
-    <h2>Grundlagen</h2>
-    <p>
-      Diabetes ist eine chronische Stoffwechselerkrankung, bei der der Körper den
-      Blutzuckerspiegel nicht mehr selbstständig regulieren kann. Moderne
-      Medizintechnik hilft Betroffenen dabei, ihre Werte regelmäßig zu überwachen
-      und Insulin gezielt zu dosieren.
-    </p>
+        <div class="section-card">
+          <h2>Prick- und Patch-Tests</h2>
+          <p>
+            Prick-Tests prüfen Sofortreaktionen; Patch-Tests sind besser für
+            Spätreaktionen (Kontaktdermatitis). Moderne Messgeräte
+            digitalisieren die Auswertung.
+          </p>
+        </div>
 
-    <div class="inline-links">
-      <a href="https://idf.org/" target="_blank">International Diabetes Federation</a>
-      <a href="https://www.diabetes.at/" target="_blank">Diabetes Österreich</a>
+        <div class="section-card">
+          <h2>IgE-Test & Molekulardiagnostik</h2>
+          <p>
+            Laboruntersuchungen messen spezifisches IgE; molekulare Tests
+            identifizieren einzelne allergene Proteine und verbessern die
+            Therapieplanung.
+          </p>
+        </div>
+
+        <div class="section-card">
+          <h2>Digitale Trends</h2>
+          <p>
+            KI-gestützte Bildauswertung, Atemsensorik und Pollen-Trackings
+            machen personalisierte Allergie-Managements möglich.
+          </p>
+        </div>
+      </div>
     </div>
 
-    <img src="images/diabetes.jpg"
-         alt="Blutzuckersensor zur kontinuierlichen Messung am Arm">
-  </div>
 
-  <div class="section-card">
-    <h2>Technische Hilfsmittel</h2>
-    <p>
-      Zu den wichtigsten Geräten zählen kontinuierliche Glukosemesssysteme (CGM)
-      und Insulinpumpen. Diese Systeme sind oft miteinander vernetzt und können
-      Daten an Smartphone-Apps senden.
-    </p>
-
-    <p>
-      Zunehmend werden diese Systeme mit
-      <a href="ki-diagnose.html">künstlicher Intelligenz</a> kombiniert, um
-      automatische Dosierungsvorschläge zu berechnen.
-    </p>
-  </div>
-
+<div class="section-card related-links">
+    <h2>Weiterführende Links</h2>
+    <ul>
+        <li><a href="#" target="_blank" id="link1">Link 1 wird automatisch gesetzt</a></li>
+        <li><a href="#" target="_blank" id="link2">Link 2 wird automatisch gesetzt</a></li>
+        <li><a href="#" target="_blank" id="link3">Link 3 wird automatisch gesetzt</a></li>
+    </ul>
 </div>
 
-<footer class="site-footer">
-  <div class="container">
-    <p>© 2025 MedTechGuide – Schulprojekt</p>
-  </div>
-</footer>
+    <footer class="site-footer">
+      <div class="container"><p>© 2025 MedTechGuide</p></div>
+    </footer>
+    <script>
+      function filter() {
+        const q = document.getElementById("search").value.toLowerCase();
+        document
+          .querySelectorAll("#content .section-card")
+          .forEach(
+            (c) =>
+              (c.style.display = c.innerText.toLowerCase().includes(q)
+                ? ""
+                : "none")
+          );
+      }
+
+function setRelatedLinks(topic) {
+    const links = {
+        diabetes: [
+            ["International Diabetes Federation", "https://idf.org/"],
+            ["Diabetes Info Österreich", "https://www.diabetes.at/"],
+            ["Deutsche Diabetes Hilfe", "https://www.diabetesde.org/"]
+        ],
+        allergie: [
+            ["Österreichische Gesellschaft für Allergologie", "https://www.oegaai.at/"],
+            ["Allergy.org Expertenportal", "https://www.allergy.org.au/"],
+            ["Pollenwarndienst Europa", "https://www.pollenwarndienst.at/"]
+        ],
+        herz: [
+            ["Herzstiftung Deutschland", "https://www.herzstiftung.de/"],
+            ["American Heart Association", "https://www.heart.org/"],
+            ["Cardio Smart", "https://www.cardiosmart.org/"]
+        ],
+        bildgebung: [
+            ["Radiopaedia – Bilddiagnostik", "https://radiopaedia.org/"],
+            ["MRI Explained", "https://mriexplained.com/"],
+            ["European Society of Radiology", "https://www.myesr.org/"]
+        ],
+        neurochips: [
+            ["BCI Research", "https://www.bci-info.org/"],
+            ["Neuralink Infos", "https://neuralink.com/"],
+            ["BCI TU Graz", "https://bci.tugraz.at/"]
+        ],
+        exoskelette: [
+            ["Exoskeleton Report", "https://exoskeletonreport.com/"],
+            ["ReWalk Robotics", "https://rewalk.com/"],
+            ["Ekso Bionics", "https://eksobionics.com/"]
+        ],
+        genetik: [
+            ["Genome.gov", "https://www.genome.gov/"],
+            ["Learn Genetics", "https://learn.genetics.utah.edu/"],
+            ["YourGenome", "https://www.yourgenome.org/"]
+        ],
+        ki: [
+            ["AI in Medicine", "https://aimedicine.info/"],
+            ["Stanford AI Health", "https://aihealth.stanford.edu/"],
+            ["WHO KI Leitfaden", "https://www.who.int/publications/i/item/9789240029200"]
+        ]
+    };
+
+    if (links[topic]) {
+        document.getElementById("link1").href = links[topic][0][1];
+        document.getElementById("link1").innerText = links[topic][0][0];
+        document.getElementById("link2").href = links[topic][1][1];
+        document.getElementById("link2").innerText = links[topic][1][0];
+        document.getElementById("link3").href = links[topic][2][1];
+        document.getElementById("link3").innerText = links[topic][2][0];
+    }
+}
+</script>
+
+<!-- Hier sagst du, welches Thema die Seite hat -->
+<script>setRelatedLinks("allergie");</script>
 
 </body>
 </html>
