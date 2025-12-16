@@ -24,10 +24,21 @@
     <a href="herz.html">Herz</a>
     <a href="bildgebung.html">Bildgebung</a>
     <a href="neurochips.html">Neurochips</a>
-    <a href="exoskelette.html">Exoskelette</a>
     <a href="zukunft.html">Zukunft</a>
+    <a href="genetik.html">Genetik</a>
+    <a href="ki-diagnose.html">KI-Diagnose</a>
   </div>
 </nav>
+
+<div class="container">
+      <div class="search-box">
+        <input
+          id="search"
+          placeholder="🔍 Suche in Exoskelette..."
+          onkeyup="filter()"
+      />
+      </div>
+
 
 <div class="container">
 
@@ -35,17 +46,9 @@
     <h2>Was sind Exoskelette?</h2>
     <p>
       Exoskelette sind tragbare, technische Systeme, die den menschlichen Körper
-      beim Bewegen, Heben oder Stabilisieren unterstützen. Sie bestehen meist aus
-      mechanischen Strukturen, Sensoren und – bei aktiven Systemen – Elektromotoren.
-      In der Medizin werden sie vor allem eingesetzt, um Patientinnen und Patienten
-      nach Verletzungen oder neurologischen Erkrankungen bei der Mobilität zu helfen.
+      beim Bewegen, Heben oder Stabilisieren unterstützen. Sie bestehen aus
+      mechanischen Strukturen, Sensoren und Elektromotoren.
     </p>
-
-    <div class="inline-links">
-      <a href="https://exoskeletonreport.com/" target="_blank">Exoskeleton Report</a>
-      <a href="https://rewalk.com/" target="_blank">ReWalk Robotics</a>
-      <a href="https://eksobionics.com/" target="_blank">Ekso Bionics</a>
-    </div>
 
     <img
       class="section-image"
@@ -57,53 +60,47 @@
   <div class="section-card">
     <h2>Einsatz in der Rehabilitation</h2>
     <p>
-      In Rehabilitationskliniken kommen Exoskelette vor allem bei Menschen mit
-      Querschnittslähmung, Schlaganfall oder schweren Muskelverletzungen zum Einsatz.
-      Die Geräte ermöglichen kontrollierte Bewegungen und fördern die Reaktivierung
-      neuronaler Verbindungen. Studien zeigen, dass regelmäßiges Training mit
-      Exoskeletten den Heilungsprozess unterstützen kann.
+      In Rehabilitationskliniken kommen Exoskelette bei Querschnittslähmung,
+      Schlaganfall oder neurologischen Erkrankungen zum Einsatz.
     </p>
-
-    <div class="inline-links">
-      <a href="https://www.ncbi.nlm.nih.gov/" target="_blank">Medizinische Studien (NIH)</a>
-      <a href="https://www.who.int/" target="_blank">WHO – Rehabilitation</a>
-    </div>
   </div>
 
   <div class="section-card">
-    <h2>Exoskelette in Industrie und Pflege</h2>
+    <h2>Industrie und Pflege</h2>
     <p>
-      Neben der Medizin werden Exoskelette auch in der Industrie und Pflege eingesetzt.
-      Sie entlasten Rücken und Gelenke bei körperlich anstrengenden Tätigkeiten und
-      können langfristige Schäden verhindern. Besonders in der Pflege können sie
-      helfen, schwere Hebevorgänge sicherer durchzuführen.
+      In Industrie und Pflege entlasten Exoskelette Rücken und Gelenke und
+      reduzieren langfristige körperliche Schäden.
     </p>
-
-    <div class="inline-links">
-      <a href="https://www.baua.de/" target="_blank">BAuA – Ergonomie</a>
-      <a href="https://osha.europa.eu/" target="_blank">EU-OSHA Arbeitsschutz</a>
-    </div>
   </div>
 
   <div class="section-card">
     <h2>Verbindung zu anderen MedTech-Themen</h2>
     <p>
-      Exoskelette werden zunehmend mit anderen medizinischen Technologien kombiniert.
-      Besonders spannend ist die Verbindung mit
-      <a href="neurochips.html">Neurochips</a>, bei der Bewegungen direkt durch
-      Gehirnsignale gesteuert werden. Auch in der
-      <a href="zukunft.html">Medizin der Zukunft</a> spielen solche Systeme eine
-      zentrale Rolle.
+      Besonders relevant ist die Kombination mit
+      <a href="neurochips.html">Neurochips</a> sowie Entwicklungen aus der
+      <a href="zukunft.html">Medizin der Zukunft</a>.
     </p>
+  </div>
+
+  <!-- 🔗 WEITERFÜHRENDE LINKS UNTEN -->
+  <div class="section-card">
+    <h2>Weiterführende Links</h2>
+    <ul>
+      <li><a id="link1" target="_blank"></a></li>
+      <li><a id="link2" target="_blank"></a></li>
+      <li><a id="link3" target="_blank"></a></li>
+    </ul>
   </div>
 
 </div>
 
 <footer class="site-footer">
-      <div class="container"><p>© 2025 MedTechGuide</p></div>
-    </footer>
-    <script>
-      function filter() {
+  <div class="container">
+    <p>© 2025 MedTechGuide</p>
+  </div>
+</footer>
+<script>
+   function filter() {
         const q = document.getElementById("search").value.toLowerCase();
         document
           .querySelectorAll("#content .section-card")
@@ -117,45 +114,10 @@
 
 function setRelatedLinks(topic) {
     const links = {
-        diabetes: [
-            ["International Diabetes Federation", "https://idf.org/"],
-            ["Diabetes Info Österreich", "https://www.diabetes.at/"],
-            ["Deutsche Diabetes Hilfe", "https://www.diabetesde.org/"]
-        ],
-        allergie: [
-            ["Österreichische Gesellschaft für Allergologie", "https://www.oegaai.at/"],
-            ["Allergy.org Expertenportal", "https://www.allergy.org.au/"],
-            ["Pollenwarndienst Europa", "https://www.pollenwarndienst.at/"]
-        ],
-        herz: [
-            ["Herzstiftung Deutschland", "https://www.herzstiftung.de/"],
-            ["American Heart Association", "https://www.heart.org/"],
-            ["Cardio Smart", "https://www.cardiosmart.org/"]
-        ],
-        bildgebung: [
-            ["Radiopaedia – Bilddiagnostik", "https://radiopaedia.org/"],
-            ["MRI Explained", "https://mriexplained.com/"],
-            ["European Society of Radiology", "https://www.myesr.org/"]
-        ],
-        neurochips: [
-            ["BCI Research", "https://www.bci-info.org/"],
-            ["Neuralink Infos", "https://neuralink.com/"],
-            ["BCI TU Graz", "https://bci.tugraz.at/"]
-        ],
         exoskelette: [
             ["Exoskeleton Report", "https://exoskeletonreport.com/"],
             ["ReWalk Robotics", "https://rewalk.com/"],
             ["Ekso Bionics", "https://eksobionics.com/"]
-        ],
-        genetik: [
-            ["Genome.gov", "https://www.genome.gov/"],
-            ["Learn Genetics", "https://learn.genetics.utah.edu/"],
-            ["YourGenome", "https://www.yourgenome.org/"]
-        ],
-        ki: [
-            ["AI in Medicine", "https://aimedicine.info/"],
-            ["Stanford AI Health", "https://aihealth.stanford.edu/"],
-            ["WHO KI Leitfaden", "https://www.who.int/publications/i/item/9789240029200"]
         ]
     };
 
@@ -170,8 +132,9 @@ function setRelatedLinks(topic) {
 }
 </script>
 
-<!-- Hier sagst du, welches Thema die Seite hat -->
-<script>setRelatedLinks("exoskelette");</script>
+<script>
+setRelatedLinks("exoskelette");
+</script>
 
 </body>
 </html>
