@@ -14,8 +14,8 @@
       </div>
     </header>
 
-<nav class="main-nav">
-    <div class="container">
+    <nav class="main-nav">
+      <div class="container">
         <a href="index.html">Start</a>
         <a href="allergie.html">Allergien</a>
         <a href="herz.html">Herz</a>
@@ -25,9 +25,8 @@
         <a href="zukunft.html">Zukunft</a>
         <a href="genetik.html">Genetik</a>
         <a href="ki-diagnose.html">KI-Diagnose</a>
-    </div>
-</nav>
-
+      </div>
+    </nav>
 
     <div class="container">
       <div class="search-box">
@@ -108,6 +107,18 @@
         </div>
 
         <div class="section-card">
+          <h2>Anwendungsbeispiel aus der Praxis</h2>
+          <p>
+            Eine Patientin mit Diabetes Typ 1 nutzt ein kontinuierliches
+            Glukosemesssystem (CGM), das ihre Blutzuckerwerte rund um die Uhr
+            überwacht. Die Messdaten werden automatisch an eine Smartphone-App
+            übertragen. Bei auffälligen Werten erhält sie eine Warnung und kann
+            frühzeitig reagieren. In Kombination mit einer Insulinpumpe wird die
+            Insulindosierung teilweise automatisiert angepasst.
+          </p>
+        </div>
+
+        <div class="section-card">
           <h2>Zukunft & Forschung</h2>
           <p>
             Forschung zielt auf implantierbare Sensoren, nicht-invasive
@@ -118,19 +129,16 @@
           </p>
         </div>
       </div>
-      
-   <div class="section-card">
-    <h2>Weiterführende Links</h2>
-    <ul>
-      <li><a id="link1" target="_blank"></a></li>
-      <li><a id="link2" target="_blank"></a></li>
-      <li><a id="link3" target="_blank"></a></li>
-    </ul>
-  </div>
 
-</div>
-
-
+      <div class="section-card">
+        <h2>Weiterführende Links</h2>
+        <ul>
+          <li><a id="link1" target="_blank"></a></li>
+          <li><a id="link2" target="_blank"></a></li>
+          <li><a id="link3" target="_blank"></a></li>
+        </ul>
+      </div>
+    </div>
 
     <footer class="site-footer">
       <div class="container"><p>© 2025 MedTechGuide</p></div>
@@ -145,63 +153,70 @@
             : "none";
         });
       }
-function setRelatedLinks(topic) {
-    const links = {
-        diabetes: [
+      function setRelatedLinks(topic) {
+        const links = {
+          diabetes: [
             ["International Diabetes Federation", "https://idf.org/"],
             ["Diabetes Info Österreich", "https://www.diabetes.at/"],
-            ["Deutsche Diabetes Hilfe", "https://www.diabetesde.org/"]
-        ],
-        allergie: [
-            ["Österreichische Gesellschaft für Allergologie", "https://www.oegaai.at/"],
+            ["Deutsche Diabetes Hilfe", "https://www.diabetesde.org/"],
+          ],
+          allergie: [
+            [
+              "Österreichische Gesellschaft für Allergologie",
+              "https://www.oegaai.at/",
+            ],
             ["Allergy.org Expertenportal", "https://www.allergy.org.au/"],
-            ["Pollenwarndienst Europa", "https://www.pollenwarndienst.at/"]
-        ],
-        herz: [
+            ["Pollenwarndienst Europa", "https://www.pollenwarndienst.at/"],
+          ],
+          herz: [
             ["Herzstiftung Deutschland", "https://www.herzstiftung.de/"],
             ["American Heart Association", "https://www.heart.org/"],
-            ["Cardio Smart", "https://www.cardiosmart.org/"]
-        ],
-        bildgebung: [
+            ["Cardio Smart", "https://www.cardiosmart.org/"],
+          ],
+          bildgebung: [
             ["Radiopaedia – Bilddiagnostik", "https://radiopaedia.org/"],
             ["MRI Explained", "https://mriexplained.com/"],
-            ["European Society of Radiology", "https://www.myesr.org/"]
-        ],
-        neurochips: [
+            ["European Society of Radiology", "https://www.myesr.org/"],
+          ],
+          neurochips: [
             ["BCI Research", "https://www.bci-info.org/"],
             ["Neuralink Infos", "https://neuralink.com/"],
-            ["BCI TU Graz", "https://bci.tugraz.at/"]
-        ],
-        exoskelette: [
+            ["BCI TU Graz", "https://bci.tugraz.at/"],
+          ],
+          exoskelette: [
             ["Exoskeleton Report", "https://exoskeletonreport.com/"],
             ["ReWalk Robotics", "https://rewalk.com/"],
-            ["Ekso Bionics", "https://eksobionics.com/"]
-        ],
-        genetik: [
+            ["Ekso Bionics", "https://eksobionics.com/"],
+          ],
+          genetik: [
             ["Genome.gov", "https://www.genome.gov/"],
             ["Learn Genetics", "https://learn.genetics.utah.edu/"],
-            ["YourGenome", "https://www.yourgenome.org/"]
-        ],
-        ki: [
+            ["YourGenome", "https://www.yourgenome.org/"],
+          ],
+          ki: [
             ["AI in Medicine", "https://aimedicine.info/"],
             ["Stanford AI Health", "https://aihealth.stanford.edu/"],
-            ["WHO KI Leitfaden", "https://www.who.int/publications/i/item/9789240029200"]
-        ]
-    };
+            [
+              "WHO KI Leitfaden",
+              "https://www.who.int/publications/i/item/9789240029200",
+            ],
+          ],
+        };
 
-    if (links[topic]) {
-        document.getElementById("link1").href = links[topic][0][1];
-        document.getElementById("link1").innerText = links[topic][0][0];
-        document.getElementById("link2").href = links[topic][1][1];
-        document.getElementById("link2").innerText = links[topic][1][0];
-        document.getElementById("link3").href = links[topic][2][1];
-        document.getElementById("link3").innerText = links[topic][2][0];
-    }
-}
-</script>
+        if (links[topic]) {
+          document.getElementById("link1").href = links[topic][0][1];
+          document.getElementById("link1").innerText = links[topic][0][0];
+          document.getElementById("link2").href = links[topic][1][1];
+          document.getElementById("link2").innerText = links[topic][1][0];
+          document.getElementById("link3").href = links[topic][2][1];
+          document.getElementById("link3").innerText = links[topic][2][0];
+        }
+      }
+    </script>
 
-<!-- Hier sagst du, welches Thema die Seite hat -->
-<script>setRelatedLinks("diabetes");</script>
-
-</body>
+    <!-- Hier sagst du, welches Thema die Seite hat -->
+    <script>
+      setRelatedLinks("diabetes");
+    </script>
+  </body>
 </html>
