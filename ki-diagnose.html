@@ -13,8 +13,8 @@
         <p class="subtitle">Algorithmen in der Medizin</p>
       </div>
     </header>
-<nav class="main-nav">
-    <div class="container">
+    <nav class="main-nav">
+      <div class="container">
         <a href="index.html">Start</a>
         <a href="diabetes.html">Diabetes</a>
         <a href="allergie.html">Allergien</a>
@@ -24,8 +24,8 @@
         <a href="exoskelette.html">Exoskelette</a>
         <a href="zukunft.html">Zukunft</a>
         <a href="genetik.html">Genetik</a>
-    </div>
-</nav>
+      </div>
+    </nav>
 
     <div class="container">
       <div class="search-box">
@@ -35,38 +35,65 @@
         <div class="section-card">
           <h2>Was ist KI in der Medizin?</h2>
           <p>
-            KI analysiert Datenmengen, erkennt Muster und unterstützt Ärzt:innen
-            bei Diagnosen. Besonders stark in Bildanalyse und prädiktiver
-            Modellierung.
+            Künstliche Intelligenz (KI) wird in der Medizin zur Analyse großer,
+            heterogener Datenmengen eingesetzt. Mithilfe von
+            Machine-Learning-Algorithmen erkennt KI komplexe Muster in
+            Bilddaten, Laborwerten und klinischen Informationen. Besonders in
+            der medizinischen Bildgebung ermöglicht KI eine präzisere und
+            frühere Erkennung pathologischer Veränderungen. Ein weiterer
+            zentraler Anwendungsbereich ist die prädiktive Modellierung, bei der
+            KI Krankheitsverläufe und Therapieergebnisse auf Basis historischer
+            Daten prognostiziert. Durch die Integration verschiedener
+            Datenquellen unterstützt KI die Entwicklung personalisierter
+            Behandlungsstrategien und verbessert die Entscheidungsgrundlage für
+            medizinisches Fachpersonal.
           </p>
           <img class="section-image" src="images/ki-1.jpg" alt="AI" />
         </div>
         <div class="section-card">
           <h2>Anwendungen</h2>
           <p>
-            Früherkennung von Lungenkrebs in CT, Hautkrebs-Erkennung per Bild,
-            Risiko-Scores für Intensivpatienten.
+            KI-basierte Systeme werden zur Früherkennung von Lungenkrebs in
+            CT-Aufnahmen sowie zur automatisierten Hautkrebs-Erkennung mittels
+            Bildanalyse eingesetzt. Darüber hinaus berechnen KI-Modelle
+            Risiko-Scores für Intensivpatient:innen, um den klinischen Verlauf
+            frühzeitig einzuschätzen und Therapieentscheidungen zu unterstützen.
           </p>
         </div>
         <div class="section-card">
           <h2>Limitierungen & Ethik</h2>
           <p>
-            Bias in Trainingsdaten, Erklärbarkeit (Blackbox-Problem) und
-            Datenschutz sind zentrale Probleme.
+            Zentrale Herausforderungen beim Einsatz künstlicher Intelligenz in
+            der Medizin sind Verzerrungen in Trainingsdaten (Bias), die zu
+            fehlerhaften Ergebnissen führen können, die eingeschränkte
+            Erklärbarkeit vieler Modelle (Blackbox-Problem) sowie hohe
+            Anforderungen an Datenschutz und Datensicherheit bei sensiblen
+            Gesundheitsdaten.
           </p>
         </div>
       </div>
     </div>
 
-<div class="section-card related-links">
-    <h2>Weiterführende Links</h2>
-    <ul>
-        <li><a href="#" target="_blank" id="link1">Link 1 wird automatisch gesetzt</a></li>
-        <li><a href="#" target="_blank" id="link2">Link 2 wird automatisch gesetzt</a></li>
-        <li><a href="#" target="_blank" id="link3">Link 3 wird automatisch gesetzt</a></li>
-    </ul>
-</div>
-
+    <div class="section-card related-links">
+      <h2>Weiterführende Links</h2>
+      <ul>
+        <li>
+          <a href="#" target="_blank" id="link1"
+            >Link 1 wird automatisch gesetzt</a
+          >
+        </li>
+        <li>
+          <a href="#" target="_blank" id="link2"
+            >Link 2 wird automatisch gesetzt</a
+          >
+        </li>
+        <li>
+          <a href="#" target="_blank" id="link3"
+            >Link 3 wird automatisch gesetzt</a
+          >
+        </li>
+      </ul>
+    </div>
 
     <footer class="site-footer">
       <div class="container"><p>© 2025 MedTechGuide</p></div>
@@ -83,63 +110,70 @@
                 : "none")
           );
       }
-  function setRelatedLinks(topic) {
-    const links = {
-        diabetes: [
+      function setRelatedLinks(topic) {
+        const links = {
+          diabetes: [
             ["International Diabetes Federation", "https://idf.org/"],
             ["Diabetes Info Österreich", "https://www.diabetes.at/"],
-            ["Deutsche Diabetes Hilfe", "https://www.diabetesde.org/"]
-        ],
-        allergie: [
-            ["Österreichische Gesellschaft für Allergologie", "https://www.oegaai.at/"],
+            ["Deutsche Diabetes Hilfe", "https://www.diabetesde.org/"],
+          ],
+          allergie: [
+            [
+              "Österreichische Gesellschaft für Allergologie",
+              "https://www.oegaai.at/",
+            ],
             ["Allergy.org Expertenportal", "https://www.allergy.org.au/"],
-            ["Pollenwarndienst Europa", "https://www.pollenwarndienst.at/"]
-        ],
-        herz: [
+            ["Pollenwarndienst Europa", "https://www.pollenwarndienst.at/"],
+          ],
+          herz: [
             ["Herzstiftung Deutschland", "https://www.herzstiftung.de/"],
             ["American Heart Association", "https://www.heart.org/"],
-            ["Cardio Smart", "https://www.cardiosmart.org/"]
-        ],
-        bildgebung: [
+            ["Cardio Smart", "https://www.cardiosmart.org/"],
+          ],
+          bildgebung: [
             ["Radiopaedia – Bilddiagnostik", "https://radiopaedia.org/"],
             ["MRI Explained", "https://mriexplained.com/"],
-            ["European Society of Radiology", "https://www.myesr.org/"]
-        ],
-        neurochips: [
+            ["European Society of Radiology", "https://www.myesr.org/"],
+          ],
+          neurochips: [
             ["BCI Research", "https://www.bci-info.org/"],
             ["Neuralink Infos", "https://neuralink.com/"],
-            ["BCI TU Graz", "https://bci.tugraz.at/"]
-        ],
-        exoskelette: [
+            ["BCI TU Graz", "https://bci.tugraz.at/"],
+          ],
+          exoskelette: [
             ["Exoskeleton Report", "https://exoskeletonreport.com/"],
             ["ReWalk Robotics", "https://rewalk.com/"],
-            ["Ekso Bionics", "https://eksobionics.com/"]
-        ],
-        genetik: [
+            ["Ekso Bionics", "https://eksobionics.com/"],
+          ],
+          genetik: [
             ["Genome.gov", "https://www.genome.gov/"],
             ["Learn Genetics", "https://learn.genetics.utah.edu/"],
-            ["YourGenome", "https://www.yourgenome.org/"]
-        ],
-        ki: [
+            ["YourGenome", "https://www.yourgenome.org/"],
+          ],
+          ki: [
             ["AI in Medicine", "https://aimedicine.info/"],
             ["Stanford AI Health", "https://aihealth.stanford.edu/"],
-            ["WHO KI Leitfaden", "https://www.who.int/publications/i/item/9789240029200"]
-        ]
-    };
+            [
+              "WHO KI Leitfaden",
+              "https://www.who.int/publications/i/item/9789240029200",
+            ],
+          ],
+        };
 
-    if (links[topic]) {
-        document.getElementById("link1").href = links[topic][0][1];
-        document.getElementById("link1").innerText = links[topic][0][0];
-        document.getElementById("link2").href = links[topic][1][1];
-        document.getElementById("link2").innerText = links[topic][1][0];
-        document.getElementById("link3").href = links[topic][2][1];
-        document.getElementById("link3").innerText = links[topic][2][0];
-    }
-}
-</script>
+        if (links[topic]) {
+          document.getElementById("link1").href = links[topic][0][1];
+          document.getElementById("link1").innerText = links[topic][0][0];
+          document.getElementById("link2").href = links[topic][1][1];
+          document.getElementById("link2").innerText = links[topic][1][0];
+          document.getElementById("link3").href = links[topic][2][1];
+          document.getElementById("link3").innerText = links[topic][2][0];
+        }
+      }
+    </script>
 
-<!-- Hier sagst du, welches Thema die Seite hat -->
-<script>setRelatedLinks("ki");</script>
-
-</body>
+    <!-- Hier sagst du, welches Thema die Seite hat -->
+    <script>
+      setRelatedLinks("ki");
+    </script>
+  </body>
 </html>

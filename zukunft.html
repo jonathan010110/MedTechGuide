@@ -188,11 +188,15 @@ function setRelatedLinks(topic) {
             ["AI in Medicine", "https://aimedicine.info/"],
             ["Stanford AI Health", "https://aihealth.stanford.edu/"],
             ["WHO KI Leitfaden", "https://www.who.int/publications/i/item/9789240029200"]
+        ],
+        zukunft: [
+            ["Future Medicine Review", "https://www.futuremedicine.com/"],
+            ["Nature Biotechnology", "https://www.nature.com/nbt/"],
+            ["MIT Medical Engineering", "https://med.mit.edu/"]
         ]
-
     };
 
-      if (links[topic]) {
+    if (links[topic]) {
         document.getElementById("link1").href = links[topic][0][1];
         document.getElementById("link1").innerText = links[topic][0][0];
         document.getElementById("link2").href = links[topic][1][1];
@@ -202,6 +206,9 @@ function setRelatedLinks(topic) {
     }
 }
 </script>
+
+<!-- Hier sagst du, welches Thema die Seite hat -->
+<script>setRelatedLinks("zukunft");</script>
 
 </body>
 </html>
