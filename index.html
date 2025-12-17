@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div id="loader">
+  <div class="spinner"></div>
+  <p>MedTechGuide wird geladen…</p>
+</div>
+
     <header class="site-header">
       <div class="container">
         <h1>MedTechGuide</h1>
@@ -96,12 +101,18 @@
       <div class="container">
         <p>© 2025 MedTechGuide – Schulprojekt</p>
       </div>
-      
-      <div id="loader">
-  <div class="spinner"></div>
-  <p>Lade Inhalte…</p>
-</div>
-
     </footer>
+    <script>
+window.addEventListener("load", () => {
+  const loader = document.getElementById("loader");
+  if (!loader) return;
+
+  loader.classList.add("hidden");
+
+  setTimeout(() => {
+    loader.style.display = "none";
+  }, 500);
+});
+</script>
   </body>
 </html>
