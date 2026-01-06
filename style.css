@@ -151,6 +151,25 @@ p {
     inset 0 1px 0 rgba(255,255,255,0.7);
 }
 
+.section-card blockquote {
+  margin: 1.4rem 0;
+  padding-left: 1rem;
+  border-left: 3px solid #1d4ed8;
+  color: #374151;
+  font-style: italic;
+}
+
+
+.section-card a {
+  color: #1d4ed8;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(29,78,216,0.25);
+}
+
+.section-card a:hover {
+  border-bottom-color: #1d4ed8;
+}
+
 
 .section-card h2 {
   font-size: 2rem;
@@ -160,9 +179,18 @@ p {
   margin-bottom: 0.75rem;
 }
 
-.section-card p {
-  color: #333;
+.section-card h2 {
+  margin-bottom: 0.8rem;
 }
+
+.section-card h2 + p {
+  margin-top: 0.2rem;
+}
+
+
+.section-card p {
+  margin-bottom: 1.1rem;
+} 
 
 .section-card p {
   font-size: 1.2rem;
@@ -172,15 +200,22 @@ p {
   max-width: 70ch;
 }
 
-..section-card ul {
-  padding-left: 1.3rem;
-  margin-top: 0.5rem;
+.section-card p:first-of-type {
+  font-size: 1.05rem;
+  color: #1f2937;
+}
+
+
+.section-card ul {
+  padding-left: 1.4rem;
+  margin-top: 0.6rem;
 }
 
 .section-card li {
-  margin-bottom: 0.6rem;
-  line-height: 1.55;
+  margin-bottom: 0.55rem;
+  line-height: 1.6;
 }
+
 
 
 /* images & media */
