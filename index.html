@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div id="loader">
+  <div class="spinner"></div>
+  <p>MedTechGuide wird geladen…</p>
+</div>
+
     <header class="site-header">
       <div class="container">
         <h1>MedTechGuide</h1>
@@ -36,7 +41,7 @@
         <h2>Über diese Seite</h2>
         <p>
           MedTechGuide erklärt wichtige medizinische Geräte und Trends. Klicke
-          auf ein Thema, um zur ausführlichen Seite zu gelangen — dort findest
+          auf ein Thema, um zur ausführlichen Seite zu gelangen - dort findest
           du erklärende Texte, Diagramme, Bilder und weiterführende Links.
         </p>
       </div>
@@ -60,7 +65,7 @@
 
         <a class="device-card" href="bildgebung.html">
           <h3>Bildgebung</h3>
-          <p>Röntgen, CT, MRT und Ultraschall — wie Ärzte hineinschauen.</p>
+          <p>Röntgen, CT, MRT und Ultraschall - wie Ärzte hineinschauen.</p>
         </a>
 
         <a class="device-card" href="neurochips.html">
@@ -72,7 +77,7 @@
 
         <a class="device-card" href="exoskelette.html">
           <h3>Exoskelette</h3>
-          <p>Reha, Industrie, Alltag – robotische Unterstützung.</p>
+          <p>Reha, Industrie, Alltag - robotische Unterstützung.</p>
         </a>
 
         <a class="device-card" href="genetik.html">
@@ -97,5 +102,17 @@
         <p>© 2025 MedTechGuide – Schulprojekt</p>
       </div>
     </footer>
+    <script>
+window.addEventListener("load", () => {
+  const loader = document.getElementById("loader");
+  if (!loader) return;
+
+  loader.classList.add("hidden");
+
+  setTimeout(() => {
+    loader.style.display = "none";
+  }, 500);
+});
+</script>
   </body>
 </html>

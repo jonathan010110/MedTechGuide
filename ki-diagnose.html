@@ -13,8 +13,8 @@
         <p class="subtitle">Algorithmen in der Medizin</p>
       </div>
     </header>
-<nav class="main-nav">
-    <div class="container">
+    <nav class="main-nav">
+      <div class="container">
         <a href="index.html">Start</a>
         <a href="diabetes.html">Diabetes</a>
         <a href="allergie.html">Allergien</a>
@@ -24,8 +24,8 @@
         <a href="exoskelette.html">Exoskelette</a>
         <a href="zukunft.html">Zukunft</a>
         <a href="genetik.html">Genetik</a>
-    </div>
-</nav>
+      </div>
+    </nav>
 
     <div class="container">
       <div class="search-box">
@@ -35,54 +35,159 @@
         <div class="section-card">
           <h2>Was ist KI in der Medizin?</h2>
           <p>
-            KI analysiert Datenmengen, erkennt Muster und unterstützt Ärzt:innen
-            bei Diagnosen. Besonders stark in Bildanalyse und prädiktiver
-            Modellierung.
+            Künstliche Intelligenz (KI) wird in der Medizin zur Analyse großer,
+            heterogener Datenmengen eingesetzt. Mithilfe von
+            Machine-Learning-Algorithmen erkennt KI komplexe Muster in
+            Bilddaten, Laborwerten und klinischen Informationen. Besonders in
+            der medizinischen Bildgebung ermöglicht KI eine präzisere und
+            frühere Erkennung pathologischer Veränderungen. Ein weiterer
+            zentraler Anwendungsbereich ist die prädiktive Modellierung, bei der
+            KI Krankheitsverläufe und Therapieergebnisse auf Basis historischer
+            Daten prognostiziert. Durch die Integration verschiedener
+            Datenquellen unterstützt KI die Entwicklung personalisierter
+            Behandlungsstrategien und verbessert die Entscheidungsgrundlage für
+            medizinisches Fachpersonal.
           </p>
           <img class="section-image" src="images/ki-1.jpg" alt="AI" />
         </div>
         <div class="section-card">
           <h2>Anwendungen</h2>
           <p>
-            Früherkennung von Lungenkrebs in CT, Hautkrebs-Erkennung per Bild,
-            Risiko-Scores für Intensivpatienten.
+            KI-basierte Systeme werden zur Früherkennung von Lungenkrebs in
+            CT-Aufnahmen sowie zur automatisierten Hautkrebs-Erkennung mittels
+            Bildanalyse eingesetzt. Darüber hinaus berechnen KI-Modelle
+            Risiko-Scores für Intensivpatient:innen, um den klinischen Verlauf
+            frühzeitig einzuschätzen und Therapieentscheidungen zu unterstützen.
           </p>
         </div>
         <div class="section-card">
+          <h2>Anwendungsbeispiel aus der Praxis</h2>
+          <p>
+            In einem Krankenhaus wird ein KI-System eingesetzt, das CT-Aufnahmen
+            der Lunge analysiert. Die Software erkennt verdächtige Strukturen
+            und weist Ärztinnen und Ärzte auf mögliche Auffälligkeiten hin.
+            Dadurch kann Lungenkrebs frühzeitig erkannt und schneller behandelt
+            werden.
+          </p>
+        </div>
+
+        <div class="section-card">
           <h2>Limitierungen & Ethik</h2>
           <p>
-            Bias in Trainingsdaten, Erklärbarkeit (Blackbox-Problem) und
-            Datenschutz sind zentrale Probleme.
+            Zentrale Herausforderungen beim Einsatz künstlicher Intelligenz in
+            der Medizin sind Verzerrungen in Trainingsdaten (Bias), die zu
+            fehlerhaften Ergebnissen führen können, die eingeschränkte
+            Erklärbarkeit vieler Modelle (Blackbox-Problem) sowie hohe
+            Anforderungen an Datenschutz und Datensicherheit bei sensiblen
+            Gesundheitsdaten.
           </p>
         </div>
       </div>
-    </div>
 
-<div class="section-card related-links">
-    <h2>Weiterführende Links</h2>
-    <ul>
-        <li><a href="#" target="_blank" id="link1">Link 1 wird automatisch gesetzt</a></li>
-        <li><a href="#" target="_blank" id="link2">Link 2 wird automatisch gesetzt</a></li>
-        <li><a href="#" target="_blank" id="link3">Link 3 wird automatisch gesetzt</a></li>
-    </ul>
+
+      <div class="section-card related-links">
+  <h2>Weiterführende Links</h2> 
+  <ul id="related-links"></ul>
+
 </div>
 
 
     <footer class="site-footer">
       <div class="container"><p>© 2025 MedTechGuide</p></div>
     </footer>
+
+
+ <script>
+function setRelatedLinks(topic) {
+  const links = {
+    diabetes: [
+      ["International Diabetes Federation", "https://idf.org/"],
+      ["Diabetes Info Österreich", "https://www.diabetes.at/"],
+      ["Deutsche Diabetes Hilfe", "https://www.diabetesde.org/"],
+      ["CDC – Diabetes", "https://www.cdc.gov/diabetes/"],
+      ["NIDDK – Diabetes Research", "https://www.niddk.nih.gov/"]
+    ],
+    allergie: [
+      ["Österreichische Gesellschaft für Allergologie", "https://www.oegaai.at/"],
+      ["Allergy.org Expertenportal", "https://www.allergy.org.au/"],
+      ["Pollenwarndienst Europa", "https://www.pollenwarndienst.at/"],
+      ["WHO – Allergien", "https://www.who.int/"],
+      ["Mayo Clinic – Allergies", "https://www.mayoclinic.org/diseases-conditions/allergies"]
+    ],
+    herz: [
+      ["Herzstiftung Deutschland", "https://www.herzstiftung.de/"],
+      ["American Heart Association", "https://www.heart.org/"],
+      ["Cardio Smart", "https://www.cardiosmart.org/"],
+      ["European Society of Cardiology", "https://www.escardio.org/"],
+      ["CDC – Heart Disease", "https://www.cdc.gov/heartdisease/"]
+    ],
+    bildgebung: [
+      ["Radiopaedia – Bilddiagnostik", "https://radiopaedia.org/"],
+      ["MRI Explained", "https://mriexplained.com/"],
+      ["European Society of Radiology", "https://www.myesr.org/"],
+      ["InsideRadiology", "https://www.insideradiology.com.au/"],
+      ["FDA – Medical Imaging", "https://www.fda.gov/radiation-emitting-products"]
+    ],
+    neurochips: [
+      ["BCI Research", "https://www.bci-info.org/"],
+      ["Neuralink Infos", "https://neuralink.com/"],
+      ["BCI TU Graz", "https://bci.tugraz.at/"],
+      ["Frontiers in Neuroscience", "https://www.frontiersin.org/journals/neuroscience"],
+      ["NINDS – Brain Research", "https://www.ninds.nih.gov/"]
+    ],
+    exoskelette: [
+      ["Exoskeleton Report", "https://exoskeletonreport.com/"],
+      ["ReWalk Robotics", "https://rewalk.com/"],
+      ["Ekso Bionics", "https://eksobionics.com/"],
+      ["ScienceDirect – Exoskeletons", "https://www.sciencedirect.com/topics/engineering/exoskeleton"],
+      ["Frontiers – Robotics & AI", "https://www.frontiersin.org/journals/robotics-and-ai"]
+    ],
+    genetik: [
+      ["Genome.gov", "https://www.genome.gov/"],
+      ["Learn Genetics", "https://learn.genetics.utah.edu/"],
+      ["YourGenome", "https://www.yourgenome.org/"],
+      ["Nature – Genetics", "https://www.nature.com/subjects/genetics"],
+      ["European Bioinformatics Institute", "https://www.ebi.ac.uk/"]
+    ],
+    ki: [
+      ["AI in Medicine", "https://aimedicine.info/"],
+      ["Stanford AI Health", "https://aihealth.stanford.edu/"],
+      ["WHO – KI Leitfaden", "https://www.who.int/publications/i/item/9789240029200"],
+      ["Nature – Machine Learning", "https://www.nature.com/subjects/machine-learning"],
+      ["Healthcare AI", "https://healthcare.ai/"]
+    ],
+    zukunft: [
+      ["MIT Technology Review – Health", "https://www.technologyreview.com/topic/health/"],
+      ["WHO – Digital Health", "https://www.who.int/health-topics/digital-health"],
+      ["Nature – Medical Research", "https://www.nature.com/subjects/medical-research"],
+      ["NIH – Medical Research", "https://www.nih.gov/"],
+      ["EU Health Policy", "https://ec.europa.eu/health/"]
+    ]
+  };
+
+  if (!links[topic]) return;
+
+  const list = document.getElementById("related-links");
+  list.innerHTML = "";
+
+  links[topic].forEach(link => {
+    const li = document.createElement("li");
+    const a = document.createElement("a");
+    a.href = link[1];
+    a.textContent = link[0];
+    a.target = "_blank";
+    li.appendChild(a);
+    list.appendChild(li);
+  });
+}
+
+</script>
+
+<ul id="related-links"></ul>
+
+    <!-- Hier sagst du, welches Thema die Seite hat -->
     <script>
-      function filter() {
-        const q = document.getElementById("search").value.toLowerCase();
-        document
-          .querySelectorAll("#content .section-card")
-          .forEach(
-            (c) =>
-              (c.style.display = c.innerText.toLowerCase().includes(q)
-                ? ""
-                : "none")
-          );
-      }
+      setRelatedLinks("ki");
     </script>
   </body>
 </html>

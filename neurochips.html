@@ -13,8 +13,8 @@
         <p class="subtitle">Hirn-Computer-Schnittstellen</p>
       </div>
     </header>
-<nav class="main-nav">
-    <div class="container">
+    <nav class="main-nav">
+      <div class="container">
         <a href="index.html">Start</a>
         <a href="diabetes.html">Diabetes</a>
         <a href="allergie.html">Allergien</a>
@@ -24,12 +24,16 @@
         <a href="zukunft.html">Zukunft</a>
         <a href="genetik.html">Genetik</a>
         <a href="ki-diagnose.html">KI-Diagnose</a>
-    </div>
-</nav>
+      </div>
+    </nav>
 
     <div class="container">
       <div class="search-box">
-        <input id="search" placeholder="🔍 Suche..." onkeyup="filter()" />
+        <input
+          id="search"
+          placeholder="🔍 Suche in Neurochips..."
+          onkeyup="filter()"
+        />
       </div>
       <div id="content">
         <div class="section-card">
@@ -60,6 +64,16 @@
           </p>
         </div>
         <div class="section-card">
+          <h2>Anwendungsbeispiel aus der Praxis</h2>
+          <p>
+            Ein Patient mit einer schweren Lähmung erhält ein
+            Brain-Computer-Interface, das neuronale Signale aus dem Gehirn
+            ausliest. Diese Signale werden genutzt, um einen Computer oder eine
+            Prothese zu steuern. Dadurch kann der Patient trotz eingeschränkter
+            Motorik mit seiner Umgebung kommunizieren.
+          </p>
+        </div>
+        <div class="section-card">
           <h2>Forschung</h2>
           <p>
             KI, flexible Elektroden und Nanodrähte verbessern Signalqualität;
@@ -67,16 +81,15 @@
           </p>
         </div>
       </div>
+      <div class="section-card">
+        <h2>Weiterführende Links</h2>
+        <ul>
+          <li><a id="link1" target="_blank"></a></li>
+          <li><a id="link2" target="_blank"></a></li>
+          <li><a id="link3" target="_blank"></a></li>
+        </ul>
+      </div>
     </div>
-
-    <div class="section-card related-links">
-    <h2>Weiterführende Links</h2>
-    <ul>
-        <li><a href="#" target="_blank" id="link1">Link 1 wird automatisch gesetzt</a></li>
-        <li><a href="#" target="_blank" id="link2">Link 2 wird automatisch gesetzt</a></li>
-        <li><a href="#" target="_blank" id="link3">Link 3 wird automatisch gesetzt</a></li>
-    </ul>
-</div>
 
     <footer class="site-footer">
       <div class="container"><p>© 2025 MedTechGuide</p></div>
@@ -93,6 +106,70 @@
                 : "none")
           );
       }
+      function setRelatedLinks(topic) {
+        const links = {
+          diabetes: [
+            ["International Diabetes Federation", "https://idf.org/"],
+            ["Diabetes Info Österreich", "https://www.diabetes.at/"],
+            ["Deutsche Diabetes Hilfe", "https://www.diabetesde.org/"],
+          ],
+          allergie: [
+            [
+              "Österreichische Gesellschaft für Allergologie",
+              "https://www.oegaai.at/",
+            ],
+            ["Allergy.org Expertenportal", "https://www.allergy.org.au/"],
+            ["Pollenwarndienst Europa", "https://www.pollenwarndienst.at/"],
+          ],
+          herz: [
+            ["Herzstiftung Deutschland", "https://www.herzstiftung.de/"],
+            ["American Heart Association", "https://www.heart.org/"],
+            ["Cardio Smart", "https://www.cardiosmart.org/"],
+          ],
+          bildgebung: [
+            ["Radiopaedia – Bilddiagnostik", "https://radiopaedia.org/"],
+            ["MRI Explained", "https://mriexplained.com/"],
+            ["European Society of Radiology", "https://www.myesr.org/"],
+          ],
+          neurochips: [
+            ["BCI Research", "https://www.bci-info.org/"],
+            ["Neuralink Infos", "https://neuralink.com/"],
+            ["BCI TU Graz", "https://bci.tugraz.at/"],
+          ],
+          exoskelette: [
+            ["Exoskeleton Report", "https://exoskeletonreport.com/"],
+            ["ReWalk Robotics", "https://rewalk.com/"],
+            ["Ekso Bionics", "https://eksobionics.com/"],
+          ],
+          genetik: [
+            ["Genome.gov", "https://www.genome.gov/"],
+            ["Learn Genetics", "https://learn.genetics.utah.edu/"],
+            ["YourGenome", "https://www.yourgenome.org/"],
+          ],
+          ki: [
+            ["AI in Medicine", "https://aimedicine.info/"],
+            ["Stanford AI Health", "https://aihealth.stanford.edu/"],
+            [
+              "WHO KI Leitfaden",
+              "https://www.who.int/publications/i/item/9789240029200",
+            ],
+          ],
+        };
+
+        if (links[topic]) {
+          document.getElementById("link1").href = links[topic][0][1];
+          document.getElementById("link1").innerText = links[topic][0][0];
+          document.getElementById("link2").href = links[topic][1][1];
+          document.getElementById("link2").innerText = links[topic][1][0];
+          document.getElementById("link3").href = links[topic][2][1];
+          document.getElementById("link3").innerText = links[topic][2][0];
+        }
+      }
+    </script>
+
+    <!-- Hier sagst du, welches Thema die Seite hat -->
+    <script>
+      setRelatedLinks("neurochips");
     </script>
   </body>
 </html>

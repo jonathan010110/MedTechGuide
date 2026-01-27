@@ -1,16 +1,48 @@
-/* style.css - Modern, keeps your colors and device-card look, plus icons & layout */
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 19px;
+  line-height: 1.65;
+  color: #1f2937;
   background: linear-gradient(90deg, #4a90e2, #1cd8d2);
-  padding: 0.6rem 0;
-  color: #222;
-  line-height: 1.6;
+  min-height: 100vh;
 }
+
+h1, h2, h3 {
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+h1 {
+  font-size: 2.2rem;
+}
+
+h2 {
+  font-size: 1.45rem;
+  margin-bottom: 0.6rem;
+}
+
+h3 {
+  font-size: 1.1rem;
+}
+
+p {
+  max-width: 68ch;
+  line-height: 1.7;
+  font-size: 1rem;
+  color: #374151;
+  margin-bottom: 1.2rem;
+}
+
+.container {
+  max-width: 1100px;
+}
+
 .container {
   width: 100%;
   max-width: 1100px;
@@ -25,12 +57,14 @@ body {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 .site-header h1 {
-  font-size: 1.9rem;
+  font-size: 2.3rem;
 }
 .subtitle {
-  font-size: 1rem;
-  margin-top: 0.3rem;
+  font-size: 1.3rem;
+   margin: 0.4rem auto 0;
   opacity: 0.95;
+  text-align: center;
+    color: rgba(255,255,255,0.9);
 }
 
 /* nav */
@@ -49,7 +83,7 @@ body {
   gap: 0.6rem;
 }
 .main-nav a {
-  color: #fff;
+  color: #f5f4f4;
   text-decoration: none;
   padding: 0.45rem 0.9rem;
   border-radius: 6px;
@@ -63,7 +97,7 @@ body {
 
 /* intro card */
 .intro-card {
-  background: #fff;
+  background: #fafafa;
   padding: 1.6rem;
   border-radius: 12px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
@@ -74,7 +108,7 @@ body {
   margin-bottom: 0.6rem;
 }
 .intro-card p {
-  font-size: 1rem;
+  font-size: 1.3rem;
 }
 
 /* grid & cards */
@@ -103,42 +137,106 @@ body {
   margin-bottom: 0.4rem;
 }
 .device-card p {
-  font-size: 0.95rem;
+  font-size: 1.3rem;
 }
 
 /* section-cards for content pages */
 .section-card {
-  background: #fff;
-  padding: 1.6rem;
-  border-radius: 12px;
-  margin-bottom: 1.6rem;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-  border-left: 5px solid #4a90e2;
+  background: rgba(255,255,255,0.97);
+  border-radius: 16px;
+  padding: 1.8rem 2rem;
+  margin-bottom: 2rem;
+  box-shadow:
+    0 12px 32px rgba(0,0,0,0.08),
+    inset 0 1px 0 rgba(255,255,255,0.7);
 }
-.section-card h2 {
-  font-size: 1.45rem;
+
+.section-card blockquote {
+  margin: 1.4rem 0;
+  padding-left: 1rem;
+  border-left: 3px solid #1d4ed8;
+  color: #374151;
+  font-style: italic;
+}
+
+
+.section-card a {
   color: #1d4ed8;
-  margin-bottom: 0.6rem;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(29,78,216,0.25);
 }
+
+.section-card a:hover {
+  border-bottom-color: #1d4ed8;
+}
+
+
+.section-card h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  color: #1d4ed8;
+  margin-bottom: 0.75rem;
+}
+
+.section-card h2 {
+  margin-bottom: 0.8rem;
+}
+
+.section-card h2 + p {
+  margin-top: 0.2rem;
+}
+
+
 .section-card p {
-  font-size: 1rem;
-  margin-bottom: 0.9rem;
+  margin-bottom: 1.1rem;
+} 
+
+.section-card p {
+  font-size: 1.2rem;
+  line-height: 1.65;
+  color: #333;
+  margin-bottom: 1rem;
+  max-width: 70ch;
 }
+
+.section-card p:first-of-type {
+  font-size: 1.05rem;
+  color: #1f2937;
+}
+
+
 .section-card ul {
-  padding-left: 1.2rem;
-  margin-bottom: 0.6rem;
+  padding-left: 1.4rem;
+  margin-top: 0.6rem;
 }
+
 .section-card li {
-  margin-bottom: 0.45rem;
+  margin-bottom: 0.55rem;
+  line-height: 1.6;
 }
+
+
 
 /* images & media */
 .section-image {
+  display: block;
   width: 100%;
-  border-radius: 10px;
-  margin-top: 0.8rem;
+  max-width: 100%;
+  margin-top: 1.4rem;
+  border-radius: 14px;
+  box-shadow: 0 14px 36px rgba(0,0,0,0.18);
+}
+
+
+.section-image {
+  width: 100%;
+  max-width: 100%;
   display: block;
 }
+
+
+
 .icon-inline {
   width: 22px;
   height: 22px;
@@ -169,13 +267,22 @@ body {
 /* footer */
 .site-footer {
   background: linear-gradient(90deg, #4a90e2, #1cd8d2);
-  color: #fff;
-  text-align: center;
-  padding: 1rem;
-  margin-top: 2rem;
+  padding: 1.2rem 0;
+  margin-top: 2.4rem;
+  margin-bottom: 0;
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.15);
 }
+
 .site-footer p {
-  opacity: 0.95;
+  max-width: none;
+  text-align: center;
+  margin: 0 auto;
+  color: rgba(255,255,255,0.9);
+}
+
+
+.site-footer p {
+  color: #f5f4f4;
   font-size: 0.95rem;
 }
 
@@ -190,20 +297,82 @@ body {
   .device-card {
     padding: 0.9rem;
   }
+
+/* related links */
+
+a {
+  color: #1d4ed8;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+}
+
+.related-links {
+  border-top: 3px solid rgba(29, 78, 216, 0.15);
+  margin-top: 3rem;
 }
 
 .related-links ul {
-    padding-left: 1.2rem;
+  margin-top: 1rem;
+  padding-left: 1.4rem;
+}
+
+.related-links li {
+  margin-bottom: 0.6rem;
 }
 
 .related-links a {
-    color: #1d4ed8;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.2s;
+  font-weight: 600;
+  color: #1d4ed8;
 }
 
 .related-links a:hover {
-    color: #1251a8;
-    text-decoration: underline;
+  text-decoration: underline;
 }
+
+.site-footer {
+  margin-top: 4rem;
+}
+
+
+
+#loader {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(90deg, #4a90e2, #1cd8d2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  color: white;
+  font-size: 1.1rem;
+  transition: opacity 0.4s ease;
+}
+
+#loader.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#loader .spinner {
+  border: 6px solid rgba(255, 255, 255, 0.3);
+  border-top: 6px solid #fff;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+    
