@@ -519,6 +519,113 @@ function showGlossaryTooltip(element, definition) {
 // 🚀 INITIALIZATION - Document Ready Event
 // ================================================================
 
+// Related Links Data (für Themenseiten)
+const relatedLinksData = {
+  diabetes: [
+    ["International Diabetes Federation", "https://idf.org/"],
+    ["Deutsche Diabetes Gesellschaft", "https://www.deutsche-diabetes-gesellschaft.de/"],
+    ["American Diabetes Association", "https://www.diabetes.org/"],
+    ["WHO - Diabetes", "https://www.who.int/health-topics/diabetes"],
+    ["CDC - Diabetes", "https://www.cdc.gov/diabetes/"],
+    ["NIH - Diabetes Research", "https://www.niddk.nih.gov/"]
+  ],
+  allergie: [
+    ["Österreichische Gesellschaft für Allergologie", "https://www.oegaai.at/"],
+    ["Deutsche Gesellschaft für Allergologie und klinische Immunologie", "https://www.dgaki.de/"],
+    ["American Academy of Allergy, Asthma & Immunology", "https://www.aaaai.org/"],
+    ["WHO - Allergies", "https://www.who.int/"],
+    ["Pollenwarndienst Europa", "https://www.pollenwarndienst.at/"],
+    ["Allergy & Asthma Network", "https://www.allergyasthmanetwork.org/"]
+  ],
+  herz: [
+    ["Deutsche Herzstiftung", "https://www.herzstiftung.de/"],
+    ["American Heart Association", "https://www.heart.org/"],
+    ["European Heart Rhythm Association", "https://www.ehra.org/"],
+    ["British Heart Foundation", "https://www.bhf.org.uk/"],
+    ["Mayo Clinic - Heart Diseases", "https://www.mayoclinic.org/diseases-conditions/heart-disease/"],
+    ["NIH - Heart Institute", "https://www.nhlbi.nih.gov/"]
+  ],
+  bildgebung: [
+    ["Radiopaedia - Medical Imaging", "https://radiopaedia.org/"],
+    ["European Society of Radiology", "https://www.myesr.org/"],
+    ["American College of Radiology", "https://www.acr.org/"],
+    ["MRI Explained", "https://mriexplained.com/"],
+    ["FDA - Medical Imaging", "https://www.fda.gov/radiation-emitting-products/"],
+    ["Nature - Medical Imaging Research", "https://www.nature.com/"]
+  ],
+  neurochips: [
+    ["BCI Society", "https://www.bci-info.org/"],
+    ["Neuralink Public Information", "https://neuralink.com/"],
+    ["Brain-Computer Interfaces - TU Graz", "https://bci.tugraz.at/"],
+    ["Frontiers in Neuroscience", "https://www.frontiersin.org/journals/neuroscience/"],
+    ["NINDS - Brain Research", "https://www.ninds.nih.gov/"],
+    ["Nature Neuroscience", "https://www.nature.com/articles/s41593-021-00928-z"]
+  ],
+  exoskelette: [
+    ["Exoskeleton Report", "https://exoskeletonreport.com/"],
+    ["ReWalk Robotics", "https://rewalk.com/"],
+    ["Ekso Bionics", "https://eksobionics.com/"],
+    ["ScienceDirect - Exoskeletons", "https://www.sciencedirect.com/topics/engineering/exoskeleton"],
+    ["IEEE - Robotics & Automation", "https://www.ieee.org/"],
+    ["Wearable Robotics - Research", "https://www.frontiersin.org/"]
+  ],
+  genetik: [
+    ["Genome.gov - NIH", "https://www.genome.gov/"],
+    ["Learn Genetics - University of Utah", "https://learn.genetics.utah.edu/"],
+    ["YourGenome - Wellcome Sanger Institute", "https://www.yourgenome.org/"],
+    ["Nature Genetics", "https://www.nature.com/subjects/genetics"],
+    ["CRISPR Gene Editing Database", "https://www.ebi.ac.uk/"],
+    ["American Society of Human Genetics", "https://www.ashg.org/"]
+  ],
+  ki: [
+    ["AI in Healthcare - Stanford", "https://aihealth.stanford.edu/"],
+    ["WHO - AI Guidelines for Health", "https://www.who.int/publications/i/item/9789240029200"],
+    ["Nature Machine Intelligence", "https://www.nature.com/subjects/machine-learning"],
+    ["OpenAI - Research on AI Safety", "https://openai.com/research/"],
+    ["MIT - AI for Healthcare", "https://dspace.mit.edu/"],
+    ["IEEE Xplore - AI in Medicine", "https://ieeexplore.ieee.org/"]
+  ],
+  zukunft: [
+    ["MIT Technology Review - Healthcare", "https://www.technologyreview.com/topic/health/"],
+    ["WHO - Digital Health", "https://www.who.int/health-topics/digital-health"],
+    ["Nature - Medical Research", "https://www.nature.com/subjects/medical-research"],
+    ["NIH - Medical Research", "https://www.nih.gov/"],
+    ["EU Digital Health Policy", "https://ec.europa.eu/health/"],
+    ["Sciencedaily - Medical News", "https://www.sciencedaily.com/"]
+  ]
+};
+
+/**
+ * Setter für Related Links (für Themenseiten)
+ * @param {string} topic - Topic Key (z.B. 'diabetes')
+ */
+function setRelatedLinks(topic) {
+  const links = relatedLinksData[topic];
+  const relatedLinksContainer = document.getElementById('related-links');
+  
+  if (!links || !relatedLinksContainer) return;
+  
+  relatedLinksContainer.innerHTML = '';
+  
+  links.forEach(([title, url]) => {
+    const li = document.createElement('li');
+    const a = document.createElement('a');
+    a.href = url;
+    a.textContent = title;
+    a.target = '_blank';
+    a.rel = 'noopener noreferrer';
+    li.appendChild(a);
+    relatedLinksContainer.appendChild(li);
+  });
+}
+
+/**
+ * Backward Compatibility Alias für alte Code
+ */
+function setActiveNavLink() {
+  initActiveNav();
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   // Initialisiere alle Module der Reihe nach
   initLoader();        // Loader verstecken

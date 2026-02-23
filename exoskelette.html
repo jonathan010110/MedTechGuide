@@ -2,14 +2,33 @@
 <html lang="de">
 <head><meta charset="utf-8" /><title>Exoskelette – MedTechGuide</title><meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="stylesheet" href="style.css" /></head>
 <body>
+  <!-- ♿ ACCESSIBILITY: Skip to Content Link -->
+  <a href="#main-content" class="skip-to-content">Zum Inhalt springen</a>
+  
   <div id="loader"><div class="spinner"></div><p>Seite wird geladen…</p></div>
   <header class="site-header"><div class="container"><h1>Exoskelette</h1><p class="subtitle">Robotische Unterstützung in Reha, Industrie und Alltag</p></div></header>
-  <nav class="main-nav"><div class="container">
-    <a href="index.html">Start</a><a href="diabetes.html">Diabetes</a><a href="allergie.html">Allergien</a><a href="herz.html">Herz</a>
-    <a href="bildgebung.html">Bildgebung</a><a href="neurochips.html">Neurochips</a><a href="exoskelette.html" class="active">Exoskelette</a><a href="genetik.html">Genetik</a>
-    <a href="ki-diagnose.html">KI-Diagnose</a><a href="zukunft.html">Zukunft</a><a href="quellen.html">Quellen</a>
-  </div></nav>
-  <main class="container">
+  <nav class="main-nav">
+    <div class="container nav-container">
+      <div class="nav-links">
+        <a href="index.html">Start</a>
+        <a href="diabetes.html">Diabetes</a>
+        <a href="allergie.html">Allergien</a>
+        <a href="herz.html">Herz</a>
+        <a href="bildgebung.html">Bildgebung</a>
+        <a href="neurochips.html">Neurochips</a>
+        <a href="exoskelette.html" class="active">Exoskelette</a>
+        <a href="genetik.html">Genetik</a>
+        <a href="ki-diagnose.html">KI-Diagnose</a>
+        <a href="zukunft.html">Zukunft</a>
+        <a href="quellen.html">Quellen</a>
+      </div>
+      <div class="nav-search">
+        <input type="text" id="globalSearch" placeholder="Seite durchsuchen…" aria-label="Globale Suche">
+        <span id="searchResults" class="search-results"></span>
+      </div>
+    </div>
+  </nav>
+  <main class="container" id="main-content">
     <section class="section-card">
       <h2>Einführung</h2>
       <p>Exoskelette sind tragbare Roboteranzüge, die Kraft und Ausdauer erhöhen – oder verloren gegangene Fähigkeiten wiederherstellen. In der Medizin werden Sie für Rehabilitation nach Schlaganfall oder Rückenmarksverletzung eingesetzt. In der Industrie unterstützen Sie Arbeiter beim Heben. Im Alltag könnten Sie älteren Menschen helfen, Autonomie zu bewahren.</p>

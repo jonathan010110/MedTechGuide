@@ -7,6 +7,9 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- ♿ ACCESSIBILITY: Skip to Content Link -->
+  <a href="#main-content" class="skip-to-content">Zum Inhalt springen</a>
+  
   <div id="loader"><div class="spinner"></div><p>Seite wird geladen…</p></div>
 
   <header class="site-header">
@@ -17,22 +20,28 @@
   </header>
 
   <nav class="main-nav">
-    <div class="container">
-      <a href="index.html">Start</a>
-      <a href="diabetes.html">Diabetes</a>
-      <a href="allergie.html">Allergien</a>
-      <a href="herz.html" class="active">Herz</a>
-      <a href="bildgebung.html">Bildgebung</a>
-      <a href="neurochips.html">Neurochips</a>
-      <a href="exoskelette.html">Exoskelette</a>
-      <a href="genetik.html">Genetik</a>
-      <a href="ki-diagnose.html">KI-Diagnose</a>
-      <a href="zukunft.html">Zukunft</a>
-      <a href="quellen.html">Quellen</a>
+    <div class="container nav-container">
+      <div class="nav-links">
+        <a href="index.html">Start</a>
+        <a href="diabetes.html">Diabetes</a>
+        <a href="allergie.html">Allergien</a>
+        <a href="herz.html" class="active">Herz</a>
+        <a href="bildgebung.html">Bildgebung</a>
+        <a href="neurochips.html">Neurochips</a>
+        <a href="exoskelette.html">Exoskelette</a>
+        <a href="genetik.html">Genetik</a>
+        <a href="ki-diagnose.html">KI-Diagnose</a>
+        <a href="zukunft.html">Zukunft</a>
+        <a href="quellen.html">Quellen</a>
+      </div>
+      <div class="nav-search">
+        <input type="text" id="globalSearch" placeholder="Seite durchsuchen…" aria-label="Globale Suche">
+        <span id="searchResults" class="search-results"></span>
+      </div>
     </div>
   </nav>
 
-  <main class="container">
+  <main class="container" id="main-content">
     <section class="section-card">
       <h2>Einführung</h2>
       <p>Das Herz-Kreislauf-System ist das wichtigste Organsystem des Körpers. Eine Fehlfunktion führt zu schwerwiegenden Erkrankungen wie Myokardinfarkt, Arrhythmien und Herzinsuffizienz. Moderne Medizintechnik ermöglicht präzise Diagnostik und lebensrettende Therapie durch EKG, Blutdruckmessung, Schrittmacher und implantierbare Defibrillatoren (ICD).</p>

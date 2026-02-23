@@ -2,14 +2,33 @@
 <html lang="de">
 <head><meta charset="utf-8" /><title>Medizinische Bildgebung – MedTechGuide</title><meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="stylesheet" href="style.css" /></head>
 <body>
+  <!-- ♿ ACCESSIBILITY: Skip to Content Link -->
+  <a href="#main-content" class="skip-to-content">Zum Inhalt springen</a>
+  
   <div id="loader"><div class="spinner"></div><p>Seite wird geladen…</p></div>
   <header class="site-header"><div class="container"><h1>Medizinische Bildgebung</h1><p class="subtitle">Röntgen, CT, MRT und Ultraschall</p></div></header>
-  <nav class="main-nav"><div class="container">
-    <a href="index.html">Start</a><a href="diabetes.html">Diabetes</a><a href="allergie.html">Allergien</a><a href="herz.html">Herz</a>
-    <a href="bildgebung.html" class="active">Bildgebung</a><a href="neurochips.html">Neurochips</a><a href="exoskelette.html">Exoskelette</a><a href="genetik.html">Genetik</a>
-    <a href="ki-diagnose.html">KI-Diagnose</a><a href="zukunft.html">Zukunft</a><a href="quellen.html">Quellen</a>
-  </div></nav>
-  <main class="container">
+  <nav class="main-nav">
+    <div class="container nav-container">
+      <div class="nav-links">
+        <a href="index.html">Start</a>
+        <a href="diabetes.html">Diabetes</a>
+        <a href="allergie.html">Allergien</a>
+        <a href="herz.html">Herz</a>
+        <a href="bildgebung.html" class="active">Bildgebung</a>
+        <a href="neurochips.html">Neurochips</a>
+        <a href="exoskelette.html">Exoskelette</a>
+        <a href="genetik.html">Genetik</a>
+        <a href="ki-diagnose.html">KI-Diagnose</a>
+        <a href="zukunft.html">Zukunft</a>
+        <a href="quellen.html">Quellen</a>
+      </div>
+      <div class="nav-search">
+        <input type="text" id="globalSearch" placeholder="Seite durchsuchen…" aria-label="Globale Suche">
+        <span id="searchResults" class="search-results"></span>
+      </div>
+    </div>
+  </nav>
+  <main class="container" id="main-content">
     <section class="section-card">
       <h2>Einführung</h2>
       <p>Medizinische Bildgebung erlaubt es Ärzten, das Körperinnere zu "sehen", ohne invasive Eingriffe. Vier Hauptmodalitäten beherrschen die Diagnostik: <strong>Röntgen</strong> (Knochen, Thorax), <strong>CT</strong> (schnell, hohe Auflösung), <strong>MRT</strong> (ohne Strahlung, detailliert) und <strong>Ultraschall</strong> (einfach, real-time). Ohne Bildgebung würde moderne Medizin nicht existieren.</p>
