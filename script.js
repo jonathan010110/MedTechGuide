@@ -102,6 +102,7 @@ function initActiveNav() {
 
 function initScrollToTop() {
   const scrollBtn = document.getElementById('scrollToTopBtn');
+  const navbar = document.querySelector('.main-nav');
   if (!scrollBtn) return;
   
   // Wichtig: Scroll-Event geführt mit throttle um Performance zu sparen
@@ -110,6 +111,13 @@ function initScrollToTop() {
       scrollBtn.classList.add('show');
     } else {
       scrollBtn.classList.remove('show');
+    }
+    
+    // Add shadow to navbar when scrolled
+    if (navbar && window.pageYOffset > 50) {
+      navbar.classList.add('scrolled');
+    } else if (navbar) {
+      navbar.classList.remove('scrolled');
     }
   }, 100);
   
