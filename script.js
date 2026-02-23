@@ -121,75 +121,10 @@ function initScrollToTop() {
   });
 }
 
-// ================================================================
-// 🌙 4. DARK MODE TOGGLE
-// ================================================================
 
-function initDarkMode() {
-  const html = document.documentElement;
-  const STORAGE_KEY = 'medtechguide-darkmode';
-  
-  // Prüfe gespeicherte Preference oder System Preference
-  const savedMode = localStorage.getItem(STORAGE_KEY);
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  const isDarkMode = savedMode === 'dark' || (savedMode === null && prefersDark);
-  
-  // Apply initial state
-  if (isDarkMode) {
-    html.classList.add('dark-mode');
-  }
-  
-  // Optional: Dark Mode Toggle Button Listener (wenn Button vorhanden)
-  const darkModeToggle = document.getElementById('darkModeToggle');
-  if (darkModeToggle) {
-    darkModeToggle.addEventListener('click', () => {
-      html.classList.toggle('dark-mode');
-      const isNowDark = html.classList.contains('dark-mode');
-      localStorage.setItem(STORAGE_KEY, isNowDark ? 'dark' : 'light');
-    });
-  }
-}
 
 // ================================================================
-// 📊 5. SCROLL PROGRESS BAR - Performance mit requestAnimationFrame
-// ================================================================
-
-function initScrollProgress() {
-  // Erstelle Progress Bar Element wenn nicht existiert
-  let progressBar = document.getElementById('scroll-progress-bar');
-  if (!progressBar) {
-    progressBar = document.createElement('div');
-    progressBar.id = 'scroll-progress-bar';
-    progressBar.className = 'scroll-progress-bar';
-    document.body.insertBefore(progressBar, document.body.firstChild);
-  }
-  
-  // Update progress mit requestAnimationFrame (keine Performance Penalty)
-  const updateProgress = () => {
-    const scrollTop = window.scrollY;
-    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-    progressBar.style.width = Math.max(0, Math.min(100, progress)) + '%';
-  };
-  
-  // RAF Event Listener (smooth, performant)
-  let ticking = false;
-  window.addEventListener('scroll', () => {
-    if (!ticking) {
-      requestAnimationFrame(() => {
-        updateProgress();
-        ticking = false;
-      });
-      ticking = true;
-    }
-  }, { passive: true });
-  
-  // Initial call
-  updateProgress();
-}
-
-// ================================================================
-// ✨ 6. SECTION FADE-IN ANIMATIONS mit IntersectionObserver
+// ✨ 5. SECTION FADE-IN ANIMATIONS mit IntersectionObserver
 // ================================================================
 
 function initSectionAnimations() {
@@ -219,7 +154,7 @@ function initSectionAnimations() {
 }
 
 // ================================================================
-// 🔍 7. GLOBAL SEARCH FUNCTION
+// 🔍 6. GLOBAL SEARCH FUNCTION
 // ================================================================
 
 function initSearch() {
@@ -280,7 +215,7 @@ function initSearch() {
 }
 
 // ================================================================
-// 🎨 8. FILTER SYSTEM (für device-cards auf index.html)
+// 🎨 7. FILTER SYSTEM (für device-cards auf index.html)
 // ================================================================
 
 function initFilters() {
@@ -311,7 +246,7 @@ function initFilters() {
 }
 
 // ================================================================
-// ⚖️ 9. DEVICE COMPARISON MODAL SYSTEM
+// ⚖️ 8. DEVICE COMPARISON MODAL SYSTEM
 // ================================================================
 
 function initCompareSystem() {
@@ -381,10 +316,142 @@ function initCompareSystem() {
 }
 
 /**
- * Öffnet Modal mit Vergleich
+ * Device Datenbank für Vergleiche
+ */
+const DEVICE_DATABASE = {
+  'Diabetes-Technologien': {
+    kategorie: 'Therapie & Monitoring',
+    beschreibung: 'Sensoren, CGM-Systeme, Insulinpumpen',
+    anwendung: 'Diabetes-Management',
+    verfügbarkeit: 'Weit verbreitet',
+    kosten: 'Moderat bis Hoch',
+    zukunft: 'Künstliche Bauchspeicheldrüse'
+  },
+  'Allergiediagnostik': {
+    kategorie: 'Diagnostik',
+    beschreibung: 'Prick-Tests, IgE-Bestimmung, Molekulardiagnostik',
+    anwendung: 'Allergie-Erkennung',
+    verfügbarkeit: 'Standard in Kliniken',
+    kosten: 'Niedrig bis Mittel',
+    zukunft: 'Epikutantests & Component-Diagnostik'
+  },
+  'Herz-Kreislauf': {
+    kategorie: 'Diagnostik & Therapie',
+    beschreibung: 'EKG, Blutdruckmessung, Schrittmacher',
+    anwendung: 'Herz-Kreislauf-Monitoring',
+    verfügbarkeit: 'Sehr verbreitet',
+    kosten: 'Variabel (niedrig bis sehr hoch)',
+    zukunft: 'Drahtlose Implantate'
+  },
+  'Bildgebung': {
+    kategorie: 'Diagnostik',
+    beschreibung: 'Röntgen, CT, MRT, Ultraschall',
+    anwendung: 'Bildgebendes Verfahren',
+    verfügbarkeit: 'In allen Kliniken',
+    kosten: 'Hoch (MRT/CT)',
+    zukunft: 'Hochauflösungs-KI-Analyse'
+  },
+  'Neurochips': {
+    kategorie: 'Forschung & Therapie',
+    beschreibung: 'Brain-Computer Interfaces, tiefe Hirnstimulation',
+    anwendung: 'Neuromodulation',
+    verfügbarkeit: 'Experimental / Begrenzt',
+    kosten: 'Sehr Hoch',
+    zukunft: 'Bidirektionale Neural-Recording'
+  },
+  'Exoskelette': {
+    kategorie: 'Therapie & Rehabilitation',
+    beschreibung: 'Roboterassistenz in Bewegung',
+    anwendung: 'Rehabilitation, Industrie',
+    verfügbarkeit: 'Zunehmend in Kliniken',
+    kosten: 'Hoch',
+    zukunft: 'Brain-gesteuerte Exoskelette'
+  },
+  'Genetik': {
+    kategorie: 'Forschung & Therapie',
+    beschreibung: 'CRISPR, DNA-Sequenzierung',
+    anwendung: 'Genanalyse & Gentherapie',
+    verfügbarkeit: 'Begrenzt auf spezialisierte Zentren',
+    kosten: 'Sinkend (Sequenzierung)',
+    zukunft: 'In-vivo CRISPR-Therapien'
+  },
+  'KI-Diagnose': {
+    kategorie: 'Zukunftstechnologie',
+    beschreibung: 'Künstliche Intelligenz für Analyse',
+    anwendung: 'Bildanalyse, Diagnostik',
+    verfügbarkeit: 'Zunehmend in Radiologie',
+    kosten: 'Variable',
+    zukunft: 'Vollautomatisierte Diagnose'
+  },
+  'Zukunftstechnologien': {
+    kategorie: 'Forschung',
+    beschreibung: 'Nano-Medizin, Bio-Interfaces',
+    anwendung: 'Experimentell',
+    verfügbarkeit: 'Nicht i.d.R. verfügbar',
+    kosten: 'R&D Phase',
+    zukunft: 'Körpereigene Nanotechnik'
+  }
+};
+
+/**
+ * Öffnet Modal mit Vergleich zweier Geräte
  * @param {Array} devices - zwei zu vergleichende Geräte
  */
 function openCompareModal(devices) {
+  // Stelle sicher dass beide Geräte existieren
+  const device1 = DEVICE_DATABASE[devices[0]];
+  const device2 = DEVICE_DATABASE[devices[1]];
+  
+  if (!device1 || !device2) {
+    console.warn('Ein oder beide Geräte nicht in Datenbank gefunden');
+    return;
+  }
+  
+  // Erstelle Vergleichstabelle
+  const tableHTML = `
+    <table class="device-comparison-table">
+      <thead>
+        <tr>
+          <th>Eigenschaft</th>
+          <th>${devices[0]}</th>
+          <th>${devices[1]}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Kategorie</strong></td>
+          <td>${device1.kategorie}</td>
+          <td>${device2.kategorie}</td>
+        </tr>
+        <tr>
+          <td><strong>Beschreibung</strong></td>
+          <td>${device1.beschreibung}</td>
+          <td>${device2.beschreibung}</td>
+        </tr>
+        <tr>
+          <td><strong>Anwendungsgebiet</strong></td>
+          <td>${device1.anwendung}</td>
+          <td>${device2.anwendung}</td>
+        </tr>
+        <tr>
+          <td><strong>Verfügbarkeit</strong></td>
+          <td>${device1.verfügbarkeit}</td>
+          <td>${device2.verfügbarkeit}</td>
+        </tr>
+        <tr>
+          <td><strong>Kostenbereich</strong></td>
+          <td>${device1.kosten}</td>
+          <td>${device2.kosten}</td>
+        </tr>
+        <tr>
+          <td><strong>Zukunftsperspektive</strong></td>
+          <td>${device1.zukunft}</td>
+          <td>${device2.zukunft}</td>
+        </tr>
+      </tbody>
+    </table>
+  `;
+  
   // Erstelle Modal
   const modal = document.createElement('div');
   modal.className = 'compare-modal';
@@ -397,7 +464,7 @@ function openCompareModal(devices) {
       <button class="modal-close" aria-label="Modal schließen">✕</button>
       <h2>Vergleich: ${devices[0]} vs ${devices[1]}</h2>
       <div class="compare-table">
-        <p>Vergleich-Details würden hier angezeigt</p>
+        ${tableHTML}
       </div>
     </div>
   `;
@@ -427,7 +494,7 @@ function openCompareModal(devices) {
 }
 
 // ================================================================
-// 🧠 10. GLOSSARY TOOLTIP SYSTEM (Automatisch)
+// 🧠 9. GLOSSARY TOOLTIP SYSTEM (Automatisch)
 // ================================================================
 
 function initGlossaryTooltips() {
@@ -631,8 +698,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initLoader();        // Loader verstecken
   initActiveNav();     // Navigation highlighting
   initScrollToTop();   // Scroll to Top Button
-  initDarkMode();      // Dark Mode Preference
-  initScrollProgress(); // Progress Bar
   initSectionAnimations(); // Fade-In Animations
   initSearch();        // Globale Suche
   initFilters();       // Filter System
