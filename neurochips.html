@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="de">
+<head><meta charset="utf-8" /><title>Neurochips & BCIs – MedTechGuide</title><meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="stylesheet" href="style.css" /></head>
+<body>
+  <div id="loader"><div class="spinner"></div><p>Seite wird geladen…</p></div>
+  <header class="site-header"><div class="container"><h1>Neurochips & Brain-Computer Interfaces</h1><p class="subtitle">Tiefe Hirnstimulation, BCI und Neuroprothesen</p></div></header>
+  <nav class="main-nav"><div class="container">
+    <a href="index.html">Start</a><a href="diabetes.html">Diabetes</a><a href="allergie.html">Allergien</a><a href="herz.html">Herz</a>
+    <a href="bildgebung.html">Bildgebung</a><a href="neurochips.html" class="active">Neurochips</a><a href="exoskelette.html">Exoskelette</a><a href="genetik.html">Genetik</a>
+    <a href="ki-diagnose.html">KI-Diagnose</a><a href="zukunft.html">Zukunft</a><a href="quellen.html">Quellen</a>
+  </div></nav>
+  <main class="container">
+    <section class="section-card">
+      <h2>Einführung</h2>
+      <p>Das Gehirn steuert den Körper durch elektronische Signale. Neurochips können diese Signale aufnehmen, verstärken und interpretieren. Drei Hauptanwendungen: <strong>Tiefe Hirnstimulation</strong> (DBS) zur Behandlung von Parkinson und Tremor, <strong>Brain-Computer Interfaces</strong> (BCI) für Lähmung, <strong>Neuroprothesen</strong> zur Wiederherstellung von Bewegung oder Sinnen.</p>
+    </section>
+    <section class="section-card">
+      <h2>Kurz erklärt</h2>
+      <p>Neurochips sind feinste Elektroden (Durchmesser < 1 mm), die ins Gehirngewebe oder an die Oberfläche implantiert werden. Sie messen neuronale Aktivität (Spikes von Neuronen) und/oder stimulieren Neuronen elektrisch. Machine Learning dekodiert diese Signale in Befehle (z.B. "Arm bewegen") oder therapeutische Parameter.</p>
+    </section>
+    <section class="section-card">
+      <h2>Technische Funktionsweise</h2>
+      <h3>Tiefe Hirnstimulation (DBS)</h3>
+      <p>Elektroden werden in spezifische Hirnregionen (z.B. Nucleus subthalamicus bei Parkinson) implantiert. Ein Stimulator am Schlüsselbein sendet hochfrequente Impulse (bis 180 Hz). Dies moduliert abnorme neuronale Aktivität und lindert Symptome. Die Mechanismus ist nicht vollständig verstanden – wahrscheinlich Störung abnormaler Rhythmen.</p>
+      <h3>Brain-Computer Interfaces (BCI)</h3>
+      <p>BCIs lesen motorische Intention direkt vom Gehirn. Invasive BCIs: Elektroden im motorischen Kortex messen Aktivität einzelner Neuronen. Ein Dekodierungs-Algorithmus (oft ein neuronales Netzwerk) konvertiert diese Aktivität in roboterarme oder Cursor-Bewegung. Der Patient stellt sich vor, eine Bewegung auszuführen – der Roboterarm bewegt sich entsprechend.</p>
+      <h3>Neuroprothesen</h3>
+      <p>Kombination aus BCI und motorischem Output. Zum Beispiel: Signale vom motorischen Kortex werden dekodiert, dann an einen Motorarm übertragen, der die Bewegung ausführt. Rückmeldung (taktile oder visuell) informiert den Patienten über die ausgeführte Aktion.</p>
+    </section>
+    <section class="section-card">
+      <h3>Vergleichstabelle: Neurochip-Technologien</h3>
+      <table>
+        <thead><tr><th>Technologie</th><th>Invasivität</th><th>Elektroden</th><th>Auflösung</th><th>Anwendung</th><th>Risiko</th></tr></thead>
+        <tbody>
+          <tr><td>DBS</td><td>Invasiv</td><td>4–8</td><td>Regional</td><td>Parkinson, Tremor</td><td>Infektin, Blutung</td></tr>
+          <tr><td>Epidurale Elektroden</td><td>Invasiv</td><td>4–32</td><td>Oberflächlich</td><td>Epilepsie</td><td>Infektionrisiko</td></tr>
+          <tr><td>Intrakortikale Mikroelektroden</td><td>Invasiv</td><td>32–256</td><td>Einzeln-Neuron</td><td>BCI, Neuroprothesen</td><td>Gliose, Signal-Degradation</td></tr>
+          <tr><td>ECoG (Oberflächlich)</td><td>Minimalist</td><td>32–64</td><td>Lokal</td><td>BCI, Epilepsie-Monitoring</td><td>Gering</td></tr>
+          <tr><td>EEG (Non-invasiv)</td><td>Keine</td><td>1–256</td><td>Grob</td><td>BCI-Spiele</td><td>Keine</td></tr>
+        </tbody>
+      </table>
+    </section>
+    <section class="section-card">
+      <h2>Anwendungsbeispiel</h2>
+      <p>Jan, 45, erlitt einen Schlaganfall mit Querschnittslähmung. Er ist vollständig gelähmt außer für Augenbewegungen. Ein inverses BCI wird implantiert: 96 Mikroelektroden im motorischen Kortex. Nach Trainieren mit Machine Learning kann Jan einen Roboterarm steuern, um Gegenstände zu greifen. Taktile Rückmeldung erlaubt ihm, den Griff zu fühlen. Seine Lebensqualität verbessert sich dramatisch.</p>
+    </section>
+    <section class="section-card">
+      <h2>Vorteile und Grenzen</h2>
+      <ul><li>Wirksam bei therapieresistenten Erkrankungen</li><li>Potenziell Lähmung wiederhergestellt</li><li>Echtzeit-Modulation von Symptomen</li><li>Könnte kognitives Enhancement ermöglichen</li></ul>
+      <ul><li>Invasivität und Infektionsrisiko</li><li>Signal-Degradation durch Gliose</li><li>Hohe Kosten</li><li>Ethische Bedenken bezüglich Gehirn-Implantaten</li></ul>
+    </section>
+    <section class="section-card">
+      <h2>Gesellschaftliche Relevanz</h2>
+      <p>BCIs könnten Millionen von Lähmungspatienten helfen. Allerdings: Zugangsungleichheit, Datenschutz (Gedanken sind privat!), Enhancement-Doping in Sport und Beruf, Sicherheit vor Hacking. Ethische Grenzen müssen definiert werden.</p>
+    </section>
+    <section class="section-card">
+      <h2>Zukunftsperspektiven</h2>
+      <p>Nicht-invasive BCIs mit EEG + AI. Wireless Implantate via Induktion. Rekonstruktion von Sensorik (Tastsinn, Sehen). Gehirn-zu-Gehirn Kommunikation. Allerdings: Langzeitverträglichkeit noch offen.</p>
+    </section>
+    <section class="section-card tech-challenges">
+      <h2>Technische Herausforderungen</h2>
+      <div class="challenge-item"><h4>Gliose und Signal-Verlust</h4><p>Das Gehirn erkannt Implantate als fremd, umgibt sie mit Gliazellen, die Signale attenuieren. Nach 1–2 Jahren ist die Signalqualität oft deutlich schlechter.</p></div>
+      <div class="challenge-item"><h4>Rausch und Dekodierung</h4><p>Neuronale Signale sind schwach und rauschig. Machine Learning muss Dekodierungsmodelle trainieren – erfordert viel Daten.</p></div>
+      <div class="challenge-item"><h4>Echtzeit-Anforderung</h4><p>BCIs müssen in < 100 ms antworten, sonst wirkt es unnatürlich. Komprimierung und Parallelisierung nötig.</p></div>
+      <div class="challenge-item"><h4>Datenschutz</h4><p>Gehirn-Signale könnten Gedanken, Gefühle, Krankheitshistorie preisgeben. Extreme Verschlüsselung und Regelung erforderlich.</p></div>
+      <div class="challenge-item"><h4>Batterie und Wireless Power</h4><p>Implantate müssen Jahre ohne Austausch laufen. Induktives Laden ist möglich, aber Effizienz limitiert.</p></div>
+    </section>
+    <section class="section-card glossar">
+      <h2>Glossar</h2>
+      <div class="glossar-term"><dt>Neuroplastizität</dt><dd>Fähigkeit des Gehirns, sich neu zu organisieren und neue neuronale Verbindungen zu bilden. Essentiell für BCI-Training.</dd></div>
+      <div class="glossar-term"><dt>Action Potential</dt><dd>Schnelle Änderung der Membranspannung eines Neurons. Wiederum zu Kommunikation zwischen Neuronen führt.</dd></div>
+      <div class="glossar-term"><dt>Motorischer Kortex</dt><dd>Region des Gehirns (primär motorischer Kortex, Brodmann Area 4), die willkürliche Bewegung kontrolliert.</dd></div>
+      <div class="glossar-term"><dt>Dekodierung</dt><dd>Prozess, neuronale Aktivität in motorische Befehle oder andere interpretierbare Signale zu konvertieren. Meist mit Machine Learning.</dd></div>
+      <div class="glossar-term"><dt>Gliose</dt><dd>Proliferation von Gliazellen (nicht-neuronale Zellen) um einen implantierten Sensor. Führt zu Signal-Degradation.</dd></div>
+    </section>
+    <section class="section-card">
+      <h2>Informatik-Reflexion</h2>
+      <p>BCIs sind extreme Embedded-AI: <strong>Real-time Signal-Processing</strong>, <strong>Machine Learning für Dekodierung</strong>, <strong>Low-Power-Constraint</strong>, <strong>Sensorik-Fusion</strong> (mehrere Elektroden), <strong>Cybersecurity für Gehirndaten</strong>, <strong>Benutzer-Anpassung</strong> (Kalibrierung pro Patient).</p>
+    </section>
+    <section class="section-card related-links">
+      <h2>Weiterführende Links & Quellen</h2>
+      <ul id="related-links"></ul>
+    </section>
+    <div class="privacy-notice"><p><strong>Datenschutz:</strong> Diese Website speichert keine Daten. Keine Cookies oder Tracking-Tools.</p></div>
+  </main>
+  <footer class="site-footer"><div class="container"><p>&copy; 2026 MedTechGuide – Schulprojekt HTL Informatik</p><p><a href="quellen.html">Über die wissenschaftlichen Quellen</a></p></div></footer>
+  <button class="scroll-to-top" id="scrollToTopBtn" aria-label="Nach oben scrollen">↑</button>
+  <script src="script.js"></script>
+  <script>window.addEventListener("load", () => { const loader = document.getElementById("loader"); if (loader) { loader.classList.add("hidden"); setTimeout(() => { loader.style.display = "none"; }, 500); } setActiveNavLink(); setRelatedLinks('neurochips'); });</script>
+</body>
+</html>
