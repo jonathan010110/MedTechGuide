@@ -1,184 +1,185 @@
 <!DOCTYPE html>
 <html lang="de">
-  <head>
-    <meta charset="utf-8" />
-    <title>Allergien</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <header class="site-header">
-      <div class="container">
-        <h1>Allergie-Diagnostik</h1>
-        <p class="subtitle">Prick-Test, IgE, molekulare Verfahren</p>
-      </div>
-    </header>
-    <nav class="main-nav">
-      <div class="container">
-        <a href="index.html">Start</a>
-        <a href="diabetes.html">Diabetes</a>
-        <a href="herz.html">Herz</a>
-        <a href="bildgebung.html">Bildgebung</a>
-        <a href="neurochips.html">Neurochips</a>
-        <a href="exoskelette.html">Exoskelette</a>
-        <a href="zukunft.html">Zukunft</a>
-        <a href="genetik.html">Genetik</a>
-        <a href="ki-diagnose.html">KI-Diagnose</a>
-      </div>
-    </nav>
+<head>
+  <meta charset="utf-8" />
+  <title>Allergiediagnostik – MedTechGuide</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="loader"><div class="spinner"></div><p>Seite wird geladen…</p></div>
 
+  <header class="site-header">
     <div class="container">
-      <div class="search-box">
-        <input
-          id="search"
-          placeholder="🔍 Suche in Allergien..."
-          onkeyup="filter()"
-        />
-      </div>
-      <div id="content">
-        <div class="section-card">
-          <h2>Überblick</h2>
-          <p>
-            Allergien sind immunologische Reaktionen auf Umweltstoffe. Symptome
-            reichen von Hautausschlag bis anaphylaktischem Schock. Diagnose ist
-            wichtig, um Auslöser gezielt zu vermeiden oder zu behandeln.
-          </p>
-          <img
-            class="section-image"
-            src="images/allergie-1.jpg"
-            alt="Allergietest"
-          />
-        </div>
-
-        <div class="section-card">
-          <h2>Prick- und Patch-Tests</h2>
-          <p>
-            Prick-Tests prüfen Sofortreaktionen; Patch-Tests sind besser für
-            Spätreaktionen (Kontaktdermatitis). Moderne Messgeräte
-            digitalisieren die Auswertung.
-          </p>
-        </div>
-
-        <div class="section-card">
-          <h2>IgE-Test & Molekulardiagnostik</h2>
-          <p>
-            Laboruntersuchungen messen spezifisches IgE; molekulare Tests
-            identifizieren einzelne allergene Proteine und verbessern die
-            Therapieplanung.
-          </p>
-        </div>
-
-        <div class="section-card">
-          <h2>Anwendungsbeispiel aus der Praxis</h2>
-          <p>
-            Ein Patient leidet unter wiederkehrenden Atemproblemen während der
-            Pollensaison. In einer Facharztpraxis wird ein Prick-Test
-            durchgeführt, um die allergieauslösenden Stoffe zu identifizieren.
-            Danach wird ein Bluttest eingesetzt, um die Ergebnisse
-            abzusichern. Auf Basis der Diagnose kann eine gezielte Therapie
-            begonnen werden.
-          </p>
-        </div>
-
-        <div class="section-card">
-          <h2>Digitale Trends</h2>
-          <p>
-            KI gestützte Bildauswertung, Atemsensorik und Pollen-Trackings
-            machen personalisierte Allergie-Managements möglich.
-          </p>
-        </div>
-      </div>
-
-      <div class="section-card">
-        <h2>Weiterführende Links</h2>
-        <ul>
-          <li><a id="link1" target="_blank"></a></li>
-          <li><a id="link2" target="_blank"></a></li>
-          <li><a id="link3" target="_blank"></a></li>
-        </ul>
-      </div>
+      <h1>Allergiediagnostik</h1>
+      <p class="subtitle">Prick-Tests, IgE-Tests und molekulare Diagnostik</p>
     </div>
+  </header>
 
-    <footer class="site-footer">
-      <div class="container"><p>© 2025 MedTechGuide</p></div>
-    </footer>
-    <script>
-      function filter() {
-        const q = document.getElementById("search").value.toLowerCase();
-        document
-          .querySelectorAll("#content .section-card")
-          .forEach(
-            (c) =>
-              (c.style.display = c.innerText.toLowerCase().includes(q)
-                ? ""
-                : "none")
-          );
-      }
+  <nav class="main-nav">
+    <div class="container">
+      <a href="index.html">Start</a>
+      <a href="diabetes.html">Diabetes</a>
+      <a href="allergie.html" class="active">Allergien</a>
+      <a href="herz.html">Herz</a>
+      <a href="bildgebung.html">Bildgebung</a>
+      <a href="neurochips.html">Neurochips</a>
+      <a href="exoskelette.html">Exoskelette</a>
+      <a href="genetik.html">Genetik</a>
+      <a href="ki-diagnose.html">KI-Diagnose</a>
+      <a href="zukunft.html">Zukunft</a>
+      <a href="quellen.html">Quellen</a>
+    </div>
+  </nav>
 
-      function setRelatedLinks(topic) {
-        const links = {
-          diabetes: [
-            ["International Diabetes Federation", "https://idf.org/"],
-            ["Diabetes Info Österreich", "https://www.diabetes.at/"],
-            ["Deutsche Diabetes Hilfe", "https://www.diabetesde.org/"],
-          ],
-          allergie: [
-            [
-              "Österreichische Gesellschaft für Allergologie",
-              "https://www.oegaai.at/",
-            ],
-            ["Allergy.org Expertenportal", "https://www.allergy.org.au/"],
-            ["Pollenwarndienst Europa", "https://www.pollenwarndienst.at/"],
-          ],
-          herz: [
-            ["Herzstiftung Deutschland", "https://www.herzstiftung.de/"],
-            ["American Heart Association", "https://www.heart.org/"],
-            ["Cardio Smart", "https://www.cardiosmart.org/"],
-          ],
-          bildgebung: [
-            ["Radiopaedia – Bilddiagnostik", "https://radiopaedia.org/"],
-            ["MRI Explained", "https://mriexplained.com/"],
-            ["European Society of Radiology", "https://www.myesr.org/"],
-          ],
-          neurochips: [
-            ["BCI Research", "https://www.bci-info.org/"],
-            ["Neuralink Infos", "https://neuralink.com/"],
-            ["BCI TU Graz", "https://bci.tugraz.at/"],
-          ],
-          exoskelette: [
-            ["Exoskeleton Report", "https://exoskeletonreport.com/"],
-            ["ReWalk Robotics", "https://rewalk.com/"],
-            ["Ekso Bionics", "https://eksobionics.com/"],
-          ],
-          genetik: [
-            ["Genome.gov", "https://www.genome.gov/"],
-            ["Learn Genetics", "https://learn.genetics.utah.edu/"],
-            ["YourGenome", "https://www.yourgenome.org/"],
-          ],
-          ki: [
-            ["AI in Medicine", "https://aimedicine.info/"],
-            ["Stanford AI Health", "https://aihealth.stanford.edu/"],
-            [
-              "WHO KI Leitfaden",
-              "https://www.who.int/publications/i/item/9789240029200",
-            ],
-          ],
-        };
+  <main class="container">
+    <section class="section-card">
+      <h2>Einführung</h2>
+      <p>Allergien sind Überreaktionen des Immunsystems auf normalerweise harmlose Substanzen. Bei wiederholtem Kontakt produziert der Körper IgE-Antikörper. Bei erneutem Kontakt aktivieren diese Mastzellen, die Histamin freisetzen – dies führt zu Juckreiz, Schwellungen oder in schweren Fällen Anaphylaxie.</p>
+      <p>Etwa 30% der Bevölkerung leidet an einer Allergie. Diagnostik ist der erste Schritt zu effektiver Behandlung.</p>
+    </section>
 
-        if (links[topic]) {
-          document.getElementById("link1").href = links[topic][0][1];
-          document.getElementById("link1").innerText = links[topic][0][0];
-          document.getElementById("link2").href = links[topic][1][1];
-          document.getElementById("link2").innerText = links[topic][1][0];
-          document.getElementById("link3").href = links[topic][2][1];
-          document.getElementById("link3").innerText = links[topic][2][0];
-        }
-      }
-    </script>
+    <section class="section-card">
+      <h2>Kurz erklärt</h2>
+      <p>Moderne Allergiediagnostik nutzt drei Methoden: <strong>Prick-Tests</strong> (kleine Kratzer mit Allergen), <strong>IgE-Bluttests</strong> (Laboranalyse) und <strong>molekulare Allergologie</strong> (Komponenten-Test). Das Ziel: Allergene identifizieren für Vermeidung oder Immuntherapie.</p>
+    </section>
 
-    <!-- Hier sagst du, welches Thema die Seite hat -->
-    <script>
-      setRelatedLinks("allergie");
-    </script>
-  </body>
+    <section class="section-card">
+      <h2>Technische Funktionsweise</h2>
+      <h3>Prick-Tests</h3>
+      <p>Standardisierte Allergen-Extrakte werden auf die Volarseite des Unterarms aufgetragen und leicht mit einer Lanzette gekratzt. Nach 15 Minuten wird die Reaktion beobachtet. Eine Quaddel zeigt positive Reaktion: IgE-Antikörper auf Mastzell-Oberfläche binden ans Allergen und führen zu Histamin-Freisetzung.</p>
+      <h3>IgE-Bluttests</h3>
+      <p>Blutproben werden untersucht auf spezifisches IgE gegen Allergene. CAP-FEIA ist Standard: Allergen wird an Papier-Kugeln gebunden, IgE wird fluoreszent detektiert.</p>
+      <h3>Molekulare Allergologie</h3>
+      <p>Statt ganze Extrakte werden einzelne Allergen-Komponenten (Proteine) getestet. Dies erlaubt präzisere Diagnostik und Vorhersage von Kreuzreaktionen.</p>
+    </section>
+
+    <section class="section-card">
+      <h3>Vergleichstabelle: Methoden</h3>
+      <table>
+        <thead><tr><th>Methode</th><th>Typ</th><th>Dauer</th><th>Kosten</th><th>Genauigkeit</th></tr></thead>
+        <tbody>
+          <tr><td>Prick-Test</td><td>In-vivo</td><td>15 Min</td><td>€€</td><td>80–90%</td></tr>
+          <tr><td>IgE-Bluttest</td><td>In-vitro</td><td>2–3 Tage</td><td>€€€</td><td>85–95%</td></tr>
+          <tr><td>Molekulare Allergo.</td><td>In-vitro</td><td>3–5 Tage</td><td>€€€€</td><td>90–98%</td></tr>
+          <tr><td>Intrakutantest</td><td>In-vivo</td><td>20 Min</td><td>€€</td><td>85%</td></tr>
+          <tr><td>Provokationstest</td><td>In-vivo</td><td>1–2 h</td><td>€€€</td><td>95%+</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section-card">
+      <h2>Anwendungsbeispiel</h2>
+      <p>Finn, 23 Jahre, leidet unter Heuschnupfen im März/April. Ein Prick-Test zeigt starke Reaktion auf Birken- und Gräserpollen. IgE-Bluttest bestätigt hohe Werte. Molecular Test zeigt Bet v 1 als Hauptallergen ohne Kreuzreaktionen. Finn beginnt Hyposensibilisierung – nach einer Saison sind Symptome deutlich besser.</p>
+    </section>
+
+    <section class="section-card">
+      <h2>Vorteile und Grenzen</h2>
+      <h3>Vorteile</h3>
+      <ul>
+        <li>Präzise Diagnostik für gezielte Behandlung</li>
+        <li>Kosteneffiziente Prick-Tests</li>
+        <li>Objektive quantitative Daten</li>
+        <li>Molekulare Details für bessere Prognose</li>
+      </ul>
+      <h3>Grenzen</h3>
+      <ul>
+        <li>Falsch-positive Ergebnisse möglich</li>
+        <li>Antihistamika verfälschen Prick-Tests</li>
+        <li>Hohe Kosten für molekulare Tests</li>
+        <li>Allergen-Variabilität zwischen Chargen</li>
+      </ul>
+    </section>
+
+    <section class="section-card">
+      <h2>Gesellschaftliche Relevanz</h2>
+      <p>30–40% der Bevölkerung hat Allergie. Dies führt zu Produktivitätsverlust, psychischen Belastungen und Kosten im Milliarden-Euro-Bereich. Der Klimawandel verlängert Pollensaison und verstärkt das Problem.</p>
+    </section>
+
+    <section class="section-card">
+      <h2>Zukunftsperspektiven</h2>
+      <p>Schnelle Point-of-Care Tests könnten Ergebnisse in 10 Minuten liefern. Machine Learning könnte vorhersagen, wer auf Immuntherapie reagiert. Mit Klimawandel entstehen neue Allergen-Quellen – Diagnostik muss mithalten.</p>
+    </section>
+
+    <section class="section-card tech-challenges">
+      <h2>Technische Herausforderungen</h2>
+      <div class="challenge-item">
+        <h4>Allergen-Standardisierung</h4>
+        <p>Extrakte variieren zwischen Chargen. Internationale Standards helfen, aber Variabilität bleibt.</p>
+      </div>
+      <div class="challenge-item">
+        <h4>Datenschutz</h4>
+        <p>Allergie-Profile sind sensibel. Sichere Datenverarbeitung erforderlich.</p>
+      </div>
+      <div class="challenge-item">
+        <h4>Kreuzreaktionen</h4>
+        <p>Algorithmen müssen Kreuzreaktionen zwischen ähnlichen Allergenen vorhersagen.</p>
+      </div>
+      <div class="challenge-item">
+        <h4>Automatisierung</h4>
+        <p>Hochautomatisierte In-vitro Tests benötigen hohe Qualitätsstandards und Investitionen.</p>
+      </div>
+      <div class="challenge-item">
+        <h4>Schnelligkeit vs. Genauigkeit</h4>
+        <p>Schnelle Tests sind oft weniger genau – ein Balance-Problem.</p>
+      </div>
+    </section>
+
+    <section class="section-card glossar">
+      <h2>Glossar</h2>
+      <div class="glossar-term">
+        <dt>Allergen</dt>
+        <dd>Substanz, die allergische Reaktion auslöst (Pollenprotein, Hausstaubmilbe, Erdnuss).</dd>
+      </div>
+      <div class="glossar-term">
+        <dt>IgE-Antikörper</dt>
+        <dd>Antikörper, der auf Allergene reagiert. Erhöhte IgE-Spiegel zeigen Allergie.</dd>
+      </div>
+      <div class="glossar-term">
+        <dt>Histamin</dt>
+        <dd>Mediatormolekül von Mastzellen, verursacht Juckreiz, Schwellung, Rötung.</dd>
+      </div>
+      <div class="glossar-term">
+        <dt>Anaphylaxie</dt>
+        <dd>Schwere, systemische allergische Reaktion; lebensbedrohlich, erfordert Epinephrin.</dd>
+      </div>
+      <div class="glossar-term">
+        <dt>Sensibilisierung</dt>
+        <dd>Prozess, bei dem Immunsystem ein Allergen erkennt und IgE dagegen produziert.</dd>
+      </div>
+    </section>
+
+    <section class="section-card">
+      <h2>Informatik-Reflexion</h2>
+      <p>Allergiediagnostik profitiert von datengestützten Methoden: <strong>Datenbanken</strong> ermöglichen Pattern-Erkennung, <strong>Machine Learning</strong> vorhersagt Allergen-Kombinationen, <strong>automatische Bildanalyse</strong> reduziert Variabilität, und <strong>Cybersecurity</strong> schützt sensible Allergie-Daten.</p>
+    </section>
+
+    <section class="section-card related-links">
+      <h2>Weiterführende Links & Quellen</h2>
+      <ul id="related-links"></ul>
+    </section>
+
+    <div class="privacy-notice">
+      <p><strong>Datenschutz:</strong> Diese Website speichert keine Daten. Keine Cookies oder Tracking-Tools.</p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 MedTechGuide – Schulprojekt HTL Informatik</p>
+      <p><a href="quellen.html">Über die wissenschaftlichen Quellen</a></p>
+    </div>
+  </footer>
+
+  <button class="scroll-to-top" id="scrollToTopBtn" aria-label="Nach oben scrollen">↑</button>
+  <script src="script.js"></script>
+  <script>
+    window.addEventListener("load", () => {
+      const loader = document.getElementById("loader");
+      if (loader) { loader.classList.add("hidden"); setTimeout(() => { loader.style.display = "none"; }, 500); }
+      setActiveNavLink();
+      setRelatedLinks('allergie');
+    });
+  </script>
+</body>
 </html>
