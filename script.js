@@ -315,6 +315,7 @@ function initFilters() {
 // ================================================================
 
 function initCompareSystem() {
+  const compareToggle = document.getElementById('compareToggle');
   const compareCheckboxes = document.querySelectorAll('[data-compare-checkbox]');
   const compareBtn = document.getElementById('compareBtn');
   
@@ -323,6 +324,25 @@ function initCompareSystem() {
   // State tracking
   let selectedDevices = [];
   const MAX_COMPARE = 2;
+  let compareModeActive = false;
+  
+  // Toggle Compare Mode
+  if (compareToggle) {
+    compareToggle.addEventListener('change', (e) => {
+      compareModeActive = e.target.checked;
+      
+      compareCheckboxes.forEach(checkbox => {
+        checkbox.style.display = compareModeActive ? 'block' : 'none';
+      });
+      
+      if (!compareModeActive) {
+        // Reset checkboxes wenn mode ausgeschaltet
+        compareCheckboxes.forEach(cb => cb.checked = false);
+        selectedDevices = [];
+        if (compareBtn) compareBtn.disabled = true;
+      }
+    });
+  }
   
   compareCheckboxes.forEach(checkbox => {
     checkbox.addEventListener('change', (e) => {
