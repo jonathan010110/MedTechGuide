@@ -1,238 +1,393 @@
 <!DOCTYPE html>
 <html lang="de">
-  <head>
-    <meta charset="utf-8" />
-    <title>Diabetes – MedTechGuide</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <header class="site-header">
-      <div class="container">
-        <h1>Diabetes-Technologien</h1>
-        <p class="subtitle">Sensoren, Pumpen & smarte Therapie</p>
-      </div>
-    </header>
+<head>
+  <meta charset="utf-8" />
+  <title>Diabetes-Technologien – MedTechGuide</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sensoren, CGM-Systeme, Insulinpumpen und intelligente Therapiealgorithmen erklären." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="loader">
+    <div class="spinner"></div>
+    <p>Seite wird geladen…</p>
+  </div>
 
-    <nav class="main-nav">
-      <div class="container">
-        <a href="index.html">Start</a>
-        <a href="allergie.html">Allergien</a>
-        <a href="herz.html">Herz</a>
-        <a href="bildgebung.html">Bildgebung</a>
-        <a href="neurochips.html">Neurochips</a>
-        <a href="exoskelette.html">Exoskelette</a>
-        <a href="zukunft.html">Zukunft</a>
-        <a href="genetik.html">Genetik</a>
-        <a href="ki-diagnose.html">KI-Diagnose</a>
-      </div>
-    </nav>
-
+  <header class="site-header">
     <div class="container">
-      <div class="search-box">
-        <input
-          id="search"
-          placeholder="🔍 Suche in Diabetes..."
-          onkeyup="filterContent()"
-        />
+      <h1>Diabetes-Technologien</h1>
+      <p class="subtitle">Sensoren, CGM und intelligente Therapie</p>
+    </div>
+  </header>
+
+  <nav class="main-nav">
+    <div class="container">
+      <a href="index.html">Start</a>
+      <a href="diabetes.html" class="active">Diabetes</a>
+      <a href="allergie.html">Allergien</a>
+      <a href="herz.html">Herz</a>
+      <a href="bildgebung.html">Bildgebung</a>
+      <a href="neurochips.html">Neurochips</a>
+      <a href="exoskelette.html">Exoskelette</a>
+      <a href="genetik.html">Genetik</a>
+      <a href="ki-diagnose.html">KI-Diagnose</a>
+      <a href="zukunft.html">Zukunft</a>
+      <a href="quellen.html">Quellen</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <!-- EINFÜHRUNG -->
+    <section class="section-card">
+      <h2>Einführung</h2>
+      <p>
+        Diabetes mellitus ist eine chronische Stoffwechselerkrankung, die durch eine Regulationsstörung des Blutzuckers gekennzeichnet ist. 
+        Während gesunde Menschen ihren Blutzucker durch Insulinausschüttung konstant halten, funktioniert dieser Mechanismus bei Diabetes-Patient:innen nicht optimal.
+      </p>
+      <p>
+        <strong>Typ-1-Diabetes</strong> entsteht durch eine Autoimmunzerstörung der insulinproduzierenden Betazellen in der Bauchspeicheldrüse, 
+        während <strong>Typ-2-Diabetes</strong> durch Insulinresistenz der Körperzellen kombiniert mit gestörter Insulinsekretion entsteht. 
+        Langfristig führen unkontrollierte Blutzuckerwerte zu Schäden an Augen (Retinopathie), Nerven (Neuropathie), Nieren (Nephropathie) und Gefäßen.
+      </p>
+    </section>
+
+    <!-- KURZ ERKLÄRT -->
+    <section class="section-card">
+      <h2>Kurz erklärt</h2>
+      <p>
+        Moderne Diabetes-Technologien ermöglichen eine präzise Blutzuckerkontrolle durch kontinuierliche Messung, algorithmische Vorhersagen und automatisierte Insulinabgabe. 
+        Drei Technologie-Säulen sind zentral:
+      </p>
+      <ul>
+        <li><strong>Sensoren:</strong> Kontinuierliche Glukosemessung (CGM) statt einzelner Messungen</li>
+        <li><strong>Intelligente Pumpen:</strong> Automatische Insulinabgabe basierend auf Glukosedaten</li>
+        <li><strong>Algorithmen:</strong> KI-Systeme vorhersagen Glukoseverläufe und optimieren die Therapie</li>
+      </ul>
+      <p>Das Ziel: Hypoglykämien (Unterzuckerungen) vermeiden und optimale Blutzuckerkontrolle erreichen.</p>
+    </section>
+
+    <!-- TECHNISCHE FUNKTIONSWEISE -->
+    <section class="section-card">
+      <h2>Technische Funktionsweise</h2>
+      
+      <h3>Blutzuckermessgeräte (Point-of-Care)</h3>
+      <p>
+        Klassische Handgeräte messen Blutglukose elektrochemisch über Teststreifen. Ein Enzym (typischerweise Glukoseoxidase oder Hexokinase) 
+        katalysiert eine Reaktion, die einen Strom proportional zur Glukosekonzentration erzeugt. Das Gerät errechnet daraus den Wert. 
+        Diese Methode ist invasiv (Fingerstich), aber schnell und akkurat.
+      </p>
+
+      <h3>Continuous Glucose Monitoring (CGM)</h3>
+      <p>
+        CGM-Sensoren messen interstitielle Glukosewerte alle 1–5 Minuten und übertragen die Daten kabellos an ein Empfängergerät oder Smartphone. 
+        Die Sensoren arbeiten nach drei Prinzipien:
+      </p>
+      <ul>
+        <li><strong>Enzymbasiert:</strong> Glukoseoxidase katalysiert eine Oxidation, die Strom erzeugt</li>
+        <li><strong>Fluoreszenzbasiert:</strong> Fluorophore leuchten proportional zur Glukosekonzentration</li>
+        <li><strong>Optisch:</strong> Lichttransmission durch Glukose wird gemessen</li>
+      </ul>
+
+      <h3>Insulinpumpen</h3>
+      <p>
+        Insulinpumpen sind tragbare Geräte, die über einen dünnen Katheter kontinuierlich Insulin subcutan abgeben. Sie arbeiten nach folgendem Prinzip:
+      </p>
+      <ul>
+        <li><strong>Basalrate:</strong> Kontinuierliche Insulinabgabe zur Grundversorgung (meist nachts)</li>
+        <li><strong>Bolus:</strong> Zusätzliche schnelle Insulingabe bei Mahlzeiten oder bei hohen Glukosewerten</li>
+        <li><strong>Correction:</strong> Anpassung bei Abweichungen vom Zielbereich</li>
+      </ul>
+
+      <h3>Closed-Loop Systeme</h3>
+      <p>
+        Moderne Hybrid-Closed-Loop Systeme verbinden CGM, Pumpe und Algorithmus automatisch:
+      </p>
+      <ol>
+        <li>CGM misst Glukosewert</li>
+        <li>Algorithmus kalkuliert Trend und Vorhersage (z.B. für die nächsten 30 Minuten)</li>
+        <li>Ggf. wird Insulinabgabe automatisch erhöht oder reduziert</li>
+        <li>Patient:in erhält eine Vorhersage und kann manuell eingreifen</li>
+      </ol>
+      <p>
+        Diese Systeme nutzen Machine Learning, um Individuelle Muster zu erkennen (Essgewohnheiten, Bewegung, Schlafzyklen).
+      </p>
+    </section>
+
+    <!-- TABELLE: GERÄTETYPEN -->
+    <section class="section-card">
+      <h3>Übersicht: Diabetes-Technologien im Vergleich</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Gerätyp</th>
+            <th>Messmethode</th>
+            <th>Häufigkeit</th>
+            <th>Invasivität</th>
+            <th>Genauigkeit</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Blutzuckermessgerät</td>
+            <td>Elektrochemisch</td>
+            <td>4–8 × täglich</td>
+            <td>Invasiv (Fingerstich)</td>
+            <td>±15%</td>
+          </tr>
+          <tr>
+            <td>CGM (enzymatisch)</td>
+            <td>Glukoseoxidase</td>
+            <td>Alle 5 Min.</td>
+            <td>Minimal-invasiv (Sensor 10 Tage)</td>
+            <td>±10%</td>
+          </tr>
+          <tr>
+            <td>CGM (optisch)</td>
+            <td>Fluoreszenz</td>
+            <td>Alle 1 Min.</td>
+            <td>Nicht-invasiv (geplant)</td>
+            <td>±8%</td>
+          </tr>
+          <tr>
+            <td>Insulinpumpe</td>
+            <td>Abgabesystem</td>
+            <td>Kontinuierlich</td>
+            <td>Minimal-invasiv</td>
+            <td>±10%</td>
+          </tr>
+          <tr>
+            <td>Closed-Loop</td>
+            <td>CGM + Algorithmus</td>
+            <td>Automatisch</td>
+            <td>Minimal-invasiv</td>
+            <td>±7%</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ANWENDUNGSBEISPIEL -->
+    <section class="section-card">
+      <h2>Anwendungsbeispiel: Frau M. mit Diabetes Typ 1</h2>
+      <p>
+        Frau M., 32 Jahre alt, Typ-1-Diabetes seit 8 Jahren. Bisher maß sie ihren Blutzucker 6–8 Mal täglich selbst und spritzte Insulin vier Mal täglich.
+      </p>
+      <p>
+        <strong>Situation vorher:</strong> Häufige nächtliche Unterzuckerungen, HbA1c von 7,8% (Zielwert unter 7%), psychische Belastung durch ständige Messungen.
+      </p>
+      <p>
+        <strong>Einführung einer Hybrid-Closed-Loop:</strong> Frau M. trägt jetzt einen CGM-Sensor und eine intelligente Insulinpumpe. 
+        Der Algorithmus passt die nächtliche Basalrate automatisch an, warnt sie bei drohenden Unterzuckerungen, und empfiehlt Bolus-Werte vor Mahlzeiten.
+      </p>
+      <p>
+        <strong>Ergebnis nach 6 Monaten:</strong> HbA1c gesunken auf 6,9%, nächtliche Unterzuckerungen von 3 auf 0–1 pro Woche, 
+        psychische Belastung deutlich geringer. Sie kann sich auf ihr Leben konzentrieren statt auf Diabetes-Management.
+      </p>
+    </section>
+
+    <!-- VORTEILE UND GRENZEN -->
+    <section class="section-card">
+      <h2>Vorteile und Grenzen</h2>
+      
+      <h3>Vorteile</h3>
+      <ul>
+        <li><strong>Präzisere Glukosekontrolle:</strong> Bessere Werte und weniger Extreme</li>
+        <li><strong>Reduktion von Komplikationen:</strong> Längerfristig weniger Organ- und Nervenschäden</li>
+        <li><strong>Verbesserte Lebensqualität:</strong> Weniger manuelle Messungen und Injektionen</li>
+        <li><strong>Bessere Prognose:</strong> Längere Lebenserwartung und bessere Gesundheit</li>
+        <li><strong>Datengestützte Entscheidungen:</strong> Ärzte erhalten detaillierte Glukosekurven</li>
+      </ul>
+
+      <h3>Grenzen und Herausforderungen</h3>
+      <ul>
+        <li><strong>Kosten:</strong> Systeme kostenintensiv; nicht alle Krankenkassen übernehmen</li>
+        <li><strong>Kalibrierung & Fehler:</strong> Sensoren müssen regelmäßig kalibriert werden; gelegentliche Falschmessungen</li>
+        <li><strong>Tragekomfort:</strong> Nicht alle Patient:innen akzeptieren Geräte am Körper</li>
+        <li><strong>Datenschutz:</strong> Glukosedaten sind hochsensibel; sichere Speicherung erforderlich</li>
+        <li><strong>Abhängigkeit:</strong> Risiko psychischer Abhängigkeit von der Technologie</li>
+        <li><strong>Lücken:</strong> Sensoren können Messungen unterbrechen; Algorithmen sind nicht perfekt</li>
+      </ul>
+    </section>
+
+    <!-- GESELLSCHAFTLICHE RELEVANZ -->
+    <section class="section-card">
+      <h2>Gesellschaftliche Relevanz</h2>
+      <p>
+        <strong>Epidemiologie:</strong> Weltweit leben etwa 537 Millionen Erwachsene mit Diabetes. Die Zahlen wachsen exponenziell, 
+        vor allem durch Typ-2-Diabetes und Übergewicht. Die Gesundheitssysteme sind belastet durch Komplikationen und Kosten.
+      </p>
+      <p>
+        <strong>Chancen:</strong> Bessere Technologien könnten Komplikationen reduzieren, Gesundheitskosten senken und Millionen Menschen 
+        ein besseres Leben ermöglichen. Dies ist auch ein Beitrag zu nachhaltiger Entwicklung (SDG 3: Gesundheit und Wohlbefinden).
+      </p>
+      <p>
+        <strong>Ethische Fragen:</strong> Wie können wir gerechte Zugang zu Technologien sicherstellen? Was ist mit Datenschutz und 
+        algorithmischen Verzerrungen? Sollten Versicherungen Glukosedaten für Prämienfestlegung verwenden dürfen?
+      </p>
+    </section>
+
+    <!-- ZUKUNFTSPERSPEKTIVEN -->
+    <section class="section-card">
+      <h2>Zukunftsperspektiven</h2>
+      <p>
+        <strong>Implantierbare Sensoren:</strong> Forschung zielt auf Sensoren, die mehrere Jahre unter der Haut arbeiten. 
+        Dies würde das Tragekomfort-Problem lösen.
+      </p>
+      <p>
+        <strong>Nicht-invasive Messung:</strong> Grenzschutzprozesse nutzen Schweiß, Tränen oder Speichel für Glukosemessung – 
+        ganz ohne Nadeln. Erste Prototypen existieren.
+      </p>
+      <p>
+        <strong>Künstliches Pankreas:</strong> Ein vollständig automatisiertes System, das Insulin nach Bedarf abgibt, ohne dass 
+        Patient:innen eingreifen müssen.
+      </p>
+      <p>
+        <strong>KI-Verbesserungen:</strong> Machine Learning wird besser bei der Vorhersage von individuellen Glukosemustern. 
+        Personalisierte Modelle könnten die Präzision weiter verbessern.
+      </p>
+      <p>
+        <strong>Bioelektronische Therapie:</strong> Alternative Ansätze: Elektrische Stimulation von Nerven könnte die Insulinausschüttung regeln.
+      </p>
+    </section>
+
+    <!-- TECHNISCHE HERAUSFORDERUNGEN -->
+    <section class="section-card tech-challenges">
+      <h2>Technische Herausforderungen</h2>
+      
+      <div class="challenge-item">
+        <h4>Datenschutz & Sicherheit</h4>
+        <p>
+          Glukosedaten sind hochsensibel: Sie verraten Essgewohnheiten, Arbeitsmuster und Gesundheitsstatus. 
+          Sichere Verschlüsselung und Speicherung sind essentiell. Hacker könnten medizinische Geräte manipulieren – ein erhebliches Risiko.
+        </p>
       </div>
 
-      <div id="content">
-        <div class="section-card">
-          <h2>Was ist Diabetes?</h2>
-          <p>
-            Diabetes mellitus ist eine chronische Stoffwechselerkrankung, die
-            durch Fehlregulation des Blutzuckers gekennzeichnet ist.
-            Typ-1-Diabetes entsteht durch Autoimmunzerstörung der
-            insulinproduzierenden Betazellen; Typ-2-Diabetes durch
-            Insulinresistenz kombiniert mit gestörter Insulinsekretion.
-            Langfristig führen unkontrollierte Werte zu Schäden an Augen,
-            Nerven, Nieren und Gefäßen.
-          </p>
-          <ul>
-            <li>Typ 1: insulinabhängig</li>
-            <li>Typ 2: stoffwechselbedingt, oft mit Übergewicht</li>
-            <li>Gestationsdiabetes: während Schwangerschaft</li>
-          </ul>
-          <img
-            class="section-image"
-            src="images/diabetes-1.jpg"
-            alt="Diabetes Gerät"
-          />
-        </div>
-
-        <div class="section-card">
-          <h2>Blutzuckermessgeräte</h2>
-          <p>
-            Handgeräte messen Blutglukose elektrochemisch über Teststreifen.
-            Enzyme (z. B. Glukoseoxidase) wandeln Glukose um und erzeugen einen
-            Strom, der proportional zur Zuckermenge ist. Moderne Geräte
-            speichern Messreihen, geben Trendinfos und synchronisieren per
-            Bluetooth mit Apps.
-          </p>
-          <p>
-            Wichtig: Kalibrierung, Kontaktflächenpflege und korrekte
-            Teststreifen sind entscheidend für Messgenauigkeit.
-          </p>
-        </div>
-
-        <div class="section-card">
-          <h2>Continuous Glucose Monitoring (CGM)</h2>
-          <p>
-            CGM-Sensoren messen interstitielle Glukosewerte kontinuierlich (alle
-            1–5 Minuten). Sie zeigen Trends, Alarmieren vor Hypo/Hyper und
-            liefern Daten für Arztgespräche. Beispiele: Libre, Dexcom. CGM
-            verbessert HbA1c-Werte und reduziert nächtliche Unterzuckerungen.
-          </p>
-          <img
-            class="section-image"
-            src="images/diabetes-2.jpg"
-            alt="CGM Sensor"
-          />
-        </div>
-
-        <div class="section-card">
-          <h2>Insulinpumpen & Closed-Loop</h2>
-          <p>
-            Insulinpumpen geben kontinuierlich Basalinsulin und Bolus für
-            Mahlzeiten. In Hybrid-Closed-Loop Systemen arbeitet ein Algorithmus
-            mit CGM-Daten zusammen, um Insulinabgabe zu optimieren. Algorithmen
-            nutzen Prognosen und Trendanalysen, um Hypoglykämien vorzubeugen.
-          </p>
-          <ul>
-            <li>Basalrate: kontinuierliche Grundabgabe</li>
-            <li>Bolus: Mahlzeitenanpassung</li>
-            <li>Safety: Alarme, manuelle Eingriffe</li>
-          </ul>
-        </div>
-
-        <div class="section-card">
-          <h2>Anwendungsbeispiel aus der Praxis</h2>
-          <p>
-            Eine Patientin mit Diabetes Typ 1 nutzt ein kontinuierliches
-            Glukosemesssystem (CGM), das ihre Blutzuckerwerte rund um die Uhr
-            überwacht. Die Messdaten werden automatisch an eine Smartphone-App
-            übertragen. Bei auffälligen Werten erhält sie eine Warnung und kann
-            frühzeitig reagieren. In Kombination mit einer Insulinpumpe wird die
-            Insulindosierung teilweise automatisiert angepasst.
-          </p>
-        </div>
-
-        <div class="section-card">
-          <h2>Zukunft & Forschung</h2>
-          <p>
-            Forschung zielt auf implantierbare Sensoren, nicht-invasive
-            Messungen (Tränen, Schweiß), Bioelektronische Therapien und
-            KI-Modelle zur Vorhersage von Glukoseverläufen. Langfristiges Ziel:
-            vollständig automatisierte Systeme, die minimale Eingriffe seitens
-            Nutzer:innen erfordern.
-          </p>
-        </div>
+      <div class="challenge-item">
+        <h4>Echtzeit-Verarbeitung</h4>
+        <p>
+          Algorithmen müssen in Echtzeit Glukosedaten analysieren und Entscheidungen treffen. 
+          Bei Batterien und Rechenkraft begrenzt: Effiziente Algorithmen sind erforderlich.
+        </p>
       </div>
 
-      <div class="section-card related-links">
-  <h2>Weiterführende Links</h2> 
-  <ul id="related-links"></ul>
+      <div class="challenge-item">
+        <h4>Systemzuverlässigkeit</h4>
+        <p>
+          Ein Fehler in der Insulinpumpe oder im Algorithmus kann lebensbedrohlich sein (Unterzuckerung, Ketoazidose). 
+          Tests nach streng regulierten Medizinstandards notwendig.
+        </p>
+      </div>
 
-</div>
+      <div class="challenge-item">
+        <h4>Energieeffizienz</h4>
+        <p>
+          Sensoren und Pumpen müssen tagelang oder wochenlang auf Batterien laufen. Niedrigstromverbrauch ist zentral. 
+          Induktives Laden könnte Batterien überflüssig machen.
+        </p>
+      </div>
 
+      <div class="challenge-item">
+        <h4>Fehlertoleranz</h4>
+        <p>
+          Sensoren können fehlerhaft kalibriert sein oder ausfallen. Der Algorithmus muss robustes Degrading-Verhalten zeigen 
+          und Patient:innen klar informieren, wenn die Qualität abnimmt.
+        </p>
+      </div>
+    </section>
 
-    <footer class="site-footer">
-      <div class="container"><p>© 2025 MedTechGuide</p></div>
-    </footer>
+    <!-- GLOSSAR -->
+    <section class="section-card glossar">
+      <h2>Glossar</h2>
+      
+      <div class="glossar-term">
+        <dt>HbA1c (Glykiertes Hämoglobin)</dt>
+        <dd>Messwert für die durchschnittliche Blutzuckerkonzentration der letzten 8–12 Wochen. Ein HbA1c unter 7% ist das Therapieziel für die meisten Diabetes-Patient:innen.</dd>
+      </div>
 
+      <div class="glossar-term">
+        <dt>Bolus</dt>
+        <dd>Eine zusätzliche schnelle Insulinabgabe, meist vor oder während einer Mahlzeit, um Blutzuckeranstieg zu verhindern.</dd>
+      </div>
 
- <script>
-function setRelatedLinks(topic) {
-  const links = {
-    diabetes: [
-      ["International Diabetes Federation", "https://idf.org/"],
-      ["Diabetes Info Österreich", "https://www.diabetes.at/"],
-      ["Deutsche Diabetes Hilfe", "https://www.diabetesde.org/"],
-      ["CDC – Diabetes", "https://www.cdc.gov/diabetes/"],
-      ["NIDDK – Diabetes Research", "https://www.niddk.nih.gov/"]
-    ],
-    allergie: [
-      ["Österreichische Gesellschaft für Allergologie", "https://www.oegaai.at/"],
-      ["Allergy.org Expertenportal", "https://www.allergy.org.au/"],
-      ["Pollenwarndienst Europa", "https://www.pollenwarndienst.at/"],
-      ["WHO – Allergien", "https://www.who.int/"],
-      ["Mayo Clinic – Allergies", "https://www.mayoclinic.org/diseases-conditions/allergies"]
-    ],
-    herz: [
-      ["Herzstiftung Deutschland", "https://www.herzstiftung.de/"],
-      ["American Heart Association", "https://www.heart.org/"],
-      ["Cardio Smart", "https://www.cardiosmart.org/"],
-      ["European Society of Cardiology", "https://www.escardio.org/"],
-      ["CDC – Heart Disease", "https://www.cdc.gov/heartdisease/"]
-    ],
-    bildgebung: [
-      ["Radiopaedia – Bilddiagnostik", "https://radiopaedia.org/"],
-      ["MRI Explained", "https://mriexplained.com/"],
-      ["European Society of Radiology", "https://www.myesr.org/"],
-      ["InsideRadiology", "https://www.insideradiology.com.au/"],
-      ["FDA – Medical Imaging", "https://www.fda.gov/radiation-emitting-products"]
-    ],
-    neurochips: [
-      ["BCI Research", "https://www.bci-info.org/"],
-      ["Neuralink Infos", "https://neuralink.com/"],
-      ["BCI TU Graz", "https://bci.tugraz.at/"],
-      ["Frontiers in Neuroscience", "https://www.frontiersin.org/journals/neuroscience"],
-      ["NINDS – Brain Research", "https://www.ninds.nih.gov/"]
-    ],
-    exoskelette: [
-      ["Exoskeleton Report", "https://exoskeletonreport.com/"],
-      ["ReWalk Robotics", "https://rewalk.com/"],
-      ["Ekso Bionics", "https://eksobionics.com/"],
-      ["ScienceDirect – Exoskeletons", "https://www.sciencedirect.com/topics/engineering/exoskeleton"],
-      ["Frontiers – Robotics & AI", "https://www.frontiersin.org/journals/robotics-and-ai"]
-    ],
-    genetik: [
-      ["Genome.gov", "https://www.genome.gov/"],
-      ["Learn Genetics", "https://learn.genetics.utah.edu/"],
-      ["YourGenome", "https://www.yourgenome.org/"],
-      ["Nature – Genetics", "https://www.nature.com/subjects/genetics"],
-      ["European Bioinformatics Institute", "https://www.ebi.ac.uk/"]
-    ],
-    ki: [
-      ["AI in Medicine", "https://aimedicine.info/"],
-      ["Stanford AI Health", "https://aihealth.stanford.edu/"],
-      ["WHO – KI Leitfaden", "https://www.who.int/publications/i/item/9789240029200"],
-      ["Nature – Machine Learning", "https://www.nature.com/subjects/machine-learning"],
-      ["Healthcare AI", "https://healthcare.ai/"]
-    ],
-    zukunft: [
-      ["MIT Technology Review – Health", "https://www.technologyreview.com/topic/health/"],
-      ["WHO – Digital Health", "https://www.who.int/health-topics/digital-health"],
-      ["Nature – Medical Research", "https://www.nature.com/subjects/medical-research"],
-      ["NIH – Medical Research", "https://www.nih.gov/"],
-      ["EU Health Policy", "https://ec.europa.eu/health/"]
-    ]
-  };
+      <div class="glossar-term">
+        <dt>Basalrate</dt>
+        <dd>Die kontinuierliche Grundmenge an Insulin, die eine Pumpe abgibt – meist nachts oder den ganzen Tag über, um Unterzuckerungen zu vermeiden.</dd>
+      </div>
 
-  if (!links[topic]) return;
+      <div class="glossar-term">
+        <dt>Closed-Loop System</dt>
+        <dd>Ein automatisiertes Regelungssystem, bei dem Sensor, Algorithmus und Pumpe zusammenarbeiten: Messung → Berechnung → Aktion → Messung (Kreislauf).</dd>
+      </div>
 
-  const list = document.getElementById("related-links");
-  list.innerHTML = "";
+      <div class="glossar-term">
+        <dt>Interstitielle Flüssigkeit</dt>
+        <dd>Flüssigkeit zwischen den Zellen im Gewebe. CGM-Sensoren messen hier die Glukosekonzentration, nicht direkt im Blut.</dd>
+      </div>
+    </section>
 
-  links[topic].forEach(link => {
-    const li = document.createElement("li");
-    const a = document.createElement("a");
-    a.href = link[1];
-    a.textContent = link[0];
-    a.target = "_blank";
-    li.appendChild(a);
-    list.appendChild(li);
-  });
-}
+    <!-- INFORMATIK-REFLEXION -->
+    <section class="section-card">
+      <h2>Informatik-Reflexion: Die Rolle der Datenverarbeitung</h2>
+      <p>
+        Diabetes-Technologien sind ein Beispiel, wie Informatik Leben retten kann. Die zentralen informatischen Herausforderungen sind:
+      </p>
+      <ul>
+        <li>
+          <strong>Algorithmen-Design:</strong> Der Closed-Loop-Algorithmus muss robust, vorhersagbar und schnell sein. 
+          Fehler können lebensbedrohlich sein – dies erfordert Verifikation und Validierung nach Medizinstandards.
+        </li>
+        <li>
+          <strong>Echtzeitverarbeitung:</strong> Daten müssen in Millisekunden verarbeitet werden. Embedded-Systeme mit begrenzt Ressourcen sind erforderlich.
+        </li>
+        <li>
+          <strong>Cybersecurity:</strong> Medizinische Geräte sind häufig Ziele von Angriffen. Sichere Kommunikation, Verschlüsselung und regelmäßige Updates sind essentiell.
+        </li>
+        <li>
+          <strong>Datenanalyse:</strong> Machine Learning verbessert die Personalisierung, aber erfordert ethische Überlegung: Kann ein Algorithmus Verzerrungen enthalten?
+        </li>
+        <li>
+          <strong>Benutzer-Schnittstellen:</strong> Die beste Technologie hilft nicht, wenn sie zu kompliziert ist. Gutes UX-Design ist medizinisch relevant.
+        </li>
+      </ul>
+    </section>
 
-</script>
+    <!-- WEITERFÜHRENDE LINKS -->
+    <section class="section-card related-links">
+      <h2>Weiterführende Links & Quellen</h2>
+      <p>Seriöse Informationsquellen für tiefergehende Recherche:</p>
+      <ul id="related-links"></ul>
+    </section>
 
-<ul id="related-links"></ul>
+    <div class="privacy-notice">
+      <p>
+        <strong>Datenschutz:</strong> Diese Website speichert keine Daten über dich. 
+        Es werden keine Cookies, Tracking-Tools oder externen Skripte verwendet.
+      </p>
+    </div>
+  </main>
 
-    <!-- Hier sagst du, welches Thema die Seite hat -->
-    <script>
-      setRelatedLinks("diabetes");
-    </script>
-  </body>
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 MedTechGuide – Schulprojekt HTL Informatik</p>
+      <p><a href="quellen.html">Über die wissenschaftlichen Quellen</a></p>
+    </div>
+  </footer>
+
+  <button class="scroll-to-top" id="scrollToTopBtn" aria-label="Nach oben scrollen">↑</button>
+
+  <script src="script.js"></script>
+  <script>
+    window.addEventListener("load", () => {
+      const loader = document.getElementById("loader");
+      if (loader) {
+        loader.classList.add("hidden");
+        setTimeout(() => {
+          loader.style.display = "none";
+        }, 500);
+      }
+      setActiveNavLink();
+      setRelatedLinks('diabetes');
+    });
+  </script>
+</body>
 </html>
