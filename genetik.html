@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="de">
+<head><meta charset="utf-8" /><title>Genetik & CRISPR – MedTechGuide</title><meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="stylesheet" href="style.css" /></head>
+<body>
+  <div id="loader"><div class="spinner"></div><p>Seite wird geladen…</p></div>
+  <header class="site-header"><div class="container"><h1>Genetik & CRISPR</h1><p class="subtitle">DNA-Sequenzierung, Gentechnik und personalisierte Medizin</p></div></header>
+  <nav class="main-nav"><div class="container">
+    <a href="index.html">Start</a><a href="diabetes.html">Diabetes</a><a href="allergie.html">Allergien</a><a href="herz.html">Herz</a>
+    <a href="bildgebung.html">Bildgebung</a><a href="neurochips.html">Neurochips</a><a href="exoskelette.html">Exoskelette</a><a href="genetik.html" class="active">Genetik</a>
+    <a href="ki-diagnose.html">KI-Diagnose</a><a href="zukunft.html">Zukunft</a><a href="quellen.html">Quellen</a>
+  </div></nav>
+  <main class="container">
+    <section class="section-card">
+      <h2>Einführung</h2>
+      <p>Unsere DNA trägt Blueprints für Entwicklung und Gesundheit. Genetische Erkrankungen entstehen durch Mutationen. Moderne Sequenzier-Technologien können DNA schnell und günstig lesen. CRISPR ermöglicht es, Gene präzise zu editieren. Zusammen ermöglichen diese Technologien: Diagnose genetischer Erkrankungen, Risikovorhersage, und zukunftig: Gentherapie.</p>
+    </section>
+    <section class="section-card">
+      <h2>Kurz erklärt</h2>
+      <p><strong>DNA-Sequenzierung:</strong> Liest die Abfolge von Basenpaaren (A, T, G, C). <strong>Genotypisierung:</strong> Sucht bekannte Mutationen. <strong>CRISPR:</strong> Ein "Schere" dass DNA schneiden kann. <strong>Gentherapie:</strong> Fügt fehlerhafte Gene ein oder repariert sie. Alle basieren auf Biologie + Informatik.</p>
+    </section>
+    <section class="section-card">
+      <h2>Technische Funktionsweise</h2>
+      <h3>DNA-Sequenzierung</h3>
+      <p><strong>Sanger-Sequenzierung</strong> (klassisch): DNA wird denaturiert und in vier Reaktionen synthetisiert, mit Stopp-Nukleotiden (ddNTP). Unterschiedliche Längen enthalten unterschiedliche Basen. Elektrophorese sortiert nach Größe. Teuer, aber akkurat.</p>
+      <p><strong>Next-Gen Sequenzierung (NGS)</strong>: Millionen DNA-Fragmente werden gleichzeitig sequenziert. Fluoreszenz-markierte Nukleotide; Kamera fotografiert jede Synthese-Runde. Viel schneller und günstiger als Sanger.</p>
+      <h3>CRISPR-Cas9</h3>
+      <p>Ein Bakterien-Immunsystem, das zum Genome Editing genutzt wird. <strong>Guide RNA</strong> leitet Cas9 zum Zielgen. <strong>Cas9</strong> (Protease) schneidet die DNA an der gewünschten Stelle. <strong>DNA-Reparatur</strong> (NHEJ oder HDR) entweder blockiert das Gen (NHEJ) oder ersetzt es (HDR mit Template).</p>
+      <h3>Genotypisierung</h3>
+      <p>Sucht nach bekannten Varianten (SNPs, Indels). Methoden: PCR + Sequenzierung, Arrays (Microarray mit Tausenden Sonden), Klinische Panels (z.B. BRCA1/2).</p>
+    </section>
+    <section class="section-card">
+      <h3>Vergleichstabelle: Sequenzier-Technologien</h3>
+      <table>
+        <thead><tr><th>Methode</th><th>Geschwindigkeit</th><th>Genauigkeit</th><th>Kosten</th><th>Durchsatz</th><th>Anwendung</th></tr></thead>
+        <tbody>
+          <tr><td>Sanger</td><td>Langsam</td><td>99.9%</td><td>€€€</td><td>Single</td><td>Validierung, klinische Tests</td></tr>
+          <tr><td>Illumina MiSeq</td><td>Schnell</td><td>99.5%</td><td>€€</td><td>Millionen</td><td>Exome, diagnostik</td></tr>
+          <tr><td>PacBio Long-Read</td><td>Mittel</td><td>99%</td><td>€€€</td><td>Hunderttausende</td><td>Strukturvarianten, Repeats</td></tr>
+          <tr><td>Oxford Nanopore</td><td>Real-time</td><td>95–99%</td><td>€€</td><td>Millionen</td><td>Rapid diagnostik, Feldforschung</td></tr>
+          <tr><td>10x Genomics</td><td>Mittel</td><td>99%</td><td>€€€</td><td>Millionen</td><td>Single-cell Genomik</td></tr>
+        </tbody>
+      </table>
+    </section>
+    <section class="section-card">
+      <h2>Anwendungsbeispiel</h2>
+      <p>Sarah, 6 Jahre, hat eine seltene Muskelerkrankung. Ärzte verdächtigen eine genetische Ursache. Whole-Exome-Sequenzierung zeigt Mutation in DMD-Gen (Dystrophin). Dies erklärt ihre Symptome – sie hat früh einsetzende Muskeldystrophie. Family-Testing zeigt, dass Mutter ist Trägerin. Das Kind wird in ein CRISPR-Gentherapie-Protokoll aufgenommen. Nach 6 Monaten zeigen sich erste Verbesserungen.</p>
+    </section>
+    <section class="section-card">
+      <h2>Vorteile und Grenzen</h2>
+      <ul><li>Präzise Diagnose genetischer Erkrankungen</li><li>Risikovorhersage für erbliche Erkrankungen</li><li>Personalisierte Behandlung basierend auf Genetik</li><li>CRISPR: Potenziell heilbare Krankheiten</li></ul>
+      <ul><li>CRISPR: Ethische Bedenken (Enhancement, Designer-Babys)</li><li>Off-target-Schnitte möglich</li><li>Kostenintensiv</li><li>Mosaikismus und Sicherheit langfristig unklar</li></ul>
+    </section>
+    <section class="section-card">
+      <h2>Gesellschaftliche Relevanz</h2>
+      <p>Genetische Diagnostik könnte Leid lindern. Allerdings: Versicherungs-Diskriminierung (genetische Prädisposition), Datenschutz (Genom ist hochpersönlich), Enhancement-Doping, Ungleichheit bei Zugang. Ethik-Kommissionen regulieren CRISPR-Einsatz.</p>
+    </section>
+    <section class="section-card">
+      <h2>Zukunftsperspektiven</h2>
+      <p>In vivo Gentherapie (direkt in Patient). Bessere CRISPR-Varianten (Prime Editing, Base Editing). Soomatische Therapie vs. Keimbahntherapie. Kombinierte CRISPR + AI für Prognose. Feldforschung mit Nanopore in Entwick lungs ländern.</p>
+    </section>
+    <section class="section-card tech-challenges">
+      <h2>Technische Herausforderungen</h2>
+      <div class="challenge-item"><h4>Off-target-Schnitte</h4><p>CRISPR kann ungewollt andere DNA-Sequenzen schneiden. Verbesserungen nötig für Sicherheit.</p></div>
+      <div class="challenge-item"><h4>Delivery-Systeme</h4><p>CRISPR und Gene in alle Zellen transportieren ist schwer. Virale Vektoren haben Grenzen und Risiken.</p></div>
+      <div class="challenge-item"><h4>Daten-Analyse</h4><p>Sequenzier-Daten sind gigantisch. Bioinformatische Pipelines müssen Varianten korrekt interpretieren.</p></div>
+      <div class="challenge-item"><h4>Datenschutz</h4><p>Genome sind ultra-sensibel. Anonymisierung möglich aber schwer. Hacks könnten Familienstruktur preisgeben.</p></div>
+      <div class="challenge-item"><h4>Langzeiteffekte</h4><p>Gen-Editierte Zellen müssen langfristig sicher sein. Langzeitstudien laufen noch.</p></div>
+    </section>
+    <section class="section-card glossar">
+      <h2>Glossar</h2>
+      <div class="glossar-term"><dt>CRISPR-Cas9</dt><dd>Ein Genome-Editing-System basierend auf Bakterien-Immunsystem. Cas9 ist die "Schere", Guide RNA ist der "Sucher".</dd></div>
+      <div class="glossar-term"><dt>Mutation</dt><dd>Veränderung in der DNA-Sequenz. Kann neutral, vorteilhaft oder schädlich sein.</dd></div>
+      <div class="glossar-term"><dt>Genom</dt><dd>Komplette genetische Information eines Organismus (3 Milliarden Basenpaare beim Menschen).</dd></div>
+      <div class="glossar-term"><dt>Gentherapie</dt><dd>Therapeutische Intervention durch Gen-Insertion oder -Korrekturo.</dd></div>
+      <div class="glossar-term"><dt>SNP (Single Nucleotide Polymorphism)</dt><dd>Einzelne Basenpaar-Variation in der Population. Häufig, normalerweise harmlos.</dd></div>
+    </section>
+    <section class="section-card">
+      <h2>Informatik-Reflexion</h2>
+      <p>Genetik ist ein <strong>Big Data</strong> Problem: <strong>Bioinformatische Pipelines</strong> analysieren Terabytes, <strong>Machine Learning</strong> interpretiert Varianten, <strong>Datenbanken</strong> (dbSNP, ClinVar) katalogisieren bekannte Mutationen, <strong>Cybersecurity</strong> schützt Genomen, <strong>Ethik-Algoritmen</strong> bewerten Off-target-Risiken.</p>
+    </section>
+    <section class="section-card related-links">
+      <h2>Weiterführende Links & Quellen</h2>
+      <ul id="related-links"></ul>
+    </section>
+    <div class="privacy-notice"><p><strong>Datenschutz:</strong> Diese Website speichert keine Daten. Keine Cookies oder Tracking-Tools.</p></div>
+  </main>
+  <footer class="site-footer"><div class="container"><p>&copy; 2026 MedTechGuide – Schulprojekt HTL Informatik</p><p><a href="quellen.html">Über die wissenschaftlichen Quellen</a></p></div></footer>
+  <button class="scroll-to-top" id="scrollToTopBtn" aria-label="Nach oben scrollen">↑</button>
+  <script src="script.js"></script>
+  <script>window.addEventListener("load", () => { const loader = document.getElementById("loader"); if (loader) { loader.classList.add("hidden"); setTimeout(() => { loader.style.display = "none"; }, 500); } setActiveNavLink(); setRelatedLinks('genetik'); });</script>
+</body>
+</html>
