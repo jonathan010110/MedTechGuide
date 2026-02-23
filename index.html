@@ -8,6 +8,9 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- ♿ ACCESSIBILITY: Skip to Content Link -->
+  <a href="#main-content" class="skip-to-content">Zum Inhalt springen</a>
+  
   <div id="loader">
     <div class="spinner"></div>
     <p>MedTechGuide wird geladen…</p>
@@ -21,22 +24,28 @@
   </header>
 
   <nav class="main-nav">
-    <div class="container">
-      <a href="index.html" class="active">Start</a>
-      <a href="diabetes.html">Diabetes</a>
-      <a href="allergie.html">Allergien</a>
-      <a href="herz.html">Herz</a>
-      <a href="bildgebung.html">Bildgebung</a>
-      <a href="neurochips.html">Neurochips</a>
-      <a href="exoskelette.html">Exoskelette</a>
-      <a href="genetik.html">Genetik</a>
-      <a href="ki-diagnose.html">KI-Diagnose</a>
-      <a href="zukunft.html">Zukunft</a>
-      <a href="quellen.html">Quellen</a>
+    <div class="container nav-container">
+      <div class="nav-links">
+        <a href="index.html" class="active">Start</a>
+        <a href="diabetes.html">Diabetes</a>
+        <a href="allergie.html">Allergien</a>
+        <a href="herz.html">Herz</a>
+        <a href="bildgebung.html">Bildgebung</a>
+        <a href="neurochips.html">Neurochips</a>
+        <a href="exoskelette.html">Exoskelette</a>
+        <a href="genetik.html">Genetik</a>
+        <a href="ki-diagnose.html">KI-Diagnose</a>
+        <a href="zukunft.html">Zukunft</a>
+        <a href="quellen.html">Quellen</a>
+      </div>
+      <div class="nav-search">
+        <input type="text" id="globalSearch" placeholder="Seite durchsuchen…" aria-label="Globale Suche">
+        <span id="searchResults" class="search-results"></span>
+      </div>
     </div>
   </nav>
 
-  <main class="container">
+  <main class="container" id="main-content">
     <div class="intro-card">
       <h2>Willkommen auf MedTechGuide</h2>
       <p>
@@ -61,49 +70,95 @@
 
     <section class="section-card">
       <h2>Entdecke die Themen</h2>
+      
+      <!-- 🎨 FILTER BUTTONS -->
+      <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="all">Alle</button>
+        <button class="filter-btn" data-filter="diagnostik">Diagnostik</button>
+        <button class="filter-btn" data-filter="therapie">Therapie</button>
+        <button class="filter-btn" data-filter="forschung">Forschung</button>
+        <button class="filter-btn" data-filter="zukunft">Zukunft</button>
+      </div>
+      
+      <!-- 📊 COMPARE SECTION -->
+      <div class="compare-section">
+        <label style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.95rem; cursor: pointer;">
+          <input type="checkbox" id="compareToggle" aria-label="Vergleichsmodus aktivieren">
+          Vergleichsmodus aktivieren
+        </label>
+        <button id="compareBtn" class="compare-btn" disabled style="margin-left: auto;">Vergleichen (0/2)</button>
+      </div>
+      
       <div class="device-grid">
-        <a class="device-card" href="diabetes.html">
-          <h3>Diabetes-Technologien</h3>
+        <a class="device-card" href="diabetes.html" data-category="therapie">
+          <div class="card-header">
+            <h3>Diabetes-Technologien</h3>
+            <input type="checkbox" class="card-checkbox" data-compare-checkbox data-compare-device="Diabetes-Technologien" style="display: none;">
+          </div>
           <p>Sensoren, CGM-Systeme, Insulinpumpen und smarte Therapiealgorithmen verstehen.</p>
         </a>
 
-        <a class="device-card" href="allergie.html">
-          <h3>Allergiediagnostik</h3>
+        <a class="device-card" href="allergie.html" data-category="diagnostik">
+          <div class="card-header">
+            <h3>Allergiediagnostik</h3>
+            <input type="checkbox" class="card-checkbox" data-compare-checkbox data-compare-device="Allergiediagnostik" style="display: none;">
+          </div>
           <p>Prick-Tests, IgE-Bestimmung und molekulare Diagnostik erklärt.</p>
         </a>
 
-        <a class="device-card" href="herz.html">
-          <h3>Herz-Kreislauf-Technologie</h3>
+        <a class="device-card" href="herz.html" data-category="diagnostik">
+          <div class="card-header">
+            <h3>Herz-Kreislauf-Technologie</h3>
+            <input type="checkbox" class="card-checkbox" data-compare-checkbox data-compare-device="Herz-Kreislauf" style="display: none;">
+          </div>
           <p>EKG, Blutdruckmessung, Schrittmacher und Defibrillatoren im Detail.</p>
         </a>
 
-        <a class="device-card" href="bildgebung.html">
-          <h3>Medizinische Bildgebung</h3>
+        <a class="device-card" href="bildgebung.html" data-category="diagnostik">
+          <div class="card-header">
+            <h3>Medizinische Bildgebung</h3>
+            <input type="checkbox" class="card-checkbox" data-compare-checkbox data-compare-device="Bildgebung" style="display: none;">
+          </div>
           <p>Röntgen, CT, MRT und Ultraschall – wie Ärzte ins Körperinnere blicken.</p>
         </a>
 
-        <a class="device-card" href="neurochips.html">
-          <h3>Neurochips & BCIs</h3>
+        <a class="device-card" href="neurochips.html" data-category="forschung">
+          <div class="card-header">
+            <h3>Neurochips & BCIs</h3>
+            <input type="checkbox" class="card-checkbox" data-compare-checkbox data-compare-device="Neurochips" style="display: none;">
+          </div>
           <p>Brain-Computer Interfaces, tiefe Hirnstimulation und Neuroprothesen.</p>
         </a>
 
-        <a class="device-card" href="exoskelette.html">
-          <h3>Exoskelette</h3>
+        <a class="device-card" href="exoskelette.html" data-category="therapie">
+          <div class="card-header">
+            <h3>Exoskelette</h3>
+            <input type="checkbox" class="card-checkbox" data-compare-checkbox data-compare-device="Exoskelette" style="display: none;">
+          </div>
           <p>Robotische Unterstützung in Rehabilitation, Industrie und Alltag.</p>
         </a>
 
-        <a class="device-card" href="genetik.html">
-          <h3>Genetik & CRISPR</h3>
+        <a class="device-card" href="genetik.html" data-category="forschung">
+          <div class="card-header">
+            <h3>Genetik & CRISPR</h3>
+            <input type="checkbox" class="card-checkbox" data-compare-checkbox data-compare-device="Genetik" style="display: none;">
+          </div>
           <p>Gentechnik, DNA-Sequenzierung und personalisierte Medizin.</p>
         </a>
 
-        <a class="device-card" href="ki-diagnose.html">
-          <h3>KI in der Medizin</h3>
+        <a class="device-card" href="ki-diagnose.html" data-category="zukunft">
+          <div class="card-header">
+            <h3>KI in der Medizin</h3>
+            <input type="checkbox" class="card-checkbox" data-compare-checkbox data-compare-device="KI-Diagnose" style="display: none;">
+          </div>
           <p>Künstliche Intelligenz für Bildanalyse, Diagnostik und Vorhersage.</p>
         </a>
 
-        <a class="device-card" href="zukunft.html">
-          <h3>Zukunftstechnologien</h3>
+        <a class="device-card" href="zukunft.html" data-category="zukunft">
+          <div class="card-header">
+            <h3>Zukunftstechnologien</h3>
+            <input type="checkbox" class="card-checkbox" data-compare-checkbox data-compare-device="Zukunftstechnologien" style="display: none;">
+          </div>
           <p>Nano-Medizin, Bio-Interfaces und kommende Innovationen.</p>
         </a>
       </div>
