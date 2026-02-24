@@ -1,0 +1,213 @@
+{
+  "pages": [
+    {
+      "id": "home",
+      "title": "MedTechGuide – Startseite",
+      "url": "index.html",
+      "description": "Diese Website erklärt wichtige medizinische Technologien und Geräte verständlich und wissenschaftlich fundiert",
+      "keywords": ["Medizintechnik", "Technologie", "Diagnostik", "Therapie", "Ausgangspunkt"],
+      "sections": [
+        {
+          "heading": "Willkommen auf MedTechGuide",
+          "content": "Diese Website erklärt wichtige medizinische Technologien und Geräte verständlich und wissenschaftlich fundiert. Entdecken Sie, wie moderne Medizintechnik Diagnostik, Therapie und Prävention revolutioniert",
+          "preview": "Startseite mit Übersicht über medizintechnologische Themen"
+        },
+        {
+          "heading": "Warum Medizintechnik verstehen?",
+          "content": "Medizinische Technologien beeinflussen unser Leben. Dieses Verständnis hilft bei besseren Gesundheitsentscheidungen und trägt zu informierten Diskussionen über Digitalisierung, Datenschutz und ethische Fragen bei",
+          "preview": "Bedeutung von Medizintechnik-Verständnis"
+        }
+      ]
+    },
+    {
+      "id": "diabetes",
+      "title": "Diabetes-Technologien",
+      "url": "diabetes.html",
+      "description": "Sensoren, CGM-Systeme, Insulinpumpen und intelligente Therapiealgorithmen verstehen",
+      "keywords": ["Diabetes", "Blutzuckermessung", "CGM", "Kontinuierliche Glukosemessung", "Insulinpumpe", "Sensor", "Blutzucker", "Typ-1", "Typ-2", "Bauchspeicheldrüse"],
+      "sections": [
+        {
+          "heading": "Einführung",
+          "content": "Diabetes mellitus ist eine chronische Stoffwechselerkrankung, die durch eine Regulationsstörung des Blutzuckers gekennzeichnet ist. Typ-1-Diabetes entsteht durch Autoimmunzerstörung der insulinproduzierenden Betazellen",
+          "preview": "Was ist Diabetes und wie funktioniert die Regulierung"
+        },
+        {
+          "heading": "Kurz erklärt",
+          "content": "Moderne Diabetes-Technologien ermöglichen präzise Blutzuckerkontrolle durch kontinuierliche Messung, algorithmische Vorhersagen und automatisierte Insulinabgabe. Drei Technologie-Säulen sind zentral: Sensoren, intelligente Pumpen, Algorithmen",
+          "preview": "Kontinuierliche Glukosemessung und automatische Insulinabgabe"
+        },
+        {
+          "heading": "Technische Funktionsweise",
+          "content": "CGM-Sensoren messen interstitielle Glukosewerte alle 1–5 Minuten. Klassische Handgeräte messen elektrochemisch über Teststreifen. Ein Enzym katalysiert eine Reaktion, die einen Strom proportional zur Glukosekonzentration erzeugt",
+          "preview": "Wie Blutzuckermessgeräte und Sensoren funktionieren"
+        }
+      ]
+    },
+    {
+      "id": "allergie",
+      "title": "Allergiediagnostik",
+      "url": "allergie.html",
+      "description": "Prick-Tests, IgE-Bestimmung und molekulare Diagnostik erklärt",
+      "keywords": ["Allergie", "Allergiediagnostik", "IgE", "Prick-Test", "Immunologische Tests", "Histamin", "Allergiker", "Allergen", "Antikörper"],
+      "sections": [
+        {
+          "heading": "Einführung",
+          "content": "Allergien sind übersteigerte Immunantworten auf eigentlich harmlose Stoffe. Das Immunsystem bildet Antikörper gegen Allergene, die dann zu Symptomen wie Juckreiz, Quaddeln oder auch lebensbedrohlichen Reaktionen führen",
+          "preview": "Was sind Allergien und wie entstehen sie"
+        },
+        {
+          "heading": "Allergie-Tests",
+          "content": "Der Prick-Test ist die einfachste Methode. Allergene werden auf die Haut aufgetragen und mit einer kleinen Lanzette gepiekst. Nach 20 Minuten zeigen sich Reaktionen als rote Quaddeln wenn eine Kontaktallergie vorliegt",
+          "preview": "Verschiedene Testverfahren für Allergien"
+        }
+      ]
+    },
+    {
+      "id": "herz",
+      "title": "Herz-Kreislauf-Technologie",
+      "url": "herz.html",
+      "description": "EKG, Blutdruckmessung, Schrittmacher und Defibrillatoren im Detail",
+      "keywords": ["Herz", "Herzkreislauf", "EKG", "Elektrokardiogramm", "Schrittmacher", "Defibrillator", "Blutdruck", "Kardiologie", "Herzrhythmus"],
+      "sections": [
+        {
+          "heading": "Einführung",
+          "content": "Das Herz ist eine Pumpe, die regelmäßig Blut durch den Körper pumpt. Herz-Kreislauf-Erkrankungen sind die häufigste Todesursache weltweit. Moderne Technologien ermöglichen präzise Diagnostik und Therapie von Herzrhythmusstörungen",
+          "preview": "Herz-Kreislauf-Erkrankungen und ihre Diagnostik"
+        },
+        {
+          "heading": "EKG und Herzmonitor",
+          "content": "Das Elektrokardiogramm registriert die elektrische Aktivität des Herzens. Ärzte können Rhythmusstörungen, Herzinfarkte und andere Anomalien erkennen. Tragbare Monitore ermöglichen kontinuierliche Überwachung",
+          "preview": "Funktionsweise von EKG und Herzmonitoren"
+        }
+      ]
+    },
+    {
+      "id": "bildgebung",
+      "title": "Medizinische Bildgebung",
+      "url": "bildgebung.html",
+      "description": "Röntgen, CT, MRT und Ultraschall – wie Ärzte ins Körperinnere blicken",
+      "keywords": ["Bildgebung", "Röntgen", "CT", "Tomographie", "MRT", "Magnetresonanztomographie", "Ultraschall", "Sonographie", "Radiologie", "Strahlung"],
+      "sections": [
+        {
+          "heading": "Einführung",
+          "content": "Bildgebende Verfahren erlauben es Ärzten, in den menschlichen Körper zu blicken ohne zu schneiden. Von klassischen Röntgenstrahlen bis zu hochauflösender MRT: Jedes Verfahren hat Stärken und Grenzen",
+          "preview": "Überblick über medizinische Bildgebungsverfahren"
+        },
+        {
+          "heading": "Röntgen",
+          "content": "Röntgenstrahlung ist eine Form von hochenergetischer elektromagnetischer Strahlung. Sie kann Materie durchdringen, verschiedene Gewebe absorbieren sie unterschiedlich stark. Daraus entsteht ein Scherenschnittprinzip: Knochen erscheinen hell, Luft dunkel",
+          "preview": "Funktionsweise der Röntgentechnik"
+        }
+      ]
+    },
+    {
+      "id": "neurochips",
+      "title": "Neurochips & Brain-Computer Interfaces",
+      "url": "neurochips.html",
+      "description": "Brain-Computer Interfaces, tiefe Hirnstimulation und Neuroprothesen",
+      "keywords": ["Neurochips", "BCI", "Brain-Computer Interface", "Hirnstimulation", "Neuroprothese", "Neurotechnologie", "Gehirn", "Neuromonitoring"],
+      "sections": [
+        {
+          "heading": "Einführung",
+          "content": "Brain-Computer Interfaces verbinden das menschliche Gehirn direkt mit Computersystemen. Dies ermöglicht es Patienten mit Lähmungen, direkter Gedankenkraft Prothesen zu steuern oder zu kommunizieren",
+          "preview": "Was sind Neurochips und BCIs"
+        },
+        {
+          "heading": "Funktionsweise",
+          "content": "BCIs messen elektrische Signale von Nervenzellen im Gehirn. Diese Signale werden dekodiert und in Steuerbefehle für externe Geräte umgewandelt. Implantat-basierte BCIs ermöglichen feinere Kontrolle als nicht-invasive EEG-Systeme",
+          "preview": "Wie Brain-Computer Interfaces funktionieren"
+        }
+      ]
+    },
+    {
+      "id": "exoskelette",
+      "title": "Exoskelette",
+      "url": "exoskelette.html",
+      "description": "Robotische Unterstützung in Rehabilitation, Industrie und Alltag",
+      "keywords": ["Exoskelett", "Robotik", "Rehabilitation", "Motorische Unterstützung", "Exosuit", "Kraftvergrößerung", "Industrie", "Gesundheit"],
+      "sections": [
+        {
+          "heading": "Einführung",
+          "content": "Exoskelette sind mechanische Systeme, die wie ein externes Skelett funktionieren. Sie unterstützen oder verstärken Bewegungen und können gelähmte oder schwache Gliedmaßen aktiv bewegen",
+          "preview": "Was sind Exoskelette und wofür werden sie genutzt"
+        },
+        {
+          "heading": "Funktionsweise",
+          "content": "Motorische Exoskelette verwenden elektrische Motoren und Steuerungssysteme um Bewegungen zu verstärken. Passive Exoskelette nutzen elastische Elemente um Lasten zu verteilen",
+          "preview": "Technische Funktionsweise von Exoskeletten"
+        }
+      ]
+    },
+    {
+      "id": "genetik",
+      "title": "Genetik & CRISPR",
+      "url": "genetik.html",
+      "description": "Gentechnik, DNA-Sequenzierung und personalisierte Medizin",
+      "keywords": ["Genetik", "CRISPR", "DNA", "Sequenzierung", "Genbearbeitung", "Genetische Therapie", "Mutation", "Genom", "Gen"],
+      "sections": [
+        {
+          "heading": "Einführung",
+          "content": "Die Genetik ist das Studium von Genen und Vererbung. DNA enthält die Anleitung für den Aufbau und die Funktion aller lebenden Organismen. Moderne DNA-Technologien ermöglichen es, Krankheiten auf genetischer Ebene zu verstehen und zu behandeln",
+          "preview": "Grundlagen der Genetik und genetischen Therapien"
+        },
+        {
+          "heading": "DNA-Sequenzierung",
+          "content": "Die DNA-Sequenzierung entschlüsselt die genaue Abfolge der vier Basen in der DNA. Früher dauerte dies Jahre und kostete Millionen. Heute dauert es Tage und kostet unter 1000 Euro",
+          "preview": "Wie DNA-Sequenzierung funktioniert"
+        }
+      ]
+    },
+    {
+      "id": "ki-diagnose",
+      "title": "KI in der Medizin",
+      "url": "ki-diagnose.html",
+      "description": "Künstliche Intelligenz für Bildanalyse, Diagnostik und Vorhersage",
+      "keywords": ["Künstliche Intelligenz", "KI", "Machine Learning", "Deep Learning", "Neuronale Netzwerke", "Diagnostik", "Bildanalyse", "Vorhersage"],
+      "sections": [
+        {
+          "heading": "Einführung",
+          "content": "Künstliche Intelligenz transformiert die medizinische Diagnostik. Machine-Learning-Modelle können aus Millionen von Bildern lernen und Muster erkennen, die für Menschen schwierig zu sehen sind",
+          "preview": "Wie KI die Medizin verändert"
+        },
+        {
+          "heading": "Deep Learning für Bildanalyse",
+          "content": "Convolutional Neural Networks funktionieren ähnlich wie das menschliche Sehsystem. Sie erkennen in medizinischen Bildern automatisch Anomalien wie Tumore oder Lungenentzündungen",
+          "preview": "Deep Learning in der medizinischen Bildanalyse"
+        }
+      ]
+    },
+    {
+      "id": "zukunft",
+      "title": "Zukunftstechnologien",
+      "url": "zukunft.html",
+      "description": "Nano-Medizin, Bio-Interfaces und kommende Innovationen",
+      "keywords": ["Zukunft", "Nanomedizin", "Nanotechnologie", "Bio-Interface", "Implantate", "Wearables", "Innovative Technologien"],
+      "sections": [
+        {
+          "heading": "Einführung",
+          "content": "Die Medizin der Zukunft wird präziser, vernetzter und intelligenter. Nanotechnologie, Bio-Interfaces und dezentralisierte diagnostische Systeme werden die Gesundheitsversorgung revolutionieren",
+          "preview": "Zukunftstrends in der Medizintechnik"
+        },
+        {
+          "heading": "Nanomedizin",
+          "content": "Nanopartikel können Medikamente gezielt zu Tumoren transportieren oder als Biosensoren fungieren. Sie sind so klein, dass sie in Blutgefäße eindringen können",
+          "preview": "Nanomedizin und ihre Anwendungen"
+        }
+      ]
+    },
+    {
+      "id": "quellen",
+      "title": "Quellen & Literatur",
+      "url": "quellen.html",
+      "description": "Wissenschaftliche Quellensammlung und weiterführende Ressourcen",
+      "keywords": ["Quellen", "Literatur", "Referenzen", "Wissenschaftliche Quellen", "Bibliografie"],
+      "sections": [
+        {
+          "heading": "Über diese Website",
+          "content": "MedTechGuide ist ein schulisches Projekt zur Vermittlung von Wissen über medizintechnologische Innovationen. Alle Inhalte basieren auf wissenschaftlichen Quellen und werden regelmäßig aktualisiert",
+          "preview": "Informationen über MedTechGuide und seine Quellen"
+        }
+      ]
+    }
+  ]
+}
