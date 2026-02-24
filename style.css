@@ -251,13 +251,15 @@ a:hover {
     font-size: 0.8rem; /* Kleinere Schriftgröße */
   }
   
-  /* Suchleiste auf Mobile - Zentriert, volle Breite nutzbar */
+  /* Suchleiste auf Mobile - Versteckt */
   .nav-search {
+    display: none;
     width: 100%;
-    max-width: 280px; /* Kleinere max-width auf Mobilgeräten */
+    max-width: 280px;
   }
 
   #searchResults {
+    display: none;
     width: 90vw;
     max-width: 280px; /* Angepasst auf Mobile */
     left: 50%;
@@ -266,6 +268,7 @@ a:hover {
   }
 
   #globalSearch {
+    display: none;
     width: 100%;
     padding: 0.5rem 0.8rem;
     font-size: 0.8rem;
@@ -350,19 +353,22 @@ a:hover {
     font-size: 0.75rem; /* Kleine Schriftgröße für kleine Bildschirme */
   }
   
-  /* Suchleiste - Optimiert für kleine Bildschirme */
+  /* Suchleiste - Versteckt auf kleine Bildschirme */
   .nav-search {
-    max-width: 240px; /* Noch kleiner auf sehr kleinen Geräten */
-    width: 90vw; /* Nutzt 90% der Viewport-Breite */
+    display: none;
+    max-width: 240px;
+    width: 90vw;
   }
   
   #globalSearch {
+    display: none;
     padding: 0.4rem 0.6rem; /* Kompakteres Padding */
     font-size: 0.75rem; /* Kleinere Schriftgröße */
     max-width: 240px;
   }
   
   #searchResults {
+    display: none;
     max-width: 240px; /* Kleinere Suchergebnisse-Box */
   }
 }
@@ -522,20 +528,21 @@ a:hover {
   display: none;
 }
 
-/* Search Bar - Zentriert unter der Navigation */
+/* Search Bar - Versteckt */
 .nav-search {
+  display: none; /* Suchleiste ausgeblendet */
   position: relative;
-  display: flex;
   align-items: center;
-  justify-content: center; /* Zentriert die Suchleiste */
-  width: 100%; /* Volle Breite nutzen */
-  max-width: 350px; /* Maximale Breite für optische Balance */
+  justify-content: center;
+  width: 100%;
+  max-width: 350px;
 }
 
-/* GLOBAL SEARCH INPUT - Zentrierte Suchleiste unter Navigation */
+/* GLOBAL SEARCH INPUT - VERSTECKT */
 #globalSearch {
-  width: 100%; /* Nutzt volle Breite des Containers */
-  max-width: 350px; /* Maximale Breite zur optischen Balance */
+  display: none; /* Suchfeld ausgeblendet */
+  width: 100%;
+  max-width: 350px;
   padding: 0.6rem 1rem;
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
@@ -551,8 +558,9 @@ a:hover {
   box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
 }
 
-/* ========== ENHANCED SEARCH RESULTS ========== */
+/* ========== ENHANCED SEARCH RESULTS - VERSTECKT ========== */
 #searchResults {
+  display: none; /* Suchleiste und Suchergebnisse sind ausgeblendet */
   position: absolute;
   top: calc(100% + 0.8rem);
   right: 0;
