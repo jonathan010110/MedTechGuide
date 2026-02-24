@@ -229,30 +229,37 @@ a:hover {
   h2 { font-size: 1.5rem; }
   h3 { font-size: 1.15rem; }
   
-  /* Mobile Navigation */
-  .nav-toggle {
-    display: flex;
-    order: 3; /* Place after nav-links */
-    margin-left: auto;
-  }
+  /* ===== MOBILE NAVIGATION - Responsive Layout ===== */
   
+  /* Navigation Container - Bleibt vertikal auf Mobile */
   .nav-container {
     gap: 1rem;
     position: relative;
+    padding: 0.6rem 0.8rem; /* Kompaktere Abstände auf Mobile */
   }
   
+  /* Navigation Links - Wrapping erlaubt auf Mobilgeräten */
   .nav-links {
-    display: none;
+    flex-wrap: wrap; /* Erlaubt Links, auf mehrere Zeilen zu wrappen */
+    justify-content: center; /* Zentriert die Links */
+    gap: 0.3rem; /* Kleinerer Abstand auf Mobile */
   }
   
+  /* Navigation Links - Kleinere Schriftgröße und Padding */
+  .nav-links a {
+    padding: 0.5rem 0.7rem; /* Kleineres Padding */
+    font-size: 0.8rem; /* Kleinere Schriftgröße */
+  }
+  
+  /* Suchleiste auf Mobile - Zentriert, volle Breite nutzbar */
   .nav-search {
-    flex: 0 0 auto;
-    order: 2;
+    width: 100%;
+    max-width: 280px; /* Kleinere max-width auf Mobilgeräten */
   }
 
   #searchResults {
     width: 90vw;
-    max-width: 400px;
+    max-width: 280px; /* Angepasst auf Mobile */
     left: 50%;
     right: auto;
     transform: translateX(-50%);
@@ -262,6 +269,7 @@ a:hover {
     width: 100%;
     padding: 0.5rem 0.8rem;
     font-size: 0.8rem;
+    max-width: 280px; /* Keine Überschreitung auf Mobile */
   }
 
   /* Cards */
@@ -410,23 +418,26 @@ a:hover {
   box-shadow: 0 4px 16px rgba(30, 64, 175, 0.12);
 }
 
+/* FLEXBOX NAVIGATION CONTAINER - Spalten-Layout (Navigation oben, Suche unten) */
 .nav-container {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 2rem;
+  flex-direction: column; /* Vertikales Layout: Navigation und Suche untereinander */
+  gap: 1rem; /* Abstand zwischen Navigation und Suchleiste */
   padding: 0.8rem 1.6rem;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+  align-items: center; /* Zentriert den Inhalt horizontal */
 }
 
+/* FLEXBOX NAVIGATION LINKS - Horizontale Reihe, alle Links in einer Zeile */
 .nav-links {
   display: flex;
-  gap: 0.2rem;
-  flex: 1;
-  flex-wrap: wrap;
+  flex-wrap: nowrap; /* Keine automatische Zeilenumbruch - alles bleibt in einer Reihe */
+  gap: 0.2rem; /* Enger Abstand zwischen Links */
   align-items: center;
+  justify-content: center; /* Zentriert die Links horizontal */
+  width: 100%; /* Nimmt volle Breite an */
 }
 
 .nav-links a {
@@ -474,24 +485,17 @@ a:hover {
   display: none;
 }
 
-/* Search Bar */
+/* Search Bar - Zentriert unter der Navigation */
 .nav-search {
   position: relative;
-  flex: 0 0 220px;
   display: flex;
   align-items: center;
+  justify-content: center; /* Zentriert die Suchleiste */
+  width: 100%; /* Volle Breite nutzen */
+  max-width: 350px; /* Maximale Breite für optische Balance */
 }
 
-#globalSearch {
-  width: 100%;
-  padding: 0.6rem 1rem;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  font-size: 0.85rem;
-  background: var(--bg-white);
-  color: var(--text-primary);
-  transition: var(--transition-fast);
-}
+/* GLOBAL SEARCH INPUT - Zentrierte Suchleiste unter Navigation */\n#globalSearch {\n  width: 100%; /* Nutzt volle Breite des Containers */\n  max-width: 350px; /* Maximale Breite zur optischen Balance */\n  padding: 0.6rem 1rem;\n  border: 1px solid var(--border);\n  border-radius: var(--radius-sm);\n  font-size: 0.85rem;\n  background: var(--bg-white);\n  color: var(--text-primary);\n  transition: var(--transition-fast);\n}
 
 #globalSearch:focus {
   outline: none;
