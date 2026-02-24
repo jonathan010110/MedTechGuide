@@ -73,48 +73,28 @@ function initLoader() {
 }
 
 // ================================================================
-// 📱 MOBILE NAVIGATION - Hamburger Menu
+// 📱 MOBILE NAVIGATION - RESPONSIVE LAYOUT (ohne Hamburger Toggle)
 // ================================================================
+// ✅ ANGEPASST: Navigation ist jetzt voll responsive mit Flexbox
+// Toggle-Button wird NICHT mehr benötigt, da alle Navigation Elemente
+// immer angezeigt werden und responsive mit CSS reagieren
+// (siehe .nav-links flex-wrap und Media Queries in style.css)
 
 function initMobileNav() {
-  // Create hamburger toggle if not exists
-  const navContainer = document.querySelector('.nav-container');
-  if (!navContainer) return;
-
-  // Check if toggle already exists
-  let navToggle = document.querySelector('.nav-toggle');
-  if (!navToggle) {
-    navToggle = document.createElement('button');
-    navToggle.className = 'nav-toggle';
-    navToggle.setAttribute('aria-label', 'Navigation expandieren');
-    navToggle.innerHTML = '<span></span><span></span><span></span>';
-    navContainer.insertBefore(navToggle, document.querySelector('.nav-search'));
-  }
-
-  // Get nav-links
+  // Navigation ist jetzt vollständig CSS-responsive
+  // Diese Funktion kann leer sein oder nur Debugging Zwecke
+  console.log('✓ Responsive Navigation aktiv (kein Toggle Button benötigt)');
+  
+  // Navigation Links - Active Manager
   const navLinks = document.querySelector('.nav-links');
-  if (!navLinks || !navToggle) return;
+  if (!navLinks) return;
 
-  // Toggle mobile menu
-  navToggle.addEventListener('click', () => {
-    navToggle.classList.toggle('active');
-    navLinks.classList.toggle('mobile-visible');
-  });
-
-  // Close menu when clicking on a link
+  // Close menu-like behavior wenn auf Link geklickt wird (für UX)
+  // Kann auf zukünftige Erweiterungen vorbereitet sein
   navLinks.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
-      navToggle.classList.remove('active');
-      navLinks.classList.remove('mobile-visible');
+      // Optional: Kann zukünftig für weitere Funktionalität genutzt werden
     });
-  });
-
-  // Close menu when clicking outside
-  document.addEventListener('click', (e) => {
-    if (!e.target.closest('.main-nav')) {
-      navToggle.classList.remove('active');
-      navLinks.classList.remove('mobile-visible');
-    }
   });
 }
 

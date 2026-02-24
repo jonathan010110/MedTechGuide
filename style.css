@@ -330,6 +330,43 @@ a:hover {
   }
 }
 
+/* ===== MEDIA QUERY: SEHR KLEINE SMARTPHONES (max-width: 480px) ===== */
+@media (max-width: 480px) {
+  /* ===== NAVIGATION OPTIMIERUNGEN FÜR KLEINE BILDSCHIRME ===== */
+  
+  /* Navigation Container - Kompaktere Abstände */
+  .nav-container {
+    gap: 0.8rem;
+    padding: 0.5rem 0.6rem;
+  }
+  
+  /* Navigation Links - Noch kleinere Schriftgröße und Padding */
+  .nav-links {
+    gap: 0.2rem;
+  }
+  
+  .nav-links a {
+    padding: 0.4rem 0.6rem; /* Noch kompakteres Padding */
+    font-size: 0.75rem; /* Kleine Schriftgröße für kleine Bildschirme */
+  }
+  
+  /* Suchleiste - Optimiert für kleine Bildschirme */
+  .nav-search {
+    max-width: 240px; /* Noch kleiner auf sehr kleinen Geräten */
+    width: 90vw; /* Nutzt 90% der Viewport-Breite */
+  }
+  
+  #globalSearch {
+    padding: 0.4rem 0.6rem; /* Kompakteres Padding */
+    font-size: 0.75rem; /* Kleinere Schriftgröße */
+    max-width: 240px;
+  }
+  
+  #searchResults {
+    max-width: 240px; /* Kleinere Suchergebnisse-Box */
+  }
+}
+
 /* ========== LOADER ========== */
 #loader {
   position: fixed;
@@ -495,7 +532,18 @@ a:hover {
   max-width: 350px; /* Maximale Breite für optische Balance */
 }
 
-/* GLOBAL SEARCH INPUT - Zentrierte Suchleiste unter Navigation */\n#globalSearch {\n  width: 100%; /* Nutzt volle Breite des Containers */\n  max-width: 350px; /* Maximale Breite zur optischen Balance */\n  padding: 0.6rem 1rem;\n  border: 1px solid var(--border);\n  border-radius: var(--radius-sm);\n  font-size: 0.85rem;\n  background: var(--bg-white);\n  color: var(--text-primary);\n  transition: var(--transition-fast);\n}
+/* GLOBAL SEARCH INPUT - Zentrierte Suchleiste unter Navigation */
+#globalSearch {
+  width: 100%; /* Nutzt volle Breite des Containers */
+  max-width: 350px; /* Maximale Breite zur optischen Balance */
+  padding: 0.6rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  background: var(--bg-white);
+  color: var(--text-primary);
+  transition: var(--transition-fast);
+}
 
 #globalSearch:focus {
   outline: none;
@@ -780,28 +828,32 @@ mark.search-highlight {
 
 @media (max-width: 768px) {
   .nav-toggle {
-    display: block;
+    display: none; /* Nicht mehr nötig mit neuem responsive Layout */
   }
   
   .nav-container {
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Erlaubt Umbruch wenn nötig */
     gap: 1rem;
   }
   
   .nav-links {
-    order: 3;
-    width: 100%;
-    display: none;
-    gap: 0.4rem;
+    order: 1; /* Navigation zuerst anzeigen */
+    width: 100%; /* Volle Breite */
+    display: flex; /* Immer sichtbar - kein Toggle nötig */
+    gap: 0.3rem; /* Kleinerer Abstand */
+    flex-wrap: wrap; /* Erlaubt Wrapping auf kleine Bildschirme */
+    justify-content: center; /* Zentriert die Links */
   }
   
   .nav-links.active {
-    display: flex;
+    display: flex; /* Keine Änderung nötig */
   }
   
   .nav-search {
-    flex: 0 0 auto;
-    min-width: 160px;
+    order: 2; /* Nach Navigation positioniert */
+    flex: 0 0 100%; /* Volle Breite einnehmen */
+    min-width: auto; /* Keine min-width Beschränkung */
+    max-width: 280px; /* Aber max-width für Optik */
   }
 }
 
