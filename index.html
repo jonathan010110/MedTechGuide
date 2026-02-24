@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="MedTechGuide erklärt medizinische Geräte, Technologien und Zukunftstrends wissenschaftlich verständlich." />
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="css/quiz.css" />
 </head>
 <body>
   <!-- ♿ ACCESSIBILITY: Skip to Content Link -->
@@ -36,6 +37,7 @@
         <a href="genetik.html">Genetik</a>
         <a href="ki-diagnose.html">KI-Diagnose</a>
         <a href="zukunft.html">Zukunft</a>
+        <a href="html/quiz.html" style="background: linear-gradient(135deg, #1e40af 0%, #0f766e 100%); color: white; font-weight: 700;">🎯 Quiz</a>
         <a href="quellen.html">Quellen</a>
       </div>
       <div class="nav-search">
@@ -71,7 +73,18 @@
     <section class="section-card">
       <h2>Entdecke die Themen</h2>
       
-      <!-- 🎨 FILTER BUTTONS -->
+      <!-- � QUIZ CTA SECTION -->
+      <div class="compare-section" style="background: linear-gradient(135deg, #eff6ff 0%, #f0fdf4 100%); border: 2px solid #1e40af;">
+        <div>
+          <h3 style="margin: 0 0 0.5rem 0; color: #1e40af;">🎯 Test dein Wissen</h3>
+          <p style="margin: 0; color: #6b7280; font-size: 0.95rem;">Interaktives Quiz mit 20 Fragen in 4 Kategorien</p>
+        </div>
+        <button onclick="window.location.href='html/quiz.html'" class="compare-btn" style="margin-left: auto; background: linear-gradient(135deg, #1e40af, #0f766e);">
+          Quiz starten →
+        </button>
+      </div>
+      
+      <!-- �🎨 FILTER BUTTONS -->
       <div class="filter-buttons">
         <button class="filter-btn active" data-filter="all">Alle</button>
         <button class="filter-btn" data-filter="diagnostik">Diagnostik</button>
@@ -204,5 +217,6 @@
   <script src="script.js"></script>
   <script src="search.js"></script>
   <script src="performance.js"></script>
+  <script src="js/quiz.js"></script>
 </body>
 </html>
