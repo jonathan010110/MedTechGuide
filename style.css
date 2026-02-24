@@ -757,8 +757,13 @@ mark.search-highlight {
 }
 
 /* ========== MOBILE NAV TOGGLE ========== */
+/* ========== NAVIGATION TOGGLE - DEPRECATED ========== */
+/* 🔄 ANGEPASST: Hamburger Toggle wird NICHT mehr verwendet */
+/* Mit neu gestalteter responsive Navigation (Flexbox mit Media Queries) */
+/* Diese CSS-Regeln sind überflüssig und werden nur für Kompatibilität beibehalten */
+
 .nav-toggle {
-  display: none;
+  display: none; /* Ist nicht mehr erforderlich */
   flex-direction: column;
   gap: 5px;
   background: none;
@@ -788,42 +793,38 @@ mark.search-highlight {
   transform: rotate(-45deg) translate(8px, -8px);
 }
 
-/* ========== MOBILE MENU STYLES ========== */
+/* ========== MOBILE MENU STYLES - DEPRECATED ========== */
+/* 🔄 ANGEPASST: Mobile Menu wird NICHT mehr mit Toggle aktiviert */
+/* Navigation wird jetzt vollständig responsive mit Flexbox dargestellt */
+
 .nav-links.mobile-visible {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  background: var(--bg-white);
-  border-bottom: 1px solid var(--border);
-  padding: 1rem 0;
+  display: flex; /* Redundant - .nav-links ist immer flex */
+  flex-direction: row; /* Nicht mehr column - responsive mit flex-wrap */
+  position: static; /* Nicht länger absolut positioniert */
+  top: auto;
+  left: auto;
+  right: auto;
+  background: inherit;
+  border-bottom: none;
+  padding: 0;
   margin-top: 0;
-  flex-wrap: nowrap;
-  gap: 0;
-  z-index: 999;
-  box-shadow: var(--shadow-md);
-  animation: slideDown 0.3s ease;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  z-index: 1000;
+  box-shadow: none;
+  animation: none;
 }
 
 .nav-links.mobile-visible a {
-  padding: 0.8rem 1.6rem;
-  border-radius: 0;
-  border-bottom: 1px solid var(--bg-light);
+  padding: 0.5rem 0.7rem; /* Mobil-optimierte Größe */
+  border-radius: var(--radius-sm);
+  border-bottom: none;
 }
 
 .nav-links.mobile-visible a.active {
-  background: var(--primary-light);
-  border-left: 4px solid var(--primary);
-  padding-left: calc(1.6rem - 4px);
-}
-  background: none;
-  border: none;
-  color: var(--text-primary);
-  font-size: 1.5rem;
-  cursor: pointer;
-  padding: 0.5rem;
+  background: var(--primary);
+  border-left: none;
+  padding-left: 0.7rem;
 }
 
 @media (max-width: 768px) {
