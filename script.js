@@ -73,7 +73,51 @@ function initLoader() {
 }
 
 // ================================================================
-// 🧭 2. ACTIVE NAVIGATION LINK - Automatisch highlight current page
+// 📱 MOBILE NAVIGATION - Hamburger Menu
+// ================================================================
+
+function initMobileNav() {
+  // Create hamburger toggle if not exists
+  const navContainer = document.querySelector('.nav-container');
+  if (!navContainer) return;
+
+  // Check if toggle already exists
+  let navToggle = document.querySelector('.nav-toggle');
+  if (!navToggle) {
+    navToggle = document.createElement('button');
+    navToggle.className = 'nav-toggle';
+    navToggle.setAttribute('aria-label', 'Navigation expandieren');
+    navToggle.innerHTML = '<span></span><span></span><span></span>';
+    navContainer.insertBefore(navToggle, document.querySelector('.nav-search'));
+  }
+
+  // Get nav-links
+  const navLinks = document.querySelector('.nav-links');
+  if (!navLinks || !navToggle) return;
+
+  // Toggle mobile menu
+  navToggle.addEventListener('click', () => {
+    navToggle.classList.toggle('active');
+    navLinks.classList.toggle('mobile-visible');
+  });
+
+  // Close menu when clicking on a link
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navToggle.classList.remove('active');
+      navLinks.classList.remove('mobile-visible');
+    });
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.main-nav')) {
+      navToggle.classList.remove('active');
+      navLinks.classList.remove('mobile-visible');
+    }
+  });
+}
+
 // ================================================================
 
 function initActiveNav() {
@@ -704,6 +748,7 @@ function setActiveNavLink() {
 document.addEventListener('DOMContentLoaded', () => {
   // Initialisiere alle Module der Reihe nach
   initLoader();        // Loader verstecken
+  initMobileNav();     // Mobile Menü
   initActiveNav();     // Navigation highlighting
   initScrollToTop();   // Scroll to Top Button
   initSectionAnimations(); // Fade-In Animations
