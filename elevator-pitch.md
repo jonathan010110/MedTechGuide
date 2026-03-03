@@ -34,6 +34,18 @@ MedTechGuide wurde konsequent nach den Prinzipien des **Design of Digital Produc
 
 MedTechGuide ist daher nicht nur eine Info-Website, sondern ein Beispiel dafür, wie **digitale Produkte echte Probleme lösen** – durch durchdachtes Design, klare Nutzerführung und sinnvolle Interaktion.
 
+---
+
+**Warum wird MedTechGuide tatsächlich genutzt?**
+
+Die Webanwendung trifft einen konkreten, alltäglichen Bedarf – und senkt dabei jede mögliche Hürde:
+
+- **Nullbarriere**: Kein Download, kein Account, kein Abo – einfach die Seite öffnen und loslesen. Das steigert die Nutzungsbereitschaft massiv.
+- **Mobiler Kontext**: Viele Menschen googeln Gesundheitsfragen direkt im Wartezimmer oder nach dem Arztgespräch – MedTechGuide ist responsiv und für genau diesen Moment gemacht.
+- **Breite Zielgruppe**: Patienten, Angehörige, Pflegepersonal, Schüler, Studierende – jeder, der mit einem medizinischen Gerät konfrontiert wird, hat einen Grund, die App zu nutzen.
+- **Echte Entscheidungshilfe**: Der Vergleichsmodus hilft nicht nur beim Verstehen, sondern gibt eine konkrete Orientierung – etwa wenn jemand zwischen zwei Blutzuckergeräten wählen muss.
+- **Emotionaler Mehrwert**: Die Selbsttests sprechen ein persönliches Bedürfnis an – Nutzer wollen nicht nur informiert werden, sie wollen sich selbst besser verstehen. Das schafft Wiederkehr.
+
 **MedTechGuide**: Weil jeder das Recht hat, die eigene Gesundheit zu verstehen.
 
 ---
