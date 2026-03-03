@@ -12,16 +12,27 @@ Genau hier setzt **MedTechGuide** an.
 
 MedTechGuide ist eine kostenlose Webanwendung, die medizintechnische Geräte verständlich, übersichtlich und interaktiv erklärt – für alle, ganz ohne Vorkenntnisse.
 
-Die Plattform umfasst **10 Themenbereiche**: alltägliche Geräte wie Blutzuckermessgeräte und Blutdruckmessgeräte, bildgebende Verfahren wie MRT und CT, aber auch Zukunftstechnologien wie Neurochips, KI-gestützte Diagnostik und Exoskelette.
+Die Plattform umfasst **10 Themenbereiche**: von alltäglichen Geräten wie Blutzuckermessgeräten über bildgebende Verfahren wie MRT und CT bis hin zu Zukunftstechnologien wie Neurochips und KI-gestützter Diagnostik.
 Zu jedem Gerät gibt es eine klare Erklärung: Was macht es? Wie funktioniert es? Für wen ist es geeignet?
 
-Wer gezielt etwas sucht, nutzt die **Volltext-Suche**. Wer zwei Geräte vergleichen möchte, wechselt in den **Vergleichsmodus** – dort werden Geräte anhand von Bewertungsbalken und einer Ampeldarstellung direkt gegenübergestellt.
-
-Und MedTechGuide geht noch einen Schritt weiter: Ein **Wissensquiz** hilft, das Gelernte zu festigen. Sieben **interaktive Selbsttests** – zu Themen wie Depression, ADHS, Burnout oder Schlafqualität – geben Nutzerinnen und Nutzern eine erste fundierte Einschätzung ihres eigenen Gesundheitszustands.
+Wer gezielt sucht, nutzt die **Volltext-Suche**. Wer zwei Geräte vergleichen möchte, wechselt in den **Vergleichsmodus** – dort stehen Bewertungsbalken und eine Ampeldarstellung zur schnellen Orientierung bereit.
+Ein **Wissensquiz** festigt das Gelernte, und sieben **interaktive Selbsttests** geben eine erste Einschätzung des eigenen Gesundheitszustands.
 
 So verwandelt MedTechGuide passive Information in echte Gesundheitskompetenz.
 
-Die Anwendung ist vollständig responsive, läuft direkt im Browser – ohne Installation, ohne Login – und ist auf allen Geräten nutzbar.
+---
+
+**Warum ist MedTechGuide ein gutes digitales Produkt?**
+
+MedTechGuide wurde konsequent nach den Prinzipien des **Design of Digital Products** entwickelt:
+
+- **User-Centered Design**: Die Inhalte sind auf Laien zugeschnitten – keine Fachsprache, klare Struktur, direkte Antworten auf die Fragen echter Nutzer.
+- **Informationsarchitektur**: 10 Kategorien, Suche und Vergleichsmodus sorgen dafür, dass Nutzer jede Information in wenigen Klicks finden.
+- **Interaktionsdesign**: Quiz und Selbsttests machen aus Lesen ein aktives Erlebnis – die App fordert zur Handlung auf, nicht nur zum Konsumieren.
+- **Responsives Design**: Die Anwendung läuft auf jedem Gerät – ohne Installation, ohne Login, sofort einsatzbereit.
+- **Visuelles Design**: Ein ruhiges, medizinisch-seriöses Farbschema (Blau/Weiß) schafft Vertrauen und Überblick – Designentscheidungen, die gezielt für die Zielgruppe getroffen wurden.
+
+MedTechGuide ist daher nicht nur eine Info-Website, sondern ein Beispiel dafür, wie **digitale Produkte echte Probleme lösen** – durch durchdachtes Design, klare Nutzerführung und sinnvolle Interaktion.
 
 **MedTechGuide**: Weil jeder das Recht hat, die eigene Gesundheit zu verstehen.
 
