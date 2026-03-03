@@ -27,5 +27,5 @@ Sie kann informieren, aktivieren und einen echten Mehrwert liefern – als Proto
 
 ---
 
-_Technologien: HTML5 · CSS3 · JavaScript (ES6+) · JSON_
+_Technologien: HTML5 · CSS3 · JavaScript (ES6+) · JSON_  
 _Umfang: 10 Kategorieseiten · Vergleichsmodus · Quiz · 7 Selbsttests · Volltext-Suche · Quellenverzeichnis_
