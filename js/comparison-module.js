@@ -82,9 +82,25 @@ class ComparisonModule {
     } else if (!this.device2 && device.id !== this.device1.id) {
       this.device2 = device;
       this.updateCompareState();
-    } else {
-      alert('Maximal 2 Geräte für Vergleich. Bitte vorherige Auswahl clearing.');
     }
+  }
+
+  /**
+   * Gerät aus Vergleich entfernen
+   */
+  removeDevice(deviceId) {
+    if (this.device1 && this.device1.id === deviceId) {
+      this.device1 = null;
+    } else if (this.device2 && this.device2.id === deviceId) {
+      this.device2 = null;
+    }
+
+    // Shift device2 to device1 if device1 was removed
+    if (!this.device1 && this.device2) {
+      this.device1 = this.device2;
+      this.device2 = null;
+    }
+    this.updateCompareState();
   }
 
   /**
@@ -121,7 +137,7 @@ class ComparisonModule {
    */
   displayComparison() {
     const body = this.modalElement.querySelector('.comparison-body');
-    
+
     body.innerHTML = `
       <div class="comparison-grid">
         ${this.renderDeviceColumn(this.device1)}
@@ -140,6 +156,15 @@ class ComparisonModule {
 
     this.modalElement.classList.add('active');
     document.body.style.overflow = 'hidden';
+
+    // Trigger animations for bars
+    setTimeout(() => {
+      const animatedBars = body.querySelectorAll('.animated-bar');
+      animatedBars.forEach(bar => {
+        const targetWidth = bar.getAttribute('data-target-width');
+        bar.style.width = targetWidth;
+      });
+    }, 50); // slight delay to allow rendering before transition
   }
 
   /**
@@ -226,20 +251,23 @@ class ComparisonModule {
     const value1 = this.device1.metrics[metricKey];
     const value2 = this.device2.metrics[metricKey];
 
+    // Added style="width: 0%" initially and then CSS transition will animate it 
+    // to the actual value when modal is opened. We'll use a small timeout after render.
+
     return `
       <div class="metric-bars">
         <div class="metric-bar">
-          <div class="bar-name">${this.device1.name.substring(0, 15)}</div>
+          <div class="bar-name" title="${this.device1.name}">${this.device1.name.substring(0, 15)}...</div>
           <div class="bar-container">
-            <div class="bar-fill" style="width: ${value1}%;" data-value="${value1}"></div>
+             <div class="bar-fill animated-bar" style="width: 0%;" data-target-width="${value1}%"></div>
             <span class="bar-value">${value1}%</span>
           </div>
         </div>
         
         <div class="metric-bar">
-          <div class="bar-name">${this.device2.name.substring(0, 15)}</div>
+          <div class="bar-name" title="${this.device2.name}">${this.device2.name.substring(0, 15)}...</div>
           <div class="bar-container">
-            <div class="bar-fill" style="width: ${value2}%;" data-value="${value2}"></div>
+            <div class="bar-fill animated-bar" style="width: 0%;" data-target-width="${value2}%"></div>
             <span class="bar-value">${value2}%</span>
           </div>
         </div>
@@ -279,11 +307,33 @@ class ComparisonModule {
   }
 
   /**
-   * Render Ampel-Symbol (Rot/Gelb/Grün)
+   * Render Ampel-Symbol (Rot/Gelb/Grün) und Text
    */
   renderTrafficLight(isApplicable) {
-    if (isApplicable === undefined) return '⚪';
-    return isApplicable ? '🟢' : '🔴';
+    if (isApplicable === undefined || isApplicable === null) {
+      return `
+        <div class="indicator-wrapper na">
+          <span class="indicator-icon">⚪</span>
+          <span class="indicator-text">Keine Daten</span>
+        </div>
+      `;
+    }
+
+    if (isApplicable) {
+      return `
+        <div class="indicator-wrapper yes">
+          <span class="indicator-icon">🟢</span>
+          <span class="indicator-text">Geeignet</span>
+        </div>
+      `;
+    } else {
+      return `
+        <div class="indicator-wrapper no">
+          <span class="indicator-icon">🔴</span>
+          <span class="indicator-text">Nicht geeignet</span>
+        </div>
+      `;
+    }
   }
 
   /**
@@ -364,5 +414,5 @@ class ComparisonModule {
 
 // Initialize wenn DOM ready
 document.addEventListener('DOMContentLoaded', () => {
-  new ComparisonModule();
+  window.comparisonModuleInstance = new ComparisonModule();
 });
