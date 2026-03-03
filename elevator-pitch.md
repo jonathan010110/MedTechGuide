@@ -2,23 +2,30 @@
 
 ## „Medizintechnik für alle – verständlich, übersichtlich, interaktiv."
 
----
-
-Millionen Menschen sind täglich auf medizinische Geräte angewiesen – doch kaum jemand versteht wirklich, wie sie funktionieren.
-**MedTechGuide** schließt genau diese Lücke.
-
-Die Website erklärt über **10 Kategorien** moderner Medizintechnik – von Insulinpumpen über KI-Diagnosesysteme bis hin zu Neurochips – klar und verständlich für Laien.
-Nutzer können Geräte **suchen, filtern und direkt miteinander vergleichen**: ein integrierter Vergleichsmodus zeigt Stärken und Schwächen auf einen Blick.
-
-Was MedTechGuide besonders macht: die Plattform bleibt nicht beim Lesen stehen.
-Ein **interaktives Wissensquiz** testet, was Nutzer gelernt haben – und **7 psychologische Selbsttests** (u.a. Depression, ADHS, Burnout, Stress) ermöglichen eine erste, informierte Selbsteinschätzung des eigenen Gesundheitszustands.
-So wird aus einer Info-Website ein echtes Werkzeug zur Gesundheitskompetenz.
-
-Das Projekt zeigt, wie sich **HTML, CSS und JavaScript** einsetzen lassen, um komplexe Fachinhalte nutzerfreundlich und ansprechend aufzubereiten – mit sauberem Code, responsivem Design und einer modularen Architektur.
-
-**MedTechGuide** ist mehr als eine Schulwebsite – es ist ein Prototyp für digitale Gesundheitskommunikation.
+> ⏱️ Redezeit: ca. 2 Minuten (~260 Wörter)
 
 ---
 
-_Technologien: HTML5 · CSS3 · JavaScript (ES6+) · JSON_  
-_Umfang: 10 Kategorieseiten · Vergleichsmodus · Volltext-Suche · Quellenverzeichnis_
+Stellen Sie sich vor, Sie bekommen ein neues medizinisches Gerät verschrieben – aber die Erklärung des Arztes war zu kurz, die Packungsbeilage zu technisch, und im Internet finden Sie nur unverständliche Fachbegriffe.
+Genau dieses Problem löst **MedTechGuide**.
+
+MedTechGuide ist eine interaktive Website, die medizintechnische Geräte klar, verständlich und übersichtlich für alle erklärt – ganz ohne Vorkenntnisse.
+Das Projekt umfasst **10 Themenbereiche**: von alltäglichen Geräten wie Blutzuckermessgeräten und Blutdruckmessgeräten über bildgebende Verfahren wie MRT und CT bis hin zu Zukunftstechnologien wie Neurochips, KI-gestützter Diagnostik und Exoskeletten.
+
+Jede Kategorie hat eine eigene, vollständig ausgebaute Seite mit Gerätebeschreibungen, Einsatzgebieten sowie Vor- und Nachteilen.
+Wer gezielt sucht, nutzt die **integrierte Volltext-Suchfunktion** – wer vergleichen möchte, wechselt in den **Vergleichsmodus**: dort werden zwei Geräte nebeneinander mit Bewertungsbalken und einer Ampeldarstellung für verschiedene Szenarien gegenübergestellt.
+
+Was MedTechGuide von einer gewöhnlichen Info-Website unterscheidet, ist die **Interaktivität**.
+Ein **Wissensquiz** lässt Nutzer testen, was sie gelernt haben.
+Und sieben **psychologische Selbsttests** – zu Themen wie Depression, ADHS, Burnout, Angst oder Schlafqualität – geben eine erste, informierte Selbsteinschätzung des eigenen Gesundheitszustands.
+So wird passive Information zu aktiver Gesundheitskompetenz.
+
+Technisch basiert das Projekt auf **HTML5, CSS3 und JavaScript** – vollständig selbst entwickelt, modular aufgebaut und responsiv für alle Geräte.
+
+MedTechGuide zeigt: Eine Schulwebsite muss kein Mindestprodukt sein.
+Sie kann informieren, aktivieren und einen echten Mehrwert liefern – als Prototyp für digitale Gesundheitskommunikation.
+
+---
+
+_Technologien: HTML5 · CSS3 · JavaScript (ES6+) · JSON_
+_Umfang: 10 Kategorieseiten · Vergleichsmodus · Quiz · 7 Selbsttests · Volltext-Suche · Quellenverzeichnis_
