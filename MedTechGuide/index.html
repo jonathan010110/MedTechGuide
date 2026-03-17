@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MedTechGuide – 3D Simulatoren</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.163.0/build/three.module.js",
+          "three/addons/": "https://unpkg.com/three@0.163.0/examples/jsm/"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div id="app-shell">
+      <aside class="sidebar">
+        <div class="brand-wrap">
+          <h1>MedTechGuide</h1>
+          <p class="subtitle">Interaktive 3D-Medizintechnik</p>
+        </div>
+
+        <nav class="device-nav" aria-label="Geräteauswahl">
+          <button class="device-btn active" data-device="pulse">Pulsoximeter</button>
+          <button class="device-btn" data-device="ekg">EKG-Monitor</button>
+          <button class="device-btn" data-device="blood">Blutdruckmessgerät</button>
+        </nav>
+
+        <section class="control-card" id="ekg-controls" hidden>
+          <h2>EKG Steuerung</h2>
+          <label for="heartRateSlider">Herzfrequenz: <span id="heartRateValue">72</span> bpm</label>
+          <input id="heartRateSlider" type="range" min="40" max="180" value="72" />
+        </section>
+
+        <section class="control-card" id="blood-controls" hidden>
+          <h2>Blutdruck Messung</h2>
+          <p>Klicke im 3D-Modell auf den Start-Knopf.</p>
+          <div class="pressure-wrap" aria-label="Druckanzeige">
+            <div class="pressure-fill" id="pressureFill"></div>
+          </div>
+          <p id="bp-result" class="result-text">Warte auf Messung...</p>
+        </section>
+
+        <section class="info-panel" id="infoPanel">
+          <h2>Info</h2>
+          <p id="infoText">Wähle ein Gerät oder klicke auf ein Bauteil für Details.</p>
+          <p class="hint">Tipp: Mit der Maus drehen, zoomen und verschieben.</p>
+        </section>
+      </aside>
+
+      <main class="viewer-area">
+        <div id="loader" class="loader-overlay" aria-live="polite">
+          <div class="spinner"></div>
+          <p>Lade 3D-Simulator...</p>
+        </div>
+        <canvas id="scene"></canvas>
+      </main>
+    </div>
+
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

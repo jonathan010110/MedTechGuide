@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="de">
-<head><meta charset="utf-8" /><title>Medizinische Bildgebung – MedTechGuide</title><meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="stylesheet" href="style.css" /></head>
+<head><meta charset="utf-8" /><title>Medizinische Bildgebung – MedTechGuide</title><meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="stylesheet" href="style.css" /><script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.163.0/build/three.module.js","three/addons/":"https://unpkg.com/three@0.163.0/examples/jsm/"}}</script></head>
 <body>
   <!-- ♿ ACCESSIBILITY: Skip to Content Link -->
   <a href="#main-content" class="skip-to-content">Zum Inhalt springen</a>
@@ -40,6 +40,29 @@
       <p>Alle Bildgebungsverfahren basieren auf Physik: Röntgen nutzt ionisierende Strahlung. CT kombiniert multiple Röntgenaufnahmen zu 3D-Bildern. MRT nutzt Magnetfelder und Radiowellen. Ultraschall nutzt Schallwellen. Jedes Verfahren hat Vorteile und Grenzen.</p>
     </section>
 
+    <section class="section-card imaging-3d-card">
+      <h2>Interaktive 3D-Modelle</h2>
+      <p>Lokale GLB-Dateien aus <strong>data/models</strong> werden automatisch eingebunden. Solange dort noch keine Modelle liegen, stehen programmierte Three.js-Modelle als Fallback bereit.</p>
+      <div class="imaging-3d-controls" role="group" aria-label="Steuerung für 3D-Modelle">
+        <label for="glbModelSelect">Modell:</label>
+        <select id="glbModelSelect">
+          <option value="ct-scanner">CT-Scanner</option>
+          <option value="mrt-scanner">MRT-Scanner</option>
+          <option value="ultraschall">Ultraschallgeraet</option>
+        </select>
+        <label for="modelScaleRange">Skalierung:</label>
+        <input id="modelScaleRange" type="range" min="0.3" max="2.0" step="0.1" value="1.0" />
+        <button id="btnLoadModel" type="button">Neu laden</button>
+        <button id="btnResetCamera" type="button">Kamera reset</button>
+        <button id="btnToggleAutoRotate" type="button" aria-pressed="false">Auto-Rotate aus</button>
+        <button id="btnToggleWireframe" type="button" aria-pressed="false">Wireframe aus</button>
+        <button id="btnTogglePulse" type="button" aria-pressed="false">Pulse aus</button>
+      </div>
+      <p id="glbStatus" class="imaging-3d-status" aria-live="polite">3D-Viewer wird initialisiert...</p>
+      <div id="imaging3DViewer" class="imaging-3d-viewer" aria-label="Interaktiver 3D-Viewer"></div>
+      <p class="imaging-3d-hint">Steuerung: Linke Maustaste drehen, Mausrad zoomen, rechte Maustaste verschieben.</p>
+    </section>
+
     <!-- IMAGE: Bildgebung -->
     <figure class="section-image">
       <img src="images/bildgebung-1.jpg" alt="Medizinische Bildgebungsverfahren" />
@@ -58,7 +81,7 @@
       <p>Schallwellen (2–18 MHz) werden ins Gewebe geschickt. Sie reflektieren an Gewebegrenzen. Ein Transducer sendet und empfängt Echos. Real-time Bilder entstehen durch schnelle Pulsfolgen.</p>
     </section>
     <section class="section-card">
-      <h3>Vergleichstabelle: Bildgebungsmodalitäten</h3>
+      <h3>VergleIichstabelle: Bildgebungsmodalitäten</h3>
       <table>
         <thead><tr><th>Verfahren</th><th>Strahlung</th><th>Geschwindigkeit</th><th>Kosten</th><th>Weichteile</th><th>Beste Anwendung</th></tr></thead>
         <tbody>
@@ -115,6 +138,7 @@
   </main>
   <footer class="site-footer"><div class="container"><p>&copy; 2026 MedTechGuide – Schulprojekt HTL Informatik</p><p><a href="quellen.html">Über die wissenschaftlichen Quellen</a></p></div></footer>
   <button class="scroll-to-top" id="scrollToTopBtn" aria-label="Nach oben scrollen">↑</button>
+  <script type="module" src="js/bildgebung-3d.js"></script>
   <script src="script.js"></script>
   <script>window.addEventListener("load", () => { const loader = document.getElementById("loader"); if (loader) { loader.classList.add("hidden"); setTimeout(() => { loader.style.display = "none"; }, 500); } setActiveNavLink(); setRelatedLinks('bildgebung'); });</script>
 </body>

@@ -1,0 +1,19 @@
+{
+  "models": [
+    {
+      "id": "ct-scanner-glb",
+      "label": "CT-Scanner Realistisch",
+      "path": "data/models/ct-scanner.glb"
+    },
+    {
+      "id": "mrt-geraet-glb",
+      "label": "MRT-Geraet Realistisch",
+      "path": "data/models/mrt-geraet.glb"
+    },
+    {
+      "id": "ultraschall-sonde-glb",
+      "label": "Ultraschallsonde Realistisch",
+      "path": "data/models/ultraschall-sonde.glb"
+    }
+  ]
+}
