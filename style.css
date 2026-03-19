@@ -1749,6 +1749,13 @@ button,
   margin-bottom: 0.8rem;
   font-size: 0.92rem;
   color: var(--text-light);
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(30, 64, 175, 0.12);
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  padding: 0.35rem 0.9rem;
 }
 
 .imaging-3d-viewer {
@@ -1762,6 +1769,7 @@ button,
     radial-gradient(circle at 82% 78%, rgba(16, 185, 129, 0.16), transparent 40%),
     linear-gradient(180deg, #f8fbff 0%, #eaf4ff 100%);
   overflow: hidden;
+  position: relative;
 }
 
 .imaging-3d-viewer canvas {
@@ -1776,8 +1784,37 @@ button,
   color: var(--text-secondary);
 }
 
+.imaging-3d-model-caption {
+  margin-bottom: 0.8rem;
+  font-size: 0.96rem;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.imaging-hint-mobile {
+  display: none;
+}
+
 @media (max-width: 768px) {
   .imaging-3d-viewer {
     min-height: 300px;
+  }
+
+  .imaging-3d-model-caption {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .imaging-3d-hint {
+    font-size: 0.84rem;
+    line-height: 1.45;
+  }
+
+  .imaging-hint-desktop {
+    display: none;
+  }
+
+  .imaging-hint-mobile {
+    display: inline;
   }
 }

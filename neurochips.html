@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="de">
-<head><meta charset="utf-8" /><title>Neurochips & BCIs – MedTechGuide</title><meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="stylesheet" href="style.css" /></head>
+<head><meta charset="utf-8" /><title>Neurochips & BCIs – MedTechGuide</title><meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="stylesheet" href="style.css" /><script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.163.0/build/three.module.js","three/addons/":"https://unpkg.com/three@0.163.0/examples/jsm/"}}</script></head>
 <body>
   <!-- ♿ ACCESSIBILITY: Skip to Content Link -->
   <a href="#main-content" class="skip-to-content">Zum Inhalt springen</a>
@@ -38,6 +38,19 @@
     <section class="section-card">
       <h2>Kurz erklärt</h2>
       <p>Neurochips sind feinste Elektroden (Durchmesser < 1 mm), die ins Gehirngewebe oder an die Oberfläche implantiert werden. Sie messen neuronale Aktivität (Spikes von Neuronen) und/oder stimulieren Neuronen elektrisch. Machine Learning dekodiert diese Signale in Befehle (z.B. "Arm bewegen") oder therapeutische Parameter.</p>
+    </section>
+    <section class="section-card imaging-3d-card" data-three-viewer data-model-label="Neurochip-GLB" data-model-path="data/models/neurochip.glb" data-fallback-model="neurochip" data-target-size="1.8">
+      <h2>3D-Modell: Neurochip</h2>
+      <p>Hier wird die passende Neurochip-GLB aus <strong>data/models/neurochip.glb</strong> geladen. Wenn keine Datei vorhanden ist, bleibt ein programmiertes Neurochip-Fallback sichtbar.</p>
+      <div class="imaging-3d-controls" role="group" aria-label="Steuerung fuer das 3D-Modell des Neurochips">
+        <button type="button" data-action="reload">GLB neu laden</button>
+        <button type="button" data-action="reset">Kamera reset</button>
+        <button type="button" data-action="autorotate" aria-pressed="false">Auto-Rotate aus</button>
+        <button type="button" data-action="wireframe" aria-pressed="false">Wireframe aus</button>
+      </div>
+      <p class="imaging-3d-status" aria-live="polite">3D-Viewer wird initialisiert...</p>
+      <div class="imaging-3d-viewer" aria-label="Interaktiver 3D-Viewer fuer Neurochip"></div>
+      <p class="imaging-3d-hint">Steuerung: Linke Maustaste drehen, Mausrad zoomen, rechte Maustaste verschieben.</p>
     </section>
     <figure class="section-image">
       <img src="images/neurochips-1.jpg" alt="Neurochips und Brain-Computer Interfaces" />
@@ -110,6 +123,7 @@
   </main>
   <footer class="site-footer"><div class="container"><p>&copy; 2026 MedTechGuide – Schulprojekt HTL Informatik</p><p><a href="quellen.html">Über die wissenschaftlichen Quellen</a></p></div></footer>
   <button class="scroll-to-top" id="scrollToTopBtn" aria-label="Nach oben scrollen">↑</button>
+  <script type="module" src="js/topic-3d-viewer.js"></script>
   <script src="script.js"></script>
   <script>window.addEventListener("load", () => { const loader = document.getElementById("loader"); if (loader) { loader.classList.add("hidden"); setTimeout(() => { loader.style.display = "none"; }, 500); } setActiveNavLink(); setRelatedLinks('neurochips'); });</script>
 </body>

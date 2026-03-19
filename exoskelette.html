@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="de">
-<head><meta charset="utf-8" /><title>Exoskelette – MedTechGuide</title><meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="stylesheet" href="style.css" /></head>
+<head><meta charset="utf-8" /><title>Exoskelette – MedTechGuide</title><meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="stylesheet" href="style.css" /><script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.163.0/build/three.module.js","three/addons/":"https://unpkg.com/three@0.163.0/examples/jsm/"}}</script></head>
 <body>
   <!-- ♿ ACCESSIBILITY: Skip to Content Link -->
   <a href="#main-content" class="skip-to-content">Zum Inhalt springen</a>
@@ -38,6 +38,19 @@
     <section class="section-card">
       <h2>Kurz erklärt</h2>
       <p>Ein Exoskelett besteht aus: <strong>Sensoren</strong> (messen Körperposition, Muskelaktivität), <strong>Aktuatoren</strong> (Motor-Gelenke), <strong>Struktur</strong> (Rahmen), <strong>Batterie</strong>, <strong>Kontrolle</strong> (Algorithmus). Der Algorithmus entscheidet, wann und wie viel Kraft die Motoren aufbringen sollen.</p>
+    </section>
+    <section class="section-card imaging-3d-card" data-three-viewer data-model-label="BMW-GLB" data-model-path="data/models/bmw.glb" data-fallback-model="bmw" data-target-size="2.45">
+      <h2>3D-Modell: BMW GLB</h2>
+      <p>Auf dieser Seite wird wie gewuenscht die BMW-GLB aus <strong>data/models/bmw.glb</strong> geladen. Falls die Datei noch fehlt, zeigt die Seite ein programmiertes Fahrzeug-Fallback.</p>
+      <div class="imaging-3d-controls" role="group" aria-label="Steuerung fuer das 3D-Modell BMW GLB">
+        <button type="button" data-action="reload">GLB neu laden</button>
+        <button type="button" data-action="reset">Kamera reset</button>
+        <button type="button" data-action="autorotate" aria-pressed="false">Auto-Rotate aus</button>
+        <button type="button" data-action="wireframe" aria-pressed="false">Wireframe aus</button>
+      </div>
+      <p class="imaging-3d-status" aria-live="polite">3D-Viewer wird initialisiert...</p>
+      <div class="imaging-3d-viewer" aria-label="Interaktiver 3D-Viewer fuer BMW GLB"></div>
+      <p class="imaging-3d-hint">Steuerung: Linke Maustaste drehen, Mausrad zoomen, rechte Maustaste verschieben.</p>
     </section>
     <figure class="section-image">
       <img src="images/exoskelette-1.jpg" alt="Exoskelette und motorische Unterstützungssysteme" />
@@ -110,6 +123,7 @@
   </main>
   <footer class="site-footer"><div class="container"><p>&copy; 2026 MedTechGuide – Schulprojekt HTL Informatik</p><p><a href="quellen.html">Über die wissenschaftlichen Quellen</a></p></div></footer>
   <button class="scroll-to-top" id="scrollToTopBtn" aria-label="Nach oben scrollen">↑</button>
+  <script type="module" src="js/topic-3d-viewer.js"></script>
   <script src="script.js"></script>
   <script>window.addEventListener("load", () => { const loader = document.getElementById("loader"); if (loader) { loader.classList.add("hidden"); setTimeout(() => { loader.style.display = "none"; }, 500); } setActiveNavLink(); setRelatedLinks('exoskelette'); });</script>
 </body>

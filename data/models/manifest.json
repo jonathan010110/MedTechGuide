@@ -14,6 +14,26 @@
       "id": "ultraschall-sonde-glb",
       "label": "Ultraschallsonde Realistisch",
       "path": "data/models/ultraschall-sonde.glb"
+    },
+    {
+      "id": "insulinpumpe-glb",
+      "label": "Insulinpumpe",
+      "path": "data/models/insulinpumpe.glb"
+    },
+    {
+      "id": "herz-glb",
+      "label": "Herz",
+      "path": "data/models/herz.glb"
+    },
+    {
+      "id": "neurochip-glb",
+      "label": "Neurochip",
+      "path": "data/models/neurochip.glb"
+    },
+    {
+      "id": "bmw-glb",
+      "label": "BMW GLB",
+      "path": "data/models/bmw.glb"
     }
   ]
 }

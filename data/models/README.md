@@ -7,6 +7,10 @@ Beispiel:
 - `data/models/ct-scanner.glb`
 - `data/models/mrt-geraet.glb`
 - `data/models/ultraschall-sonde.glb`
+- `data/models/insulinpumpe.glb`
+- `data/models/herz.glb`
+- `data/models/neurochip.glb`
+- `data/models/bmw.glb`
 
 Im Projekt sind bereits drei vorbereitete Manifest-Eintraege vorhanden. Wenn du die Dateien mit diesen Namen in diesen Ordner legst, erscheinen sie automatisch im Viewer:
 
