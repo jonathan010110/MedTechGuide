@@ -145,6 +145,48 @@ function createNeurochipModel(refs) {
   return root;
 }
 
+function createDnaHelixFallbackModel(refs) {
+  const root = new THREE.Group();
+  const strandMaterialA = makeMaterial(0x2563eb, 0.35, 0.35, 0x1d4ed8, 0.2);
+  const strandMaterialB = makeMaterial(0xef4444, 0.35, 0.35, 0xb91c1c, 0.2);
+  const rungMaterial = makeMaterial(0xf8fafc, 0.55, 0.18, 0x93c5fd, 0.08);
+
+  const steps = 40;
+  const radius = 0.33;
+  const totalHeight = 1.9;
+
+  for (let index = 0; index <= steps; index += 1) {
+    const t = index / steps;
+    const angle = t * Math.PI * 8;
+    const y = t * totalHeight;
+    const xA = Math.cos(angle) * radius;
+    const zA = Math.sin(angle) * radius;
+    const xB = Math.cos(angle + Math.PI) * radius;
+    const zB = Math.sin(angle + Math.PI) * radius;
+
+    const nodeA = new THREE.Mesh(new THREE.SphereGeometry(0.04, 14, 14), strandMaterialA);
+    nodeA.position.set(xA, y, zA);
+    root.add(nodeA);
+
+    const nodeB = new THREE.Mesh(new THREE.SphereGeometry(0.04, 14, 14), strandMaterialB);
+    nodeB.position.set(xB, y, zB);
+    root.add(nodeB);
+
+    if (index % 2 === 0) {
+      const rung = new THREE.Mesh(new THREE.CylinderGeometry(0.016, 0.016, radius * 1.95, 10), rungMaterial);
+      const midpoint = new THREE.Vector3((xA + xB) / 2, y, (zA + zB) / 2);
+      rung.position.copy(midpoint);
+      rung.lookAt(new THREE.Vector3(xA, y, zA));
+      rung.rotateX(Math.PI / 2);
+      root.add(rung);
+    }
+  }
+
+  root.position.y = 0.05;
+  refs.dnaHelix = root;
+  return root;
+}
+
 function createBMWFallbackModel(refs) {
   const root = new THREE.Group();
 
@@ -327,6 +369,7 @@ const fallbackFactories = {
   'insulin-pump': createInsulinPumpModel,
   heart: createHeartModel,
   neurochip: createNeurochipModel,
+  'dna-helix': createDnaHelixFallbackModel,
   bmw: createBMWFallbackModel,
   'ct-scanner': createCTScannerFallbackModel,
   'mrt-scanner': createMRTScannerFallbackModel,
@@ -416,6 +459,7 @@ function buildViewer(section) {
     screen: null,
     heart: null,
     chip: null,
+    dnaHelix: null,
     car: null,
     ctRing: null,
     ctTable: null,
@@ -496,6 +540,7 @@ function buildViewer(section) {
     refs.screen = null;
     refs.heart = null;
     refs.chip = null;
+    refs.dnaHelix = null;
     refs.car = null;
     refs.ctRing = null;
     refs.ctTable = null;
@@ -519,6 +564,7 @@ function buildViewer(section) {
         refs.screen = null;
         refs.heart = null;
         refs.chip = null;
+        refs.dnaHelix = null;
         refs.car = null;
         refs.ctRing = null;
         refs.ctTable = null;
@@ -574,6 +620,10 @@ function buildViewer(section) {
 
     if (refs.chip) {
       refs.chip.rotation.z = Math.sin(time * 1.4) * 0.18;
+    }
+
+    if (refs.dnaHelix) {
+      refs.dnaHelix.rotation.y = time * 0.65;
     }
 
     if (refs.car) {
