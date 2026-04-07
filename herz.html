@@ -58,7 +58,7 @@
 
     <section class="section-card imaging-3d-card" data-three-viewer data-model-label="Herz-GLB" data-model-path="data/models/herz.glb" data-fallback-model="heart" data-target-size="1.75">
       <h2>3D-Modell: Herz</h2>
-      <p>Hier wird die passende Herz-GLB aus <strong>data/models/herz.glb</strong> geladen. Falls sie fehlt, zeigt die Seite ein programmiertes Herzmodell als Fallback.</p>
+      <p class="imaging-3d-model-caption">Hier siehst du ein Herzmodell mit den wichtigsten anatomischen Bereichen. Es hilft, den Aufbau des Organs und seine zentrale Rolle im Blutkreislauf besser zu verstehen.</p>
       <div class="imaging-3d-controls" role="group" aria-label="Steuerung fuer das 3D-Modell des Herzens">
         <button type="button" data-action="reload">GLB neu laden</button>
         <button type="button" data-action="reset">Kamera reset</button>
@@ -67,7 +67,10 @@
       </div>
       <p class="imaging-3d-status" aria-live="polite">3D-Viewer wird initialisiert...</p>
       <div class="imaging-3d-viewer" aria-label="Interaktiver 3D-Viewer fuer Herz"></div>
-      <p class="imaging-3d-hint">Steuerung: Linke Maustaste drehen, Mausrad zoomen, rechte Maustaste verschieben.</p>
+      <p class="imaging-3d-hint">
+        <span class="imaging-hint-desktop">Steuerung: Linke Maustaste drehen, Mausrad zoomen, rechte Maustaste verschieben.</span>
+        <span class="imaging-hint-mobile">Handy: Mit einem Finger drehen, mit zwei Fingern zoomen und verschieben.</span>
+      </p>
     </section>
 
     <!-- IMAGE: Herz-Kreislauf -->

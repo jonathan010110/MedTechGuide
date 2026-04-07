@@ -80,7 +80,7 @@
 
     <section class="section-card imaging-3d-card" data-three-viewer data-model-label="Insulinpumpe" data-model-path="data/models/insulinpumpe.glb" data-fallback-model="insulin-pump" data-target-size="1.65">
       <h2>3D-Modell: Insulinpumpe</h2>
-      <p>Hier wird die passende Insulinpumpen-GLB aus <strong>data/models/insulinpumpe.glb</strong> geladen. Wenn die Datei noch fehlt, wird automatisch ein programmiertes Fallback angezeigt.</p>
+      <p class="imaging-3d-model-caption">Dieses Modell zeigt eine Insulinpumpe. Sie gibt kontinuierlich kleine Insulinmengen ab und unterstuetzt so eine stabile Blutzuckereinstellung im Alltag.</p>
       <div class="imaging-3d-controls" role="group" aria-label="Steuerung fuer das 3D-Modell der Insulinpumpe">
         <button type="button" data-action="reload">GLB neu laden</button>
         <button type="button" data-action="reset">Kamera reset</button>
@@ -89,7 +89,10 @@
       </div>
       <p class="imaging-3d-status" aria-live="polite">3D-Viewer wird initialisiert...</p>
       <div class="imaging-3d-viewer" aria-label="Interaktiver 3D-Viewer fuer Insulinpumpe"></div>
-      <p class="imaging-3d-hint">Steuerung: Linke Maustaste drehen, Mausrad zoomen, rechte Maustaste verschieben.</p>
+      <p class="imaging-3d-hint">
+        <span class="imaging-hint-desktop">Steuerung: Linke Maustaste drehen, Mausrad zoomen, rechte Maustaste verschieben.</span>
+        <span class="imaging-hint-mobile">Handy: Mit einem Finger drehen, mit zwei Fingern zoomen und verschieben.</span>
+      </p>
     </section>
 
     <!-- IMAGE: Diabetes Technologies -->

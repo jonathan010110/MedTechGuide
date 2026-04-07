@@ -41,7 +41,7 @@
     </section>
     <section class="section-card imaging-3d-card" data-three-viewer data-model-label="BMW-GLB" data-model-path="data/models/bmw.glb" data-fallback-model="bmw" data-target-size="2.45">
       <h2>3D-Modell: BMW GLB</h2>
-      <p>Auf dieser Seite wird wie gewuenscht die BMW-GLB aus <strong>data/models/bmw.glb</strong> geladen. Falls die Datei noch fehlt, zeigt die Seite ein programmiertes Fahrzeug-Fallback.</p>
+      <p class="imaging-3d-model-caption">Dieses Modell zeigt ein Fahrzeug als Praxisbeispiel fuer Assistenz- und Sensorsysteme im Mobilitaetsumfeld. So wird sichtbar, wie technische Komponenten in reale Anwendungen integriert werden.</p>
       <div class="imaging-3d-controls" role="group" aria-label="Steuerung fuer das 3D-Modell BMW GLB">
         <button type="button" data-action="reload">GLB neu laden</button>
         <button type="button" data-action="reset">Kamera reset</button>
@@ -50,7 +50,10 @@
       </div>
       <p class="imaging-3d-status" aria-live="polite">3D-Viewer wird initialisiert...</p>
       <div class="imaging-3d-viewer" aria-label="Interaktiver 3D-Viewer fuer BMW GLB"></div>
-      <p class="imaging-3d-hint">Steuerung: Linke Maustaste drehen, Mausrad zoomen, rechte Maustaste verschieben.</p>
+      <p class="imaging-3d-hint">
+        <span class="imaging-hint-desktop">Steuerung: Linke Maustaste drehen, Mausrad zoomen, rechte Maustaste verschieben.</span>
+        <span class="imaging-hint-mobile">Handy: Mit einem Finger drehen, mit zwei Fingern zoomen und verschieben.</span>
+      </p>
     </section>
     <figure class="section-image">
       <img src="images/exoskelette-1.jpg" alt="Exoskelette und motorische Unterstützungssysteme" />
