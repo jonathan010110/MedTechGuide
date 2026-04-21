@@ -444,7 +444,6 @@ function buildViewer(section) {
   const btnReload = section.querySelector('[data-action="reload"]');
   const btnReset = section.querySelector('[data-action="reset"]');
   const btnRotate = section.querySelector('[data-action="autorotate"]');
-  const btnWireframe = section.querySelector('[data-action="wireframe"]');
   const title = section.dataset.modelLabel || '3D-Modell';
   const modelPath = section.dataset.modelPath || '';
   const fallbackKey = section.dataset.fallbackModel || '';
@@ -500,7 +499,6 @@ function buildViewer(section) {
 
   let currentModel = null;
   let autoRotate = false;
-  let wireframe = false;
   let pulseEnabled = false;
 
   function setStatus(text, isError = false) {
@@ -526,14 +524,13 @@ function buildViewer(section) {
     normalizeModel(nextModel, targetSize, yOffset);
     currentModel = nextModel;
     scene.add(currentModel);
-    setWireframe(currentModel, wireframe);
     fitCameraToObject(camera, controls, currentModel);
   }
 
   function loadFallback(reasonText) {
     const factory = fallbackFactories[fallbackKey];
     if (!factory) {
-      setStatus(reasonText || 'Kein Fallback-Modell verfuegbar.', true);
+      setStatus(reasonText || 'Modell konnte nicht geladen werden.', true);
       return;
     }
 
@@ -553,11 +550,11 @@ function buildViewer(section) {
 
   function loadModel() {
     if (!modelPath) {
-      loadFallback('Kein GLB-Pfad gesetzt. Fallback aktiv.');
+      loadFallback('Kein Modellpfad gesetzt. Fallback aktiv.');
       return;
     }
 
-    setStatus(`${title} wird geladen...`);
+    setStatus('Modell wird geladen...');
     loader.load(
       modelPath,
       (gltf) => {
@@ -571,11 +568,11 @@ function buildViewer(section) {
         refs.mrtRing = null;
         refs.usProbe = null;
         replaceModel(gltf.scene);
-        setStatus(`${title} als GLB geladen.`);
+        setStatus('Modell bereit.');
       },
       undefined,
       () => {
-        loadFallback(`${title} GLB nicht gefunden unter ${modelPath}. Fallback aktiv.`);
+        loadFallback('Das Modell ist derzeit nicht verfuegbar. Fallback aktiv.');
       }
     );
   }
@@ -595,14 +592,7 @@ function buildViewer(section) {
     controls.autoRotate = autoRotate;
     controls.autoRotateSpeed = 1.2;
     btnRotate.setAttribute('aria-pressed', autoRotate ? 'true' : 'false');
-    btnRotate.textContent = autoRotate ? 'Auto-Rotate an' : 'Auto-Rotate aus';
-  });
-
-  btnWireframe?.addEventListener('click', () => {
-    wireframe = !wireframe;
-    setWireframe(currentModel, wireframe);
-    btnWireframe.setAttribute('aria-pressed', wireframe ? 'true' : 'false');
-    btnWireframe.textContent = wireframe ? 'Wireframe an' : 'Wireframe aus';
+    btnRotate.textContent = autoRotate ? 'Rotation an' : 'Rotation aus';
   });
 
   const animate = (timeMs) => {
