@@ -1,8 +1,8 @@
 # Elevator Pitch – MedTechGuide
 
-## „Medizintechnik für alle – verständlich, übersichtlich, interaktiv."
+## âMedizintechnik für alle – verständlich, übersichtlich, interaktiv."
 
-> ⏱️ Redezeit: ca. 2–3 Minuten (~320 Wörter)
+> â±ï¸ Redezeit: ca. 2–3 Minuten (~320 Wörter)
 
 ---
 
@@ -39,7 +39,7 @@ MedTechGuide wurde konsequent nach den Prinzipien des **Design of Digital Produc
 - **Informationsarchitektur** – 10 Kategorien, Suche und Vergleichsmodus für schnelle Navigation
 - **Interaktionsdesign** – Quiz und Selbsttests fördern aktives Lernen
 - **Responsives Design** – funktioniert auf Smartphone, Tablet und PC
-- **Visuelles Design** – ruhiges Blau-Weiß-Schema für Vertrauen und Übersicht
+- **Visuelles Design** – ruhiges Blau-WeiÃ-Schema für Vertrauen und Ãbersicht
 
 MedTechGuide ist damit mehr als eine Informationsseite – es ist ein strukturiertes, nutzerorientiertes digitales Produkt.
 
@@ -75,4 +75,4 @@ Die Webanwendung trifft einen konkreten Bedarf – und senkt jede Einstiegshürd
 
 **MedTechGuide** – weil jeder das Recht hat, die eigene Gesundheit zu verstehen.
 
-_Webanwendung · 10 Kategorien · Vergleichsmodus · Quiz · 7 Selbsttests · Volltext-Suche_
+_Webanwendung Â· 10 Kategorien Â· Vergleichsmodus Â· Quiz Â· 7 Selbsttests Â· Volltext-Suche_

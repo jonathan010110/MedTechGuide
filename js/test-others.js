@@ -72,7 +72,7 @@ const AnxietyTest = {
     // KOGNITIVE SYMPTOME (5 Fragen)
     { id: 36, category: 'Kognitiv', question: 'Ich kann meine ängstlichen Gedanken nicht stoppen.' },
     { id: 37, category: 'Kognitiv', question: 'Ich stelle mir das Schlimmste vor.' },
-    { id: 38, category: 'Kognitiv', question: 'Ich habe schwarzweiß-Denken beim Umgang mit Unsicherheit.' },
+    { id: 38, category: 'Kognitiv', question: 'Ich habe schwarzweiÃ-Denken beim Umgang mit Unsicherheit.' },
     { id: 39, category: 'Kognitiv', question: 'Ich kann mich schwer konzentrieren wegen Angstgedanken.' },
     { id: 40, category: 'Kognitiv', question: 'Mein Gedächtnis ist wegen Angst beeinträchtigt.' }
   ],
@@ -115,7 +115,7 @@ const AnxietyTest = {
 
   medicalDisclaimer: `
     <div style="background: #fef2f2; border-left: 4px solid #ef4444; padding: 1rem; margin-top: 2rem; border-radius: 8px;">
-      <p style="margin: 0; font-weight: 600; color: #7f1d1d;">⚠️ Wichtiger Hinweis:</p>
+      <p style="margin: 0; font-weight: 600; color: #7f1d1d;">â ï¸ Wichtiger Hinweis:</p>
       <p style="margin: 0.5rem 0 0 0; color: #5f3738; font-size: 0.95rem;">
         Dieser Test dient nur zur groben Orientierung und ersetzt keine medizinische Diagnose. Bei anhaltenden oder belastenden Beschwerden wenden Sie sich bitte an eine Ärztin, einen Arzt oder eine psychologische Fachperson.
       </p>
@@ -158,7 +158,7 @@ const BurnoutTest = {
     { id: 16, category: 'Depersonalisierung', question: 'Mich interessiert nicht mehr, wie andere mir ergent.' },
 
     // REDUZIERTE LEISTUNG (8 Fragen)
-    { id: 17, category: 'Leistung', question: 'Ich kann meine Arbeit nicht mehr so effizient bewältigenю' },
+    { id: 17, category: 'Leistung', question: 'Ich kann meine Arbeit nicht mehr so effizient bewältigenÑ' },
     { id: 18, category: 'Leistung', question: 'Ich verliere Vertrauen in meine Fähigkeiten.' },
     { id: 19, category: 'Leistung', question: 'Meine Produktivität sinkt.' },
     { id: 20, category: 'Leistung', question: 'Ich kann mich bei der Arbeit nicht konzentrieren.' },
@@ -185,7 +185,7 @@ const BurnoutTest = {
 
     // SELBSTPFLEGE UND HOBBYS (4 Fragen)
     { id: 37, category: 'Selbstpflege', question: 'Ich vernachlässige meine Selbstpflege (Schlaf, Ernährung, Sport).' },
-    { id: 38, category: 'Selbstpflege', question: 'Ich hab Zeit für Hobbys und zeitgemäße Aktivitäten gegeben.' },
+    { id: 38, category: 'Selbstpflege', question: 'Ich hab Zeit für Hobbys und zeitgemäÃe Aktivitäten gegeben.' },
     { id: 39, category: 'Selbstpflege', question: 'Ich vergesse, mich selbst zu kümmern.' },
     { id: 40, category: 'Selbstpflege', question: 'Mein soziallives ist mangelhaft geworden.' }
   ],
@@ -228,7 +228,7 @@ const BurnoutTest = {
 
   medicalDisclaimer: `
     <div style="background: #fef2f2; border-left: 4px solid #ef4444; padding: 1rem; margin-top: 2rem; border-radius: 8px;">
-      <p style="margin: 0; font-weight: 600; color: #7f1d1d;">⚠️ Wichtiger Hinweis:</p>
+      <p style="margin: 0; font-weight: 600; color: #7f1d1d;">â ï¸ Wichtiger Hinweis:</p>
       <p style="margin: 0.5rem 0 0 0; color: #5f3738; font-size: 0.95rem;">
         Dieser Test dient nur zur groben Orientierung und ersetzt keine medizinische Diagnose. Bei anhaltenden oder belastenden Beschwerden wenden Sie sich bitte an eine Ärztin, einen Arzt oder eine psychologische Fachperson.
       </p>
@@ -251,16 +251,16 @@ const StressTest = {
 
   questions: [
     // WAHRNEHMUNG VON KONTROLLIERBARKEIT (5 Fragen)
-    { id: 1, category: 'Kontrolle', question: 'Ich fühle mich überfordert von Ereignissen außerhalb meiner Kontrolle.' },
+    { id: 1, category: 'Kontrolle', question: 'Ich fühle mich überfordert von Ereignissen auÃerhalb meiner Kontrolle.' },
     { id: 2, category: 'Kontrolle', question: 'Ich bin unsicher, wie ich Probleme bewältigen soll.' },
     { id: 3, category: 'Kontrolle', question: 'Dinge werden schneller schlecht als ich sie reparieren kann.' },
     { id: 4, category: 'Kontrolle', question: 'Ich kann Herausforderungen in meinem Leben nicht bewältigen.' },
     { id: 5, category: 'Kontrolle', question: 'Ich fühle mich der Situation nicht gewachsen.' },
 
     // LEBENSVERÄNDERUNGEN (5 Fragen)
-    { id: 6, category: 'Veränderungen', question: 'Ich erlebe große Veränderungen in meinem Leben.' },
+    { id: 6, category: 'Veränderungen', question: 'Ich erlebe groÃe Veränderungen in meinem Leben.' },
     { id: 7, category: 'Veränderungen', question: 'Meine Lebensumstände haben sich erheblich verändert.' },
-    { id: 8, category: 'Veränderungen', question: 'Ich habe schwierige persönliche Übergänge erlebt.' },
+    { id: 8, category: 'Veränderungen', question: 'Ich habe schwierige persönliche Ãbergänge erlebt.' },
     { id: 9, category: 'Veränderungen', question: 'Unerwartete Ereignisse haben mein Leben beeinflusst.' },
     { id: 10, category: 'Veränderungen', question: 'Ich versuche, mich an neue Situationen anzupassen.' },
 
@@ -323,15 +323,15 @@ const StressTest = {
       return {
         level: 'Leicht-Moderat',
         color: '#f59e0b',
-        description: 'Leicht bis mäßige Stressbelastung',
-        text: 'Sie zeigen leichte bis mäßige Stressbelastung. Achtsamkeit und Entspannungstechniken werden empfohlen.'
+        description: 'Leicht bis mäÃige Stressbelastung',
+        text: 'Sie zeigen leichte bis mäÃige Stressbelastung. Achtsamkeit und Entspannungstechniken werden empfohlen.'
       };
     } else if (score <= 50) {
       return {
         level: 'Moderat-Schwer',
         color: '#f97316',
-        description: 'Mäßig bis schwere Stressbelastung',
-        text: 'Sie zeigen mäßig bis schwere Stressbelastung. Professionelle Unterstützung wird empfohlen.'
+        description: 'MäÃig bis schwere Stressbelastung',
+        text: 'Sie zeigen mäÃig bis schwere Stressbelastung. Professionelle Unterstützung wird empfohlen.'
       };
     } else {
       return {
@@ -345,7 +345,7 @@ const StressTest = {
 
   medicalDisclaimer: `
     <div style="background: #fef2f2; border-left: 4px solid #ef4444; padding: 1rem; margin-top: 2rem; border-radius: 8px;">
-      <p style="margin: 0; font-weight: 600; color: #7f1d1d;">⚠️ Wichtiger Hinweis:</p>
+      <p style="margin: 0; font-weight: 600; color: #7f1d1d;">â ï¸ Wichtiger Hinweis:</p>
       <p style="margin: 0.5rem 0 0 0; color: #5f3738; font-size: 0.95rem;">
         Dieser Test dient nur zur groben Orientierung und ersetzt keine medizinische Diagnose. Bei anhaltenden oder belastenden Beschwerden wenden Sie sich bitte an eine Ärztin, einen Arzt oder eine psychologische Fachperson.
       </p>
@@ -381,7 +381,7 @@ const SleepQualityTest = {
     { id: 9, category: 'Durchschlafen', question: 'Ich erlebe lange Zeiträume des Wachseins in der Nacht.' },
     { id: 10, category: 'Durchschlafen', question: 'Mein Schlaf ist fragmentiert oder unterbrochen.' },
 
-    // FRÜHMORGLICHES ERWACHEN (5 Fragen)
+    // FRÃHMORGLICHES ERWACHEN (5 Fragen)
     { id: 11, category: 'Frühes Aufwachen', question: 'Ich wache sehr früh am Morgen auf (vor 5 Uhr).' },
     { id: 12, category: 'Frühes Aufwachen', question: 'Ich kann nicht länger schlafen, wenn ich früh aufwache.' },
     { id: 13, category: 'Frühes Aufwachen', question: 'Ich fühle mich tagsüber müde wegen frühem Aufwachen.' },
@@ -417,8 +417,8 @@ const SleepQualityTest = {
     { id: 35, category: 'Hygiene', question: 'Ich verwende elektronische Geräte vor dem Schlafengehen.' },
 
     // SCHLAFMUSTER (5 Fragen)
-    { id: 36, category: 'Muster', question: 'Meine Schlafens- und Aufwachzeiten sind unregelmäßig.' },
-    { id: 37, category: 'Muster', question: 'Ich arbeite in Schichten oder habe unregelmäßige Arbeitszeiten.' },
+    { id: 36, category: 'Muster', question: 'Meine Schlafens- und Aufwachzeiten sind unregelmäÃig.' },
+    { id: 37, category: 'Muster', question: 'Ich arbeite in Schichten oder habe unregelmäÃige Arbeitszeiten.' },
     { id: 38, category: 'Muster', question: 'Ich schlafe zu viel am Wochenende (Social Jet Lag).' },
     { id: 39, category: 'Muster', question: 'Ich reise häufig und muss meine Schlafmuster anpassen.' },
     { id: 40, category: 'Muster', question: 'Mein Körper hat keine konsistente Schlaf-Wach-Routine.' }
@@ -462,7 +462,7 @@ const SleepQualityTest = {
 
   medicalDisclaimer: `
     <div style="background: #fef2f2; border-left: 4px solid #ef4444; padding: 1rem; margin-top: 2rem; border-radius: 8px;">
-      <p style="margin: 0; font-weight: 600; color: #7f1d1d;">⚠️ Wichtiger Hinweis:</p>
+      <p style="margin: 0; font-weight: 600; color: #7f1d1d;">â ï¸ Wichtiger Hinweis:</p>
       <p style="margin: 0.5rem 0 0 0; color: #5f3738; font-size: 0.95rem;">
         Dieser Test dient nur zur groben Orientierung und ersetzt keine medizinische Diagnose. Bei anhaltenden oder belastenden Beschwerden wenden Sie sich bitte an eine Ärztin, einen Arzt oder eine psychologische Fachperson.
       </p>

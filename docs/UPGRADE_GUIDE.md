@@ -1,22 +1,22 @@
-# 🚀 MedTechGuide Website Refactoring & Upgrade
+# ð MedTechGuide Website Refactoring & Upgrade
 
-## Übersicht der Implementierten Verbesserungen
+## Ãbersicht der Implementierten Verbesserungen
 
 Dieses Projekt wurde umfassend aufgewertet mit modernen Web-Standards für **Performance, Accessibility, UX/UI** und **Interaktivität**.
 
 ---
 
-## 📋 1. GLOBALE SUCHFUNKTION (Vollständig neu implementiert)
+## ð 1. GLOBALE SUCHFUNKTION (Vollständig neu implementiert)
 
 ### Was wurde verbessert?
-- ✅ **Globale Suche** über ALLE Seiten der Website (nicht nur aktuell)
-- ✅ **Search Index System** via `search-index.json`
-- ✅ **Live-Suche** mit Debouncing für bessere Performance
-- ✅ **Intelligentes Ranking** nach Relevanz/Score
-- ✅ **Dropdown-UI** mit Seitennamen und Preview-Text
-- ✅ **Highlight auf Zielseite** wenn Suchlink angeklickt wird
-- ✅ **Leere-Zustand-Anzeige** ("Keine Ergebnisse gefunden")
-- ✅ **Keyboard-Support** & Accessibility
+- â **Globale Suche** über ALLE Seiten der Website (nicht nur aktuell)
+- â **Search Index System** via `search-index.json`
+- â **Live-Suche** mit Debouncing für bessere Performance
+- â **Intelligentes Ranking** nach Relevanz/Score
+- â **Dropdown-UI** mit Seitennamen und Preview-Text
+- â **Highlight auf Zielseite** wenn Suchlink angeklickt wird
+- â **Leere-Zustand-Anzeige** ("Keine Ergebnisse gefunden")
+- â **Keyboard-Support** & Accessibility
 
 ### Neue Dateien:
 - **`search.js`** - Vollständiger Suchmotor mit globalen Features
@@ -29,27 +29,27 @@ Dieses Projekt wurde umfassend aufgewertet mit modernen Web-Standards für **Per
 - `.search-highlight` - Highlight markierter Text auf Zielseite
 
 ### Technische Details:
-- **Normalisierung**: Umlaute (ä→a), Groß/Kleinschreibung
+- **Normalisierung**: Umlaute (äâa), GroÃ/Kleinschreibung
 - **Scoring-System**: Titel (4 Punkte) > Keywords (2) > Content (1)
 - **Performance**: Debounce 150ms, max 10 Ergebnisse
 - **Memory**: SessionStorage für Highlighting nach Navigation
 
 ---
 
-## 🧭 2. NAVIGATION & UX - STARK VERBESSERT
+## ð§­ 2. NAVIGATION & UX - STARK VERBESSERT
 
 ### Was wurde verbessert?
-- ✅ **Mobile Hamburger-Menü** (automatisch auf <768px)
-- ✅ **Sticky Navbar** beim Scrollen mit Shadow
-- ✅ **Aktive Seite visuell hervorheben** 
-- ✅ **Bessere Hover-Effekte** mit Animationen
-- ✅ **Responsive Design** für alle Screen-Größen
-- ✅ **Touch-freundliche Links** (mindestens 44x44px)
+- â **Mobile Hamburger-Menü** (automatisch auf <768px)
+- â **Sticky Navbar** beim Scrollen mit Shadow
+- â **Aktive Seite visuell hervorheben** 
+- â **Bessere Hover-Effekte** mit Animationen
+- â **Responsive Design** für alle Screen-GröÃen
+- â **Touch-freundliche Links** (mindestens 44x44px)
 
 ### Mobile Menü Features:
 - **Hamburger Button** wird automatisch generiert via JavaScript
-- **Animated Toggle** mit Rotation-Effekt (☰ → ✕)
-- **Auto-Close** bei Link-Klick oder Click außerhalb
+- **Animated Toggle** mit Rotation-Effekt (â° â â)
+- **Auto-Close** bei Link-Klick oder Click auÃerhalb
 - **Smooth Transitions** für alle Animationen
 
 ### Navigation CSS Updates:
@@ -67,14 +67,14 @@ Dieses Projekt wurde umfassend aufgewertet mit modernen Web-Standards für **Per
 
 ---
 
-## ⚡ 3. PERFORMANCE-OPTIMIERUNGEN
+## â¡ 3. PERFORMANCE-OPTIMIERUNGEN
 
 ### Was wurde implementiert?
-- ✅ **Lazy Loading** für Bilder (native + Fallback)
-- ✅ **Deferred Script Loading** (search, performance)
-- ✅ **Optimierte CSS** (minimal external dependencies)
-- ✅ **Performance Monitoring** (Dev Console Logs)
-- ✅ **Resource Hints** Infrastruktur (DNS Prefetch, Preload)
+- â **Lazy Loading** für Bilder (native + Fallback)
+- â **Deferred Script Loading** (search, performance)
+- â **Optimierte CSS** (minimal external dependencies)
+- â **Performance Monitoring** (Dev Console Logs)
+- â **Resource Hints** Infrastruktur (DNS Prefetch, Preload)
 
 ### Neue Datei:
 - **`performance.js`** - Lazy Loading, Monitoring, ResourceHints
@@ -93,17 +93,17 @@ logPerformanceMetrics()  // Dev-only Console Logs (localhost nur)
 
 ---
 
-## ♿ 4. ACCESSIBILITY-VERBESSERUNGEN
+## â¿ 4. ACCESSIBILITY-VERBESSERUNGEN
 
 ### Was wurde implementiert?
-- ✅ **Verbesserte Focus-Zustände** (3px solid outline)
-- ✅ **Skip-to-Content Link** (visible on focus)
-- ✅ **ARIA Labels** auf allen Buttons
-- ✅ **Besserer Link-Text** (underline, visited colors)
-- ✅ **Mindest-Touch-Targets** 44x44px
-- ✅ **Prefers-Reduced-Motion** Unterstützung
-- ✅ **Semantic HTML** (Header, Nav, Main, Footer immer)
-- ✅ **Color Contrast** WCAG AAA Standard
+- â **Verbesserte Focus-Zustände** (3px solid outline)
+- â **Skip-to-Content Link** (visible on focus)
+- â **ARIA Labels** auf allen Buttons
+- â **Besserer Link-Text** (underline, visited colors)
+- â **Mindest-Touch-Targets** 44x44px
+- â **Prefers-Reduced-Motion** Unterstützung
+- â **Semantic HTML** (Header, Nav, Main, Footer immer)
+- â **Color Contrast** WCAG AAA Standard
 
 ### CSS Accessibility Features:
 ```css
@@ -111,7 +111,7 @@ logPerformanceMetrics()  // Dev-only Console Logs (localhost nur)
 a:visited               // Besuchte Links in Violet
 @media (prefers-reduced-motion: reduce)  // Respect User Preferences
 code, pre               // Bessere Code-Lesbarkeit
-input:focus-visible     // Form Inputs mit großem Focus-Ring
+input:focus-visible     // Form Inputs mit groÃem Focus-Ring
 ```
 
 ### Best Practices implementiert:
@@ -122,7 +122,7 @@ input:focus-visible     // Form Inputs mit großem Focus-Ring
 
 ---
 
-## ✨ 5. INTERAKTIVITÄT & MODERNE UI
+## â¨ 5. INTERAKTIVITÄT & MODERNE UI
 
 ### Neue Animationen & Transitions:
 ```css
@@ -143,14 +143,14 @@ input:focus-visible     // Form Inputs mit großem Focus-Ring
 - **Tooltips**: Fade-In Scale Animation
 
 ### UX Details:
-- **Hover-Scale Klasse**: Cards vergrößern sich um 5%
+- **Hover-Scale Klasse**: Cards vergröÃern sich um 5%
 - **Hover-Lift Klasse**: Cards heben sich um 8px
 - **Button Feedback**: Visual auf Click, Disabled State Gray
 - **Color Transitions**: Fast (150ms) für responsives Gefühl
 
 ---
 
-## 📊 6. ERWEITERTE FEATURES
+## ð 6. ERWEITERTE FEATURES
 
 ### Filter-System:
 - Kategorie-Buttons (Alle, Diagnostik, Therapie, etc.)
@@ -160,7 +160,7 @@ input:focus-visible     // Form Inputs mit großem Focus-Ring
 ### Vergleichs-Modal:
 - Wähle bis zu 2 Devices zum Vergleich
 - Tabelle mit Specs
-- ESC zum Schließen
+- ESC zum SchlieÃen
 - Backdrop-Blur für Fokus
 
 ### Glossar-Tooltips:
@@ -174,7 +174,7 @@ input:focus-visible     // Form Inputs mit großem Focus-Ring
 
 ---
 
-## 🔧 TECHNISCHE IMPLEMENTIERUNG
+## ð§ TECHNISCHE IMPLEMENTIERUNG
 
 ### JavaScript Module:
 ```
@@ -196,36 +196,36 @@ performance.js      // Lazy Loading & Monitoring (NEW)
 ```
 
 ### Responsive Breakpoints:
-- **768px**: Tablet-Größe (Mobile Menu aktiviert)
+- **768px**: Tablet-GröÃe (Mobile Menu aktiviert)
 - **480px**: Small Mobile (Font-Sizing angepasst)
 - **1200px**: Desktop max-width
 
 ---
 
-## 📝 FILE-STRUKTUR
+## ð FILE-STRUKTUR
 
 ```
 c:\WMC\Projekt_25\
-├── index.html                    // Updated mit search.js, performance.js
-├── diabetes.html, allergie.html, ... // Themenseiten
-├── quellen.html
-├── style.css                     // 1600+ Zeilen, alle Features enthalten
-├── script.js                     // Erweitert mit Mobile Nav
-├── search.js                     // NEU - Globale Suchfunktion
-├── search-index.json             // NEU - Search Index
-├── performance.js                // NEU - Lazy Loading & Monitoring
-├── images/                       // Bilder (Lazy Loading ready)
-└── README.md, REFACTORING_DOKUMENTATION.md
+âââ index.html                    // Updated mit search.js, performance.js
+âââ diabetes.html, allergie.html, ... // Themenseiten
+âââ quellen.html
+âââ style.css                     // 1600+ Zeilen, alle Features enthalten
+âââ script.js                     // Erweitert mit Mobile Nav
+âââ search.js                     // NEU - Globale Suchfunktion
+âââ search-index.json             // NEU - Search Index
+âââ performance.js                // NEU - Lazy Loading & Monitoring
+âââ images/                       // Bilder (Lazy Loading ready)
+âââ README.md, REFACTORING_DOKUMENTATION.md
 ```
 
 ---
 
-## 🚀 HOW TO USE
+## ð HOW TO USE
 
 ### Für die Entwickler:
 1. **Suche testen**: Schreib in die Search Box auf jeder Seite
 2. **Mobile Menu**: Resize zu <768px um Hamburger zu sehen
-3. **Performance**: Öffne DevTools → Performance Tab → Reload
+3. **Performance**: Öffne DevTools â Performance Tab â Reload
 4. **Accessibility**: Drücke `Tab` mehrmals um Focus-States zu sehen
 
 ### Für End-User:
@@ -236,7 +236,7 @@ c:\WMC\Projekt_25\
 
 ---
 
-## 🔬 TESTING-CHECKLIST
+## ð¬ TESTING-CHECKLIST
 
 - [ ] Suche funktioniert auf allen 10 Seiten
 - [ ] Hamburger-Menü erscheint auf Mobile (<768px)
@@ -250,17 +250,17 @@ c:\WMC\Projekt_25\
 
 ---
 
-## 📱 BROWSER-KOMPATIBILITÄT
+## ð± BROWSER-KOMPATIBILITÄT
 
-- ✅ Chrome/Edge 90+
-- ✅ Firefox 88+
-- ✅ Safari 14+
-- ✅ Mobile Safari (iOS 14+)
-- ⚠️ IE11: Teilweise Support (keine native Lazy Loading)
+- â Chrome/Edge 90+
+- â Firefox 88+
+- â Safari 14+
+- â Mobile Safari (iOS 14+)
+- â ï¸ IE11: Teilweise Support (keine native Lazy Loading)
 
 ---
 
-## 🎯 PERFORMANCE TARGETS
+## ð¯ PERFORMANCE TARGETS
 
 - **First Contentful Paint**: < 1.5s
 - **Largest Contentful Paint**: < 2.5s
@@ -270,7 +270,7 @@ c:\WMC\Projekt_25\
 
 ---
 
-## 📞 SUPPORT & FEEDBACK
+## ð SUPPORT & FEEDBACK
 
 Falls Probleme auftreten:
 1. Öffne DevTools (F12) und schau auf Console Errors
@@ -280,13 +280,13 @@ Falls Probleme auftreten:
 
 ---
 
-## 📄 Lizenz & Attribution
+## ð Lizenz & Attribution
 
 **MedTechGuide** verfügt über:
-- 🔓 Vollständig **lizenzfrei**, offene Quellen
-- 📚 Wissensbasis auf wissenschaftlichen Quellen
-- 🎓 Schulprojekt HTL Informatik 2026
-- ♻️ Open for Educational Reuse
+- ð Vollständig **lizenzfrei**, offene Quellen
+- ð Wissensbasis auf wissenschaftlichen Quellen
+- ð Schulprojekt HTL Informatik 2026
+- â»ï¸ Open for Educational Reuse
 
 ---
 

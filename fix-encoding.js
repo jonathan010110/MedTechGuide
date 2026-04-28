@@ -3,19 +3,19 @@ const path = require('path');
 
 // Map of wrong UTF-8 byte sequences to correct characters
 const replacements = [
-  ['â€œ', '\"'],  // left quote
-  ['â€\u009d', '\"'],  // right quote
+  ['Ã¢â¬Å', '\"'],  // left quote
+  ['Ã¢â¬\u009d', '\"'],  // right quote
   ['–', '–'],   // en dash
   ['–', '—'],   // em dash
-  ['â€¦', '…'],   // ellipsis
+  ['Ã¢â¬Â¦', '…'],   // ellipsis
   ['ü', 'ü'],    // ü
   ['ö', 'ö'],    // ö
   ['ä', 'ä'],    // ä
   ['é', 'é'],    // é
   ['à', 'à'],    // à
   ['ç', 'ç'],    // ç
-  ['â™¿', '♿'],  // wheelchair
-  ['â„¢', '™'],   // trademark
+  ['Ã¢â¢Â¿', 'â¿'],  // wheelchair
+  ['Ã¢âÂ¢', 'â¢'],   // trademark
   ['«', '«'],    // guillemet left
   ['»', '»'],    // guillemet right
   ['°', '°'],    // degree
@@ -48,4 +48,4 @@ function walk(dir) {
 }
 
 walk('.');
-console.log('✓ Encoding-Reparatur abgeschlossen');
+console.log('â Encoding-Reparatur abgeschlossen');

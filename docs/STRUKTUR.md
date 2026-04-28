@@ -1,56 +1,56 @@
-# 📁 MedTechGuide Projekt-Struktur
+# ð MedTechGuide Projekt-Struktur
 
-## Übersicht der Ordnerorganisation
+## Ãbersicht der Ordnerorganisation
 
 ```
 c:\WMC\Projekt_25\
-│
-├── 📄 Startdateien (Root)
-│   ├── index.html               ← HAUPT-Einstiegspunkt
-│   ├── style.css                ← Haupt-CSS (1700+Zeilen)
-│   ├── script.js                ← Haupt-JavaScript
-│   ├── search.js                ← Neue Suchfunktion
-│   ├── search-index.json        ← Search-Datenbank
-│   ├── performance.js           ← Lazy Loading & Performance
-│   └── README.md, UPGRADE_GUIDE.md, etc.
-│
-├── 📁 /css (Neue Style-Dateien)
-│   ├── quiz.css                 ← Quiz-spezifische Styles
-│   └── [zukünftige CSS...]
-│
-├── 📁 /js (Neue JavaScript-Module)
-│   ├── quiz.js                  ← Interaktives Quiz-System
-│   └── [zukünftige JS...]
-│
-├── 📁 /html (Alle HTML-Content Seiten)
-│   ├── quiz.html                ← Neue Quiz-Seite
-│   └── [weitere Seiten...]
-│
-├── 📁 /data (Datenbanken & Config)
-│   ├── quiz-database.json       ← Quiz-Fragen (optional)
-│   └── [weitere Daten...]
-│
-├── 📁 /images (Bilder)
-│   ├── diabetes-1.jpg
-│   ├── allergie-1.jpg
-│   └── [weitere Bilder...]
-│
-├── 📁 /docs (Dokumentation)
-│   ├── UPGRADE_GUIDE.md         ← Features-Dokumentation
-│   ├── STRUKTUR.md              ← Diese Datei
-│   └── [weitere Docs...]
-│
-├── 📁 /MedTechGuide (Optional: Fachspezifischer Ordner)
-│   └── [Zusätzliche Ressourcen]
-│
-└── .git/ (Git-Repository)
+â
+âââ ð Startdateien (Root)
+â   âââ index.html               â HAUPT-Einstiegspunkt
+â   âââ style.css                â Haupt-CSS (1700+Zeilen)
+â   âââ script.js                â Haupt-JavaScript
+â   âââ search.js                â Neue Suchfunktion
+â   âââ search-index.json        â Search-Datenbank
+â   âââ performance.js           â Lazy Loading & Performance
+â   âââ README.md, UPGRADE_GUIDE.md, etc.
+â
+âââ ð /css (Neue Style-Dateien)
+â   âââ quiz.css                 â Quiz-spezifische Styles
+â   âââ [zukünftige CSS...]
+â
+âââ ð /js (Neue JavaScript-Module)
+â   âââ quiz.js                  â Interaktives Quiz-System
+â   âââ [zukünftige JS...]
+â
+âââ ð /html (Alle HTML-Content Seiten)
+â   âââ quiz.html                â Neue Quiz-Seite
+â   âââ [weitere Seiten...]
+â
+âââ ð /data (Datenbanken & Config)
+â   âââ quiz-database.json       â Quiz-Fragen (optional)
+â   âââ [weitere Daten...]
+â
+âââ ð /images (Bilder)
+â   âââ diabetes-1.jpg
+â   âââ allergie-1.jpg
+â   âââ [weitere Bilder...]
+â
+âââ ð /docs (Dokumentation)
+â   âââ UPGRADE_GUIDE.md         â Features-Dokumentation
+â   âââ STRUKTUR.md              â Diese Datei
+â   âââ [weitere Docs...]
+â
+âââ ð /MedTechGuide (Optional: Fachspezifischer Ordner)
+â   âââ [Zusätzliche Ressourcen]
+â
+âââ .git/ (Git-Repository)
 ```
 
 ---
 
-## 🆕 NEUE FEATURES (ab v2.1)
+## ð NEUE FEATURES (ab v2.1)
 
-### 1️⃣ Quiz-System
+### 1ï¸â£ Quiz-System
 - **Datei**: `/js/quiz.js` (550+ Zeilen)
 - **Styling**: `/css/quiz.css` (+300 Zeilen)
 - **Seite**: `/html/quiz.html`
@@ -63,7 +63,7 @@ c:\WMC\Projekt_25\
   - Progress-Bar
   - Responsive Design
 
-### 2️⃣ Verbesserte Ordnerstruktur
+### 2ï¸â£ Verbesserte Ordnerstruktur
 - **CSS-Separation**: Haupt + Module (quiz.css)
 - **JS-Modularisierung**: Einzelne Funktionalitäten
 - **Content-Organisation**: HTML-Dateien in `/html`
@@ -71,7 +71,7 @@ c:\WMC\Projekt_25\
 
 ---
 
-## 🚀 WIE NUTZEN
+## ð WIE NUTZEN
 
 ### Quiz aufrufen:
 1. Navigation: Klick "Quiz" Link (oben rechts)
@@ -82,10 +82,10 @@ c:\WMC\Projekt_25\
 
 ### Suchfunktion:
 ```
-Überall auf der Website:
+Ãberall auf der Website:
 - Search Box oben rechts
 - Tippe einen Begriff
-- Klick auf Ergebnis → navigiert + highlighted
+- Klick auf Ergebnis â navigiert + highlighted
 ```
 
 ### Neue CSS laden:
@@ -102,9 +102,9 @@ c:\WMC\Projekt_25\
 
 ---
 
-## 📁 Datei-Zuordnungen
+## ð Datei-Zuordnungen
 
-| Datei | Funktion | Größe |
+| Datei | Funktion | GröÃe |
 |-------|----------|-------|
 | `index.html` | Startseite | ~200 Zeilen |
 | `style.css` | Haupt-Styling | ~1700 Zeilen |
@@ -118,7 +118,7 @@ c:\WMC\Projekt_25\
 
 ---
 
-## 🎯 Nächste Schritte (Optional)
+## ð¯ Nächste Schritte (Optional)
 
 ### Struktur weiter optimieren:
 - [ ] Admin-Panel für Quiz-Verwaltung
@@ -140,7 +140,7 @@ c:\WMC\Projekt_25\
 
 ---
 
-## ✅ Checkliste für VS Code Setup
+## â Checkliste für VS Code Setup
 
 - [x] Ordnerstruktur erstellen (`/css`, `/js`, `/html`, `/data`, `/docs`)
 - [x] Quiz-System implementiert
@@ -152,18 +152,18 @@ c:\WMC\Projekt_25\
 
 ---
 
-## 📊 Projekt-Statistiken
+## ð Projekt-Statistiken
 
 - **Zeilen Code**: ~4000+
 - **CSS-Selektoren**: 200+
 - **JavaScript-Funktionen**: 80+
 - **HTML-Dateien**: 11
-- **Quiz-Fragen**: 20 (4 Kategorien × 5)
+- **Quiz-Fragen**: 20 (4 Kategorien Ã 5)
 - **Search-Einträge**: 150+
 
 ---
 
-## 🔗 Wichtige Links
+## ð Wichtige Links
 
 - **Hauptseite**: `../index.html`
 - **Quiz**: `../html/quiz.html`
@@ -172,7 +172,7 @@ c:\WMC\Projekt_25\
 
 ---
 
-## 📝 Notizen für Entwickler
+## ð Notizen für Entwickler
 
 1. **CSS Modularity**: Jede Feature hat ihre eigenen Styles
 2. **JS Modularity**: Quiz ist unabhängig initialisierbar

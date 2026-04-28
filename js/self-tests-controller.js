@@ -232,7 +232,7 @@ class SelfTestsController {
         </div>
 
         <div class="trait-section">
-          <div class="trait-title">💪 Stärken</div>
+          <div class="trait-title">ðª Stärken</div>
           <div class="trait-list strengths">
             <div class="trait-item">
               <span>${typeInfo.strength}</span>
@@ -241,7 +241,7 @@ class SelfTestsController {
         </div>
 
         <div class="trait-section">
-          <div class="trait-title">⚠️ Herausforderungen</div>
+          <div class="trait-title">â ï¸ Herausforderungen</div>
           <div class="trait-list challenges">
             <div class="trait-item">
               <span>${typeInfo.challenges}</span>
@@ -250,7 +250,7 @@ class SelfTestsController {
         </div>
 
         <div class="trait-section">
-          <div class="trait-title">🎯 Passende Arbeitsumfelder</div>
+          <div class="trait-title">ð¯ Passende Arbeitsumfelder</div>
           <div class="trait-list">
             <div class="trait-item">
               <span>${typeInfo.workplace}</span>
@@ -260,7 +260,7 @@ class SelfTestsController {
       `;
     }
 
-    // Medizinischer Hint (außer MBTI)
+    // Medizinischer Hint (auÃer MBTI)
     if (this.currentTest.medicalDisclaimer) {
       resultsHTML += this.currentTest.medicalDisclaimer;
     }
@@ -268,7 +268,7 @@ class SelfTestsController {
     // Reset Button
     resultsHTML += `
       <div style="text-align: center; margin-top: 2rem;">
-        <button class="btn-reset">← Einen anderen Test machen</button>
+        <button class="btn-reset">â Einen anderen Test machen</button>
       </div>
     `;
 

@@ -1,26 +1,26 @@
-# 🎯 Quiz System v2.0 - Neue Features & Updates
+# ð¯ Quiz System v2.0 - Neue Features & Updates
 
 **Release Date:** 24.02.2026  
 **Version:** 2.0  
-**Status:** ✅ Vollständig implementiert
+**Status:** â Vollständig implementiert
 
 ---
 
-## 📋 Überblick der Änderungen
+## ð Ãberblick der Änderungen
 
 Das Quiz-System wurde komplett überarbeitet und erweitert:
 
-### ✨ Neue Features
+### â¨ Neue Features
 
-#### 1. **Randomisierte Fragen** 🔀
+#### 1. **Randomisierte Fragen** ð
 - Alle Fragen werden zufällig sortiert (Fisher-Yates Shuffle)
 - Multiple-Choice Antworten werden ebenfalls randomisiert
 - Jeder Quiz-Test ist unterschiedlich
 - **Funktion:** `getRandomizedQuestions(kategorie)`
 
-#### 2. **Drei Psychologische Tests** 🧠
+#### 2. **Drei Psychologische Tests** ð§ 
 
-##### 🔴 Depression-Screening (PHQ-9)
+##### ð´ Depression-Screening (PHQ-9)
 - **Basis:** Patient Health Questionnaire-9 (wissenschaftlich validiert)
 - **Fragen:** 9 Fragen zu depressiven Symptomen
 - **Skala:** 0-3 (Gar nicht bis Fast jeden Tag)
@@ -29,9 +29,9 @@ Das Quiz-System wurde komplett überarbeitet und erweitert:
   - 5-9: Leichte Depression
   - 10-14: Moderate Depression
   - 15+: Schwere Depression
-- **Warnung:** ⚠️ Kein Ersatz für ärztliche Diagnose
+- **Warnung:** â ï¸ Kein Ersatz für ärztliche Diagnose
 
-##### 🧠 ADHS-Screening (ASRS v1.1)
+##### ð§  ADHS-Screening (ASRS v1.1)
 - **Basis:** Adult ADHD Self-Report Scale (professionell validiert)
 - **Fragen:** 6 Hauptfragen zu ADHS-Symptomen
 - **Skala:** 0-4 (Nie/selten bis Immer)
@@ -39,9 +39,9 @@ Das Quiz-System wurde komplett überarbeitet und erweitert:
   - 0-6: Niedrige ADHS-Merkmale
   - 7-12: Mögliche ADHS
   - 13+: Wahrscheinlich ADHS
-- **Warnung:** ⚠️ Weitere Evaluation empfohlen
+- **Warnung:** â ï¸ Weitere Evaluation empfohlen
 
-##### 🌟 Big-Five Persönlichkeitstest (ENTF)
+##### ð Big-Five Persönlichkeitstest (ENTF)
 - **Basis:** Five Factor Model (international standardisiert)
 - **Dimensionen (ENTF):**
   - **O** = Offenheit (Openness) - Kreativität, Neugier
@@ -54,7 +54,7 @@ Das Quiz-System wurde komplett überarbeitet und erweitert:
 - **Ergebnis:** Profil mit Score pro Dimension
 - **Interpretation:** Detaillierte Erklärungen für jede Dimension
 
-#### 3. **Mobile Hochformat-Optimierung** 📱
+#### 3. **Mobile Hochformat-Optimierung** ð±
 
 **Breakpoints:**
 - **768px & darunter:** Tablet Portrait
@@ -62,17 +62,17 @@ Das Quiz-System wurde komplett überarbeitet und erweitert:
 - **Landscape:** Spezial-Optimierung
 
 **Optimierungen:**
-- ✅ Reduzierte Padding/Margin für kleine Screens
-- ✅ Improved Touch-Targets (min 44px)
-- ✅ Better Typography für Mobile
-- ✅ Flexibles Grid Layout
-- ✅ Landscape Mode Support
-- ✅ Hochformat-spezialisiert
+- â Reduzierte Padding/Margin für kleine Screens
+- â Improved Touch-Targets (min 44px)
+- â Better Typography für Mobile
+- â Flexibles Grid Layout
+- â Landscape Mode Support
+- â Hochformat-spezialisiert
 
-#### 4. **Verbesserte UI/UX** 🎨
+#### 4. **Verbesserte UI/UX** ð¨
 
 **Multiple Choice:**
-- Größere Touch-Ziele auf Mobile
+- GröÃere Touch-Ziele auf Mobile
 - Bessere Hover-Effekte
 - Klarere Visualisierung
 
@@ -89,7 +89,7 @@ Das Quiz-System wurde komplett überarbeitet und erweitert:
 
 ---
 
-## 🎮 Neue Testtypen
+## ð® Neue Testtypen
 
 ### Datenstruktur v2.0
 
@@ -132,7 +132,7 @@ quizState = {
 
 ---
 
-## 🔧 Technische Änderungen
+## ð§ Technische Änderungen
 
 ### Neue Funktionen
 
@@ -177,14 +177,14 @@ const randomFragen = getRandomizedQuestions('diagnostik');
 ```javascript
 // Neue Kategorienngruppe in Modal
 <div class="quiz-kategorie-gruppe">
-  <h3>🧠 Psychologische Tests</h3>
+  <h3>ð§  Psychologische Tests</h3>
   // Psychology-Kategorie werden separiert
 </div>
 ```
 
 ---
 
-## 🎯 CSS Changes
+## ð¯ CSS Changes
 
 ### Neue Klassen
 
@@ -218,7 +218,7 @@ const randomFragen = getRandomizedQuestions('diagnostik');
 ```css
 /* 768px - Tablet Portrait */
 @media (max-width: 768px) {
-  /* Reduzierte Größen, Spacing */
+  /* Reduzierte GröÃen, Spacing */
 }
 
 /* 480px - Small Phone */
@@ -235,7 +235,7 @@ const randomFragen = getRandomizedQuestions('diagnostik');
 
 ---
 
-## 📊 QUIZ_DATABASE Struktur v2.0
+## ð QUIZ_DATABASE Struktur v2.0
 
 ```javascript
 QUIZ_DATABASE = {
@@ -251,22 +251,22 @@ QUIZ_DATABASE = {
   // Psychologie (Likert Scale)
   depression: {
     type: 'likert',
-    name: '😔 Depressions-Screening',
+    name: 'ð Depressions-Screening',
     beschreibung: '...',
-    warnung: '⚠️ ...',
+    warnung: 'â ï¸ ...',
     fragen: [...],
     interpretation: { 0: {...}, 5: {...}, ... }
   },
   adhs: {
     type: 'likert',
-    name: '🧠 ADHS-Screening',
+    name: 'ð§  ADHS-Screening',
     // ...
   },
 
   // Big Five (Dimensionen)
   persoenlichkeit: {
     type: 'bigfive',
-    name: '🌟 Big-Five Test',
+    name: 'ð Big-Five Test',
     dimensionen: { O: '...', C: '...', ... },
     fragen: [...]
   }
@@ -275,7 +275,7 @@ QUIZ_DATABASE = {
 
 ---
 
-## 🚀 Verwendung
+## ð Verwendung
 
 ### Alle Tests starten
 
@@ -301,20 +301,20 @@ const randomizedQuestions = getRandomizedQuestions('diagnostik');
 
 ---
 
-## ✅ Browser Kompatibilität
+## â Browser Kompatibilität
 
-- ✅ Chrome 85+
-- ✅ Firefox 78+
-- ✅ Safari 14+
-- ✅ Edge 85+
-- ✅ Mobile Chrome
-- ✅ Mobile Safari
+- â Chrome 85+
+- â Firefox 78+
+- â Safari 14+
+- â Edge 85+
+- â Mobile Chrome
+- â Mobile Safari
 
 ---
 
-## 🔐 Datenschutz
+## ð Datenschutz
 
-✅ **Vollständig lokal:**
+â **Vollständig lokal:**
 - Keine externe Datenübertragun
 - Keine Speicherung auf Server
 - Keine Cookies
@@ -323,9 +323,9 @@ const randomizedQuestions = getRandomizedQuestions('diagnostik');
 
 ---
 
-## ⚖️ Psychologische Tests - Disclaimer
+## âï¸ Psychologische Tests - Disclaimer
 
-### ⚠️ WICHTIG
+### â ï¸ WICHTIG
 
 Diese Tests sind **KEINE medizinische Diagnose**. Sie dienen nur zu:
 - Grundlegendem Screening
@@ -341,17 +341,17 @@ Diese Tests sind **KEINE medizinische Diagnose**. Sie dienen nur zu:
 
 ---
 
-## 🐛 Bekannte Limitationen
+## ð Bekannte Limitationen
 
-- ❌ Keine Test-Verlauf Speicherung zwischen Sessions
-- ❌ Keine Mehrfach-Versuche Tracking
-- ❌ Keine Export-Funktion
-- ❌ Keine Leaderboard
-- ❌ Keine Benachrichtigungen
+- â Keine Test-Verlauf Speicherung zwischen Sessions
+- â Keine Mehrfach-Versuche Tracking
+- â Keine Export-Funktion
+- â Keine Leaderboard
+- â Keine Benachrichtigungen
 
 ---
 
-## 🔮 Geplante Features v2.1
+## ð® Geplante Features v2.1
 
 - [ ] Ergebnisse als PDF exportieren
 - [ ] History/Verlauf speichern
@@ -363,7 +363,7 @@ Diese Tests sind **KEINE medizinische Diagnose**. Sie dienen nur zu:
 
 ---
 
-## 📱 Mobile-First Design Prinzipien
+## ð± Mobile-First Design Prinzipien
 
 1. **Touch-Friendly:** Alle Buttons 44px+ (Apple)
 2. **Performance:** Schnelle Interaktion auch auf 3G
@@ -373,7 +373,7 @@ Diese Tests sind **KEINE medizinische Diagnose**. Sie dienen nur zu:
 
 ---
 
-## 🎓 Wissenschaftliche Basis
+## ð Wissenschaftliche Basis
 
 **Depression (PHQ-9):**
 - Entwickelt von Pfizer, frei verwendbar
@@ -385,22 +385,22 @@ Diese Tests sind **KEINE medizinische Diagnose**. Sie dienen nur zu:
 - WHO (World Health Organization) entwickelt
 - Free screening tool
 - 5 Minuten schnelle Version
-- Über 100.000 mal validiert
+- Ãber 100.000 mal validiert
 
 **Big Five:**
 - International standardisiert
-- Über 50 Jahre Forschung
+- Ãber 50 Jahre Forschung
 - Used by HR, Universities, Researchers
 - Basis für viele Personality Tests
 
 ---
 
-## 🛠️ Technische Spezifikationen
+## ð ï¸ Technische Spezifikationen
 
 | Aspekt | Details |
 |--------|---------|
 | **JavaScript** | Vanilla ES6+ (keine Frameworks) |
-| **Größe** | quiz.js: ~45KB, quiz.css: ~35KB |
+| **GröÃe** | quiz.js: ~45KB, quiz.css: ~35KB |
 | **Dependencies** | Keine (vollständig independent) |
 | **Performance** | < 100ms für Quiz-Start |
 | **Memory** | < 5MB für vollständigen Session |
@@ -409,12 +409,12 @@ Diese Tests sind **KEINE medizinische Diagnose**. Sie dienen nur zu:
 
 ---
 
-## 📞 Support & Testing
+## ð Support & Testing
 
 ### Testen
 ```
 1. Öffne index.html
-2. Klick auf "🎯 Quiz" 
+2. Klick auf "ð¯ Quiz" 
 3. Wähle einen Test
 4. Beantworte alle Fragen
 5. Schaue Ergebnisse an
@@ -424,15 +424,15 @@ Diese Tests sind **KEINE medizinische Diagnose**. Sie dienen nur zu:
 Falls Quiz nicht funktioniert:
 1. Prüf Browser Console (F12)
 2. Checkliste:
-   - ✅ quiz.js geladen?
-   - ✅ quiz.css geladen?
-   - ✅ No JavaScript Fehler?
-   - ✅ Cache geleert?
+   - â quiz.js geladen?
+   - â quiz.css geladen?
+   - â No JavaScript Fehler?
+   - â Cache geleert?
 3. Versuche anderen Browser
 
 ---
 
-**Viel Spaß mit dem neuen Quiz System 2.0! 🎯🚀**
+**Viel SpaÃ mit dem neuen Quiz System 2.0! ð¯ð**
 
 Version: 2.0 | Last Updated: 24.02.2026
 

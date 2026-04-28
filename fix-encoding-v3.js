@@ -10,12 +10,12 @@ const replacements = [
   ['c3a9', 'é'], // é
   ['c3a0', 'à'], // à
   ['c3a7', 'ç'], // ç
-  ['c381', 'Á'], // Á
-  ['c38d', 'Í'], // Í
-  ['c393', 'Ó'], // Ó
-  ['c399', 'Ù'], // Ù
-  ['c382', 'Â'], // Â
+  ['c381', 'Ã'], // Ã
+  ['c38d', 'Ã'], // Ã
+  ['c393', 'Ã'], // Ã
   ['c399', 'Ü'], // Ü
+  ['c382', 'Ã'], // Ã
+  ['c399', 'Ã'], // Ã
   ['c39c', 'Ö'], // Ö
   ['c384', 'Ä'], // Ä
   // Bindestriche
@@ -25,8 +25,8 @@ const replacements = [
   ['e2809d', '"'], // right quote
   ['e28099', "'"], // right single quote
   ['e28098', "'"], // left single quote
-  ['e2809a', '‚'], // single low quote
-  ['e2809b', '‛'], // single high quote
+  ['e2809a', 'â'], // single low quote
+  ['e2809b', 'â'], // single high quote
   // Ellipsis
   ['e28026', '…'], // …
 ];

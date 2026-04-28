@@ -56,25 +56,25 @@ Interaktiver Geräte-Vergleich mit:
 
 ```
 Projekt_25/
-├── index.html              # Startseite
-├── [kategorie].html        # Kategorieseiten (10 Stück)
-├── comparison.html         # Gerätevergleich
-├── quellen.html            # Quellenverzeichnis
-├── style.css               # Globales Stylesheet
-├── script.js               # Hauptlogik (Suche, Filter)
-├── search.js               # Suchmodul
-├── search-index.json       # Suchindex aller Geräte
-├── css/
-│   └── comparison.css      # Styles für den Vergleichsmodus
-├── js/
-│   ├── comparison-module.js
-│   └── comparison-ui.js
-└── docs/                   # Dokumentation
+âââ index.html              # Startseite
+âââ [kategorie].html        # Kategorieseiten (10 Stück)
+âââ comparison.html         # Gerätevergleich
+âââ quellen.html            # Quellenverzeichnis
+âââ style.css               # Globales Stylesheet
+âââ script.js               # Hauptlogik (Suche, Filter)
+âââ search.js               # Suchmodul
+âââ search-index.json       # Suchindex aller Geräte
+âââ css/
+â   âââ comparison.css      # Styles für den Vergleichsmodus
+âââ js/
+â   âââ comparison-module.js
+â   âââ comparison-ui.js
+âââ docs/                   # Dokumentation
 ```
 
 ## Design
 
-- Ruhiges, seriöses Farbschema (Blau/Weiß/Grau)
+- Ruhiges, seriöses Farbschema (Blau/WeiÃ/Grau)
 - Responsives Layout für Desktop und Mobile
 - Klare Typografie für medizinisch-technische Inhalte
 

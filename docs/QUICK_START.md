@@ -1,35 +1,35 @@
-# 🚀 Quick Start - Neue Quiz & Ordner-Struktur
+# ð Quick Start - Neue Quiz & Ordner-Struktur
 
-## ✅ Was wurde hinzugefügt?
+## â Was wurde hinzugefügt?
 
-### 1. 🎯 **Quiz-System**
+### 1. ð¯ **Quiz-System**
 - **20 interaktive Fragen** in 4 Kategorien
-  - 🔍 Diagnostik (5 Fragen)
-  - 💊 Therapie (5 Fragen)
-  - 🔬 Forschung (5 Fragen)
-  - 🚀 Zukunft (5 Fragen)
+  - ð Diagnostik (5 Fragen)
+  - ð Therapie (5 Fragen)
+  - ð¬ Forschung (5 Fragen)
+  - ð Zukunft (5 Fragen)
 - **Scoring & Ergebnisse** mit detaillierter Auswertung
 - **Responsive Design** für Mobile & Desktop
 
-### 2. 📁 **Ordnerstruktur**
+### 2. ð **Ordnerstruktur**
 ```
 Projekt_25/
-├── /css/              ← CSS-Module (quiz.css)
-├── /js/               ← JavaScript-Module (quiz.js)
-├── /html/             ← Content-Seiten (quiz.html + andere)
-├── /data/             ← Datenbanken & Config
-├── /images/           ← Bilder (existiert schon)
-└── /docs/             ← Dokumentation (STRUKTUR.md)
+âââ /css/              â CSS-Module (quiz.css)
+âââ /js/               â JavaScript-Module (quiz.js)
+âââ /html/             â Content-Seiten (quiz.html + andere)
+âââ /data/             â Datenbanken & Config
+âââ /images/           â Bilder (existiert schon)
+âââ /docs/             â Dokumentation (STRUKTUR.md)
 ```
 
-### 3. 🔍 **Verbesserte Suche**
+### 3. ð **Verbesserte Suche**
 - Funktioniert bereits vollständig
 - Durchsucht alle 10 Seiten
 - Auto-Highlighting auf Zielseite
 
 ---
 
-## 📊 DATEIEN-ÜBERSICHT
+## ð DATEIEN-ÃBERSICHT
 
 ### Neue Dateien erstellt:
 | Datei | Beschreibung |
@@ -37,25 +37,25 @@ Projekt_25/
 | `js/quiz.js` | Quiz-Engine (600+ Zeilen) |
 | `css/quiz.css` | Quiz-Styling (350+ Zeilen) |
 | `html/quiz.html` | Quiz-Landingpage |
-| `docs/STRUKTUR.md` | Projekt-Übersicht |
+| `docs/STRUKTUR.md` | Projekt-Ãbersicht |
 | `docs/QUICK_START.md` | Diese Datei |
 
 ### Aktualisierte Dateien:
 | Datei | Änderung |
 |-------|---------|
 | `index.html` | +Quiz-Link, +CSS-Import, +Info-Box |
-| `style.css` | ✓ Unverändert (alle Styles schon vorhanden) |
-| `script.js` | ✓ Unverändert (Mobile-Nav schon enthalten) |
+| `style.css` | â Unverändert (alle Styles schon vorhanden) |
+| `script.js` | â Unverändert (Mobile-Nav schon enthalten) |
 
 ---
 
-## 🎮 WIE NUTZEN
+## ð® WIE NUTZEN
 
 ### Quiz aufrufen:
 
-**Option 1: Über Navigation**
-- Oben in der Navbar: "🎯 Quiz" Button (neu hinzugefügt)
-- Klick → öffnet `html/quiz.html`
+**Option 1: Ãber Navigation**
+- Oben in der Navbar: "ð¯ Quiz" Button (neu hinzugefügt)
+- Klick â öffnet `html/quiz.html`
 
 **Option 2: Direkt-Link**
 ```
@@ -63,7 +63,7 @@ Projekt_25/
 ```
 
 **Option 3: Von Startseite**
-- Blauer Button: "Quiz starten →"
+- Blauer Button: "Quiz starten â"
 
 ### Quiz spielen:
 ```
@@ -76,14 +76,14 @@ Projekt_25/
 
 ---
 
-## 🎨 STYLING HIGHLIGHTS
+## ð¨ STYLING HIGHLIGHTS
 
 ### Quiz-Komponenten:
-- ✨ **Modal-Dialoge** mit Blur-Backdrop
-- 📊 **Progress-Bar** für Fortschritt
-- 🎯 **Score-Circle** mit animiertem Bounce
-- 🏆 **Ergebnis-Anzeige** mit Emoji & Bewertung
-- 📱 **Vollständig responsive**
+- â¨ **Modal-Dialoge** mit Blur-Backdrop
+- ð **Progress-Bar** für Fortschritt
+- ð¯ **Score-Circle** mit animiertem Bounce
+- ð **Ergebnis-Anzeige** mit Emoji & Bewertung
+- ð± **Vollständig responsive**
 
 ### CSS-Klassen:
 ```css
@@ -96,7 +96,7 @@ Projekt_25/
 
 ---
 
-## 🔧 TECHNISCHE DETAILS
+## ð§ TECHNISCHE DETAILS
 
 ### Quiz-Datenbank:
 ```javascript
@@ -133,7 +133,7 @@ quizState = {
 
 ---
 
-## 📱 RESPONSIVE BREAKPOINTS
+## ð± RESPONSIVE BREAKPOINTS
 
 - **Desktop** (>768px): Vollständige Layout
 - **Tablet** (768px): Optimiert
@@ -144,9 +144,9 @@ quizState = {
 
 ---
 
-## 🔐 DATENSCHUTZ
+## ð DATENSCHUTZ
 
-✅ **Keine externe Daten-Speicherung**
+â **Keine externe Daten-Speicherung**
 - Quiz-Ergebnisse nur lokal im Browser
 - Keine Cookies oder Tracking
 - Keine Cloud-Verbindung
@@ -154,7 +154,7 @@ quizState = {
 
 ---
 
-## ❌ BEKANNTE LIMITATIONEN
+## â BEKANNTE LIMITATIONEN
 
 - Quiz-Daten sind hardcoded (können aber in JSON ausgelagert werden)
 - Keine Datenspeicherung zwischen Sessions
@@ -163,7 +163,7 @@ quizState = {
 
 ---
 
-## ✨ NÄCHSTE MÖGLICHE FEATURES
+## â¨ NÄCHSTE MÖGLICHE FEATURES
 
 ### Einfach zu implementieren:
 - [ ] Quiz-Kategorien im HTML als Daten
@@ -186,7 +186,7 @@ quizState = {
 
 ---
 
-## 📝 INSTALLATION
+## ð INSTALLATION
 
 ### 1. Dateien kopieren:
 ```bash
@@ -204,13 +204,13 @@ cp -r js/ html/ css/ data/ docs/ /path/to/projekt
 
 ### 3. Testen:
 - Öffne `index.html`
-- Klick auf "🎯 Quiz" Button
+- Klick auf "ð¯ Quiz" Button
 - Wähle Kategorie
 - Beantworte Fragen
 
 ---
 
-## 🐛 TROUBLESHOOTING
+## ð TROUBLESHOOTING
 
 ### Quiz lädt nicht?
 ```
@@ -223,7 +223,7 @@ cp -r js/ html/ css/ data/ docs/ /path/to/projekt
 ### Styling bricht?
 ```
 1. Prüf dass css/quiz.css geladen wird
-2. Inspect Element (F12) → Console
+2. Inspect Element (F12) â Console
 3. Validiere CSS Syntax
 ```
 
@@ -236,17 +236,17 @@ cp -r js/ html/ css/ data/ docs/ /path/to/projekt
 
 ---
 
-## 📞 SUPPORT
+## ð SUPPORT
 
 Falls Fragen:
-1. Lies STRUKTUR.md für Überblick
+1. Lies STRUKTUR.md für Ãberblick
 2. Check js/quiz.js für Quellcode-Kommentare
 3. Validiere mit VS Code Linter
 4. Teste in Chrome DevTools
 
 ---
 
-## 🎓 LERN-RESSOURCEN
+## ð LERN-RESSOURCEN
 
 - [MDN: JavaScript Modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)
 - [CSS Grid Documentation](https://css-tricks.com/snippets/css/complete-guide-grid/)
@@ -255,7 +255,7 @@ Falls Fragen:
 
 ---
 
-**Genießt das Quiz! 🎯**
+**GenieÃt das Quiz! ð¯**
 
 Version: 2.1 | Release: 24.02.2026
 

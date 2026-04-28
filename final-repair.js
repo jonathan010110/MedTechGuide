@@ -14,26 +14,26 @@ function fixFile(filePath) {
     // Liste von ALLEN fehlerhaften Byte-Sequenzen
     const badSequences = [
       // Doppelt-kodierte Umlaute (UTF-8 als Latin1 interpretiert)
-      { find: [0xC3, 0xBC], replace: 'ü' },  // Ã¼
-      { find: [0xC3, 0xB6], replace: 'ö' },  // Ã¶
-      { find: [0xC3, 0xA4], replace: 'ä' },  // Ã¤
-      { find: [0xC3, 0xA9], replace: 'é' },  // Ã©
-      { find: [0xC3, 0xA0], replace: 'à' },  // Ã 
-      { find: [0xC3, 0xA7], replace: 'ç' },  // Ã§
-      { find: [0xC3, 0xA1], replace: 'á' },  // Ã¡
-      { find: [0xC3, 0xAD], replace: 'í' },  // Ã­
-      { find: [0xC3, 0xB3], replace: 'ó' },  // Ó
-      { find: [0xC3, 0xB9], replace: 'ù' },  // Ã¹
-      { find: [0xC3, 0xB1], replace: 'ñ' },  // Ã±
-      { find: [0xC3, 0x84], replace: 'Ä' },  // Ã„
-      { find: [0xC3, 0x96], replace: 'Ö' },  // Ã–
-      { find: [0xC3, 0x9C], replace: 'Ü' },  // Ã™
+      { find: [0xC3, 0xBC], replace: 'ü' },  // ÃÂ¼
+      { find: [0xC3, 0xB6], replace: 'ö' },  // ÃÂ¶
+      { find: [0xC3, 0xA4], replace: 'ä' },  // ÃÂ¤
+      { find: [0xC3, 0xA9], replace: 'é' },  // ÃÂ©
+      { find: [0xC3, 0xA0], replace: 'à' },  // Ã 
+      { find: [0xC3, 0xA7], replace: 'ç' },  // ÃÂ§
+      { find: [0xC3, 0xA1], replace: 'á' },  // ÃÂ¡
+      { find: [0xC3, 0xAD], replace: 'í' },  // ÃÂ­
+      { find: [0xC3, 0xB3], replace: 'ó' },  // Ã
+      { find: [0xC3, 0xB9], replace: 'ù' },  // ÃÂ¹
+      { find: [0xC3, 0xB1], replace: 'ñ' },  // ÃÂ±
+      { find: [0xC3, 0x84], replace: 'Ä' },  // Ãâ
+      { find: [0xC3, 0x96], replace: 'Ö' },  // Ã–
+      { find: [0xC3, 0x9C], replace: 'Ã' },  // Ãâ¢
       
-      // Doppelt-kodierte Sonderzeichen (â... Sequenzen)
-      { find: [0xC3, 0xA2], replace: 'â' },  // Ã¢ -> â
-      { find: [0xC2, 0xAB], replace: '«' },  // Â«
-      { find: [0xC2, 0xBB], replace: '»' },  // Â»
-      { find: [0xC2, 0xB0], replace: '°' },  // Â°
+      // Doppelt-kodierte Sonderzeichen (Ã¢... Sequenzen)
+      { find: [0xC3, 0xA2], replace: 'Ã¢' },  // ÃÂ¢ -> Ã¢
+      { find: [0xC2, 0xAB], replace: '«' },  // Ã«
+      { find: [0xC2, 0xBB], replace: '»' },  // Ã»
+      { find: [0xC2, 0xB0], replace: '°' },  // Ã°
       { find: [0xE2, 0x80, 0x93], replace: '–' },  // – (en-dash)
       { find: [0xE2, 0x80, 0x94], replace: '—' },  // — (em-dash)
       { find: [0xE2, 0x80, 0x9C], replace: '"' },  // "
@@ -42,11 +42,11 @@ function fixFile(filePath) {
       { find: [0xE2, 0x80, 0x99], replace: "'" },  // '
       { find: [0xE2, 0x80, 0xA6], replace: '…' },  // …
       
-      // Emoji-Sequenzen (doppelt kodiert wie ðŸ...)
+      // Emoji-Sequenzen (doppelt kodiert wie Ã°Å¸...)
       { find: [0xF0, 0x9F], replace: '' },  // Remove first part of emoji if broken
       
-      // Spezielle Sequenzen für â€ (which is E2 80)
-      { find: [0xC3, 0xA2, 0xC2, 0x80], replace: '' },  // â€ ersetzt durch leer
+      // Spezielle Sequenzen für Ã¢â¬ (which is E2 80)
+      { find: [0xC3, 0xA2, 0xC2, 0x80], replace: '' },  // Ã¢â¬ ersetzt durch leer
       { find: [0xE2, 0x80, 0x9C], replace: '"' },  // Left quote
       { find: [0xE2, 0x80, 0x9D], replace: '"' },  // Right quote
     ];
@@ -55,32 +55,32 @@ function fixFile(filePath) {
     
     // Ersetze String-basiert für komplexe Sequenzen
     const stringReplacements = [
-      ['â€"', '–'],   // en-dash
-      ['â€"', '—'],   // em-dash
-      ['â€œ', '"'],   // left quote
-      ['â€\u009d', '"'],  // right quote
-      ['â€™', "'"],  // right single quote
-      ['â€˜', "'"],  // left single quote
-      ['â€¢', '•'],  // bullet
-      ['â€¦', '…'],  // ellipsis
-      ['ðŸŽ¯', '🎯'],  // dart emoji
-      ['ðŸ§ ', '🧠'],  // brain emoji
-      ['ðŸ'¾', '💾'],  // diskette emoji
-      ['ðŸ"Š', '📊'],  // chart emoji
-      ['ðŸ©º', '🩺'],  // stethoscope emoji
-      ['ðŸ"§', '🔧'],  // wrench emoji
-      ['ðŸ§¬', '🧬'],  // microscope emoji
-      ['ðŸ¤–', '🤖'],  // robot emoji
-      ['ðŸ'', '💡'],  // lightbulb emoji
-      ['ðŸ"', '📈'],  // chart up emoji
-      ['ðŸ"', '📉'],  // chart down emoji
-      ['ðŸ"', '📋'],  // clipboard emoji
-      ['âš–ï¸', '⚖️'],  // scale emoji
-      ['âœ…', '✅'],  // check emoji
-      ['â›"', '❌'],  // cross emoji
-      ['Â«', '«'],
-      ['Â»', '»'],
-      ['Â°', '°'],
+      ['Ã¢â¬"', '–'],   // en-dash
+      ['Ã¢â¬"', '—'],   // em-dash
+      ['Ã¢â¬Å', '"'],   // left quote
+      ['Ã¢â¬\u009d', '"'],  // right quote
+      ['Ã¢â¬â¢', "'"],  // right single quote
+      ['Ã¢â¬Ë', "'"],  // left single quote
+      ['Ã¢â¬Â¢', '•'],  // bullet
+      ['Ã¢â¬Â¦', '…'],  // ellipsis
+      ['Ã°Å¸Å½Â¯', 'ð¯'],  // dart emoji
+      ['Ã°Å¸Â§ ', 'ð§ '],  // brain emoji
+      ['Ã°Å¸'Â¾', 'ð¾'],  // diskette emoji
+      ['Ã°Å¸"Å ', 'ð'],  // chart emoji
+      ['Ã°Å¸Â©Âº', 'ð©º'],  // stethoscope emoji
+      ['Ã°Å¸"Â§', 'ð§'],  // wrench emoji
+      ['Ã°Å¸Â§Â¬', 'ð§¬'],  // microscope emoji
+      ['Ã°Å¸Â¤–', 'ð¤'],  // robot emoji
+      ['Ã°Å¸'', 'ð¡'],  // lightbulb emoji
+      ['Ã°Å¸"', 'ð'],  // chart up emoji
+      ['Ã°Å¸"', 'ð'],  // chart down emoji
+      ['Ã°Å¸"', 'ð'],  // clipboard emoji
+      ['Ã¢Å¡–Ã¯Â¸', 'âï¸'],  // scale emoji
+      ['Ã¢Å…', 'â'],  // check emoji
+      ['Ã¢âº"', 'â'],  // cross emoji
+      ['Ã«', '«'],
+      ['Ã»', '»'],
+      ['Ã°', '°'],
     ];
     
     for (const [wrong, correct] of stringReplacements) {

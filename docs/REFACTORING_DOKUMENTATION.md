@@ -1,12 +1,12 @@
 # MedTechGuide - Portfolio-Level Refactoring Dokumentation
 
-## 📋 Überblick
+## ð Ãberblick
 
 Diese Dokumentation beschreibt die umfassenden Refactoring- und Modernisierungsarbeiten am MedTechGuide-Projekt. Das Projekt wurde von einer grundlegenden HTML/CSS/JS Website zu einer modernen, professionellen Anwendung mit Vanilla JS, erweiterten Features und Portfolio-Qualität eleviert.
 
 ---
 
-## 🎯 Implementierte Features
+## ð¯ Implementierte Features
 
 ### 1. **JavaScript Architektur Refaktorierung**
 
@@ -32,10 +32,10 @@ document.addEventListener('DOMContentLoaded', () => {
 ```
 
 **Jede Funktion ist:**
-- ✅ Unabhängig initialisierbar
-- ✅ Defensive (null-checks)
-- ✅ Event-Listener-sicher
-- ✅ Gut dokumentiert mit JSDoc-Kommentaren
+- â Unabhängig initialisierbar
+- â Defensive (null-checks)
+- â Event-Listener-sicher
+- â Gut dokumentiert mit JSDoc-Kommentaren
 
 ---
 
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
 - System-Preference Detection (`prefers-color-scheme: dark`)
 - localStorage Persistierung (`medtechguide-darkmode`)
 - CSS Variables für konsistente Farben
-- Toggle-Button in allen Navbars (🌙)
+- Toggle-Button in allen Navbars (ð)
 
 **CSS Variable Beispiele:**
 ```css
@@ -139,7 +139,7 @@ function initSectionAnimations() {
 
 **Features:**
 - Durchsucht h1–h4, p, li, Glossar
-- Text-Normalisierung (Umlaute: ä→a, ö→o, ü→u)
+- Text-Normalisierung (Umlaute: äâa, öâo, üâu)
 - Highlight-Markierung
 - Automatisches Scroll zum ersten Treffer
 - Treffer-Anzahl-Anzeige
@@ -175,8 +175,8 @@ function normalizeText(text) {
 **Features:**
 - Max 2 Geräte auswählbar
 - Toggle-Modus aktivieren/deaktivieren
-- Modal mit ESC schließbar
-- Klick außerhalb schließt Modal
+- Modal mit ESC schlieÃbar
+- Klick auÃerhalb schlieÃt Modal
 - ARIA-Attribute für Accessibility
 
 **HTML:**
@@ -222,7 +222,7 @@ function openCompareModal(devices) {
 <a href="#main-content" class="skip-to-content">Zum Inhalt springen</a>
 ```
 - Wird bei `:focus` sichtbar
-- Top: -40px → 0 bei Focus
+- Top: -40px â 0 bei Focus
 
 #### Semantic HTML
 ```html
@@ -247,7 +247,7 @@ role="tooltip"
 
 #### Keyboard Navigation
 - Tab-Navigation funkioniert durchgehend
-- Modal mit ESC schließbar
+- Modal mit ESC schlieÃbar
 - Buttons statt klickbare divs
 
 ---
@@ -333,7 +333,7 @@ window.addEventListener('scroll', handler, { passive: true });
 .device-card::before {
   height: 3px;
   background: linear-gradient(90deg, var(--primary), var(--accent));
-  transform: scaleX(0) → scaleX(1) on hover;
+  transform: scaleX(0) â scaleX(1) on hover;
 }
 ```
 
@@ -358,12 +358,12 @@ thead {
 
 ---
 
-## 📊 Code-Qualität
+## ð Code-Qualität
 
 ### Kommentierung
 - Alle Funktionen haben JSDoc-Kommentare
 - Inline-Kommentare für komplexe Logik
-- Emojis für visuelles Scanning (🎯, ♿, etc.)
+- Emojis für visuelles Scanning (ð¯, â¿, etc.)
 
 ### Keine Breaking Changes
 - Alle neuen Features sind opt-in
@@ -378,7 +378,7 @@ thead {
 
 ---
 
-## 🚀 Neue HTML-Struktur
+## ð Neue HTML-Struktur
 
 ### Navigation (alle Seiten)
 ```html
@@ -390,7 +390,7 @@ thead {
     <div class="nav-search">
       <input type="text" id="globalSearch">
       <span id="searchResults"></span>
-      <button id="darkModeToggle">🌙</button>
+      <button id="darkModeToggle">ð</button>
     </div>
   </div>
 </nav>
@@ -418,7 +418,7 @@ thead {
 
 ---
 
-## 🎨 CSS Variable System
+## ð¨ CSS Variable System
 
 ### Farben
 ```css
@@ -437,7 +437,7 @@ thead {
 --shadow-xl: 0 12px 32px rgba(30, 64, 175, 0.15);
 ```
 
-### Übergänge
+### Ãbergänge
 ```css
 --transition: all 0.2s ease;
 --transition-slow: all 0.3s ease;
@@ -445,7 +445,7 @@ thead {
 
 ---
 
-## 📱 Responsive Design
+## ð± Responsive Design
 
 ### Breakpoints
 - Desktop: > 1024px
@@ -461,13 +461,13 @@ thead {
 
 ---
 
-## ✨ Besondere Features
+## â¨ Besondere Features
 
 ### Text-Normalisierung
 Suche funktioniert auch mit Umlauten:
-- "Diabetes" ≈ "Diäbetes" ✓
-- "übersicht" ≈ "übersicht" ✓
-- "ärztin" ≈ "arztin" ✓
+- "Diabetes" â "Diäbetes" â
+- "übersicht" â "übersicht" â
+- "ärztin" â "arztin" â
 
 ### Smart Highlighting
 - Keine verschachtelten `<span>` Tags
@@ -488,7 +488,7 @@ element.addEventListener('mouseleave', () => {
 
 ---
 
-## 🔧 Basis-Setup
+## ð§ Basis-Setup
 
 ### Installation/Start
 1. Öffne [http://localhost:8000](http://localhost:8000) (wenn Server läuft)
@@ -498,26 +498,26 @@ element.addEventListener('mouseleave', () => {
 ### Dateistruktur
 ```
 c:\WMC\Projekt_25\
-├── index.html
-├── [theme-seiten].html (11 Seiten)
-├── style.css (modularisiert mit Variablen)
-├── script.js (refaktoriert, modular)
-├── images/
-├── MedTechGuide/
-└── REFACTORING_DOKUMENTATION.md (diese Datei)
+âââ index.html
+âââ [theme-seiten].html (11 Seiten)
+âââ style.css (modularisiert mit Variablen)
+âââ script.js (refaktoriert, modular)
+âââ images/
+âââ MedTechGuide/
+âââ REFACTORING_DOKUMENTATION.md (diese Datei)
 ```
 
 ---
 
-## 📚 Browser-Kompatibilität
+## ð Browser-Kompatibilität
 
 ### Features
-- **CSS Variables**: IE 11 nicht, aber alle modernen Browser ✓
-- **IntersectionObserver**: IE 11 nicht, aber alle modernen Browser ✓
-- **RequestAnimationFrame**: IE 9+, Safari 6+ ✓
-- **localStorage**: IE 8+, alle modernen Browser ✓
-- **Flexbox**: IE 10+, alle modernen Browser ✓
-- **backdrop-filter**: Chrome 76+, Firefox 103+, Safari 9+ ✓
+- **CSS Variables**: IE 11 nicht, aber alle modernen Browser â
+- **IntersectionObserver**: IE 11 nicht, aber alle modernen Browser â
+- **RequestAnimationFrame**: IE 9+, Safari 6+ â
+- **localStorage**: IE 8+, alle modernen Browser â
+- **Flexbox**: IE 10+, alle modernen Browser â
+- **backdrop-filter**: Chrome 76+, Firefox 103+, Safari 9+ â
 
 ### Fallbacks
 - Dark Mode hat fallback to System-Preference
@@ -526,42 +526,42 @@ c:\WMC\Projekt_25\
 
 ---
 
-## 🎓 Warum diese Lösungen?
+## ð Warum diese Lösungen?
 
 ### Warum IntersectionObserver?
-✅ Nicht blockierend  
-✅ Nativer API (kein Polyfill nötig)  
-✅ Browser optimiert this automatically  
-✅ Memory-Leaks unmöglich mit unobserve()
+â Nicht blockierend  
+â Nativer API (kein Polyfill nötig)  
+â Browser optimiert this automatically  
+â Memory-Leaks unmöglich mit unobserve()
 
 ### Warum RAF für Progress Bar?
-✅ Synchronisiert mit Browser Refresh-Rate  
-✅ Keine Tearing-Effekte  
-✅ Maximale Performance  
+â Synchronisiert mit Browser Refresh-Rate  
+â Keine Tearing-Effekte  
+â Maximale Performance  
 
 ### Warum CSS Variables?
-✅ Dark Mode ohne CSS-Duplikation  
-✅ Zentrale Farb-Verwaltung  
-✅ Dynamisch änderbar mit JS  
+â Dark Mode ohne CSS-Duplikation  
+â Zentrale Farb-Verwaltung  
+â Dynamisch änderbar mit JS  
 
 ### Warum ThrottleEvent-Listener?
-✅ Scroll-Events feuern 60x pro Sekunde  
-✅ Können CPU überlasten  
-✅ Throttling = nur max 10x pro Sekunde  
+â Scroll-Events feuern 60x pro Sekunde  
+â Können CPU überlasten  
+â Throttling = nur max 10x pro Sekunde  
 
 ---
 
-## 🐛 Testing & Debugging
+## ð Testing & Debugging
 
 ### Tests durchführen:
-1. **Suche**: Gib "Diabetes" in Suchfeld → sollte highlights zeigen
-2. **Dark Mode**: Klick 🌙 Button → ganzseitige Umgestaltung
-3. **Progress Bar**: Scroll nach unten → Progress Bar füllt sich
-4. **Filter**: Klick "Diagnostik" → nur relevant Cards sichtbar
-5. **Vergleich**: Aktiviere Vergleichsmodus → Checkboxes erscheinen
-6. **Glossar**: Hover über Glossar-Term → Tooltip
+1. **Suche**: Gib "Diabetes" in Suchfeld â sollte highlights zeigen
+2. **Dark Mode**: Klick ð Button â ganzseitige Umgestaltung
+3. **Progress Bar**: Scroll nach unten â Progress Bar füllt sich
+4. **Filter**: Klick "Diagnostik" â nur relevant Cards sichtbar
+5. **Vergleich**: Aktiviere Vergleichsmodus â Checkboxes erscheinen
+6. **Glossar**: Hover über Glossar-Term â Tooltip
 7. **Keyboard**: TAB-Navigation sollte überall funktionieren
-8. **Mobile**: Öffne auf Handy → responsive Layout
+8. **Mobile**: Öffne auf Handy â responsive Layout
 
 ### Browser-Konsole (F12)
 ```javascript
@@ -577,7 +577,7 @@ getEventListeners(window)
 
 ---
 
-## 📈 Performance-Metriken (Geschätzt)
+## ð Performance-Metriken (Geschätzt)
 
 | Metrik | Wert | Kategorie |
 |--------|------|-----------|
@@ -590,7 +590,7 @@ getEventListeners(window)
 
 ---
 
-## 🎯 Nächste Schritte (Optional)
+## ð¯ Nächste Schritte (Optional)
 
 Falls Sie das Projekt weiter verbessern möchten:
 1. **ServiceWorker** für Offline-Funktionalität
@@ -602,7 +602,7 @@ Falls Sie das Projekt weiter verbessern möchten:
 
 ---
 
-## 📝 Lizenz & Credits
+## ð Lizenz & Credits
 
 Projekt: MedTechGuide  
 Typ: Schulprojekt - HTL Informatik  
@@ -613,4 +613,4 @@ Technologien: Vanilla JavaScript, CSS3, HTML5
 
 **Ende der Dokumentation**
 
-Viel Erfolg mit dem Portfolio-Projekt! 🚀
+Viel Erfolg mit dem Portfolio-Projekt! ð

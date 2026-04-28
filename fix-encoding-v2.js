@@ -6,36 +6,36 @@ const replacements = [
   // Umlaute
   ['ü', 'ü'], ['ö', 'ö'], ['ä', 'ä'],
   ['é', 'é'], ['à', 'à'], ['ç', 'ç'],
-  ['Ã¡', 'á'], ['Ã­', 'í'], ['Ã³', 'ó'],
-  ['Ã¹', 'ù'], ['Ã¢', 'â'], ['Ã™', 'Ü'],
-  ['Ã–', 'Ö'], ['Ã„', 'Ä'],
+  ['ÃÂ¡', 'á'], ['ÃÂ­', 'í'], ['ÃÂ³', 'ó'],
+  ['ÃÂ¹', 'ù'], ['ÃÂ¢', 'Ã¢'], ['Ãâ¢', 'Ã'],
+  ['Ã–', 'Ö'], ['Ãâ', 'Ä'],
   
   // Bindestriche und Anführungszeichen
-  ['–', '–'], ['–', '—'], ['â€œ', '"'], ['â€\u009d', '"'],
-  ['â€™', "'"], ['â€˜', "'"],
+  ['–', '–'], ['–', '—'], ['Ã¢â¬Å', '"'], ['Ã¢â¬\u009d', '"'],
+  ['Ã¢â¬â¢', "'"], ['Ã¢â¬Ë', "'"],
   
   // Ellipsis und spezielle Zeichen
-  ['â€¦', '...'], ['â€¹', '<'], ['â€º', '>'],
+  ['Ã¢â¬Â¦', '...'], ['Ã¢â¬Â¹', '<'], ['Ã¢â¬Âº', '>'],
   
   // Guillemets
   ['«', '«'], ['»', '»'],
   
   // Degree und andere
-  ['°', '°'], ['â„¢', 'TM'],
+  ['°', '°'], ['Ã¢âÂ¢', 'TM'],
   
   // Emojis - diese mit Unicode-Escape-Sequenzen
   // Stattdessen: Die fehlerhaften Sequenzen direkt finden
-  ['ðŸŽ¯', 'EMOJI_DARTBOARD'],
-  ['ðŸ§ ', 'EMOJI_BRAIN'],
-  ['ðŸ'¾', 'EMOJI_DISKETTE'],
-  ['ðŸ"Š', 'EMOJI_CHART'],
-  ['ðŸ©º', 'EMOJI_STETHOSCOPE'],
-  ['ðŸ"§', 'EMOJI_WRENCH'],
-  ['ðŸ§¬', 'EMOJI_MICROSCOPE'],
-  ['ðŸ¤–', 'EMOJI_ROBOT'],
-  ['ðŸ'', 'EMOJI_LIGHTBULB'],
-  ['âœ…', 'CHECK'],
-  ['â›"', 'CROSS'],
+  ['Ã°Å¸Å½Â¯', 'EMOJI_DARTBOARD'],
+  ['Ã°Å¸Â§ ', 'EMOJI_BRAIN'],
+  ['Ã°Å¸'Â¾', 'EMOJI_DISKETTE'],
+  ['Ã°Å¸"Å ', 'EMOJI_CHART'],
+  ['Ã°Å¸Â©Âº', 'EMOJI_STETHOSCOPE'],
+  ['Ã°Å¸"Â§', 'EMOJI_WRENCH'],
+  ['Ã°Å¸Â§Â¬', 'EMOJI_MICROSCOPE'],
+  ['Ã°Å¸Â¤–', 'EMOJI_ROBOT'],
+  ['Ã°Å¸'', 'EMOJI_LIGHTBULB'],
+  ['Ã¢Å…', 'CHECK'],
+  ['Ã¢âº"', 'CROSS'],
 ];
 
 function fixFile(filePath) {

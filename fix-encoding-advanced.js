@@ -6,30 +6,30 @@ const replacements = [
   // Häufige Ersetzungen
   ['ü', 'ü'], ['ö', 'ö'], ['ä', 'ä'],
   ['é', 'é'], ['à', 'à'], ['ç', 'ç'],
-  ['Ã¡', 'á'], ['Ã­', 'í'], ['Ã³', 'ó'],
-  ['Ã¹', 'ù'], ['Ã¢', 'â'], ['Ã™', 'Ü'],
-  ['Ã–', 'Ö'], ['Ã„', 'Ä'],
+  ['ÃÂ¡', 'á'], ['ÃÂ­', 'í'], ['ÃÂ³', 'ó'],
+  ['ÃÂ¹', 'ù'], ['ÃÂ¢', 'Ã¢'], ['Ãâ¢', 'Ã'],
+  ['Ã–', 'Ö'], ['Ãâ', 'Ä'],
   
   // En-Dash und Em-Dash
-  ['–', '–'], ['–', '—'], ['â€œ', '"'], ['â€\u009d', '"'],
+  ['–', '–'], ['–', '—'], ['Ã¢â¬Å', '"'], ['Ã¢â¬\u009d', '"'],
   
   // Ellipsis und spezielle Zeichen
-  ['â€¦', '…'], ['â€¹', '‹'], ['â€º', '›'],
+  ['Ã¢â¬Â¦', '…'], ['Ã¢â¬Â¹', 'â¹'], ['Ã¢â¬Âº', 'âº'],
   
   // Guillemets
   ['«', '«'], ['»', '»'],
   
   // Degree und andere
-  ['°', '°'], ['â„¢', '™'],
+  ['°', '°'], ['Ã¢âÂ¢', 'â¢'],
   
   // Emojis (double-encoded)
-  ['ðŸŽ¯', '🎯'], ['ðŸ§ ', '🧠'], ['âš–ï¸', '⚖️'], ['ðŸ"Š', '📊'],
-  ['ðŸ©º', '🩺'], ['ðŸ'¾', '💾'], ['ðŸ"§', '🔧'], ['ðŸ§¬', '🧬'],
-  ['ðŸ§¿', '🧿'], ['ðŸ¤–', '🤖'], ['ðŸ'', '💡'], ['âœ…', '✅'],
-  ['â›"', '❌'], ['ðŸ"', '📈'], ['ðŸ"', '📉'], ['ðŸ"', '📋'],
+  ['Ã°Å¸Å½Â¯', 'ð¯'], ['Ã°Å¸Â§ ', 'ð§ '], ['Ã¢Å¡–Ã¯Â¸', 'âï¸'], ['Ã°Å¸"Å ', 'ð'],
+  ['Ã°Å¸Â©Âº', 'ð©º'], ['Ã°Å¸'Â¾', 'ð¾'], ['Ã°Å¸"Â§', 'ð§'], ['Ã°Å¸Â§Â¬', 'ð§¬'],
+  ['Ã°Å¸Â§Â¿', 'ð§¿'], ['Ã°Å¸Â¤–', 'ð¤'], ['Ã°Å¸'', 'ð¡'], ['Ã¢Å…', 'â'],
+  ['Ã¢âº"', 'â'], ['Ã°Å¸"', 'ð'], ['Ã°Å¸"', 'ð'], ['Ã°Å¸"', 'ð'],
   
   // Weitere problematische Sequenzen
-  ['â€™', '''], ['â€˜', '''], ['â€ª', ''], ['â€«', ''],
+  ['Ã¢â¬â¢', '''], ['Ã¢â¬Ë', '''], ['Ã¢â¬Âª', ''], ['Ã¢â¬«', ''],
 ];
 
 function fixFile(filePath) {
@@ -47,12 +47,12 @@ function fixFile(filePath) {
     
     if (modified) {
       fs.writeFileSync(filePath, content, 'utf8');
-      console.log('✓ Fixed: ' + path.relative(process.cwd(), filePath));
+      console.log('â Fixed: ' + path.relative(process.cwd(), filePath));
       return true;
     }
     return false;
   } catch (e) {
-    console.error('✗ Error in ' + filePath + ': ' + e.message);
+    console.error('â Error in ' + filePath + ': ' + e.message);
     return false;
   }
 }
@@ -72,4 +72,4 @@ function walk(dir) {
 }
 
 const fixed = walk('.');
-console.log('\n✓ Encoding-Reparatur abgeschlossen: ' + fixed + ' Dateien repariert');
+console.log('\nâ Encoding-Reparatur abgeschlossen: ' + fixed + ' Dateien repariert');

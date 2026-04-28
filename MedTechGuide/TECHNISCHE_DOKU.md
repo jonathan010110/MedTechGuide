@@ -1,12 +1,12 @@
 # MedTechGuide – Technische Dokumentation
 
-## 1) Überblick
+## 1) Ãberblick
 MedTechGuide ist eine modulare Web-App mit Three.js, die drei medizinische Geräte als programmatisch erzeugte 3D-Simulatoren darstellt:
 - Pulsoximeter
 - EKG-Monitor
 - Blutdruckmessgerät
 
-Alle 3D-Modelle werden ausschließlich aus Geometrien (`BoxGeometry`, `CylinderGeometry`, `TorusGeometry`, `PlaneGeometry`, `SphereGeometry`) aufgebaut. Es werden keine externen 3D-Modelle geladen.
+Alle 3D-Modelle werden ausschlieÃlich aus Geometrien (`BoxGeometry`, `CylinderGeometry`, `TorusGeometry`, `PlaneGeometry`, `SphereGeometry`) aufgebaut. Es werden keine externen 3D-Modelle geladen.
 
 ## 2) Projektstruktur
 - `index.html`: App-Shell, Sidebar, Controls, Canvas
@@ -31,13 +31,13 @@ Aufbau aus:
 
 Animationen:
 - LED-Glühen über `emissiveIntensity`
-- Displaywerte (SpO₂ + Puls) und Pulswelle via Canvas-Textur
+- Displaywerte (SpOâ + Puls) und Pulswelle via Canvas-Textur
 
 ### EKG-Monitor
 Aufbau aus:
 - Monitorgehäuse (`BoxGeometry`)
 - Bezel + Screen-Fläche (`BoxGeometry` + `PlaneGeometry`)
-- Standfuß (`CylinderGeometry`)
+- StandfuÃ (`CylinderGeometry`)
 - Kabelbogen (`TorusGeometry`)
 - Interaktiver Drehknopf (`CylinderGeometry`)
 
@@ -60,7 +60,7 @@ Animationen:
 ## 4) Signalvisualisierung
 
 ### Pulsoximeter-Signal
-- Canvas zeichnet numerische Werte (`SpO₂`, `bpm`)
+- Canvas zeichnet numerische Werte (`SpOâ`, `bpm`)
 - Pulswelle als vereinfachte sinusförmige Basis + periodischer Peak
 - Canvas wird pro Frame aktualisiert und als `CanvasTexture` auf den Display-Plane gelegt
 
@@ -81,13 +81,13 @@ Vorteil:
 - Exakte Bauteil-Interaktion ohne separate HTML-Hotspots
 - Einfach erweiterbar durch zusätzliche interaktive Meshes
 
-## 6) Gerätewechsel & Übergänge
+## 6) Gerätewechsel & Ãbergänge
 Beim Wechseln zwischen Geräten:
 - Vorheriges Gerät wird weich ausgeblendet/skaliert
 - Neues Gerät wird eingeblendet/skaliert
-- Übergang wird zeitbasiert im Animationsloop berechnet
+- Ãbergang wird zeitbasiert im Animationsloop berechnet
 
-Dadurch entstehen „Smooth Transitions“ ohne zusätzliche Bibliothek.
+Dadurch entstehen âSmooth Transitions" ohne zusätzliche Bibliothek.
 
 ## 7) Bedienung
 - Sidebar: Auswahl des aktiven Geräts
