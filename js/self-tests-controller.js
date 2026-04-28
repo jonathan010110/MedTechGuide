@@ -27,7 +27,7 @@ class SelfTestsController {
 
   initializeEventListeners() {
     // Test Karten Click Handler
-    document.querySelectorAll('.test-card').forEach(card => {
+    document.querySelectorAll'.test-card').forEach(card => {
       card.addEventListener('click', (e) => {
         const testId = card.dataset.testId;
         const test = this.allTests.find(t => t.testId === testId);
@@ -54,7 +54,7 @@ class SelfTestsController {
     this.testStarted = true;
 
     // Hide test cards, show interface
-    document.querySelectorAll('.test-card').forEach(card => {
+    document.querySelectorAll'.test-card').forEach(card => {
       card.style.display = 'none';
     });
 
@@ -114,7 +114,7 @@ class SelfTestsController {
     });
 
     // Add change listener
-    document.querySelectorAll('input[type="radio"]').forEach(radio => {
+    document.querySelectorAll'input[type="radio"]').forEach(radio => {
       radio.addEventListener('change', (e) => {
         this.answers[e.target.dataset.questionId] = parseInt(e.target.value);
       });
@@ -232,7 +232,7 @@ class SelfTestsController {
         </div>
 
         <div class="trait-section">
-          <div class="trait-title">ðª Stärken</div>
+          <div class="trait-title">�°ÂÂÂÂÂÂª Stärken</div>
           <div class="trait-list strengths">
             <div class="trait-item">
               <span>${typeInfo.strength}</span>
@@ -241,7 +241,7 @@ class SelfTestsController {
         </div>
 
         <div class="trait-section">
-          <div class="trait-title">â ï¸ Herausforderungen</div>
+          <div class="trait-title">âÂÂÂÂ �Â¯ÂÂ¸ÂÂ Herausforderungen</div>
           <div class="trait-list challenges">
             <div class="trait-item">
               <span>${typeInfo.challenges}</span>
@@ -250,7 +250,7 @@ class SelfTestsController {
         </div>
 
         <div class="trait-section">
-          <div class="trait-title">ð¯ Passende Arbeitsumfelder</div>
+          <div class="trait-title">�°ÂÂÂÂÂÂ¯ Passende Arbeitsumfelder</div>
           <div class="trait-list">
             <div class="trait-item">
               <span>${typeInfo.workplace}</span>
@@ -260,7 +260,7 @@ class SelfTestsController {
       `;
     }
 
-    // Medizinischer Hint (auÃer MBTI)
+    // Medizinischer Hint (au�ÂÂÂer MBTI)
     if (this.currentTest.medicalDisclaimer) {
       resultsHTML += this.currentTest.medicalDisclaimer;
     }
@@ -268,7 +268,7 @@ class SelfTestsController {
     // Reset Button
     resultsHTML += `
       <div style="text-align: center; margin-top: 2rem;">
-        <button class="btn-reset">â Einen anderen Test machen</button>
+        <button class="btn-reset">âÂÂÂÂ Einen anderen Test machen</button>
       </div>
     `;
 
@@ -290,7 +290,7 @@ class SelfTestsController {
     this.testStarted = false;
 
     // Show test cards again
-    document.querySelectorAll('.test-card').forEach(card => {
+    document.querySelectorAll'.test-card').forEach(card => {
       card.style.display = 'block';
     });
 

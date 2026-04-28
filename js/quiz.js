@@ -1,13 +1,13 @@
 /**
  * ===================================================================
- * ð¯ MEDTECHGUIDE - ADVANCED QUIZ & ASSESSMENT SYSTEM v2.0
+ * �°ÂÂÂÂÂÂ¯ MEDTECHGUIDE - ADVANCED QUIZ & ASSESSMENT SYSTEM v2.0
  * ===================================================================
  * Interaktives Quiz mit Medizintechnik + Professionelle psychologische Tests
  * Multiple Choice & Likert-Skalen, Randomisierung, Score-Tracking
  */
 
 // ===================================================================
-// ð QUIZ DATABASE WITH RANDOMIZATION
+// �°ÂÂÂÂÂÂ QUIZ DATABASE WITH RANDOMIZATION
 // ===================================================================
 
 const QUIZ_DATABASE = {
@@ -18,7 +18,7 @@ const QUIZ_DATABASE = {
       { frage: "Was ist ein Prick-Test?", optionen: ["Blutabnahme", "Allergie-Test mit Hautreaktion", "Atemtest", "Urintest"], antwort: 1, erklärung: "Ein Prick-Test kratzt die Haut mit Allergenen und beobachtet die Reaktion nach 15 Min." },
       { frage: "Welche Bildgebung nutzt Magnetfelder?", optionen: ["Röntgen", "CT", "MRT", "Ultraschall"], antwort: 2, erklärung: "MRT nutzt starke Magnetfelder und Radiowellen." },
       { frage: "Was misst ein EKG?", optionen: ["Blutdruck", "Elektrische Herzaktivität", "Sauerstoff", "Temperatur"], antwort: 1, erklärung: "Das Elektrokardiogramm registriert die elektrischen Signale des Herzens." },
-      { frage: "Wie heiÃt der Schnelltestindex für Allergie-Bluttest?", optionen: ["CAP-FEIA", "ELISA", "PCR", "Western Blot"], antwort: 0, erklärung: "CAP-FEIA ist der Standard für IgE-Bestimmung." }
+      { frage: "Wie hei�ÂÂÂt der Schnelltestindex für Allergie-Bluttest?", optionen: ["CAP-FEIA", "ELISA", "PCR", "Western Blot"], antwort: 0, erklärung: "CAP-FEIA ist der Standard für IgE-Bestimmung." }
     ]
   },
   therapie: {
@@ -26,7 +26,7 @@ const QUIZ_DATABASE = {
     fragen: [
       { frage: "Was ist eine Insulinpumpe?", optionen: ["Ein Beatmungsgerät", "Ein tragbares Gerät für kontinuierliche Insulinabgabe", "Ein Dialysegerät", "Ein Infusionsständer"], antwort: 1, erklärung: "Eine Insulinpumpe gibt kontinuierlich Insulin ab über einen subcutanen Katheter." },
       { frage: "Was ist ein Hybrid-Closed-Loop System?", optionen: ["CGM + Pumpe + Algorithmus automatisch verbunden", "Zwei Insulinpumpen", "Ein altes System", "Ein manuelles System"], antwort: 0, erklärung: "Hybrid-Closed-Loop verbindet Sensor, Pumpe und Algorithmus für automatische Kontrolle." },
-      { frage: "Was ist ein Exoskelett?", optionen: ["Eine äuÃere Stützstruktur für Bewegungen", "Ein implantierbares Gerät", "Ein Medikament", "Eine Prothese"], antwort: 0, erklärung: "Ein Exoskelett ist eine mechanische Struktur, die Bewegungen verstärkt oder unterstützt." },
+      { frage: "Was ist ein Exoskelett?", optionen: ["Eine äu�ÂÂÂere Stützstruktur für Bewegungen", "Ein implantierbares Gerät", "Ein Medikament", "Eine Prothese"], antwort: 0, erklärung: "Ein Exoskelett ist eine mechanische Struktur, die Bewegungen verstärkt oder unterstützt." },
       { frage: "Was ist Hyposensibilisierung?", optionen: ["Blockieren von Allergenen", "Schrittweise Gewöhnung des Immunsystems", "Medikament gegen Allergie", "Chirurgischer Eingriff"], antwort: 1, erklärung: "Hyposensibilisierung gewöhnt das Immunsystem schrittweise an das Allergen." },
       { frage: "Was ist ein Schrittmacher?", optionen: ["Ein Medikament", "Ein implantierbares Herzgerät für Rhythmusstabilität", "Ein Sensor", "Eine Software"], antwort: 1, erklärung: "Ein Schrittmacher reguliert den Herzrhythmus durch elektrische Impulse." }
     ]
@@ -54,15 +54,15 @@ const QUIZ_DATABASE = {
 
   depression: {
     type: 'likert',
-    name: 'ð Depressions-Screening (PHQ-9)',
+    name: '�°ÂÂÂÂÂÂ Depressions-Screening (PHQ-9)',
     beschreibung: 'Wissenschaftlich validierter Test zur Früherkennung',
-    warnung: 'â ï¸ Ersatz nicht für ärztliche Diagnose. Konsultieren Sie bei Bedarf einen Arzt.',
+    warnung: 'âÂÂÂÂ �Â¯ÂÂ¸ÂÂ Ersatz nicht für ärztliche Diagnose. Konsultieren Sie bei Bedarf einen Arzt.',
     fragen: [
       { frage: "Wenig Interesse oder Freude an seinen Tätigkeiten", skala: ["Gar nicht", "An mehreren Tagen", "An mehr als der Hälfte der Tage", "Fast jeden Tag"] },
       { frage: "Niedergeschlagenheit, Schwermut oder Hoffnungslosigkeit", skala: ["Gar nicht", "An mehreren Tagen", "An mehr als der Hälfte der Tage", "Fast jeden Tag"] },
       { frage: "Schwierigkeiten ein- oder durchzuschlafen", skala: ["Gar nicht", "An mehreren Tagen", "An mehr als der Hälfte der Tage", "Fast jeden Tag"] },
       { frage: "Müdigkeit oder Mangel an Energie", skala: ["Gar nicht", "An mehreren Tagen", "An mehr als der Hälfte der Tage", "Fast jeden Tag"] },
-      { frage: "Verminderter Appetit oder Ãberessen", skala: ["Gar nicht", "An mehreren Tagen", "An mehr als der Hälfte der Tage", "Fast jeden Tag"] },
+      { frage: "Verminderter Appetit oder �ÂÂÂberessen", skala: ["Gar nicht", "An mehreren Tagen", "An mehr als der Hälfte der Tage", "Fast jeden Tag"] },
       { frage: "Negative Gefühle sich selbst gegenüber", skala: ["Gar nicht", "An mehreren Tagen", "An mehr als der Hälfte der Tage", "Fast jeden Tag"] },
       { frage: "Schwierigkeiten sich zu konzentrieren", skala: ["Gar nicht", "An mehreren Tagen", "An mehr als der Hälfte der Tage", "Fast jeden Tag"] },
       { frage: "Verlangsamt oder beschleunigt sich in Bewegungen", skala: ["Gar nicht", "An mehreren Tagen", "An mehr als der Hälfte der Tage", "Fast jeden Tag"] },
@@ -72,15 +72,15 @@ const QUIZ_DATABASE = {
       0: { label: "Keine Depression", description: "Ergebnisse deuten nicht auf Depression hin." },
       5: { label: "Leichte Depression", description: "Sie zeigen einige depressive Symptome." },
       10: { label: "Moderate Depression", description: "Fachberatung wird empfohlen." },
-      15: { label: "Schwere Depression", description: "â ï¸ Konsultieren Sie dringend einen Psychologen." }
+      15: { label: "Schwere Depression", description: "âÂÂÂÂ �Â¯ÂÂ¸ÂÂ Konsultieren Sie dringend einen Psychologen." }
     }
   },
 
   adhs: {
     type: 'likert',
-    name: 'ð§  ADHS-Screening (ASRS v1.1)',
+    name: '�°ÂÂÂÂ§ÂÂ  ADHS-Screening (ASRS v1.1)',
     beschreibung: 'Professioneller ADHS-Screening-Test',
-    warnung: 'â ï¸ Ersatz nicht für ärztliche Diagnose. Konsultieren Sie einen Spezialisten.',
+    warnung: 'âÂÂÂÂ �Â¯ÂÂ¸ÂÂ Ersatz nicht für ärztliche Diagnose. Konsultieren Sie einen Spezialisten.',
     fragen: [
       { frage: "Wie oft vergessen Sie Termine oder Aufgaben?", skala: ["Nie/selten", "Manchmal", "Oft", "Sehr oft", "Immer"] },
       { frage: "Wie oft fällt es Ihnen schwer bei Details?", skala: ["Nie/selten", "Manchmal", "Oft", "Sehr oft", "Immer"] },
@@ -92,13 +92,13 @@ const QUIZ_DATABASE = {
     interpretation: {
       0: { label: "Niedrige ADHS-Merkmale", description: "Keine signifikanten Anzeichen erkannt." },
       10: { label: "Mögliche ADHS", description: "Weitere Evaluation empfohlen." },
-      15: { label: "Wahrscheinlich ADHS", description: "â ï¸ Fachliche Bewertung wird empfohlen." }
+      15: { label: "Wahrscheinlich ADHS", description: "âÂÂÂÂ �Â¯ÂÂ¸ÂÂ Fachliche Bewertung wird empfohlen." }
     }
   },
 
   persoenlichkeit: {
     type: 'bigfive',
-    name: 'ð Big-Five Persönlichkeitstest (ENTF)',
+    name: '�°ÂÂÂÂÂÂ Big-Five Persönlichkeitstest (ENTF)',
     beschreibung: 'Wissenschaftlich validierter Test der fünf Persönlichkeitsfaktoren',
     dimensionen: {
       O: "Offenheit - Kreativität & Neugier",
@@ -133,7 +133,7 @@ const QUIZ_DATABASE = {
 };
 
 // ===================================================================
-// ð® UTILITY FUNCTIONS
+// �°ÂÂÂÂÂ® UTILITY FUNCTIONS
 // ===================================================================
 
 function shuffleArray(array) {
@@ -157,7 +157,7 @@ function getRandomizedQuestions(kategorie) {
 }
 
 // ===================================================================
-// ð® QUIZ STATE & LOGIC
+// �°ÂÂÂÂÂ® QUIZ STATE & LOGIC
 // ===================================================================
 
 let quizState = {
@@ -291,7 +291,7 @@ function displayQuizFrage() {
   }
 
   html += `
-      <button class="quiz-close" onclick="closeQuiz()">â Quiz beenden</button>
+      <button class="quiz-close" onclick="closeQuiz()">âÂÂÂÂ Quiz beenden</button>
     </div>
   `;
 
@@ -316,26 +316,26 @@ function showQuizErgebnis() {
     let bewertung = '';
     let emoji = '';
     if (prozent >= 90) {
-      bewertung = 'Ausgezeichnet! ð';
-      emoji = 'ð';
+      bewertung = 'Ausgezeichnet! �°ÂÂÂÂÂÂ';
+      emoji = '�°ÂÂÂÂÂÂ';
     } else if (prozent >= 80) {
-      bewertung = 'Sehr gut! ð';
-      emoji = 'ð¥';
+      bewertung = 'Sehr gut! �°ÂÂÂÂÂÂ';
+      emoji = '�°ÂÂÂÂ¥ÂÂ';
     } else if (prozent >= 70) {
-      bewertung = 'Gut! ð';
-      emoji = 'ð¥';
+      bewertung = 'Gut! �°ÂÂÂÂÂÂ';
+      emoji = '�°ÂÂÂÂ¥ÂÂ';
     } else if (prozent >= 60) {
-      bewertung = 'Bestanden! â';
-      emoji = 'ð¥';
+      bewertung = 'Bestanden! âÂÂÂÂ';
+      emoji = '�°ÂÂÂÂ¥ÂÂ';
     } else {
-      bewertung = 'Noch etwas Ãben! ðª';
-      emoji = 'ð';
+      bewertung = 'Noch etwas �ÂÂÂben! �°ÂÂÂÂÂÂª';
+      emoji = '�°ÂÂÂÂÂÂ';
     }
 
     let detailsHtml = quizState.antworten.map((a, i) => `
       <div class="quiz-result-item ${a.isKorrekt ? 'korrekt' : 'falsch'}">
         <h4>Frage ${i + 1}: ${a.frage}</h4>
-        <p class="status">${a.isKorrekt ? 'â Korrekt' : 'â Falsch'}</p>
+        <p class="status">${a.isKorrekt ? 'âÂÂÂÂ Korrekt' : 'âÂÂÂÂ Falsch'}</p>
       </div>
     `).join('');
 
@@ -378,7 +378,7 @@ function showQuizErgebnis() {
 
     html += `
       <div class="quiz-result-header">
-        <div class="quiz-result-emoji">ð</div>
+        <div class="quiz-result-emoji">�°ÂÂÂÂÂÂ</div>
         <h2>Test abgeschlossen!</h2>
         <p class="quiz-result-rating">${interpretation.label}</p>
       </div>
@@ -424,7 +424,7 @@ function showQuizErgebnis() {
 
     html += `
       <div class="quiz-result-header">
-        <div class="quiz-result-emoji">ð</div>
+        <div class="quiz-result-emoji">�°ÂÂÂÂÂÂ</div>
         <h2>Persönlichkeitsprofil</h2>
         <p class="quiz-result-rating">Deine Big-Five Ergebnisse</p>
       </div>
@@ -453,7 +453,7 @@ function showQuizErgebnis() {
 }
 
 // ===================================================================
-// ð¨ UI MANAGEMENT
+// �°ÂÂÂÂÂÂ¨ UI MANAGEMENT
 // ===================================================================
 
 function showQuizUI() {
@@ -476,7 +476,7 @@ function closeQuiz() {
   }
 }
 
-function openQuizModal() {
+function openQuizModal) {
   let modal = document.getElementById('quiz-modal');
   if (!modal) {
     modal = document.createElement('div');
@@ -486,24 +486,24 @@ function openQuizModal() {
   }
 
   const kategorien = [
-    { key: 'diagnostik', name: 'ð Diagnostik', desc: 'Testverfahren und Mess-Instrumente', type: 'medical' },
-    { key: 'therapie', name: 'ð Therapie', desc: 'Behandlungs-Geräte', type: 'medical' },
-    { key: 'forschung', name: 'ð¬ Forschung', desc: 'Neue Technologien', type: 'medical' },
-    { key: 'zukunft', name: 'ð Zukunft', desc: 'Kommende Innovationen', type: 'medical' },
-    { key: 'depression', name: 'ð Depression', desc: 'PHQ-9 Screening', type: 'psychology' },
-    { key: 'adhs', name: 'ð§  ADHS', desc: 'ASRS Screening', type: 'psychology' },
-    { key: 'persoenlichkeit', name: 'ð Persönlichkeit', desc: 'Big-Five Test', type: 'psychology' }
+    { key: 'diagnostik', name: '�°ÂÂÂÂÂÂ Diagnostik', desc: 'Testverfahren und Mess-Instrumente', type: 'medical' },
+    { key: 'therapie', name: '�°ÂÂÂÂÂÂ Therapie', desc: 'Behandlungs-Geräte', type: 'medical' },
+    { key: 'forschung', name: '�°ÂÂÂÂÂÂ¬ Forschung', desc: 'Neue Technologien', type: 'medical' },
+    { key: 'zukunft', name: '�°ÂÂÂÂÂÂ Zukunft', desc: 'Kommende Innovationen', type: 'medical' },
+    { key: 'depression', name: '�°ÂÂÂÂÂÂ Depression', desc: 'PHQ-9 Screening', type: 'psychology' },
+    { key: 'adhs', name: '�°ÂÂÂÂ§ÂÂ  ADHS', desc: 'ASRS Screening', type: 'psychology' },
+    { key: 'persoenlichkeit', name: '�°ÂÂÂÂÂÂ Persönlichkeit', desc: 'Big-Five Test', type: 'psychology' }
   ];
 
   let html = `
-    <div class="quiz-modal-overlay" onclick="closeQuizModal()"></div>
+    <div class="quiz-modal-overlay" onclick="closeQuizModal)"></div>
     <div class="quiz-modal-content">
-      <button class="modal-close" onclick="closeQuizModal()">â</button>
+      <button class="modal-close" onclick="closeQuizModal)">âÂÂÂÂ</button>
       <h2>Wähle einen Test</h2>
       <p class="quiz-modal-subtitle">Medizintechnik Quiz oder psychologische Tests</p>
       
       <div class="quiz-kategorie-gruppe">
-        <h3 class="kategorie-gruppe-titel">ð Medizintechnik</h3>
+        <h3 class="kategorie-gruppe-titel">�°ÂÂÂÂÂÂ Medizintechnik</h3>
         <div class="quiz-kategorien-grid">
   `;
 
@@ -524,7 +524,7 @@ function openQuizModal() {
       </div>
 
       <div class="quiz-kategorie-gruppe">
-        <h3 class="kategorie-gruppe-titel">ð§  Psychologische Tests</h3>
+        <h3 class="kategorie-gruppe-titel">�°ÂÂÂÂ§ÂÂ  Psychologische Tests</h3>
         <div class="quiz-kategorien-grid">
   `;
 
@@ -551,7 +551,7 @@ function openQuizModal() {
   modal.classList.add('quiz-modal-active');
 }
 
-function closeQuizModal() {
+function closeQuizModal) {
   const modal = document.getElementById('quiz-modal');
   if (modal) {
     modal.classList.remove('quiz-modal-active');
@@ -559,11 +559,11 @@ function closeQuizModal() {
 }
 
 // ===================================================================
-// ð INITIALIZATION
+// �°ÂÂÂÂÂÂ INITIALIZATION
 // ===================================================================
 
 function initQuizSystem() {
-  console.log('â Quiz System v2.0 initialisiert (mit psychologischen Tests)');
+  console.log('âÂÂÂÂ Quiz System v2.0 initialisiert (mit psychologischen Tests)');
   
   const quizBtn = document.querySelector('[data-quiz-button]');
   if (quizBtn) {

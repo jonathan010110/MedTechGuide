@@ -1,31 +1,31 @@
-# ð Quiz v2.0 - Update Summary
+# �°ÂÂÂÂÂÂ Quiz v2.0 - Update Summary
 
 **Datum:** 24.02.2026  
 **Version:** 2.0.0 Release  
 
-## â¨ Was ist neu?
+## âÂÂÂÂ¨ Was ist neu?
 
-### ð **Randomisierte Fragen**
+### �°ÂÂÂÂÂÂ **Randomisierte Fragen**
 Fragen und Antworten werden jetzt bei jedem Test zufällig sortiert!
 - Fisher-Yates Shuffle Algorithmus
 - Jeder Test ist unterschiedlich
 - Kein "Auswendiglernen" möglich
 
-### ð§  **3 Professionelle Psychologische Tests**
+### �°ÂÂÂÂ§ÂÂ  **3 Professionelle Psychologische Tests**
 
-#### ð **Depression-Screening (PHQ-9)**
+#### �°ÂÂÂÂÂÂ **Depression-Screening (PHQ-9)**
 - Basis: Patient Health Questionnaire
 - 9 Fragen zu depressiven Symptomen
 - Wissenschaftlich validiert
-- â ï¸ Kein Ersatz für Arztbesuch
+- âÂÂÂÂ �Â¯ÂÂ¸ÂÂ Kein Ersatz für Arztbesuch
 
-#### ð§  **ADHS-Screening (ASRS v1.1)**
+#### �°ÂÂÂÂ§ÂÂ  **ADHS-Screening (ASRS v1.1)**
 - Basis: Adult ADHD Self-Report Scale
 - 6 Fragen zu ADHS-Symptomen
 - Von der WHO entwickelt
-- â ï¸ Weitere Evaluierung empfohlen
+- âÂÂÂÂ �Â¯ÂÂ¸ÂÂ Weitere Evaluierung empfohlen
 
-#### ð **Big-Five Persönlichkeitstest**
+#### �°ÂÂÂÂÂÂ **Big-Five Persönlichkeitstest**
 - 5 Persönlichkeitsdimensionen (ENTF):
   - **O**ffenheit - Neugier & Kreativität
   - **E**xtraversion - Geselligkeit & Energie
@@ -35,14 +35,14 @@ Fragen und Antworten werden jetzt bei jedem Test zufällig sortiert!
 - 20 Fragen
 - Detailliertes Persönlichkeitsprofil
 
-### ð± **Mobile Hochformat-Optimierung**
-- â Perfekt optimiert für Smartphones
-- â Breakpoints: 480px, 768px
-- â Touch-friendly Buttons (44px+)
-- â Landscape & Portrait Support
-- â Schneller & Responsive
+### �°ÂÂÂÂÂÂ± **Mobile Hochformat-Optimierung**
+- âÂÂÂÂ Perfekt optimiert für Smartphones
+- âÂÂÂÂ Breakpoints: 480px, 768px
+- âÂÂÂÂ Touch-friendly Buttons (44px+)
+- âÂÂÂÂ Landscape & Portrait Support
+- âÂÂÂÂ Schneller & Responsive
 
-### ð¨ **Neue UI für Fragebögen**
+### �°ÂÂÂÂÂÂ¨ **Neue UI für Fragebögen**
 - Likert-Skalen (für Depression & ADHS)
 - Big-Five Dimension-Visualisierung
 - Farbcodierte Ergebnisse
@@ -51,12 +51,12 @@ Fragen und Antworten werden jetzt bei jedem Test zufällig sortiert!
 
 ---
 
-## ð¯ Wie benutzen?
+## �°ÂÂÂÂÂÂ¯ Wie benutzen?
 
 ### Im Browser
 ```
 1. Öffne index.html
-2. Klick auf "ð¯ Quiz" Button in Navigation
+2. Klick auf "�°ÂÂÂÂÂÂ¯ Quiz" Button in Navigation
 3. NEUE OPTION: Wähle einen psychologischen Test
 4. Beantworte alle Fragen
 5. Schau die Ergebnisse an (mit Interpretationen)
@@ -65,46 +65,46 @@ Fragen und Antworten werden jetzt bei jedem Test zufällig sortiert!
 ### Tests verfügbar
 
 **Medizintechnik (Multiple Choice):**
-- ð Diagnostik (5 Fragen, randomisiert)
-- ð Therapie (5 Fragen, randomisiert)
-- ð¬ Forschung (5 Fragen, randomisiert)
-- ð Zukunft (5 Fragen, randomisiert)
+- �°ÂÂÂÂÂÂ Diagnostik (5 Fragen, randomisiert)
+- �°ÂÂÂÂÂÂ Therapie (5 Fragen, randomisiert)
+- �°ÂÂÂÂÂÂ¬ Forschung (5 Fragen, randomisiert)
+- �°ÂÂÂÂÂÂ Zukunft (5 Fragen, randomisiert)
 
-**Psychologie (Fragebögen):**  â­ NEU
-- ð Depression-Screening
-- ð§  ADHS-Screening
-- ð Big-Five Persönlichkeitstest
+**Psychologie (Fragebögen):**  âÂÂ­ÂÂ NEU
+- �°ÂÂÂÂÂÂ Depression-Screening
+- �°ÂÂÂÂ§ÂÂ  ADHS-Screening
+- �°ÂÂÂÂÂÂ Big-Five Persönlichkeitstest
 
 ---
 
-## ð Dateiänderungen
+## �°ÂÂÂÂÂÂ Dateiänderungen
 
 ### Aktualisiert
-- â `js/quiz.js` (v2.0 - 1000+ Zeilen)
+- âÂÂÂÂ `js/quiz.js` (v2.0 - 1000+ Zeilen)
   - Neue QUIZ_DATABASE Struktur mit 3 Tests
   - Randomisierungs-Funktionen
   - Likert-Skalen Support
   - Big-Five Scoring
 
-- â `css/quiz.css` (v2.0 - 750+ Zeilen)
+- âÂÂÂÂ `css/quiz.css` (v2.0 - 750+ Zeilen)
   - Mobile Hochformat-Optimierung
   - Likert-Skalen Styling
   - Big-Five Visualisierung
   - Landscape Mode Support
 
 ### Neu erstellt
-- â `docs/QUIZ_V2_CHANGELOG.md` (ausführliche Dokumentation)
+- âÂÂÂÂ `docs/QUIZ_V2_CHANGELOG.md` (ausführliche Dokumentation)
 
 ### Unverändert
-- â `index.html` (funktioniert weiterhin)
-- â `html/quiz.html` (funktioniert weiterhin)
-- â Alle anderen Dateien
+- âÂÂÂÂ `index.html` (funktioniert weiterhin)
+- âÂÂÂÂ `html/quiz.html` (funktioniert weiterhin)
+- âÂÂÂÂ Alle anderen Dateien
 
 ---
 
-## ð Datenschutz & Sicherheit
+## �°ÂÂÂÂÂÂ Datenschutz & Sicherheit
 
-â 100% Local Processing:
+âÂÂÂÂ 100% Local Processing:
 - Keine externe Datenübertragung
 - Keine Server-Speicherung
 - Keine Cookies
@@ -113,55 +113,55 @@ Fragen und Antworten werden jetzt bei jedem Test zufällig sortiert!
 
 ---
 
-## â ï¸ Psychologische Tests - Wichtig!
+## âÂÂÂÂ �Â¯ÂÂ¸ÂÂ Psychologische Tests - Wichtig!
 
 ### Diese Tests sind:
-â **KEINE** ärztliche Diagnose  
-â **NICHT** als vollständige Evaluierung  
-â **NICHT** für Selbstmedikation  
+âÂÂÂÂ **KEINE** ärztliche Diagnose  
+âÂÂÂÂ **NICHT** als vollständige Evaluierung  
+âÂÂÂÂ **NICHT** für Selbstmedikation  
 
 ### Diese Tests sind:
-â Grundlegendes Screening  
-â Selbst-Bewusstseinsfindung  
-â Zum Arztbesuch vorbereiten  
-â Informativ & Eduaktiv  
+âÂÂÂÂ Grundlegendes Screening  
+âÂÂÂÂ Selbst-Bewusstseinsfindung  
+âÂÂÂÂ Zum Arztbesuch vorbereiten  
+âÂÂÂÂ Informativ & Eduaktiv  
 
 ### Bei ernsthafte Bedenken:
-ð¥ **Konsultiere einen Psychologen**  
-ð **Rufe einen Arzt an**  
-ð **Kontaktiere Krisenhotline**  
+�°ÂÂÂÂÂÂ¥ **Konsultiere einen Psychologen**  
+�°ÂÂÂÂÂÂ **Rufe einen Arzt an**  
+�°ÂÂÂÂÂÂ **Kontaktiere Krisenhotline**  
 
 ---
 
-## ð§ª Testing Suggestions
+## �°ÂÂÂÂ§ÂÂª Testing Suggestions
 
 ### Multiple Choice (Diagnostik)
 ```
-â Öffne "ð Diagnostik"
-â Beantworte 5 Fragen
-â Fragen sollten unterschiedlich sein jedesmal
-â Antworten A/B/C/D sollten variieren
+âÂÂÂÂ Öffne "�°ÂÂÂÂÂÂ Diagnostik"
+âÂÂÂÂ Beantworte 5 Fragen
+âÂÂÂÂ Fragen sollten unterschiedlich sein jedesmal
+âÂÂÂÂ Antworten A/B/C/D sollten variieren
 ```
 
 ### Likert Scale (Depression)
 ```
-â Öffne "ð Depression-Screening"
-â Beantworte 9 Fragen mit Skala
-â Schau Gesamtscore & Interpretation an
-â Lese Warnung sorgfältig!
+âÂÂÂÂ Öffne "�°ÂÂÂÂÂÂ Depression-Screening"
+âÂÂÂÂ Beantworte 9 Fragen mit Skala
+âÂÂÂÂ Schau Gesamtscore & Interpretation an
+âÂÂÂÂ Lese Warnung sorgfältig!
 ```
 
 ### Big Five (Persönlichkeit)
 ```
-â Öffne "ð Persönlichkeit"
-â Beantworte 20 Fragen (1-5 Skala)
-â Schau Profil mit 5 Dimensionen an
-â Lese Interpretationen für jede Dimension
+âÂÂÂÂ Öffne "�°ÂÂÂÂÂÂ Persönlichkeit"
+âÂÂÂÂ Beantworte 20 Fragen (1-5 Skala)
+âÂÂÂÂ Schau Profil mit 5 Dimensionen an
+âÂÂÂÂ Lese Interpretationen für jede Dimension
 ```
 
 ---
 
-## ð± Mobile Test
+## �°ÂÂÂÂÂÂ± Mobile Test
 
 ### Auf iPhone/Android testen:
 1. Öffne http://localhost:8000 (oder deine URL)
@@ -172,23 +172,23 @@ Fragen und Antworten werden jetzt bei jedem Test zufällig sortiert!
 
 ---
 
-## ð Troubleshooting
+## �°ÂÂÂÂÂÂ Troubleshooting
 
-### â Quiz lädt nicht
+### âÂÂÂÂ Quiz lädt nicht
 **Lösung:**
 1. Konsole öffnen: F12
 2. Prüfe ob Fehler sichtbar ist
 3. Cache leeren: Ctrl+Shift+Delete
 4. Seite neuladen
 
-### â Styling bricht
+### âÂÂÂÂ Styling bricht
 **Lösung:**
 1. Prüfe ob quiz.css in head geladen ist
 2. Prüfe ob quiz.js vor body-close ist
 3. Cache leeren
 4. Browser neu starten
 
-### â Fragen erscheinen nicht
+### âÂÂÂÂ Fragen erscheinen nicht
 **Lösung:**
 1. Öffne Konsole (F12)
 2. Prüfe auf JavaScript Fehler
@@ -197,7 +197,7 @@ Fragen und Antworten werden jetzt bei jedem Test zufällig sortiert!
 
 ---
 
-## â Checkliste
+## âÂÂÂÂ Checkliste
 
 - [x] quiz.js v2.0 installiert
 - [x] quiz.css v2.0 installiert
@@ -210,14 +210,14 @@ Fragen und Antworten werden jetzt bei jedem Test zufällig sortiert!
 
 ---
 
-## ð Weitere Infos
+## �°ÂÂÂÂÂÂ Weitere Infos
 
 Detaillierte technische Dokumentation:
-â Siehe: `docs/QUIZ_V2_CHANGELOG.md`
+âÂÂÂÂ Siehe: `docs/QUIZ_V2_CHANGELOG.md`
 
 ---
 
-**Gratuliere zum Update! ð**
+**Gratuliere zum Update! �°ÂÂÂÂÂÂ**
 
 Das System ist nun professioneller, responsiver und mit echten psychologischen Tests.
 

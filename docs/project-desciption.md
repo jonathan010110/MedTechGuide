@@ -1,8 +1,8 @@
-# Projekt: MedTechGuide – Medizinische Geräte verständlich erklärt
+# Projekt: MedTechGuide â Medizinische Geräte verständlich erklärt
 
 ## Projektidee
 
-MedTechGuide ist eine interaktive Website, die **medizintechnische Geräte** übersichtlich, verständlich und ansprechend für Laien präsentiert. Von Blutzuckermessgeräten über EKG-Systeme bis hin zu Neurochips und KI-gestützten Diagnosewerkzeugen – das Projekt deckt ein breites Spektrum moderner Medizintechnik ab und erklärt Funktion, Einsatzgebiet sowie Vor- und Nachteile jedes Geräts.
+MedTechGuide ist eine interaktive Website, die **medizintechnische Geräte** übersichtlich, verständlich und ansprechend für Laien präsentiert. Von Blutzuckermessgeräten über EKG-Systeme bis hin zu Neurochips und KI-gestützten Diagnosewerkzeugen â das Projekt deckt ein breites Spektrum moderner Medizintechnik ab und erklärt Funktion, Einsatzgebiet sowie Vor- und Nachteile jedes Geräts.
 
 ## Projektstatus
 
@@ -14,16 +14,16 @@ Das Projekt ist weitgehend fertiggestellt. Alle geplanten Kernfunktionen sind im
 
 Jede Kategorie hat eine eigene, vollständig ausgebaute HTML-Seite:
 
-- **Diabetes** – Blutzuckermessgeräte, Insulinpumpen, CGM-Systeme
-- **Allergie** – Allergie-Testgeräte und -Therapiehilfen
-- **Herz-Kreislauf** – EKG, Blutdruckmessung, Herzschrittmacher
-- **Bildgebung** – MRT, CT, Ultraschall, Röntgen
-- **Genetik** – Gensequenzierung, DNA-Diagnostik
-- **Neurochips** – Gehirn-Computer-Schnittstellen, neuronale Implantate
-- **Exoskelette** – Rehabilitationsroboter und Bewegungsunterstützung
-- **KI-Diagnose** – KI-gestützte Bildanalyse und Diagnostiksysteme
-- **Zukunftstechnologien** – Nanobots, Smart Implants, digitale Zwillinge
-- **Selbsttests** – Heim-Diagnosetests und Wearables
+- **Diabetes** â Blutzuckermessgeräte, Insulinpumpen, CGM-Systeme
+- **Allergie** â Allergie-Testgeräte und -Therapiehilfen
+- **Herz-Kreislauf** â EKG, Blutdruckmessung, Herzschrittmacher
+- **Bildgebung** â MRT, CT, Ultraschall, Röntgen
+- **Genetik** â Gensequenzierung, DNA-Diagnostik
+- **Neurochips** â Gehirn-Computer-Schnittstellen, neuronale Implantate
+- **Exoskelette** â Rehabilitationsroboter und Bewegungsunterstützung
+- **KI-Diagnose** â KI-gestützte Bildanalyse und Diagnostiksysteme
+- **Zukunftstechnologien** â Nanobots, Smart Implants, digitale Zwillinge
+- **Selbsttests** â Heim-Diagnosetests und Wearables
 
 ### Vergleichsmodus (`comparison.html`)
 
@@ -56,25 +56,25 @@ Interaktiver Geräte-Vergleich mit:
 
 ```
 Projekt_25/
-âââ index.html              # Startseite
-âââ [kategorie].html        # Kategorieseiten (10 Stück)
-âââ comparison.html         # Gerätevergleich
-âââ quellen.html            # Quellenverzeichnis
-âââ style.css               # Globales Stylesheet
-âââ script.js               # Hauptlogik (Suche, Filter)
-âââ search.js               # Suchmodul
-âââ search-index.json       # Suchindex aller Geräte
-âââ css/
-â   âââ comparison.css      # Styles für den Vergleichsmodus
-âââ js/
-â   âââ comparison-module.js
-â   âââ comparison-ui.js
-âââ docs/                   # Dokumentation
+âÂÂÂÂâÂÂÂÂâÂÂÂÂ index.html              # Startseite
+âÂÂÂÂâÂÂÂÂâÂÂÂÂ [kategorie].html        # Kategorieseiten (10 Stück)
+âÂÂÂÂâÂÂÂÂâÂÂÂÂ comparison.html         # Gerätevergleich
+âÂÂÂÂâÂÂÂÂâÂÂÂÂ quellen.html            # Quellenverzeichnis
+âÂÂÂÂâÂÂÂÂâÂÂÂÂ style.css               # Globales Stylesheet
+âÂÂÂÂâÂÂÂÂâÂÂÂÂ script.js               # Hauptlogik (Suche, Filter)
+âÂÂÂÂâÂÂÂÂâÂÂÂÂ search.js               # Suchmodul
+âÂÂÂÂâÂÂÂÂâÂÂÂÂ search-index.json       # Suchindex aller Geräte
+âÂÂÂÂâÂÂÂÂâÂÂÂÂ css/
+âÂÂÂÂ�   âÂÂÂÂâÂÂÂÂâÂÂÂÂ comparison.css      # Styles für den Vergleichsmodus
+âÂÂÂÂâÂÂÂÂâÂÂÂÂ js/
+âÂÂÂÂ�   âÂÂÂÂâÂÂÂÂâÂÂÂÂ comparison-module.js
+âÂÂÂÂ�   âÂÂÂÂâÂÂÂÂâÂÂÂÂ comparison-ui.js
+âÂÂÂÂâÂÂÂÂâÂÂÂÂ docs/                   # Dokumentation
 ```
 
 ## Design
 
-- Ruhiges, seriöses Farbschema (Blau/WeiÃ/Grau)
+- Ruhiges, seriöses Farbschema (Blau/Wei�ÂÂÂ/Grau)
 - Responsives Layout für Desktop und Mobile
 - Klare Typografie für medizinisch-technische Inhalte
 

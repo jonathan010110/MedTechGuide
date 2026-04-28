@@ -23,7 +23,7 @@ const PersonalityTest = {
   // 40 Fragen - 10 pro Dimension
   questions: [
     // === EXTRAVERSION (E) vs. INTROVERSION (I) - 10 Fragen ===
-    { id: 1, dimension: 'EI', polarity: 'E', question: 'Ich genieÃe GroÃveranstaltungen und bin gerne unter vielen Menschen.' },
+    { id: 1, dimension: 'EI', polarity: 'E', question: 'Ich genie�ÂÂÂe Gro�ÂÂÂveranstaltungen und bin gerne unter vielen Menschen.' },
     { id: 2, dimension: 'EI', polarity: 'I', question: 'Ich brauche viel Zeit allein, um aufzutanken.' },
     { id: 3, dimension: 'EI', polarity: 'E', question: 'Ich liebe neue Menschen kennenzulernen und freunde mich schnell an.' },
     { id: 4, dimension: 'EI', polarity: 'I', question: 'Ich fühle mich in eins-zu-eins-Gesprächen wohler als in Gruppen.' },
@@ -36,7 +36,7 @@ const PersonalityTest = {
 
     // === SENSING (S) vs. INTUITION (N) - 10 Fragen ===
     { id: 11, dimension: 'SN', polarity: 'S', question: 'Ich vertraue auf konkrete Fakten und praktische Erfahrungen.' },
-    { id: 12, dimension: 'SN', polarity: 'N', question: 'Ich sehe gerne gröÃere Muster und Zusammenhänge.' },
+    { id: 12, dimension: 'SN', polarity: 'N', question: 'Ich sehe gerne grö�ÂÂÂere Muster und Zusammenhänge.' },
     { id: 13, dimension: 'SN', polarity: 'S', question: 'Ich mag klare Anweisungen und bewährte Wege.' },
     { id: 14, dimension: 'SN', polarity: 'N', question: 'Ich träume gerne von Möglichkeiten und der Zukunft.' },
     { id: 15, dimension: 'SN', polarity: 'S', question: 'Details sind mir wichtig und ich bemerke sie normalerweise.' },
@@ -61,7 +61,7 @@ const PersonalityTest = {
     // === JUDGING (J) vs. PERCEIVING (P) - 10 Fragen ===
     { id: 31, dimension: 'JP', polarity: 'J', question: 'Ich liebe Pläne und Strukturen.' },
     { id: 32, dimension: 'JP', polarity: 'P', question: 'Ich bin flexibel und improvisiere gerne.' },
-    { id: 33, dimension: 'JP', polarity: 'J', question: 'Ich möchte Dinge erledigt haben und abschlieÃen.' },
+    { id: 33, dimension: 'JP', polarity: 'J', question: 'Ich möchte Dinge erledigt haben und abschlie�ÂÂÂen.' },
     { id: 34, dimension: 'JP', polarity: 'P', question: 'Ich behalte gerne Optionen offen.' },
     { id: 35, dimension: 'JP', polarity: 'J', question: 'Ich arbeite besser mit Deadline und Struktur.' },
     { id: 36, dimension: 'JP', polarity: 'P', question: 'Ich arbeite besser unter Zeitdruck und Spontaneität.' },
@@ -75,120 +75,120 @@ const PersonalityTest = {
   types: {
     ENTJ: {
       name: 'Der Stratege (ENTJ)',
-      strength: 'ð¯ Strategisch, Führend, Ehrgeiziger, Entschlossener',
-      challenges: 'â ï¸ Ungeduldig, Direkt, Fokus nur auf Effizienz',
+      strength: '�°ÂÂÂÂÂÂ¯ Strategisch, Führend, Ehrgeiziger, Entschlossener',
+      challenges: 'âÂÂÂÂ �Â¯ÂÂ¸ÂÂ Ungeduldig, Direkt, Fokus nur auf Effizienz',
       workplace: 'Management, Strategische Planung, Unternehmertum',
       description: 'ENTJs sind natürliche Anführer mit strategischem Verstand. Sie lieben Herausforderungen und arbeiten effizient auf Ziele hin.'
     },
     ENTJ: {
       name: 'Der Stratege (ENTJ)',
-      strength: 'ð¯ Strategisch, Führend, Ehrgeiziger, Entschlossener',
-      challenges: 'â ï¸ Ungeduldig, Direkt, Fokus nur auf Effizienz',
+      strength: '�°ÂÂÂÂÂÂ¯ Strategisch, Führend, Ehrgeiziger, Entschlossener',
+      challenges: 'âÂÂÂÂ �Â¯ÂÂ¸ÂÂ Ungeduldig, Direkt, Fokus nur auf Effizienz',
       workplace: 'Management, Strategische Planung, Unternehmertum',
       description: 'ENTJs sind natürliche Anführer mit strategischem Verstand. Sie lieben Herausforderungen und arbeiten effizient auf Ziele hin.'
     },
     INTJ: {
       name: 'Der Architekt (INTJ)',
-      strength: 'ðï¸ Visionar, Unabhängig, Planungsorientiert, Intellektuello',
-      challenges: 'â ï¸ Zu kritisch, Unflexibel, Kann emotionale Nuancen übersehen',
+      strength: '�°ÂÂÂÂÂÂ�Â¯ÂÂ¸ÂÂ Visionar, Unabhängig, Planungsorientiert, Intellektuello',
+      challenges: 'âÂÂÂÂ �Â¯ÂÂ¸ÂÂ Zu kritisch, Unflexibel, Kann emotionale Nuancen übersehen',
       workplace: 'Wissenschaft, Forschung, Strategische Analysen, Softwareentwicklung',
       description: 'INTJs sind visionäre Denker, die komplexe Systeme durchschauen. Sie sind unabhängig und zielbewusst.'
     },
     ENTP: {
       name: 'Der Visionar (ENTP)',
-      strength: 'â¡ Kreativ, Debattierfreudig, flexibel, Innovativer',
-      challenges: 'â ï¸ Verliert Fokus, Ungeduldig, Kann andere reizen mit Debaten',
+      strength: 'âÂÂÂÂ¡ Kreativ, Debattierfreudig, flexibel, Innovativer',
+      challenges: 'âÂÂÂÂ �Â¯ÂÂ¸ÂÂ Verliert Fokus, Ungeduldig, Kann andere reizen mit Debaten',
       workplace: 'Unternehmertum, Consulting, Produktentwicklung, Vertrieb',
       description: 'ENTPs sind clever und voller Ideen. Sie lieben Debatten und kreative Herausforderungen.'
     },
     INTP: {
       name: 'Der Denker (INTP)',
-      strength: 'ð§  Logisch, Analytischer, Unabhängiger, Origineller',
-      challenges: 'â ï¸ Kann sozial unbeholfen sein, Perfektionist, Prokrastiniert',
+      strength: '�°ÂÂÂÂ§ÂÂ  Logisch, Analytischer, Unabhängiger, Origineller',
+      challenges: 'âÂÂÂÂ �Â¯ÂÂ¸ÂÂ Kann sozial unbeholfen sein, Perfektionist, Prokrastiniert',
       workplace: 'Forschung, Programmierung, Akademie, Wissenschaft',
       description: 'INTPs sind tiefe Denker und Problemlöser. Sie lieben Logik und sind oft Pioniere in ihren Bereichen.'
     },
     ESFJ: {
       name: 'Der Konsul (ESFJ)',
-      strength: 'ð Warmherzig, Verantwortungsvoll, Kontaktfreudig, Unterstützender',
-      challenges: 'â ï¸ Kann zu geschwätzig sein, Braucht viel Bestätigung, Unhaft neuer Ideen',
+      strength: '�°ÂÂÂÂÂÂ Warmherzig, Verantwortungsvoll, Kontaktfreudig, Unterstützender',
+      challenges: 'âÂÂÂÂ �Â¯ÂÂ¸ÂÂ Kann zu geschwätzig sein, Braucht viel Bestätigung, Unhaft neuer Ideen',
       workplace: 'Bildung, Pflege, Soziales, HR',
       description: 'ESFJs sind warmherzig und verantwortungsvoll. Sie kümmern sich um andere und mögen Strukturen.'
     },
     ISFJ: {
       name: 'Der Beschützer (ISFJ)',
-      strength: 'ð¡ï¸ Zuverlässig, Geduldig, Unterstützender, Praktischer',
-      challenges: 'â ï¸ Zu zurückhaltend, Kann Ärger anstauen, Schwer mit Kritik',
+      strength: '�°ÂÂÂÂÂÂ¡�Â¯ÂÂ¸ÂÂ Zuverlässig, Geduldig, Unterstützender, Praktischer',
+      challenges: 'âÂÂÂÂ �Â¯ÂÂ¸ÂÂ Zu zurückhaltend, Kann Ärger anstauen, Schwer mit Kritik',
       workplace: 'Pflege, Bildung, Administration, Sozialarbeit',
       description: 'ISFJs sind zuverlässige Helfer. Sie arbeiten gerne mit Details und achten auf andere.'
     },
     ESFP: {
       name: 'Der Entertainer (ESFP)',
-      strength: 'ð Lebhaft, Spontan, Kontaktfreudig, Präsenter',
-      challenges: 'â ï¸ Kann oberflächlich sein, Schwierigkeiten mit langen Frist-Aufgaben',
+      strength: '�°ÂÂÂÂÂÂ Lebhaft, Spontan, Kontaktfreudig, Präsenter',
+      challenges: 'âÂÂÂÂ �Â¯ÂÂ¸ÂÂ Kann oberflächlich sein, Schwierigkeiten mit langen Frist-Aufgaben',
       workplace: 'Event-Management, Verkauf, Entertainment, Marketing',
       description: 'ESFPs sind die Lebenskünstler. Sie lieben Action, Menschen und leben im Hier und Jetzt.'
     },
     ISFP: {
       name: 'Der Abenteurer (ISFP)',
-      strength: 'ð¨ Künstlerisch, Flexibel, Sensitiv, Abenteuerlustig',
-      challenges: 'â ï¸ Kann sich zu emotional in Dinge verfangen, Schwierigkeiten mit Hierachien',
+      strength: '�°ÂÂÂÂÂÂ¨ Künstlerisch, Flexibel, Sensitiv, Abenteuerlustig',
+      challenges: 'âÂÂÂÂ �Â¯ÂÂ¸ÂÂ Kann sich zu emotional in Dinge verfangen, Schwierigkeiten mit Hierachien',
       workplace: 'Kunst, Design, Handwerk, Coaching, Adventure Tourism',
-      description: 'ISFPs sind sensible und künstlerische Geister. Sie leben nach ihren Werten und genieÃen die Vielfalt.'
+      description: 'ISFPs sind sensible und künstlerische Geister. Sie leben nach ihren Werten und genie�ÂÂÂen die Vielfalt.'
     },
     ESTJ: {
       name: 'Der Logistiker (ESTJ)',
-      strength: 'ð Organisiert, Verantwortungsvoll, Treuer, Hardworker',
-      challenges: 'â ï¸ Kann zu rigid sein, Schwierigkeiten mit unkonventionellen Ideen',
+      strength: '�°ÂÂÂÂÂÂ Organisiert, Verantwortungsvoll, Treuer, Hardworker',
+      challenges: 'âÂÂÂÂ �Â¯ÂÂ¸ÂÂ Kann zu rigid sein, Schwierigkeiten mit unkonventionellen Ideen',
       workplace: 'Management, Militär, Verwaltung, Handwerk',
       description: 'ESTJs sind praktische Organisatoren. Sie lieben Regeln, Effizienz und klare Hierarchien.'
     },
     ISTJ: {
       name: 'Der Logistiker (ISTJ)',
-      strength: 'âï¸ Verantwortungsvoll, Praktisch, Loyal, Gründlic',
-      challenges: 'â ï¸ Kann zu steif sein, Schwierigkeiten mit Veränderungen',
+      strength: 'âÂÂÂÂ�Â¯ÂÂ¸ÂÂ Verantwortungsvoll, Praktisch, Loyal, Gründlic',
+      challenges: 'âÂÂÂÂ �Â¯ÂÂ¸ÂÂ Kann zu steif sein, Schwierigkeiten mit Veränderungen',
       workplace: 'Buchhaltung, Ingenieurwesen, IT, Administration',
       description: 'ISTJs sind pflichtbewusst und zuverlässig. Sie arbeiten methodisch und wertschätzen Stabilität.'
     },
     ESTP: {
       name: 'Der Unternehmer (ESTP)',
-      strength: 'ð Wagemutig, Pragmatisch, Charismativ, Risikobereiter',
-      challenges: 'â ï¸ Kann rücksichtslos sein, Schwierigkeiten mit Planung',
+      strength: '�°ÂÂÂÂÂÂ Wagemutig, Pragmatisch, Charismativ, Risikobereiter',
+      challenges: 'âÂÂÂÂ �Â¯ÂÂ¸ÂÂ Kann rücksichtslos sein, Schwierigkeiten mit Planung',
       workplace: 'Verkauf, Unternehmertum, Sport, Militär',
       description: 'ESTPs sind gewage Macher. Sie leben für Action und lieben die Herausforderung.'
     },
     ISTP: {
       name: 'Der Handwerker (ISTP)',
-      strength: 'ð§ Praktisch, Unabhängig, Logisch, Problemlöser',
-      challenges: 'â ï¸ Kann unflexibel sein, Schwierigkeiten mit emotionaler Kommunikation',
+      strength: '�°ÂÂÂÂÂÂ§ Praktisch, Unabhängig, Logisch, Problemlöser',
+      challenges: 'âÂÂÂÂ �Â¯ÂÂ¸ÂÂ Kann unflexibel sein, Schwierigkeiten mit emotionaler Kommunikation',
       workplace: 'Handwerk, Ingenieurwesen, Techniker, Mechaniker',
       description: 'ISTPs sind praktische Problemlöser. Sie verstehen, wie Dinge funktionieren und mögen es konkret.'
     },
     ENFJ: {
       name: 'Der Protagonist (ENFJ)',
-      strength: 'ð¥ Charismatisch, Inspirierend, Organisiert, Einfühlsam',
-      challenges: 'â ï¸ Kann zu idealistisch sein, Braucht viel soziale Validierung',
+      strength: '�°ÂÂÂÂÂÂ¥ Charismatisch, Inspirierend, Organisiert, Einfühlsam',
+      challenges: 'âÂÂÂÂ �Â¯ÂÂ¸ÂÂ Kann zu idealistisch sein, Braucht viel soziale Validierung',
       workplace: 'Training, Coaching, Politik, Psychologie',
       description: 'ENFJs sind inspirierende Führungspersonen. Sie kümmern sich um andere und mobilisieren sie für Ziele.'
     },
     INFJ: {
       name: 'Der Berater (INFJ)',
-      strength: 'ð® Einfühlsam, Idealistisch, Intuitiv, Tiefgründig',
-      challenges: 'â ï¸ Kann zu perfektionistisch sein, Ãberfordert durch zu viele Anfragen',
+      strength: '�°ÂÂÂÂÂ® Einfühlsam, Idealistisch, Intuitiv, Tiefgründig',
+      challenges: 'âÂÂÂÂ �Â¯ÂÂ¸ÂÂ Kann zu perfektionistisch sein, �ÂÂÂberfordert durch zu viele Anfragen',
       workplace: 'Beratung, Psychologie, Schreiben, Künstlerisches',
-      description: 'INFJs sind tiefe und idealistical Denker. Sie sehen groÃes Potenzial bei anderen und wollen helfen.'
+      description: 'INFJs sind tiefe und idealistical Denker. Sie sehen gro�ÂÂÂes Potenzial bei anderen und wollen helfen.'
     },
     ENFP: {
       name: 'Der Kampagner (ENFP)',
-      strength: 'ð Charismatisch, Spontan, Kreativ, Enthusiastisch',
-      challenges: 'â ï¸ Kann unstet sein, Schwierigkeiten mit Fokus',
+      strength: '�°ÂÂÂÂÂÂ Charismatisch, Spontan, Kreativ, Enthusiastisch',
+      challenges: 'âÂÂÂÂ �Â¯ÂÂ¸ÂÂ Kann unstet sein, Schwierigkeiten mit Fokus',
       workplace: 'Marketing, PR, Kreative Branchen, Training',
       description: 'ENFPs sind charismatisch und voller Enthusiasmus. Sie lieben Vielfalt und regen andere an.'
     },
     INFP: {
       name: 'Der Mediator (INFP)',
-      strength: 'ð« Authentisch, Kreativ, Idealistisch, Individualistisch',
-      challenges: 'â ï¸ Kann verletzlich sein, Schwierigkeiten mit Konflikten',
+      strength: '�°ÂÂÂÂ« Authentisch, Kreativ, Idealistisch, Individualistisch',
+      challenges: 'âÂÂÂÂ �Â¯ÂÂ¸ÂÂ Kann verletzlich sein, Schwierigkeiten mit Konflikten',
       workplace: 'Schreiben, Künstlerisches, Beratung, Nonprofits',
       description: 'INFPs sind authentische Idealisten. Sie wollen authentisch sein und einen sinnvollen Beitrag leisten.'
     }

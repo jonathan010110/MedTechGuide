@@ -32,7 +32,7 @@ const DepressionTest = {
     { id: 6, category: 'Antrieb', question: 'Mir fällt es schwer, mich zu alltäglichen Dingen aufzuraffen.' },
     { id: 7, category: 'Antrieb', question: 'Ich bin müde und erschöpft, selbst wenn ich ausreichend geschlafen habe.' },
     { id: 8, category: 'Antrieb', question: 'Ich habe weniger Energie als sonst.' },
-    { id: 9, category: 'Antrieb', question: 'Aktivitäten, die mir früher SpaÃ gemacht haben, interessieren mich nicht mehr.' },
+    { id: 9, category: 'Antrieb', question: 'Aktivitäten, die mir früher Spa�ÂÂÂ gemacht haben, interessieren mich nicht mehr.' },
     { id: 10, category: 'Antrieb', question: 'Ich bin langsamer als gewöhnlich bei Gedanken und Handlungen.' },
 
     // === SCHLAF (5 Fragen) ===
@@ -68,7 +68,7 @@ const DepressionTest = {
     { id: 32, category: 'Suizidgedanken', question: 'Ich habe Gedanken, mir selbst Schaden zuzufügen.' },
     { id: 33, category: 'Suizidgedanken', question: 'Ich denke darüber nach, nicht mehr existieren zu wollen.' },
 
-    // === SOZIALER RÃCKZUG (4 Fragen) ===
+    // === SOZIALER R�ÂÂÂCKZUG (4 Fragen) ===
     { id: 34, category: 'Sozialer Rückzug', question: 'Ich möchte mich von anderen Menschen zurückziehen.' },
     { id: 35, category: 'Sozialer Rückzug', question: 'Ich habe weniger Lust auf soziale Kontakte.' },
     { id: 36, category: 'Sozialer Rückzug', question: 'Ich fühle mich von anderen isoliert oder unverstanden.' },
@@ -134,7 +134,7 @@ const DepressionTest = {
    */
   medicalDisclaimer: `
     <div style="background: #fef2f2; border-left: 4px solid #ef4444; padding: 1rem; margin-top: 2rem; border-radius: 8px;">
-      <p style="margin: 0; font-weight: 600; color: #7f1d1d;">â ï¸ Wichtiger Hinweis:</p>
+      <p style="margin: 0; font-weight: 600; color: #7f1d1d;">âÂÂÂÂ �Â¯ÂÂ¸ÂÂ Wichtiger Hinweis:</p>
       <p style="margin: 0.5rem 0 0 0; color: #5f3738; font-size: 0.95rem;">
         Dieser Test dient nur zur groben Orientierung und ersetzt keine medizinische Diagnose. Bei anhaltenden oder belastenden Beschwerden wenden Sie sich bitte an eine Ärztin, einen Arzt oder eine psychologische Fachperson.
       </p>

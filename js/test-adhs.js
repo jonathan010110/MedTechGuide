@@ -27,14 +27,14 @@ const ADHSTest = {
     { id: 2, category: 'Unaufmerksamkeit', subcategory: 'Unaufmerksamkeit', question: 'Mir fällt es schwer, mich über längere Zeit auf Aufgaben zu konzentrieren.' },
     { id: 3, category: 'Unaufmerksamkeit', subcategory: 'Unaufmerksamkeit', question: 'Ich verliere leicht den Faden bei Gesprächen oder beim Lesen.' },
     { id: 4, category: 'Unaufmerksamkeit', subcategory: 'Unaufmerksamkeit', question: 'Wichtige Aufgaben bleiben unvollständig, weil ich mich nicht konzentrieren kann.' },
-    { id: 5, category: 'Unaufmerksamkeit', subcategory: 'Unaufmerksamkeit', question: 'Ich werde leicht durch äuÃere Reize abgelenkt.' },
+    { id: 5, category: 'Unaufmerksamkeit', subcategory: 'Unaufmerksamkeit', question: 'Ich werde leicht durch äu�ÂÂÂere Reize abgelenkt.' },
     { id: 6, category: 'Unaufmerksamkeit', subcategory: 'Unaufmerksamkeit', question: 'Mir ist es schwer, Anweisungen zu folgen.' },
     { id: 7, category: 'Unaufmerksamkeit', subcategory: 'Unaufmerksamkeit', question: 'Ich vergesse häufig alltägliche Aufgaben oder Verpflichtungen.' },
     { id: 8, category: 'Unaufmerksamkeit', subcategory: 'Unaufmerksamkeit', question: 'Ich mache Flüchtigkeitsfehler bei der Arbeit oder in der Schule.' },
 
     // === HYPERAKTIVITÄT (8 Fragen) ===
     { id: 9, category: 'Hyperaktivität', subcategory: 'Hyperaktivität', question: 'Ich bin ständig in Bewegung oder kann schwer stillsitzen.' },
-    { id: 10, category: 'Hyperaktivität', subcategory: 'Hyperaktivität', question: 'Ich zappele mit meinen Händen oder FüÃen.' },
+    { id: 10, category: 'Hyperaktivität', subcategory: 'Hyperaktivität', question: 'Ich zappele mit meinen Händen oder Fü�ÂÂÂen.' },
     { id: 11, category: 'Hyperaktivität', subcategory: 'Hyperaktivität', question: 'Ich verlasse oft meinen Sitz, wenn ich sitzen sollte.' },
     { id: 12, category: 'Hyperaktivität', subcategory: 'Hyperaktivität', question: 'Ich kann schwer ruhige Aktivitäten ausführen.' },
     { id: 13, category: 'Hyperaktivität', subcategory: 'Hyperaktivität', question: 'Ich fühle mich innere Unruhe oder Rastlosigkeit.' },
@@ -110,13 +110,13 @@ const ADHSTest = {
         level: 'Leicht-Moderat',
         color: '#f59e0b',
         description: 'Leicht bis moderate Symptomausprägung',
-        text: 'Sie zeigen leicht bis mäÃig ausgeprägte ADHS-Symptome. Professionelle Evaluation wird empfohlen.'
+        text: 'Sie zeigen leicht bis mä�ÂÂÂig ausgeprägte ADHS-Symptome. Professionelle Evaluation wird empfohlen.'
       };
     } else if (score <= 96) {
       return {
         level: 'Moderat-Schwer',
         color: '#f97316',
-        description: 'MäÃig bis schwere Symptomausprägung',
+        description: 'Mä�ÂÂÂig bis schwere Symptomausprägung',
         text: 'Ihre Symptome sind deutlich. Professionelle Unterstützung wird dringend empfohlen.'
       };
     } else {
@@ -134,7 +134,7 @@ const ADHSTest = {
    */
   medicalDisclaimer: `
     <div style="background: #fef2f2; border-left: 4px solid #ef4444; padding: 1rem; margin-top: 2rem; border-radius: 8px;">
-      <p style="margin: 0; font-weight: 600; color: #7f1d1d;">â ï¸ Wichtiger Hinweis:</p>
+      <p style="margin: 0; font-weight: 600; color: #7f1d1d;">âÂÂÂÂ �Â¯ÂÂ¸ÂÂ Wichtiger Hinweis:</p>
       <p style="margin: 0.5rem 0 0 0; color: #5f3738; font-size: 0.95rem;">
         Dieser Test dient nur zur groben Orientierung und ersetzt keine medizinische Diagnose. Bei anhaltenden oder belastenden Beschwerden wenden Sie sich bitte an eine Ärztin, einen Arzt oder eine psychologische Fachperson.
       </p>

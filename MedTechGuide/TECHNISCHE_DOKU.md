@@ -1,12 +1,12 @@
-# MedTechGuide – Technische Dokumentation
+# MedTechGuide â Technische Dokumentation
 
-## 1) Ãberblick
+## 1) �ÂÂÂberblick
 MedTechGuide ist eine modulare Web-App mit Three.js, die drei medizinische Geräte als programmatisch erzeugte 3D-Simulatoren darstellt:
 - Pulsoximeter
 - EKG-Monitor
 - Blutdruckmessgerät
 
-Alle 3D-Modelle werden ausschlieÃlich aus Geometrien (`BoxGeometry`, `CylinderGeometry`, `TorusGeometry`, `PlaneGeometry`, `SphereGeometry`) aufgebaut. Es werden keine externen 3D-Modelle geladen.
+Alle 3D-Modelle werden ausschlie�ÂÂÂlich aus Geometrien (`BoxGeometry`, `CylinderGeometry`, `TorusGeometry`, `PlaneGeometry`, `SphereGeometry`) aufgebaut. Es werden keine externen 3D-Modelle geladen.
 
 ## 2) Projektstruktur
 - `index.html`: App-Shell, Sidebar, Controls, Canvas
@@ -31,13 +31,13 @@ Aufbau aus:
 
 Animationen:
 - LED-Glühen über `emissiveIntensity`
-- Displaywerte (SpOâ + Puls) und Pulswelle via Canvas-Textur
+- Displaywerte (SpOâÂÂ�ÂÂ� + Puls) und Pulswelle via Canvas-Textur
 
 ### EKG-Monitor
 Aufbau aus:
 - Monitorgehäuse (`BoxGeometry`)
 - Bezel + Screen-Fläche (`BoxGeometry` + `PlaneGeometry`)
-- StandfuÃ (`CylinderGeometry`)
+- Standfu�ÂÂÂ (`CylinderGeometry`)
 - Kabelbogen (`TorusGeometry`)
 - Interaktiver Drehknopf (`CylinderGeometry`)
 
@@ -60,7 +60,7 @@ Animationen:
 ## 4) Signalvisualisierung
 
 ### Pulsoximeter-Signal
-- Canvas zeichnet numerische Werte (`SpOâ`, `bpm`)
+- Canvas zeichnet numerische Werte (`SpOâÂÂ�ÂÂ�`, `bpm`)
 - Pulswelle als vereinfachte sinusförmige Basis + periodischer Peak
 - Canvas wird pro Frame aktualisiert und als `CanvasTexture` auf den Display-Plane gelegt
 
@@ -81,17 +81,17 @@ Vorteil:
 - Exakte Bauteil-Interaktion ohne separate HTML-Hotspots
 - Einfach erweiterbar durch zusätzliche interaktive Meshes
 
-## 6) Gerätewechsel & Ãbergänge
+## 6) Gerätewechsel & �ÂÂÂbergänge
 Beim Wechseln zwischen Geräten:
 - Vorheriges Gerät wird weich ausgeblendet/skaliert
 - Neues Gerät wird eingeblendet/skaliert
-- Ãbergang wird zeitbasiert im Animationsloop berechnet
+- �ÂÂÂbergang wird zeitbasiert im Animationsloop berechnet
 
-Dadurch entstehen âSmooth Transitions" ohne zusätzliche Bibliothek.
+Dadurch entstehen âÂÂÂÂSmooth Transitions" ohne zusätzliche Bibliothek.
 
 ## 7) Bedienung
 - Sidebar: Auswahl des aktiven Geräts
-- EKG: Herzfrequenz-Slider (40–180 bpm)
+- EKG: Herzfrequenz-Slider (40â180 bpm)
 - Blutdruck: Messung per Klick auf 3D-Starttaste
 - 3D-Ansicht: OrbitControls (Drehen, Zoomen, Verschieben)
 

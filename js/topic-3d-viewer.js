@@ -845,7 +845,7 @@ function buildViewer(section) {
     setStatus(reasonText || `${title} als programmiertes Fallback geladen.`);
   }
 
-  function loadModel() {
+  function loadModel) {
     if (!modelPath) {
       loadFallback('Kein Modellpfad gesetzt. Fallback aktiv.');
       return;
@@ -875,7 +875,7 @@ function buildViewer(section) {
   }
 
   btnReload?.addEventListener('click', () => {
-    loadModel();
+    loadModel);
   });
 
   btnReset?.addEventListener('click', () => {
@@ -973,10 +973,10 @@ function buildViewer(section) {
   window.addEventListener('resize', resize);
   resize();
   toggleHotspotDebug(false);
-  loadModel();
+  loadModel);
   animate(0);
 }
 
-document.querySelectorAll('[data-three-viewer]').forEach((section) => {
+document.querySelectorAll'[data-three-viewer]').forEach((section) => {
   buildViewer(section);
 });

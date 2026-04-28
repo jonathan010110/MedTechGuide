@@ -1,5 +1,5 @@
 export function setupUI({ app, loader, heartRateSlider, heartRateValue }) {
-  const deviceButtons = [...document.querySelectorAll('.device-btn')];
+  const deviceButtons = [...document.querySelectorAll'.device-btn')];
   const ekgControls = document.getElementById('ekg-controls');
   const bloodControls = document.getElementById('blood-controls');
 

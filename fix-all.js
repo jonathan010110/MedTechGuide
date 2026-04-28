@@ -10,9 +10,9 @@ function fixFile(filePath) {
     
     // Manuell: Ersetze die problematischen Sequenzen
     // En-dash
-    content = content.split('\u00e2\u0080\u0093').join('–');
+    content = content.split('\u00e2\u0080\u0093').join('â');
     // Em-dash  
-    content = content.split('\u00e2\u0080\u0094').join('—');
+    content = content.split('\u00e2\u0080\u0094').join('â');
     // Left quote
     content = content.split('\u00e2\u0080\u009c').join('"');
     // Right quote
@@ -22,9 +22,9 @@ function fixFile(filePath) {
     // Left single quote
     content = content.split('\u00e2\u0080\u0098').join("'");
     // Bullet
-    content = content.split('\u00e2\u0080\u00a2').join('•');
+    content = content.split('\u00e2\u0080\u00a2').join('â¢');
     // Ellipsis
-    content = content.split('\u00e2\u0080\u00a6').join('…');
+    content = content.split('\u00e2\u0080\u00a6').join('â¦');
     
     // Sonderzeichen
     content = content.split('\u00c2\u00ab').join('«');
@@ -45,7 +45,7 @@ function fixFile(filePath) {
     content = content.split('\u00c3\u00b1').join('ñ');
     content = content.split('\u00c3\u0084').join('Ä');
     content = content.split('\u00c3\u0096').join('Ö');
-    content = content.split('\u00c3\u0099').join('Ã');
+    content = content.split('\u00c3\u0099').join('�ÂÂÂ');
     
     if (content !== original) {
       fs.writeFileSync(filePath, content, 'utf8');

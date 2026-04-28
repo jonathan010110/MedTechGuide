@@ -245,10 +245,10 @@ a:hover {
     gap: 0.3rem; /* Kleinerer Abstand auf Mobile */
   }
   
-  /* Navigation Links - Kleinere SchriftgröÃe und Padding */
+  /* Navigation Links - Kleinere Schriftgrö�ÂÂÂe und Padding */
   .nav-links a {
     padding: 0.5rem 0.7rem; /* Kleineres Padding */
-    font-size: 0.8rem; /* Kleinere SchriftgröÃe */
+    font-size: 0.8rem; /* Kleinere Schriftgrö�ÂÂÂe */
   }
   
   /* Suchleiste auf Mobile - Versteckt */
@@ -272,7 +272,7 @@ a:hover {
     width: 100%;
     padding: 0.5rem 0.8rem;
     font-size: 0.8rem;
-    max-width: 280px; /* Keine Ãberschreitung auf Mobile */
+    max-width: 280px; /* Keine �ÂÂÂberschreitung auf Mobile */
   }
 
   /* Cards */
@@ -335,7 +335,7 @@ a:hover {
 
 /* ===== MEDIA QUERY: SEHR KLEINE SMARTPHONES (max-width: 480px) ===== */
 @media (max-width: 480px) {
-  /* ===== NAVIGATION OPTIMIERUNGEN FÃR KLEINE BILDSCHIRME ===== */
+  /* ===== NAVIGATION OPTIMIERUNGEN F�ÂÂÂR KLEINE BILDSCHIRME ===== */
   
   /* Navigation Container - Kompaktere Abstände */
   .nav-container {
@@ -343,14 +343,14 @@ a:hover {
     padding: 0.5rem 0.6rem;
   }
   
-  /* Navigation Links - Noch kleinere SchriftgröÃe und Padding */
+  /* Navigation Links - Noch kleinere Schriftgrö�ÂÂÂe und Padding */
   .nav-links {
     gap: 0.2rem;
   }
   
   .nav-links a {
     padding: 0.4rem 0.6rem; /* Noch kompakteres Padding */
-    font-size: 0.75rem; /* Kleine SchriftgröÃe für kleine Bildschirme */
+    font-size: 0.75rem; /* Kleine Schriftgrö�ÂÂÂe für kleine Bildschirme */
   }
   
   /* Suchleiste - Versteckt auf kleine Bildschirme */
@@ -363,7 +363,7 @@ a:hover {
   #globalSearch {
     display: none;
     padding: 0.4rem 0.6rem; /* Kompakteres Padding */
-    font-size: 0.75rem; /* Kleinere SchriftgröÃe */
+    font-size: 0.75rem; /* Kleinere Schriftgrö�ÂÂÂe */
     max-width: 240px;
   }
   
@@ -766,7 +766,7 @@ mark.search-highlight {
 
 /* ========== MOBILE NAV TOGGLE ========== */
 /* ========== NAVIGATION TOGGLE - DEPRECATED ========== */
-/* ð ANGEPASST: Hamburger Toggle wird NICHT mehr verwendet */
+/* �°ÂÂÂÂÂÂ ANGEPASST: Hamburger Toggle wird NICHT mehr verwendet */
 /* Mit neu gestalteter responsive Navigation (Flexbox mit Media Queries) */
 /* Diese CSS-Regeln sind überflüssig und werden nur für Kompatibilität beibehalten */
 
@@ -802,7 +802,7 @@ mark.search-highlight {
 }
 
 /* ========== MOBILE MENU STYLES - DEPRECATED ========== */
-/* ð ANGEPASST: Mobile Menu wird NICHT mehr mit Toggle aktiviert */
+/* �°ÂÂÂÂÂÂ ANGEPASST: Mobile Menu wird NICHT mehr mit Toggle aktiviert */
 /* Navigation wird jetzt vollständig responsive mit Flexbox dargestellt */
 
 .nav-links.mobile-visible {
@@ -824,7 +824,7 @@ mark.search-highlight {
 }
 
 .nav-links.mobile-visible a {
-  padding: 0.5rem 0.7rem; /* Mobil-optimierte GröÃe */
+  padding: 0.5rem 0.7rem; /* Mobil-optimierte Grö�ÂÂÂe */
   border-radius: var(--radius-sm);
   border-bottom: none;
 }
@@ -1573,7 +1573,7 @@ figcaption {
 }
 
 /* ===================================================================
-   â¨ ENHANCED ANIMATIONS & INTERACTIVE EFFECTS
+   âÂÂÂÂ¨ ENHANCED ANIMATIONS & INTERACTIVE EFFECTS
    =================================================================== */
 
 /* Smooth Scroll */

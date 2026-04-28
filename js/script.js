@@ -5,7 +5,7 @@
  */
 
 // ================================================================
-// ð¾ UTILITY FUNCTIONS
+// �°ÂÂÂÂÂÂ¾ UTILITY FUNCTIONS
 // ================================================================
 
 /**
@@ -33,7 +33,7 @@ function throttle(func, delay) {
 function normalizeText(text) {
   return text.toLowerCase()
     .replace(/ä/g, 'a').replace(/ö/g, 'o').replace(/ü/g, 'u')
-    .replace(/Ã/g, 'ss').trim();
+    .replace(/�ÂÂÂ/g, 'ss').trim();
 }
 
 /**
@@ -42,7 +42,7 @@ function normalizeText(text) {
  */
 function removeHighlights(container) {
   if (!container) return;
-  const highlights = container.querySelectorAll('span.highlight');
+  const highlights = container.querySelectorAll'span.highlight');
   highlights.forEach(span => {
     const parent = span.parentNode;
     if (parent) {
@@ -55,7 +55,7 @@ function removeHighlights(container) {
 }
 
 // ================================================================
-// ð 1. LOADER - HIDDEN ON PAGE LOAD (with fallback)
+// �°ÂÂÂÂÂÂ 1. LOADER - HIDDEN ON PAGE LOAD (with fallback)
 // ================================================================
 
 function initLoader() {
@@ -73,9 +73,9 @@ function initLoader() {
 }
 
 // ================================================================
-// ð± MOBILE NAVIGATION - RESPONSIVE LAYOUT (ohne Hamburger Toggle)
+// �°ÂÂÂÂÂÂ± MOBILE NAVIGATION - RESPONSIVE LAYOUT (ohne Hamburger Toggle)
 // ================================================================
-// â ANGEPASST: Navigation ist jetzt voll responsive mit Flexbox
+// âÂÂÂÂ ANGEPASST: Navigation ist jetzt voll responsive mit Flexbox
 // Toggle-Button wird NICHT mehr benötigt, da alle Navigation Elemente
 // immer angezeigt werden und responsive mit CSS reagieren
 // (siehe .nav-links flex-wrap und Media Queries in style.css)
@@ -83,7 +83,7 @@ function initLoader() {
 function initMobileNav() {
   // Navigation ist jetzt vollständig CSS-responsive
   // Diese Funktion kann leer sein oder nur Debugging Zwecke
-  console.log('â Responsive Navigation aktiv (kein Toggle Button benötigt)');
+  console.log('âÂÂÂÂ Responsive Navigation aktiv (kein Toggle Button benötigt)');
   
   // Navigation Links - Active Manager
   const navLinks = document.querySelector('.nav-links');
@@ -91,7 +91,7 @@ function initMobileNav() {
 
   // Close menu-like behavior wenn auf Link geklickt wird (für UX)
   // Kann auf zukünftige Erweiterungen vorbereitet sein
-  navLinks.querySelectorAll('a').forEach(link => {
+  navLinks.querySelectorAll'a').forEach(link => {
     link.addEventListener('click', () => {
       // Optional: Kann zukünftig für weitere Funktionalität genutzt werden
     });
@@ -102,7 +102,7 @@ function initMobileNav() {
 
 function initActiveNav() {
   // Defensive checks
-  const navLinks = document.querySelectorAll('.main-nav a');
+  const navLinks = document.querySelectorAll'.main-nav a');
   if (!navLinks.length) return;
   
   // Get aktuellen Page basierend auf pathname
@@ -121,7 +121,7 @@ function initActiveNav() {
 }
 
 // ================================================================
-// â¬ï¸ 3. SCROLL TO TOP BUTTON - Performance optimiert
+// âÂÂ¬ÂÂ�Â¯ÂÂ¸ÂÂ 3. SCROLL TO TOP BUTTON - Performance optimiert
 // ================================================================
 
 function initScrollToTop() {
@@ -156,11 +156,11 @@ function initScrollToTop() {
 
 
 // ================================================================
-// â¨ 5. SECTION FADE-IN ANIMATIONS mit IntersectionObserver
+// âÂÂÂÂ¨ 5. SECTION FADE-IN ANIMATIONS mit IntersectionObserver
 // ================================================================
 
 function initSectionAnimations() {
-  const sections = document.querySelectorAll('.section-card');
+  const sections = document.querySelectorAll'.section-card');
   if (!sections.length) return;
   
   // IntersectionObserver ist performance-optimiert
@@ -186,7 +186,7 @@ function initSectionAnimations() {
 }
 
 // ================================================================
-// ð 6. GLOBAL SEARCH FUNCTION
+// �°ÂÂÂÂÂÂ 6. GLOBAL SEARCH FUNCTION
 // ================================================================
 
 function initSearch() {
@@ -207,7 +207,7 @@ function initSearch() {
     }
     
     const normalizedQuery = normalizeText(query);
-    const searchable = document.querySelectorAll('h1, h2, h3, h4, p, li');
+    const searchable = document.querySelectorAll'h1, h2, h3, h4, p, li');
     
     let hitCount = 0;
     let firstHit = null;
@@ -247,12 +247,12 @@ function initSearch() {
 }
 
 // ================================================================
-// ð¨ 7. FILTER SYSTEM (für device-cards auf index.html)
+// �°ÂÂÂÂÂÂ¨ 7. FILTER SYSTEM (für device-cards auf index.html)
 // ================================================================
 
 function initFilters() {
-  const filterBtns = document.querySelectorAll('[data-filter]');
-  const deviceCards = document.querySelectorAll('.device-card');
+  const filterBtns = document.querySelectorAll'[data-filter]');
+  const deviceCards = document.querySelectorAll'.device-card');
   
   if (!filterBtns.length || !deviceCards.length) return;
   
@@ -278,12 +278,12 @@ function initFilters() {
 }
 
 // ================================================================
-// âï¸ 8. DEVICE COMPARISON MODAL SYSTEM
+// âÂÂÂÂ�Â¯ÂÂ¸ÂÂ 8. DEVICE COMPARISON MODAL SYSTEM
 // ================================================================
 
 function initCompareSystem() {
   const compareToggle = document.getElementById('compareToggle');
-  const compareCheckboxes = document.querySelectorAll('[data-compare-checkbox]');
+  const compareCheckboxes = document.querySelectorAll'[data-compare-checkbox]');
   const compareBtn = document.getElementById('compareBtn');
   
   if (!compareCheckboxes.length) return;
@@ -493,7 +493,7 @@ function openCompareModal(devices) {
   modal.innerHTML = `
     <div class="compare-modal-overlay"></div>
     <div class="compare-modal-content">
-      <button class="modal-close" aria-label="Modal schlieÃen">â</button>
+      <button class="modal-close" aria-label="Modal schlie�ÂÂÂen">âÂÂÂÂ</button>
       <h2>Vergleich: ${devices[0]} vs ${devices[1]}</h2>
       <div class="compare-table">
         ${tableHTML}
@@ -515,10 +515,10 @@ function openCompareModal(devices) {
   closeBtn.addEventListener('click', closeModal);
   overlay.addEventListener('click', closeModal);
   
-  // ESC key zum SchlieÃen
+  // ESC key zum Schlie�ÂÂÂen
   const handleEsc = (e) => {
     if (e.key === 'Escape') {
-      closeModal();
+      closeModal);
       document.removeEventListener('keydown', handleEsc);
     }
   };
@@ -526,11 +526,11 @@ function openCompareModal(devices) {
 }
 
 // ================================================================
-// ð§  9. GLOSSARY TOOLTIP SYSTEM (Automatisch)
+// �°ÂÂÂÂ§ÂÂ  9. GLOSSARY TOOLTIP SYSTEM (Automatisch)
 // ================================================================
 
 function initGlossaryTooltips() {
-  const glossaryTerms = document.querySelectorAll('.glossar-term dt');
+  const glossaryTerms = document.querySelectorAll'.glossar-term dt');
   if (!glossaryTerms.length) return;
   
   // Sammle alle Glossar-Begriffe
@@ -615,7 +615,7 @@ function showGlossaryTooltip(element, definition) {
 }
 
 // ================================================================
-// ð INITIALIZATION - Document Ready Event
+// �°ÂÂÂÂÂÂ INITIALIZATION - Document Ready Event
 // ================================================================
 
 // Related Links Data (für Themenseiten)

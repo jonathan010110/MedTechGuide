@@ -1,6 +1,6 @@
 /**
  * ===================================================================
- * â¡ MEDTECHGUIDE - PERFORMANCE OPTIMIZATIONS
+ * âÂÂÂÂ¡ MEDTECHGUIDE - PERFORMANCE OPTIMIZATIONS
  * ===================================================================
  * Features:
  * - Lazy Loading für Bilder
@@ -10,7 +10,7 @@
  */
 
 // ===================================================================
-// ð¼ï¸ LAZY LOADING FOR IMAGES
+// �°ÂÂÂÂÂÂ¼�Â¯ÂÂ¸ÂÂ LAZY LOADING FOR IMAGES
 // ===================================================================
 
 /**
@@ -18,11 +18,11 @@
  */
 function initLazyLoading() {
   // Moderne Browser nutzen native loading="lazy"
-  const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+  const lazyImages = document.querySelectorAll'img[loading="lazy"]');
   
   if (!lazyImages.length) {
     // Fallback: alle img-tags hinzufügen
-    document.querySelectorAll('img').forEach(img => {
+    document.querySelectorAll'img').forEach(img => {
       // Skip wenn aria-hidden
       if (img.closest('.skip-to-content, .loader, .spinner')) return;
       
@@ -36,7 +36,7 @@ function initLazyLoading() {
     });
   }
   
-  console.log('â Lazy Loading initialisiert');
+  console.log('âÂÂÂÂ Lazy Loading initialisiert');
 }
 
 /**
@@ -64,7 +64,7 @@ function initIntersectionObserver(img) {
 }
 
 // ===================================================================
-// ð PERFORMANCE MONITORING (optional)
+// �°ÂÂÂÂÂÂ PERFORMANCE MONITORING (optional)
 // ===================================================================
 
 /**
@@ -87,7 +87,7 @@ function logPerformanceMetrics() {
     
     // Log nur wenn nicht in production
     if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-      console.group('ð Performance Metrics');
+      console.group('�°ÂÂÂÂÂÂ Performance Metrics');
       Object.entries(metrics).forEach(([label, ms]) => {
         console.log(`${label}: ${ms}ms`);
       });
@@ -111,7 +111,7 @@ function logPerformanceMetrics() {
 }
 
 // ===================================================================
-// ð± SERVICE WORKER REGISTRATION (optional, für offline support)
+// �°ÂÂÂÂÂÂ± SERVICE WORKER REGISTRATION (optional, für offline support)
 // ===================================================================
 
 /**
@@ -122,16 +122,16 @@ function registerServiceWorker() {
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('service-worker.js')
       .then(registration => {
-        console.log('â Service Worker registered:', registration);
+        console.log('âÂÂÂÂ Service Worker registered:', registration);
       })
       .catch(error => {
-        console.log('â ï¸ Service Worker registration failed:', error);
+        console.log('âÂÂÂÂ �Â¯ÂÂ¸ÂÂ Service Worker registration failed:', error);
       });
   }
 }
 
 // ===================================================================
-// â¡ RESOURCE PRIORITIZATION
+// âÂÂÂÂ¡ RESOURCE PRIORITIZATION
 // ===================================================================
 
 /**
@@ -154,7 +154,7 @@ function addResourceHints() {
 }
 
 // ===================================================================
-// ð INITIALIZATION
+// �°ÂÂÂÂÂÂ INITIALIZATION
 // ===================================================================
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -180,7 +180,7 @@ if (document.readyState === 'loading') {
 }
 
 // ===================================================================
-// ð EXPORT
+// �°ÂÂÂÂÂÂ EXPORT
 // ===================================================================
 
 if (typeof module !== 'undefined' && module.exports) {

@@ -109,7 +109,7 @@ function createRoundedBox(width, height, depth, radius, smoothness, material) {
   return new THREE.Mesh(geometry, material);
 }
 
-function createCTScannerModel() {
+function createCTScannerModel) {
   const root = new THREE.Group();
 
   const base = createRoundedBox(2.4, 0.28, 1.55, 0.08, 6, makeMaterial(0xe6edf8, 0.1, 0.7));
@@ -153,7 +153,7 @@ function createCTScannerModel() {
   return root;
 }
 
-function createMRTScannerModel() {
+function createMRTScannerModel) {
   const root = new THREE.Group();
 
   const body = createRoundedBox(2.3, 1.4, 1.55, 0.18, 8, makeMaterial(0xf8fafc, 0.05, 0.7));
@@ -189,7 +189,7 @@ function createMRTScannerModel() {
   return root;
 }
 
-function createUltrasoundModel() {
+function createUltrasoundModel) {
   const root = new THREE.Group();
 
   const cartBase = new THREE.Mesh(
@@ -363,7 +363,7 @@ function applyCurrentModelFeatures() {
   fitCameraToObject(currentModel);
 }
 
-function removeCurrentModel() {
+function removeCurrentModel) {
   if (!currentModel) return;
   scene.remove(currentModel);
   currentModel.traverse((obj) => {
@@ -387,7 +387,7 @@ function loadProceduralModel(modelKey) {
   if (!modelKey || !modelFactories[modelKey]) return;
 
   setStatus('3D-Modell wird im Code erzeugt...');
-  removeCurrentModel();
+  removeCurrentModel);
   try {
     currentModelConfig = getModelConfig(modelKey);
     currentModel = modelFactories[modelKey]();
@@ -403,7 +403,7 @@ function loadProceduralModel(modelKey) {
 
 function loadGlbModel(modelConfig) {
   setStatus(`GLB wird geladen: ${modelConfig.label}...`);
-  removeCurrentModel();
+  removeCurrentModel);
 
   gltfLoader.load(
     modelConfig.path,

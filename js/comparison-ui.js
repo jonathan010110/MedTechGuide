@@ -96,7 +96,7 @@ class ComparisonUI {
             if (e.target.tagName !== 'BUTTON') return;
 
             // Update active state
-            this.categoryFilter.querySelectorAll('.filter-btn').forEach(btn => {
+            this.categoryFilter.querySelectorAll'.filter-btn').forEach(btn => {
                 btn.classList.remove('active');
             });
             e.target.classList.add('active');
