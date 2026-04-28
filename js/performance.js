@@ -10,7 +10,7 @@
  */
 
 // ===================================================================
-// �°ÂÂÂÂÂÂ¼�Â¯ÂÂ¸ÂÂ LAZY LOADING FOR IMAGES
+// –°ÂÂÂÂÂÂ¼–Â¯ÂÂ¸ÂÂ LAZY LOADING FOR IMAGES
 // ===================================================================
 
 /**
@@ -64,7 +64,7 @@ function initIntersectionObserver(img) {
 }
 
 // ===================================================================
-// �°ÂÂÂÂÂÂ PERFORMANCE MONITORING (optional)
+// –°ÂÂÂÂÂÂ PERFORMANCE MONITORING (optional)
 // ===================================================================
 
 /**
@@ -87,7 +87,7 @@ function logPerformanceMetrics() {
     
     // Log nur wenn nicht in production
     if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-      console.group('�°ÂÂÂÂÂÂ Performance Metrics');
+      console.group('–°ÂÂÂÂÂÂ Performance Metrics');
       Object.entries(metrics).forEach(([label, ms]) => {
         console.log(`${label}: ${ms}ms`);
       });
@@ -111,7 +111,7 @@ function logPerformanceMetrics() {
 }
 
 // ===================================================================
-// �°ÂÂÂÂÂÂ± SERVICE WORKER REGISTRATION (optional, für offline support)
+// –°ÂÂÂÂÂÂ± SERVICE WORKER REGISTRATION (optional, für offline support)
 // ===================================================================
 
 /**
@@ -125,7 +125,7 @@ function registerServiceWorker() {
         console.log('âÂÂÂÂ Service Worker registered:', registration);
       })
       .catch(error => {
-        console.log('âÂÂÂÂ �Â¯ÂÂ¸ÂÂ Service Worker registration failed:', error);
+        console.log('âÂÂÂÂ –Â¯ÂÂ¸ÂÂ Service Worker registration failed:', error);
       });
   }
 }
@@ -154,7 +154,7 @@ function addResourceHints() {
 }
 
 // ===================================================================
-// �°ÂÂÂÂÂÂ INITIALIZATION
+// –°ÂÂÂÂÂÂ INITIALIZATION
 // ===================================================================
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -180,7 +180,7 @@ if (document.readyState === 'loading') {
 }
 
 // ===================================================================
-// �°ÂÂÂÂÂÂ EXPORT
+// –°ÂÂÂÂÂÂ EXPORT
 // ===================================================================
 
 if (typeof module !== 'undefined' && module.exports) {

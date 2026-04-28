@@ -10,7 +10,7 @@
         {
           "heading": "Willkommen auf MedTechGuide",
           "content": "Diese Website erklärt wichtige medizinische Technologien und Geräte verständlich und wissenschaftlich fundiert. Entdecken Sie, wie moderne Medizintechnik Diagnostik, Therapie und Prävention revolutioniert",
-          "preview": "Startseite mit �ÂÂÂbersicht über medizintechnologische Themen"
+          "preview": "Startseite mit –ÂÂÂbersicht über medizintechnologische Themen"
         },
         {
           "heading": "Warum Medizintechnik verstehen?",
@@ -71,12 +71,12 @@
       "sections": [
         {
           "heading": "Einführung",
-          "content": "Das Herz ist eine Pumpe, die regelmä�ÂÂÂig Blut durch den Körper pumpt. Herz-Kreislauf-Erkrankungen sind die häufigste Todesursache weltweit. Moderne Technologien ermöglichen präzise Diagnostik und Therapie von Herzrhythmusstörungen",
+          "content": "Das Herz ist eine Pumpe, die regelmä–ÂÂÂig Blut durch den Körper pumpt. Herz-Kreislauf-Erkrankungen sind die häufigste Todesursache weltweit. Moderne Technologien ermöglichen präzise Diagnostik und Therapie von Herzrhythmusstörungen",
           "preview": "Herz-Kreislauf-Erkrankungen und ihre Diagnostik"
         },
         {
           "heading": "EKG und Herzmonitor",
-          "content": "Das Elektrokardiogramm registriert die elektrische Aktivität des Herzens. Ärzte können Rhythmusstörungen, Herzinfarkte und andere Anomalien erkennen. Tragbare Monitore ermöglichen kontinuierliche �ÂÂÂberwachung",
+          "content": "Das Elektrokardiogramm registriert die elektrische Aktivität des Herzens. Ärzte können Rhythmusstörungen, Herzinfarkte und andere Anomalien erkennen. Tragbare Monitore ermöglichen kontinuierliche –ÂÂÂberwachung",
           "preview": "Funktionsweise von EKG und Herzmonitoren"
         }
       ]
@@ -91,7 +91,7 @@
         {
           "heading": "Einführung",
           "content": "Bildgebende Verfahren erlauben es Ärzten, in den menschlichen Körper zu blicken ohne zu schneiden. Von klassischen Röntgenstrahlen bis zu hochauflösender MRT: Jedes Verfahren hat Stärken und Grenzen",
-          "preview": "�ÂÂÂberblick über medizinische Bildgebungsverfahren"
+          "preview": "–ÂÂÂberblick über medizinische Bildgebungsverfahren"
         },
         {
           "heading": "Röntgen",
@@ -124,11 +124,11 @@
       "title": "Exoskelette",
       "url": "exoskelette.html",
       "description": "Robotische Unterstützung in Rehabilitation, Industrie und Alltag",
-      "keywords": ["Exoskelett", "Robotik", "Rehabilitation", "Motorische Unterstützung", "Exosuit", "Kraftvergrö�ÂÂÂerung", "Industrie", "Gesundheit"],
+      "keywords": ["Exoskelett", "Robotik", "Rehabilitation", "Motorische Unterstützung", "Exosuit", "Kraftvergrö–ÂÂÂerung", "Industrie", "Gesundheit"],
       "sections": [
         {
           "heading": "Einführung",
-          "content": "Exoskelette sind mechanische Systeme, die wie ein externes Skelett funktionieren. Sie unterstützen oder verstärken Bewegungen und können gelähmte oder schwache Gliedma�ÂÂÂen aktiv bewegen",
+          "content": "Exoskelette sind mechanische Systeme, die wie ein externes Skelett funktionieren. Sie unterstützen oder verstärken Bewegungen und können gelähmte oder schwache Gliedma–ÂÂÂen aktiv bewegen",
           "preview": "Was sind Exoskelette und wofür werden sie genutzt"
         },
         {
@@ -190,7 +190,7 @@
         },
         {
           "heading": "Nanomedizin",
-          "content": "Nanopartikel können Medikamente gezielt zu Tumoren transportieren oder als Biosensoren fungieren. Sie sind so klein, dass sie in Blutgefä�ÂÂÂe eindringen können",
+          "content": "Nanopartikel können Medikamente gezielt zu Tumoren transportieren oder als Biosensoren fungieren. Sie sind so klein, dass sie in Blutgefä–ÂÂÂe eindringen können",
           "preview": "Nanomedizin und ihre Anwendungen"
         }
       ]
@@ -203,8 +203,8 @@
       "keywords": ["Quellen", "Literatur", "Referenzen", "Wissenschaftliche Quellen", "Bibliografie"],
       "sections": [
         {
-          "heading": "�ÂÂÂber diese Website",
-          "content": "MedTechGuide ist ein schulisches Projekt zur Vermittlung von Wissen über medizintechnologische Innovationen. Alle Inhalte basieren auf wissenschaftlichen Quellen und werden regelmä�ÂÂÂig aktualisiert",
+          "heading": "–ÂÂÂber diese Website",
+          "content": "MedTechGuide ist ein schulisches Projekt zur Vermittlung von Wissen über medizintechnologische Innovationen. Alle Inhalte basieren auf wissenschaftlichen Quellen und werden regelmä–ÂÂÂig aktualisiert",
           "preview": "Informationen über MedTechGuide und seine Quellen"
         }
       ]

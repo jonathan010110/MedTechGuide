@@ -1,56 +1,56 @@
-# �°ÂÂÂÂÂÂ MedTechGuide Projekt-Struktur
+# –°ÂÂÂÂÂÂ MedTechGuide Projekt-Struktur
 
-## �ÂÂÂbersicht der Ordnerorganisation
+## –ÂÂÂbersicht der Ordnerorganisation
 
 ```
 c:\WMC\Projekt_25\
-âÂÂÂÂ�
-âÂÂÂÂâÂÂÂÂâÂÂÂÂ �°ÂÂÂÂÂÂ Startdateien (Root)
-âÂÂÂÂ�   âÂÂÂÂâÂÂÂÂâÂÂÂÂ index.html               âÂÂÂÂ HAUPT-Einstiegspunkt
-âÂÂÂÂ�   âÂÂÂÂâÂÂÂÂâÂÂÂÂ style.css                âÂÂÂÂ Haupt-CSS (1700+Zeilen)
-âÂÂÂÂ�   âÂÂÂÂâÂÂÂÂâÂÂÂÂ script.js                âÂÂÂÂ Haupt-JavaScript
-âÂÂÂÂ�   âÂÂÂÂâÂÂÂÂâÂÂÂÂ search.js                âÂÂÂÂ Neue Suchfunktion
-âÂÂÂÂ�   âÂÂÂÂâÂÂÂÂâÂÂÂÂ search-index.json        âÂÂÂÂ Search-Datenbank
-âÂÂÂÂ�   âÂÂÂÂâÂÂÂÂâÂÂÂÂ performance.js           âÂÂÂÂ Lazy Loading & Performance
-âÂÂÂÂ�   âÂÂÂÂâÂÂÂÂâÂÂÂÂ README.md, UPGRADE_GUIDE.md, etc.
-âÂÂÂÂ�
-âÂÂÂÂâÂÂÂÂâÂÂÂÂ �°ÂÂÂÂÂÂ /css (Neue Style-Dateien)
-âÂÂÂÂ�   âÂÂÂÂâÂÂÂÂâÂÂÂÂ quiz.css                 âÂÂÂÂ Quiz-spezifische Styles
-âÂÂÂÂ�   âÂÂÂÂâÂÂÂÂâÂÂÂÂ [zukünftige CSS...]
-âÂÂÂÂ�
-âÂÂÂÂâÂÂÂÂâÂÂÂÂ �°ÂÂÂÂÂÂ /js (Neue JavaScript-Module)
-âÂÂÂÂ�   âÂÂÂÂâÂÂÂÂâÂÂÂÂ quiz.js                  âÂÂÂÂ Interaktives Quiz-System
-âÂÂÂÂ�   âÂÂÂÂâÂÂÂÂâÂÂÂÂ [zukünftige JS...]
-âÂÂÂÂ�
-âÂÂÂÂâÂÂÂÂâÂÂÂÂ �°ÂÂÂÂÂÂ /html (Alle HTML-Content Seiten)
-âÂÂÂÂ�   âÂÂÂÂâÂÂÂÂâÂÂÂÂ quiz.html                âÂÂÂÂ Neue Quiz-Seite
-âÂÂÂÂ�   âÂÂÂÂâÂÂÂÂâÂÂÂÂ [weitere Seiten...]
-âÂÂÂÂ�
-âÂÂÂÂâÂÂÂÂâÂÂÂÂ �°ÂÂÂÂÂÂ /data (Datenbanken & Config)
-âÂÂÂÂ�   âÂÂÂÂâÂÂÂÂâÂÂÂÂ quiz-database.json       âÂÂÂÂ Quiz-Fragen (optional)
-âÂÂÂÂ�   âÂÂÂÂâÂÂÂÂâÂÂÂÂ [weitere Daten...]
-âÂÂÂÂ�
-âÂÂÂÂâÂÂÂÂâÂÂÂÂ �°ÂÂÂÂÂÂ /images (Bilder)
-âÂÂÂÂ�   âÂÂÂÂâÂÂÂÂâÂÂÂÂ diabetes-1.jpg
-âÂÂÂÂ�   âÂÂÂÂâÂÂÂÂâÂÂÂÂ allergie-1.jpg
-âÂÂÂÂ�   âÂÂÂÂâÂÂÂÂâÂÂÂÂ [weitere Bilder...]
-âÂÂÂÂ�
-âÂÂÂÂâÂÂÂÂâÂÂÂÂ �°ÂÂÂÂÂÂ /docs (Dokumentation)
-âÂÂÂÂ�   âÂÂÂÂâÂÂÂÂâÂÂÂÂ UPGRADE_GUIDE.md         âÂÂÂÂ Features-Dokumentation
-âÂÂÂÂ�   âÂÂÂÂâÂÂÂÂâÂÂÂÂ STRUKTUR.md              âÂÂÂÂ Diese Datei
-âÂÂÂÂ�   âÂÂÂÂâÂÂÂÂâÂÂÂÂ [weitere Docs...]
-âÂÂÂÂ�
-âÂÂÂÂâÂÂÂÂâÂÂÂÂ �°ÂÂÂÂÂÂ /MedTechGuide (Optional: Fachspezifischer Ordner)
-âÂÂÂÂ�   âÂÂÂÂâÂÂÂÂâÂÂÂÂ [Zusätzliche Ressourcen]
-âÂÂÂÂ�
+âÂÂÂÂ–
+âÂÂÂÂâÂÂÂÂâÂÂÂÂ –°ÂÂÂÂÂÂ Startdateien (Root)
+âÂÂÂÂ–   âÂÂÂÂâÂÂÂÂâÂÂÂÂ index.html               âÂÂÂÂ HAUPT-Einstiegspunkt
+âÂÂÂÂ–   âÂÂÂÂâÂÂÂÂâÂÂÂÂ style.css                âÂÂÂÂ Haupt-CSS (1700+Zeilen)
+âÂÂÂÂ–   âÂÂÂÂâÂÂÂÂâÂÂÂÂ script.js                âÂÂÂÂ Haupt-JavaScript
+âÂÂÂÂ–   âÂÂÂÂâÂÂÂÂâÂÂÂÂ search.js                âÂÂÂÂ Neue Suchfunktion
+âÂÂÂÂ–   âÂÂÂÂâÂÂÂÂâÂÂÂÂ search-index.json        âÂÂÂÂ Search-Datenbank
+âÂÂÂÂ–   âÂÂÂÂâÂÂÂÂâÂÂÂÂ performance.js           âÂÂÂÂ Lazy Loading & Performance
+âÂÂÂÂ–   âÂÂÂÂâÂÂÂÂâÂÂÂÂ README.md, UPGRADE_GUIDE.md, etc.
+âÂÂÂÂ–
+âÂÂÂÂâÂÂÂÂâÂÂÂÂ –°ÂÂÂÂÂÂ /css (Neue Style-Dateien)
+âÂÂÂÂ–   âÂÂÂÂâÂÂÂÂâÂÂÂÂ quiz.css                 âÂÂÂÂ Quiz-spezifische Styles
+âÂÂÂÂ–   âÂÂÂÂâÂÂÂÂâÂÂÂÂ [zukünftige CSS...]
+âÂÂÂÂ–
+âÂÂÂÂâÂÂÂÂâÂÂÂÂ –°ÂÂÂÂÂÂ /js (Neue JavaScript-Module)
+âÂÂÂÂ–   âÂÂÂÂâÂÂÂÂâÂÂÂÂ quiz.js                  âÂÂÂÂ Interaktives Quiz-System
+âÂÂÂÂ–   âÂÂÂÂâÂÂÂÂâÂÂÂÂ [zukünftige JS...]
+âÂÂÂÂ–
+âÂÂÂÂâÂÂÂÂâÂÂÂÂ –°ÂÂÂÂÂÂ /html (Alle HTML-Content Seiten)
+âÂÂÂÂ–   âÂÂÂÂâÂÂÂÂâÂÂÂÂ quiz.html                âÂÂÂÂ Neue Quiz-Seite
+âÂÂÂÂ–   âÂÂÂÂâÂÂÂÂâÂÂÂÂ [weitere Seiten...]
+âÂÂÂÂ–
+âÂÂÂÂâÂÂÂÂâÂÂÂÂ –°ÂÂÂÂÂÂ /data (Datenbanken & Config)
+âÂÂÂÂ–   âÂÂÂÂâÂÂÂÂâÂÂÂÂ quiz-database.json       âÂÂÂÂ Quiz-Fragen (optional)
+âÂÂÂÂ–   âÂÂÂÂâÂÂÂÂâÂÂÂÂ [weitere Daten...]
+âÂÂÂÂ–
+âÂÂÂÂâÂÂÂÂâÂÂÂÂ –°ÂÂÂÂÂÂ /images (Bilder)
+âÂÂÂÂ–   âÂÂÂÂâÂÂÂÂâÂÂÂÂ diabetes-1.jpg
+âÂÂÂÂ–   âÂÂÂÂâÂÂÂÂâÂÂÂÂ allergie-1.jpg
+âÂÂÂÂ–   âÂÂÂÂâÂÂÂÂâÂÂÂÂ [weitere Bilder...]
+âÂÂÂÂ–
+âÂÂÂÂâÂÂÂÂâÂÂÂÂ –°ÂÂÂÂÂÂ /docs (Dokumentation)
+âÂÂÂÂ–   âÂÂÂÂâÂÂÂÂâÂÂÂÂ UPGRADE_GUIDE.md         âÂÂÂÂ Features-Dokumentation
+âÂÂÂÂ–   âÂÂÂÂâÂÂÂÂâÂÂÂÂ STRUKTUR.md              âÂÂÂÂ Diese Datei
+âÂÂÂÂ–   âÂÂÂÂâÂÂÂÂâÂÂÂÂ [weitere Docs...]
+âÂÂÂÂ–
+âÂÂÂÂâÂÂÂÂâÂÂÂÂ –°ÂÂÂÂÂÂ /MedTechGuide (Optional: Fachspezifischer Ordner)
+âÂÂÂÂ–   âÂÂÂÂâÂÂÂÂâÂÂÂÂ [Zusätzliche Ressourcen]
+âÂÂÂÂ–
 âÂÂÂÂâÂÂÂÂâÂÂÂÂ .git/ (Git-Repository)
 ```
 
 ---
 
-## �°ÂÂÂÂÂÂ NEUE FEATURES (ab v2.1)
+## –°ÂÂÂÂÂÂ NEUE FEATURES (ab v2.1)
 
-### 1�Â¯ÂÂ¸ÂÂâÂÂÂÂ£ Quiz-System
+### 1–Â¯ÂÂ¸ÂÂâÂÂÂÂ£ Quiz-System
 - **Datei**: `/js/quiz.js` (550+ Zeilen)
 - **Styling**: `/css/quiz.css` (+300 Zeilen)
 - **Seite**: `/html/quiz.html`
@@ -63,7 +63,7 @@ c:\WMC\Projekt_25\
   - Progress-Bar
   - Responsive Design
 
-### 2�Â¯ÂÂ¸ÂÂâÂÂÂÂ£ Verbesserte Ordnerstruktur
+### 2–Â¯ÂÂ¸ÂÂâÂÂÂÂ£ Verbesserte Ordnerstruktur
 - **CSS-Separation**: Haupt + Module (quiz.css)
 - **JS-Modularisierung**: Einzelne Funktionalitäten
 - **Content-Organisation**: HTML-Dateien in `/html`
@@ -71,7 +71,7 @@ c:\WMC\Projekt_25\
 
 ---
 
-## �°ÂÂÂÂÂÂ WIE NUTZEN
+## –°ÂÂÂÂÂÂ WIE NUTZEN
 
 ### Quiz aufrufen:
 1. Navigation: Klick "Quiz" Link (oben rechts)
@@ -82,7 +82,7 @@ c:\WMC\Projekt_25\
 
 ### Suchfunktion:
 ```
-�ÂÂÂberall auf der Website:
+–ÂÂÂberall auf der Website:
 - Search Box oben rechts
 - Tippe einen Begriff
 - Klick auf Ergebnis âÂÂÂÂ navigiert + highlighted
@@ -102,9 +102,9 @@ c:\WMC\Projekt_25\
 
 ---
 
-## �°ÂÂÂÂÂÂ Datei-Zuordnungen
+## –°ÂÂÂÂÂÂ Datei-Zuordnungen
 
-| Datei | Funktion | Grö�ÂÂÂe |
+| Datei | Funktion | Grö–ÂÂÂe |
 |-------|----------|-------|
 | `index.html` | Startseite | ~200 Zeilen |
 | `style.css` | Haupt-Styling | ~1700 Zeilen |
@@ -118,7 +118,7 @@ c:\WMC\Projekt_25\
 
 ---
 
-## �°ÂÂÂÂÂÂ¯ Nächste Schritte (Optional)
+## –°ÂÂÂÂÂÂ¯ Nächste Schritte (Optional)
 
 ### Struktur weiter optimieren:
 - [ ] Admin-Panel für Quiz-Verwaltung
@@ -152,18 +152,18 @@ c:\WMC\Projekt_25\
 
 ---
 
-## �°ÂÂÂÂÂÂ Projekt-Statistiken
+## –°ÂÂÂÂÂÂ Projekt-Statistiken
 
 - **Zeilen Code**: ~4000+
 - **CSS-Selektoren**: 200+
 - **JavaScript-Funktionen**: 80+
 - **HTML-Dateien**: 11
-- **Quiz-Fragen**: 20 (4 Kategorien �ÂÂÂ 5)
+- **Quiz-Fragen**: 20 (4 Kategorien –ÂÂÂ 5)
 - **Search-Einträge**: 150+
 
 ---
 
-## �°ÂÂÂÂÂÂ Wichtige Links
+## –°ÂÂÂÂÂÂ Wichtige Links
 
 - **Hauptseite**: `../index.html`
 - **Quiz**: `../html/quiz.html`
@@ -172,7 +172,7 @@ c:\WMC\Projekt_25\
 
 ---
 
-## �°ÂÂÂÂÂÂ Notizen für Entwickler
+## –°ÂÂÂÂÂÂ Notizen für Entwickler
 
 1. **CSS Modularity**: Jede Feature hat ihre eigenen Styles
 2. **JS Modularity**: Quiz ist unabhängig initialisierbar

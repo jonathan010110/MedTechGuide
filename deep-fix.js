@@ -13,7 +13,7 @@ function fixFile(filePath) {
     let content = buf.toString('utf8');
     
     // Wenn es noch Fehler hat, lese als Latin1 und konvertiere
-    if (content.includes('�') || content.includes('Â')) {
+    if (content.includes('–') || content.includes('Â')) {
       content = buf.toString('latin1');
     }
     
@@ -22,19 +22,19 @@ function fixFile(filePath) {
     // ALLE möglichen Kombinationen von Fehler-Sequenzen
     // Diese sind UTF-8 Bytes, die als Latin1 oder ISO-8859-1 interpretiert wurden
     
-    // 3-Byte UTF-8 als 2x Latin1 (�Â... Sequenzen)
-    content = content.split('�ÂÂ¢âÂÂÂ¬').join('â');  // En-dash doppelt falsch
-    content = content.split('�ÂÂ¢âÂÂÂ­').join('â');  // Em-dash doppelt falsch
-    content = content.split('�ÂÂ¢âÂÂ').join('');     // Basis-Fehler
+    // 3-Byte UTF-8 als 2x Latin1 (–Â... Sequenzen)
+    content = content.split('–ÂÂ¢âÂÂÂ¬').join('â');  // En-dash doppelt falsch
+    content = content.split('–ÂÂ¢âÂÂÂ­').join('â');  // Em-dash doppelt falsch
+    content = content.split('–ÂÂ¢âÂÂ').join('');     // Basis-Fehler
     content = content.split('âÂÂ').join('');        // Weitere Basis-Fehler
-    content = content.split('�Â').join('');         // Generisches � Â Präfix
+    content = content.split('–Â').join('');         // Generisches – Â Präfix
     
     // Standard-Fehler (wenn nur 1x falsch kodiert)
-    content = content.split('�Â¼').join('ü');
-    content = content.split('�Â¶').join('ö');
-    content = content.split('�Â¤').join('ä');
-    content = content.split('ââ�¬"').join('â');
-    content = content.split('ââ�¬"').join('â');
+    content = content.split('–Â¼').join('ü');
+    content = content.split('–Â¶').join('ö');
+    content = content.split('–Â¤').join('ä');
+    content = content.split('ââ–¬"').join('â');
+    content = content.split('ââ–¬"').join('â');
     content = content.split('Â«').join('«');
     content = content.split('Â»').join('»');
     content = content.split('Â°').join('°');

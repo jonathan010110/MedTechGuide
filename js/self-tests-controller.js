@@ -232,7 +232,7 @@ class SelfTestsController {
         </div>
 
         <div class="trait-section">
-          <div class="trait-title">�°ÂÂÂÂÂÂª Stärken</div>
+          <div class="trait-title">–°ÂÂÂÂÂÂª Stärken</div>
           <div class="trait-list strengths">
             <div class="trait-item">
               <span>${typeInfo.strength}</span>
@@ -241,7 +241,7 @@ class SelfTestsController {
         </div>
 
         <div class="trait-section">
-          <div class="trait-title">âÂÂÂÂ �Â¯ÂÂ¸ÂÂ Herausforderungen</div>
+          <div class="trait-title">âÂÂÂÂ –Â¯ÂÂ¸ÂÂ Herausforderungen</div>
           <div class="trait-list challenges">
             <div class="trait-item">
               <span>${typeInfo.challenges}</span>
@@ -250,7 +250,7 @@ class SelfTestsController {
         </div>
 
         <div class="trait-section">
-          <div class="trait-title">�°ÂÂÂÂÂÂ¯ Passende Arbeitsumfelder</div>
+          <div class="trait-title">–°ÂÂÂÂÂÂ¯ Passende Arbeitsumfelder</div>
           <div class="trait-list">
             <div class="trait-item">
               <span>${typeInfo.workplace}</span>
@@ -260,7 +260,7 @@ class SelfTestsController {
       `;
     }
 
-    // Medizinischer Hint (au�ÂÂÂer MBTI)
+    // Medizinischer Hint (au–ÂÂÂer MBTI)
     if (this.currentTest.medicalDisclaimer) {
       resultsHTML += this.currentTest.medicalDisclaimer;
     }

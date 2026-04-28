@@ -22,7 +22,7 @@ function fixFile(filePath) {
     // Sollte c2 sein (für 2-Byte UTF-8 Start)
     newHex = newHex.split('c282').join('c2');
     
-    // c381 = UTF-8 für "�" (0xC3 als 0xC3 0x81)
+    // c381 = UTF-8 für "–" (0xC3 als 0xC3 0x81)
     newHex = newHex.split('c381').join('c3');
     
     if (newHex !== hexStr) {

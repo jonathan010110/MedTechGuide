@@ -1,17 +1,17 @@
-# �°ÂÂÂÂÂÂ Quick Start - Neue Quiz & Ordner-Struktur
+# –°ÂÂÂÂÂÂ Quick Start - Neue Quiz & Ordner-Struktur
 
 ## âÂÂÂÂ Was wurde hinzugefügt?
 
-### 1. �°ÂÂÂÂÂÂ¯ **Quiz-System**
+### 1. –°ÂÂÂÂÂÂ¯ **Quiz-System**
 - **20 interaktive Fragen** in 4 Kategorien
-  - �°ÂÂÂÂÂÂ Diagnostik (5 Fragen)
-  - �°ÂÂÂÂÂÂ Therapie (5 Fragen)
-  - �°ÂÂÂÂÂÂ¬ Forschung (5 Fragen)
-  - �°ÂÂÂÂÂÂ Zukunft (5 Fragen)
+  - –°ÂÂÂÂÂÂ Diagnostik (5 Fragen)
+  - –°ÂÂÂÂÂÂ Therapie (5 Fragen)
+  - –°ÂÂÂÂÂÂ¬ Forschung (5 Fragen)
+  - –°ÂÂÂÂÂÂ Zukunft (5 Fragen)
 - **Scoring & Ergebnisse** mit detaillierter Auswertung
 - **Responsive Design** für Mobile & Desktop
 
-### 2. �°ÂÂÂÂÂÂ **Ordnerstruktur**
+### 2. –°ÂÂÂÂÂÂ **Ordnerstruktur**
 ```
 Projekt_25/
 âÂÂÂÂâÂÂÂÂâÂÂÂÂ /css/              âÂÂÂÂ CSS-Module (quiz.css)
@@ -22,14 +22,14 @@ Projekt_25/
 âÂÂÂÂâÂÂÂÂâÂÂÂÂ /docs/             âÂÂÂÂ Dokumentation (STRUKTUR.md)
 ```
 
-### 3. �°ÂÂÂÂÂÂ **Verbesserte Suche**
+### 3. –°ÂÂÂÂÂÂ **Verbesserte Suche**
 - Funktioniert bereits vollständig
 - Durchsucht alle 10 Seiten
 - Auto-Highlighting auf Zielseite
 
 ---
 
-## �°ÂÂÂÂÂÂ DATEIEN-�ÂÂÂBERSICHT
+## –°ÂÂÂÂÂÂ DATEIEN-–ÂÂÂBERSICHT
 
 ### Neue Dateien erstellt:
 | Datei | Beschreibung |
@@ -37,7 +37,7 @@ Projekt_25/
 | `js/quiz.js` | Quiz-Engine (600+ Zeilen) |
 | `css/quiz.css` | Quiz-Styling (350+ Zeilen) |
 | `html/quiz.html` | Quiz-Landingpage |
-| `docs/STRUKTUR.md` | Projekt-�ÂÂÂbersicht |
+| `docs/STRUKTUR.md` | Projekt-–ÂÂÂbersicht |
 | `docs/QUICK_START.md` | Diese Datei |
 
 ### Aktualisierte Dateien:
@@ -49,12 +49,12 @@ Projekt_25/
 
 ---
 
-## �°ÂÂÂÂÂ® WIE NUTZEN
+## –°ÂÂÂÂÂ® WIE NUTZEN
 
 ### Quiz aufrufen:
 
-**Option 1: �ÂÂÂber Navigation**
-- Oben in der Navbar: "�°ÂÂÂÂÂÂ¯ Quiz" Button (neu hinzugefügt)
+**Option 1: –ÂÂÂber Navigation**
+- Oben in der Navbar: "–°ÂÂÂÂÂÂ¯ Quiz" Button (neu hinzugefügt)
 - Klick âÂÂÂÂ öffnet `html/quiz.html`
 
 **Option 2: Direkt-Link**
@@ -76,14 +76,14 @@ Projekt_25/
 
 ---
 
-## �°ÂÂÂÂÂÂ¨ STYLING HIGHLIGHTS
+## –°ÂÂÂÂÂÂ¨ STYLING HIGHLIGHTS
 
 ### Quiz-Komponenten:
 - âÂÂÂÂ¨ **Modal-Dialoge** mit Blur-Backdrop
-- �°ÂÂÂÂÂÂ **Progress-Bar** für Fortschritt
-- �°ÂÂÂÂÂÂ¯ **Score-Circle** mit animiertem Bounce
-- �°ÂÂÂÂÂÂ **Ergebnis-Anzeige** mit Emoji & Bewertung
-- �°ÂÂÂÂÂÂ± **Vollständig responsive**
+- –°ÂÂÂÂÂÂ **Progress-Bar** für Fortschritt
+- –°ÂÂÂÂÂÂ¯ **Score-Circle** mit animiertem Bounce
+- –°ÂÂÂÂÂÂ **Ergebnis-Anzeige** mit Emoji & Bewertung
+- –°ÂÂÂÂÂÂ± **Vollständig responsive**
 
 ### CSS-Klassen:
 ```css
@@ -96,7 +96,7 @@ Projekt_25/
 
 ---
 
-## �°ÂÂÂÂÂÂ§ TECHNISCHE DETAILS
+## –°ÂÂÂÂÂÂ§ TECHNISCHE DETAILS
 
 ### Quiz-Datenbank:
 ```javascript
@@ -133,7 +133,7 @@ quizState = {
 
 ---
 
-## �°ÂÂÂÂÂÂ± RESPONSIVE BREAKPOINTS
+## –°ÂÂÂÂÂÂ± RESPONSIVE BREAKPOINTS
 
 - **Desktop** (>768px): Vollständige Layout
 - **Tablet** (768px): Optimiert
@@ -144,7 +144,7 @@ quizState = {
 
 ---
 
-## �°ÂÂÂÂÂÂ DATENSCHUTZ
+## –°ÂÂÂÂÂÂ DATENSCHUTZ
 
 âÂÂÂÂ **Keine externe Daten-Speicherung**
 - Quiz-Ergebnisse nur lokal im Browser
@@ -186,7 +186,7 @@ quizState = {
 
 ---
 
-## �°ÂÂÂÂÂÂ INSTALLATION
+## –°ÂÂÂÂÂÂ INSTALLATION
 
 ### 1. Dateien kopieren:
 ```bash
@@ -204,13 +204,13 @@ cp -r js/ html/ css/ data/ docs/ /path/to/projekt
 
 ### 3. Testen:
 - Öffne `index.html`
-- Klick auf "�°ÂÂÂÂÂÂ¯ Quiz" Button
+- Klick auf "–°ÂÂÂÂÂÂ¯ Quiz" Button
 - Wähle Kategorie
 - Beantworte Fragen
 
 ---
 
-## �°ÂÂÂÂÂÂ TROUBLESHOOTING
+## –°ÂÂÂÂÂÂ TROUBLESHOOTING
 
 ### Quiz lädt nicht?
 ```
@@ -236,17 +236,17 @@ cp -r js/ html/ css/ data/ docs/ /path/to/projekt
 
 ---
 
-## �°ÂÂÂÂÂÂ SUPPORT
+## –°ÂÂÂÂÂÂ SUPPORT
 
 Falls Fragen:
-1. Lies STRUKTUR.md für �ÂÂÂberblick
+1. Lies STRUKTUR.md für –ÂÂÂberblick
 2. Check js/quiz.js für Quellcode-Kommentare
 3. Validiere mit VS Code Linter
 4. Teste in Chrome DevTools
 
 ---
 
-## �°ÂÂÂÂÂÂ LERN-RESSOURCEN
+## –°ÂÂÂÂÂÂ LERN-RESSOURCEN
 
 - [MDN: JavaScript Modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)
 - [CSS Grid Documentation](https://css-tricks.com/snippets/css/complete-guide-grid/)
@@ -255,7 +255,7 @@ Falls Fragen:
 
 ---
 
-**Genie�ÂÂÂt das Quiz! �°ÂÂÂÂÂÂ¯**
+**Genie–ÂÂÂt das Quiz! –°ÂÂÂÂÂÂ¯**
 
 Version: 2.1 | Release: 24.02.2026
 

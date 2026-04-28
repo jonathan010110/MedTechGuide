@@ -6,31 +6,31 @@
 
 ---
 
-## �°ÂÂÂÂÂÂ¯ Was wurde implementiert?
+## –°ÂÂÂÂÂÂ¯ Was wurde implementiert?
 
-### 1�Â¯ÂÂ¸ÂÂâÂÂÂÂ£ **Randomisierte Fragen** âÂÂÂÂ
+### 1–Â¯ÂÂ¸ÂÂâÂÂÂÂ£ **Randomisierte Fragen** âÂÂÂÂ
 - âÂÂÂÂ Fisher-Yates Shuffle-Algorithmus
 - âÂÂÂÂ Fragen werden zufällig sortiert
 - âÂÂÂÂ Antworten werden randomisiert (Multiple Choice)
 - âÂÂÂÂ Jeder Test ist unterschiedlich
 
-### 2�Â¯ÂÂ¸ÂÂâÂÂÂÂ£ **Depression-Screening (PHQ-9)** âÂÂÂÂ
+### 2–Â¯ÂÂ¸ÂÂâÂÂÂÂ£ **Depression-Screening (PHQ-9)** âÂÂÂÂ
 - âÂÂÂÂ 9 Fragen zu depressiven Symptomen
 - âÂÂÂÂ Likert-Skalen (0-3)
 - âÂÂÂÂ Wissenschaftlich validiert (Pfizer/NIH)
 - âÂÂÂÂ Automatische Interpretation
-- âÂÂÂÂ âÂÂÂÂ �Â¯ÂÂ¸ÂÂ Warnung mit Disclaimer
+- âÂÂÂÂ âÂÂÂÂ –Â¯ÂÂ¸ÂÂ Warnung mit Disclaimer
 - âÂÂÂÂ Gesamtscore-Berechnung
 
-### 3�Â¯ÂÂ¸ÂÂâÂÂÂÂ£ **ADHS-Screening (ASRS v1.1)** âÂÂÂÂ
+### 3–Â¯ÂÂ¸ÂÂâÂÂÂÂ£ **ADHS-Screening (ASRS v1.1)** âÂÂÂÂ
 - âÂÂÂÂ 6 Kernfragen zu ADHS-Symptomen
 - âÂÂÂÂ 5-Punkt Likert-Skala
 - âÂÂÂÂ WHO-Genehmigt
 - âÂÂÂÂ Professionelle Interpretation
-- âÂÂÂÂ âÂÂÂÂ �Â¯ÂÂ¸ÂÂ Warnung mit Empfehlungen
+- âÂÂÂÂ âÂÂÂÂ –Â¯ÂÂ¸ÂÂ Warnung mit Empfehlungen
 - âÂÂÂÂ Score-Kategorisierung
 
-### 4�Â¯ÂÂ¸ÂÂâÂÂÂÂ£ **Big-Five Persönlichkeitstest (ENTF)** âÂÂÂÂ
+### 4–Â¯ÂÂ¸ÂÂâÂÂÂÂ£ **Big-Five Persönlichkeitstest (ENTF)** âÂÂÂÂ
 - âÂÂÂÂ 20 Fragen (4 pro Dimension)
 - âÂÂÂÂ 5-Punkt Likert-Skala
 - âÂÂÂÂ 5 Persönlichkeitsdimensionen:
@@ -43,20 +43,20 @@
 - âÂÂÂÂ Dimension-spezifische Erklärungen
 - âÂÂÂÂ Visuelle Fortschrittsbalken
 
-### 5�Â¯ÂÂ¸ÂÂâÂÂÂÂ£ **Mobile Hochformat-Optimierung** âÂÂÂÂ
+### 5–Â¯ÂÂ¸ÂÂâÂÂÂÂ£ **Mobile Hochformat-Optimierung** âÂÂÂÂ
 - âÂÂÂÂ Desktop (>1200px): Normales Layout
 - âÂÂÂÂ Tablet (768px-1200px): Optimiert
 - âÂÂÂÂ **Small Phone (<768px): Hochformat optimiert**
   - âÂÂÂÂ Reduzierte Padding/Margin
-  - âÂÂÂÂ Grö�ÂÂÂere Touch-Ziele (44px+)
+  - âÂÂÂÂ Grö–ÂÂÂere Touch-Ziele (44px+)
   - âÂÂÂÂ Bessere Typography
   - âÂÂÂÂ Flexibles Grid
 - âÂÂÂÂ Landscape Mode Support
 - âÂÂÂÂ Volle Funktionalität auf allen Devices
 
-### 6�Â¯ÂÂ¸ÂÂâÂÂÂÂ£ **Professionelle UI/UX** âÂÂÂÂ
+### 6–Â¯ÂÂ¸ÂÂâÂÂÂÂ£ **Professionelle UI/UX** âÂÂÂÂ
 - âÂÂÂÂ Moderne Button-Designs
-- âÂÂÂÂ Smooth Animationen & �ÂÂÂbergänge
+- âÂÂÂÂ Smooth Animationen & –ÂÂÂbergänge
 - âÂÂÂÂ Farbcodierte Ergebnisse
 - âÂÂÂÂ Fortschrittsbalken mit Animationen
 - âÂÂÂÂ Emoji-unterstützte Kategorien
@@ -65,7 +65,7 @@
 
 ---
 
-## �°ÂÂÂÂÂÂ Dateien-Status
+## –°ÂÂÂÂÂÂ Dateien-Status
 
 ### Neue Dateien
 ```
@@ -89,12 +89,12 @@
 
 ---
 
-## �°ÂÂÂÂÂÂ Wie Verwenden?
+## –°ÂÂÂÂÂÂ Wie Verwenden?
 
 ### Im Browser öffnen
 ```
 1. Öffne index.html
-2. Klick auf "�°ÂÂÂÂÂÂ¯ Quiz" in der Navigation
+2. Klick auf "–°ÂÂÂÂÂÂ¯ Quiz" in der Navigation
 3. Wähle einen Test (7 verfügbar!)
 4. Beantworte die Fragen
 5. Schau die Ergebnisse an
@@ -103,19 +103,19 @@
 ### Verfügbare Tests
 
 **Medizintechnik (Multiple Choice):**
-- �°ÂÂÂÂÂÂ Diagnostik - 5 Fragen (randomisiert)
-- �°ÂÂÂÂÂÂ Therapie - 5 Fragen (randomisiert)
-- �°ÂÂÂÂÂÂ¬ Forschung - 5 Fragen (randomisiert)
-- �°ÂÂÂÂÂÂ Zukunft - 5 Fragen (randomisiert)
+- –°ÂÂÂÂÂÂ Diagnostik - 5 Fragen (randomisiert)
+- –°ÂÂÂÂÂÂ Therapie - 5 Fragen (randomisiert)
+- –°ÂÂÂÂÂÂ¬ Forschung - 5 Fragen (randomisiert)
+- –°ÂÂÂÂÂÂ Zukunft - 5 Fragen (randomisiert)
 
 **Psychologie (Fragebögen) - NEU:**
-- �°ÂÂÂÂÂÂ Depression-Screening - 9 Fragen (PHQ-9)
-- �°ÂÂÂÂ§ÂÂ  ADHS-Screening - 6 Fragen (ASRS)
-- �°ÂÂÂÂÂÂ Big-Five Persönlichkeit - 20 Fragen
+- –°ÂÂÂÂÂÂ Depression-Screening - 9 Fragen (PHQ-9)
+- –°ÂÂÂÂ§ÂÂ  ADHS-Screening - 6 Fragen (ASRS)
+- –°ÂÂÂÂÂÂ Big-Five Persönlichkeit - 20 Fragen
 
 ---
 
-## �°ÂÂÂÂÂÂ§ Technische Highlights
+## –°ÂÂÂÂÂÂ§ Technische Highlights
 
 ### Neue JavaScript-Funktionen
 ```javascript
@@ -157,12 +157,12 @@ type: 'bigfive'                        // Persönlichkeitsdimensionen
 
 ---
 
-## �°ÂÂÂÂÂÂ Grö�ÂÂÂe & Performance
+## –°ÂÂÂÂÂÂ Grö–ÂÂÂe & Performance
 
 | Metrik | Wert |
 |--------|------|
-| quiz.js Grö�ÂÂÂe | ~45 KB |
-| quiz.css Grö�ÂÂÂe | ~35 KB |
+| quiz.js Grö–ÂÂÂe | ~45 KB |
+| quiz.css Grö–ÂÂÂe | ~35 KB |
 | Total Size | ~80 KB |
 | Startup Time | < 100ms |
 | Memory Usage | < 5 MB |
@@ -171,7 +171,7 @@ type: 'bigfive'                        // Persönlichkeitsdimensionen
 
 ---
 
-## �°ÂÂÂÂÂÂ Sicherheit & Datenschutz
+## –°ÂÂÂÂÂÂ Sicherheit & Datenschutz
 
 âÂÂÂÂ **Vollständig Lokal:**
 - Keine Cloud-Speicherung
@@ -182,7 +182,7 @@ type: 'bigfive'                        // Persönlichkeitsdimensionen
 
 ---
 
-## �°ÂÂÂÂÂÂ± Responsivität - Breakpoints
+## –°ÂÂÂÂÂÂ± Responsivität - Breakpoints
 
 ```css
 /* Desktop (>1200px) */
@@ -211,7 +211,7 @@ type: 'bigfive'                        // Persönlichkeitsdimensionen
 
 ---
 
-## âÂÂÂÂ �Â¯ÂÂ¸ÂÂ Psychologische Tests - Wichtig
+## âÂÂÂÂ –Â¯ÂÂ¸ÂÂ Psychologische Tests - Wichtig
 
 ### Haftungsausschluss
 Diese Tests sind:
@@ -225,7 +225,7 @@ Diese Tests sind:
 - âÂÂÂÂ Informativ & Eduaktiv
 - âÂÂÂÂ Zur Vorbereitung auf Arztbesuch
 
-**Bei Bedenken:** �°ÂÂÂÂÂÂ¥ Konsultie einen Psychologen
+**Bei Bedenken:** –°ÂÂÂÂÂÂ¥ Konsultie einen Psychologen
 
 ---
 
@@ -246,7 +246,7 @@ Diese Tests sind:
 
 ---
 
-## �°ÂÂÂÂÂÂ Wissenschaftliche Basis
+## –°ÂÂÂÂÂÂ Wissenschaftliche Basis
 
 ### Depression (PHQ-9)
 - Entwickler: Pfizer, NIH (National Institutes of Health)
@@ -260,10 +260,10 @@ Diese Tests sind:
 - Screening-Version: 6 Fragen (5 Minuten)
 - Vollversion: 18 Fragen (15 Minuten)
 - Validiert durch umfangreiche Forschung
-- �ÂÂÂber 100.000 Validierungseinträge
+- –ÂÂÂber 100.000 Validierungseinträge
 
 ### Big-Five (NEO-FFI)
-- �ÂÂÂber 50 Jahre Forschung
+- –ÂÂÂber 50 Jahre Forschung
 - International standardisiert
 - Used by: HR, Universities, Psychologists
 - Basis für: Myers-Briggs, MBTI, andere Tests
@@ -271,7 +271,7 @@ Diese Tests sind:
 
 ---
 
-## �°ÂÂÂÂÂÂ Nächste Mögliche Features
+## –°ÂÂÂÂÂÂ Nächste Mögliche Features
 
 ```
 Level 1 (Einfach):
@@ -292,7 +292,7 @@ Level 3 (Komplex):
 
 ---
 
-## �°ÂÂÂÂÂÂ Support & Fehlerbehandlung
+## –°ÂÂÂÂÂÂ Support & Fehlerbehandlung
 
 ### Falls Quiz nicht funktioniert
 1. Konsole öffnen (F12)
@@ -315,7 +315,7 @@ A: Sie basieren auf wissenschaftlichen Standards, sind aber kein Ersatz für pro
 
 ---
 
-## �°ÂÂÂÂÂÂ Dokumentation
+## –°ÂÂÂÂÂÂ Dokumentation
 
 Für mehr Infos siehe:
 - `docs/QUIZ_V2_CHANGELOG.md` - Detaillierte technische Dokumentation
@@ -325,7 +325,7 @@ Für mehr Infos siehe:
 
 ---
 
-## �°ÂÂÂÂÂÂ Zusammenfassung
+## –°ÂÂÂÂÂÂ Zusammenfassung
 
 âÂÂÂÂ¨ **Das neue Quiz System v2.0 bietet:**
 - 4 Medizintechnik-Quizze (randomisiert)
@@ -336,7 +336,7 @@ Für mehr Infos siehe:
 - Zero Dependencies
 - Ready for Production
 
-**Das System ist einsatzbereit! �°ÂÂÂÂÂÂ**
+**Das System ist einsatzbereit! –°ÂÂÂÂÂÂ**
 
 ---
 

@@ -2,7 +2,7 @@
 
 ## âÂÂÂÂMedizintechnik für alle â verständlich, übersichtlich, interaktiv."
 
-> âÂÂÂÂ±�Â¯ÂÂ¸ÂÂ Redezeit: ca. 2â3 Minuten (~320 Wörter)
+> âÂÂÂÂ±–Â¯ÂÂ¸ÂÂ Redezeit: ca. 2â3 Minuten (~320 Wörter)
 
 ---
 
@@ -39,7 +39,7 @@ MedTechGuide wurde konsequent nach den Prinzipien des **Design of Digital Produc
 - **Informationsarchitektur** â 10 Kategorien, Suche und Vergleichsmodus für schnelle Navigation
 - **Interaktionsdesign** â Quiz und Selbsttests fördern aktives Lernen
 - **Responsives Design** â funktioniert auf Smartphone, Tablet und PC
-- **Visuelles Design** â ruhiges Blau-Wei�ÂÂÂ-Schema für Vertrauen und �ÂÂÂbersicht
+- **Visuelles Design** â ruhiges Blau-Wei–ÂÂÂ-Schema für Vertrauen und –ÂÂÂbersicht
 
 MedTechGuide ist damit mehr als eine Informationsseite â es ist ein strukturiertes, nutzerorientiertes digitales Produkt.
 
@@ -75,4 +75,4 @@ Die Webanwendung trifft einen konkreten Bedarf â und senkt jede Einstiegsh�
 
 **MedTechGuide** â weil jeder das Recht hat, die eigene Gesundheit zu verstehen.
 
-_Webanwendung �Â�ÂÂ· 10 Kategorien �Â�ÂÂ· Vergleichsmodus �Â�ÂÂ· Quiz �Â�ÂÂ· 7 Selbsttests �Â�ÂÂ· Volltext-Suche_
+_Webanwendung –Â–ÂÂ· 10 Kategorien –Â–ÂÂ· Vergleichsmodus –Â–ÂÂ· Quiz –Â–ÂÂ· 7 Selbsttests –Â–ÂÂ· Volltext-Suche_

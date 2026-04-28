@@ -65,16 +65,16 @@ Projekt_25/
 âÂÂÂÂâÂÂÂÂâÂÂÂÂ search.js               # Suchmodul
 âÂÂÂÂâÂÂÂÂâÂÂÂÂ search-index.json       # Suchindex aller Geräte
 âÂÂÂÂâÂÂÂÂâÂÂÂÂ css/
-âÂÂÂÂ�   âÂÂÂÂâÂÂÂÂâÂÂÂÂ comparison.css      # Styles für den Vergleichsmodus
+âÂÂÂÂ–   âÂÂÂÂâÂÂÂÂâÂÂÂÂ comparison.css      # Styles für den Vergleichsmodus
 âÂÂÂÂâÂÂÂÂâÂÂÂÂ js/
-âÂÂÂÂ�   âÂÂÂÂâÂÂÂÂâÂÂÂÂ comparison-module.js
-âÂÂÂÂ�   âÂÂÂÂâÂÂÂÂâÂÂÂÂ comparison-ui.js
+âÂÂÂÂ–   âÂÂÂÂâÂÂÂÂâÂÂÂÂ comparison-module.js
+âÂÂÂÂ–   âÂÂÂÂâÂÂÂÂâÂÂÂÂ comparison-ui.js
 âÂÂÂÂâÂÂÂÂâÂÂÂÂ docs/                   # Dokumentation
 ```
 
 ## Design
 
-- Ruhiges, seriöses Farbschema (Blau/Wei�ÂÂÂ/Grau)
+- Ruhiges, seriöses Farbschema (Blau/Wei–ÂÂÂ/Grau)
 - Responsives Layout für Desktop und Mobile
 - Klare Typografie für medizinisch-technische Inhalte
 

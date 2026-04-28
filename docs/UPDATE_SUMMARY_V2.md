@@ -1,31 +1,31 @@
-# �°ÂÂÂÂÂÂ Quiz v2.0 - Update Summary
+# –°ÂÂÂÂÂÂ Quiz v2.0 - Update Summary
 
 **Datum:** 24.02.2026  
 **Version:** 2.0.0 Release  
 
 ## âÂÂÂÂ¨ Was ist neu?
 
-### �°ÂÂÂÂÂÂ **Randomisierte Fragen**
+### –°ÂÂÂÂÂÂ **Randomisierte Fragen**
 Fragen und Antworten werden jetzt bei jedem Test zufällig sortiert!
 - Fisher-Yates Shuffle Algorithmus
 - Jeder Test ist unterschiedlich
 - Kein "Auswendiglernen" möglich
 
-### �°ÂÂÂÂ§ÂÂ  **3 Professionelle Psychologische Tests**
+### –°ÂÂÂÂ§ÂÂ  **3 Professionelle Psychologische Tests**
 
-#### �°ÂÂÂÂÂÂ **Depression-Screening (PHQ-9)**
+#### –°ÂÂÂÂÂÂ **Depression-Screening (PHQ-9)**
 - Basis: Patient Health Questionnaire
 - 9 Fragen zu depressiven Symptomen
 - Wissenschaftlich validiert
-- âÂÂÂÂ �Â¯ÂÂ¸ÂÂ Kein Ersatz für Arztbesuch
+- âÂÂÂÂ –Â¯ÂÂ¸ÂÂ Kein Ersatz für Arztbesuch
 
-#### �°ÂÂÂÂ§ÂÂ  **ADHS-Screening (ASRS v1.1)**
+#### –°ÂÂÂÂ§ÂÂ  **ADHS-Screening (ASRS v1.1)**
 - Basis: Adult ADHD Self-Report Scale
 - 6 Fragen zu ADHS-Symptomen
 - Von der WHO entwickelt
-- âÂÂÂÂ �Â¯ÂÂ¸ÂÂ Weitere Evaluierung empfohlen
+- âÂÂÂÂ –Â¯ÂÂ¸ÂÂ Weitere Evaluierung empfohlen
 
-#### �°ÂÂÂÂÂÂ **Big-Five Persönlichkeitstest**
+#### –°ÂÂÂÂÂÂ **Big-Five Persönlichkeitstest**
 - 5 Persönlichkeitsdimensionen (ENTF):
   - **O**ffenheit - Neugier & Kreativität
   - **E**xtraversion - Geselligkeit & Energie
@@ -35,14 +35,14 @@ Fragen und Antworten werden jetzt bei jedem Test zufällig sortiert!
 - 20 Fragen
 - Detailliertes Persönlichkeitsprofil
 
-### �°ÂÂÂÂÂÂ± **Mobile Hochformat-Optimierung**
+### –°ÂÂÂÂÂÂ± **Mobile Hochformat-Optimierung**
 - âÂÂÂÂ Perfekt optimiert für Smartphones
 - âÂÂÂÂ Breakpoints: 480px, 768px
 - âÂÂÂÂ Touch-friendly Buttons (44px+)
 - âÂÂÂÂ Landscape & Portrait Support
 - âÂÂÂÂ Schneller & Responsive
 
-### �°ÂÂÂÂÂÂ¨ **Neue UI für Fragebögen**
+### –°ÂÂÂÂÂÂ¨ **Neue UI für Fragebögen**
 - Likert-Skalen (für Depression & ADHS)
 - Big-Five Dimension-Visualisierung
 - Farbcodierte Ergebnisse
@@ -51,12 +51,12 @@ Fragen und Antworten werden jetzt bei jedem Test zufällig sortiert!
 
 ---
 
-## �°ÂÂÂÂÂÂ¯ Wie benutzen?
+## –°ÂÂÂÂÂÂ¯ Wie benutzen?
 
 ### Im Browser
 ```
 1. Öffne index.html
-2. Klick auf "�°ÂÂÂÂÂÂ¯ Quiz" Button in Navigation
+2. Klick auf "–°ÂÂÂÂÂÂ¯ Quiz" Button in Navigation
 3. NEUE OPTION: Wähle einen psychologischen Test
 4. Beantworte alle Fragen
 5. Schau die Ergebnisse an (mit Interpretationen)
@@ -65,19 +65,19 @@ Fragen und Antworten werden jetzt bei jedem Test zufällig sortiert!
 ### Tests verfügbar
 
 **Medizintechnik (Multiple Choice):**
-- �°ÂÂÂÂÂÂ Diagnostik (5 Fragen, randomisiert)
-- �°ÂÂÂÂÂÂ Therapie (5 Fragen, randomisiert)
-- �°ÂÂÂÂÂÂ¬ Forschung (5 Fragen, randomisiert)
-- �°ÂÂÂÂÂÂ Zukunft (5 Fragen, randomisiert)
+- –°ÂÂÂÂÂÂ Diagnostik (5 Fragen, randomisiert)
+- –°ÂÂÂÂÂÂ Therapie (5 Fragen, randomisiert)
+- –°ÂÂÂÂÂÂ¬ Forschung (5 Fragen, randomisiert)
+- –°ÂÂÂÂÂÂ Zukunft (5 Fragen, randomisiert)
 
 **Psychologie (Fragebögen):**  âÂÂ­ÂÂ NEU
-- �°ÂÂÂÂÂÂ Depression-Screening
-- �°ÂÂÂÂ§ÂÂ  ADHS-Screening
-- �°ÂÂÂÂÂÂ Big-Five Persönlichkeitstest
+- –°ÂÂÂÂÂÂ Depression-Screening
+- –°ÂÂÂÂ§ÂÂ  ADHS-Screening
+- –°ÂÂÂÂÂÂ Big-Five Persönlichkeitstest
 
 ---
 
-## �°ÂÂÂÂÂÂ Dateiänderungen
+## –°ÂÂÂÂÂÂ Dateiänderungen
 
 ### Aktualisiert
 - âÂÂÂÂ `js/quiz.js` (v2.0 - 1000+ Zeilen)
@@ -102,7 +102,7 @@ Fragen und Antworten werden jetzt bei jedem Test zufällig sortiert!
 
 ---
 
-## �°ÂÂÂÂÂÂ Datenschutz & Sicherheit
+## –°ÂÂÂÂÂÂ Datenschutz & Sicherheit
 
 âÂÂÂÂ 100% Local Processing:
 - Keine externe Datenübertragung
@@ -113,7 +113,7 @@ Fragen und Antworten werden jetzt bei jedem Test zufällig sortiert!
 
 ---
 
-## âÂÂÂÂ �Â¯ÂÂ¸ÂÂ Psychologische Tests - Wichtig!
+## âÂÂÂÂ –Â¯ÂÂ¸ÂÂ Psychologische Tests - Wichtig!
 
 ### Diese Tests sind:
 âÂÂÂÂ **KEINE** ärztliche Diagnose  
@@ -127,17 +127,17 @@ Fragen und Antworten werden jetzt bei jedem Test zufällig sortiert!
 âÂÂÂÂ Informativ & Eduaktiv  
 
 ### Bei ernsthafte Bedenken:
-�°ÂÂÂÂÂÂ¥ **Konsultiere einen Psychologen**  
-�°ÂÂÂÂÂÂ **Rufe einen Arzt an**  
-�°ÂÂÂÂÂÂ **Kontaktiere Krisenhotline**  
+–°ÂÂÂÂÂÂ¥ **Konsultiere einen Psychologen**  
+–°ÂÂÂÂÂÂ **Rufe einen Arzt an**  
+–°ÂÂÂÂÂÂ **Kontaktiere Krisenhotline**  
 
 ---
 
-## �°ÂÂÂÂ§ÂÂª Testing Suggestions
+## –°ÂÂÂÂ§ÂÂª Testing Suggestions
 
 ### Multiple Choice (Diagnostik)
 ```
-âÂÂÂÂ Öffne "�°ÂÂÂÂÂÂ Diagnostik"
+âÂÂÂÂ Öffne "–°ÂÂÂÂÂÂ Diagnostik"
 âÂÂÂÂ Beantworte 5 Fragen
 âÂÂÂÂ Fragen sollten unterschiedlich sein jedesmal
 âÂÂÂÂ Antworten A/B/C/D sollten variieren
@@ -145,7 +145,7 @@ Fragen und Antworten werden jetzt bei jedem Test zufällig sortiert!
 
 ### Likert Scale (Depression)
 ```
-âÂÂÂÂ Öffne "�°ÂÂÂÂÂÂ Depression-Screening"
+âÂÂÂÂ Öffne "–°ÂÂÂÂÂÂ Depression-Screening"
 âÂÂÂÂ Beantworte 9 Fragen mit Skala
 âÂÂÂÂ Schau Gesamtscore & Interpretation an
 âÂÂÂÂ Lese Warnung sorgfältig!
@@ -153,7 +153,7 @@ Fragen und Antworten werden jetzt bei jedem Test zufällig sortiert!
 
 ### Big Five (Persönlichkeit)
 ```
-âÂÂÂÂ Öffne "�°ÂÂÂÂÂÂ Persönlichkeit"
+âÂÂÂÂ Öffne "–°ÂÂÂÂÂÂ Persönlichkeit"
 âÂÂÂÂ Beantworte 20 Fragen (1-5 Skala)
 âÂÂÂÂ Schau Profil mit 5 Dimensionen an
 âÂÂÂÂ Lese Interpretationen für jede Dimension
@@ -161,7 +161,7 @@ Fragen und Antworten werden jetzt bei jedem Test zufällig sortiert!
 
 ---
 
-## �°ÂÂÂÂÂÂ± Mobile Test
+## –°ÂÂÂÂÂÂ± Mobile Test
 
 ### Auf iPhone/Android testen:
 1. Öffne http://localhost:8000 (oder deine URL)
@@ -172,7 +172,7 @@ Fragen und Antworten werden jetzt bei jedem Test zufällig sortiert!
 
 ---
 
-## �°ÂÂÂÂÂÂ Troubleshooting
+## –°ÂÂÂÂÂÂ Troubleshooting
 
 ### âÂÂÂÂ Quiz lädt nicht
 **Lösung:**
@@ -210,14 +210,14 @@ Fragen und Antworten werden jetzt bei jedem Test zufällig sortiert!
 
 ---
 
-## �°ÂÂÂÂÂÂ Weitere Infos
+## –°ÂÂÂÂÂÂ Weitere Infos
 
 Detaillierte technische Dokumentation:
 âÂÂÂÂ Siehe: `docs/QUIZ_V2_CHANGELOG.md`
 
 ---
 
-**Gratuliere zum Update! �°ÂÂÂÂÂÂ**
+**Gratuliere zum Update! –°ÂÂÂÂÂÂ**
 
 Das System ist nun professioneller, responsiver und mit echten psychologischen Tests.
 

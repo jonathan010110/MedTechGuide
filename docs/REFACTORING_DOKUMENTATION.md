@@ -1,12 +1,12 @@
 # MedTechGuide - Portfolio-Level Refactoring Dokumentation
 
-## �°ÂÂÂÂÂÂ �ÂÂÂberblick
+## –°ÂÂÂÂÂÂ –ÂÂÂberblick
 
 Diese Dokumentation beschreibt die umfassenden Refactoring- und Modernisierungsarbeiten am MedTechGuide-Projekt. Das Projekt wurde von einer grundlegenden HTML/CSS/JS Website zu einer modernen, professionellen Anwendung mit Vanilla JS, erweiterten Features und Portfolio-Qualität eleviert.
 
 ---
 
-## �°ÂÂÂÂÂÂ¯ Implementierte Features
+## –°ÂÂÂÂÂÂ¯ Implementierte Features
 
 ### 1. **JavaScript Architektur Refaktorierung**
 
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
 - System-Preference Detection (`prefers-color-scheme: dark`)
 - localStorage Persistierung (`medtechguide-darkmode`)
 - CSS Variables für konsistente Farben
-- Toggle-Button in allen Navbars (�°ÂÂÂÂÂÂ)
+- Toggle-Button in allen Navbars (–°ÂÂÂÂÂÂ)
 
 **CSS Variable Beispiele:**
 ```css
@@ -175,8 +175,8 @@ function normalizeText(text) {
 **Features:**
 - Max 2 Geräte auswählbar
 - Toggle-Modus aktivieren/deaktivieren
-- Modal mit ESC schlie�ÂÂÂbar
-- Klick au�ÂÂÂerhalb schlie�ÂÂÂt Modal
+- Modal mit ESC schlie–ÂÂÂbar
+- Klick au–ÂÂÂerhalb schlie–ÂÂÂt Modal
 - ARIA-Attribute für Accessibility
 
 **HTML:**
@@ -247,7 +247,7 @@ role="tooltip"
 
 #### Keyboard Navigation
 - Tab-Navigation funkioniert durchgehend
-- Modal mit ESC schlie�ÂÂÂbar
+- Modal mit ESC schlie–ÂÂÂbar
 - Buttons statt klickbare divs
 
 ---
@@ -358,12 +358,12 @@ thead {
 
 ---
 
-## �°ÂÂÂÂÂÂ Code-Qualität
+## –°ÂÂÂÂÂÂ Code-Qualität
 
 ### Kommentierung
 - Alle Funktionen haben JSDoc-Kommentare
 - Inline-Kommentare für komplexe Logik
-- Emojis für visuelles Scanning (�°ÂÂÂÂÂÂ¯, âÂÂÂÂ¿, etc.)
+- Emojis für visuelles Scanning (–°ÂÂÂÂÂÂ¯, âÂÂÂÂ¿, etc.)
 
 ### Keine Breaking Changes
 - Alle neuen Features sind opt-in
@@ -378,7 +378,7 @@ thead {
 
 ---
 
-## �°ÂÂÂÂÂÂ Neue HTML-Struktur
+## –°ÂÂÂÂÂÂ Neue HTML-Struktur
 
 ### Navigation (alle Seiten)
 ```html
@@ -390,7 +390,7 @@ thead {
     <div class="nav-search">
       <input type="text" id="globalSearch">
       <span id="searchResults"></span>
-      <button id="darkModeToggle">�°ÂÂÂÂÂÂ</button>
+      <button id="darkModeToggle">–°ÂÂÂÂÂÂ</button>
     </div>
   </div>
 </nav>
@@ -418,7 +418,7 @@ thead {
 
 ---
 
-## �°ÂÂÂÂÂÂ¨ CSS Variable System
+## –°ÂÂÂÂÂÂ¨ CSS Variable System
 
 ### Farben
 ```css
@@ -437,7 +437,7 @@ thead {
 --shadow-xl: 0 12px 32px rgba(30, 64, 175, 0.15);
 ```
 
-### �ÂÂÂbergänge
+### –ÂÂÂbergänge
 ```css
 --transition: all 0.2s ease;
 --transition-slow: all 0.3s ease;
@@ -445,7 +445,7 @@ thead {
 
 ---
 
-## �°ÂÂÂÂÂÂ± Responsive Design
+## –°ÂÂÂÂÂÂ± Responsive Design
 
 ### Breakpoints
 - Desktop: > 1024px
@@ -488,7 +488,7 @@ element.addEventListener('mouseleave', () => {
 
 ---
 
-## �°ÂÂÂÂÂÂ§ Basis-Setup
+## –°ÂÂÂÂÂÂ§ Basis-Setup
 
 ### Installation/Start
 1. Öffne [http://localhost:8000](http://localhost:8000) (wenn Server läuft)
@@ -509,7 +509,7 @@ c:\WMC\Projekt_25\
 
 ---
 
-## �°ÂÂÂÂÂÂ Browser-Kompatibilität
+## –°ÂÂÂÂÂÂ Browser-Kompatibilität
 
 ### Features
 - **CSS Variables**: IE 11 nicht, aber alle modernen Browser âÂÂÂÂ
@@ -526,7 +526,7 @@ c:\WMC\Projekt_25\
 
 ---
 
-## �°ÂÂÂÂÂÂ Warum diese Lösungen?
+## –°ÂÂÂÂÂÂ Warum diese Lösungen?
 
 ### Warum IntersectionObserver?
 âÂÂÂÂ Nicht blockierend  
@@ -551,11 +551,11 @@ c:\WMC\Projekt_25\
 
 ---
 
-## �°ÂÂÂÂÂÂ Testing & Debugging
+## –°ÂÂÂÂÂÂ Testing & Debugging
 
 ### Tests durchführen:
 1. **Suche**: Gib "Diabetes" in Suchfeld âÂÂÂÂ sollte highlights zeigen
-2. **Dark Mode**: Klick �°ÂÂÂÂÂÂ Button âÂÂÂÂ ganzseitige Umgestaltung
+2. **Dark Mode**: Klick –°ÂÂÂÂÂÂ Button âÂÂÂÂ ganzseitige Umgestaltung
 3. **Progress Bar**: Scroll nach unten âÂÂÂÂ Progress Bar füllt sich
 4. **Filter**: Klick "Diagnostik" âÂÂÂÂ nur relevant Cards sichtbar
 5. **Vergleich**: Aktiviere Vergleichsmodus âÂÂÂÂ Checkboxes erscheinen
@@ -577,7 +577,7 @@ getEventListeners(window)
 
 ---
 
-## �°ÂÂÂÂÂÂ Performance-Metriken (Geschätzt)
+## –°ÂÂÂÂÂÂ Performance-Metriken (Geschätzt)
 
 | Metrik | Wert | Kategorie |
 |--------|------|-----------|
@@ -590,7 +590,7 @@ getEventListeners(window)
 
 ---
 
-## �°ÂÂÂÂÂÂ¯ Nächste Schritte (Optional)
+## –°ÂÂÂÂÂÂ¯ Nächste Schritte (Optional)
 
 Falls Sie das Projekt weiter verbessern möchten:
 1. **ServiceWorker** für Offline-Funktionalität
@@ -602,7 +602,7 @@ Falls Sie das Projekt weiter verbessern möchten:
 
 ---
 
-## �°ÂÂÂÂÂÂ Lizenz & Credits
+## –°ÂÂÂÂÂÂ Lizenz & Credits
 
 Projekt: MedTechGuide  
 Typ: Schulprojekt - HTL Informatik  
@@ -613,4 +613,4 @@ Technologien: Vanilla JavaScript, CSS3, HTML5
 
 **Ende der Dokumentation**
 
-Viel Erfolg mit dem Portfolio-Projekt! �°ÂÂÂÂÂÂ
+Viel Erfolg mit dem Portfolio-Projekt! –°ÂÂÂÂÂÂ

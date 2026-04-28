@@ -1,12 +1,12 @@
-# �°ÂÂÂÂÂÂ MedTechGuide Website Refactoring & Upgrade
+# –°ÂÂÂÂÂÂ MedTechGuide Website Refactoring & Upgrade
 
-## �ÂÂÂbersicht der Implementierten Verbesserungen
+## –ÂÂÂbersicht der Implementierten Verbesserungen
 
 Dieses Projekt wurde umfassend aufgewertet mit modernen Web-Standards für **Performance, Accessibility, UX/UI** und **Interaktivität**.
 
 ---
 
-## �°ÂÂÂÂÂÂ 1. GLOBALE SUCHFUNKTION (Vollständig neu implementiert)
+## –°ÂÂÂÂÂÂ 1. GLOBALE SUCHFUNKTION (Vollständig neu implementiert)
 
 ### Was wurde verbessert?
 - âÂÂÂÂ **Globale Suche** über ALLE Seiten der Website (nicht nur aktuell)
@@ -29,27 +29,27 @@ Dieses Projekt wurde umfassend aufgewertet mit modernen Web-Standards für **Per
 - `.search-highlight` - Highlight markierter Text auf Zielseite
 
 ### Technische Details:
-- **Normalisierung**: Umlaute (äâÂÂÂÂa), Gro�ÂÂÂ/Kleinschreibung
+- **Normalisierung**: Umlaute (äâÂÂÂÂa), Gro–ÂÂÂ/Kleinschreibung
 - **Scoring-System**: Titel (4 Punkte) > Keywords (2) > Content (1)
 - **Performance**: Debounce 150ms, max 10 Ergebnisse
 - **Memory**: SessionStorage für Highlighting nach Navigation
 
 ---
 
-## �°ÂÂÂÂ§ÂÂ­ 2. NAVIGATION & UX - STARK VERBESSERT
+## –°ÂÂÂÂ§ÂÂ­ 2. NAVIGATION & UX - STARK VERBESSERT
 
 ### Was wurde verbessert?
 - âÂÂÂÂ **Mobile Hamburger-Menü** (automatisch auf <768px)
 - âÂÂÂÂ **Sticky Navbar** beim Scrollen mit Shadow
 - âÂÂÂÂ **Aktive Seite visuell hervorheben** 
 - âÂÂÂÂ **Bessere Hover-Effekte** mit Animationen
-- âÂÂÂÂ **Responsive Design** für alle Screen-Grö�ÂÂÂen
+- âÂÂÂÂ **Responsive Design** für alle Screen-Grö–ÂÂÂen
 - âÂÂÂÂ **Touch-freundliche Links** (mindestens 44x44px)
 
 ### Mobile Menü Features:
 - **Hamburger Button** wird automatisch generiert via JavaScript
 - **Animated Toggle** mit Rotation-Effekt (âÂÂ° âÂÂÂÂ âÂÂÂÂ)
-- **Auto-Close** bei Link-Klick oder Click au�ÂÂÂerhalb
+- **Auto-Close** bei Link-Klick oder Click au–ÂÂÂerhalb
 - **Smooth Transitions** für alle Animationen
 
 ### Navigation CSS Updates:
@@ -111,7 +111,7 @@ logPerformanceMetrics()  // Dev-only Console Logs (localhost nur)
 a:visited               // Besuchte Links in Violet
 @media (prefers-reduced-motion: reduce)  // Respect User Preferences
 code, pre               // Bessere Code-Lesbarkeit
-input:focus-visible     // Form Inputs mit gro�ÂÂÂem Focus-Ring
+input:focus-visible     // Form Inputs mit gro–ÂÂÂem Focus-Ring
 ```
 
 ### Best Practices implementiert:
@@ -143,14 +143,14 @@ input:focus-visible     // Form Inputs mit gro�ÂÂÂem Focus-Ring
 - **Tooltips**: Fade-In Scale Animation
 
 ### UX Details:
-- **Hover-Scale Klasse**: Cards vergrö�ÂÂÂern sich um 5%
+- **Hover-Scale Klasse**: Cards vergrö–ÂÂÂern sich um 5%
 - **Hover-Lift Klasse**: Cards heben sich um 8px
 - **Button Feedback**: Visual auf Click, Disabled State Gray
 - **Color Transitions**: Fast (150ms) für responsives Gefühl
 
 ---
 
-## �°ÂÂÂÂÂÂ 6. ERWEITERTE FEATURES
+## –°ÂÂÂÂÂÂ 6. ERWEITERTE FEATURES
 
 ### Filter-System:
 - Kategorie-Buttons (Alle, Diagnostik, Therapie, etc.)
@@ -160,7 +160,7 @@ input:focus-visible     // Form Inputs mit gro�ÂÂÂem Focus-Ring
 ### Vergleichs-Modal:
 - Wähle bis zu 2 Devices zum Vergleich
 - Tabelle mit Specs
-- ESC zum Schlie�ÂÂÂen
+- ESC zum Schlie–ÂÂÂen
 - Backdrop-Blur für Fokus
 
 ### Glossar-Tooltips:
@@ -174,7 +174,7 @@ input:focus-visible     // Form Inputs mit gro�ÂÂÂem Focus-Ring
 
 ---
 
-## �°ÂÂÂÂÂÂ§ TECHNISCHE IMPLEMENTIERUNG
+## –°ÂÂÂÂÂÂ§ TECHNISCHE IMPLEMENTIERUNG
 
 ### JavaScript Module:
 ```
@@ -196,13 +196,13 @@ performance.js      // Lazy Loading & Monitoring (NEW)
 ```
 
 ### Responsive Breakpoints:
-- **768px**: Tablet-Grö�ÂÂÂe (Mobile Menu aktiviert)
+- **768px**: Tablet-Grö–ÂÂÂe (Mobile Menu aktiviert)
 - **480px**: Small Mobile (Font-Sizing angepasst)
 - **1200px**: Desktop max-width
 
 ---
 
-## �°ÂÂÂÂÂÂ FILE-STRUKTUR
+## –°ÂÂÂÂÂÂ FILE-STRUKTUR
 
 ```
 c:\WMC\Projekt_25\
@@ -220,7 +220,7 @@ c:\WMC\Projekt_25\
 
 ---
 
-## �°ÂÂÂÂÂÂ HOW TO USE
+## –°ÂÂÂÂÂÂ HOW TO USE
 
 ### Für die Entwickler:
 1. **Suche testen**: Schreib in die Search Box auf jeder Seite
@@ -236,7 +236,7 @@ c:\WMC\Projekt_25\
 
 ---
 
-## �°ÂÂÂÂÂÂ¬ TESTING-CHECKLIST
+## –°ÂÂÂÂÂÂ¬ TESTING-CHECKLIST
 
 - [ ] Suche funktioniert auf allen 10 Seiten
 - [ ] Hamburger-Menü erscheint auf Mobile (<768px)
@@ -250,17 +250,17 @@ c:\WMC\Projekt_25\
 
 ---
 
-## �°ÂÂÂÂÂÂ± BROWSER-KOMPATIBILITÄT
+## –°ÂÂÂÂÂÂ± BROWSER-KOMPATIBILITÄT
 
 - âÂÂÂÂ Chrome/Edge 90+
 - âÂÂÂÂ Firefox 88+
 - âÂÂÂÂ Safari 14+
 - âÂÂÂÂ Mobile Safari (iOS 14+)
-- âÂÂÂÂ �Â¯ÂÂ¸ÂÂ IE11: Teilweise Support (keine native Lazy Loading)
+- âÂÂÂÂ –Â¯ÂÂ¸ÂÂ IE11: Teilweise Support (keine native Lazy Loading)
 
 ---
 
-## �°ÂÂÂÂÂÂ¯ PERFORMANCE TARGETS
+## –°ÂÂÂÂÂÂ¯ PERFORMANCE TARGETS
 
 - **First Contentful Paint**: < 1.5s
 - **Largest Contentful Paint**: < 2.5s
@@ -270,7 +270,7 @@ c:\WMC\Projekt_25\
 
 ---
 
-## �°ÂÂÂÂÂÂ SUPPORT & FEEDBACK
+## –°ÂÂÂÂÂÂ SUPPORT & FEEDBACK
 
 Falls Probleme auftreten:
 1. Öffne DevTools (F12) und schau auf Console Errors
@@ -280,13 +280,13 @@ Falls Probleme auftreten:
 
 ---
 
-## �°ÂÂÂÂÂÂ Lizenz & Attribution
+## –°ÂÂÂÂÂÂ Lizenz & Attribution
 
 **MedTechGuide** verfügt über:
-- �°ÂÂÂÂÂÂ Vollständig **lizenzfrei**, offene Quellen
-- �°ÂÂÂÂÂÂ Wissensbasis auf wissenschaftlichen Quellen
-- �°ÂÂÂÂÂÂ Schulprojekt HTL Informatik 2026
-- âÂÂ»�Â¯ÂÂ¸ÂÂ Open for Educational Reuse
+- –°ÂÂÂÂÂÂ Vollständig **lizenzfrei**, offene Quellen
+- –°ÂÂÂÂÂÂ Wissensbasis auf wissenschaftlichen Quellen
+- –°ÂÂÂÂÂÂ Schulprojekt HTL Informatik 2026
+- âÂÂ»–Â¯ÂÂ¸ÂÂ Open for Educational Reuse
 
 ---
 
