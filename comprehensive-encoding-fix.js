@@ -14,37 +14,37 @@ function fixFile(filePath) {
     // These are UTF-8 bytes that got mis-interpreted as Latin-1 and then re-encoded
     const corrections = [
       // German Umlaute (most common)
-      ['Ã¼', 'ü'],  // ü
-      ['Ã¶', 'ö'],  // ö
-      ['Ã¤', 'ä'],  // ä
-      ['Ã„', 'Ä'],  // Ä
-      ['Ã–', 'Ö'],  // Ö
-      ['Ã™', 'Ü'],  // Ü
-      ['ÃŸ', 'ß'],  // ß
-      ['Ã©', 'é'],  // é
-      ['Ã ', 'à'],  // à
-      ['Ã¡', 'á'],  // á
-      ['Ã§', 'ç'],  // ç
+      ['ü', 'ü'],  // ü
+      ['ö', 'ö'],  // ö
+      ['ä', 'ä'],  // ä
+      ['Ä', 'Ä'],  // Ä
+      ['Ö', 'Ö'],  // Ö
+      ['Ü', 'Ü'],  // Ü
+      ['ß', 'ß'],  // ß
+      ['é', 'é'],  // é
+      ['à', 'à'],  // à
+      ['á', 'á'],  // á
+      ['ç', 'ç'],  // ç
       
       // Double-encoded special characters
-      ['â€"', '–'],  // en dash
-      ['â€"', '—'],  // em dash
-      ['â€˜', '''],  // left single quote
-      ['â€™', '''],  // right single quote
-      ['â€œ', '"'],  // left double quote
+      ['–', '–'],  // en dash
+      ['–', '—'],  // em dash
+      [''', "'"],  // left single quote
+      [''', "'"],  // right single quote
+      ['"', '"'],  // left double quote
       ['â€\u009d', '"'],  // right double quote
-      ['â€¢', '•'],  // bullet
-      ['â€¦', '…'],  // ellipsis
+      ['•', '•'],  // bullet
+      ['…', '…'],  // ellipsis
       
       // Fix double spaces around dashes (from previous repairs)
-      ['  –  ', ' – '],
-      ['  –  ', ' – '],
+      [' – ', ' – '],
+      [' – ', ' – '],
       
       // Remove any standalone problematic characters
-      ['Â«', '«'],
-      ['Â»', '»'],
-      ['Â°', '°'],
-      ['â¿', '♿'],
+      ['«', '«'],
+      ['»', '»'],
+      ['°', '°'],
+      ['♿', '♿'],
     ];
     
     for (const [wrong, correct] of corrections) {
