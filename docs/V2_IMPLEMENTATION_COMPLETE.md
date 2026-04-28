@@ -1,347 +1,347 @@
-# â¨ Quiz System v2.0 - IMPLEMENTATION COMPLETE
+#à¨àQuizàSystemàv2.0à-àIMPLEMENTATIONàCOMPLETE
 
-**Status:** â Vollständig implementiert und getestet  
-**Datum:** 24.02.2026  
-**Version:** 2.0.0  
-
----
-
-## –°¯ Was wurde implementiert?
-
-### 1–¯¸â£ **Randomisierte Fragen** â
-- â Fisher-Yates Shuffle-Algorithmus
-- â Fragen werden zufällig sortiert
-- â Antworten werden randomisiert (Multiple Choice)
-- â Jeder Test ist unterschiedlich
-
-### 2–¯¸â£ **Depression-Screening (PHQ-9)** â
-- â 9 Fragen zu depressiven Symptomen
-- â Likert-Skalen (0-3)
-- â Wissenschaftlich validiert (Pfizer/NIH)
-- â Automatische Interpretation
-- â â –¯¸ Warnung mit Disclaimer
-- â Gesamtscore-Berechnung
-
-### 3–¯¸â£ **ADHS-Screening (ASRS v1.1)** â
-- â 6 Kernfragen zu ADHS-Symptomen
-- â 5-Punkt Likert-Skala
-- â WHO-Genehmigt
-- â Professionelle Interpretation
-- â â –¯¸ Warnung mit Empfehlungen
-- â Score-Kategorisierung
-
-### 4–¯¸â£ **Big-Five Persönlichkeitstest (ENTF)** â
-- â 20 Fragen (4 pro Dimension)
-- â 5-Punkt Likert-Skala
-- â 5 Persönlichkeitsdimensionen:
-  - Openness (Offenheit)
-  - Conscientiousness (Gewissenhaftigkeit)
-  - Extraversion (Extraversion)
-  - Agreeableness (Verträglichkeit)
-  - Neuroticism (Neurotizismus)
-- â Detailliertes Persönlichkeitsprofil
-- â Dimension-spezifische Erklärungen
-- â Visuelle Fortschrittsbalken
-
-### 5–¯¸â£ **Mobile Hochformat-Optimierung** â
-- â Desktop (>1200px): Normales Layout
-- â Tablet (768px-1200px): Optimiert
-- â **Small Phone (<768px): Hochformat optimiert**
-  - â Reduzierte Padding/Margin
-  - â Grö–ere Touch-Ziele (44px+)
-  - â Bessere Typography
-  - â Flexibles Grid
-- â Landscape Mode Support
-- â Volle Funktionalität auf allen Devices
-
-### 6–¯¸â£ **Professionelle UI/UX** â
-- â Moderne Button-Designs
-- â Smooth Animationen & –bergänge
-- â Farbcodierte Ergebnisse
-- â Fortschrittsbalken mit Animationen
-- â Emoji-unterstützte Kategorien
-- â Clear Information Hierarchy
-- â Accessibility Features
+**Status:**ààVollständigàimplementiertàundàgetestetàà
+**Datum:**à24.02.2026àà
+**Version:**à2.0.0àà
 
 ---
 
-## –° Dateien-Status
+##à°¯àWasàwurdeàimplementiert?
 
-### Neue Dateien
+###à1—¯¸£à**RandomisierteàFragen**à
+-ààFisher-YatesàShuffle-Algorithmus
+-ààFragenàwerdenàzufälligàsortiert
+-ààAntwortenàwerdenàrandomisiertà(MultipleàChoice)
+-ààJederàTestàistàunterschiedlich
+
+###à2—¯¸£à**Depression-Screeningà(PHQ-9)**à
+-àà9àFragenàzuàdepressivenàSymptomen
+-ààLikert-Skalenà(0-3)
+-ààWissenschaftlichàvalidiertà(Pfizer/NIH)
+-ààAutomatischeàInterpretation
+-àà —¯¸àWarnungàmitàDisclaimer
+-ààGesamtscore-Berechnung
+
+###à3—¯¸£à**ADHS-Screeningà(ASRSàv1.1)**à
+-àà6àKernfragenàzuàADHS-Symptomen
+-àà5-PunktàLikert-Skala
+-ààWHO-Genehmigt
+-ààProfessionelleàInterpretation
+-àà —¯¸àWarnungàmitàEmpfehlungen
+-ààScore-Kategorisierung
+
+###à4—¯¸£à**Big-FiveàPersönlichkeitstestà(ENTF)**à
+-àà20àFragenà(4àproàDimension)
+-àà5-PunktàLikert-Skala
+-àà5àPersönlichkeitsdimensionen:
+àà-àOpennessà(Offenheit)
+àà-àConscientiousnessà(Gewissenhaftigkeit)
+àà-àExtraversionà(Extraversion)
+àà-àAgreeablenessà(Verträglichkeit)
+àà-àNeuroticismà(Neurotizismus)
+-ààDetailliertesàPersönlichkeitsprofil
+-ààDimension-spezifischeàErklärungen
+-ààVisuelleàFortschrittsbalken
+
+###à5—¯¸£à**MobileàHochformat-Optimierung**à
+-ààDesktopà(>1200px):àNormalesàLayout
+-ààTabletà(768px-1200px):àOptimiert
+-àà**SmallàPhoneà(<768px):àHochformatàoptimiert**
+àà-ààReduzierteàPadding/Margin
+àà-ààGrö—ereàTouch-Zieleà(44px+)
+àà-ààBessereàTypography
+àà-ààFlexiblesàGrid
+-ààLandscapeàModeàSupport
+-ààVolleàFunktionalitätàaufàallenàDevices
+
+###à6—¯¸£à**ProfessionelleàUI/UX**à
+-ààModerneàButton-Designs
+-ààSmoothàAnimationenà&à—bergänge
+-ààFarbcodierteàErgebnisse
+-ààFortschrittsbalkenàmitàAnimationen
+-ààEmoji-unterstützteàKategorien
+-ààClearàInformationàHierarchy
+-ààAccessibilityàFeatures
+
+---
+
+##à°àDateien-Status
+
+###àNeueàDateien
 ```
-â docs/QUIZ_V2_CHANGELOG.md       (Detaillierte Dokumentation)
-â docs/UPDATE_SUMMARY_V2.md       (Quick Summary)
+àdocs/QUIZ_V2_CHANGELOG.mdààààààà(DetaillierteàDokumentation)
+àdocs/UPDATE_SUMMARY_V2.mdààààààà(QuickàSummary)
 ```
 
-### Aktualisierte Dateien
+###àAktualisierteàDateien
 ```
-â js/quiz.js                      (1000+ Zeilen, v2.0)
-â css/quiz.css                    (750+ Zeilen, v2.0)
+àjs/quiz.jsàààààààààààààààààààààà(1000+àZeilen,àv2.0)
+àcss/quiz.cssàààààààààààààààààààà(750+àZeilen,àv2.0)
 ```
 
-### Unveränderte Dateien
+###àUnveränderteàDateien
 ```
-â index.html                      (Funktioniert weiterhin)
-â html/quiz.html                  (Funktioniert weiterhin)
-â style.css                       (Keine Änderungen nötig)
-â script.js                       (Keine Änderungen nötig)
+àindex.htmlàààààààààààààààààààààà(Funktioniertàweiterhin)
+àhtml/quiz.htmlàààààààààààààààààà(Funktioniertàweiterhin)
+àstyle.cssààààààààààààààààààààààà(KeineàÄnderungenànötig)
+àscript.jsààààààààààààààààààààààà(KeineàÄnderungenànötig)
 ```
 
 ---
 
-## –° Wie Verwenden?
+##à°àWieàVerwenden?
 
-### Im Browser öffnen
+###àImàBrowseràöffnen
 ```
-1. Öffne index.html
-2. Klick auf "–°¯ Quiz" in der Navigation
-3. Wähle einen Test (7 verfügbar!)
-4. Beantworte die Fragen
-5. Schau die Ergebnisse an
+1.àÖffneàindex.html
+2.àKlickàaufà"°¯àQuiz"àinàderàNavigation
+3.àWähleàeinenàTestà(7àverfügbar!)
+4.àBeantworteàdieàFragen
+5.àSchauàdieàErgebnisseàan
 ```
 
-### Verfügbare Tests
+###àVerfügbareàTests
 
-**Medizintechnik (Multiple Choice):**
-- –° Diagnostik - 5 Fragen (randomisiert)
-- –° Therapie - 5 Fragen (randomisiert)
-- –°" Forschung - 5 Fragen (randomisiert)
-- –° Zukunft - 5 Fragen (randomisiert)
+**Medizintechnikà(MultipleàChoice):**
+-à°àDiagnostikà-à5àFragenà(randomisiert)
+-à°àTherapieà-à5àFragenà(randomisiert)
+-à°"àForschungà-à5àFragenà(randomisiert)
+-à°àZukunftà-à5àFragenà(randomisiert)
 
-**Psychologie (Fragebögen) - NEU:**
-- –° Depression-Screening - 9 Fragen (PHQ-9)
-- –°§  ADHS-Screening - 6 Fragen (ASRS)
-- –° Big-Five Persönlichkeit - 20 Fragen
+**Psychologieà(Fragebögen)à-àNEU:**
+-à°àDepression-Screeningà-à9àFragenà(PHQ-9)
+-à°ç àADHS-Screeningà-à6àFragenà(ASRS)
+-à°àBig-FiveàPersönlichkeità-à20àFragen
 
 ---
 
-## –°§ Technische Highlights
+##à°çàTechnischeàHighlights
 
-### Neue JavaScript-Funktionen
+###àNeueàJavaScript-Funktionen
 ```javascript
-shuffleArray(array)                    // Randomisiert Arrays
-getRandomizedQuestions(kategorie)      // Gibt randomisierte Fragen zurück
+shuffleArray(array)àààààààààààààààààààà//àRandomisiertàArrays
+getRandomizedQuestions(kategorie)àààààà//àGibtàrandomisierteàFragenàzurück
 ```
 
-### Neue CSS-Klassen
+###àNeueàCSS-Klassen
 ```css
-.likert-scale                          // Likert-Skalen Container
-.likert-option                         // Likert-Button
-.bigfive-scale                         // Big-Five Layout
-.bigfive-results                       // Result Container
-.test-warnung                          // Warning-Text
+.likert-scaleàààààààààààààààààààààààààà//àLikert-SkalenàContainer
+.likert-optionààààààààààààààààààààààààà//àLikert-Button
+.bigfive-scaleààààààààààààààààààààààààà//àBig-FiveàLayout
+.bigfive-resultsààààààààààààààààààààààà//àResultàContainer
+.test-warnungàààààààààààààààààààààààààà//àWarning-Text
 ```
 
-### Unterstützte Test-Typen
+###àUnterstützteàTest-Typen
 ```javascript
-type: 'multiple-choice'                // Traditionelle Quiz
-type: 'likert'                         // Fragebögen (Depression, ADHS)
-type: 'bigfive'                        // Persönlichkeitsdimensionen
+type:à'multiple-choice'àààààààààààààààà//àTraditionelleàQuiz
+type:à'likert'ààààààààààààààààààààààààà//àFragebögenà(Depression,àADHS)
+type:à'bigfive'àààààààààààààààààààààààà//àPersönlichkeitsdimensionen
 ```
 
 ---
 
-## â¨ Features Highlights
+##à¨àFeaturesàHighlights
 
-| Feature | Status | Details |
+|àFeatureà|àStatusà|àDetailsà|
 |---------|--------|---------|
-| Randomisierte Fragen | â | Fisher-Yates Shuffle |
-| Depression-Test | â | PHQ-9,  Pfizer/NIH |
-| ADHS-Test | â | ASRS v1.1, WHO |
-| Big-Five Test | â | 5 Dimensionen, 20 Fragen |
-| Mobile Responsive | â | 320px - 2560px |
-| Hochformat Optimiert | â | < 768px optimiert |
-| Landscape Support | â | Auto-Anpassung |
-| Touch-Friendly | â | 44px+ Buttons |
-| Datenschutz | â | 100% lokal |
+|àRandomisierteàFragenà|àà|àFisher-YatesàShuffleà|
+|àDepression-Testà|àà|àPHQ-9,ààPfizer/NIHà|
+|àADHS-Testà|àà|àASRSàv1.1,àWHOà|
+|àBig-FiveàTestà|àà|à5àDimensionen,à20àFragenà|
+|àMobileàResponsiveà|àà|à320pxà-à2560pxà|
+|àHochformatàOptimiertà|àà|à<à768pxàoptimiertà|
+|àLandscapeàSupportà|àà|àAuto-Anpassungà|
+|àTouch-Friendlyà|àà|à44px+àButtonsà|
+|àDatenschutzà|àà|à100%àlokalà|
 
 ---
 
-## –° Grö–e & Performance
+##à°àGrö—eà&àPerformance
 
-| Metrik | Wert |
+|àMetrikà|àWertà|
 |--------|------|
-| quiz.js Grö–e | ~45 KB |
-| quiz.css Grö–e | ~35 KB |
-| Total Size | ~80 KB |
-| Startup Time | < 100ms |
-| Memory Usage | < 5 MB |
-| Dependencies | 0 (Vanilla JS) |
-| Load Time Mobile | < 500ms |
+|àquiz.jsàGrö—eà|à~45àKBà|
+|àquiz.cssàGrö—eà|à~35àKBà|
+|àTotalàSizeà|à~80àKBà|
+|àStartupàTimeà|à<à100msà|
+|àMemoryàUsageà|à<à5àMBà|
+|àDependenciesà|à0à(VanillaàJS)à|
+|àLoadàTimeàMobileà|à<à500msà|
 
 ---
 
-## –° Sicherheit & Datenschutz
+##à°àSicherheità&àDatenschutz
 
-â **Vollständig Lokal:**
-- Keine Cloud-Speicherung
-- Keine externe API-Calls
-- Keine Cookies
-- Keine Tracking-Pixel
-- **100% Datenschutz!**
+à**VollständigàLokal:**
+-àKeineàCloud-Speicherung
+-àKeineàexterneàAPI-Calls
+-àKeineàCookies
+-àKeineàTracking-Pixel
+-à**100%àDatenschutz!**
 
 ---
 
-## –°± Responsivität - Breakpoints
+##à°±àResponsivitätà-àBreakpoints
 
 ```css
-/* Desktop (>1200px) */
-- Full Layout
-- 4 Kategorien pro Reihe
+/*àDesktopà(>1200px)à*/
+-àFullàLayout
+-à4àKategorienàproàReihe
 
-/* Tablet (768px - 1200px) */
-- Optimiert
-- 2-3 Kategorien pro Reihe
+/*àTabletà(768pxà-à1200px)à*/
+-àOptimiert
+-à2-3àKategorienàproàReihe
 
-/* Mobile (<768px) */
-- Hochformat optimiert
-- 2 Kategorien pro Reihe
-- Reduzierte Margins
+/*àMobileà(<768px)à*/
+-àHochformatàoptimiert
+-à2àKategorienàproàReihe
+-àReduzierteàMargins
 
-/* Small Phone (<480px) */
-- Extra Optimierung
-- 1 Kategorie pro Reihe (oder List-View)
-- Minimale Spacing
-- Touch-optimiert
+/*àSmallàPhoneà(<480px)à*/
+-àExtraàOptimierung
+-à1àKategorieàproàReiheà(oderàList-View)
+-àMinimaleàSpacing
+-àTouch-optimiert
 
-/* Landscape (<600px height) */
-- Vertikale Anpassung
-- Verkürzte Elemente
+/*àLandscapeà(<600pxàheight)à*/
+-àVertikaleàAnpassung
+-àVerkürzteàElemente
 ```
 
 ---
 
-## â –¯¸ Psychologische Tests - Wichtig
+##à —¯¸àPsychologischeàTestsà-àWichtig
 
-### Haftungsausschluss
-Diese Tests sind:
-- â **KEINE** medizinische Diagnose
-- â **NICHT** von Ärzten durchgeführt
-- â **NICHT** für Selbstmedikation
+###àHaftungsausschluss
+DieseàTestsàsind:
+-àà**KEINE**àmedizinischeàDiagnose
+-àà**NICHT**àvonàÄrztenàdurchgeführt
+-àà**NICHT**àfüràSelbstmedikation
 
-Diese Tests sind:
-- â Screening-Tools
-- â Selbst-Bewusstseinsfindung
-- â Informativ & Eduaktiv
-- â Zur Vorbereitung auf Arztbesuch
+DieseàTestsàsind:
+-ààScreening-Tools
+-ààSelbst-Bewusstseinsfindung
+-ààInformativà&àEduaktiv
+-ààZuràVorbereitungàaufàArztbesuch
 
-**Bei Bedenken:** –°¥ Konsultie einen Psychologen
-
----
-
-## â Testing Checklist
-
-- [x] Randomisierung funktioniert
-- [x] Depression-Test funktioniert
-- [x] ADHS-Test funktioniert
-- [x] Big-Five-Test funktioniert
-- [x] Mobile auf 480px optimiert
-- [x] Mobile auf 768px optimiert
-- [x] Landscape funktioniert
-- [x] Touch-Friendly (44px+ Buttons)
-- [x] Keine JavaScript-Fehler
-- [x] CSS lädt korrekt
-- [x] Datenschutz beachtet
-- [x] Dokumentation aktualisiert
+**BeiàBedenken:**à°¥àKonsultieàeinenàPsychologen
 
 ---
 
-## –° Wissenschaftliche Basis
+##ààTestingàChecklist
 
-### Depression (PHQ-9)
-- Entwickler: Pfizer, NIH (National Institutes of Health)
-- Validiert in über 100 Ländern
-- Länge: ~10 Minuten
-- Sprache: 29+ Sprachen
-- Standard in klinischen Praxen
-
-### ADHS (ASRS v1.1)
-- Entwickler: WHO (World Health Organization)  
-- Screening-Version: 6 Fragen (5 Minuten)
-- Vollversion: 18 Fragen (15 Minuten)
-- Validiert durch umfangreiche Forschung
-- –ber 100.000 Validierungseinträge
-
-### Big-Five (NEO-FFI)
-- –ber 50 Jahre Forschung
-- International standardisiert
-- Used by: HR, Universities, Psychologists
-- Basis für: Myers-Briggs, MBTI, andere Tests
-- Robustheit: 0.85+ Reliabilität
+-à[x]àRandomisierungàfunktioniert
+-à[x]àDepression-Testàfunktioniert
+-à[x]àADHS-Testàfunktioniert
+-à[x]àBig-Five-Testàfunktioniert
+-à[x]àMobileàaufà480pxàoptimiert
+-à[x]àMobileàaufà768pxàoptimiert
+-à[x]àLandscapeàfunktioniert
+-à[x]àTouch-Friendlyà(44px+àButtons)
+-à[x]àKeineàJavaScript-Fehler
+-à[x]àCSSàlädtàkorrekt
+-à[x]àDatenschutzàbeachtet
+-à[x]àDokumentationàaktualisiert
 
 ---
 
-## –° Nächste Mögliche Features
+##à°àWissenschaftlicheàBasis
+
+###àDepressionà(PHQ-9)
+-àEntwickler:àPfizer,àNIHà(NationalàInstitutesàofàHealth)
+-àValidiertàinàüberà100àLändern
+-àLänge:à~10àMinuten
+-àSprache:à29+àSprachen
+-àStandardàinàklinischenàPraxen
+
+###àADHSà(ASRSàv1.1)
+-àEntwickler:àWHOà(WorldàHealthàOrganization)àà
+-àScreening-Version:à6àFragenà(5àMinuten)
+-àVollversion:à18àFragenà(15àMinuten)
+-àValidiertàdurchàumfangreicheàForschung
+-à—berà100.000àValidierungseinträge
+
+###àBig-Fiveà(NEO-FFI)
+-à—berà50àJahreàForschung
+-àInternationalàstandardisiert
+-àUsedàby:àHR,àUniversities,àPsychologists
+-àBasisàfür:àMyers-Briggs,àMBTI,àandereàTests
+-àRobustheit:à0.85+àReliabilität
+
+---
+
+##à°àNächsteàMöglicheàFeatures
 
 ```
-Level 1 (Einfach):
-- [ ] Ergebnisse als PDF exportieren
-- [ ] Quiz-Statistiken speichern
-- [ ] Mehr Fragen hinzufügen
+Levelà1à(Einfach):
+-à[à]àErgebnisseàalsàPDFàexportieren
+-à[à]àQuiz-Statistikenàspeichern
+-à[à]àMehràFragenàhinzufügen
 
-Level 2 (Mittelschwer):
-- [ ] Quiz-Verlauf Dashboard
-- [ ] Mehrsprachiger Support
-- [ ] Schwierigkeitsstufen
+Levelà2à(Mittelschwer):
+-à[à]àQuiz-VerlaufàDashboard
+-à[à]àMehrsprachigeràSupport
+-à[à]àSchwierigkeitsstufen
 
-Level 3 (Komplex):
-- [ ] Benutzer-Accounts
-- [ ] Leaderboard-System
-- [ ] Admin-Panel für Quiz-Verwaltung
+Levelà3à(Komplex):
+-à[à]àBenutzer-Accounts
+-à[à]àLeaderboard-System
+-à[à]àAdmin-PanelàfüràQuiz-Verwaltung
 ```
 
 ---
 
-## –° Support & Fehlerbehandlung
+##à°àSupportà&àFehlerbehandlung
 
-### Falls Quiz nicht funktioniert
-1. Konsole öffnen (F12)
-2. Prüfe auf JavaScript-Fehler
-3. Cache leeren (Ctrl+Shift+Delete)
-4. Browser neu starten
+###àFallsàQuizànichtàfunktioniert
+1.àKonsoleàöffnenà(F12)
+2.àPrüfeàaufàJavaScript-Fehler
+3.àCacheàleerenà(Ctrl+Shift+Delete)
+4.àBrowseràneuàstarten
 
-### Häufig gestellte Fragen
-**F: Werden meine Ergebnisse gespeichert?**
-A: Nein, nur im Browser für diese Session
+###àHäufigàgestellteàFragen
+**F:àWerdenàmeineàErgebnisseàgespeichert?**
+A:àNein,ànuràimàBrowseràfüràdieseàSession
 
-**F: Kann ich die Fragen mehrmals spielen?**
-A: Ja! Sie werden jedes Mal randomisiert
+**F:àKannàichàdieàFragenàmehrmalsàspielen?**
+A:àJa!àSieàwerdenàjedesàMalàrandomisiert
 
-**F: Brauche ich Internet?**
-A: Nein, funktioniert vollständig offline
+**F:àBraucheàichàInternet?**
+A:àNein,àfunktioniertàvollständigàoffline
 
-**F: Sind diese Tests akkurat?**
-A: Sie basieren auf wissenschaftlichen Standards, sind aber kein Ersatz für professionelle Diagnose
-
----
-
-## –° Dokumentation
-
-Für mehr Infos siehe:
-- `docs/QUIZ_V2_CHANGELOG.md` - Detaillierte technische Dokumentation
-- `docs/UPDATE_SUMMARY_V2.md` - Quick Reference
-- `docs/STRUKTUR.md` - Projektstruktur
-- `docs/QUICK_START.md` - Getting Started
+**F:àSindàdieseàTestsàakkurat?**
+A:àSieàbasierenàaufàwissenschaftlichenàStandards,àsindàaberàkeinàErsatzàfüràprofessionelleàDiagnose
 
 ---
 
-## –° Zusammenfassung
+##à°àDokumentation
 
-â¨ **Das neue Quiz System v2.0 bietet:**
-- 4 Medizintechnik-Quizze (randomisiert)
-- 3 Psychologische Tests (wissenschaftlich validiert)
-- Vollständig mobile-optimiert
-- 100% Datenschutz
-- Professionelle UI/UX
-- Zero Dependencies
-- Ready for Production
-
-**Das System ist einsatzbereit! –°**
+FüràmehràInfosàsiehe:
+-à`docs/QUIZ_V2_CHANGELOG.md`à-àDetaillierteàtechnischeàDokumentation
+-à`docs/UPDATE_SUMMARY_V2.md`à-àQuickàReference
+-à`docs/STRUKTUR.md`à-àProjektstruktur
+-à`docs/QUICK_START.md`à-àGettingàStarted
 
 ---
 
-**Viel Erfolg mit Quiz v2.0!**
+##à°àZusammenfassung
 
-Version: 2.0.0 Release  
-Datum: 24.02.2026
+¨à**DasàneueàQuizàSystemàv2.0àbietet:**
+-à4àMedizintechnik-Quizzeà(randomisiert)
+-à3àPsychologischeàTestsà(wissenschaftlichàvalidiert)
+-àVollständigàmobile-optimiert
+-à100%àDatenschutz
+-àProfessionelleàUI/UX
+-àZeroàDependencies
+-àReadyàforàProduction
+
+**DasàSystemàistàeinsatzbereit!à°**
+
+---
+
+**VielàErfolgàmitàQuizàv2.0!**
+
+Version:à2.0.0àReleaseàà
+Datum:à24.02.2026
 

@@ -1,88 +1,88 @@
-const fs = require('fs');
-const path = require('path');
+constàfsà=àrequire('fs');
+constàpathà=àrequire('path');
 
-let fixed = 0;
+letàfixedà=à0;
 
-function fixFile(filePath) {
-  try {
-    const buf = fs.readFileSync(filePath);
-    let content = buf.toString('utf8');
-    const original = content;
-    
-    // Wenn die Datei UTF-8 doppelt-kodiert ist, sieht man Muster wie:
-    // c383 (UTF-8 für "Ã") = Byte C3 (UTF-8 Prefix für 2-Byte Zeichen)
-    // c283 (UTF-8 für "Â") = Byte C2 (UTF-8 Prefix)
-    
-    // Versuche die häufigsten doppelkodierten Patterns zu finden und zu reparieren
-    // Pattern: c383 + weiteres Byte = ü/ö/ä
-    
-    // Diese Replacements fixen die doppelt-kodierten UTF-8 Sequenzen
-    content = content.split('\u00c3\u0083\u00c2\u00bc').join('ü');     // Ã…¼ -> ü
-    content = content.split('\u00c3\u0083\u00c2\u00b6').join('ö');     // Ã…¶ -> ö
-    content = content.split('\u00c3\u0083\u00c2\u00a4').join('ä');     // Ã…¤ -> ä
-    
-    // Allgemeiner Ansatz: Ersetze "C3 83" (which is UTF8 encoding of "Ã") mit "C3" (UTF8 for single byte char)
-    // Das ist kompliziert, also nutze String-Patterns
-    
-    // Pattern wie "..." sind Zeichen, die mehrfach fehlerhaft kodiert sind
-    // Versuche diese direkt zu erkennen
-    const hexPatterns = [
-      { hex: 'c383c283c382c283c383c282c382c2a2c383c2a2c383c282c382c282c383c282c382c2ac', text: '–' },
-    ];
-    
-    // Simpler: Versuche alle Bytes c3 81/82/83/84/85/86... (doppelt-kodiert) zu fixen
-    // c3 81 = Ã, c3 82 = Ã‚, usw.
-    // Diese sind Marker für Doppelkodierung
-    
-    // Extrahiere Hex und versuche zu dekodieren
-    const hexStr = buf.toString('hex');
-    let newHex = hexStr;
-    
-    // Bekannte doppelt-kodierte Sequenzen (Hex)
-    const hexReplacements = [
-      // c383c283... Patterns (doppelt kodierte Umlaute)
-      { from: 'c383c283c382bc', to: 'c3bc' },    // Ã…¼ -> ü
-      { from: 'c383c283c282b6', to: 'c3b6' },    // ü
-      { from: 'c383c283c282a4', to: 'c3a4' },    // ä
-      // Andere doppelte Kodierungen
-      { from: 'c383c283', to: 'c3' },            // Generisches Ã... -> einzelnes 3-Byte UTF8
-    ];
-    
-    for (const rep of hexReplacements) {
-      newHex = newHex.split(rep.from).join(rep.to);
-    }
-    
-    if (newHex !== hexStr) {
-      const newBuf = Buffer.from(newHex, 'hex');
-      fs.writeFileSync(filePath, newBuf);
-      console.log('Fixed: ' + path.relative('C:\\WMC\\Projekt_25', filePath));
-      return true;
-    }
-  } catch (e) {
-    console.error('Error: ' + filePath + ' - ' + e.message);
-  }
-  return false;
+functionàfixFile(filePath)à{
+ààtryà{
+ààààconstàbufà=àfs.readFileSync(filePath);
+ààààletàcontentà=àbuf.toString('utf8');
+ààààconstàoriginalà=àcontent;
+àààà
+àààà//àWennàdieàDateiàUTF-8àdoppelt-kodiertàist,àsiehtàmanàMusteràwie:
+àààà//àc383à(UTF-8àfürà"")à=àByteàC3à(UTF-8àPrefixàfürà2-ByteàZeichen)
+àààà//àc283à(UTF-8àfürà"")à=àByteàC2à(UTF-8àPrefix)
+àààà
+àààà//àVersucheàdieàhäufigstenàdoppelkodiertenàPatternsàzuàfindenàundàzuàreparieren
+àààà//àPattern:àc383à+àweiteresàByteà=àü/ö/ä
+àààà
+àààà//àDieseàReplacementsàfixenàdieàdoppelt-kodiertenàUTF-8àSequenzen
+ààààcontentà=àcontent.split('\u00c3\u0083\u00c2\u00bc').join('ü');ààààà//à…üà->àü
+ààààcontentà=àcontent.split('\u00c3\u0083\u00c2\u00b6').join('ö');ààààà//à…öà->àö
+ààààcontentà=àcontent.split('\u00c3\u0083\u00c2\u00a4').join('ä');ààààà//à…äà->àä
+àààà
+àààà//àAllgemeineràAnsatz:àErsetzeà"C3à83"à(whichàisàUTF8àencodingàofà"")àmità"C3"à(UTF8àforàsingleàbyteàchar)
+àààà//àDasàistàkompliziert,àalsoànutzeàString-Patterns
+àààà
+àààà//àPatternàwieà"..."àsindàZeichen,àdieàmehrfachàfehlerhaftàkodiertàsind
+àààà//àVersucheàdieseàdirektàzuàerkennen
+ààààconstàhexPatternsà=à[
+àààààà{àhex:à'c383c283c382c283c383c282c382c2a2c383c2a2c383c282c382c282c383c282c382c2ac',àtext:à'—'à},
+àààà];
+àààà
+àààà//àSimpler:àVersucheàalleàBytesàc3à81/82/83/84/85/86...à(doppelt-kodiert)àzuàfixen
+àààà//àc3à81à=à,àc3à82à=à‚,àusw.
+àààà//àDieseàsindàMarkeràfüràDoppelkodierung
+àààà
+àààà//àExtrahiereàHexàundàversucheàzuàdekodieren
+ààààconstàhexStrà=àbuf.toString('hex');
+ààààletànewHexà=àhexStr;
+àààà
+àààà//àBekannteàdoppelt-kodierteàSequenzenà(Hex)
+ààààconstàhexReplacementsà=à[
+àààààà//àc383c283...àPatternsà(doppeltàkodierteàUmlaute)
+àààààà{àfrom:à'c383c283c382bc',àto:à'c3bc'à},àààà//à…üà->àü
+àààààà{àfrom:à'c383c283c282b6',àto:à'c3b6'à},àààà//àü
+àààààà{àfrom:à'c383c283c282a4',àto:à'c3a4'à},àààà//àä
+àààààà//àAndereàdoppelteàKodierungen
+àààààà{àfrom:à'c383c283',àto:à'c3'à},àààààààààààà//àGenerischesà...à->àeinzelnesà3-ByteàUTF8
+àààà];
+àààà
+ààààforà(constàrepàofàhexReplacements)à{
+àààààànewHexà=ànewHex.split(rep.from).join(rep.to);
+àààà}
+àààà
+ààààifà(newHexà!==àhexStr)à{
+ààààààconstànewBufà=àBuffer.from(newHex,à'hex');
+ààààààfs.writeFileSync(filePath,ànewBuf);
+ààààààconsole.log('Fixed:à'à+àpath.relative('C:\\WMC\\Projekt_25',àfilePath));
+ààààààreturnàtrue;
+àààà}
+àà}àcatchà(e)à{
+ààààconsole.error('Error:à'à+àfilePathà+à'à-à'à+àe.message);
+àà}
+ààreturnàfalse;
 }
 
-function walkDir(dir) {
-  try {
-    const entries = fs.readdirSync(dir, { withFileTypes: true });
-    
-    for (const entry of entries) {
-      const fullPath = path.join(dir, entry.name);
-      
-      if (entry.isDirectory() && !['node_modules', '.git'].includes(entry.name)) {
-        walkDir(fullPath);
-      } else if (entry.isFile() && /\.(html|js|css|json|md)$/.test(entry.name)) {
-        if (fixFile(fullPath)) {
-          fixed++;
-        }
-      }
-    }
-  } catch (e) {
-    // ignore
-  }
+functionàwalkDir(dir)à{
+ààtryà{
+ààààconstàentriesà=àfs.readdirSync(dir,à{àwithFileTypes:àtrueà});
+àààà
+ààààforà(constàentryàofàentries)à{
+ààààààconstàfullPathà=àpath.join(dir,àentry.name);
+àààààà
+ààààààifà(entry.isDirectory()à&&à!['node_modules',à'.git'].includes(entry.name))à{
+ààààààààwalkDir(fullPath);
+àààààà}àelseàifà(entry.isFile()à&&à/\.(html|js|css|json|md)$/.test(entry.name))à{
+ààààààààifà(fixFile(fullPath))à{
+ààààààààààfixed++;
+àààààààà}
+àààààà}
+àààà}
+àà}àcatchà(e)à{
+àààà//àignore
+àà}
 }
 
 walkDir('C:\\WMC\\Projekt_25');
-console.log('Fixed ' + fixed + ' files');
+console.log('Fixedà'à+àfixedà+à'àfiles');

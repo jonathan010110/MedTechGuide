@@ -1,132 +1,132 @@
-<!DOCTYPE html>
-<html lang="de">
-<head><meta charset="utf-8" /><title>Neurochips & BCIs –•â–"" MedTechGuide</title><meta name="viewport" content="width=device-width, initial-scale=1.0" /><base href="../" /><link rel="stylesheet" href="css/style.css" /><script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.163.0/build/three.module.js","three/addons/":"https://unpkg.com/three@0.163.0/examples/jsm/"}}</script></head>
+<!DOCTYPEàhtml>
+<htmlàlang="de">
+<head><metaàcharset="utf-8"à/><title>Neurochipsà&àBCIsà—•—""àMedTechGuide</title><metaàname="viewport"àcontent="width=device-width,àinitial-scale=1.0"à/><baseàhref="../"à/><linkàrel="stylesheet"àhref="css/style.css"à/><scriptàtype="importmap">{"imports":{"three":"https://unpkg.com/three@0.163.0/build/three.module.js","three/addons/":"https://unpkg.com/three@0.163.0/examples/jsm/"}}</script></head>
 <body>
-  <!-- â¿ ACCESSIBILITY: Skip to Content Link -->
-  <a href="#main-content" class="skip-to-content">Zum Inhalt springen</a>
-  
-  <div id="loader"><div class="spinner"></div><p>Seite wird geladenâ¦</p></div>
-  <header class="site-header"><div class="container"><h1>Neurochips & Brain-Computer Interfaces</h1><p class="subtitle">Tiefe Hirnstimulation, BCI und Neuroprothesen</p></div></header>
-  <nav class="main-nav">
-    <div class="nav-container">
-      <div class="nav-links">
-        <a href="index.html">Start</a>
-        <a href="html/diabetes.html">Diabetes</a>
-        <a href="html/allergie.html">Allergien</a>
-        <a href="html/herz.html">Herz</a>
-        <a href="html/bildgebung.html">Bildgebung</a>
-        <a href="html/neurochips.html" class="active">Neurochips</a>
-        <a href="html/exoskelette.html">Exoskelette</a>
-        <a href="html/genetik.html">Genetik</a>
-        <a href="html/ki-diagnose.html">KI-Diagnose</a>
-        <a href="html/zukunft.html">Zukunft</a>
-        <a href="html/quiz.html" style="background: linear-gradient(135deg, #1e40af 0%, #0f766e 100%); color: white; font-weight: 700;">–°–¸–Â½––¯ Quiz</a>
-        <a href="html/self-tests.html" style="background: linear-gradient(135deg, #7c3aed 0%, #ec4899 100%); color: white; font-weight: 700;">–°–¸––§––  Tests</a>
-        <a href="html/quellen.html">Quellen</a>
-      </div>
-      <div class="nav-search">
-        <input type="text" id="globalSearch" placeholder="Sucheâ¦" aria-label="Globale Suche">
-        <span id="searchResults" class="search-results"></span>
-      </div>
-    </div>
-  </nav>
-  <main class="container" id="main-content">
-    <section class="section-card">
-      <h2>Einführung</h2>
-      <p>Das Gehirn steuert den Körper durch elektronische Signale. Neurochips können diese Signale aufnehmen, verstärken und interpretieren. Drei Hauptanwendungen: <strong>Tiefe Hirnstimulation</strong> (DBS) zur Behandlung von Parkinson und Tremor, <strong>Brain-Computer Interfaces</strong> (BCI) für Lähmung, <strong>Neuroprothesen</strong> zur Wiederherstellung von Bewegung oder Sinnen.</p>
-    </section>
-    <section class="section-card">
-      <h2>Kurz erklärt</h2>
-      <p>Neurochips sind feinste Elektroden (Durchmesser < 1 mm), die ins Gehirngewebe oder an die Oberfläche implantiert werden. Sie messen neuronale Aktivität (Spikes von Neuronen) und/oder stimulieren Neuronen elektrisch. Machine Learning dekodiert diese Signale in Befehle (z.B. "Arm bewegen") oder therapeutische Parameter.</p>
-    </section>
-    <section class="section-card imaging-3d-card" data-three-viewer data-model-label="Neurochip" data-model-path="data/models/neurochip.glb" data-fallback-model="neurochip" data-target-size="1.8">
-      <h2>3D-Modell: Neurochip</h2>
-      <p class="imaging-3d-model-caption">Eine reduzierte 3D-Ansicht eines Neurochips als technische Schnittstelle.</p>
-      <div class="imaging-3d-controls" role="group" aria-label="Steuerung fuer das 3D-Modell des Neurochips">
-        <button type="button" data-action="reload">Modell neu laden</button>
-        <button type="button" data-action="reset">Ansicht zurücksetzen</button>
-        <button type="button" data-action="autorotate" aria-pressed="false">Rotation aus</button>
-      </div>
-      <p class="imaging-3d-status" aria-live="polite">Modell wird geladen...</p>
-      <div class="imaging-3d-viewer" aria-label="Interaktiver 3D-Viewer fuer Neurochip"></div>
-      <p class="imaging-3d-hint">
-        <span class="imaging-hint-desktop">Steuerung: Linke Maustaste drehen, Mausrad zoomen, rechte Maustaste verschieben.</span>
-        <span class="imaging-hint-mobile">Handy: Mit einem Finger drehen, mit zwei Fingern zoomen und verschieben.</span>
-      </p>
-    </section>
-    <figure class="section-image">
-      <img src="images/neurochips-1.jpg" alt="Neurochips und Brain-Computer Interfaces" />
-      <figcaption>Neuronale Schnittstellen: Neurochips ermöglichen bidirektionale Kommunikation zwischen Gehirn und externen Geräten.</figcaption>
-    </figure>
-    <section class="section-card">
-      <h2>Technische Funktionsweise</h2>
-      <h3>Tiefe Hirnstimulation (DBS)</h3>
-      <p>Elektroden werden in spezifische Hirnregionen (z.B. Nucleus subthalamicus bei Parkinson) implantiert. Ein Stimulator am Schlüsselbein sendet hochfrequente Impulse (bis 180 Hz). Dies moduliert abnorme neuronale Aktivität und lindert Symptome. Die Mechanismus ist nicht vollständig verstanden –•â–"" wahrscheinlich Störung abnormaler Rhythmen.</p>
-      <h3>Brain-Computer Interfaces (BCI)</h3>
-      <p>BCIs lesen motorische Intention direkt vom Gehirn. Invasive BCIs: Elektroden im motorischen Kortex messen Aktivität einzelner Neuronen. Ein Dekodierungs-Algorithmus (oft ein neuronales Netzwerk) konvertiert diese Aktivität in roboterarme oder Cursor-Bewegung. Der Patient stellt sich vor, eine Bewegung auszuführen –•â–"" der Roboterarm bewegt sich entsprechend.</p>
-      <h3>Neuroprothesen</h3>
-      <p>Kombination aus BCI und motorischem Output. Zum Beispiel: Signale vom motorischen Kortex werden dekodiert, dann an einen Motorarm übertragen, der die Bewegung ausführt. Rückmeldung (taktile oder visuell) informiert den Patienten über die ausgeführte Aktion.</p>
-    </section>
-    <section class="section-card">
-      <h3>Vergleichstabelle: Neurochip-Technologien</h3>
-      <table>
-        <thead><tr><th>Technologie</th><th>Invasivität</th><th>Elektroden</th><th>Auflösung</th><th>Anwendung</th><th>Risiko</th></tr></thead>
-        <tbody>
-          <tr><td>DBS</td><td>Invasiv</td><td>4–•â–""8</td><td>Regional</td><td>Parkinson, Tremor</td><td>Infektin, Blutung</td></tr>
-          <tr><td>Epidurale Elektroden</td><td>Invasiv</td><td>4–•â–""32</td><td>Oberflächlich</td><td>Epilepsie</td><td>Infektionrisiko</td></tr>
-          <tr><td>Intrakortikale Mikroelektroden</td><td>Invasiv</td><td>32–•â–""256</td><td>Einzeln-Neuron</td><td>BCI, Neuroprothesen</td><td>Gliose, Signal-Degradation</td></tr>
-          <tr><td>ECoG (Oberflächlich)</td><td>Minimalist</td><td>32–•â–""64</td><td>Lokal</td><td>BCI, Epilepsie-Monitoring</td><td>Gering</td></tr>
-          <tr><td>EEG (Non-invasiv)</td><td>Keine</td><td>1–•â–""256</td><td>Grob</td><td>BCI-Spiele</td><td>Keine</td></tr>
-        </tbody>
-      </table>
-    </section>
-    <section class="section-card">
-      <h2>Anwendungsbeispiel</h2>
-      <p>Jan, 45, erlitt einen Schlaganfall mit Querschnittslähmung. Er ist vollständig gelähmt au––¸er für Augenbewegungen. Ein inverses BCI wird implantiert: 96 Mikroelektroden im motorischen Kortex. Nach Trainieren mit Machine Learning kann Jan einen Roboterarm steuern, um Gegenstände zu greifen. Taktile Rückmeldung erlaubt ihm, den Griff zu fühlen. Seine Lebensqualität verbessert sich dramatisch.</p>
-    </section>
-    <section class="section-card">
-      <h2>Vorteile und Grenzen</h2>
-      <ul><li>Wirksam bei therapieresistenten Erkrankungen</li><li>Potenziell Lähmung wiederhergestellt</li><li>Echtzeit-Modulation von Symptomen</li><li>Könnte kognitives Enhancement ermöglichen</li></ul>
-      <ul><li>Invasivität und Infektionsrisiko</li><li>Signal-Degradation durch Gliose</li><li>Hohe Kosten</li><li>Ethische Bedenken bezüglich Gehirn-Implantaten</li></ul>
-    </section>
-    <section class="section-card">
-      <h2>Gesellschaftliche Relevanz</h2>
-      <p>BCIs könnten Millionen von Lähmungspatienten helfen. Allerdings: Zugangsungleichheit, Datenschutz (Gedanken sind privat!), Enhancement-Doping in Sport und Beruf, Sicherheit vor Hacking. Ethische Grenzen müssen definiert werden.</p>
-    </section>
-    <section class="section-card">
-      <h2>Zukunftsperspektiven</h2>
-      <p>Nicht-invasive BCIs mit EEG + AI. Wireless Implantate via Induktion. Rekonstruktion von Sensorik (Tastsinn, Sehen). Gehirn-zu-Gehirn Kommunikation. Allerdings: Langzeitverträglichkeit noch offen.</p>
-    </section>
-    <section class="section-card tech-challenges">
-      <h2>Technische Herausforderungen</h2>
-      <div class="challenge-item"><h4>Gliose und Signal-Verlust</h4><p>Das Gehirn erkannt Implantate als fremd, umgibt sie mit Gliazellen, die Signale attenuieren. Nach 1–•â–""2 Jahren ist die Signalqualität oft deutlich schlechter.</p></div>
-      <div class="challenge-item"><h4>Rausch und Dekodierung</h4><p>Neuronale Signale sind schwach und rauschig. Machine Learning muss Dekodierungsmodelle trainieren –•â–"" erfordert viel Daten.</p></div>
-      <div class="challenge-item"><h4>Echtzeit-Anforderung</h4><p>BCIs müssen in < 100 ms antworten, sonst wirkt es unnatürlich. Komprimierung und Parallelisierung nötig.</p></div>
-      <div class="challenge-item"><h4>Datenschutz</h4><p>Gehirn-Signale könnten Gedanken, Gefühle, Krankheitshistorie preisgeben. Extreme Verschlüsselung und Regelung erforderlich.</p></div>
-      <div class="challenge-item"><h4>Batterie und Wireless Power</h4><p>Implantate müssen Jahre ohne Austausch laufen. Induktives Laden ist möglich, aber Effizienz limitiert.</p></div>
-    </section>
-    <section class="section-card glossar">
-      <h2>Glossar</h2>
-      <div class="glossar-term"><dt>Neuroplastizität</dt><dd>Fähigkeit des Gehirns, sich neu zu organisieren und neue neuronale Verbindungen zu bilden. Essentiell für BCI-Training.</dd></div>
-      <div class="glossar-term"><dt>Action Potential</dt><dd>Schnelle –ânderung der Membranspannung eines Neurons. Wiederum zu Kommunikation zwischen Neuronen führt.</dd></div>
-      <div class="glossar-term"><dt>Motorischer Kortex</dt><dd>Region des Gehirns (primär motorischer Kortex, Brodmann Area 4), die willkürliche Bewegung kontrolliert.</dd></div>
-      <div class="glossar-term"><dt>Dekodierung</dt><dd>Prozess, neuronale Aktivität in motorische Befehle oder andere interpretierbare Signale zu konvertieren. Meist mit Machine Learning.</dd></div>
-      <div class="glossar-term"><dt>Gliose</dt><dd>Proliferation von Gliazellen (nicht-neuronale Zellen) um einen implantierten Sensor. Führt zu Signal-Degradation.</dd></div>
-    </section>
-    <section class="section-card">
-      <h2>Informatik-Reflexion</h2>
-      <p>BCIs sind extreme Embedded-AI: <strong>Real-time Signal-Processing</strong>, <strong>Machine Learning für Dekodierung</strong>, <strong>Low-Power-Constraint</strong>, <strong>Sensorik-Fusion</strong> (mehrere Elektroden), <strong>Cybersecurity für Gehirndaten</strong>, <strong>Benutzer-Anpassung</strong> (Kalibrierung pro Patient).</p>
-    </section>
-    <section class="section-card related-links">
-      <h2>Weiterführende Links & Quellen</h2>
-      <ul id="related-links"></ul>
-    </section>
-    <div class="privacy-notice"><p><strong>Datenschutz:</strong> Diese Website speichert keine Daten. Keine Cookies oder Tracking-Tools.</p></div>
-  </main>
-  <footer class="site-footer"><div class="container"><p>&copy; 2026 MedTechGuide – Schulprojekt HTL Informatik</p><p><a href="html/quellen.html">––ber die wissenschaftlichen Quellen</a></p></div></footer>
-  <button class="scroll-to-top" id="scrollToTopBtn" aria-label="Nach oben scrollen">–•â '</button>
-  <script type="module" src="js/topic-3d-viewer.js"></script>
-  <script src="js/script.js"></script>
-  <script>window.addEventListener("load", () => { const loader = document.getElementById("loader"); if (loader) { loader.classList.add("hidden"); setTimeout(() => { loader.style.display = "none"; }, 500); } setActiveNavLink(); setRelatedLinks('neurochips'); });</script>
+àà<!--à¿àACCESSIBILITY:àSkipàtoàContentàLinkà-->
+àà<aàhref="#main-content"àclass="skip-to-content">ZumàInhaltàspringen</a>
+àà
+àà<divàid="loader"><divàclass="spinner"></div><p>Seiteàwirdàgeladen¦</p></div>
+àà<headeràclass="site-header"><divàclass="container"><h1>Neurochipsà&àBrain-ComputeràInterfaces</h1><pàclass="subtitle">TiefeàHirnstimulation,àBCIàundàNeuroprothesen</p></div></header>
+àà<navàclass="main-nav">
+àààà<divàclass="nav-container">
+àààààà<divàclass="nav-links">
+àààààààà<aàhref="index.html">Start</a>
+àààààààà<aàhref="html/diabetes.html">Diabetes</a>
+àààààààà<aàhref="html/allergie.html">Allergien</a>
+àààààààà<aàhref="html/herz.html">Herz</a>
+àààààààà<aàhref="html/bildgebung.html">Bildgebung</a>
+àààààààà<aàhref="html/neurochips.html"àclass="active">Neurochips</a>
+àààààààà<aàhref="html/exoskelette.html">Exoskelette</a>
+àààààààà<aàhref="html/genetik.html">Genetik</a>
+àààààààà<aàhref="html/ki-diagnose.html">KI-Diagnose</a>
+àààààààà<aàhref="html/zukunft.html">Zukunft</a>
+àààààààà<aàhref="html/quiz.html"àstyle="background:àlinear-gradient(135deg,à#1e40afà0%,à#0f766eà100%);àcolor:àwhite;àfont-weight:à700;">—°—¸—½——¯àQuiz</a>
+àààààààà<aàhref="html/self-tests.html"àstyle="background:àlinear-gradient(135deg,à#7c3aedà0%,à#ec4899à100%);àcolor:àwhite;àfont-weight:à700;">—°—¸——ç—— àTests</a>
+àààààààà<aàhref="html/quellen.html">Quellen</a>
+àààààà</div>
+àààààà<divàclass="nav-search">
+àààààààà<inputàtype="text"àid="globalSearch"àplaceholder="Suche¦"àaria-label="GlobaleàSuche">
+àààààààà<spanàid="searchResults"àclass="search-results"></span>
+àààààà</div>
+àààà</div>
+àà</nav>
+àà<mainàclass="container"àid="main-content">
+àààà<sectionàclass="section-card">
+àààààà<h2>Einführung</h2>
+àààààà<p>DasàGehirnàsteuertàdenàKörperàdurchàelektronischeàSignale.àNeurochipsàkönnenàdieseàSignaleàaufnehmen,àverstärkenàundàinterpretieren.àDreiàHauptanwendungen:à<strong>TiefeàHirnstimulation</strong>à(DBS)àzuràBehandlungàvonàParkinsonàundàTremor,à<strong>Brain-ComputeràInterfaces</strong>à(BCI)àfüràLähmung,à<strong>Neuroprothesen</strong>àzuràWiederherstellungàvonàBewegungàoderàSinnen.</p>
+àààà</section>
+àààà<sectionàclass="section-card">
+àààààà<h2>Kurzàerklärt</h2>
+àààààà<p>NeurochipsàsindàfeinsteàElektrodenà(Durchmesserà<à1àmm),àdieàinsàGehirngewebeàoderàanàdieàOberflächeàimplantiertàwerden.àSieàmessenàneuronaleàAktivitätà(SpikesàvonàNeuronen)àund/oderàstimulierenàNeuronenàelektrisch.àMachineàLearningàdekodiertàdieseàSignaleàinàBefehleà(z.B.à"Armàbewegen")àoderàtherapeutischeàParameter.</p>
+àààà</section>
+àààà<sectionàclass="section-cardàimaging-3d-card"àdata-three-vieweràdata-model-label="Neurochip"àdata-model-path="data/models/neurochip.glb"àdata-fallback-model="neurochip"àdata-target-size="1.8">
+àààààà<h2>3D-Modell:àNeurochip</h2>
+àààààà<pàclass="imaging-3d-model-caption">Eineàreduzierteà3D-AnsichtàeinesàNeurochipsàalsàtechnischeàSchnittstelle.</p>
+àààààà<divàclass="imaging-3d-controls"àrole="group"àaria-label="Steuerungàfueràdasà3D-ModellàdesàNeurochips">
+àààààààà<buttonàtype="button"àdata-action="reload">Modellàneuàladen</button>
+àààààààà<buttonàtype="button"àdata-action="reset">Ansichtàzurücksetzen</button>
+àààààààà<buttonàtype="button"àdata-action="autorotate"àaria-pressed="false">Rotationàaus</button>
+àààààà</div>
+àààààà<pàclass="imaging-3d-status"àaria-live="polite">Modellàwirdàgeladen...</p>
+àààààà<divàclass="imaging-3d-viewer"àaria-label="Interaktiverà3D-VieweràfueràNeurochip"></div>
+àààààà<pàclass="imaging-3d-hint">
+àààààààà<spanàclass="imaging-hint-desktop">Steuerung:àLinkeàMaustasteàdrehen,àMausradàzoomen,àrechteàMaustasteàverschieben.</span>
+àààààààà<spanàclass="imaging-hint-mobile">Handy:àMitàeinemàFingeràdrehen,àmitàzweiàFingernàzoomenàundàverschieben.</span>
+àààààà</p>
+àààà</section>
+àààà<figureàclass="section-image">
+àààààà<imgàsrc="images/neurochips-1.jpg"àalt="NeurochipsàundàBrain-ComputeràInterfaces"à/>
+àààààà<figcaption>NeuronaleàSchnittstellen:àNeurochipsàermöglichenàbidirektionaleàKommunikationàzwischenàGehirnàundàexternenàGeräten.</figcaption>
+àààà</figure>
+àààà<sectionàclass="section-card">
+àààààà<h2>TechnischeàFunktionsweise</h2>
+àààààà<h3>TiefeàHirnstimulationà(DBS)</h3>
+àààààà<p>ElektrodenàwerdenàinàspezifischeàHirnregionenà(z.B.àNucleusàsubthalamicusàbeiàParkinson)àimplantiert.àEinàStimulatoràamàSchlüsselbeinàsendetàhochfrequenteàImpulseà(bisà180àHz).àDiesàmoduliertàabnormeàneuronaleàAktivitätàundàlindertàSymptome.àDieàMechanismusàistànichtàvollständigàverstandenà—•—""àwahrscheinlichàStörungàabnormaleràRhythmen.</p>
+àààààà<h3>Brain-ComputeràInterfacesà(BCI)</h3>
+àààààà<p>BCIsàlesenàmotorischeàIntentionàdirektàvomàGehirn.àInvasiveàBCIs:àElektrodenàimàmotorischenàKortexàmessenàAktivitätàeinzelneràNeuronen.àEinàDekodierungs-Algorithmusà(oftàeinàneuronalesàNetzwerk)àkonvertiertàdieseàAktivitätàinàroboterarmeàoderàCursor-Bewegung.àDeràPatientàstelltàsichàvor,àeineàBewegungàauszuführenà—•—""àderàRoboterarmàbewegtàsichàentsprechend.</p>
+àààààà<h3>Neuroprothesen</h3>
+àààààà<p>KombinationàausàBCIàundàmotorischemàOutput.àZumàBeispiel:àSignaleàvomàmotorischenàKortexàwerdenàdekodiert,àdannàanàeinenàMotorarmàübertragen,àderàdieàBewegungàausführt.àRückmeldungà(taktileàoderàvisuell)àinformiertàdenàPatientenàüberàdieàausgeführteàAktion.</p>
+àààà</section>
+àààà<sectionàclass="section-card">
+àààààà<h3>Vergleichstabelle:àNeurochip-Technologien</h3>
+àààààà<table>
+àààààààà<thead><tr><th>Technologie</th><th>Invasivität</th><th>Elektroden</th><th>Auflösung</th><th>Anwendung</th><th>Risiko</th></tr></thead>
+àààààààà<tbody>
+àààààààààà<tr><td>DBS</td><td>Invasiv</td><td>4—•—""8</td><td>Regional</td><td>Parkinson,àTremor</td><td>Infektin,àBlutung</td></tr>
+àààààààààà<tr><td>EpiduraleàElektroden</td><td>Invasiv</td><td>4—•—""32</td><td>Oberflächlich</td><td>Epilepsie</td><td>Infektionrisiko</td></tr>
+àààààààààà<tr><td>IntrakortikaleàMikroelektroden</td><td>Invasiv</td><td>32—•—""256</td><td>Einzeln-Neuron</td><td>BCI,àNeuroprothesen</td><td>Gliose,àSignal-Degradation</td></tr>
+àààààààààà<tr><td>ECoGà(Oberflächlich)</td><td>Minimalist</td><td>32—•—""64</td><td>Lokal</td><td>BCI,àEpilepsie-Monitoring</td><td>Gering</td></tr>
+àààààààààà<tr><td>EEGà(Non-invasiv)</td><td>Keine</td><td>1—•—""256</td><td>Grob</td><td>BCI-Spiele</td><td>Keine</td></tr>
+àààààààà</tbody>
+àààààà</table>
+àààà</section>
+àààà<sectionàclass="section-card">
+àààààà<h2>Anwendungsbeispiel</h2>
+àààààà<p>Jan,à45,àerlittàeinenàSchlaganfallàmitàQuerschnittslähmung.àEràistàvollständigàgelähmtàau——¸eràfüràAugenbewegungen.àEinàinversesàBCIàwirdàimplantiert:à96àMikroelektrodenàimàmotorischenàKortex.àNachàTrainierenàmitàMachineàLearningàkannàJanàeinenàRoboterarmàsteuern,àumàGegenständeàzuàgreifen.àTaktileàRückmeldungàerlaubtàihm,àdenàGriffàzuàfühlen.àSeineàLebensqualitätàverbessertàsichàdramatisch.</p>
+àààà</section>
+àààà<sectionàclass="section-card">
+àààààà<h2>VorteileàundàGrenzen</h2>
+àààààà<ul><li>WirksamàbeiàtherapieresistentenàErkrankungen</li><li>PotenziellàLähmungàwiederhergestellt</li><li>Echtzeit-ModulationàvonàSymptomen</li><li>KönnteàkognitivesàEnhancementàermöglichen</li></ul>
+àààààà<ul><li>InvasivitätàundàInfektionsrisiko</li><li>Signal-DegradationàdurchàGliose</li><li>HoheàKosten</li><li>EthischeàBedenkenàbezüglichàGehirn-Implantaten</li></ul>
+àààà</section>
+àààà<sectionàclass="section-card">
+àààààà<h2>GesellschaftlicheàRelevanz</h2>
+àààààà<p>BCIsàkönntenàMillionenàvonàLähmungspatientenàhelfen.àAllerdings:àZugangsungleichheit,àDatenschutzà(Gedankenàsindàprivat!),àEnhancement-DopingàinàSportàundàBeruf,àSicherheitàvoràHacking.àEthischeàGrenzenàmüssenàdefiniertàwerden.</p>
+àààà</section>
+àààà<sectionàclass="section-card">
+àààààà<h2>Zukunftsperspektiven</h2>
+àààààà<p>Nicht-invasiveàBCIsàmitàEEGà+àAI.àWirelessàImplantateàviaàInduktion.àRekonstruktionàvonàSensorikà(Tastsinn,àSehen).àGehirn-zu-GehirnàKommunikation.àAllerdings:àLangzeitverträglichkeitànochàoffen.</p>
+àààà</section>
+àààà<sectionàclass="section-cardàtech-challenges">
+àààààà<h2>TechnischeàHerausforderungen</h2>
+àààààà<divàclass="challenge-item"><h4>GlioseàundàSignal-Verlust</h4><p>DasàGehirnàerkanntàImplantateàalsàfremd,àumgibtàsieàmitàGliazellen,àdieàSignaleàattenuieren.àNachà1—•—""2àJahrenàistàdieàSignalqualitätàoftàdeutlichàschlechter.</p></div>
+àààààà<divàclass="challenge-item"><h4>RauschàundàDekodierung</h4><p>NeuronaleàSignaleàsindàschwachàundàrauschig.àMachineàLearningàmussàDekodierungsmodelleàtrainierenà—•—""àerfordertàvielàDaten.</p></div>
+àààààà<divàclass="challenge-item"><h4>Echtzeit-Anforderung</h4><p>BCIsàmüssenàinà<à100àmsàantworten,àsonstàwirktàesàunnatürlich.àKomprimierungàundàParallelisierungànötig.</p></div>
+àààààà<divàclass="challenge-item"><h4>Datenschutz</h4><p>Gehirn-SignaleàkönntenàGedanken,àGefühle,àKrankheitshistorieàpreisgeben.àExtremeàVerschlüsselungàundàRegelungàerforderlich.</p></div>
+àààààà<divàclass="challenge-item"><h4>BatterieàundàWirelessàPower</h4><p>ImplantateàmüssenàJahreàohneàAustauschàlaufen.àInduktivesàLadenàistàmöglich,àaberàEffizienzàlimitiert.</p></div>
+àààà</section>
+àààà<sectionàclass="section-cardàglossar">
+àààààà<h2>Glossar</h2>
+àààààà<divàclass="glossar-term"><dt>Neuroplastizität</dt><dd>FähigkeitàdesàGehirns,àsichàneuàzuàorganisierenàundàneueàneuronaleàVerbindungenàzuàbilden.àEssentiellàfüràBCI-Training.</dd></div>
+àààààà<divàclass="glossar-term"><dt>ActionàPotential</dt><dd>Schnelleà—nderungàderàMembranspannungàeinesàNeurons.àWiederumàzuàKommunikationàzwischenàNeuronenàführt.</dd></div>
+àààààà<divàclass="glossar-term"><dt>MotorischeràKortex</dt><dd>RegionàdesàGehirnsà(primäràmotorischeràKortex,àBrodmannàAreaà4),àdieàwillkürlicheàBewegungàkontrolliert.</dd></div>
+àààààà<divàclass="glossar-term"><dt>Dekodierung</dt><dd>Prozess,àneuronaleàAktivitätàinàmotorischeàBefehleàoderàandereàinterpretierbareàSignaleàzuàkonvertieren.àMeistàmitàMachineàLearning.</dd></div>
+àààààà<divàclass="glossar-term"><dt>Gliose</dt><dd>ProliferationàvonàGliazellenà(nicht-neuronaleàZellen)àumàeinenàimplantiertenàSensor.àFührtàzuàSignal-Degradation.</dd></div>
+àààà</section>
+àààà<sectionàclass="section-card">
+àààààà<h2>Informatik-Reflexion</h2>
+àààààà<p>BCIsàsindàextremeàEmbedded-AI:à<strong>Real-timeàSignal-Processing</strong>,à<strong>MachineàLearningàfüràDekodierung</strong>,à<strong>Low-Power-Constraint</strong>,à<strong>Sensorik-Fusion</strong>à(mehrereàElektroden),à<strong>CybersecurityàfüràGehirndaten</strong>,à<strong>Benutzer-Anpassung</strong>à(KalibrierungàproàPatient).</p>
+àààà</section>
+àààà<sectionàclass="section-cardàrelated-links">
+àààààà<h2>WeiterführendeàLinksà&àQuellen</h2>
+àààààà<ulàid="related-links"></ul>
+àààà</section>
+àààà<divàclass="privacy-notice"><p><strong>Datenschutz:</strong>àDieseàWebsiteàspeichertàkeineàDaten.àKeineàCookiesàoderàTracking-Tools.</p></div>
+àà</main>
+àà<footeràclass="site-footer"><divàclass="container"><p>&copy;à2026àMedTechGuideà—àSchulprojektàHTLàInformatik</p><p><aàhref="html/quellen.html">——beràdieàwissenschaftlichenàQuellen</a></p></div></footer>
+àà<buttonàclass="scroll-to-top"àid="scrollToTopBtn"àaria-label="Nachàobenàscrollen">—• '</button>
+àà<scriptàtype="module"àsrc="js/topic-3d-viewer.js"></script>
+àà<scriptàsrc="js/script.js"></script>
+àà<script>window.addEventListener("load",à()à=>à{àconstàloaderà=àdocument.getElementById("loader");àifà(loader)à{àloader.classList.add("hidden");àsetTimeout(()à=>à{àloader.style.displayà=à"none";à},à500);à}àsetActiveNavLink();àsetRelatedLinks('neurochips');à});</script>
 </body>
 </html>

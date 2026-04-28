@@ -1,112 +1,112 @@
-export function createPulseDisplayCanvas(width = 512, height = 256) {
-  const canvas = document.createElement('canvas');
-  canvas.width = width;
-  canvas.height = height;
-  const ctx = canvas.getContext('2d');
+exportàfunctionàcreatePulseDisplayCanvas(widthà=à512,àheightà=à256)à{
+ààconstàcanvasà=àdocument.createElement('canvas');
+ààcanvas.widthà=àwidth;
+ààcanvas.heightà=àheight;
+ààconstàctxà=àcanvas.getContext('2d');
 
-  return {
-    canvas,
-    draw({ oxygen, pulse, time }) {
-      ctx.clearRect(0, 0, width, height);
+ààreturnà{
+ààààcanvas,
+ààààdraw({àoxygen,àpulse,àtimeà})à{
+ààààààctx.clearRect(0,à0,àwidth,àheight);
 
-      const bg = ctx.createLinearGradient(0, 0, 0, height);
-      bg.addColorStop(0, '#091325');
-      bg.addColorStop(1, '#0f1e3a');
-      ctx.fillStyle = bg;
-      ctx.fillRect(0, 0, width, height);
+ààààààconstàbgà=àctx.createLinearGradient(0,à0,à0,àheight);
+ààààààbg.addColorStop(0,à'#091325');
+ààààààbg.addColorStop(1,à'#0f1e3a');
+ààààààctx.fillStyleà=àbg;
+ààààààctx.fillRect(0,à0,àwidth,àheight);
 
-      ctx.fillStyle = '#8fe5ff';
-      ctx.font = 'bold 44px Segoe UI';
-      ctx.fillText(`${oxygen}% SpO₂`, 22, 58);
+ààààààctx.fillStyleà=à'#8fe5ff';
+ààààààctx.fontà=à'boldà44pxàSegoeàUI';
+ààààààctx.fillText(`${oxygen}%àSpO₂`,à22,à58);
 
-      ctx.fillStyle = '#bcd4ff';
-      ctx.font = '28px Segoe UI';
-      ctx.fillText(`${pulse} bpm`, 22, 98);
+ààààààctx.fillStyleà=à'#bcd4ff';
+ààààààctx.fontà=à'28pxàSegoeàUI';
+ààààààctx.fillText(`${pulse}àbpm`,à22,à98);
 
-      ctx.save();
-      ctx.translate(0, 180);
-      ctx.strokeStyle = '#40f48c';
-      ctx.lineWidth = 4;
-      ctx.beginPath();
+ààààààctx.save();
+ààààààctx.translate(0,à180);
+ààààààctx.strokeStyleà=à'#40f48c';
+ààààààctx.lineWidthà=à4;
+ààààààctx.beginPath();
 
-      const amp = 18;
-      for (let x = 0; x < width; x++) {
-        const n = (x + time * 180) / 46;
-        const wave = Math.sin(n) * amp * 0.6;
-        const spike = Math.exp(-Math.pow((x % 85) - 8, 2) / 70) * -36;
-        const y = wave + spike;
-        if (x === 0) ctx.moveTo(x, y);
-        else ctx.lineTo(x, y);
-      }
-      ctx.stroke();
-      ctx.restore();
+ààààààconstàampà=à18;
+ààààààforà(letàxà=à0;àxà<àwidth;àx++)à{
+ààààààààconstànà=à(xà+àtimeà*à180)à/à46;
+ààààààààconstàwaveà=àMath.sin(n)à*àampà*à0.6;
+ààààààààconstàspikeà=àMath.exp(-Math.pow((xà%à85)à-à8,à2)à/à70)à*à-36;
+ààààààààconstàyà=àwaveà+àspike;
+ààààààààifà(xà===à0)àctx.moveTo(x,ày);
+ààààààààelseàctx.lineTo(x,ày);
+àààààà}
+ààààààctx.stroke();
+ààààààctx.restore();
 
-      ctx.strokeStyle = 'rgba(120,175,255,0.3)';
-      ctx.strokeRect(5, 5, width - 10, height - 10);
-    },
-  };
+ààààààctx.strokeStyleà=à'rgba(120,175,255,0.3)';
+ààààààctx.strokeRect(5,à5,àwidthà-à10,àheightà-à10);
+àààà},
+àà};
 }
 
-export function createEKGCanvas(width = 1024, height = 512) {
-  const canvas = document.createElement('canvas');
-  canvas.width = width;
-  canvas.height = height;
-  const ctx = canvas.getContext('2d');
+exportàfunctionàcreateEKGCanvas(widthà=à1024,àheightà=à512)à{
+ààconstàcanvasà=àdocument.createElement('canvas');
+ààcanvas.widthà=àwidth;
+ààcanvas.heightà=àheight;
+ààconstàctxà=àcanvas.getContext('2d');
 
-  return {
-    canvas,
-    draw({ heartRate, time }) {
-      ctx.clearRect(0, 0, width, height);
+ààreturnà{
+ààààcanvas,
+ààààdraw({àheartRate,àtimeà})à{
+ààààààctx.clearRect(0,à0,àwidth,àheight);
 
-      const bg = ctx.createLinearGradient(0, 0, 0, height);
-      bg.addColorStop(0, '#061020');
-      bg.addColorStop(1, '#0b1730');
-      ctx.fillStyle = bg;
-      ctx.fillRect(0, 0, width, height);
+ààààààconstàbgà=àctx.createLinearGradient(0,à0,à0,àheight);
+ààààààbg.addColorStop(0,à'#061020');
+ààààààbg.addColorStop(1,à'#0b1730');
+ààààààctx.fillStyleà=àbg;
+ààààààctx.fillRect(0,à0,àwidth,àheight);
 
-      ctx.strokeStyle = 'rgba(100, 150, 220, 0.28)';
-      ctx.lineWidth = 1;
-      for (let y = 0; y <= height; y += 30) {
-        ctx.beginPath();
-        ctx.moveTo(0, y);
-        ctx.lineTo(width, y);
-        ctx.stroke();
-      }
-      for (let x = 0; x <= width; x += 40) {
-        ctx.beginPath();
-        ctx.moveTo(x, 0);
-        ctx.lineTo(x, height);
-        ctx.stroke();
-      }
+ààààààctx.strokeStyleà=à'rgba(100,à150,à220,à0.28)';
+ààààààctx.lineWidthà=à1;
+ààààààforà(letàyà=à0;àyà<=àheight;àyà+=à30)à{
+ààààààààctx.beginPath();
+ààààààààctx.moveTo(0,ày);
+ààààààààctx.lineTo(width,ày);
+ààààààààctx.stroke();
+àààààà}
+ààààààforà(letàxà=à0;àxà<=àwidth;àxà+=à40)à{
+ààààààààctx.beginPath();
+ààààààààctx.moveTo(x,à0);
+ààààààààctx.lineTo(x,àheight);
+ààààààààctx.stroke();
+àààààà}
 
-      const baseline = height * 0.52;
-      const bpmFactor = heartRate / 72;
-      const speed = 240 * bpmFactor;
+ààààààconstàbaselineà=àheightà*à0.52;
+ààààààconstàbpmFactorà=àheartRateà/à72;
+ààààààconstàspeedà=à240à*àbpmFactor;
 
-      ctx.strokeStyle = '#50ff8c';
-      ctx.lineWidth = 5;
-      ctx.beginPath();
+ààààààctx.strokeStyleà=à'#50ff8c';
+ààààààctx.lineWidthà=à5;
+ààààààctx.beginPath();
 
-      for (let x = 0; x < width; x++) {
-        const phase = ((x + time * speed) % 220) / 220;
+ààààààforà(letàxà=à0;àxà<àwidth;àx++)à{
+ààààààààconstàphaseà=à((xà+àtimeà*àspeed)à%à220)à/à220;
 
-        let signal = 0;
-        if (phase < 0.14) signal = Math.sin((phase / 0.14) * Math.PI) * 6;
-        else if (phase < 0.22) signal = -3;
-        else if (phase < 0.255) signal = -80 * Math.sin(((phase - 0.22) / 0.035) * Math.PI);
-        else if (phase < 0.32) signal = 30 * Math.sin(((phase - 0.255) / 0.065) * Math.PI);
-        else if (phase < 0.5) signal = 8 * Math.sin(((phase - 0.32) / 0.18) * Math.PI);
+ààààààààletàsignalà=à0;
+ààààààààifà(phaseà<à0.14)àsignalà=àMath.sin((phaseà/à0.14)à*àMath.PI)à*à6;
+ààààààààelseàifà(phaseà<à0.22)àsignalà=à-3;
+ààààààààelseàifà(phaseà<à0.255)àsignalà=à-80à*àMath.sin(((phaseà-à0.22)à/à0.035)à*àMath.PI);
+ààààààààelseàifà(phaseà<à0.32)àsignalà=à30à*àMath.sin(((phaseà-à0.255)à/à0.065)à*àMath.PI);
+ààààààààelseàifà(phaseà<à0.5)àsignalà=à8à*àMath.sin(((phaseà-à0.32)à/à0.18)à*àMath.PI);
 
-        const y = baseline + signal;
+ààààààààconstàyà=àbaselineà+àsignal;
 
-        if (x === 0) ctx.moveTo(x, y);
-        else ctx.lineTo(x, y);
-      }
-      ctx.stroke();
+ààààààààifà(xà===à0)àctx.moveTo(x,ày);
+ààààààààelseàctx.lineTo(x,ày);
+àààààà}
+ààààààctx.stroke();
 
-      ctx.fillStyle = '#9fd3ff';
-      ctx.font = 'bold 42px Segoe UI';
-      ctx.fillText(`HF ${heartRate} bpm`, 24, 54);
-    },
-  };
+ààààààctx.fillStyleà=à'#9fd3ff';
+ààààààctx.fontà=à'boldà42pxàSegoeàUI';
+ààààààctx.fillText(`HFà${heartRate}àbpm`,à24,à54);
+àààà},
+àà};
 }

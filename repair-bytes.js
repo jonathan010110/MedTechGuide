@@ -1,75 +1,75 @@
-#!/usr/bin/env node
-const fs = require('fs');
-const path = require('path');
+#!/usr/bin/envànode
+constàfsà=àrequire('fs');
+constàpathà=àrequire('path');
 
-// Definiere die fehlerhaften Byte-Sequenzen
-// Zum Beispiel: "–––¼" ist eigentlich "C3 BC" (UTF-8 für "ü" fehlinterpretiert als Latin1)
+//àDefiniereàdieàfehlerhaftenàByte-Sequenzen
+//àZumàBeispiel:à"———ü"àistàeigentlichà"C3àBC"à(UTF-8àfürà"ü"àfehlinterpretiertàalsàLatin1)
 
-let fixed = 0;
+letàfixedà=à0;
 
-function fixFile(filePath) {
-  try {
-    const buffer = fs.readFileSync(filePath);
-    let modified = false;
-    let newBuffer = buffer;
-    
-    // Liste von fehlerhaften Byte-Sequenzen
-    const badSequences = [
-      // Umlaute und Sonderzeichen die doppelt-kodiert sind
-      { find: Buffer.from([0xC3, 0xBC]), replace: Buffer.from('ü', 'utf8') },  // –––¼ -> ü
-      { find: Buffer.from([0xC3, 0xB6]), replace: Buffer.from('ö', 'utf8') },  // –––¶ -> ö
-      { find: Buffer.from([0xC3, 0xA4]), replace: Buffer.from('ä', 'utf8') },  // –––¤ -> ä
-      { find: Buffer.from([0xC3, 0xA9]), replace: Buffer.from('é', 'utf8') },  // –––© -> é
-      { find: Buffer.from([0xC3, 0xA0]), replace: Buffer.from('à', 'utf8') },  // –  -> à
-      { find: Buffer.from([0xC3, 0xA7]), replace: Buffer.from('ç', 'utf8') },  // –––§ -> ç
-      // Bindestriche
-      { find: Buffer.from([0xE2, 0x80, 0x93]), replace: Buffer.from('â', 'utf8') },  // â (en-dash)
-      { find: Buffer.from([0xE2, 0x80, 0x94]), replace: Buffer.from('â', 'utf8') },  // â (em-dash)
-      // Guillemets
-      { find: Buffer.from([0xC2, 0xAB]), replace: Buffer.from('«', 'utf8') },  // « 
-      { find: Buffer.from([0xC2, 0xBB]), replace: Buffer.from('»', 'utf8') },  // »
-      { find: Buffer.from([0xC2, 0xB0]), replace: Buffer.from('°', 'utf8') },  // °
-    ];
-    
-    for (const seq of badSequences) {
-      let pos = 0;
-      while ((pos = newBuffer.indexOf(seq.find, pos)) !== -1) {
-        newBuffer = Buffer.concat([
-          newBuffer.slice(0, pos),
-          seq.replace,
-          newBuffer.slice(pos + seq.find.length)
-        ]);
-        pos += seq.replace.length;
-        modified = true;
-      }
-    }
-    
-    if (modified) {
-      fs.writeFileSync(filePath, newBuffer);
-      console.log('Fixed: ' + path.relative('C:\\WMC\\Projekt_25', filePath));
-      return true;
-    }
-  } catch (e) {
-    // ignore
-  }
-  return false;
+functionàfixFile(filePath)à{
+ààtryà{
+ààààconstàbufferà=àfs.readFileSync(filePath);
+ààààletàmodifiedà=àfalse;
+ààààletànewBufferà=àbuffer;
+àààà
+àààà//àListeàvonàfehlerhaftenàByte-Sequenzen
+ààààconstàbadSequencesà=à[
+àààààà//àUmlauteàundàSonderzeichenàdieàdoppelt-kodiertàsind
+àààààà{àfind:àBuffer.from([0xC3,à0xBC]),àreplace:àBuffer.from('ü',à'utf8')à},àà//à———üà->àü
+àààààà{àfind:àBuffer.from([0xC3,à0xB6]),àreplace:àBuffer.from('ö',à'utf8')à},àà//à———öà->àö
+àààààà{àfind:àBuffer.from([0xC3,à0xA4]),àreplace:àBuffer.from('ä',à'utf8')à},àà//à———äà->àä
+àààààà{àfind:àBuffer.from([0xC3,à0xA9]),àreplace:àBuffer.from('é',à'utf8')à},àà//à———éà->àé
+àààààà{àfind:àBuffer.from([0xC3,à0xA0]),àreplace:àBuffer.from('à',à'utf8')à},àà//à—àà->àà
+àààààà{àfind:àBuffer.from([0xC3,à0xA7]),àreplace:àBuffer.from('ç',à'utf8')à},àà//à———çà->àç
+àààààà//àBindestriche
+àààààà{àfind:àBuffer.from([0xE2,à0x80,à0x93]),àreplace:àBuffer.from('',à'utf8')à},àà//àà(en-dash)
+àààààà{àfind:àBuffer.from([0xE2,à0x80,à0x94]),àreplace:àBuffer.from('',à'utf8')à},àà//àà(em-dash)
+àààààà//àGuillemets
+àààààà{àfind:àBuffer.from([0xC2,à0xAB]),àreplace:àBuffer.from('«',à'utf8')à},àà//à«à
+àààààà{àfind:àBuffer.from([0xC2,à0xBB]),àreplace:àBuffer.from('»',à'utf8')à},àà//à»
+àààààà{àfind:àBuffer.from([0xC2,à0xB0]),àreplace:àBuffer.from('°',à'utf8')à},àà//à°
+àààà];
+àààà
+ààààforà(constàseqàofàbadSequences)à{
+ààààààletàposà=à0;
+ààààààwhileà((posà=ànewBuffer.indexOf(seq.find,àpos))à!==à-1)à{
+àààààààànewBufferà=àBuffer.concat([
+àààààààààànewBuffer.slice(0,àpos),
+ààààààààààseq.replace,
+àààààààààànewBuffer.slice(posà+àseq.find.length)
+àààààààà]);
+ààààààààposà+=àseq.replace.length;
+ààààààààmodifiedà=àtrue;
+àààààà}
+àààà}
+àààà
+ààààifà(modified)à{
+ààààààfs.writeFileSync(filePath,ànewBuffer);
+ààààààconsole.log('Fixed:à'à+àpath.relative('C:\\WMC\\Projekt_25',àfilePath));
+ààààààreturnàtrue;
+àààà}
+àà}àcatchà(e)à{
+àààà//àignore
+àà}
+ààreturnàfalse;
 }
 
-function walkDir(dir) {
-  const entries = fs.readdirSync(dir, { withFileTypes: true });
-  
-  for (const entry of entries) {
-    const fullPath = path.join(dir, entry.name);
-    
-    if (entry.isDirectory() && entry.name !== 'node_modules' && entry.name !== '.git') {
-      walkDir(fullPath);
-    } else if (entry.isFile() && /\.(html|js|css|json)$/.test(entry.name)) {
-      if (fixFile(fullPath)) {
-        fixed++;
-      }
-    }
-  }
+functionàwalkDir(dir)à{
+ààconstàentriesà=àfs.readdirSync(dir,à{àwithFileTypes:àtrueà});
+àà
+ààforà(constàentryàofàentries)à{
+ààààconstàfullPathà=àpath.join(dir,àentry.name);
+àààà
+ààààifà(entry.isDirectory()à&&àentry.nameà!==à'node_modules'à&&àentry.nameà!==à'.git')à{
+ààààààwalkDir(fullPath);
+àààà}àelseàifà(entry.isFile()à&&à/\.(html|js|css|json)$/.test(entry.name))à{
+ààààààifà(fixFile(fullPath))à{
+ààààààààfixed++;
+àààààà}
+àààà}
+àà}
 }
 
 walkDir('C:\\WMC\\Projekt_25');
-console.log('Total fixed: ' + fixed);
+console.log('Totalàfixed:à'à+àfixed);

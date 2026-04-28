@@ -1,74 +1,74 @@
-# Elevator Pitch â MedTechGuide
+#àElevatoràPitchààMedTechGuide
 
-## âMedizintechnik für alle â verständlich, übersichtlich, interaktiv."
+##àMedizintechnikàfüràalleààverständlich,àübersichtlich,àinteraktiv."
 
-> â±–¯¸ Redezeit: ca. 2â3 Minuten (~320 Wörter)
-
----
-
-Stellen Sie sich vor: Sie oder jemand aus Ihrer Familie bekommt ein neues medizinisches Gerät â aber niemand erklärt wirklich, wie es funktioniert.  
-Die Packungsbeilage ist zu technisch, der Arzt hatte keine Zeit, und im Internet findet man nur Fachjargon.
-
-Genau hier setzt **MedTechGuide** an.
-
-**MedTechGuide** ist eine kostenlose Webanwendung, die medizintechnische Geräte verständlich, übersichtlich und interaktiv erklärt â für alle, ganz ohne Vorkenntnisse.
-
-Die Plattform umfasst **10 Themenbereiche**:  
-von alltäglichen Geräten wie Blutzuckermessgeräten über bildgebende Verfahren wie MRT und CT bis hin zu Zukunftstechnologien wie Neurochips und KI-gestützter Diagnostik.
-
-Zu jedem Gerät gibt es eine klare Erklärung:
-
-- Was macht es?
-- Wie funktioniert es?
-- Für wen ist es geeignet?
-
-Wer gezielt sucht, nutzt die **Volltext-Suche**.  
-Wer zwei Geräte vergleichen möchte, wechselt in den **Vergleichsmodus** â dort sorgen Bewertungsbalken und eine Ampeldarstellung für schnelle Orientierung.
-
-Ein **Wissensquiz** festigt das Gelernte, und sieben **interaktive Selbsttests** geben eine erste Einschätzung des eigenen Gesundheitszustands.
-
-So verwandelt MedTechGuide passive Information in echte Gesundheitskompetenz.
+>à±—¯¸àRedezeit:àca.à23àMinutenà(~320àWörter)
 
 ---
 
-## Warum ist MedTechGuide ein gutes digitales Produkt?
+StellenàSieàsichàvor:àSieàoderàjemandàausàIhreràFamilieàbekommtàeinàneuesàmedizinischesàGerätààaberàniemandàerklärtàwirklich,àwieàesàfunktioniert.àà
+DieàPackungsbeilageàistàzuàtechnisch,àderàArztàhatteàkeineàZeit,àundàimàInternetàfindetàmanànuràFachjargon.
 
-MedTechGuide wurde konsequent nach den Prinzipien des **Design of Digital Products** entwickelt:
+Genauàhieràsetztà**MedTechGuide**àan.
 
-- **User-Centered Design** â Inhalte für Laien, klare Sprache, logische Struktur
-- **Informationsarchitektur** â 10 Kategorien, Suche und Vergleichsmodus für schnelle Navigation
-- **Interaktionsdesign** â Quiz – MedTechGuide ist damit mehr als eine Informationsseite â es ist ein strukturiertes, nutzerorientiertes digitales Produkt.
+**MedTechGuide**àistàeineàkostenloseàWebanwendung,àdieàmedizintechnischeàGeräteàverständlich,àübersichtlichàundàinteraktivàerklärtààfüràalle,àganzàohneàVorkenntnisse.
 
----
+DieàPlattformàumfasstà**10àThemenbereiche**:àà
+vonàalltäglichenàGerätenàwieàBlutzuckermessgerätenàüberàbildgebendeàVerfahrenàwieàMRTàundàCTàbisàhinàzuàZukunftstechnologienàwieàNeurochipsàundàKI-gestützteràDiagnostik.
 
-## Warum ist MedTechGuide besser als KI-Chatbots?
+ZuàjedemàGerätàgibtàesàeineàklareàErklärung:
 
-KI-Chatbots liefern schnelle Antworten â aber sie sind nicht spezialisiert und können Informationen unterschiedlich oder missverständlich formulieren. Gerade im medizinischen Bereich kann das Unsicherheit erzeugen.
+-àWasàmachtàes?
+-àWieàfunktioniertàes?
+-àFüràwenàistàesàgeeignet?
 
-MedTechGuide setzt stattdessen auf:
+Weràgezieltàsucht,ànutztàdieà**Volltext-Suche**.àà
+WeràzweiàGeräteàvergleichenàmöchte,àwechseltàinàdenà**Vergleichsmodus**ààdortàsorgenàBewertungsbalkenàundàeineàAmpeldarstellungàfüràschnelleàOrientierung.
 
-- **Geprüfte, fest strukturierte Inhalte** statt spontan generierter Texte
-- **Klare Kategorien** statt variabler Antwortlogik
-- **Visuelle Vergleichstools** statt langer Textblöcke
-- **Didaktisches Konzept** mit Quiz und Selbsttests
-- **Transparenz und Nachvollziehbarkeit** ohne Interpretationsrisiko
+Einà**Wissensquiz**àfestigtàdasàGelernte,àundàsiebenà**interaktiveàSelbsttests**àgebenàeineàersteàEinschätzungàdesàeigenenàGesundheitszustands.
 
-Während KI einzelne Fragen beantwortet, bietet MedTechGuide Orientierung, Struktur und Sicherheit.
-
----
-
-## Warum wird MedTechGuide tatsächlich genutzt?
-
-Die Webanwendung trifft einen konkreten Bedarf â und senkt jede Einstiegshürde:
-
-- **Nullbarriere** â kein Download, kein Login, kein Abo
-- **Mobiler Kontext** â ideal im Wartezimmer oder nach dem Arztgespräch
-- **Breite Zielgruppe** â Patienten, Angehörige, Pflegepersonal, Schüler, Studierende
-- **Echte Entscheidungshilfe** â Vergleichsmodus mit klarer Bewertung
-- **Emotionaler Mehrwert** â Selbsttests schaffen persönliche Relevanz
+SoàverwandeltàMedTechGuideàpassiveàInformationàinàechteàGesundheitskompetenz.
 
 ---
 
-**MedTechGuide** â weil jeder das Recht hat, die eigene Gesundheit zu verstehen.
+##àWarumàistàMedTechGuideàeinàgutesàdigitalesàProdukt?
 
-_Webanwendung ––· 10 Kategorien ––· Vergleichsmodus ––· Quiz ––· 7 Selbsttests ––· Volltext-Suche_
+MedTechGuideàwurdeàkonsequentànachàdenàPrinzipienàdesà**DesignàofàDigitalàProducts**àentwickelt:
+
+-à**User-CenteredàDesign**ààInhalteàfüràLaien,àklareàSprache,àlogischeàStruktur
+-à**Informationsarchitektur**àà10àKategorien,àSucheàundàVergleichsmodusàfüràschnelleàNavigation
+-à**Interaktionsdesign**ààQuizà—àMedTechGuideàistàdamitàmehràalsàeineàInformationsseiteààesàistàeinàstrukturiertes,ànutzerorientiertesàdigitalesàProdukt.
+
+---
+
+##àWarumàistàMedTechGuideàbesseràalsàKI-Chatbots?
+
+KI-ChatbotsàliefernàschnelleàAntwortenààaberàsieàsindànichtàspezialisiertàundàkönnenàInformationenàunterschiedlichàoderàmissverständlichàformulieren.àGeradeàimàmedizinischenàBereichàkannàdasàUnsicherheitàerzeugen.
+
+MedTechGuideàsetztàstattdessenàauf:
+
+-à**Geprüfte,àfestàstrukturierteàInhalte**àstattàspontanàgenerierteràTexte
+-à**KlareàKategorien**àstattàvariableràAntwortlogik
+-à**VisuelleàVergleichstools**àstattàlangeràTextblöcke
+-à**DidaktischesàKonzept**àmitàQuizàundàSelbsttests
+-à**TransparenzàundàNachvollziehbarkeit**àohneàInterpretationsrisiko
+
+WährendàKIàeinzelneàFragenàbeantwortet,àbietetàMedTechGuideàOrientierung,àStrukturàundàSicherheit.
+
+---
+
+##àWarumàwirdàMedTechGuideàtatsächlichàgenutzt?
+
+DieàWebanwendungàtrifftàeinenàkonkretenàBedarfààundàsenktàjedeàEinstiegshürde:
+
+-à**Nullbarriere**ààkeinàDownload,àkeinàLogin,àkeinàAbo
+-à**MobileràKontext**ààidealàimàWartezimmeràoderànachàdemàArztgespräch
+-à**BreiteàZielgruppe**ààPatienten,àAngehörige,àPflegepersonal,àSchüler,àStudierende
+-à**EchteàEntscheidungshilfe**ààVergleichsmodusàmitàklareràBewertung
+-à**EmotionaleràMehrwert**ààSelbsttestsàschaffenàpersönlicheàRelevanz
+
+---
+
+**MedTechGuide**ààweilàjederàdasàRechtàhat,àdieàeigeneàGesundheitàzuàverstehen.
+
+_Webanwendungà——·à10àKategorienà——·àVergleichsmodusà——·àQuizà——·à7àSelbsttestsà——·àVolltext-Suche_

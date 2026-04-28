@@ -1,133 +1,133 @@
-ï»Â¿<!DOCTYPE html>
-<html lang="de">
-<head><meta charset="utf-8" /><title>Exoskelette –ÆÂ––•–•––ÂÂ––"" MedTechGuide</title><meta name="viewport" content="width=device-width, initial-scale=1.0" /><base href="../" /><link rel="stylesheet" href="css/style.css" /><script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.163.0/build/three.module.js","three/addons/":"https://unpkg.com/three@0.163.0/examples/jsm/"}}</script></head>
+ï»¿<!DOCTYPEàhtml>
+<htmlàlang="de">
+<head><metaàcharset="utf-8"à/><title>Exoskeletteà—Æ——•—•————""àMedTechGuide</title><metaàname="viewport"àcontent="width=device-width,àinitial-scale=1.0"à/><baseàhref="../"à/><linkàrel="stylesheet"àhref="css/style.css"à/><scriptàtype="importmap">{"imports":{"three":"https://unpkg.com/three@0.163.0/build/three.module.js","three/addons/":"https://unpkg.com/three@0.163.0/examples/jsm/"}}</script></head>
 <body>
-  <!-- –•––ÂÂ¢––¿ ACCESSIBILITY: Skip to Content Link -->
-  <a href="#main-content" class="skip-to-content">Zum Inhalt springen</a>
-  
-  <div id="loader"><div class="spinner"></div><p>Seite wird geladen–Â–¬¦</p></div>
-  <header class="site-header"><div class="container"><h1>Exoskelette</h1><p class="subtitle">Robotische Unterst–¼tzung in Reha, Industrie und Alltag</p></div></header>
-  <nav class="main-nav">
-    <div class="nav-container">
-      <div class="nav-links">
-        <a href="index.html">Start</a>
-        <a href="html/diabetes.html">Diabetes</a>
-        <a href="html/allergie.html">Allergien</a>
-        <a href="html/herz.html">Herz</a>
-        <a href="html/bildgebung.html">Bildgebung</a>
-        <a href="html/neurochips.html">Neurochips</a>
-        <a href="html/exoskelette.html" class="active">Exoskelette</a>
-        <a href="html/genetik.html">Genetik</a>
-        <a href="html/ki-diagnose.html">KI-Diagnose</a>
-        <a href="html/zukunft.html">Zukunft</a>
-        <a href="html/quiz.html" style="background: linear-gradient(135deg, #1e40af 0%, #0f766e 100%); color: white; font-weight: 700;">–ÆÂ––°–â¦––¸–â¦––½–âÂÂ––¯ Quiz</a>
-        <a href="html/self-tests.html" style="background: linear-gradient(135deg, #7c3aed 0%, #ec4899 100%); color: white; font-weight: 700;">–ÆÂ––°–â¦––¸–âÂÂ––§–âÂÂ––  Tests</a>
-        <a href="html/quellen.html">Quellen</a>
-      </div>
-      <div class="nav-search">
-        <input type="text" id="globalSearch" placeholder="Suche–Â–¬¦" aria-label="Globale Suche">
-        <span id="searchResults" class="search-results"></span>
-      </div>
-    </div>
-  </nav>
-  <main class="container" id="main-content">
-    <section class="section-card">
-      <h2>Einf–¼hrung</h2>
-      <p>Exoskelette sind tragbare Roboteranz–¼ge, die Kraft und Ausdauer erh–¶hen –ÆÂ––•–•––ÂÂ––"" oder verloren gegangene F–¤higkeiten wiederherstellen. In der Medizin werden Sie f–¼r Rehabilitation nach Schlaganfall oder R–¼ckenmarksverletzung eingesetzt. In der Industrie unterst–¼tzen Sie Arbeiter beim Heben. Im Alltag k–¶nnten Sie –¤lteren Menschen helfen, Autonomie zu bewahren.</p>
-    </section>
-    <section class="section-card">
-      <h2>Kurz erkl–¤rt</h2>
-      <p>Ein Exoskelett besteht aus: <strong>Sensoren</strong> (messen K–¶rperposition, Muskelaktivit–¤t), <strong>Aktuatoren</strong> (Motor-Gelenke), <strong>Struktur</strong> (Rahmen), <strong>Batterie</strong>, <strong>Kontrolle</strong> (Algorithmus). Der Algorithmus entscheidet, wann und wie viel Kraft die Motoren aufbringen sollen.</p>
-    </section>
-    <section class="section-card imaging-3d-card" data-three-viewer data-model-label="Fahrzeugmodell" data-model-path="data/models/bmw.glb" data-fallback-model="bmw" data-target-size="2.45">
-      <h2>3D-Modell: BMW GLB</h2>
-      <p class="imaging-3d-model-caption">Ein Fahrzeugmodell als anschauliches Beispiel fuer integrierte Technik.</p>
-      <div class="imaging-3d-controls" role="group" aria-label="Steuerung fuer das 3D-Modell BMW GLB">
-        <button type="button" data-action="reload">Modell neu laden</button>
-        <button type="button" data-action="reset">Ansicht zur–¼cksetzen</button>
-        <button type="button" data-action="autorotate" aria-pressed="false">Rotation aus</button>
-      </div>
-      <p class="imaging-3d-status" aria-live="polite">Modell wird geladen...</p>
-      <div class="imaging-3d-viewer" aria-label="Interaktiver 3D-Viewer fuer BMW GLB"></div>
-      <p class="imaging-3d-hint">
-        <span class="imaging-hint-desktop">Steuerung: Linke Maustaste drehen, Mausrad zoomen, rechte Maustaste verschieben.</span>
-        <span class="imaging-hint-mobile">Handy: Mit einem Finger drehen, mit zwei Fingern zoomen und verschieben.</span>
-      </p>
-    </section>
-    <figure class="section-image">
-      <img src="images/exoskelette-1.jpg" alt="Exoskelette und motorische Unterst–¼tzungssysteme" />
-      <figcaption>Tragbare Roboter: Exoskelette verst–¤rken menschliche Kraft und erm–¶glichen Mobilit–¤t f–¼r Menschen mit Bewegungseinschr–¤nkungen.</figcaption>
-    </figure>
-    <section class="section-card">
-      <h2>Technische Funktionsweise</h2>
-      <h3>Sensoren</h3>
-      <p><strong>IMU</strong> (Inertiale Messeinheit): Beschleunigungsmesser und Gyroskope messen Bewegung. <strong>Muskelaktivit–¤tssensoren</strong> (EMG): Elektromyographie misst elektrische Aktivit–¤t der Muskeln. <strong>Positionssensoren</strong>: Encoder an Gelenken.</p>
-      <h3>Aktuatoren</h3>
-      <p>Elektromotoren mit Getrieben erzeugen Drehmoment an Gelenken. Typisch 5–ÆÂ––•–•––ÂÂ––""50 Nm an H–¼fte/Knie. Schnelle Reaktion (<50 ms) erforderlich.</p>
-      <h3>Kontrolle</h3>
-      <p>Der Controller liest Sensoren und aktiviert Motoren. <strong>Passive Exos</strong>: Mechanische Federn unterst–¼tzen. <strong>Aktive Exos</strong>: Motoren steuern Bewegung, oft mit Feedback-Kontrolle. <strong>Intelligente Exos</strong>: Machine Learning passt Unterst–¼tzung an Nutzermuster an.</p>
-    </section>
-    <section class="section-card">
-      <h3>Vergleichstabelle: Exoskelett-Typen</h3>
-      <table>
-        <thead><tr><th>Typ</th><th>Anwendung</th><th>Motorisiert</th><th>Gewicht</th><th>Batterielebensdauer</th><th>Kosten</th></tr></thead>
-        <tbody>
-          <tr><td>ReWalk (Rehabilitation)</td><td>Gehtraining nach R–¼ckenmarksverletzung</td><td>Ja</td><td>24 kg</td><td>2–ÆÂ––•–•––ÂÂ––""3 h</td><td>–ÆÂ––•–•––Â–¬––ÅÂ¡–âÂÂ––"–ÆÂ––•–•––Â–¬––ÅÂ¡–âÂÂ––"–ÆÂ––•–•––Â–¬––ÅÂ¡–âÂÂ––"–ÆÂ––•–•––Â–¬––ÅÂ¡–âÂÂ––"–ÆÂ––•–•––Â–¬––ÅÂ¡–âÂÂ––"</td></tr>
-          <tr><td>Ekso GT (Industrie)</td><td>Armunterst–¼tzung beim Overhead-Arbeiten</td><td>Ja</td><td>3.6 kg (Arm)</td><td>8 h</td><td>–ÆÂ––•–•––Â–¬––ÅÂ¡–âÂÂ––"–ÆÂ––•–•––Â–¬––ÅÂ¡–âÂÂ––"–ÆÂ––•–•––Â–¬––ÅÂ¡–âÂÂ––"–ÆÂ––•–•––Â–¬––ÅÂ¡–âÂÂ––"</td></tr>
-          <tr><td>Passive Exos</td><td>Langzeitunterst–¼tzung, Alltag</td><td>Nein</td><td>1–ÆÂ––•–•––ÂÂ––""3 kg</td><td>Keine (mechanisch)</td><td>–ÆÂ––•–•––Â–¬––ÅÂ¡–âÂÂ––"–ÆÂ––•–•––Â–¬––ÅÂ¡–âÂÂ––"–ÆÂ––•–•––Â–¬––ÅÂ¡–âÂÂ––"</td></tr>
-          <tr><td>LUKE Arm (Prothese)</td><td>Prothesenersatz mit motorischer Kontrolle</td><td>Ja</td><td>3.3 kg</td><td>? (experimentell)</td><td>–ÆÂ––•–•––Â–¬––ÅÂ¡–âÂÂ––"–ÆÂ––•–•––Â–¬––ÅÂ¡–âÂÂ––"–ÆÂ––•–•––Â–¬––ÅÂ¡–âÂÂ––"–ÆÂ––•–•––Â–¬––ÅÂ¡–âÂÂ––"–ÆÂ––•–•––Â–¬––ÅÂ¡–âÂÂ––"</td></tr>
-          <tr><td>Lokomat (Therapie)</td><td>Station–¤res Gehtraining</td><td>Ja</td><td>Station–¤r</td><td>Netzgebunden</td><td>–ÆÂ––•–•––Â–¬––ÅÂ¡–âÂÂ––"–ÆÂ––•–•––Â–¬––ÅÂ¡–âÂÂ––"–ÆÂ––•–•––Â–¬––ÅÂ¡–âÂÂ––"–ÆÂ––•–•––Â–¬––ÅÂ¡–âÂÂ––"–ÆÂ––•–•––Â–¬––ÅÂ¡–âÂÂ––"</td></tr>
-        </tbody>
-      </table>
-    </section>
-    <section class="section-card">
-      <h2>Anwendungsbeispiel</h2>
-      <p>Peter, 38, erlitt vor 2 Jahren eine R–¼ckenmarksquestache bei L4 –ÆÂ––•–•––ÂÂ––"" Querschnittsl–¤hmung. Mit einem ReWalk-Exoskelett macht er t–¤gliches Gehtraining. Der Exo erkennt seinen Oberk–¶rper-Balanceversuch und steuert Beine koordiniert. Nach 3 Monaten kann Peter mit Kr–¼cken gehen –ÆÂ––•–•––ÂÂ––"" etwas Muskeltonus kehrt zur–¼ck. Nach 1 Jahr verbessert sich sein Gef–¼hl partienweise. Das Exoskelett verbessert psychische Gesundheit und kardiovaskul–¤re Fitness erheblich.</p>
-    </section>
-    <section class="section-card">
-      <h2>Vorteile und Grenzen</h2>
-      <ul><li>Helfen Patient:innen, normale Aktivit–¤ten auszuf–¼hren</li><li>Arbeiter vor –ÆÂ––ÆÂ–â¦––"berlastung sch–¼tzen</li><li>Therapie-Effekt durch Bewegung</li><li>Unabh–¤ngigkeit erh–¶hen</li></ul>
-      <ul><li>Hohe Kosten</li><li>Gewicht und Tragekomfort</li><li>Batterielebensdauer begrenzt</li><li>Komplexit–¤t; Nutzer-Training erforderlich</li></ul>
-    </section>
-    <section class="section-card">
-      <h2>Gesellschaftliche Relevanz</h2>
-      <p>Exoskelette k–¶nnten –¤lteren Menschen Autonomie bewahren. Sie k–¶nnten Industrie-Arbeitsbelastung reduzieren. Allerdings: Hohe Kosten begrenzen Zugang. Datenschutz (Bewegungsmuster werden gesammelt).</p>
-    </section>
-    <section class="section-card">
-      <h2>Zukunftsperspektiven</h2>
-      <p>Leichtere Materialien (Graphen, Kohlefaser). Bessere Batterien (Solid-state). AI-Vorhersage von Nutzerbewegung. Neural-Integration mit BCIs. Affordable Designs f–¼r Schwellenl–¤nder.</p>
-    </section>
-    <section class="section-card tech-challenges">
-      <h2>Technische Herausforderungen</h2>
-      <div class="challenge-item"><h4>Gewicht und Balance</h4><p>Das Exoskelett selbst sollte nicht mehr wiegen als die Kraftunterst–¼tzung bringt –ÆÂ––•–•––ÂÂ––"" ein Balance-Akt.</p></div>
-      <div class="challenge-item"><h4>Energieeffizienz</h4><p>Motoreneffizienz, Batterie-Dichte, Verlustleistung. Tageslange Nutzung erfordert massive Energiedichte.</p></div>
-      <div class="challenge-item"><h4>Kontrollalgorithmen</h4><p>Muss schnell (< 100 ms) und zuverl–¤ssig funktionieren. Machine Learning muss Nutzerbewegung vorhersagen.</p></div>
-      <div class="challenge-item"><h4>Anpassung an Individuen</h4><p>Jede Person hat andere Proportionen, Kraft, Bewegungsmuster. Individuelle Kalibrierung n–¶tig.</p></div>
-      <div class="challenge-item"><h4>Sicherheit</h4><p>Ein fehlerhafter Exo k–¶nnte den Nutzer verletzen. Redundanz und Fail-Safe Systeme essentiell.</p></div>
-    </section>
-    <section class="section-card glossar">
-      <h2>Glossar</h2>
-      <div class="glossar-term"><dt>Aktuator</dt><dd>Motor oder Muskelersatz, der Kraft erzeugt. In Exos: elektrische Motoren mit Getrieben.</dd></div>
-      <div class="glossar-term"><dt>IMU (Inertiale Messeinheit)</dt><dd>Sensor mit Beschleunigungsmesser und Gyroskop. Misst 3D-Bewegung und Orientierung.</dd></div>
-      <div class="glossar-term"><dt>EMG (Elektromyographie)</dt><dd>Messung der elektrischen Aktivit–¤t von Muskeln. Kann Bewegungsintention fr–¼h erkennen.</dd></div>
-      <div class="glossar-term"><dt>Drehmoment</dt><dd>Rotationskraft an einem Gelenk. Gemessen in Newton-Meter (Nm).</dd></div>
-      <div class="glossar-term"><dt>R–¼ckmeldung (Feedback)</dt><dd>Kontrolle-System, das Sensorausgabe misst und Aktuatoren entsprechend anpasst.</dd></div>
-    </section>
-    <section class="section-card">
-      <h2>Informatik-Reflexion</h2>
-      <p>Exoskelette brauchen: <strong>Embedded Real-time Control</strong>, <strong>Sensor-Fusion</strong> (mehrere Inputs kombinieren), <strong>Predictive Algorithms</strong> (anticipate Nutzer-Bewegung), <strong>Sicherheit</strong> (Safety-kritisch), <strong>Machine Learning f–¼r Personalisierung</strong>, <strong>Batterie-Management</strong>.</p>
-    </section>
-    <section class="section-card related-links">
-      <h2>Weiterf–¼hrende Links & Quellen</h2>
-      <ul id="related-links"></ul>
-    </section>
-    <div class="privacy-notice"><p><strong>Datenschutz:</strong> Diese Website speichert keine Daten. Keine Cookies oder Tracking-Tools.</p></div>
-  </main>
-  <footer class="site-footer"><div class="container"><p>&copy; 2026 MedTechGuide – Schulprojekt HTL Informatik</p><p><a href="html/quellen.html">–ÆÂ––ÆÂ–â¦––"ber die wissenschaftlichen Quellen</a></p></div></footer>
-  <button class="scroll-to-top" id="scrollToTopBtn" aria-label="Nach oben scrollen">–ÆÂ––•–•––Â–¬–– '</button>
-  <script type="module" src="js/topic-3d-viewer.js"></script>
-  <script src="js/script.js"></script>
-  <script>window.addEventListener("load", () => { const loader = document.getElementById("loader"); if (loader) { loader.classList.add("hidden"); setTimeout(() => { loader.style.display = "none"; }, 500); } setActiveNavLink(); setRelatedLinks('exoskelette'); });</script>
+àà<!--à—•——¢——¿àACCESSIBILITY:àSkipàtoàContentàLinkà-->
+àà<aàhref="#main-content"àclass="skip-to-content">ZumàInhaltàspringen</a>
+àà
+àà<divàid="loader"><divàclass="spinner"></div><p>Seiteàwirdàgeladen——¬¦</p></div>
+àà<headeràclass="site-header"><divàclass="container"><h1>Exoskelette</h1><pàclass="subtitle">RobotischeàUnterst—ützungàinàReha,àIndustrieàundàAlltag</p></div></header>
+àà<navàclass="main-nav">
+àààà<divàclass="nav-container">
+àààààà<divàclass="nav-links">
+àààààààà<aàhref="index.html">Start</a>
+àààààààà<aàhref="html/diabetes.html">Diabetes</a>
+àààààààà<aàhref="html/allergie.html">Allergien</a>
+àààààààà<aàhref="html/herz.html">Herz</a>
+àààààààà<aàhref="html/bildgebung.html">Bildgebung</a>
+àààààààà<aàhref="html/neurochips.html">Neurochips</a>
+àààààààà<aàhref="html/exoskelette.html"àclass="active">Exoskelette</a>
+àààààààà<aàhref="html/genetik.html">Genetik</a>
+àààààààà<aàhref="html/ki-diagnose.html">KI-Diagnose</a>
+àààààààà<aàhref="html/zukunft.html">Zukunft</a>
+àààààààà<aàhref="html/quiz.html"àstyle="background:àlinear-gradient(135deg,à#1e40afà0%,à#0f766eà100%);àcolor:àwhite;àfont-weight:à700;">—Æ°—¦——¸—¦——½———¯àQuiz</a>
+àààààààà<aàhref="html/self-tests.html"àstyle="background:àlinear-gradient(135deg,à#7c3aedà0%,à#ec4899à100%);àcolor:àwhite;àfont-weight:à700;">—Æ°—¦——¸———ç——— àTests</a>
+àààààààà<aàhref="html/quellen.html">Quellen</a>
+àààààà</div>
+àààààà<divàclass="nav-search">
+àààààààà<inputàtype="text"àid="globalSearch"àplaceholder="Suche——¬¦"àaria-label="GlobaleàSuche">
+àààààààà<spanàid="searchResults"àclass="search-results"></span>
+àààààà</div>
+àààà</div>
+àà</nav>
+àà<mainàclass="container"àid="main-content">
+àààà<sectionàclass="section-card">
+àààààà<h2>Einf—ührung</h2>
+àààààà<p>ExoskeletteàsindàtragbareàRoboteranz—üge,àdieàKraftàundàAusdaueràerh—öhenà—Æ——•—•————""àoderàverlorenàgegangeneàF—ähigkeitenàwiederherstellen.àInàderàMedizinàwerdenàSieàf—üràRehabilitationànachàSchlaganfallàoderàR—ückenmarksverletzungàeingesetzt.àInàderàIndustrieàunterst—ützenàSieàArbeiteràbeimàHeben.àImàAlltagàk—önntenàSieà—älterenàMenschenàhelfen,àAutonomieàzuàbewahren.</p>
+àààà</section>
+àààà<sectionàclass="section-card">
+àààààà<h2>Kurzàerkl—ärt</h2>
+àààààà<p>EinàExoskelettàbestehtàaus:à<strong>Sensoren</strong>à(messenàK—örperposition,àMuskelaktivit—ät),à<strong>Aktuatoren</strong>à(Motor-Gelenke),à<strong>Struktur</strong>à(Rahmen),à<strong>Batterie</strong>,à<strong>Kontrolle</strong>à(Algorithmus).àDeràAlgorithmusàentscheidet,àwannàundàwieàvielàKraftàdieàMotorenàaufbringenàsollen.</p>
+àààà</section>
+àààà<sectionàclass="section-cardàimaging-3d-card"àdata-three-vieweràdata-model-label="Fahrzeugmodell"àdata-model-path="data/models/bmw.glb"àdata-fallback-model="bmw"àdata-target-size="2.45">
+àààààà<h2>3D-Modell:àBMWàGLB</h2>
+àààààà<pàclass="imaging-3d-model-caption">EinàFahrzeugmodellàalsàanschaulichesàBeispielàfueràintegrierteàTechnik.</p>
+àààààà<divàclass="imaging-3d-controls"àrole="group"àaria-label="Steuerungàfueràdasà3D-ModellàBMWàGLB">
+àààààààà<buttonàtype="button"àdata-action="reload">Modellàneuàladen</button>
+àààààààà<buttonàtype="button"àdata-action="reset">Ansichtàzur—ücksetzen</button>
+àààààààà<buttonàtype="button"àdata-action="autorotate"àaria-pressed="false">Rotationàaus</button>
+àààààà</div>
+àààààà<pàclass="imaging-3d-status"àaria-live="polite">Modellàwirdàgeladen...</p>
+àààààà<divàclass="imaging-3d-viewer"àaria-label="Interaktiverà3D-VieweràfueràBMWàGLB"></div>
+àààààà<pàclass="imaging-3d-hint">
+àààààààà<spanàclass="imaging-hint-desktop">Steuerung:àLinkeàMaustasteàdrehen,àMausradàzoomen,àrechteàMaustasteàverschieben.</span>
+àààààààà<spanàclass="imaging-hint-mobile">Handy:àMitàeinemàFingeràdrehen,àmitàzweiàFingernàzoomenàundàverschieben.</span>
+àààààà</p>
+àààà</section>
+àààà<figureàclass="section-image">
+àààààà<imgàsrc="images/exoskelette-1.jpg"àalt="ExoskeletteàundàmotorischeàUnterst—ützungssysteme"à/>
+àààààà<figcaption>TragbareàRoboter:àExoskeletteàverst—ärkenàmenschlicheàKraftàundàerm—öglichenàMobilit—ätàf—üràMenschenàmitàBewegungseinschr—änkungen.</figcaption>
+àààà</figure>
+àààà<sectionàclass="section-card">
+àààààà<h2>TechnischeàFunktionsweise</h2>
+àààààà<h3>Sensoren</h3>
+àààààà<p><strong>IMU</strong>à(InertialeàMesseinheit):àBeschleunigungsmesseràundàGyroskopeàmessenàBewegung.à<strong>Muskelaktivit—ätssensoren</strong>à(EMG):àElektromyographieàmisstàelektrischeàAktivit—ätàderàMuskeln.à<strong>Positionssensoren</strong>:àEncoderàanàGelenken.</p>
+àààààà<h3>Aktuatoren</h3>
+àààààà<p>ElektromotorenàmitàGetriebenàerzeugenàDrehmomentàanàGelenken.àTypischà5—Æ——•—•————""50àNmàanàH—üfte/Knie.àSchnelleàReaktionà(<50àms)àerforderlich.</p>
+àààààà<h3>Kontrolle</h3>
+àààààà<p>DeràControlleràliestàSensorenàundàaktiviertàMotoren.à<strong>PassiveàExos</strong>:àMechanischeàFedernàunterst—ützen.à<strong>AktiveàExos</strong>:àMotorenàsteuernàBewegung,àoftàmitàFeedback-Kontrolle.à<strong>IntelligenteàExos</strong>:àMachineàLearningàpasstàUnterst—ützungàanàNutzermusteràan.</p>
+àààà</section>
+àààà<sectionàclass="section-card">
+àààààà<h3>Vergleichstabelle:àExoskelett-Typen</h3>
+àààààà<table>
+àààààààà<thead><tr><th>Typ</th><th>Anwendung</th><th>Motorisiert</th><th>Gewicht</th><th>Batterielebensdauer</th><th>Kosten</th></tr></thead>
+àààààààà<tbody>
+àààààààààà<tr><td>ReWalkà(Rehabilitation)</td><td>GehtrainingànachàR—ückenmarksverletzung</td><td>Ja</td><td>24àkg</td><td>2—Æ——•—•————""3àh</td><td>—Æ——•—•———¬——Å¡———"—Æ——•—•———¬——Å¡———"—Æ——•—•———¬——Å¡———"—Æ——•—•———¬——Å¡———"—Æ——•—•———¬——Å¡———"</td></tr>
+àààààààààà<tr><td>EksoàGTà(Industrie)</td><td>Armunterst—ützungàbeimàOverhead-Arbeiten</td><td>Ja</td><td>3.6àkgà(Arm)</td><td>8àh</td><td>—Æ——•—•———¬——Å¡———"—Æ——•—•———¬——Å¡———"—Æ——•—•———¬——Å¡———"—Æ——•—•———¬——Å¡———"</td></tr>
+àààààààààà<tr><td>PassiveàExos</td><td>Langzeitunterst—ützung,àAlltag</td><td>Nein</td><td>1—Æ——•—•————""3àkg</td><td>Keineà(mechanisch)</td><td>—Æ——•—•———¬——Å¡———"—Æ——•—•———¬——Å¡———"—Æ——•—•———¬——Å¡———"</td></tr>
+àààààààààà<tr><td>LUKEàArmà(Prothese)</td><td>ProthesenersatzàmitàmotorischeràKontrolle</td><td>Ja</td><td>3.3àkg</td><td>?à(experimentell)</td><td>—Æ——•—•———¬——Å¡———"—Æ——•—•———¬——Å¡———"—Æ——•—•———¬——Å¡———"—Æ——•—•———¬——Å¡———"—Æ——•—•———¬——Å¡———"</td></tr>
+àààààààààà<tr><td>Lokomatà(Therapie)</td><td>Station—äresàGehtraining</td><td>Ja</td><td>Station—är</td><td>Netzgebunden</td><td>—Æ——•—•———¬——Å¡———"—Æ——•—•———¬——Å¡———"—Æ——•—•———¬——Å¡———"—Æ——•—•———¬——Å¡———"—Æ——•—•———¬——Å¡———"</td></tr>
+àààààààà</tbody>
+àààààà</table>
+àààà</section>
+àààà<sectionàclass="section-card">
+àààààà<h2>Anwendungsbeispiel</h2>
+àààààà<p>Peter,à38,àerlittàvorà2àJahrenàeineàR—ückenmarksquestacheàbeiàL4à—Æ——•—•————""àQuerschnittsl—ähmung.àMitàeinemàReWalk-Exoskelettàmachtàeràt—äglichesàGehtraining.àDeràExoàerkenntàseinenàOberk—örper-BalanceversuchàundàsteuertàBeineàkoordiniert.àNachà3àMonatenàkannàPeteràmitàKr—ückenàgehenà—Æ——•—•————""àetwasàMuskeltonusàkehrtàzur—ück.àNachà1àJahràverbessertàsichàseinàGef—ühlàpartienweise.àDasàExoskelettàverbessertàpsychischeàGesundheitàundàkardiovaskul—äreàFitnessàerheblich.</p>
+àààà</section>
+àààà<sectionàclass="section-card">
+àààààà<h2>VorteileàundàGrenzen</h2>
+àààààà<ul><li>HelfenàPatient:innen,ànormaleàAktivit—ätenàauszuf—ühren</li><li>Arbeiteràvorà—Æ——Æ—¦——"berlastungàsch—ützen</li><li>Therapie-EffektàdurchàBewegung</li><li>Unabh—ängigkeitàerh—öhen</li></ul>
+àààààà<ul><li>HoheàKosten</li><li>GewichtàundàTragekomfort</li><li>Batterielebensdaueràbegrenzt</li><li>Komplexit—ät;àNutzer-Trainingàerforderlich</li></ul>
+àààà</section>
+àààà<sectionàclass="section-card">
+àààààà<h2>GesellschaftlicheàRelevanz</h2>
+àààààà<p>Exoskeletteàk—önntenà—älterenàMenschenàAutonomieàbewahren.àSieàk—önntenàIndustrie-Arbeitsbelastungàreduzieren.àAllerdings:àHoheàKostenàbegrenzenàZugang.àDatenschutzà(Bewegungsmusteràwerdenàgesammelt).</p>
+àààà</section>
+àààà<sectionàclass="section-card">
+àààààà<h2>Zukunftsperspektiven</h2>
+àààààà<p>LeichtereàMaterialienà(Graphen,àKohlefaser).àBessereàBatterienà(Solid-state).àAI-VorhersageàvonàNutzerbewegung.àNeural-IntegrationàmitàBCIs.àAffordableàDesignsàf—üràSchwellenl—änder.</p>
+àààà</section>
+àààà<sectionàclass="section-cardàtech-challenges">
+àààààà<h2>TechnischeàHerausforderungen</h2>
+àààààà<divàclass="challenge-item"><h4>GewichtàundàBalance</h4><p>DasàExoskelettàselbstàsollteànichtàmehràwiegenàalsàdieàKraftunterst—ützungàbringtà—Æ——•—•————""àeinàBalance-Akt.</p></div>
+àààààà<divàclass="challenge-item"><h4>Energieeffizienz</h4><p>Motoreneffizienz,àBatterie-Dichte,àVerlustleistung.àTageslangeàNutzungàerfordertàmassiveàEnergiedichte.</p></div>
+àààààà<divàclass="challenge-item"><h4>Kontrollalgorithmen</h4><p>Mussàschnellà(<à100àms)àundàzuverl—ässigàfunktionieren.àMachineàLearningàmussàNutzerbewegungàvorhersagen.</p></div>
+àààààà<divàclass="challenge-item"><h4>AnpassungàanàIndividuen</h4><p>JedeàPersonàhatàandereàProportionen,àKraft,àBewegungsmuster.àIndividuelleàKalibrierungàn—ötig.</p></div>
+àààààà<divàclass="challenge-item"><h4>Sicherheit</h4><p>EinàfehlerhafteràExoàk—önnteàdenàNutzeràverletzen.àRedundanzàundàFail-SafeàSystemeàessentiell.</p></div>
+àààà</section>
+àààà<sectionàclass="section-cardàglossar">
+àààààà<h2>Glossar</h2>
+àààààà<divàclass="glossar-term"><dt>Aktuator</dt><dd>MotoràoderàMuskelersatz,àderàKraftàerzeugt.àInàExos:àelektrischeàMotorenàmitàGetrieben.</dd></div>
+àààààà<divàclass="glossar-term"><dt>IMUà(InertialeàMesseinheit)</dt><dd>SensoràmitàBeschleunigungsmesseràundàGyroskop.àMisstà3D-BewegungàundàOrientierung.</dd></div>
+àààààà<divàclass="glossar-term"><dt>EMGà(Elektromyographie)</dt><dd>MessungàderàelektrischenàAktivit—ätàvonàMuskeln.àKannàBewegungsintentionàfr—ühàerkennen.</dd></div>
+àààààà<divàclass="glossar-term"><dt>Drehmoment</dt><dd>RotationskraftàanàeinemàGelenk.àGemessenàinàNewton-Meterà(Nm).</dd></div>
+àààààà<divàclass="glossar-term"><dt>R—ückmeldungà(Feedback)</dt><dd>Kontrolle-System,àdasàSensorausgabeàmisstàundàAktuatorenàentsprechendàanpasst.</dd></div>
+àààà</section>
+àààà<sectionàclass="section-card">
+àààààà<h2>Informatik-Reflexion</h2>
+àààààà<p>Exoskeletteàbrauchen:à<strong>EmbeddedàReal-timeàControl</strong>,à<strong>Sensor-Fusion</strong>à(mehrereàInputsàkombinieren),à<strong>PredictiveàAlgorithms</strong>à(anticipateàNutzer-Bewegung),à<strong>Sicherheit</strong>à(Safety-kritisch),à<strong>MachineàLearningàf—üràPersonalisierung</strong>,à<strong>Batterie-Management</strong>.</p>
+àààà</section>
+àààà<sectionàclass="section-cardàrelated-links">
+àààààà<h2>Weiterf—ührendeàLinksà&àQuellen</h2>
+àààààà<ulàid="related-links"></ul>
+àààà</section>
+àààà<divàclass="privacy-notice"><p><strong>Datenschutz:</strong>àDieseàWebsiteàspeichertàkeineàDaten.àKeineàCookiesàoderàTracking-Tools.</p></div>
+àà</main>
+àà<footeràclass="site-footer"><divàclass="container"><p>&copy;à2026àMedTechGuideà—àSchulprojektàHTLàInformatik</p><p><aàhref="html/quellen.html">—Æ——Æ—¦——"beràdieàwissenschaftlichenàQuellen</a></p></div></footer>
+àà<buttonàclass="scroll-to-top"àid="scrollToTopBtn"àaria-label="Nachàobenàscrollen">—Æ——•—•———¬—— '</button>
+àà<scriptàtype="module"àsrc="js/topic-3d-viewer.js"></script>
+àà<scriptàsrc="js/script.js"></script>
+àà<script>window.addEventListener("load",à()à=>à{àconstàloaderà=àdocument.getElementById("loader");àifà(loader)à{àloader.classList.add("hidden");àsetTimeout(()à=>à{àloader.style.displayà=à"none";à},à500);à}àsetActiveNavLink();àsetRelatedLinks('exoskelette');à});</script>
 </body>
 </html>
 

@@ -1,82 +1,82 @@
-const fs = require('fs');
-const path = require('path');
+constàfsà=àrequire('fs');
+constàpathà=àrequire('path');
 
-let fixed = 0;
+letàfixedà=à0;
 
-function fixFile(filePath) {
-  try {
-    let content = fs.readFileSync(filePath, 'latin1');
-    const original = content;
-    
-    // Manuell: Ersetze die problematischen Sequenzen
-    // En-dash
-    content = content.split('\u00e2\u0080\u0093').join('â');
-    // Em-dash  
-    content = content.split('\u00e2\u0080\u0094').join('â');
-    // Left quote
-    content = content.split('\u00e2\u0080\u009c').join('"');
-    // Right quote
-    content = content.split('\u00e2\u0080\u009d').join('"');
-    // Right single quote
-    content = content.split('\u00e2\u0080\u0099').join("'");
-    // Left single quote
-    content = content.split('\u00e2\u0080\u0098').join("'");
-    // Bullet
-    content = content.split('\u00e2\u0080\u00a2').join('â¢');
-    // Ellipsis
-    content = content.split('\u00e2\u0080\u00a6').join('â¦');
-    
-    // Sonderzeichen
-    content = content.split('\u00c2\u00ab').join('«');
-    content = content.split('\u00c2\u00bb').join('»');
-    content = content.split('\u00c2\u00b0').join('°');
-    
-    // Umlaute
-    content = content.split('\u00c3\u00bc').join('ü');
-    content = content.split('\u00c3\u00b6').join('ö');
-    content = content.split('\u00c3\u00a4').join('ä');
-    content = content.split('\u00c3\u00a9').join('é');
-    content = content.split('\u00c3\u00a0').join('à');
-    content = content.split('\u00c3\u00a7').join('ç');
-    content = content.split('\u00c3\u00a1').join('á');
-    content = content.split('\u00c3\u00ad').join('í');
-    content = content.split('\u00c3\u00b3').join('ó');
-    content = content.split('\u00c3\u00b9').join('ù');
-    content = content.split('\u00c3\u00b1').join('ñ');
-    content = content.split('\u00c3\u0084').join('Ä');
-    content = content.split('\u00c3\u0096').join('Ö');
-    content = content.split('\u00c3\u0099').join('–');
-    
-    if (content !== original) {
-      fs.writeFileSync(filePath, content, 'utf8');
-      console.log('Fixed: ' + path.relative('C:\\WMC\\Projekt_25', filePath));
-      return true;
-    }
-  } catch (e) {
-    console.log('Skip: ' + filePath);
-  }
-  return false;
+functionàfixFile(filePath)à{
+ààtryà{
+ààààletàcontentà=àfs.readFileSync(filePath,à'latin1');
+ààààconstàoriginalà=àcontent;
+àààà
+àààà//àManuell:àErsetzeàdieàproblematischenàSequenzen
+àààà//àEn-dash
+ààààcontentà=àcontent.split('\u00e2\u0080\u0093').join('');
+àààà//àEm-dashàà
+ààààcontentà=àcontent.split('\u00e2\u0080\u0094').join('');
+àààà//àLeftàquote
+ààààcontentà=àcontent.split('\u00e2\u0080\u009c').join('"');
+àààà//àRightàquote
+ààààcontentà=àcontent.split('\u00e2\u0080\u009d').join('"');
+àààà//àRightàsingleàquote
+ààààcontentà=àcontent.split('\u00e2\u0080\u0099').join("'");
+àààà//àLeftàsingleàquote
+ààààcontentà=àcontent.split('\u00e2\u0080\u0098').join("'");
+àààà//àBullet
+ààààcontentà=àcontent.split('\u00e2\u0080\u00a2').join('¢');
+àààà//àEllipsis
+ààààcontentà=àcontent.split('\u00e2\u0080\u00a6').join('¦');
+àààà
+àààà//àSonderzeichen
+ààààcontentà=àcontent.split('\u00c2\u00ab').join('«');
+ààààcontentà=àcontent.split('\u00c2\u00bb').join('»');
+ààààcontentà=àcontent.split('\u00c2\u00b0').join('°');
+àààà
+àààà//àUmlaute
+ààààcontentà=àcontent.split('\u00c3\u00bc').join('ü');
+ààààcontentà=àcontent.split('\u00c3\u00b6').join('ö');
+ààààcontentà=àcontent.split('\u00c3\u00a4').join('ä');
+ààààcontentà=àcontent.split('\u00c3\u00a9').join('é');
+ààààcontentà=àcontent.split('\u00c3\u00a0').join('à');
+ààààcontentà=àcontent.split('\u00c3\u00a7').join('ç');
+ààààcontentà=àcontent.split('\u00c3\u00a1').join('á');
+ààààcontentà=àcontent.split('\u00c3\u00ad').join('í');
+ààààcontentà=àcontent.split('\u00c3\u00b3').join('ó');
+ààààcontentà=àcontent.split('\u00c3\u00b9').join('ù');
+ààààcontentà=àcontent.split('\u00c3\u00b1').join('ñ');
+ààààcontentà=àcontent.split('\u00c3\u0084').join('Ä');
+ààààcontentà=àcontent.split('\u00c3\u0096').join('Ö');
+ààààcontentà=àcontent.split('\u00c3\u0099').join('—');
+àààà
+ààààifà(contentà!==àoriginal)à{
+ààààààfs.writeFileSync(filePath,àcontent,à'utf8');
+ààààààconsole.log('Fixed:à'à+àpath.relative('C:\\WMC\\Projekt_25',àfilePath));
+ààààààreturnàtrue;
+àààà}
+àà}àcatchà(e)à{
+ààààconsole.log('Skip:à'à+àfilePath);
+àà}
+ààreturnàfalse;
 }
 
-function walkDir(dir) {
-  try {
-    const entries = fs.readdirSync(dir, { withFileTypes: true });
-    
-    for (const entry of entries) {
-      const fullPath = path.join(dir, entry.name);
-      
-      if (entry.isDirectory() && !['node_modules', '.git'].includes(entry.name)) {
-        walkDir(fullPath);
-      } else if (entry.isFile() && /\.(html|js|css|json|md)$/.test(entry.name)) {
-        if (fixFile(fullPath)) {
-          fixed++;
-        }
-      }
-    }
-  } catch (e) {
-    // ignore
-  }
+functionàwalkDir(dir)à{
+ààtryà{
+ààààconstàentriesà=àfs.readdirSync(dir,à{àwithFileTypes:àtrueà});
+àààà
+ààààforà(constàentryàofàentries)à{
+ààààààconstàfullPathà=àpath.join(dir,àentry.name);
+àààààà
+ààààààifà(entry.isDirectory()à&&à!['node_modules',à'.git'].includes(entry.name))à{
+ààààààààwalkDir(fullPath);
+àààààà}àelseàifà(entry.isFile()à&&à/\.(html|js|css|json|md)$/.test(entry.name))à{
+ààààààààifà(fixFile(fullPath))à{
+ààààààààààfixed++;
+àààààààà}
+àààààà}
+àààà}
+àà}àcatchà(e)à{
+àààà//àignore
+àà}
 }
 
 walkDir('C:\\WMC\\Projekt_25');
-console.log('Fixed ' + fixed + ' files');
+console.log('Fixedà'à+àfixedà+à'àfiles');

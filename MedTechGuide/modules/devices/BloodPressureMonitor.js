@@ -1,84 +1,84 @@
-import * as THREE from 'three';
+importà*àasàTHREEàfromà'three';
 
-export function createBloodPressureMonitor(onStartMeasure) {
-  const root = new THREE.Group();
-  root.name = 'blood-root';
+exportàfunctionàcreateBloodPressureMonitor(onStartMeasure)à{
+ààconstàrootà=ànewàTHREE.Group();
+ààroot.nameà=à'blood-root';
 
-  const bodyMat = new THREE.MeshStandardMaterial({ color: '#e5ebf2', roughness: 0.38, metalness: 0.12 });
-  const darkMat = new THREE.MeshStandardMaterial({ color: '#23324b', roughness: 0.52, metalness: 0.2 });
+ààconstàbodyMatà=ànewàTHREE.MeshStandardMaterial({àcolor:à'#e5ebf2',àroughness:à0.38,àmetalness:à0.12à});
+ààconstàdarkMatà=ànewàTHREE.MeshStandardMaterial({àcolor:à'#23324b',àroughness:à0.52,àmetalness:à0.2à});
 
-  const unit = new THREE.Mesh(new THREE.BoxGeometry(3.5, 1.25, 1.55), bodyMat);
-  unit.position.y = -0.05;
-  root.add(unit);
+ààconstàunità=ànewàTHREE.Mesh(newàTHREE.BoxGeometry(3.5,à1.25,à1.55),àbodyMat);
+ààunit.position.yà=à-0.05;
+ààroot.add(unit);
 
-  const displayFrame = new THREE.Mesh(new THREE.BoxGeometry(1.85, 0.85, 0.14), darkMat);
-  displayFrame.position.set(-0.68, 0.2, 0.85);
-  root.add(displayFrame);
+ààconstàdisplayFrameà=ànewàTHREE.Mesh(newàTHREE.BoxGeometry(1.85,à0.85,à0.14),àdarkMat);
+ààdisplayFrame.position.set(-0.68,à0.2,à0.85);
+ààroot.add(displayFrame);
 
-  const display = new THREE.Mesh(
-    new THREE.PlaneGeometry(1.58, 0.62),
-    new THREE.MeshStandardMaterial({ color: '#0e2a48', emissive: '#061428', emissiveIntensity: 0.45 })
-  );
-  display.position.set(-0.68, 0.2, 0.93);
-  root.add(display);
+ààconstàdisplayà=ànewàTHREE.Mesh(
+àààànewàTHREE.PlaneGeometry(1.58,à0.62),
+àààànewàTHREE.MeshStandardMaterial({àcolor:à'#0e2a48',àemissive:à'#061428',àemissiveIntensity:à0.45à})
+àà);
+ààdisplay.position.set(-0.68,à0.2,à0.93);
+ààroot.add(display);
 
-  const startButton = new THREE.Mesh(
-    new THREE.CylinderGeometry(0.22, 0.22, 0.09, 26),
-    new THREE.MeshStandardMaterial({ color: '#45d980', emissive: '#0a5029', emissiveIntensity: 0.55 })
-  );
-  startButton.position.set(1.18, 0.14, 0.82);
-  startButton.rotation.x = Math.PI / 2;
-  startButton.name = 'bp-start';
-  root.add(startButton);
+ààconstàstartButtonà=ànewàTHREE.Mesh(
+àààànewàTHREE.CylinderGeometry(0.22,à0.22,à0.09,à26),
+àààànewàTHREE.MeshStandardMaterial({àcolor:à'#45d980',àemissive:à'#0a5029',àemissiveIntensity:à0.55à})
+àà);
+ààstartButton.position.set(1.18,à0.14,à0.82);
+ààstartButton.rotation.xà=àMath.PIà/à2;
+ààstartButton.nameà=à'bp-start';
+ààroot.add(startButton);
 
-  const hose = new THREE.Mesh(
-    new THREE.TorusGeometry(1.06, 0.06, 14, 52, Math.PI * 1.32),
-    new THREE.MeshStandardMaterial({ color: '#111722', roughness: 0.8 })
-  );
-  hose.rotation.set(0.25, 0.15, 0.2);
-  hose.position.set(1.58, -0.32, -0.12);
-  root.add(hose);
+ààconstàhoseà=ànewàTHREE.Mesh(
+àààànewàTHREE.TorusGeometry(1.06,à0.06,à14,à52,àMath.PIà*à1.32),
+àààànewàTHREE.MeshStandardMaterial({àcolor:à'#111722',àroughness:à0.8à})
+àà);
+ààhose.rotation.set(0.25,à0.15,à0.2);
+ààhose.position.set(1.58,à-0.32,à-0.12);
+ààroot.add(hose);
 
-  const cuffBand = new THREE.Mesh(
-    new THREE.CylinderGeometry(0.62, 0.62, 1.4, 40, 1, true),
-    new THREE.MeshStandardMaterial({ color: '#2d3b55', roughness: 0.65, side: THREE.DoubleSide })
-  );
-  cuffBand.rotation.z = Math.PI / 2;
-  cuffBand.position.set(2.95, -0.22, 0.1);
-  root.add(cuffBand);
+ààconstàcuffBandà=ànewàTHREE.Mesh(
+àààànewàTHREE.CylinderGeometry(0.62,à0.62,à1.4,à40,à1,àtrue),
+àààànewàTHREE.MeshStandardMaterial({àcolor:à'#2d3b55',àroughness:à0.65,àside:àTHREE.DoubleSideà})
+àà);
+ààcuffBand.rotation.zà=àMath.PIà/à2;
+ààcuffBand.position.set(2.95,à-0.22,à0.1);
+ààroot.add(cuffBand);
 
-  const cuffInner = new THREE.Mesh(
-    new THREE.CylinderGeometry(0.44, 0.44, 1.38, 32),
-    new THREE.MeshStandardMaterial({ color: '#151f2f', roughness: 0.82 })
-  );
-  cuffInner.rotation.z = Math.PI / 2;
-  cuffInner.position.set(2.95, -0.22, 0.1);
-  root.add(cuffInner);
+ààconstàcuffInnerà=ànewàTHREE.Mesh(
+àààànewàTHREE.CylinderGeometry(0.44,à0.44,à1.38,à32),
+àààànewàTHREE.MeshStandardMaterial({àcolor:à'#151f2f',àroughness:à0.82à})
+àà);
+ààcuffInner.rotation.zà=àMath.PIà/à2;
+ààcuffInner.position.set(2.95,à-0.22,à0.1);
+ààroot.add(cuffInner);
 
-  const interactive = [
-    {
-      mesh: startButton,
-      title: 'Start-Taste',
-      text: 'Startet die Messung. Der Druck steigt zuerst an und fällt dann kontrolliert zur systolischen/diastolischen Erkennung.',
-      action: 'start-bp',
-    },
-  ];
+ààconstàinteractiveà=à[
+àààà{
+ààààààmesh:àstartButton,
+ààààààtitle:à'Start-Taste',
+ààààààtext:à'StartetàdieàMessung.àDeràDruckàsteigtàzuerstàanàundàfälltàdannàkontrolliertàzuràsystolischen/diastolischenàErkennung.',
+ààààààaction:à'start-bp',
+àààà},
+àà];
 
-  return {
-    id: 'blood',
-    name: 'Blutdruckmessgerät',
-    root,
-    interactive,
-    description:
-      'Messgerät mit Starttaste, Schlauch und Manschette. Nach Start simuliert das System den Manschettendruck und zeigt ein Ergebnis.',
-    onActivate() {},
-    onDeactivate() {},
-    update(_delta, elapsed) {
-      startButton.material.emissiveIntensity = 0.35 + Math.sin(elapsed * 2.8) * 0.2;
-      root.rotation.y = Math.sin(elapsed * 0.42) * 0.05;
-    },
-    triggerStart() {
-      onStartMeasure();
-    },
-  };
+ààreturnà{
+ààààid:à'blood',
+ààààname:à'Blutdruckmessgerät',
+ààààroot,
+ààààinteractive,
+ààààdescription:
+àààààà'MessgerätàmitàStarttaste,àSchlauchàundàManschette.àNachàStartàsimuliertàdasàSystemàdenàManschettendruckàundàzeigtàeinàErgebnis.',
+ààààonActivate()à{},
+ààààonDeactivate()à{},
+ààààupdate(_delta,àelapsed)à{
+ààààààstartButton.material.emissiveIntensityà=à0.35à+àMath.sin(elapsedà*à2.8)à*à0.2;
+ààààààroot.rotation.yà=àMath.sin(elapsedà*à0.42)à*à0.05;
+àààà},
+ààààtriggerStart()à{
+ààààààonStartMeasure();
+àààà},
+àà};
 }

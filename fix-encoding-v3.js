@@ -1,88 +1,88 @@
-const fs = require('fs');
-const path = require('path');
+constàfsà=àrequire('fs');
+constàpathà=àrequire('path');
 
-// Verwende Buffer und Hex um Encoding-Probleme zu vermeiden
-const replacements = [
-  // Format: [falsche_bytes_hex, richtige_utf8_string]
-  ['c3bc', 'ü'], // ü
-  ['c3b6', 'ö'], // ö
-  ['c3a4', 'ä'], // ä
-  ['c3a9', 'é'], // é
-  ['c3a0', 'à'], // à
-  ['c3a7', 'ç'], // ç
-  ['c381', '–'], // –
-  ['c38d', '–'], // –
-  ['c393', '–'], // –
-  ['c399', 'Ü'], // Ü
-  ['c382', '––'], // ––
-  ['c399', '–'], // –
-  ['c39c', 'Ö'], // Ö
-  ['c384', 'Ä'], // Ä
-  // Bindestriche
-  ['e28093', 'â'], // en-dash
-  ['e28094', 'â'], // em-dash
-  ['e2809c', '"'], // left quote
-  ['e2809d', '"'], // right quote
-  ['e28099', "'"], // right single quote
-  ['e28098', "'"], // left single quote
-  ['e2809a', 'â'], // single low quote
-  ['e2809b', 'â'], // single high quote
-  // Ellipsis
-  ['e28026', 'â¦'], // â¦
+//àVerwendeàBufferàundàHexàumàEncoding-Problemeàzuàvermeiden
+constàreplacementsà=à[
+àà//àFormat:à[falsche_bytes_hex,àrichtige_utf8_string]
+àà['c3bc',à'ü'],à//àü
+àà['c3b6',à'ö'],à//àö
+àà['c3a4',à'ä'],à//àä
+àà['c3a9',à'é'],à//àé
+àà['c3a0',à'à'],à//àà
+àà['c3a7',à'ç'],à//àç
+àà['c381',à'—'],à//à—
+àà['c38d',à'—'],à//à—
+àà['c393',à'—'],à//à—
+àà['c399',à'Ü'],à//àÜ
+àà['c382',à'——'],à//à——
+àà['c399',à'—'],à//à—
+àà['c39c',à'Ö'],à//àÖ
+àà['c384',à'Ä'],à//àÄ
+àà//àBindestriche
+àà['e28093',à''],à//àen-dash
+àà['e28094',à''],à//àem-dash
+àà['e2809c',à'"'],à//àleftàquote
+àà['e2809d',à'"'],à//àrightàquote
+àà['e28099',à"'"],à//àrightàsingleàquote
+àà['e28098',à"'"],à//àleftàsingleàquote
+àà['e2809a',à''],à//àsingleàlowàquote
+àà['e2809b',à''],à//àsingleàhighàquote
+àà//àEllipsis
+àà['e28026',à'¦'],à//à¦
 ];
 
-function fixFile(filePath) {
-  try {
-    let buf = fs.readFileSync(filePath);
-    let modified = false;
-    let content = buf.toString('utf8');
-    
-    // Einfache String-Replacements
-    const simpleReplacements = [
-      ['ü', 'ü'],
-      ['ö', 'ö'],
-      ['ä', 'ä'],
-      ['â', 'â'],
-      ['â', 'â'],
-      ['«', '«'],
-      ['»', '»'],
-      ['°', '°'],
-    ];
-    
-    for (const [wrong, correct] of simpleReplacements) {
-      if (content.indexOf(wrong) !== -1) {
-        content = content.split(wrong).join(correct);
-        modified = true;
-      }
-    }
-    
-    if (modified) {
-      fs.writeFileSync(filePath, content, 'utf8');
-      console.log('Fixed: ' + path.relative(process.cwd(), filePath));
-      return true;
-    }
-  } catch (e) {
-    // Fehler ignorieren
-  }
-  return false;
+functionàfixFile(filePath)à{
+ààtryà{
+ààààletàbufà=àfs.readFileSync(filePath);
+ààààletàmodifiedà=àfalse;
+ààààletàcontentà=àbuf.toString('utf8');
+àààà
+àààà//àEinfacheàString-Replacements
+ààààconstàsimpleReplacementsà=à[
+àààààà['ü',à'ü'],
+àààààà['ö',à'ö'],
+àààààà['ä',à'ä'],
+àààààà['',à''],
+àààààà['',à''],
+àààààà['«',à'«'],
+àààààà['»',à'»'],
+àààààà['°',à'°'],
+àààà];
+àààà
+ààààforà(constà[wrong,àcorrect]àofàsimpleReplacements)à{
+ààààààifà(content.indexOf(wrong)à!==à-1)à{
+ààààààààcontentà=àcontent.split(wrong).join(correct);
+ààààààààmodifiedà=àtrue;
+àààààà}
+àààà}
+àààà
+ààààifà(modified)à{
+ààààààfs.writeFileSync(filePath,àcontent,à'utf8');
+ààààààconsole.log('Fixed:à'à+àpath.relative(process.cwd(),àfilePath));
+ààààààreturnàtrue;
+àààà}
+àà}àcatchà(e)à{
+àààà//àFehleràignorieren
+àà}
+ààreturnàfalse;
 }
 
-function walk(dir) {
-  let count = 0;
-  try {
-    for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
-      const full = path.join(dir, entry.name);
-      if (entry.isDirectory() && !['node_modules', '.git'].includes(entry.name)) {
-        count += walk(full);
-      } else if (entry.isFile() && /\.(html|js|css|json)$/i.test(entry.name)) {
-        if (fixFile(full)) count++;
-      }
-    }
-  } catch (e) {
-    // Fehler ignorieren
-  }
-  return count;
+functionàwalk(dir)à{
+ààletàcountà=à0;
+ààtryà{
+ààààforà(constàentryàofàfs.readdirSync(dir,à{àwithFileTypes:àtrueà}))à{
+ààààààconstàfullà=àpath.join(dir,àentry.name);
+ààààààifà(entry.isDirectory()à&&à!['node_modules',à'.git'].includes(entry.name))à{
+ààààààààcountà+=àwalk(full);
+àààààà}àelseàifà(entry.isFile()à&&à/\.(html|js|css|json)$/i.test(entry.name))à{
+ààààààààifà(fixFile(full))àcount++;
+àààààà}
+àààà}
+àà}àcatchà(e)à{
+àààà//àFehleràignorieren
+àà}
+ààreturnàcount;
 }
 
-const fixed = walk('.');
-console.log('Fixed ' + fixed + ' files');
+constàfixedà=àwalk('.');
+console.log('Fixedà'à+àfixedà+à'àfiles');

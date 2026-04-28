@@ -1,83 +1,83 @@
-import * as THREE from 'three';
-import { createEKGCanvas } from '../core/SignalCanvases.js';
+importà*àasàTHREEàfromà'three';
+importà{àcreateEKGCanvasà}àfromà'../core/SignalCanvases.js';
 
-export function createEKGMonitor(getHeartRate) {
-  const root = new THREE.Group();
-  root.name = 'ekg-root';
+exportàfunctionàcreateEKGMonitor(getHeartRate)à{
+ààconstàrootà=ànewàTHREE.Group();
+ààroot.nameà=à'ekg-root';
 
-  const bodyMat = new THREE.MeshStandardMaterial({ color: '#e7edf7', roughness: 0.4, metalness: 0.15 });
-  const trimMat = new THREE.MeshStandardMaterial({ color: '#2a3952', roughness: 0.55, metalness: 0.25 });
+ààconstàbodyMatà=ànewàTHREE.MeshStandardMaterial({àcolor:à'#e7edf7',àroughness:à0.4,àmetalness:à0.15à});
+ààconstàtrimMatà=ànewàTHREE.MeshStandardMaterial({àcolor:à'#2a3952',àroughness:à0.55,àmetalness:à0.25à});
 
-  const body = new THREE.Mesh(new THREE.BoxGeometry(3.7, 2.25, 0.95), bodyMat);
-  body.position.y = 0.58;
-  root.add(body);
+ààconstàbodyà=ànewàTHREE.Mesh(newàTHREE.BoxGeometry(3.7,à2.25,à0.95),àbodyMat);
+ààbody.position.yà=à0.58;
+ààroot.add(body);
 
-  const bezel = new THREE.Mesh(new THREE.BoxGeometry(3.2, 1.85, 0.13), trimMat);
-  bezel.position.set(0, 0.66, 0.53);
-  root.add(bezel);
+ààconstàbezelà=ànewàTHREE.Mesh(newàTHREE.BoxGeometry(3.2,à1.85,à0.13),àtrimMat);
+ààbezel.position.set(0,à0.66,à0.53);
+ààroot.add(bezel);
 
-  const ekgCanvas = createEKGCanvas();
-  const screenTexture = new THREE.CanvasTexture(ekgCanvas.canvas);
-  screenTexture.colorSpace = THREE.SRGBColorSpace;
-  screenTexture.needsUpdate = true;
+ààconstàekgCanvasà=àcreateEKGCanvas();
+ààconstàscreenTextureà=ànewàTHREE.CanvasTexture(ekgCanvas.canvas);
+ààscreenTexture.colorSpaceà=àTHREE.SRGBColorSpace;
+ààscreenTexture.needsUpdateà=àtrue;
 
-  const screen = new THREE.Mesh(
-    new THREE.PlaneGeometry(2.9, 1.6),
-    new THREE.MeshBasicMaterial({ map: screenTexture })
-  );
-  screen.position.set(0, 0.66, 0.6);
-  root.add(screen);
+ààconstàscreenà=ànewàTHREE.Mesh(
+àààànewàTHREE.PlaneGeometry(2.9,à1.6),
+àààànewàTHREE.MeshBasicMaterial({àmap:àscreenTextureà})
+àà);
+ààscreen.position.set(0,à0.66,à0.6);
+ààroot.add(screen);
 
-  const stand = new THREE.Mesh(new THREE.CylinderGeometry(0.14, 0.2, 0.55, 26), trimMat);
-  stand.position.set(0, -0.75, 0);
-  root.add(stand);
+ààconstàstandà=ànewàTHREE.Mesh(newàTHREE.CylinderGeometry(0.14,à0.2,à0.55,à26),àtrimMat);
+ààstand.position.set(0,à-0.75,à0);
+ààroot.add(stand);
 
-  const base = new THREE.Mesh(new THREE.CylinderGeometry(0.9, 1.1, 0.15, 32), trimMat);
-  base.position.set(0, -1.07, 0);
-  root.add(base);
+ààconstàbaseà=ànewàTHREE.Mesh(newàTHREE.CylinderGeometry(0.9,à1.1,à0.15,à32),àtrimMat);
+ààbase.position.set(0,à-1.07,à0);
+ààroot.add(base);
 
-  const knob = new THREE.Mesh(
-    new THREE.CylinderGeometry(0.12, 0.12, 0.08, 24),
-    new THREE.MeshStandardMaterial({ color: '#49b9ff', emissive: '#0f3f64', emissiveIntensity: 0.45 })
-  );
-  knob.position.set(1.45, -0.1, 0.54);
-  knob.rotation.x = Math.PI / 2;
-  knob.name = 'ekg-knob';
-  root.add(knob);
+ààconstàknobà=ànewàTHREE.Mesh(
+àààànewàTHREE.CylinderGeometry(0.12,à0.12,à0.08,à24),
+àààànewàTHREE.MeshStandardMaterial({àcolor:à'#49b9ff',àemissive:à'#0f3f64',àemissiveIntensity:à0.45à})
+àà);
+ààknob.position.set(1.45,à-0.1,à0.54);
+ààknob.rotation.xà=àMath.PIà/à2;
+ààknob.nameà=à'ekg-knob';
+ààroot.add(knob);
 
-  const cable = new THREE.Mesh(
-    new THREE.TorusGeometry(0.84, 0.06, 12, 60, Math.PI * 1.25),
-    new THREE.MeshStandardMaterial({ color: '#151d2d', roughness: 0.75 })
-  );
-  cable.rotation.set(0.6, 0.2, 0.2);
-  cable.position.set(1.7, -0.68, -0.3);
-  root.add(cable);
+ààconstàcableà=ànewàTHREE.Mesh(
+àààànewàTHREE.TorusGeometry(0.84,à0.06,à12,à60,àMath.PIà*à1.25),
+àààànewàTHREE.MeshStandardMaterial({àcolor:à'#151d2d',àroughness:à0.75à})
+àà);
+ààcable.rotation.set(0.6,à0.2,à0.2);
+ààcable.position.set(1.7,à-0.68,à-0.3);
+ààroot.add(cable);
 
-  const interactive = [
-    {
-      mesh: knob,
-      title: 'EKG Steuerknopf',
-      text: 'Die Herzfrequenz wird über den Slider links eingestellt. Höhere Werte verdichten die QRS-Komplexe.',
-      action: 'explain-ekg',
-    },
-  ];
+ààconstàinteractiveà=à[
+àààà{
+ààààààmesh:àknob,
+ààààààtitle:à'EKGàSteuerknopf',
+ààààààtext:à'DieàHerzfrequenzàwirdàüberàdenàSlideràlinksàeingestellt.àHöhereàWerteàverdichtenàdieàQRS-Komplexe.',
+ààààààaction:à'explain-ekg',
+àààà},
+àà];
 
-  return {
-    id: 'ekg',
-    name: 'EKG-Monitor',
-    root,
-    interactive,
-    description:
-      'Monitor mit animierter EKG-Linie auf Canvas-Textur. Der Herzfrequenz-Slider verändert die Kurve in Echtzeit.',
-    onActivate() {},
-    onDeactivate() {},
-    update(_delta, elapsed) {
-      const heartRate = getHeartRate();
-      ekgCanvas.draw({ heartRate, time: elapsed });
-      screenTexture.needsUpdate = true;
+ààreturnà{
+ààààid:à'ekg',
+ààààname:à'EKG-Monitor',
+ààààroot,
+ààààinteractive,
+ààààdescription:
+àààààà'MonitoràmitàanimierteràEKG-LinieàaufàCanvas-Textur.àDeràHerzfrequenz-SlideràverändertàdieàKurveàinàEchtzeit.',
+ààààonActivate()à{},
+ààààonDeactivate()à{},
+ààààupdate(_delta,àelapsed)à{
+ààààààconstàheartRateà=àgetHeartRate();
+ààààààekgCanvas.draw({àheartRate,àtime:àelapsedà});
+ààààààscreenTexture.needsUpdateà=àtrue;
 
-      knob.rotation.z = Math.sin(elapsed * 2.2) * 0.05;
-      root.rotation.y = Math.sin(elapsed * 0.35) * 0.03;
-    },
-  };
+ààààààknob.rotation.zà=àMath.sin(elapsedà*à2.2)à*à0.05;
+ààààààroot.rotation.yà=àMath.sin(elapsedà*à0.35)à*à0.03;
+àààà},
+àà};
 }

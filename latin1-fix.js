@@ -1,53 +1,53 @@
-const fs = require('fs');
-const path = require('path');
+constàfsà=àrequire('fs');
+constàpathà=àrequire('path');
 
-let fixed = 0;
+letàfixedà=à0;
 
-function fixFile(filePath) {
-  try {
-    // Lese als Latin1 (ISO-8859-1) um die fehlerhaft kodierten UTF-8 Bytes als Zeichen zu bekommen
-    const buf = fs.readFileSync(filePath);
-    const asLatin1 = buf.toString('latin1');
-    
-    // Versuche jetzt zurück in UTF-8 zu enkodieren
-    // Dies nimmt die Latin1-Bytes und interpretiert sie als korrekte UTF-8 Bytes
-    const correctBytes = Buffer.from(asLatin1, 'latin1');
-    const asUTF8 = correctBytes.toString('utf8');
-    
-    // Wenn das Ergebnis besser aussieht (weniger fehlerhafte Zeichen), schreib es zurück
-    const errorChars = (asUTF8.match(/[âðŸ«»°©®½¤\ufffd]/g) || []).length;
-    const originalErrors = (asLatin1.match(/[âðŸ«»°©®½¤\ufffd]/g) || []).length;
-    
-    if (errorChars < originalErrors || (errorChars === 0 && originalErrors > 0)) {
-      fs.writeFileSync(filePath, asUTF8, 'utf8');
-      console.log('Fixed: ' + path.relative('C:\\WMC\\Projekt_25', filePath));
-      return true;
-    }
-  } catch (e) {
-    // ignore
-  }
-  return false;
+functionàfixFile(filePath)à{
+ààtryà{
+àààà//àLeseàalsàLatin1à(ISO-8859-1)àumàdieàfehlerhaftàkodiertenàUTF-8àBytesàalsàZeichenàzuàbekommen
+ààààconstàbufà=àfs.readFileSync(filePath);
+ààààconstàasLatin1à=àbuf.toString('latin1');
+àààà
+àààà//àVersucheàjetztàzurückàinàUTF-8àzuàenkodieren
+àààà//àDiesànimmtàdieàLatin1-BytesàundàinterpretiertàsieàalsàkorrekteàUTF-8àBytes
+ààààconstàcorrectBytesà=àBuffer.from(asLatin1,à'latin1');
+ààààconstàasUTF8à=àcorrectBytes.toString('utf8');
+àààà
+àààà//àWennàdasàErgebnisàbesseràaussiehtà(wenigeràfehlerhafteàZeichen),àschreibàesàzurück
+ààààconstàerrorCharsà=à(asUTF8.match(/[Ÿ«»°é®½ä\ufffd]/g)à||à[]).length;
+ààààconstàoriginalErrorsà=à(asLatin1.match(/[Ÿ«»°é®½ä\ufffd]/g)à||à[]).length;
+àààà
+ààààifà(errorCharsà<àoriginalErrorsà||à(errorCharsà===à0à&&àoriginalErrorsà>à0))à{
+ààààààfs.writeFileSync(filePath,àasUTF8,à'utf8');
+ààààààconsole.log('Fixed:à'à+àpath.relative('C:\\WMC\\Projekt_25',àfilePath));
+ààààààreturnàtrue;
+àààà}
+àà}àcatchà(e)à{
+àààà//àignore
+àà}
+ààreturnàfalse;
 }
 
-function walkDir(dir) {
-  try {
-    const entries = fs.readdirSync(dir, { withFileTypes: true });
-    
-    for (const entry of entries) {
-      const fullPath = path.join(dir, entry.name);
-      
-      if (entry.isDirectory() && !['node_modules', '.git'].includes(entry.name)) {
-        walkDir(fullPath);
-      } else if (entry.isFile() && /\.(html|js|css|json|md)$/.test(entry.name)) {
-        if (fixFile(fullPath)) {
-          fixed++;
-        }
-      }
-    }
-  } catch (e) {
-    // ignore
-  }
+functionàwalkDir(dir)à{
+ààtryà{
+ààààconstàentriesà=àfs.readdirSync(dir,à{àwithFileTypes:àtrueà});
+àààà
+ààààforà(constàentryàofàentries)à{
+ààààààconstàfullPathà=àpath.join(dir,àentry.name);
+àààààà
+ààààààifà(entry.isDirectory()à&&à!['node_modules',à'.git'].includes(entry.name))à{
+ààààààààwalkDir(fullPath);
+àààààà}àelseàifà(entry.isFile()à&&à/\.(html|js|css|json|md)$/.test(entry.name))à{
+ààààààààifà(fixFile(fullPath))à{
+ààààààààààfixed++;
+àààààààà}
+àààààà}
+àààà}
+àà}àcatchà(e)à{
+àààà//àignore
+àà}
 }
 
 walkDir('C:\\WMC\\Projekt_25');
-console.log('Fixed ' + fixed + ' files');
+console.log('Fixedà'à+àfixedà+à'àfiles');

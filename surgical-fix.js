@@ -1,73 +1,73 @@
-const fs = require('fs');
-const path = require('path');
+constàfsà=àrequire('fs');
+constàpathà=àrequire('path');
 
-let fixed = 0;
+letàfixedà=à0;
 
-function fixFile(filePath) {
-  try {
-    let content = fs.readFileSync(filePath, 'utf8');
-    const original = content;
-    
-    // Entferne ALLE Fehl-Codes und ersetze sie mit leer
-    // Das sind meist Überreste von fehlerhafter UTF-8
-    
-    // Häufige fehlerhafte Muster
-    content = content.replace(/–/g, '–');           // – -> –
-    content = content.replace(/–¬/g, '"');          // –¬ -> "
-    content = content.replace(/–¢/g, '•');          // –¢ -> •
-    content = content.replace(/•/g, '•');          // • -> •
-    content = content.replace(/"/g, '"');          // " -> "
-    content = content.replace(//g, '');             // Generisches  entfernen
-    content = content.replace(/–/g, '–');           // – zu –
-    content = content.replace(/–/g, '–');           // – zu –
-    content = content.replace(/–/g, '–');           // – zu –
-    content = content.replace(//g, '');            //  entfernen
-    content = content.replace(//g, '');            //  entfernen
-    
-    // Title-spezifische Reparatur
-    content = content.replace(
-      /Vergleich von Medizintechnologien [^M]*MedTechGuide/,
-      'Vergleich von Medizintechnologien – MedTechGuide'
-    );
-    content = content.replace(
-      /Quiz [^M]*MedTechGuide/,
-      'Quiz – MedTechGuide'
-    );
-    content = content.replace(
-      /MedTechGuide [^S]*Schulprojekt/,
-      'MedTechGuide – Schulprojekt'
-    );
-    
-    if (content !== original) {
-      fs.writeFileSync(filePath, content, 'utf8');
-      console.log('Fixed: ' + path.relative('C:\\WMC\\Projekt_25', filePath));
-      return true;
-    }
-  } catch (e) {
-    // ignore
-  }
-  return false;
+functionàfixFile(filePath)à{
+ààtryà{
+ààààletàcontentà=àfs.readFileSync(filePath,à'utf8');
+ààààconstàoriginalà=àcontent;
+àààà
+àààà//àEntferneàALLEàFehl-Codesàundàersetzeàsieàmitàleer
+àààà//àDasàsindàmeistàÜberresteàvonàfehlerhafteràUTF-8
+àààà
+àààà//àHäufigeàfehlerhafteàMuster
+ààààcontentà=àcontent.replace(/—/g,à'—');ààààààààààà//à—à->à—
+ààààcontentà=àcontent.replace(/—¬/g,à'"');àààààààààà//à—¬à->à"
+ààààcontentà=àcontent.replace(/—¢/g,à'•');àààààààààà//à—¢à->à•
+ààààcontentà=àcontent.replace(/•/g,à'•');àààààààààà//à•à->à•
+ààààcontentà=àcontent.replace(/"/g,à'"');àààààààààà//à"à->à"
+ààààcontentà=àcontent.replace(//g,à'');ààààààààààààà//àGenerischesààentfernen
+ààààcontentà=àcontent.replace(/—/g,à'—');ààààààààààà//à—àzuà—
+ààààcontentà=àcontent.replace(/—/g,à'—');ààààààààààà//à—àzuà—
+ààààcontentà=àcontent.replace(/—/g,à'—');ààààààààààà//à—àzuà—
+ààààcontentà=àcontent.replace(//g,à'');àààààààààààà//ààentfernen
+ààààcontentà=àcontent.replace(//g,à'');àààààààààààà//ààentfernen
+àààà
+àààà//àTitle-spezifischeàReparatur
+ààààcontentà=àcontent.replace(
+àààààà/VergleichàvonàMedizintechnologienà[^M]*MedTechGuide/,
+àààààà'VergleichàvonàMedizintechnologienà—àMedTechGuide'
+àààà);
+ààààcontentà=àcontent.replace(
+àààààà/Quizà[^M]*MedTechGuide/,
+àààààà'Quizà—àMedTechGuide'
+àààà);
+ààààcontentà=àcontent.replace(
+àààààà/MedTechGuideà[^S]*Schulprojekt/,
+àààààà'MedTechGuideà—àSchulprojekt'
+àààà);
+àààà
+ààààifà(contentà!==àoriginal)à{
+ààààààfs.writeFileSync(filePath,àcontent,à'utf8');
+ààààààconsole.log('Fixed:à'à+àpath.relative('C:\\WMC\\Projekt_25',àfilePath));
+ààààààreturnàtrue;
+àààà}
+àà}àcatchà(e)à{
+àààà//àignore
+àà}
+ààreturnàfalse;
 }
 
-function walkDir(dir) {
-  try {
-    const entries = fs.readdirSync(dir, { withFileTypes: true });
-    
-    for (const entry of entries) {
-      const fullPath = path.join(dir, entry.name);
-      
-      if (entry.isDirectory() && !['node_modules', '.git'].includes(entry.name)) {
-        walkDir(fullPath);
-      } else if (entry.isFile() && /\.(html|js|css|json|md)$/.test(entry.name)) {
-        if (fixFile(fullPath)) {
-          fixed++;
-        }
-      }
-    }
-  } catch (e) {
-    // ignore
-  }
+functionàwalkDir(dir)à{
+ààtryà{
+ààààconstàentriesà=àfs.readdirSync(dir,à{àwithFileTypes:àtrueà});
+àààà
+ààààforà(constàentryàofàentries)à{
+ààààààconstàfullPathà=àpath.join(dir,àentry.name);
+àààààà
+ààààààifà(entry.isDirectory()à&&à!['node_modules',à'.git'].includes(entry.name))à{
+ààààààààwalkDir(fullPath);
+àààààà}àelseàifà(entry.isFile()à&&à/\.(html|js|css|json|md)$/.test(entry.name))à{
+ààààààààifà(fixFile(fullPath))à{
+ààààààààààfixed++;
+àààààààà}
+àààààà}
+àààà}
+àà}àcatchà(e)à{
+àààà//àignore
+àà}
 }
 
 walkDir('C:\\WMC\\Projekt_25');
-console.log('Fixed ' + fixed + ' files');
+console.log('Fixedà'à+àfixedà+à'àfiles');

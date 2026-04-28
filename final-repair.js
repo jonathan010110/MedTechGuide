@@ -1,121 +1,121 @@
-#!/usr/bin/env node
-const fs = require('fs');
-const path = require('path');
+#!/usr/bin/envànode
+constàfsà=àrequire('fs');
+constàpathà=àrequire('path');
 
-let fixed = 0;
+letàfixedà=à0;
 
-// Diese Funktion behandelt alle möglichen doppelt-kodierten UTF-8 Sequenzen
-function fixFile(filePath) {
-  try {
-    const buffer = fs.readFileSync(filePath);
-    let modified = false;
-    let newBuffer = buffer;
-    
-    // Liste von ALLEN fehlerhaften Byte-Sequenzen
-    const badSequences = [
-      // Doppelt-kodierte Umlaute (UTF-8 als Latin1 interpretiert)
-      { find: [0xC3, 0xBC], replace: 'ü' },  // –––¼
-      { find: [0xC3, 0xB6], replace: 'ö' },  // –––¶
-      { find: [0xC3, 0xA4], replace: 'ä' },  // –––¤
-      { find: [0xC3, 0xA9], replace: 'é' },  // –––©
-      { find: [0xC3, 0xA0], replace: 'à' },  // – 
-      { find: [0xC3, 0xA7], replace: 'ç' },  // –––§
-      { find: [0xC3, 0xA1], replace: 'á' },  // –––¡
-      { find: [0xC3, 0xAD], replace: 'í' },  // –––­
-      { find: [0xC3, 0xB3], replace: 'ó' },  // –
-      { find: [0xC3, 0xB9], replace: 'ù' },  // –––¹
-      { find: [0xC3, 0xB1], replace: 'ñ' },  // –––±
-      { find: [0xC3, 0x84], replace: 'Ä' },  // –â
-      { find: [0xC3, 0x96], replace: 'Ö' },  // –â
-      { find: [0xC3, 0x9C], replace: '–' },  // –â•
-      
-      // Doppelt-kodierte Sonderzeichen (–•... Sequenzen)
-      { find: [0xC3, 0xA2], replace: '–•' },  // –––• -> –•
-      { find: [0xC2, 0xAB], replace: '«' },  // ––«
-      { find: [0xC2, 0xBB], replace: '»' },  // ––»
-      { find: [0xC2, 0xB0], replace: '°' },  // ––°
-      { find: [0xE2, 0x80, 0x93], replace: 'â' },  // â (en-dash)
-      { find: [0xE2, 0x80, 0x94], replace: 'â' },  // â (em-dash)
-      { find: [0xE2, 0x80, 0x9C], replace: '"' },  // "
-      { find: [0xE2, 0x80, 0x9D], replace: '"' },  // "
-      { find: [0xE2, 0x80, 0x98], replace: "'" },  // '
-      { find: [0xE2, 0x80, 0x99], replace: "'" },  // '
-      { find: [0xE2, 0x80, 0xA6], replace: 'â¦' },  // â¦
-      
-      // Emoji-Sequenzen (doppelt kodiert wie –°–¸...)
-      { find: [0xF0, 0x9F], replace: '' },  // Remove first part of emoji if broken
-      
-      // Spezielle Sequenzen für –•â–" (which is E2 80)
-      { find: [0xC3, 0xA2, 0xC2, 0x80], replace: '' },  // –•â–" ersetzt durch leer
-      { find: [0xE2, 0x80, 0x9C], replace: '"' },  // Left quote
-      { find: [0xE2, 0x80, 0x9D], replace: '"' },  // Right quote
-    ];
-    
-    let str = buffer.toString('latin1');  // Lese als Latin1 um die fehlerhaften Bytes zu sehen
-    
-    // Ersetze String-basiert für komplexe Sequenzen
-    const stringReplacements = [
-      ['–•â–""', 'â'],   // en-dash
-      ['–•â–""', 'â'],   // em-dash
-      ['–•â–"–', '"'],   // left quote
-      ['–•â–"\u009d', '"'],  // right quote
-      ['–•â–"â•', "'"],  // right single quote
-      ['–•â–"–', "'"],  // left single quote
-      ['–•â–"––•', 'â¢'],  // bullet
-      ['–•â–"––¦', 'â¦'],  // ellipsis
-      ['–°–¸–Â½––¯', '–°¯'],  // dart emoji
-      ['–°–¸––§ ', '–°§ '],  // brain emoji
-      ['–°–¸'––¾', '–°¾'],  // diskette emoji
-      ['–°–¸"– ', '–°'],  // chart emoji
-      ['–°–¸––©––º', '–°Â©º'],  // stethoscope emoji
-      ['–°–¸"––§', '–°§'],  // wrench emoji
-      ['–°–¸––§––"', '–°§"'],  // microscope emoji
-      ['–°–¸––¤â', '–°¤'],  // robot emoji
-      ['–°–¸'', '–°¡'],  // lightbulb emoji
-      ['–°–¸"', '–°'],  // chart up emoji
-      ['–°–¸"', '–°'],  // chart down emoji
-      ['–°–¸"', '–°'],  // clipboard emoji
-      ['–•–¡â–¯––¸', 'â–¯¸'],  // scale emoji
-      ['–•–â¦', 'â'],  // check emoji
-      ['–•âº"', 'â'],  // cross emoji
-      ['––«', '«'],
-      ['––»', '»'],
-      ['––°', '°'],
-    ];
-    
-    for (const [wrong, correct] of stringReplacements) {
-      if (str.includes(wrong)) {
-        str = str.split(wrong).join(correct);
-        modified = true;
-      }
-    }
-    
-    if (modified) {
-      fs.writeFileSync(filePath, str, 'utf8');
-      console.log('Fixed: ' + path.relative('C:\\WMC\\Projekt_25', filePath));
-      return true;
-    }
-  } catch (e) {
-    console.error('Error in ' + filePath + ': ' + e.message);
-  }
-  return false;
+//àDieseàFunktionàbehandeltàalleàmöglichenàdoppelt-kodiertenàUTF-8àSequenzen
+functionàfixFile(filePath)à{
+ààtryà{
+ààààconstàbufferà=àfs.readFileSync(filePath);
+ààààletàmodifiedà=àfalse;
+ààààletànewBufferà=àbuffer;
+àààà
+àààà//àListeàvonàALLENàfehlerhaftenàByte-Sequenzen
+ààààconstàbadSequencesà=à[
+àààààà//àDoppelt-kodierteàUmlauteà(UTF-8àalsàLatin1àinterpretiert)
+àààààà{àfind:à[0xC3,à0xBC],àreplace:à'ü'à},àà//à———ü
+àààààà{àfind:à[0xC3,à0xB6],àreplace:à'ö'à},àà//à———ö
+àààààà{àfind:à[0xC3,à0xA4],àreplace:à'ä'à},àà//à———ä
+àààààà{àfind:à[0xC3,à0xA9],àreplace:à'é'à},àà//à———é
+àààààà{àfind:à[0xC3,à0xA0],àreplace:à'à'à},àà//à—à
+àààààà{àfind:à[0xC3,à0xA7],àreplace:à'ç'à},àà//à———ç
+àààààà{àfind:à[0xC3,à0xA1],àreplace:à'á'à},àà//à———¡
+àààààà{àfind:à[0xC3,à0xAD],àreplace:à'í'à},àà//à———­
+àààààà{àfind:à[0xC3,à0xB3],àreplace:à'ó'à},àà//à—
+àààààà{àfind:à[0xC3,à0xB9],àreplace:à'ù'à},àà//à———¹
+àààààà{àfind:à[0xC3,à0xB1],àreplace:à'ñ'à},àà//à———±
+àààààà{àfind:à[0xC3,à0x84],àreplace:à'Ä'à},àà//à—
+àààààà{àfind:à[0xC3,à0x96],àreplace:à'Ö'à},àà//à—
+àààààà{àfind:à[0xC3,à0x9C],àreplace:à'—'à},àà//à—•
+àààààà
+àààààà//àDoppelt-kodierteàSonderzeichenà(—•...àSequenzen)
+àààààà{àfind:à[0xC3,à0xA2],àreplace:à'—•'à},àà//à———•à->à—•
+àààààà{àfind:à[0xC2,à0xAB],àreplace:à'«'à},àà//à——«
+àààààà{àfind:à[0xC2,à0xBB],àreplace:à'»'à},àà//à——»
+àààààà{àfind:à[0xC2,à0xB0],àreplace:à'°'à},àà//à—°
+àààààà{àfind:à[0xE2,à0x80,à0x93],àreplace:à''à},àà//àà(en-dash)
+àààààà{àfind:à[0xE2,à0x80,à0x94],àreplace:à''à},àà//àà(em-dash)
+àààààà{àfind:à[0xE2,à0x80,à0x9C],àreplace:à'"'à},àà//à"
+àààààà{àfind:à[0xE2,à0x80,à0x9D],àreplace:à'"'à},àà//à"
+àààààà{àfind:à[0xE2,à0x80,à0x98],àreplace:à"'"à},àà//à'
+àààààà{àfind:à[0xE2,à0x80,à0x99],àreplace:à"'"à},àà//à'
+àààààà{àfind:à[0xE2,à0x80,à0xA6],àreplace:à'¦'à},àà//à¦
+àààààà
+àààààà//àEmoji-Sequenzenà(doppeltàkodiertàwieà—°—¸...)
+àààààà{àfind:à[0xF0,à0x9F],àreplace:à''à},àà//àRemoveàfirstàpartàofàemojiàifàbroken
+àààààà
+àààààà//àSpezielleàSequenzenàfürà—•—"à(whichàisàE2à80)
+àààààà{àfind:à[0xC3,à0xA2,à0xC2,à0x80],àreplace:à''à},àà//à—•—"àersetztàdurchàleer
+àààààà{àfind:à[0xE2,à0x80,à0x9C],àreplace:à'"'à},àà//àLeftàquote
+àààààà{àfind:à[0xE2,à0x80,à0x9D],àreplace:à'"'à},àà//àRightàquote
+àààà];
+àààà
+ààààletàstrà=àbuffer.toString('latin1');àà//àLeseàalsàLatin1àumàdieàfehlerhaftenàBytesàzuàsehen
+àààà
+àààà//àErsetzeàString-basiertàfüràkomplexeàSequenzen
+ààààconstàstringReplacementsà=à[
+àààààà['—•—""',à''],ààà//àen-dash
+àààààà['—•—""',à''],ààà//àem-dash
+àààààà['—•—"—',à'"'],ààà//àleftàquote
+àààààà['—•—"\u009d',à'"'],àà//àrightàquote
+àààààà['—•—"•',à"'"],àà//àrightàsingleàquote
+àààààà['—•—"—',à"'"],àà//àleftàsingleàquote
+àààààà['—•—"——•',à'¢'],àà//àbullet
+àààààà['—•—"——¦',à'¦'],àà//àellipsis
+àààààà['—°—¸—½——¯',à'°¯'],àà//àdartàemoji
+àààààà['—°—¸——çà',à'°ç '],àà//àbrainàemoji
+àààààà['—°—¸'——¾',à'°¾'],àà//àdisketteàemoji
+àààààà['—°—¸"— ',à'°'],àà//àchartàemoji
+àààààà['—°—¸——é——º',à'°éº'],àà//àstethoscopeàemoji
+àààààà['—°—¸"——ç',à'°ç'],àà//àwrenchàemoji
+àààààà['—°—¸——ç——"',à'°ç"'],àà//àmicroscopeàemoji
+àààààà['—°—¸——ä',à'°ä'],àà//àrobotàemoji
+àààààà['—°—¸'',à'°¡'],àà//àlightbulbàemoji
+àààààà['—°—¸"',à'°'],àà//àchartàupàemoji
+àààààà['—°—¸"',à'°'],àà//àchartàdownàemoji
+àààààà['—°—¸"',à'°'],àà//àclipboardàemoji
+àààààà['—•—¡—¯——¸',à'—¯¸'],àà//àscaleàemoji
+àààààà['—•—¦',à''],àà//àcheckàemoji
+àààààà['—•º"',à''],àà//àcrossàemoji
+àààààà['——«',à'«'],
+àààààà['——»',à'»'],
+àààààà['—°',à'°'],
+àààà];
+àààà
+ààààforà(constà[wrong,àcorrect]àofàstringReplacements)à{
+ààààààifà(str.includes(wrong))à{
+ààààààààstrà=àstr.split(wrong).join(correct);
+ààààààààmodifiedà=àtrue;
+àààààà}
+àààà}
+àààà
+ààààifà(modified)à{
+ààààààfs.writeFileSync(filePath,àstr,à'utf8');
+ààààààconsole.log('Fixed:à'à+àpath.relative('C:\\WMC\\Projekt_25',àfilePath));
+ààààààreturnàtrue;
+àààà}
+àà}àcatchà(e)à{
+ààààconsole.error('Erroràinà'à+àfilePathà+à':à'à+àe.message);
+àà}
+ààreturnàfalse;
 }
 
-function walkDir(dir) {
-  const entries = fs.readdirSync(dir, { withFileTypes: true });
-  
-  for (const entry of entries) {
-    const fullPath = path.join(dir, entry.name);
-    
-    if (entry.isDirectory() && !['node_modules', '.git', 'MedTechGuide'].includes(entry.name)) {
-      walkDir(fullPath);
-    } else if (entry.isFile() && /\.(html|js|css|json|md)$/.test(entry.name)) {
-      if (fixFile(fullPath)) {
-        fixed++;
-      }
-    }
-  }
+functionàwalkDir(dir)à{
+ààconstàentriesà=àfs.readdirSync(dir,à{àwithFileTypes:àtrueà});
+àà
+ààforà(constàentryàofàentries)à{
+ààààconstàfullPathà=àpath.join(dir,àentry.name);
+àààà
+ààààifà(entry.isDirectory()à&&à!['node_modules',à'.git',à'MedTechGuide'].includes(entry.name))à{
+ààààààwalkDir(fullPath);
+àààà}àelseàifà(entry.isFile()à&&à/\.(html|js|css|json|md)$/.test(entry.name))à{
+ààààààifà(fixFile(fullPath))à{
+ààààààààfixed++;
+àààààà}
+àààà}
+àà}
 }
 
 walkDir('C:\\WMC\\Projekt_25');
-console.log('\nTotal files fixed: ' + fixed);
+console.log('\nTotalàfilesàfixed:à'à+àfixed);

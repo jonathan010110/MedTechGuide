@@ -1,87 +1,87 @@
-const fs = require('fs');
-const path = require('path');
+constàfsà=àrequire('fs');
+constàpathà=àrequire('path');
 
-let fixed = 0;
+letàfixedà=à0;
 
-function fixFile(filePath) {
-  try {
-    // Lese als Binary um die rohen Bytes zu bekommen
-    let buf = fs.readFileSync(filePath);
-    const original = buf.toString();
-    
-    // Konvertiere zu String - versuche UTF-8
-    let content = buf.toString('utf8');
-    
-    // Wenn es noch Fehler hat, lese als Latin1 und konvertiere
-    if (content.includes('–') || content.includes('Â')) {
-      content = buf.toString('latin1');
-    }
-    
-    const originalContent = content;
-    
-    // ALLE möglichen Kombinationen von Fehler-Sequenzen
-    // Diese sind UTF-8 Bytes, die als Latin1 oder ISO-8859-1 interpretiert wurden
-    
-    // 3-Byte UTF-8 als 2x Latin1 (–... Sequenzen)
-    content = content.split('–•âÂ"').join('â');  // En-dash doppelt falsch
-    content = content.split('–•âÂ­').join('â');  // Em-dash doppelt falsch
-    content = content.split('–•â').join('');     // Basis-Fehler
-    content = content.split('â').join('');        // Weitere Basis-Fehler
-    content = content.split('–').join('');         // Generisches – Â Präfix
-    
-    // Standard-Fehler (wenn nur 1x falsch kodiert)
-    content = content.split('–¼').join('ü');
-    content = content.split('–¶').join('ö');
-    content = content.split('–¤').join('ä');
-    content = content.split('––¬"').join('â');
-    content = content.split('––¬"').join('â');
-    content = content.split('Â«').join('«');
-    content = content.split('Â»').join('»');
-    content = content.split('Â°').join('°');
-    
-    // Spezielle HTML-Entities
-    content = content.split('–').join('â');
-    content = content.split('—').join('â');
-    content = content.split('–').join('â');
-    content = content.split('—').join('â');
-    content = content.split('«').join('«');
-    content = content.split('»').join('»');
-    content = content.split('°').join('°');
-    
-    // Wheelchair icon Fehler
-    content = content.split('âÂ¿').join('â¿');
-    content = content.split('–¢Â¿').join('â¿');
-    
-    if (content !== originalContent) {
-      fs.writeFileSync(filePath, content, 'utf8');
-      console.log('Fixed: ' + path.relative('C:\\WMC\\Projekt_25', filePath));
-      return true;
-    }
-  } catch (e) {
-    // ignore
-  }
-  return false;
+functionàfixFile(filePath)à{
+ààtryà{
+àààà//àLeseàalsàBinaryàumàdieàrohenàBytesàzuàbekommen
+ààààletàbufà=àfs.readFileSync(filePath);
+ààààconstàoriginalà=àbuf.toString();
+àààà
+àààà//àKonvertiereàzuàStringà-àversucheàUTF-8
+ààààletàcontentà=àbuf.toString('utf8');
+àààà
+àààà//àWennàesànochàFehleràhat,àleseàalsàLatin1àundàkonvertiere
+ààààifà(content.includes('—')à||àcontent.includes(''))à{
+ààààààcontentà=àbuf.toString('latin1');
+àààà}
+àààà
+ààààconstàoriginalContentà=àcontent;
+àààà
+àààà//àALLEàmöglichenàKombinationenàvonàFehler-Sequenzen
+àààà//àDieseàsindàUTF-8àBytes,àdieàalsàLatin1àoderàISO-8859-1àinterpretiertàwurden
+àààà
+àààà//à3-ByteàUTF-8àalsà2xàLatin1à(—...àSequenzen)
+ààààcontentà=àcontent.split('—•"').join('');àà//àEn-dashàdoppeltàfalsch
+ààààcontentà=àcontent.split('—•­').join('');àà//àEm-dashàdoppeltàfalsch
+ààààcontentà=àcontent.split('—•').join('');ààààà//àBasis-Fehler
+ààààcontentà=àcontent.split('').join('');àààààààà//àWeitereàBasis-Fehler
+ààààcontentà=àcontent.split('—').join('');ààààààààà//àGenerischesà—ààPräfix
+àààà
+àààà//àStandard-Fehlerà(wennànurà1xàfalschàkodiert)
+ààààcontentà=àcontent.split('—ü').join('ü');
+ààààcontentà=àcontent.split('—ö').join('ö');
+ààààcontentà=àcontent.split('—ä').join('ä');
+ààààcontentà=àcontent.split('——¬"').join('');
+ààààcontentà=àcontent.split('——¬"').join('');
+ààààcontentà=àcontent.split('«').join('«');
+ààààcontentà=àcontent.split('»').join('»');
+ààààcontentà=àcontent.split('°').join('°');
+àààà
+àààà//àSpezielleàHTML-Entities
+ààààcontentà=àcontent.split('—').join('');
+ààààcontentà=àcontent.split('—').join('');
+ààààcontentà=àcontent.split('—').join('');
+ààààcontentà=àcontent.split('—').join('');
+ààààcontentà=àcontent.split('«').join('«');
+ààààcontentà=àcontent.split('»').join('»');
+ààààcontentà=àcontent.split('°').join('°');
+àààà
+àààà//àWheelchairàiconàFehler
+ààààcontentà=àcontent.split('¿').join('¿');
+ààààcontentà=àcontent.split('—¢¿').join('¿');
+àààà
+ààààifà(contentà!==àoriginalContent)à{
+ààààààfs.writeFileSync(filePath,àcontent,à'utf8');
+ààààààconsole.log('Fixed:à'à+àpath.relative('C:\\WMC\\Projekt_25',àfilePath));
+ààààààreturnàtrue;
+àààà}
+àà}àcatchà(e)à{
+àààà//àignore
+àà}
+ààreturnàfalse;
 }
 
-function walkDir(dir) {
-  try {
-    const entries = fs.readdirSync(dir, { withFileTypes: true });
-    
-    for (const entry of entries) {
-      const fullPath = path.join(dir, entry.name);
-      
-      if (entry.isDirectory() && !['node_modules', '.git'].includes(entry.name)) {
-        walkDir(fullPath);
-      } else if (entry.isFile() && /\.(html|js|css|json|md)$/.test(entry.name)) {
-        if (fixFile(fullPath)) {
-          fixed++;
-        }
-      }
-    }
-  } catch (e) {
-    // ignore
-  }
+functionàwalkDir(dir)à{
+ààtryà{
+ààààconstàentriesà=àfs.readdirSync(dir,à{àwithFileTypes:àtrueà});
+àààà
+ààààforà(constàentryàofàentries)à{
+ààààààconstàfullPathà=àpath.join(dir,àentry.name);
+àààààà
+ààààààifà(entry.isDirectory()à&&à!['node_modules',à'.git'].includes(entry.name))à{
+ààààààààwalkDir(fullPath);
+àààààà}àelseàifà(entry.isFile()à&&à/\.(html|js|css|json|md)$/.test(entry.name))à{
+ààààààààifà(fixFile(fullPath))à{
+ààààààààààfixed++;
+àààààààà}
+àààààà}
+àààà}
+àà}àcatchà(e)à{
+àààà//àignore
+àà}
 }
 
 walkDir('C:\\WMC\\Projekt_25');
-console.log('Fixed ' + fixed + ' files');
+console.log('Fixedà'à+àfixedà+à'àfiles');

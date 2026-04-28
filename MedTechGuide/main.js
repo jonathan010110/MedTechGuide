@@ -1,47 +1,47 @@
-import { App3D } from './modules/core/App3D.js';
-import { setupUI } from './modules/ui/setupUI.js';
+importà{àApp3Dà}àfromà'./modules/core/App3D.js';
+importà{àsetupUIà}àfromà'./modules/ui/setupUI.js';
 
-const canvas = document.getElementById('scene');
-const loader = document.getElementById('loader');
-const infoPanel = document.getElementById('infoPanel');
-const infoText = document.getElementById('infoText');
-const heartRateSlider = document.getElementById('heartRateSlider');
-const heartRateValue = document.getElementById('heartRateValue');
-const pressureFill = document.getElementById('pressureFill');
-const bpResult = document.getElementById('bp-result');
+constàcanvasà=àdocument.getElementById('scene');
+constàloaderà=àdocument.getElementById('loader');
+constàinfoPanelà=àdocument.getElementById('infoPanel');
+constàinfoTextà=àdocument.getElementById('infoText');
+constàheartRateSliderà=àdocument.getElementById('heartRateSlider');
+constàheartRateValueà=àdocument.getElementById('heartRateValue');
+constàpressureFillà=àdocument.getElementById('pressureFill');
+constàbpResultà=àdocument.getElementById('bp-result');
 
-const showLoaderMessage = (message) => {
-  const textNode = loader?.querySelector('p');
-  if (textNode) {
-    textNode.textContent = message;
-  }
+constàshowLoaderMessageà=à(message)à=>à{
+ààconstàtextNodeà=àloader?.querySelector('p');
+ààifà(textNode)à{
+ààààtextNode.textContentà=àmessage;
+àà}
 };
 
-if (window.location.protocol === 'file:') {
-  showLoaderMessage('Bitte über lokalen Server öffnen: z. B. python -m http.server 8080 und dann /MedTechGuide/.');
+ifà(window.location.protocolà===à'file:')à{
+ààshowLoaderMessage('BitteàüberàlokalenàServeràöffnen:àz.àB.àpythonà-màhttp.serverà8080àundàdannà/MedTechGuide/.');
 }
 
-if (window.location.protocol !== 'file:') {
-  const app = new App3D({
-    canvas,
-    infoPanel,
-    infoText,
-    heartRateSlider,
-    pressureFill,
-    bpResult,
-  });
+ifà(window.location.protocolà!==à'file:')à{
+ààconstàappà=ànewàApp3D({
+ààààcanvas,
+ààààinfoPanel,
+ààààinfoText,
+ààààheartRateSlider,
+ààààpressureFill,
+ààààbpResult,
+àà});
 
-  setupUI({
-    app,
-    loader,
-    heartRateSlider,
-    heartRateValue,
-  });
+ààsetupUI({
+ààààapp,
+ààààloader,
+ààààheartRateSlider,
+ààààheartRateValue,
+àà});
 
-  try {
-    app.init();
-  } catch (error) {
-    console.error('MedTechGuide konnte nicht initialisiert werden:', error);
-    showLoaderMessage('Startfehler: Prüfe Browser-Konsole und nutze einen lokalen HTTP-Server.');
-  }
+ààtryà{
+ààààapp.init();
+àà}àcatchà(error)à{
+ààààconsole.error('MedTechGuideàkonnteànichtàinitialisiertàwerden:',àerror);
+ààààshowLoaderMessage('Startfehler:àPrüfeàBrowser-KonsoleàundànutzeàeinenàlokalenàHTTP-Server.');
+àà}
 }

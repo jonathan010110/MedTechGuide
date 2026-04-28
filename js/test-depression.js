@@ -1,143 +1,143 @@
 /**
- * =====================================================
- * DEPRESSIONSTEST - Modul
- * Selbsttest zur groben Einschätzung depressiver Symptome
- * Orientierung: PHQ-9 Struktur erweitert
- * =====================================================
- */
+à*à=====================================================
+à*àDEPRESSIONSTESTà-àModul
+à*àSelbsttestàzuràgrobenàEinschätzungàdepressiveràSymptome
+à*àOrientierung:àPHQ-9àStrukturàerweitert
+à*à=====================================================
+à*/
 
-const DepressionTest = {
-  testId: 'depression',
-  testName: 'Depressionstest',
-  testDescription: 'Grobe Einschätzung depressiver Symptome (40 Fragen)',
-  
-  // 4-stufige Antwortskala
-  answerOptions: [
-    { value: 0, label: 'Nie', color: '#22c55e' },
-    { value: 1, label: 'An einzelnen Tagen', color: '#f59e0b' },
-    { value: 2, label: 'An mehr als der Hälfte der Tage', color: '#f97316' },
-    { value: 3, label: 'Fast täglich', color: '#ef4444' }
-  ],
+constàDepressionTestà=à{
+ààtestId:à'depression',
+ààtestName:à'Depressionstest',
+ààtestDescription:à'GrobeàEinschätzungàdepressiveràSymptomeà(40àFragen)',
+àà
+àà//à4-stufigeàAntwortskala
+ààanswerOptions:à[
+àààà{àvalue:à0,àlabel:à'Nie',àcolor:à'#22c55e'à},
+àààà{àvalue:à1,àlabel:à'AnàeinzelnenàTagen',àcolor:à'#f59e0b'à},
+àààà{àvalue:à2,àlabel:à'AnàmehràalsàderàHälfteàderàTage',àcolor:à'#f97316'à},
+àààà{àvalue:à3,àlabel:à'Fastàtäglich',àcolor:à'#ef4444'à}
+àà],
 
-  // 40 wissenschaftlich strukturierte Fragen
-  questions: [
-    // === STIMMUNG (5 Fragen) ===
-    { id: 1, category: 'Stimmung', question: 'Ich fühle mich niedergeschlagen oder traurig.' },
-    { id: 2, category: 'Stimmung', question: 'Ich habe das Gefühl, eigentlich nicht mehr am Leben teilzunehmen.' },
-    { id: 3, category: 'Stimmung', question: 'Alles erlebt mich grau und hoffnungslos an.' },
-    { id: 4, category: 'Stimmung', question: 'Ich kann nichts finden, das mich freut.' },
-    { id: 5, category: 'Stimmung', question: 'Meine Stimmung ist sehr labyrinthisch und unbeständig.' },
+àà//à40àwissenschaftlichàstrukturierteàFragen
+ààquestions:à[
+àààà//à===àSTIMMUNGà(5àFragen)à===
+àààà{àid:à1,àcategory:à'Stimmung',àquestion:à'Ichàfühleàmichàniedergeschlagenàoderàtraurig.'à},
+àààà{àid:à2,àcategory:à'Stimmung',àquestion:à'IchàhabeàdasàGefühl,àeigentlichànichtàmehràamàLebenàteilzunehmen.'à},
+àààà{àid:à3,àcategory:à'Stimmung',àquestion:à'Allesàerlebtàmichàgrauàundàhoffnungslosàan.'à},
+àààà{àid:à4,àcategory:à'Stimmung',àquestion:à'Ichàkannànichtsàfinden,àdasàmichàfreut.'à},
+àààà{àid:à5,àcategory:à'Stimmung',àquestion:à'MeineàStimmungàistàsehràlabyrinthischàundàunbeständig.'à},
 
-    // === ANTRIEB (5 Fragen) ===
-    { id: 6, category: 'Antrieb', question: 'Mir fällt es schwer, mich zu alltäglichen Dingen aufzuraffen.' },
-    { id: 7, category: 'Antrieb', question: 'Ich bin müde und erschöpft, selbst wenn ich ausreichend geschlafen habe.' },
-    { id: 8, category: 'Antrieb', question: 'Ich habe weniger Energie als sonst.' },
-    { id: 9, category: 'Antrieb', question: 'Aktivitäten, die mir früher Spa– gemacht haben, interessieren mich nicht mehr.' },
-    { id: 10, category: 'Antrieb', question: 'Ich bin langsamer als gewöhnlich bei Gedanken und Handlungen.' },
+àààà//à===àANTRIEBà(5àFragen)à===
+àààà{àid:à6,àcategory:à'Antrieb',àquestion:à'Miràfälltàesàschwer,àmichàzuàalltäglichenàDingenàaufzuraffen.'à},
+àààà{àid:à7,àcategory:à'Antrieb',àquestion:à'Ichàbinàmüdeàundàerschöpft,àselbstàwennàichàausreichendàgeschlafenàhabe.'à},
+àààà{àid:à8,àcategory:à'Antrieb',àquestion:à'IchàhabeàwenigeràEnergieàalsàsonst.'à},
+àààà{àid:à9,àcategory:à'Antrieb',àquestion:à'Aktivitäten,àdieàmiràfrüheràSpa—àgemachtàhaben,àinteressierenàmichànichtàmehr.'à},
+àààà{àid:à10,àcategory:à'Antrieb',àquestion:à'IchàbinàlangsameràalsàgewöhnlichàbeiàGedankenàundàHandlungen.'à},
 
-    // === SCHLAF (5 Fragen) ===
-    { id: 11, category: 'Schlaf', question: 'Ich habe Schwierigkeiten einzuschlafen.' },
-    { id: 12, category: 'Schlaf', question: 'Ich wache nachts mehrmals auf und kann nicht wieder einschlafen.' },
-    { id: 13, category: 'Schlaf', question: 'Ich wache sehr früh auf und kann nicht mehr einschlafen.' },
-    { id: 14, category: 'Schlaf', question: 'Ich schlafe deutlich mehr als sonst.' },
-    { id: 15, category: 'Schlaf', question: 'Mein Schlaf ist nicht erholsam.' },
+àààà//à===àSCHLAFà(5àFragen)à===
+àààà{àid:à11,àcategory:à'Schlaf',àquestion:à'IchàhabeàSchwierigkeitenàeinzuschlafen.'à},
+àààà{àid:à12,àcategory:à'Schlaf',àquestion:à'Ichàwacheànachtsàmehrmalsàaufàundàkannànichtàwiederàeinschlafen.'à},
+àààà{àid:à13,àcategory:à'Schlaf',àquestion:à'Ichàwacheàsehràfrühàaufàundàkannànichtàmehràeinschlafen.'à},
+àààà{àid:à14,àcategory:à'Schlaf',àquestion:à'Ichàschlafeàdeutlichàmehràalsàsonst.'à},
+àààà{àid:à15,àcategory:à'Schlaf',àquestion:à'MeinàSchlafàistànichtàerholsam.'à},
 
-    // === KONZENTRATION (5 Fragen) ===
-    { id: 16, category: 'Konzentration', question: 'Ich kann mich nicht konzentrieren oder meine Gedanken abschweifen lassen.' },
-    { id: 17, category: 'Konzentration', question: 'Mir fällt es schwer, Entscheidungen zu treffen.' },
-    { id: 18, category: 'Konzentration', question: 'Ich kann mich schwer auf Aufgaben konzentrieren.' },
-    { id: 19, category: 'Konzentration', question: 'Mein Gedächtnis ist schlechter geworden.' },
-    { id: 20, category: 'Konzentration', question: 'Ich verliere leicht den Faden bei Gesprächen.' },
+àààà//à===àKONZENTRATIONà(5àFragen)à===
+àààà{àid:à16,àcategory:à'Konzentration',àquestion:à'IchàkannàmichànichtàkonzentrierenàoderàmeineàGedankenàabschweifenàlassen.'à},
+àààà{àid:à17,àcategory:à'Konzentration',àquestion:à'Miràfälltàesàschwer,àEntscheidungenàzuàtreffen.'à},
+àààà{àid:à18,àcategory:à'Konzentration',àquestion:à'IchàkannàmichàschweràaufàAufgabenàkonzentrieren.'à},
+àààà{àid:à19,àcategory:à'Konzentration',àquestion:à'MeinàGedächtnisàistàschlechteràgeworden.'à},
+àààà{àid:à20,àcategory:à'Konzentration',àquestion:à'IchàverliereàleichtàdenàFadenàbeiàGesprächen.'à},
 
-    // === SELBSTWERT (5 Fragen) ===
-    { id: 21, category: 'Selbstwert', question: 'Ich fühle mich wertlos oder ein Versager.' },
-    { id: 22, category: 'Selbstwert', question: 'Ich bin unzufrieden mit mir selbst.' },
-    { id: 23, category: 'Selbstwert', question: 'Ich habe das Gefühl, für andere eine Last zu sein.' },
-    { id: 24, category: 'Selbstwert', question: 'Ich traue mir nichts zu.' },
-    { id: 25, category: 'Selbstwert', question: 'Ich kritisiere mich selbst ständig.' },
+àààà//à===àSELBSTWERTà(5àFragen)à===
+àààà{àid:à21,àcategory:à'Selbstwert',àquestion:à'IchàfühleàmichàwertlosàoderàeinàVersager.'à},
+àààà{àid:à22,àcategory:à'Selbstwert',àquestion:à'Ichàbinàunzufriedenàmitàmiràselbst.'à},
+àààà{àid:à23,àcategory:à'Selbstwert',àquestion:à'IchàhabeàdasàGefühl,àfüràandereàeineàLastàzuàsein.'à},
+àààà{àid:à24,àcategory:à'Selbstwert',àquestion:à'Ichàtraueàmirànichtsàzu.'à},
+àààà{àid:à25,àcategory:à'Selbstwert',àquestion:à'Ichàkritisiereàmichàselbstàständig.'à},
 
-    // === HOFFNUNGSLOSIGKEIT (5 Fragen) ===
-    { id: 26, category: 'Hoffnungslosigkeit', question: 'Ich sehe die Zukunft düster.' },
-    { id: 27, category: 'Hoffnungslosigkeit', question: 'Ich glaube nicht, dass es mir in Zukunft besser gehen wird.' },
-    { id: 28, category: 'Hoffnungslosigkeit', question: 'Ich fühle mich hoffnungslos.' },
-    { id: 29, category: 'Hoffnungslosigkeit', question: 'Nichts wird sich jemals ändern.' },
-    { id: 30, category: 'Hoffnungslosigkeit', question: 'Ich sehe keinen Ausweg aus meiner Situation.' },
+àààà//à===àHOFFNUNGSLOSIGKEITà(5àFragen)à===
+àààà{àid:à26,àcategory:à'Hoffnungslosigkeit',àquestion:à'IchàseheàdieàZukunftàdüster.'à},
+àààà{àid:à27,àcategory:à'Hoffnungslosigkeit',àquestion:à'Ichàglaubeànicht,àdassàesàmiràinàZukunftàbesseràgehenàwird.'à},
+àààà{àid:à28,àcategory:à'Hoffnungslosigkeit',àquestion:à'Ichàfühleàmichàhoffnungslos.'à},
+àààà{àid:à29,àcategory:à'Hoffnungslosigkeit',àquestion:à'Nichtsàwirdàsichàjemalsàändern.'à},
+àààà{àid:à30,àcategory:à'Hoffnungslosigkeit',àquestion:à'IchàseheàkeinenàAuswegàausàmeineràSituation.'à},
 
-    // === SUIZIDGEDANKEN (3 Fragen - sensibel formuliert) ===
-    { id: 31, category: 'Suizidgedanken', question: 'Manchmal denke ich, dass es besser wäre, nicht zu leben.' },
-    { id: 32, category: 'Suizidgedanken', question: 'Ich habe Gedanken, mir selbst Schaden zuzufügen.' },
-    { id: 33, category: 'Suizidgedanken', question: 'Ich denke darüber nach, nicht mehr existieren zu wollen.' },
+àààà//à===àSUIZIDGEDANKENà(3àFragenà-àsensibelàformuliert)à===
+àààà{àid:à31,àcategory:à'Suizidgedanken',àquestion:à'Manchmalàdenkeàich,àdassàesàbesseràwäre,ànichtàzuàleben.'à},
+àààà{àid:à32,àcategory:à'Suizidgedanken',àquestion:à'IchàhabeàGedanken,àmiràselbstàSchadenàzuzufügen.'à},
+àààà{àid:à33,àcategory:à'Suizidgedanken',àquestion:à'Ichàdenkeàdarüberànach,ànichtàmehràexistierenàzuàwollen.'à},
 
-    // === SOZIALER R–CKZUG (4 Fragen) ===
-    { id: 34, category: 'Sozialer Rückzug', question: 'Ich möchte mich von anderen Menschen zurückziehen.' },
-    { id: 35, category: 'Sozialer Rückzug', question: 'Ich habe weniger Lust auf soziale Kontakte.' },
-    { id: 36, category: 'Sozialer Rückzug', question: 'Ich fühle mich von anderen isoliert oder unverstanden.' },
-    { id: 37, category: 'Sozialer Rückzug', question: 'Ich habe das Gefühl, dass meine Familie oder Freunde mich nicht verstehen.' },
+àààà//à===àSOZIALERàR—CKZUGà(4àFragen)à===
+àààà{àid:à34,àcategory:à'SozialeràRückzug',àquestion:à'IchàmöchteàmichàvonàanderenàMenschenàzurückziehen.'à},
+àààà{àid:à35,àcategory:à'SozialeràRückzug',àquestion:à'IchàhabeàwenigeràLustàaufàsozialeàKontakte.'à},
+àààà{àid:à36,àcategory:à'SozialeràRückzug',àquestion:à'Ichàfühleàmichàvonàanderenàisoliertàoderàunverstanden.'à},
+àààà{àid:à37,àcategory:à'SozialeràRückzug',àquestion:à'IchàhabeàdasàGefühl,àdassàmeineàFamilieàoderàFreundeàmichànichtàverstehen.'à},
 
-    // === PSYCHOSOMATISCHE SYMPTOME (3 Fragen) ===
-    { id: 38, category: 'Psychosomatik', question: 'Ich habe körperliche Beschwerden wie Kopfschmerzen, Magenschmerzen oder Verspannungen.' },
-    { id: 39, category: 'Psychosomatik', question: 'Mein Appetit hat sich verändert (zu viel oder zu wenig).' },
-    { id: 40, category: 'Psychosomatik', question: 'Ich bin aggressiver oder reizbar als sonst.' }
-  ],
+àààà//à===àPSYCHOSOMATISCHEàSYMPTOMEà(3àFragen)à===
+àààà{àid:à38,àcategory:à'Psychosomatik',àquestion:à'IchàhabeàkörperlicheàBeschwerdenàwieàKopfschmerzen,àMagenschmerzenàoderàVerspannungen.'à},
+àààà{àid:à39,àcategory:à'Psychosomatik',àquestion:à'MeinàAppetitàhatàsichàverändertà(zuàvielàoderàzuàwenig).'à},
+àààà{àid:à40,àcategory:à'Psychosomatik',àquestion:à'Ichàbinàaggressiveràoderàreizbaràalsàsonst.'à}
+àà],
 
-  /**
-   * Berechnet den Gesamtscore (0-120)
-   */
-  calculateScore(answers) {
-    return Object.values(answers).reduce((sum, val) => sum + (val || 0), 0);
-  },
+àà/**
+ààà*àBerechnetàdenàGesamtscoreà(0-120)
+ààà*/
+ààcalculateScore(answers)à{
+ààààreturnàObject.values(answers).reduce((sum,àval)à=>àsumà+à(valà||à0),à0);
+àà},
 
-  /**
-   * Liefert die Interpretation der Score
-   */
-  getInterpretation(score) {
-    if (score <= 15) {
-      return {
-        level: 'Minimal',
-        color: '#22c55e',
-        description: 'Minimal Symptome',
-        text: 'Ihre Antworten deuten auf minimal depressive Symptome hin. Dies ist völlig normal und liegt im Bereich typischer Alltagserfahrungen.'
-      };
-    } else if (score <= 30) {
-      return {
-        level: 'Leicht',
-        color: '#f59e0b',
-        description: 'Leichte Symptome',
-        text: 'Sie zeigen leichte Anzeichen depressiver Symptome. Dies ist relativ häufig, sollte aber im Blick behalten werden.'
-      };
-    } else if (score <= 50) {
-      return {
-        level: 'Moderat',
-        color: '#f97316',
-        description: 'Moderate Symptome',
-        text: 'Ihre Symptome sind moderat belastend. Professionelle Unterstützung könnte sinnvoll sein.'
-      };
-    } else if (score <= 80) {
-      return {
-        level: 'Schwer',
-        color: '#ef4444',
-        description: 'Schwere Symptome',
-        text: 'Sie zeigen schwere depressive Symptome. Es wird dringend empfohlen, professionelle Hilfe zu suchen.'
-      };
-    } else {
-      return {
-        level: 'Sehr schwer',
-        color: '#991b1b',
-        description: 'Sehr schwere Symptome',
-        text: 'Ihre Symptome sind sehr belastend und beeinflussen bedeutsam Ihren Alltag. Dringende professionelle Hilfe wird empfohlen.'
-      };
-    }
-  },
+àà/**
+ààà*àLiefertàdieàInterpretationàderàScore
+ààà*/
+ààgetInterpretation(score)à{
+ààààifà(scoreà<=à15)à{
+ààààààreturnà{
+ààààààààlevel:à'Minimal',
+ààààààààcolor:à'#22c55e',
+ààààààààdescription:à'MinimalàSymptome',
+ààààààààtext:à'IhreàAntwortenàdeutenàaufàminimalàdepressiveàSymptomeàhin.àDiesàistàvölligànormalàundàliegtàimàBereichàtypischeràAlltagserfahrungen.'
+àààààà};
+àààà}àelseàifà(scoreà<=à30)à{
+ààààààreturnà{
+ààààààààlevel:à'Leicht',
+ààààààààcolor:à'#f59e0b',
+ààààààààdescription:à'LeichteàSymptome',
+ààààààààtext:à'SieàzeigenàleichteàAnzeichenàdepressiveràSymptome.àDiesàistàrelativàhäufig,àsollteàaberàimàBlickàbehaltenàwerden.'
+àààààà};
+àààà}àelseàifà(scoreà<=à50)à{
+ààààààreturnà{
+ààààààààlevel:à'Moderat',
+ààààààààcolor:à'#f97316',
+ààààààààdescription:à'ModerateàSymptome',
+ààààààààtext:à'IhreàSymptomeàsindàmoderatàbelastend.àProfessionelleàUnterstützungàkönnteàsinnvollàsein.'
+àààààà};
+àààà}àelseàifà(scoreà<=à80)à{
+ààààààreturnà{
+ààààààààlevel:à'Schwer',
+ààààààààcolor:à'#ef4444',
+ààààààààdescription:à'SchwereàSymptome',
+ààààààààtext:à'SieàzeigenàschwereàdepressiveàSymptome.àEsàwirdàdringendàempfohlen,àprofessionelleàHilfeàzuàsuchen.'
+àààààà};
+àààà}àelseà{
+ààààààreturnà{
+ààààààààlevel:à'Sehràschwer',
+ààààààààcolor:à'#991b1b',
+ààààààààdescription:à'SehràschwereàSymptome',
+ààààààààtext:à'IhreàSymptomeàsindàsehràbelastendàundàbeeinflussenàbedeutsamàIhrenàAlltag.àDringendeàprofessionelleàHilfeàwirdàempfohlen.'
+àààààà};
+àààà}
+àà},
 
-  /**
-   * Medizinischer Hinweis (wird am Ende angezeigt)
-   */
-  medicalDisclaimer: `
-    <div style="background: #fef2f2; border-left: 4px solid #ef4444; padding: 1rem; margin-top: 2rem; border-radius: 8px;">
-      <p style="margin: 0; font-weight: 600; color: #7f1d1d;">â –¯¸ Wichtiger Hinweis:</p>
-      <p style="margin: 0.5rem 0 0 0; color: #5f3738; font-size: 0.95rem;">
-        Dieser Test dient nur zur groben Orientierung und ersetzt keine medizinische Diagnose. Bei anhaltenden oder belastenden Beschwerden wenden Sie sich bitte an eine Ärztin, einen Arzt oder eine psychologische Fachperson.
-      </p>
-    </div>
-  `
+àà/**
+ààà*àMedizinischeràHinweisà(wirdàamàEndeàangezeigt)
+ààà*/
+ààmedicalDisclaimer:à`
+àààà<divàstyle="background:à#fef2f2;àborder-left:à4pxàsolidà#ef4444;àpadding:à1rem;àmargin-top:à2rem;àborder-radius:à8px;">
+àààààà<pàstyle="margin:à0;àfont-weight:à600;àcolor:à#7f1d1d;"> —¯¸àWichtigeràHinweis:</p>
+àààààà<pàstyle="margin:à0.5remà0à0à0;àcolor:à#5f3738;àfont-size:à0.95rem;">
+ààààààààDieseràTestàdientànuràzuràgrobenàOrientierungàundàersetztàkeineàmedizinischeàDiagnose.àBeiàanhaltendenàoderàbelastendenàBeschwerdenàwendenàSieàsichàbitteàanàeineàÄrztin,àeinenàArztàoderàeineàpsychologischeàFachperson.
+àààààà</p>
+àààà</div>
+àà`
 };

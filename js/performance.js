@@ -1,191 +1,191 @@
 /**
- * ===================================================================
- * â¡ MEDTECHGUIDE - PERFORMANCE OPTIMIZATIONS
- * ===================================================================
- * Features:
- * - Lazy Loading für Bilder
- * - Deferred Search Index Loading
- * - Progressive Enhancement
- * - Resource Prioritization
- */
+à*à===================================================================
+à*à¡àMEDTECHGUIDEà-àPERFORMANCEàOPTIMIZATIONS
+à*à===================================================================
+à*àFeatures:
+à*à-àLazyàLoadingàfüràBilder
+à*à-àDeferredàSearchàIndexàLoading
+à*à-àProgressiveàEnhancement
+à*à-àResourceàPrioritization
+à*/
 
-// ===================================================================
-// –°¼–¯¸ LAZY LOADING FOR IMAGES
-// ===================================================================
+//à===================================================================
+//à°ü—¯¸àLAZYàLOADINGàFORàIMAGES
+//à===================================================================
 
 /**
- * Initialisiert Lazy Loading für Bilder (native, mit fallback)
- */
-function initLazyLoading() {
-  // Moderne Browser nutzen native loading="lazy"
-  const lazyImages = document.querySelectorAll'img[loading="lazy"]');
-  
-  if (!lazyImages.length) {
-    // Fallback: alle img-tags hinzufügen
-    document.querySelectorAll'img').forEach(img => {
-      // Skip wenn aria-hidden
-      if (img.closest('.skip-to-content, .loader, .spinner')) return;
-      
-      img.setAttribute('loading', 'lazy');
-      img.setAttribute('decoding', 'async');
-      
-      // Fallback für alte Browser: IntersectionObserver
-      if ('IntersectionObserver' in window) {
-        initIntersectionObserver(img);
-      }
-    });
-  }
-  
-  console.log('â Lazy Loading initialisiert');
+à*àInitialisiertàLazyàLoadingàfüràBilderà(native,àmitàfallback)
+à*/
+functionàinitLazyLoading()à{
+àà//àModerneàBrowserànutzenànativeàloading="lazy"
+ààconstàlazyImagesà=àdocument.querySelectorAll'img[loading="lazy"]');
+àà
+ààifà(!lazyImages.length)à{
+àààà//àFallback:àalleàimg-tagsàhinzufügen
+ààààdocument.querySelectorAll'img').forEach(imgà=>à{
+àààààà//àSkipàwennàaria-hidden
+ààààààifà(img.closest('.skip-to-content,à.loader,à.spinner'))àreturn;
+àààààà
+ààààààimg.setAttribute('loading',à'lazy');
+ààààààimg.setAttribute('decoding',à'async');
+àààààà
+àààààà//àFallbackàfüràalteàBrowser:àIntersectionObserver
+ààààààifà('IntersectionObserver'àinàwindow)à{
+ààààààààinitIntersectionObserver(img);
+àààààà}
+àààà});
+àà}
+àà
+ààconsole.log('àLazyàLoadingàinitialisiert');
 }
 
 /**
- * Fallback IntersectionObserver für alte Browser
- */
-function initIntersectionObserver(img) {
-  const imageObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const image = entry.target;
-        // Load image wenn sichtbar
-        if (image.src || image.dataset.src) {
-          image.src = image.dataset.src || image.src;
-          image.removeAttribute('data-src');
-          imageObserver.unobserve(image);
-        }
-      }
-    });
-  }, {
-    rootMargin: '50px 0px',
-    threshold: 0.01
-  });
-  
-  imageObserver.observe(img);
+à*àFallbackàIntersectionObserveràfüràalteàBrowser
+à*/
+functionàinitIntersectionObserver(img)à{
+ààconstàimageObserverà=ànewàIntersectionObserver((entries,àobserver)à=>à{
+ààààentries.forEach(entryà=>à{
+ààààààifà(entry.isIntersecting)à{
+ààààààààconstàimageà=àentry.target;
+àààààààà//àLoadàimageàwennàsichtbar
+ààààààààifà(image.srcà||àimage.dataset.src)à{
+ààààààààààimage.srcà=àimage.dataset.srcà||àimage.src;
+ààààààààààimage.removeAttribute('data-src');
+ààààààààààimageObserver.unobserve(image);
+àààààààà}
+àààààà}
+àààà});
+àà},à{
+ààààrootMargin:à'50pxà0px',
+ààààthreshold:à0.01
+àà});
+àà
+ààimageObserver.observe(img);
 }
 
-// ===================================================================
-// –° PERFORMANCE MONITORING (optional)
-// ===================================================================
+//à===================================================================
+//à°àPERFORMANCEàMONITORINGà(optional)
+//à===================================================================
 
 /**
- * Loggt wichtige Performance Metriken (nur in Development)
- */
-function logPerformanceMetrics() {
-  if (document.readyState === 'loading') {
-    return;
-  }
+à*àLoggtàwichtigeàPerformanceàMetrikenà(nuràinàDevelopment)
+à*/
+functionàlogPerformanceMetrics()à{
+ààifà(document.readyStateà===à'loading')à{
+ààààreturn;
+àà}
 
-  // Nutze Performance API wenn verfügbar
-  if (window.performance && window.performance.timing) {
-    const timing = window.performance.timing;
-    const metrics = {
-      'DOM Interactive': timing.domInteractive - timing.navigationStart,
-      'DOM Complete': timing.domComplete - timing.navigationStart,
-      'Page Load (onload)': timing.loadEventEnd - timing.navigationStart,
-      'TTI (Est.)': timing.domInteractive - timing.navigationStart
-    };
-    
-    // Log nur wenn nicht in production
-    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-      console.group('–° Performance Metrics');
-      Object.entries(metrics).forEach(([label, ms]) => {
-        console.log(`${label}: ${ms}ms`);
-      });
-      console.groupEnd();
-    }
-  }
+àà//àNutzeàPerformanceàAPIàwennàverfügbar
+ààifà(window.performanceà&&àwindow.performance.timing)à{
+ààààconstàtimingà=àwindow.performance.timing;
+ààààconstàmetricsà=à{
+àààààà'DOMàInteractive':àtiming.domInteractiveà-àtiming.navigationStart,
+àààààà'DOMàComplete':àtiming.domCompleteà-àtiming.navigationStart,
+àààààà'PageàLoadà(onload)':àtiming.loadEventEndà-àtiming.navigationStart,
+àààààà'TTIà(Est.)':àtiming.domInteractiveà-àtiming.navigationStart
+àààà};
+àààà
+àààà//àLogànuràwennànichtàinàproduction
+ààààifà(window.location.hostnameà===à'localhost'à||àwindow.location.hostnameà===à'127.0.0.1')à{
+ààààààconsole.group('°àPerformanceàMetrics');
+ààààààObject.entries(metrics).forEach(([label,àms])à=>à{
+ààààààààconsole.log(`${label}:à${ms}ms`);
+àààààà});
+ààààààconsole.groupEnd();
+àààà}
+àà}
 
-  // Cumulative Layout Shift (CLS) - neuere API
-  if ('PerformanceObserver' in window) {
-    try {
-      const observer = new PerformanceObserver((list) => {
-        for (const entry of list.getEntries()) {
-          console.log('CLS Entry:', entry.value);
-        }
-      });
-      observer.observe({ entryTypes: ['layout-shift'] });
-    } catch (e) {
-      // API not available
-    }
-  }
+àà//àCumulativeàLayoutàShiftà(CLS)à-àneuereàAPI
+ààifà('PerformanceObserver'àinàwindow)à{
+ààààtryà{
+ààààààconstàobserverà=ànewàPerformanceObserver((list)à=>à{
+ààààààààforà(constàentryàofàlist.getEntries())à{
+ààààààààààconsole.log('CLSàEntry:',àentry.value);
+àààààààà}
+àààààà});
+ààààààobserver.observe({àentryTypes:à['layout-shift']à});
+àààà}àcatchà(e)à{
+àààààà//àAPIànotàavailable
+àààà}
+àà}
 }
 
-// ===================================================================
-// –°± SERVICE WORKER REGISTRATION (optional, für offline support)
-// ===================================================================
+//à===================================================================
+//à°±àSERVICEàWORKERàREGISTRATIONà(optional,àfüràofflineàsupport)
+//à===================================================================
 
 /**
- * Registriert ServiceWorker für offline Funktionalität
- * Hinweis: Benötigt service-worker.js Datei
- */
-function registerServiceWorker() {
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('service-worker.js')
-      .then(registration => {
-        console.log('â Service Worker registered:', registration);
-      })
-      .catch(error => {
-        console.log('â –¯¸ Service Worker registration failed:', error);
-      });
-  }
+à*àRegistriertàServiceWorkeràfüràofflineàFunktionalität
+à*àHinweis:àBenötigtàservice-worker.jsàDatei
+à*/
+functionàregisterServiceWorker()à{
+ààifà('serviceWorker'àinànavigator)à{
+àààànavigator.serviceWorker.register('service-worker.js')
+àààààà.then(registrationà=>à{
+ààààààààconsole.log('àServiceàWorkeràregistered:',àregistration);
+àààààà})
+àààààà.catch(errorà=>à{
+ààààààààconsole.log(' —¯¸àServiceàWorkeràregistrationàfailed:',àerror);
+àààààà});
+àà}
 }
 
-// ===================================================================
-// â¡ RESOURCE PRIORITIZATION
-// ===================================================================
+//à===================================================================
+//à¡àRESOURCEàPRIORITIZATION
+//à===================================================================
 
 /**
- * Preload wichtige Ressourcen
- */
-function addResourceHints() {
-  const head = document.head;
-  
-  // DNS Prefetch für externe Ressourcen (wenn vorhanden)
-  const links = [
-    // Beispiel: { rel: 'dns-prefetch', href: 'https://example.com' }
-  ];
-  
-  links.forEach(link => {
-    const linkEl = document.createElement('link');
-    linkEl.rel = link.rel;
-    linkEl.href = link.href;
-    head.appendChild(linkEl);
-  });
+à*àPreloadàwichtigeàRessourcen
+à*/
+functionàaddResourceHints()à{
+ààconstàheadà=àdocument.head;
+àà
+àà//àDNSàPrefetchàfüràexterneàRessourcenà(wennàvorhanden)
+ààconstàlinksà=à[
+àààà//àBeispiel:à{àrel:à'dns-prefetch',àhref:à'https://example.com'à}
+àà];
+àà
+ààlinks.forEach(linkà=>à{
+ààààconstàlinkElà=àdocument.createElement('link');
+ààààlinkEl.relà=àlink.rel;
+ààààlinkEl.hrefà=àlink.href;
+ààààhead.appendChild(linkEl);
+àà});
 }
 
-// ===================================================================
-// –° INITIALIZATION
-// ===================================================================
+//à===================================================================
+//à°àINITIALIZATION
+//à===================================================================
 
-document.addEventListener('DOMContentLoaded', () => {
-  initLazyLoading();
-  logPerformanceMetrics();
-  addResourceHints();
-  
-  // Deferred ServiceWorker registration (nicht blocking)
-  if (document.readyState === 'complete') {
-    // registerServiceWorker(); // Uncomment wenn service-worker.js exists
-  } else {
-    window.addEventListener('load', () => {
-      // registerServiceWorker();
-    });
-  }
+document.addEventListener('DOMContentLoaded',à()à=>à{
+ààinitLazyLoading();
+ààlogPerformanceMetrics();
+ààaddResourceHints();
+àà
+àà//àDeferredàServiceWorkeràregistrationà(nichtàblocking)
+ààifà(document.readyStateà===à'complete')à{
+àààà//àregisterServiceWorker();à//àUncommentàwennàservice-worker.jsàexists
+àà}àelseà{
+ààààwindow.addEventListener('load',à()à=>à{
+àààààà//àregisterServiceWorker();
+àààà});
+àà}
 });
 
-// Oder früher laden wenn möglich
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initLazyLoading);
-} else {
-  initLazyLoading();
+//àOderàfrüheràladenàwennàmöglich
+ifà(document.readyStateà===à'loading')à{
+ààdocument.addEventListener('DOMContentLoaded',àinitLazyLoading);
+}àelseà{
+ààinitLazyLoading();
 }
 
-// ===================================================================
-// –° EXPORT
-// ===================================================================
+//à===================================================================
+//à°àEXPORT
+//à===================================================================
 
-if (typeof module !== 'undefined' && module.exports) {
-  module.exports = {
-    initLazyLoading,
-    logPerformanceMetrics
-  };
+ifà(typeofàmoduleà!==à'undefined'à&&àmodule.exports)à{
+ààmodule.exportsà=à{
+ààààinitLazyLoading,
+ààààlogPerformanceMetrics
+àà};
 }

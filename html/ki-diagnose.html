@@ -1,117 +1,117 @@
-ï»Â¿<!DOCTYPE html>
-<html lang="de">
-<head><meta charset="utf-8" /><title>KI in der Medizin –ÆÂ––•–•––ÂÂ––"" MedTechGuide</title><meta name="viewport" content="width=device-width, initial-scale=1.0" /><base href="../" /><link rel="stylesheet" href="css/style.css" /></head>
+ï»¿<!DOCTYPEàhtml>
+<htmlàlang="de">
+<head><metaàcharset="utf-8"à/><title>KIàinàderàMedizinà—Æ——•—•————""àMedTechGuide</title><metaàname="viewport"àcontent="width=device-width,àinitial-scale=1.0"à/><baseàhref="../"à/><linkàrel="stylesheet"àhref="css/style.css"à/></head>
 <body>
-  <!-- –•––ÂÂ¢––¿ ACCESSIBILITY: Skip to Content Link -->
-  <a href="#main-content" class="skip-to-content">Zum Inhalt springen</a>
-  
-  <div id="loader"><div class="spinner"></div><p>Seite wird geladen–Â–¬¦</p></div>
-  <header class="site-header"><div class="container"><h1>K–¼nstliche Intelligenz in der Medizin</h1><p class="subtitle">Bildanalyse, Diagnostik und Vorhersage</p></div></header>
-  <nav class="main-nav">
-    <div class="nav-container">
-      <div class="nav-links">
-        <a href="index.html">Start</a>
-        <a href="html/diabetes.html">Diabetes</a>
-        <a href="html/allergie.html">Allergien</a>
-        <a href="html/herz.html">Herz</a>
-        <a href="html/bildgebung.html">Bildgebung</a>
-        <a href="html/neurochips.html">Neurochips</a>
-        <a href="html/exoskelette.html">Exoskelette</a>
-        <a href="html/genetik.html">Genetik</a>
-        <a href="html/ki-diagnose.html" class="active">KI-Diagnose</a>
-        <a href="html/zukunft.html">Zukunft</a>
-        <a href="html/quiz.html" style="background: linear-gradient(135deg, #1e40af 0%, #0f766e 100%); color: white; font-weight: 700;">–ÆÂ––°–â¦––¸–â¦––½–âÂÂ––¯ Quiz</a>
-        <a href="html/self-tests.html" style="background: linear-gradient(135deg, #7c3aed 0%, #ec4899 100%); color: white; font-weight: 700;">–ÆÂ––°–â¦––¸–âÂÂ––§–âÂÂ––  Tests</a>
-        <a href="html/quellen.html">Quellen</a>
-      </div>
-      <div class="nav-search">
-        <input type="text" id="globalSearch" placeholder="Suche–Â–¬¦" aria-label="Globale Suche">
-        <span id="searchResults" class="search-results"></span>
-      </div>
-    </div>
-  </nav>
-  <main class="container" id="main-content">
-    <section class="section-card">
-      <h2>Einf–¼hrung</h2>
-      <p>Machine Learning und Deep Learning transformieren Medizin. KI-Systeme k–¶nnen medizinische Bilder analysieren (Tumoren erkennen, Frakturen klassifizieren), klinische Daten interpretieren (Vorhersage von Patientenverl–¤ufen), und sogar Genotyp-Ph–¤notyp Beziehungen dekodieren. WHO nennt AI eine Schl–¼sseltechnologie f–¼r SDG 3 (Gesundheit).</p>
-    </section>
-    <section class="section-card">
-      <h2>Kurz erkl–¤rt</h2>
-      <p><strong>Supervised Learning:</strong> KI lernt von gelabelten Beispielen (1000 CT-Bilder mit/ohne Tumor). <strong>CNNs</strong> (Convolutional Neural Networks) sind besonders f–¼r Bildanalyse geeignet. <strong>Validation:</strong> Unabh–¤ngiger Test-Satz misst echte Performance. <strong>Kalibrierung:</strong> Adjustierung f–¼r verschiedene Institutionen/Scanner.</p>
-    </section>
-    <figure class="section-image">
-      <img src="images/ki-1.jpg" alt="K–¼nstliche Intelligenz und Deep Learning in der medizinischen Diagnostik" />
-      <figcaption>KI-gest–¼tzte Bildanalyse: Deep-Learning-Netzwerke erkennen Muster in medizinischen Bildern mit hoher Genauigkeit.</figcaption>
-    </figure>
-    <section class="section-card">
-      <h2>Technische Funktionsweise</h2>
-      <h3>Bildanalyse mit Deep Learning</h3>
-      <p>Ein CNN hat viele Schichten (Convolutional, Pooling, Dense Layers). Jede Schicht lernt Features: tiefe Schichten lernen primitive Features (Linien), tiefe Schichten lernen semantische Features (Tumoren, Nodules). Das Netzwerk wird mit Tausenden annotierten Bildern trainiert mittels Backpropagation. Loss-Funktion optimiert Gewichte.</p>
-      <h3>Kliniksiche Risk Prediction</h3>
-      <p>Elektronische Krankenakten enthalten strukturierte (Laborwerte, Diagnosen) und unstrukturierte (Notizen) Daten. Machine Learning (Random Forest, XGBoost, oder LSTM-RNNs) kann Risk Scores berechnen: "Dieser Patient hat 60% Risiko f–¼r Myokardinfarkt in 6 Monaten".</p>
-      <h3>Natural Language Processing (NLP)</h3>
-      <p>–ÆÂ––ÆÂ–•––Â–¬––ÅÂ¾rztliche Notizen sind frei Text. NLP extrahiert Information: "Patient hat Fieber und Husten" –ÆÂ––•–•––Â–¬–– ' Symptome identifizieren –ÆÂ––•–•––Â–¬–– ' febriler Zustand erkannt. Transformer-Modelle (Attention-Mechanismus) sind State-of-the-Art.</p>
-    </section>
-    <section class="section-card">
-      <h3>Vergleichstabelle: KI-Systeme</h3>
-      <table>
-        <thead><tr><th>System</th><th>Input</th><th>Aufgabe</th><th>Accuracy</th><th>Status</th></tr></thead>
-        <tbody>
-          <tr><td>RadiologyAI</td><td>CT/MRT-Bilder</td><td>Tumor-Detektion</td><td>92–ÆÂ––•–•––ÂÂ––""96%</td><td>Klinisch</td></tr>
-          <tr><td>DeepMind AlphaFold</td><td>Aminos–¤ure-Sequenzen</td><td>Proteinstruktur</td><td>~90%</td><td>Research</td></tr>
-          <tr><td>IBM Watson</td><td>Klinische Notizen</td><td>Diagnose-Vorschlag</td><td>Variable</td><td>Pilotphase</td></tr>
-          <tr><td>EHR-Risk-Model</td><td>Elektronische Krankenakten</td><td>Mortalit–¤ts-Prediction</td><td>85%+ AUROC</td><td>Forschung</td></tr>
-          <tr><td>CancerNet</td><td>Pathologie-Bilder</td><td>Krebs-Klassifizierung</td><td>94%+</td><td>Klinisch</td></tr>
-        </tbody>
-      </table>
-    </section>
-    <section class="section-card">
-      <h2>Anwendungsbeispiel</h2>
-      <p>Ein 65-j–¤hriger Mann erh–¤lt ein Thorax-CT f–¼r Verdacht auf Lungentumor. Radiologische AI markiert 3 verd–¤chtige Nodules. Die erste (15 mm) wird als wahrscheinlich maligne klassifiziert (85% Confidence). Der Radiologe best–¤tigt dies und veranlasst Biopsie. Tumorstadium: T2aN0M0. Prognose-AI sagt 5-Jahres-–ÆÂ––ÆÂ–â¦––"berlebensrate von 60% voraus. Patient erh–¤lt Chemotherapie + Strahlung. 2 Jahre sp–¤ter: krankheitsfrei.</p>
-    </section>
-    <section class="section-card">
-      <h2>Vorteile und Grenzen</h2>
-      <ul><li>H–¶here Diagnostik-Genauigkeit durch 24/7-Analyse</li><li>Schnellere Diagnose (Minuten statt Tage)</li><li>Objektivit–¤t (kein Erm–¼dungs-Effekt)</li><li>Risikovorhersage f–¼r Fr–¼h-Intervention</li></ul>
-      <ul><li>Black-Box Problem: Warum entschied sich AI f–¼r Diagnose?</li><li>Datenschutz und Bias (Trainings-Daten k–¶nnen verzerrt sein)</li><li>Regulierung unklar (FDA-Zulassung unterschiedlich)</li><li>Kostenintensiv (GPU-Hardware, Expertise)</li></ul>
-    </section>
-    <section class="section-card">
-      <h2>Gesellschaftliche Relevanz</h2>
-      <p>KI k–¶nnte –ÆÂ––ÆÂ–•––Â–¬––ÅÂ¾rzte-Mangel kompensieren: In Schwellenl–¤ndern kann KI diagnostizieren, wenn keine Spezialisten verf–¼gbar sind. Allerdings: Automatisierungs-Arbeitsplatz-Verlust f–¼r Radiologen. Auch: Algorithmen k–¶nnten Patienten-Gruppen benachteiligen (wenn Trainings-Daten nicht divers sind).</p>
-    </section>
-    <section class="section-card">
-      <h2>Zukunftsperspektiven</h2>
-      <p>Explainable AI (XAI) f–¼r Transparenz. Federated Learning: Trainieren ohne zentrale Datenbankz. Multimodal Models (kombiniert Bilder + Text + Genomik). Therapeutische KI-Agenten (nicht nur Diagnose, sondern auch Therapie-Planung).</p>
-    </section>
-    <section class="section-card tech-challenges">
-      <h2>Technische Herausforderungen</h2>
-      <div class="challenge-item"><h4>Datenschutz & GDPR</h4><p>Trainings-Daten oft erfasst ohne explizite Erlaubnis. Anonymisierung kann reidentifiziert werden (Re-Identificaton Attacks).</p></div>
-      <div class="challenge-item"><h4>Bias & Fairness</h4><p>Trainings-Daten k–¶nnen unterrepr–¤sentierte Gruppen unteibenf. Modell lernt Bias –ÆÂ––•–•––Â–¬–– ' Diskriminierung von Patienten.</p></div>
-      <div class="challenge-item"><h4>Robustheit</h4><p>Modelle k–¶nnen auf Adversarial Examples t–¤uschbar sein (kleine Pixel-–ÆÂ––ÆÂ–•––Â–¬––ÅÂ¾nderungen –ÆÂ––•–•––Â–¬–– ' falsche Diagnose).</p></div>
-      <div class="challenge-item"><h4>Kontinuierliches Lernen</h4><p>Echte Deployment erfordert constant Updates wenn neue Daten verf–¼gbar sind –ÆÂ––•–•––ÂÂ––"" ohne Full Retraining.</p></div>
-      <div class="challenge-item"><h4>Echtzeit-Anforderungen</h4><p>Latenz kritisch f–¼r OP-Assistenz oder Echtzeit-–ÆÂ––ÆÂ–â¦––"berwachung. Embedded oder Edge-Inference n–¶tig.</p></div>
-    </section>
-    <section class="section-card glossar">
-      <h2>Glossar</h2>
-      <div class="glossar-term"><dt>CNN (Convolutional Neural Network)</dt><dd>Neuronales Netzwerk Typ spezialisiert auf r–¤umliche Daten (Bilder). Nutzt Convolution-Operation f–¼r Feature-Extraktion.</dd></div>
-      <div class="glossar-term"><dt>Deep Learning</dt><dd>Machine Learning mit vielen Schichten (Deep Neural Networks). Automatisch Features lernen statt manuell zu extrahieren.</dd></div>
-      <div class="glossar-term"><dt>Trainingsdaten</dt><dd>Datensatz, mit dem ein Machine Learning Modell trainiert wird. Qualit–¤t und Menge essentiell f–¼r Performance.</dd></div>
-      <div class="glossar-term"><dt>Validierung</dt><dd>Evaluation eines Modells auf unabh–¤ngigen Test-Daten. Misst echte generalisierbare Performance.</dd></div>
-      <div class="glossar-term"><dt>Overfitting</dt><dd>Wenn Modell zu gut Trainings-Daten learned, aber auf neuen Daten schlecht ist. Generalisierung fehlgeschlagen.</dd></div>
-    </section>
-    <section class="section-card">
-      <h2>Informatik-Reflexion</h2>
-      <p>KI in der Medizin erfordert: <strong>Software Engineering</strong> (Production ML pipelines), <strong>Sicherheit</strong> (Adversarial robustness), <strong>Ethik</strong> (Bias detection), <strong>Regulierung</strong> (FDA compliance), <strong>Transparency</strong> (Explainability), <strong>Verifiable Testing</strong> (formal verification).</p>
-    </section>
-    <section class="section-card related-links">
-      <h2>Weiterf–¼hrende Links & Quellen</h2>
-      <ul id="related-links"></ul>
-    </section>
-    <div class="privacy-notice"><p><strong>Datenschutz:</strong> Diese Website speichert keine Daten. Keine Cookies oder Tracking-Tools.</p></div>
-  </main>
-  <footer class="site-footer"><div class="container"><p>&copy; 2026 MedTechGuide – Schulprojekt HTL Informatik</p><p><a href="html/quellen.html">–ÆÂ––ÆÂ–â¦––"ber die wissenschaftlichen Quellen</a></p></div></footer>
-  <button class="scroll-to-top" id="scrollToTopBtn" aria-label="Nach oben scrollen">–ÆÂ––•–•––Â–¬–– '</button>
-  <script src="js/script.js"></script>
-  <script>window.addEventListener("load", () => { const loader = document.getElementById("loader"); if (loader) { loader.classList.add("hidden"); setTimeout(() => { loader.style.display = "none"; }, 500); } setActiveNavLink(); setRelatedLinks('ki'); });</script>
+àà<!--à—•——¢——¿àACCESSIBILITY:àSkipàtoàContentàLinkà-->
+àà<aàhref="#main-content"àclass="skip-to-content">ZumàInhaltàspringen</a>
+àà
+àà<divàid="loader"><divàclass="spinner"></div><p>Seiteàwirdàgeladen——¬¦</p></div>
+àà<headeràclass="site-header"><divàclass="container"><h1>K—ünstlicheàIntelligenzàinàderàMedizin</h1><pàclass="subtitle">Bildanalyse,àDiagnostikàundàVorhersage</p></div></header>
+àà<navàclass="main-nav">
+àààà<divàclass="nav-container">
+àààààà<divàclass="nav-links">
+àààààààà<aàhref="index.html">Start</a>
+àààààààà<aàhref="html/diabetes.html">Diabetes</a>
+àààààààà<aàhref="html/allergie.html">Allergien</a>
+àààààààà<aàhref="html/herz.html">Herz</a>
+àààààààà<aàhref="html/bildgebung.html">Bildgebung</a>
+àààààààà<aàhref="html/neurochips.html">Neurochips</a>
+àààààààà<aàhref="html/exoskelette.html">Exoskelette</a>
+àààààààà<aàhref="html/genetik.html">Genetik</a>
+àààààààà<aàhref="html/ki-diagnose.html"àclass="active">KI-Diagnose</a>
+àààààààà<aàhref="html/zukunft.html">Zukunft</a>
+àààààààà<aàhref="html/quiz.html"àstyle="background:àlinear-gradient(135deg,à#1e40afà0%,à#0f766eà100%);àcolor:àwhite;àfont-weight:à700;">—Æ°—¦——¸—¦——½———¯àQuiz</a>
+àààààààà<aàhref="html/self-tests.html"àstyle="background:àlinear-gradient(135deg,à#7c3aedà0%,à#ec4899à100%);àcolor:àwhite;àfont-weight:à700;">—Æ°—¦——¸———ç——— àTests</a>
+àààààààà<aàhref="html/quellen.html">Quellen</a>
+àààààà</div>
+àààààà<divàclass="nav-search">
+àààààààà<inputàtype="text"àid="globalSearch"àplaceholder="Suche——¬¦"àaria-label="GlobaleàSuche">
+àààààààà<spanàid="searchResults"àclass="search-results"></span>
+àààààà</div>
+àààà</div>
+àà</nav>
+àà<mainàclass="container"àid="main-content">
+àààà<sectionàclass="section-card">
+àààààà<h2>Einf—ührung</h2>
+àààààà<p>MachineàLearningàundàDeepàLearningàtransformierenàMedizin.àKI-Systemeàk—önnenàmedizinischeàBilderàanalysierenà(Tumorenàerkennen,àFrakturenàklassifizieren),àklinischeàDatenàinterpretierenà(VorhersageàvonàPatientenverl—äufen),àundàsogaràGenotyp-Ph—änotypàBeziehungenàdekodieren.àWHOànenntàAIàeineàSchl—üsseltechnologieàf—üràSDGà3à(Gesundheit).</p>
+àààà</section>
+àààà<sectionàclass="section-card">
+àààààà<h2>Kurzàerkl—ärt</h2>
+àààààà<p><strong>SupervisedàLearning:</strong>àKIàlerntàvonàgelabeltenàBeispielenà(1000àCT-Bilderàmit/ohneàTumor).à<strong>CNNs</strong>à(ConvolutionalàNeuralàNetworks)àsindàbesondersàf—üràBildanalyseàgeeignet.à<strong>Validation:</strong>àUnabh—ängigeràTest-SatzàmisstàechteàPerformance.à<strong>Kalibrierung:</strong>àAdjustierungàf—üràverschiedeneàInstitutionen/Scanner.</p>
+àààà</section>
+àààà<figureàclass="section-image">
+àààààà<imgàsrc="images/ki-1.jpg"àalt="K—ünstlicheàIntelligenzàundàDeepàLearningàinàderàmedizinischenàDiagnostik"à/>
+àààààà<figcaption>KI-gest—ützteàBildanalyse:àDeep-Learning-NetzwerkeàerkennenàMusteràinàmedizinischenàBildernàmitàhoheràGenauigkeit.</figcaption>
+àààà</figure>
+àààà<sectionàclass="section-card">
+àààààà<h2>TechnischeàFunktionsweise</h2>
+àààààà<h3>BildanalyseàmitàDeepàLearning</h3>
+àààààà<p>EinàCNNàhatàvieleàSchichtenà(Convolutional,àPooling,àDenseàLayers).àJedeàSchichtàlerntàFeatures:àtiefeàSchichtenàlernenàprimitiveàFeaturesà(Linien),àtiefeàSchichtenàlernenàsemantischeàFeaturesà(Tumoren,àNodules).àDasàNetzwerkàwirdàmitàTausendenàannotiertenàBildernàtrainiertàmittelsàBackpropagation.àLoss-FunktionàoptimiertàGewichte.</p>
+àààààà<h3>KliniksicheàRiskàPrediction</h3>
+àààààà<p>ElektronischeàKrankenaktenàenthaltenàstrukturierteà(Laborwerte,àDiagnosen)àundàunstrukturierteà(Notizen)àDaten.àMachineàLearningà(RandomàForest,àXGBoost,àoderàLSTM-RNNs)àkannàRiskàScoresàberechnen:à"DieseràPatientàhatà60%àRisikoàf—üràMyokardinfarktàinà6àMonaten".</p>
+àààààà<h3>NaturalàLanguageàProcessingà(NLP)</h3>
+àààààà<p>—Æ——Æ—•———¬——Å¾rztlicheàNotizenàsindàfreiàText.àNLPàextrahiertàInformation:à"PatientàhatàFieberàundàHusten"à—Æ——•—•———¬—— 'àSymptomeàidentifizierenà—Æ——•—•———¬—— 'àfebrileràZustandàerkannt.àTransformer-Modelleà(Attention-Mechanismus)àsindàState-of-the-Art.</p>
+àààà</section>
+àààà<sectionàclass="section-card">
+àààààà<h3>Vergleichstabelle:àKI-Systeme</h3>
+àààààà<table>
+àààààààà<thead><tr><th>System</th><th>Input</th><th>Aufgabe</th><th>Accuracy</th><th>Status</th></tr></thead>
+àààààààà<tbody>
+àààààààààà<tr><td>RadiologyAI</td><td>CT/MRT-Bilder</td><td>Tumor-Detektion</td><td>92—Æ——•—•————""96%</td><td>Klinisch</td></tr>
+àààààààààà<tr><td>DeepMindàAlphaFold</td><td>Aminos—äure-Sequenzen</td><td>Proteinstruktur</td><td>~90%</td><td>Research</td></tr>
+àààààààààà<tr><td>IBMàWatson</td><td>KlinischeàNotizen</td><td>Diagnose-Vorschlag</td><td>Variable</td><td>Pilotphase</td></tr>
+àààààààààà<tr><td>EHR-Risk-Model</td><td>ElektronischeàKrankenakten</td><td>Mortalit—äts-Prediction</td><td>85%+àAUROC</td><td>Forschung</td></tr>
+àààààààààà<tr><td>CancerNet</td><td>Pathologie-Bilder</td><td>Krebs-Klassifizierung</td><td>94%+</td><td>Klinisch</td></tr>
+àààààààà</tbody>
+àààààà</table>
+àààà</section>
+àààà<sectionàclass="section-card">
+àààààà<h2>Anwendungsbeispiel</h2>
+àààààà<p>Einà65-j—ährigeràMannàerh—ältàeinàThorax-CTàf—üràVerdachtàaufàLungentumor.àRadiologischeàAIàmarkiertà3àverd—ächtigeàNodules.àDieàersteà(15àmm)àwirdàalsàwahrscheinlichàmaligneàklassifiziertà(85%àConfidence).àDeràRadiologeàbest—ätigtàdiesàundàveranlasstàBiopsie.àTumorstadium:àT2aN0M0.àPrognose-AIàsagtà5-Jahres-—Æ——Æ—¦——"berlebensrateàvonà60%àvoraus.àPatientàerh—ältàChemotherapieà+àStrahlung.à2àJahreàsp—äter:àkrankheitsfrei.</p>
+àààà</section>
+àààà<sectionàclass="section-card">
+àààààà<h2>VorteileàundàGrenzen</h2>
+àààààà<ul><li>H—öhereàDiagnostik-Genauigkeitàdurchà24/7-Analyse</li><li>SchnellereàDiagnoseà(MinutenàstattàTage)</li><li>Objektivit—ätà(keinàErm—üdungs-Effekt)</li><li>Risikovorhersageàf—üràFr—üh-Intervention</li></ul>
+àààààà<ul><li>Black-BoxàProblem:àWarumàentschiedàsichàAIàf—üràDiagnose?</li><li>DatenschutzàundàBiasà(Trainings-Datenàk—önnenàverzerrtàsein)</li><li>Regulierungàunklarà(FDA-Zulassungàunterschiedlich)</li><li>Kostenintensivà(GPU-Hardware,àExpertise)</li></ul>
+àààà</section>
+àààà<sectionàclass="section-card">
+àààààà<h2>GesellschaftlicheàRelevanz</h2>
+àààààà<p>KIàk—önnteà—Æ——Æ—•———¬——Å¾rzte-Mangelàkompensieren:àInàSchwellenl—ändernàkannàKIàdiagnostizieren,àwennàkeineàSpezialistenàverf—ügbaràsind.àAllerdings:àAutomatisierungs-Arbeitsplatz-Verlustàf—üràRadiologen.àAuch:àAlgorithmenàk—önntenàPatienten-Gruppenàbenachteiligenà(wennàTrainings-Datenànichtàdiversàsind).</p>
+àààà</section>
+àààà<sectionàclass="section-card">
+àààààà<h2>Zukunftsperspektiven</h2>
+àààààà<p>ExplainableàAIà(XAI)àf—üràTransparenz.àFederatedàLearning:àTrainierenàohneàzentraleàDatenbankz.àMultimodalàModelsà(kombiniertàBilderà+àTextà+àGenomik).àTherapeutischeàKI-Agentenà(nichtànuràDiagnose,àsondernàauchàTherapie-Planung).</p>
+àààà</section>
+àààà<sectionàclass="section-cardàtech-challenges">
+àààààà<h2>TechnischeàHerausforderungen</h2>
+àààààà<divàclass="challenge-item"><h4>Datenschutzà&àGDPR</h4><p>Trainings-DatenàoftàerfasstàohneàexpliziteàErlaubnis.àAnonymisierungàkannàreidentifiziertàwerdenà(Re-IdentificatonàAttacks).</p></div>
+àààààà<divàclass="challenge-item"><h4>Biasà&àFairness</h4><p>Trainings-Datenàk—önnenàunterrepr—äsentierteàGruppenàunteibenf.àModellàlerntàBiasà—Æ——•—•———¬—— 'àDiskriminierungàvonàPatienten.</p></div>
+àààààà<divàclass="challenge-item"><h4>Robustheit</h4><p>Modelleàk—önnenàaufàAdversarialàExamplesàt—äuschbaràseinà(kleineàPixel-—Æ——Æ—•———¬——Å¾nderungenà—Æ——•—•———¬—— 'àfalscheàDiagnose).</p></div>
+àààààà<divàclass="challenge-item"><h4>KontinuierlichesàLernen</h4><p>EchteàDeploymentàerfordertàconstantàUpdatesàwennàneueàDatenàverf—ügbaràsindà—Æ——•—•————""àohneàFullàRetraining.</p></div>
+àààààà<divàclass="challenge-item"><h4>Echtzeit-Anforderungen</h4><p>Latenzàkritischàf—üràOP-AssistenzàoderàEchtzeit-—Æ——Æ—¦——"berwachung.àEmbeddedàoderàEdge-Inferenceàn—ötig.</p></div>
+àààà</section>
+àààà<sectionàclass="section-cardàglossar">
+àààààà<h2>Glossar</h2>
+àààààà<divàclass="glossar-term"><dt>CNNà(ConvolutionalàNeuralàNetwork)</dt><dd>NeuronalesàNetzwerkàTypàspezialisiertàaufàr—äumlicheàDatenà(Bilder).àNutztàConvolution-Operationàf—üràFeature-Extraktion.</dd></div>
+àààààà<divàclass="glossar-term"><dt>DeepàLearning</dt><dd>MachineàLearningàmitàvielenàSchichtenà(DeepàNeuralàNetworks).àAutomatischàFeaturesàlernenàstattàmanuellàzuàextrahieren.</dd></div>
+àààààà<divàclass="glossar-term"><dt>Trainingsdaten</dt><dd>Datensatz,àmitàdemàeinàMachineàLearningàModellàtrainiertàwird.àQualit—ätàundàMengeàessentiellàf—üràPerformance.</dd></div>
+àààààà<divàclass="glossar-term"><dt>Validierung</dt><dd>EvaluationàeinesàModellsàaufàunabh—ängigenàTest-Daten.àMisstàechteàgeneralisierbareàPerformance.</dd></div>
+àààààà<divàclass="glossar-term"><dt>Overfitting</dt><dd>WennàModellàzuàgutàTrainings-Datenàlearned,àaberàaufàneuenàDatenàschlechtàist.àGeneralisierungàfehlgeschlagen.</dd></div>
+àààà</section>
+àààà<sectionàclass="section-card">
+àààààà<h2>Informatik-Reflexion</h2>
+àààààà<p>KIàinàderàMedizinàerfordert:à<strong>SoftwareàEngineering</strong>à(ProductionàMLàpipelines),à<strong>Sicherheit</strong>à(Adversarialàrobustness),à<strong>Ethik</strong>à(Biasàdetection),à<strong>Regulierung</strong>à(FDAàcompliance),à<strong>Transparency</strong>à(Explainability),à<strong>VerifiableàTesting</strong>à(formalàverification).</p>
+àààà</section>
+àààà<sectionàclass="section-cardàrelated-links">
+àààààà<h2>Weiterf—ührendeàLinksà&àQuellen</h2>
+àààààà<ulàid="related-links"></ul>
+àààà</section>
+àààà<divàclass="privacy-notice"><p><strong>Datenschutz:</strong>àDieseàWebsiteàspeichertàkeineàDaten.àKeineàCookiesàoderàTracking-Tools.</p></div>
+àà</main>
+àà<footeràclass="site-footer"><divàclass="container"><p>&copy;à2026àMedTechGuideà—àSchulprojektàHTLàInformatik</p><p><aàhref="html/quellen.html">—Æ——Æ—¦——"beràdieàwissenschaftlichenàQuellen</a></p></div></footer>
+àà<buttonàclass="scroll-to-top"àid="scrollToTopBtn"àaria-label="Nachàobenàscrollen">—Æ——•—•———¬—— '</button>
+àà<scriptàsrc="js/script.js"></script>
+àà<script>window.addEventListener("load",à()à=>à{àconstàloaderà=àdocument.getElementById("loader");àifà(loader)à{àloader.classList.add("hidden");àsetTimeout(()à=>à{àloader.style.displayà=à"none";à},à500);à}àsetActiveNavLink();àsetRelatedLinks('ki');à});</script>
 </body>
 </html>
 

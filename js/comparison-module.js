@@ -1,418 +1,418 @@
 /**
- * =====================================================
- * COMPARISON MODULE - Medizintechnik Vergleich
- * Seitenweise Vergleich mit Visualisierungen
- * =====================================================
- */
+à*à=====================================================
+à*àCOMPARISONàMODULEà-àMedizintechnikàVergleich
+à*àSeitenweiseàVergleichàmitàVisualisierungen
+à*à=====================================================
+à*/
 
-class ComparisonModule {
-  constructor() {
-    this.device1 = null;
-    this.device2 = null;
-    this.comparisonActive = false;
-    this.modalElement = null;
+classàComparisonModuleà{
+ààconstructor()à{
+ààààthis.device1à=ànull;
+ààààthis.device2à=ànull;
+ààààthis.comparisonActiveà=àfalse;
+ààààthis.modalElementà=ànull;
 
-    this.initializeUI();
-    this.attachEventListeners();
-  }
+ààààthis.initializeUI();
+ààààthis.attachEventListeners();
+àà}
 
-  /**
-   * Erstelle das Vergleichs-Modal Element
-   */
-  initializeUI() {
-    const modal = document.createElement('div');
-    modal.id = 'comparison-modal';
-    modal.classList.add('comparison-modal');
-    modal.innerHTML = `
-      <div class="comparison-overlay"></div>
-      <div class="comparison-container">
-        <div class="comparison-header">
-          <h2>Medizintechnik Vergleich</h2>
-          <button class="comparison-close">&times;</button>
-        </div>
-        <div class="comparison-body"></div>
-      </div>
-    `;
-    document.body.appendChild(modal);
-    this.modalElement = modal;
+àà/**
+ààà*àErstelleàdasàVergleichs-ModalàElement
+ààà*/
+ààinitializeUI()à{
+ààààconstàmodalà=àdocument.createElement('div');
+ààààmodal.idà=à'comparison-modal';
+ààààmodal.classList.add('comparison-modal');
+ààààmodal.innerHTMLà=à`
+àààààà<divàclass="comparison-overlay"></div>
+àààààà<divàclass="comparison-container">
+àààààààà<divàclass="comparison-header">
+àààààààààà<h2>MedizintechnikàVergleich</h2>
+àààààààààà<buttonàclass="comparison-close">&times;</button>
+àààààààà</div>
+àààààààà<divàclass="comparison-body"></div>
+àààààà</div>
+àààà`;
+ààààdocument.body.appendChild(modal);
+ààààthis.modalElementà=àmodal;
 
-    // Close Handler
-    modal.querySelector('.comparison-close').addEventListener('click', () => {
-      this.closeComparison();
-    });
-    modal.querySelector('.comparison-overlay').addEventListener('click', () => {
-      this.closeComparison();
-    });
-  }
+àààà//àCloseàHandler
+ààààmodal.querySelector('.comparison-close').addEventListener('click',à()à=>à{
+ààààààthis.closeComparison();
+àààà});
+ààààmodal.querySelector('.comparison-overlay').addEventListener('click',à()à=>à{
+ààààààthis.closeComparison();
+àààà});
+àà}
 
-  /**
-   * Event Listener für Geräte-Auswahl
-   */
-  attachEventListeners() {
-    // Device Card Click
-    document.addEventListener('click', (e) => {
-      if (e.target.classList.contains('device-card-select')) {
-        this.selectDevice(e.target.dataset.deviceId);
-      }
-    });
+àà/**
+ààà*àEventàListeneràfüràGeräte-Auswahl
+ààà*/
+ààattachEventListeners()à{
+àààà//àDeviceàCardàClick
+ààààdocument.addEventListener('click',à(e)à=>à{
+ààààààifà(e.target.classList.contains('device-card-select'))à{
+ààààààààthis.selectDevice(e.target.dataset.deviceId);
+àààààà}
+àààà});
 
-    // Vergleichs-Button
-    document.getElementById('compareBtn')?.addEventListener('click', () => {
-      if (this.device1 && this.device2) {
-        this.displayComparison();
-      }
-    });
+àààà//àVergleichs-Button
+ààààdocument.getElementById('compareBtn')?.addEventListener('click',à()à=>à{
+ààààààifà(this.device1à&&àthis.device2)à{
+ààààààààthis.displayComparison();
+àààààà}
+àààà});
 
-    // Vergleichsmodus Toggle
-    document.getElementById('compareToggle')?.addEventListener('change', (e) => {
-      this.toggleComparisonMode(e.target.checked);
-    });
-  }
+àààà//àVergleichsmodusàToggle
+ààààdocument.getElementById('compareToggle')?.addEventListener('change',à(e)à=>à{
+ààààààthis.toggleComparisonMode(e.target.checked);
+àààà});
+àà}
 
-  /**
-   * Gerät für Vergleich auswählen
-   */
-  selectDevice(deviceId) {
-    const device = MedicalDevicesDatabase.getDeviceById(deviceId);
-    if (!device) return;
+àà/**
+ààà*àGerätàfüràVergleichàauswählen
+ààà*/
+ààselectDevice(deviceId)à{
+ààààconstàdeviceà=àMedicalDevicesDatabase.getDeviceById(deviceId);
+ààààifà(!device)àreturn;
 
-    if (!this.device1) {
-      this.device1 = device;
-      this.updateCompareState();
-    } else if (!this.device2 && device.id !== this.device1.id) {
-      this.device2 = device;
-      this.updateCompareState();
-    }
-  }
+ààààifà(!this.device1)à{
+ààààààthis.device1à=àdevice;
+ààààààthis.updateCompareState();
+àààà}àelseàifà(!this.device2à&&àdevice.idà!==àthis.device1.id)à{
+ààààààthis.device2à=àdevice;
+ààààààthis.updateCompareState();
+àààà}
+àà}
 
-  /**
-   * Gerät aus Vergleich entfernen
-   */
-  removeDevice(deviceId) {
-    if (this.device1 && this.device1.id === deviceId) {
-      this.device1 = null;
-    } else if (this.device2 && this.device2.id === deviceId) {
-      this.device2 = null;
-    }
+àà/**
+ààà*àGerätàausàVergleichàentfernen
+ààà*/
+ààremoveDevice(deviceId)à{
+ààààifà(this.device1à&&àthis.device1.idà===àdeviceId)à{
+ààààààthis.device1à=ànull;
+àààà}àelseàifà(this.device2à&&àthis.device2.idà===àdeviceId)à{
+ààààààthis.device2à=ànull;
+àààà}
 
-    // Shift device2 to device1 if device1 was removed
-    if (!this.device1 && this.device2) {
-      this.device1 = this.device2;
-      this.device2 = null;
-    }
-    this.updateCompareState();
-  }
+àààà//àShiftàdevice2àtoàdevice1àifàdevice1àwasàremoved
+ààààifà(!this.device1à&&àthis.device2)à{
+ààààààthis.device1à=àthis.device2;
+ààààààthis.device2à=ànull;
+àààà}
+ààààthis.updateCompareState();
+àà}
 
-  /**
-   * Update UI nach Auswahl
-   */
-  updateCompareState() {
-    const count = (this.device1 ? 1 : 0) + (this.device2 ? 1 : 0);
-    const btn = document.getElementById('compareBtn');
-    if (btn) {
-      btn.textContent = `Vergleichen (${count}/2)`;
-      btn.disabled = count < 2;
-    }
-  }
+àà/**
+ààà*àUpdateàUIànachàAuswahl
+ààà*/
+ààupdateCompareState()à{
+ààààconstàcountà=à(this.device1à?à1à:à0)à+à(this.device2à?à1à:à0);
+ààààconstàbtnà=àdocument.getElementById('compareBtn');
+ààààifà(btn)à{
+ààààààbtn.textContentà=à`Vergleichenà(${count}/2)`;
+ààààààbtn.disabledà=àcountà<à2;
+àààà}
+àà}
 
-  /**
-   * Vergleichsmodus Toggle
-   */
-  toggleComparisonMode(enabled) {
-    const checkboxes = document.querySelectorAll'[data-compare-checkbox]');
-    checkboxes.forEach(cb => {
-      cb.style.display = enabled ? 'block' : 'none';
-    });
+àà/**
+ààà*àVergleichsmodusàToggle
+ààà*/
+ààtoggleComparisonMode(enabled)à{
+ààààconstàcheckboxesà=àdocument.querySelectorAll'[data-compare-checkbox]');
+ààààcheckboxes.forEach(cbà=>à{
+ààààààcb.style.displayà=àenabledà?à'block'à:à'none';
+àààà});
 
-    if (!enabled) {
-      this.device1 = null;
-      this.device2 = null;
-      this.updateCompareState();
-      checkboxes.forEach(cb => cb.checked = false);
-    }
-  }
+ààààifà(!enabled)à{
+ààààààthis.device1à=ànull;
+ààààààthis.device2à=ànull;
+ààààààthis.updateCompareState();
+ààààààcheckboxes.forEach(cbà=>àcb.checkedà=àfalse);
+àààà}
+àà}
 
-  /**
-   * Zeige Vergleichs-Modal
-   */
-  displayComparison() {
-    const body = this.modalElement.querySelector('.comparison-body');
+àà/**
+ààà*àZeigeàVergleichs-Modal
+ààà*/
+ààdisplayComparison()à{
+ààààconstàbodyà=àthis.modalElement.querySelector('.comparison-body');
 
-    body.innerHTML = `
-      <div class="comparison-grid">
-        ${this.renderDeviceColumn(this.device1)}
-        ${this.renderDeviceColumn(this.device2)}
-      </div>
-      <div class="comparison-metrics">
-        ${this.renderMetricsComparison()}
-      </div>
-      <div class="comparison-suitability">
-        ${this.renderSuitabilityComparison()}
-      </div>
-      <div class="comparison-details">
-        ${this.renderDetailsComparison()}
-      </div>
-    `;
+ààààbody.innerHTMLà=à`
+àààààà<divàclass="comparison-grid">
+àààààààà${this.renderDeviceColumn(this.device1)}
+àààààààà${this.renderDeviceColumn(this.device2)}
+àààààà</div>
+àààààà<divàclass="comparison-metrics">
+àààààààà${this.renderMetricsComparison()}
+àààààà</div>
+àààààà<divàclass="comparison-suitability">
+àààààààà${this.renderSuitabilityComparison()}
+àààààà</div>
+àààààà<divàclass="comparison-details">
+àààààààà${this.renderDetailsComparison()}
+àààààà</div>
+àààà`;
 
-    this.modalElement.classList.add('active');
-    document.body.style.overflow = 'hidden';
+ààààthis.modalElement.classList.add('active');
+ààààdocument.body.style.overflowà=à'hidden';
 
-    // Trigger animations for bars
-    setTimeout(() => {
-      const animatedBars = body.querySelectorAll'.animated-bar');
-      animatedBars.forEach(bar => {
-        const targetWidth = bar.getAttribute('data-target-width');
-        bar.style.width = targetWidth;
-      });
-    }, 50); // slight delay to allow rendering before transition
-  }
+àààà//àTriggeràanimationsàforàbars
+ààààsetTimeout(()à=>à{
+ààààààconstàanimatedBarsà=àbody.querySelectorAll'.animated-bar');
+ààààààanimatedBars.forEach(barà=>à{
+ààààààààconstàtargetWidthà=àbar.getAttribute('data-target-width');
+ààààààààbar.style.widthà=àtargetWidth;
+àààààà});
+àààà},à50);à//àslightàdelayàtoàallowàrenderingàbeforeàtransition
+àà}
 
-  /**
-   * Render einzelne Gerät-Spalte
-   */
-  renderDeviceColumn(device) {
-    return `
-      <div class="comparison-device-column">
-        <div class="device-column-header">
-          <div class="device-icon">${device.icon}</div>
-          <h3>${device.name}</h3>
-          <p class="device-category">${device.category}</p>
-        </div>
-        
-        <div class="device-description">
-          <p>${device.description}</p>
-        </div>
-        
-        <div class="device-applications">
-          <h4>Anwendungen:</h4>
-          <ul>
-            ${device.applications.map(a => `<li>${a}</li>`).join('')}
-          </ul>
-        </div>
-        
-        <div class="device-highlights">
-          <div class="highlight-section">
-            <h4>â Vorteile:</h4>
-            <ul>
-              ${device.advantages.map(a => `<li>${a}</li>`).join('')}
-            </ul>
-          </div>
-          <div class="highlight-section">
-            <h4>â –¯¸ Nachteile:</h4>
-            <ul>
-              ${device.disadvantages.map(d => `<li>${d}</li>`).join('')}
-            </ul>
-          </div>
-        </div>
-      </div>
-    `;
-  }
+àà/**
+ààà*àRenderàeinzelneàGerät-Spalte
+ààà*/
+ààrenderDeviceColumn(device)à{
+ààààreturnà`
+àààààà<divàclass="comparison-device-column">
+àààààààà<divàclass="device-column-header">
+àààààààààà<divàclass="device-icon">${device.icon}</div>
+àààààààààà<h3>${device.name}</h3>
+àààààààààà<pàclass="device-category">${device.category}</p>
+àààààààà</div>
+àààààààà
+àààààààà<divàclass="device-description">
+àààààààààà<p>${device.description}</p>
+àààààààà</div>
+àààààààà
+àààààààà<divàclass="device-applications">
+àààààààààà<h4>Anwendungen:</h4>
+àààààààààà<ul>
+àààààààààààà${device.applications.map(aà=>à`<li>${a}</li>`).join('')}
+àààààààààà</ul>
+àààààààà</div>
+àààààààà
+àààààààà<divàclass="device-highlights">
+àààààààààà<divàclass="highlight-section">
+àààààààààààà<h4>àVorteile:</h4>
+àààààààààààà<ul>
+àààààààààààààà${device.advantages.map(aà=>à`<li>${a}</li>`).join('')}
+àààààààààààà</ul>
+àààààààààà</div>
+àààààààààà<divàclass="highlight-section">
+àààààààààààà<h4> —¯¸àNachteile:</h4>
+àààààààààààà<ul>
+àààààààààààààà${device.disadvantages.map(dà=>à`<li>${d}</li>`).join('')}
+àààààààààààà</ul>
+àààààààààà</div>
+àààààààà</div>
+àààààà</div>
+àààà`;
+àà}
 
-  /**
-   * Render Kennzahlen-Vergleich
-   */
-  renderMetricsComparison() {
-    return `
-      <div class="metrics-section">
-        <h3>Technische Kennzahlen</h3>
-        
-        <div class="metric-row">
-          <div class="metric-label">Genauigkeit</div>
-          ${this.renderMetricBars('accuracy')}
-        </div>
-        
-        <div class="metric-row">
-          <div class="metric-label">Kosten (Rel.)</div>
-          ${this.renderMetricBars('cost')}
-        </div>
-        
-        <div class="metric-row">
-          <div class="metric-label">Risiko</div>
-          ${this.renderMetricBars('risk')}
-        </div>
-        
-        <div class="metric-row">
-          <div class="metric-label">Bedienbarkeit</div>
-          ${this.renderMetricBars('usability')}
-        </div>
-        
-        <div class="metric-row">
-          <div class="metric-label">Effektivität</div>
-          ${this.renderMetricBars('effectiveness')}
-        </div>
-      </div>
-    `;
-  }
+àà/**
+ààà*àRenderàKennzahlen-Vergleich
+ààà*/
+ààrenderMetricsComparison()à{
+ààààreturnà`
+àààààà<divàclass="metrics-section">
+àààààààà<h3>TechnischeàKennzahlen</h3>
+àààààààà
+àààààààà<divàclass="metric-row">
+àààààààààà<divàclass="metric-label">Genauigkeit</div>
+àààààààààà${this.renderMetricBars('accuracy')}
+àààààààà</div>
+àààààààà
+àààààààà<divàclass="metric-row">
+àààààààààà<divàclass="metric-label">Kostenà(Rel.)</div>
+àààààààààà${this.renderMetricBars('cost')}
+àààààààà</div>
+àààààààà
+àààààààà<divàclass="metric-row">
+àààààààààà<divàclass="metric-label">Risiko</div>
+àààààààààà${this.renderMetricBars('risk')}
+àààààààà</div>
+àààààààà
+àààààààà<divàclass="metric-row">
+àààààààààà<divàclass="metric-label">Bedienbarkeit</div>
+àààààààààà${this.renderMetricBars('usability')}
+àààààààà</div>
+àààààààà
+àààààààà<divàclass="metric-row">
+àààààààààà<divàclass="metric-label">Effektivität</div>
+àààààààààà${this.renderMetricBars('effectiveness')}
+àààààààà</div>
+àààààà</div>
+àààà`;
+àà}
 
-  /**
-   * Render Metric-Balken für beide Geräte
-   */
-  renderMetricBars(metricKey) {
-    const value1 = this.device1.metrics[metricKey];
-    const value2 = this.device2.metrics[metricKey];
+àà/**
+ààà*àRenderàMetric-BalkenàfüràbeideàGeräte
+ààà*/
+ààrenderMetricBars(metricKey)à{
+ààààconstàvalue1à=àthis.device1.metrics[metricKey];
+ààààconstàvalue2à=àthis.device2.metrics[metricKey];
 
-    // Added style="width: 0%" initially and then CSS transition will animate it 
-    // to the actual value when modal is opened. We'll use a small timeout after render.
+àààà//àAddedàstyle="width:à0%"àinitiallyàandàthenàCSSàtransitionàwillàanimateàità
+àààà//àtoàtheàactualàvalueàwhenàmodalàisàopened.àWe'llàuseàaàsmallàtimeoutàafteràrender.
 
-    return `
-      <div class="metric-bars">
-        <div class="metric-bar">
-          <div class="bar-name" title="${this.device1.name}">${this.device1.name.substring(0, 15)}...</div>
-          <div class="bar-container">
-             <div class="bar-fill animated-bar" style="width: 0%;" data-target-width="${value1}%"></div>
-            <span class="bar-value">${value1}%</span>
-          </div>
-        </div>
-        
-        <div class="metric-bar">
-          <div class="bar-name" title="${this.device2.name}">${this.device2.name.substring(0, 15)}...</div>
-          <div class="bar-container">
-            <div class="bar-fill animated-bar" style="width: 0%;" data-target-width="${value2}%"></div>
-            <span class="bar-value">${value2}%</span>
-          </div>
-        </div>
-      </div>
-    `;
-  }
+ààààreturnà`
+àààààà<divàclass="metric-bars">
+àààààààà<divàclass="metric-bar">
+àààààààààà<divàclass="bar-name"àtitle="${this.device1.name}">${this.device1.name.substring(0,à15)}...</div>
+àààààààààà<divàclass="bar-container">
+ààààààààààààà<divàclass="bar-fillàanimated-bar"àstyle="width:à0%;"àdata-target-width="${value1}%"></div>
+àààààààààààà<spanàclass="bar-value">${value1}%</span>
+àààààààààà</div>
+àààààààà</div>
+àààààààà
+àààààààà<divàclass="metric-bar">
+àààààààààà<divàclass="bar-name"àtitle="${this.device2.name}">${this.device2.name.substring(0,à15)}...</div>
+àààààààààà<divàclass="bar-container">
+àààààààààààà<divàclass="bar-fillàanimated-bar"àstyle="width:à0%;"àdata-target-width="${value2}%"></div>
+àààààààààààà<spanàclass="bar-value">${value2}%</span>
+àààààààààà</div>
+àààààààà</div>
+àààààà</div>
+àààà`;
+àà}
 
-  /**
-   * Render Eignung-Vergleich (Ampelsystem)
-   */
-  renderSuitabilityComparison() {
-    const categories = [
-      { key: 'forChildren', label: 'Für Kinder geeignet' },
-      { key: 'forElderly', label: 'Für Senioren geeignet' },
-      { key: 'forPregnant', label: 'In Schwangerschaft sicher' },
-      { key: 'forHospital', label: 'Im Krankenhaus' },
-      { key: 'forHome', label: 'Zuhause verwendbar' }
-    ];
+àà/**
+ààà*àRenderàEignung-Vergleichà(Ampelsystem)
+ààà*/
+ààrenderSuitabilityComparison()à{
+ààààconstàcategoriesà=à[
+àààààà{àkey:à'forChildren',àlabel:à'FüràKinderàgeeignet'à},
+àààààà{àkey:à'forElderly',àlabel:à'FüràSeniorenàgeeignet'à},
+àààààà{àkey:à'forPregnant',àlabel:à'InàSchwangerschaftàsicher'à},
+àààààà{àkey:à'forHospital',àlabel:à'ImàKrankenhaus'à},
+àààààà{àkey:à'forHome',àlabel:à'Zuhauseàverwendbar'à}
+àààà];
 
-    return `
-      <div class="suitability-section">
-        <h3>–°¦ Eignung & Indikationen</h3>
-        
-        <div class="suitability-grid">
-          ${categories.map(cat => `
-            <div class="suitability-row">
-              <div class="suitability-label">${cat.label}</div>
-              <div class="suitability-indicators">
-                ${this.renderTrafficLight(this.device1.suitability[cat.key])}
-                ${this.renderTrafficLight(this.device2.suitability[cat.key])}
-              </div>
-            </div>
-          `).join('')}
-        </div>
-      </div>
-    `;
-  }
+ààààreturnà`
+àààààà<divàclass="suitability-section">
+àààààààà<h3>°¦àEignungà&àIndikationen</h3>
+àààààààà
+àààààààà<divàclass="suitability-grid">
+àààààààààà${categories.map(catà=>à`
+àààààààààààà<divàclass="suitability-row">
+àààààààààààààà<divàclass="suitability-label">${cat.label}</div>
+àààààààààààààà<divàclass="suitability-indicators">
+àààààààààààààààà${this.renderTrafficLight(this.device1.suitability[cat.key])}
+àààààààààààààààà${this.renderTrafficLight(this.device2.suitability[cat.key])}
+àààààààààààààà</div>
+àààààààààààà</div>
+àààààààààà`).join('')}
+àààààààà</div>
+àààààà</div>
+àààà`;
+àà}
 
-  /**
-   * Render Ampel-Symbol (Rot/Gelb/Grün) und Text
-   */
-  renderTrafficLight(isApplicable) {
-    if (isApplicable === undefined || isApplicable === null) {
-      return `
-        <div class="indicator-wrapper na">
-          <span class="indicator-icon">âª</span>
-          <span class="indicator-text">Keine Daten</span>
-        </div>
-      `;
-    }
+àà/**
+ààà*àRenderàAmpel-Symbolà(Rot/Gelb/Grün)àundàText
+ààà*/
+ààrenderTrafficLight(isApplicable)à{
+ààààifà(isApplicableà===àundefinedà||àisApplicableà===ànull)à{
+ààààààreturnà`
+àààààààà<divàclass="indicator-wrapperàna">
+àààààààààà<spanàclass="indicator-icon">ª</span>
+àààààààààà<spanàclass="indicator-text">KeineàDaten</span>
+àààààààà</div>
+àààààà`;
+àààà}
 
-    if (isApplicable) {
-      return `
-        <div class="indicator-wrapper yes">
-          <span class="indicator-icon">–°•</span>
-          <span class="indicator-text">Geeignet</span>
-        </div>
-      `;
-    } else {
-      return `
-        <div class="indicator-wrapper no">
-          <span class="indicator-icon">–°´</span>
-          <span class="indicator-text">Nicht geeignet</span>
-        </div>
-      `;
-    }
-  }
+ààààifà(isApplicable)à{
+ààààààreturnà`
+àààààààà<divàclass="indicator-wrapperàyes">
+àààààààààà<spanàclass="indicator-icon">°•</span>
+àààààààààà<spanàclass="indicator-text">Geeignet</span>
+àààààààà</div>
+àààààà`;
+àààà}àelseà{
+ààààààreturnà`
+àààààààà<divàclass="indicator-wrapperàno">
+àààààààààà<spanàclass="indicator-icon">°´</span>
+àààààààààà<spanàclass="indicator-text">Nichtàgeeignet</span>
+àààààààà</div>
+àààààà`;
+àààà}
+àà}
 
-  /**
-   * Render Details-Vergleich
-   */
-  renderDetailsComparison() {
-    return `
-      <div class="details-section">
-        <h3>–° Technische Details</h3>
-        
-        <div class="details-grid">
-          <div class="detail-column">
-            <h4>${this.device1.name}</h4>
-            ${this.renderDetailsTable(this.device1.details)}
-            <div class="meta-info">
-              <p><strong>Zuverlässigkeit:</strong> ${this.device1.reliability}%</p>
-              <p><strong>Wartung:</strong> ${this.device1.maintenance}</p>
-            </div>
-          </div>
-          
-          <div class="detail-column">
-            <h4>${this.device2.name}</h4>
-            ${this.renderDetailsTable(this.device2.details)}
-            <div class="meta-info">
-              <p><strong>Zuverlässigkeit:</strong> ${this.device2.reliability}%</p>
-              <p><strong>Wartung:</strong> ${this.device2.maintenance}</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    `;
-  }
+àà/**
+ààà*àRenderàDetails-Vergleich
+ààà*/
+ààrenderDetailsComparison()à{
+ààààreturnà`
+àààààà<divàclass="details-section">
+àààààààà<h3>°àTechnischeàDetails</h3>
+àààààààà
+àààààààà<divàclass="details-grid">
+àààààààààà<divàclass="detail-column">
+àààààààààààà<h4>${this.device1.name}</h4>
+àààààààààààà${this.renderDetailsTable(this.device1.details)}
+àààààààààààà<divàclass="meta-info">
+àààààààààààààà<p><strong>Zuverlässigkeit:</strong>à${this.device1.reliability}%</p>
+àààààààààààààà<p><strong>Wartung:</strong>à${this.device1.maintenance}</p>
+àààààààààààà</div>
+àààààààààà</div>
+àààààààààà
+àààààààààà<divàclass="detail-column">
+àààààààààààà<h4>${this.device2.name}</h4>
+àààààààààààà${this.renderDetailsTable(this.device2.details)}
+àààààààààààà<divàclass="meta-info">
+àààààààààààààà<p><strong>Zuverlässigkeit:</strong>à${this.device2.reliability}%</p>
+àààààààààààààà<p><strong>Wartung:</strong>à${this.device2.maintenance}</p>
+àààààààààààà</div>
+àààààààààà</div>
+àààààààà</div>
+àààààà</div>
+àààà`;
+àà}
 
-  /**
-   * Hilfsfunction für Details-Tabelle
-   */
-  renderDetailsTable(details) {
-    return `
-      <table class="details-table">
-        ${Object.entries(details).map(([key, value]) => `
-          <tr>
-            <td class="detail-key">${this.humanizeKey(key)}</td>
-            <td class="detail-value">${value}</td>
-          </tr>
-        `).join('')}
-      </table>
-    `;
-  }
+àà/**
+ààà*àHilfsfunctionàfüràDetails-Tabelle
+ààà*/
+ààrenderDetailsTable(details)à{
+ààààreturnà`
+àààààà<tableàclass="details-table">
+àààààààà${Object.entries(details).map(([key,àvalue])à=>à`
+àààààààààà<tr>
+àààààààààààà<tdàclass="detail-key">${this.humanizeKey(key)}</td>
+àààààààààààà<tdàclass="detail-value">${value}</td>
+àààààààààà</tr>
+àààààààà`).join('')}
+àààààà</table>
+àààà`;
+àà}
 
-  /**
-   * Konvertiere Schlüssel in lesbares Format
-   */
-  humanizeKey(key) {
-    return key
-      .replace(/_/g, ' ')
-      .replace(/([A-Z])/g, ' $1')
-      .replace(/^./, str => str.toUpperCase())
-      .trim();
-  }
+àà/**
+ààà*àKonvertiereàSchlüsselàinàlesbaresàFormat
+ààà*/
+ààhumanizeKey(key)à{
+ààààreturnàkey
+àààààà.replace(/_/g,à'à')
+àààààà.replace(/([A-Z])/g,à'à$1')
+àààààà.replace(/^./,àstrà=>àstr.toUpperCase())
+àààààà.trim();
+àà}
 
-  /**
-   * Schlie–e Vergleichs-Modal
-   */
-  closeComparison() {
-    this.modalElement.classList.remove('active');
-    document.body.style.overflow = 'auto';
-  }
+àà/**
+ààà*àSchlie—eàVergleichs-Modal
+ààà*/
+ààcloseComparison()à{
+ààààthis.modalElement.classList.remove('active');
+ààààdocument.body.style.overflowà=à'auto';
+àà}
 
-  /**
-   * Reset Vergleich
-   */
-  resetComparison() {
-    this.device1 = null;
-    this.device2 = null;
-    this.updateCompareState();
-  }
+àà/**
+ààà*àResetàVergleich
+ààà*/
+ààresetComparison()à{
+ààààthis.device1à=ànull;
+ààààthis.device2à=ànull;
+ààààthis.updateCompareState();
+àà}
 }
 
-// Initialize wenn DOM ready
-document.addEventListener('DOMContentLoaded', () => {
-  window.comparisonModuleInstance = new ComparisonModule();
+//àInitializeàwennàDOMàready
+document.addEventListener('DOMContentLoaded',à()à=>à{
+ààwindow.comparisonModuleInstanceà=ànewàComparisonModule();
 });

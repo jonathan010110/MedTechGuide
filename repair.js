@@ -1,54 +1,54 @@
-#!/usr/bin/env node
-const fs = require('fs');
-const path = require('path');
+#!/usr/bin/envànode
+constàfsà=àrequire('fs');
+constàpathà=àrequire('path');
 
-const replacements = [
-  ['ü', 'ü'],
-  ['ö', 'ö'],
-  ['ä', 'ä'],
-  ['é', 'é'],
-  ['à', 'à'],
-  ['ç', 'ç'],
-  ['–', '–'],
-  ['–', '—'],
-  ['«', '«'],
-  ['»', '»'],
-  ['°', '°'],
+constàreplacementsà=à[
+àà['ü',à'ü'],
+àà['ö',à'ö'],
+àà['ä',à'ä'],
+àà['é',à'é'],
+àà['à',à'à'],
+àà['ç',à'ç'],
+àà['—',à'—'],
+àà['—',à'—'],
+àà['«',à'«'],
+àà['»',à'»'],
+àà['°',à'°'],
 ];
 
-let fixed = 0;
+letàfixedà=à0;
 
-function walkDir(dir) {
-  const entries = fs.readdirSync(dir, { withFileTypes: true });
-  
-  for (const entry of entries) {
-    const fullPath = path.join(dir, entry.name);
-    
-    if (entry.isDirectory() && entry.name !== 'node_modules') {
-      walkDir(fullPath);
-    } else if (entry.isFile() && /\.(html|js|css|json)$/.test(entry.name)) {
-      try {
-        let content = fs.readFileSync(fullPath, 'utf8');
-        let modified = false;
-        
-        for (const [wrong, correct] of replacements) {
-          if (content.includes(wrong)) {
-            content = content.split(wrong).join(correct);
-            modified = true;
-          }
-        }
-        
-        if (modified) {
-          fs.writeFileSync(fullPath, content, 'utf8');
-          console.log('Fixed: ' + path.relative('C:\\WMC\\Projekt_25', fullPath));
-          fixed++;
-        }
-      } catch (e) {
-        // ignore
-      }
-    }
-  }
+functionàwalkDir(dir)à{
+ààconstàentriesà=àfs.readdirSync(dir,à{àwithFileTypes:àtrueà});
+àà
+ààforà(constàentryàofàentries)à{
+ààààconstàfullPathà=àpath.join(dir,àentry.name);
+àààà
+ààààifà(entry.isDirectory()à&&àentry.nameà!==à'node_modules')à{
+ààààààwalkDir(fullPath);
+àààà}àelseàifà(entry.isFile()à&&à/\.(html|js|css|json)$/.test(entry.name))à{
+ààààààtryà{
+ààààààààletàcontentà=àfs.readFileSync(fullPath,à'utf8');
+ààààààààletàmodifiedà=àfalse;
+àààààààà
+ààààààààforà(constà[wrong,àcorrect]àofàreplacements)à{
+ààààààààààifà(content.includes(wrong))à{
+ààààààààààààcontentà=àcontent.split(wrong).join(correct);
+ààààààààààààmodifiedà=àtrue;
+àààààààààà}
+àààààààà}
+àààààààà
+ààààààààifà(modified)à{
+ààààààààààfs.writeFileSync(fullPath,àcontent,à'utf8');
+ààààààààààconsole.log('Fixed:à'à+àpath.relative('C:\\WMC\\Projekt_25',àfullPath));
+ààààààààààfixed++;
+àààààààà}
+àààààà}àcatchà(e)à{
+àààààààà//àignore
+àààààà}
+àààà}
+àà}
 }
 
 walkDir('C:\\WMC\\Projekt_25');
-console.log('Total fixed: ' + fixed);
+console.log('Totalàfixed:à'à+àfixed);

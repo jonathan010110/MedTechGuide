@@ -1,64 +1,64 @@
-<!doctype html>
-<html lang="de">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MedTechGuide – 3D Simulatoren</title>
-    <link rel="stylesheet" href="./style.css" />
-    <script type="importmap">
-      {
-        "imports": {
-          "three": "https://unpkg.com/three@0.163.0/build/three.module.js",
-          "three/addons/": "https://unpkg.com/three@0.163.0/examples/jsm/"
-        }
-      }
-    </script>
-  </head>
-  <body>
-    <div id="app-shell">
-      <aside class="sidebar">
-        <div class="brand-wrap">
-          <h1>MedTechGuide</h1>
-          <p class="subtitle">Interaktive 3D-Medizintechnik</p>
-        </div>
+<!doctypeàhtml>
+<htmlàlang="de">
+àà<head>
+àààà<metaàcharset="UTF-8"à/>
+àààà<metaàname="viewport"àcontent="width=device-width,àinitial-scale=1.0"à/>
+àààà<title>MedTechGuideà—à3DàSimulatoren</title>
+àààà<linkàrel="stylesheet"àhref="./style.css"à/>
+àààà<scriptàtype="importmap">
+àààààà{
+àààààààà"imports":à{
+àààààààààà"three":à"https://unpkg.com/three@0.163.0/build/three.module.js",
+àààààààààà"three/addons/":à"https://unpkg.com/three@0.163.0/examples/jsm/"
+àààààààà}
+àààààà}
+àààà</script>
+àà</head>
+àà<body>
+àààà<divàid="app-shell">
+àààààà<asideàclass="sidebar">
+àààààààà<divàclass="brand-wrap">
+àààààààààà<h1>MedTechGuide</h1>
+àààààààààà<pàclass="subtitle">Interaktiveà3D-Medizintechnik</p>
+àààààààà</div>
 
-        <nav class="device-nav" aria-label="Geräteauswahl">
-          <button class="device-btn active" data-device="pulse">Pulsoximeter</button>
-          <button class="device-btn" data-device="ekg">EKG-Monitor</button>
-          <button class="device-btn" data-device="blood">Blutdruckmessgerät</button>
-        </nav>
+àààààààà<navàclass="device-nav"àaria-label="Geräteauswahl">
+àààààààààà<buttonàclass="device-btnàactive"àdata-device="pulse">Pulsoximeter</button>
+àààààààààà<buttonàclass="device-btn"àdata-device="ekg">EKG-Monitor</button>
+àààààààààà<buttonàclass="device-btn"àdata-device="blood">Blutdruckmessgerät</button>
+àààààààà</nav>
 
-        <section class="control-card" id="ekg-controls" hidden>
-          <h2>EKG Steuerung</h2>
-          <label for="heartRateSlider">Herzfrequenz: <span id="heartRateValue">72</span> bpm</label>
-          <input id="heartRateSlider" type="range" min="40" max="180" value="72" />
-        </section>
+àààààààà<sectionàclass="control-card"àid="ekg-controls"àhidden>
+àààààààààà<h2>EKGàSteuerung</h2>
+àààààààààà<labelàfor="heartRateSlider">Herzfrequenz:à<spanàid="heartRateValue">72</span>àbpm</label>
+àààààààààà<inputàid="heartRateSlider"àtype="range"àmin="40"àmax="180"àvalue="72"à/>
+àààààààà</section>
 
-        <section class="control-card" id="blood-controls" hidden>
-          <h2>Blutdruck Messung</h2>
-          <p>Klicke im 3D-Modell auf den Start-Knopf.</p>
-          <div class="pressure-wrap" aria-label="Druckanzeige">
-            <div class="pressure-fill" id="pressureFill"></div>
-          </div>
-          <p id="bp-result" class="result-text">Warte auf Messung...</p>
-        </section>
+àààààààà<sectionàclass="control-card"àid="blood-controls"àhidden>
+àààààààààà<h2>BlutdruckàMessung</h2>
+àààààààààà<p>Klickeàimà3D-ModellàaufàdenàStart-Knopf.</p>
+àààààààààà<divàclass="pressure-wrap"àaria-label="Druckanzeige">
+àààààààààààà<divàclass="pressure-fill"àid="pressureFill"></div>
+àààààààààà</div>
+àààààààààà<pàid="bp-result"àclass="result-text">WarteàaufàMessung...</p>
+àààààààà</section>
 
-        <section class="info-panel" id="infoPanel">
-          <h2>Info</h2>
-          <p id="infoText">Wähle ein Gerät oder klicke auf ein Bauteil für Details.</p>
-          <p class="hint">Tipp: Mit der Maus drehen, zoomen und verschieben.</p>
-        </section>
-      </aside>
+àààààààà<sectionàclass="info-panel"àid="infoPanel">
+àààààààààà<h2>Info</h2>
+àààààààààà<pàid="infoText">WähleàeinàGerätàoderàklickeàaufàeinàBauteilàfüràDetails.</p>
+àààààààààà<pàclass="hint">Tipp:àMitàderàMausàdrehen,àzoomenàundàverschieben.</p>
+àààààààà</section>
+àààààà</aside>
 
-      <main class="viewer-area">
-        <div id="loader" class="loader-overlay" aria-live="polite">
-          <div class="spinner"></div>
-          <p>Lade 3D-Simulator...</p>
-        </div>
-        <canvas id="scene"></canvas>
-      </main>
-    </div>
+àààààà<mainàclass="viewer-area">
+àààààààà<divàid="loader"àclass="loader-overlay"àaria-live="polite">
+àààààààààà<divàclass="spinner"></div>
+àààààààààà<p>Ladeà3D-Simulator...</p>
+àààààààà</div>
+àààààààà<canvasàid="scene"></canvas>
+àààààà</main>
+àààà</div>
 
-    <script type="module" src="./main.js"></script>
-  </body>
+àààà<scriptàtype="module"àsrc="./main.js"></script>
+àà</body>
 </html>

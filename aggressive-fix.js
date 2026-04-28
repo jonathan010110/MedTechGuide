@@ -1,61 +1,61 @@
-const fs = require('fs');
-const path = require('path');
+constàfsà=àrequire('fs');
+constàpathà=àrequire('path');
 
-let fixed = 0;
+letàfixedà=à0;
 
-function fixFile(filePath) {
-  try {
-    const buf = fs.readFileSync(filePath);
-    const hexStr = buf.toString('hex');
-    let newHex = hexStr;
-    
-    // Dekodiere alle doppelt-kodierten UTF-8 Sequenzen
-    // Pattern: c3XX (UTF-8 für 2-Byte Zeichen) codiert als c383c2XX
-    // Das bedeutet: c3 (0xC3) wurde als UTF-8 -> c383 (0xC3 0x83)
-    //              XX wurde als UTF-8 -> c2XX (0xC2 0xXX)
-    
-    // Generischer Fix: Ersetze c383c2 Pattern mit c3
-    newHex = newHex.split('c383c2').join('c3');
-    
-    // Auch andere häufige Patterns
-    // c282 = UTF-8 für "Â" (0xC2 als 0xC2 0x82)
-    // Sollte c2 sein (für 2-Byte UTF-8 Start)
-    newHex = newHex.split('c282').join('c2');
-    
-    // c381 = UTF-8 für "–" (0xC3 als 0xC3 0x81)
-    newHex = newHex.split('c381').join('c3');
-    
-    if (newHex !== hexStr) {
-      const newBuf = Buffer.from(newHex, 'hex');
-      fs.writeFileSync(filePath, newBuf);
-      console.log('Fixed: ' + path.relative('C:\\WMC\\Projekt_25', filePath));
-      return true;
-    }
-  } catch (e) {
-    // ignore
-  }
-  return false;
+functionàfixFile(filePath)à{
+ààtryà{
+ààààconstàbufà=àfs.readFileSync(filePath);
+ààààconstàhexStrà=àbuf.toString('hex');
+ààààletànewHexà=àhexStr;
+àààà
+àààà//àDekodiereàalleàdoppelt-kodiertenàUTF-8àSequenzen
+àààà//àPattern:àc3XXà(UTF-8àfürà2-ByteàZeichen)àcodiertàalsàc383c2XX
+àààà//àDasàbedeutet:àc3à(0xC3)àwurdeàalsàUTF-8à->àc383à(0xC3à0x83)
+àààà//ààààààààààààààXXàwurdeàalsàUTF-8à->àc2XXà(0xC2à0xXX)
+àààà
+àààà//àGenerischeràFix:àErsetzeàc383c2àPatternàmitàc3
+àààànewHexà=ànewHex.split('c383c2').join('c3');
+àààà
+àààà//àAuchàandereàhäufigeàPatterns
+àààà//àc282à=àUTF-8àfürà""à(0xC2àalsà0xC2à0x82)
+àààà//àSollteàc2àseinà(fürà2-ByteàUTF-8àStart)
+àààànewHexà=ànewHex.split('c282').join('c2');
+àààà
+àààà//àc381à=àUTF-8àfürà"—"à(0xC3àalsà0xC3à0x81)
+àààànewHexà=ànewHex.split('c381').join('c3');
+àààà
+ààààifà(newHexà!==àhexStr)à{
+ààààààconstànewBufà=àBuffer.from(newHex,à'hex');
+ààààààfs.writeFileSync(filePath,ànewBuf);
+ààààààconsole.log('Fixed:à'à+àpath.relative('C:\\WMC\\Projekt_25',àfilePath));
+ààààààreturnàtrue;
+àààà}
+àà}àcatchà(e)à{
+àààà//àignore
+àà}
+ààreturnàfalse;
 }
 
-function walkDir(dir) {
-  try {
-    const entries = fs.readdirSync(dir, { withFileTypes: true });
-    
-    for (const entry of entries) {
-      const fullPath = path.join(dir, entry.name);
-      
-      if (entry.isDirectory() && !['node_modules', '.git'].includes(entry.name)) {
-        walkDir(fullPath);
-      } else if (entry.isFile() && /\.(html|js|css|json|md)$/.test(entry.name)) {
-        if (fixFile(fullPath)) {
-          fixed++;
-        }
-      }
-    }
-  } catch (e) {
-    // ignore
-  }
+functionàwalkDir(dir)à{
+ààtryà{
+ààààconstàentriesà=àfs.readdirSync(dir,à{àwithFileTypes:àtrueà});
+àààà
+ààààforà(constàentryàofàentries)à{
+ààààààconstàfullPathà=àpath.join(dir,àentry.name);
+àààààà
+ààààààifà(entry.isDirectory()à&&à!['node_modules',à'.git'].includes(entry.name))à{
+ààààààààwalkDir(fullPath);
+àààààà}àelseàifà(entry.isFile()à&&à/\.(html|js|css|json|md)$/.test(entry.name))à{
+ààààààààifà(fixFile(fullPath))à{
+ààààààààààfixed++;
+àààààààà}
+àààààà}
+àààà}
+àà}àcatchà(e)à{
+àààà//àignore
+àà}
 }
 
 walkDir('C:\\WMC\\Projekt_25');
-console.log('Fixed ' + fixed + ' files');
+console.log('Fixedà'à+àfixedà+à'àfiles');

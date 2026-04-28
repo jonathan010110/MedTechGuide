@@ -1,39 +1,39 @@
 {
-  "models": [
-    {
-      "id": "ct-scanner-glb",
-      "label": "CT-Scanner Realistisch",
-      "path": "data/models/ct-scanner.glb"
-    },
-    {
-      "id": "mrt-geraet-glb",
-      "label": "MRT-Geraet Realistisch",
-      "path": "data/models/mrt-geraet.glb"
-    },
-    {
-      "id": "ultraschall-sonde-glb",
-      "label": "Ultraschallsonde Realistisch",
-      "path": "data/models/ultraschall-sonde.glb"
-    },
-    {
-      "id": "insulinpumpe-glb",
-      "label": "Insulinpumpe",
-      "path": "data/models/insulinpumpe.glb"
-    },
-    {
-      "id": "herz-glb",
-      "label": "Herz",
-      "path": "data/models/herz.glb"
-    },
-    {
-      "id": "neurochip-glb",
-      "label": "Neurochip",
-      "path": "data/models/neurochip.glb"
-    },
-    {
-      "id": "bmw-glb",
-      "label": "BMW GLB",
-      "path": "data/models/bmw.glb"
-    }
-  ]
+àà"models":à[
+àààà{
+àààààà"id":à"ct-scanner-glb",
+àààààà"label":à"CT-ScanneràRealistisch",
+àààààà"path":à"data/models/ct-scanner.glb"
+àààà},
+àààà{
+àààààà"id":à"mrt-geraet-glb",
+àààààà"label":à"MRT-GeraetàRealistisch",
+àààààà"path":à"data/models/mrt-geraet.glb"
+àààà},
+àààà{
+àààààà"id":à"ultraschall-sonde-glb",
+àààààà"label":à"UltraschallsondeàRealistisch",
+àààààà"path":à"data/models/ultraschall-sonde.glb"
+àààà},
+àààà{
+àààààà"id":à"insulinpumpe-glb",
+àààààà"label":à"Insulinpumpe",
+àààààà"path":à"data/models/insulinpumpe.glb"
+àààà},
+àààà{
+àààààà"id":à"herz-glb",
+àààààà"label":à"Herz",
+àààààà"path":à"data/models/herz.glb"
+àààà},
+àààà{
+àààààà"id":à"neurochip-glb",
+àààààà"label":à"Neurochip",
+àààààà"path":à"data/models/neurochip.glb"
+àààà},
+àààà{
+àààààà"id":à"bmw-glb",
+àààààà"label":à"BMWàGLB",
+àààààà"path":à"data/models/bmw.glb"
+àààà}
+àà]
 }

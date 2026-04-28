@@ -1,589 +1,589 @@
 /**
- * ===================================================================
- * –°¯ MEDTECHGUIDE - ADVANCED QUIZ & ASSESSMENT SYSTEM v2.0
- * ===================================================================
- * Interaktives Quiz mit Medizintechnik + Professionelle psychologische Tests
- * Multiple Choice & Likert-Skalen, Randomisierung, Score-Tracking
- */
+à*à===================================================================
+à*à°¯àMEDTECHGUIDEà-àADVANCEDàQUIZà&àASSESSMENTàSYSTEMàv2.0
+à*à===================================================================
+à*àInteraktivesàQuizàmitàMedizintechnikà+àProfessionelleàpsychologischeàTests
+à*àMultipleàChoiceà&àLikert-Skalen,àRandomisierung,àScore-Tracking
+à*/
 
-// ===================================================================
-// –° QUIZ DATABASE WITH RANDOMIZATION
-// ===================================================================
+//à===================================================================
+//à°àQUIZàDATABASEàWITHàRANDOMIZATION
+//à===================================================================
 
-const QUIZ_DATABASE = {
-  diagnostik: {
-    type: 'multiple-choice',
-    fragen: [
-      { frage: "Welches Verfahren misst kontinuierlich den Blutzucker?", optionen: ["EKG", "CGM (Continuous Glucose Monitoring)", "Röntgen", "MRT"], antwort: 1, erklärung: "CGM misst die Glukose interstitiell alle 5 Minuten." },
-      { frage: "Was ist ein Prick-Test?", optionen: ["Blutabnahme", "Allergie-Test mit Hautreaktion", "Atemtest", "Urintest"], antwort: 1, erklärung: "Ein Prick-Test kratzt die Haut mit Allergenen und beobachtet die Reaktion nach 15 Min." },
-      { frage: "Welche Bildgebung nutzt Magnetfelder?", optionen: ["Röntgen", "CT", "MRT", "Ultraschall"], antwort: 2, erklärung: "MRT nutzt starke Magnetfelder und Radiowellen." },
-      { frage: "Was misst ein EKG?", optionen: ["Blutdruck", "Elektrische Herzaktivität", "Sauerstoff", "Temperatur"], antwort: 1, erklärung: "Das Elektrokardiogramm registriert die elektrischen Signale des Herzens." },
-      { frage: "Wie hei–t der Schnelltestindex für Allergie-Bluttest?", optionen: ["CAP-FEIA", "ELISA", "PCR", "Western Blot"], antwort: 0, erklärung: "CAP-FEIA ist der Standard für IgE-Bestimmung." }
-    ]
-  },
-  therapie: {
-    type: 'multiple-choice',
-    fragen: [
-      { frage: "Was ist eine Insulinpumpe?", optionen: ["Ein Beatmungsgerät", "Ein tragbares Gerät für kontinuierliche Insulinabgabe", "Ein Dialysegerät", "Ein Infusionsständer"], antwort: 1, erklärung: "Eine Insulinpumpe gibt kontinuierlich Insulin ab über einen subcutanen Katheter." },
-      { frage: "Was ist ein Hybrid-Closed-Loop System?", optionen: ["CGM + Pumpe + Algorithmus automatisch verbunden", "Zwei Insulinpumpen", "Ein altes System", "Ein manuelles System"], antwort: 0, erklärung: "Hybrid-Closed-Loop verbindet Sensor, Pumpe und Algorithmus für automatische Kontrolle." },
-      { frage: "Was ist ein Exoskelett?", optionen: ["Eine äu–ere Stützstruktur für Bewegungen", "Ein implantierbares Gerät", "Ein Medikament", "Eine Prothese"], antwort: 0, erklärung: "Ein Exoskelett ist eine mechanische Struktur, die Bewegungen verstärkt oder unterstützt." },
-      { frage: "Was ist Hyposensibilisierung?", optionen: ["Blockieren von Allergenen", "Schrittweise Gewöhnung des Immunsystems", "Medikament gegen Allergie", "Chirurgischer Eingriff"], antwort: 1, erklärung: "Hyposensibilisierung gewöhnt das Immunsystem schrittweise an das Allergen." },
-      { frage: "Was ist ein Schrittmacher?", optionen: ["Ein Medikament", "Ein implantierbares Herzgerät für Rhythmusstabilität", "Ein Sensor", "Eine Software"], antwort: 1, erklärung: "Ein Schrittmacher reguliert den Herzrhythmus durch elektrische Impulse." }
-    ]
-  },
-  forschung: {
-    type: 'multiple-choice',
-    fragen: [
-      { frage: "Was ist CRISPR?", optionen: ["Eine Kamera", "Ein Geneditierungs-Tool", "Eine Krankheit", "Ein Protein"], antwort: 1, erklärung: "CRISPR ist ein molekulares Werkzeug zur präzisen DNA-Bearbeitung." },
-      { frage: "Was ist ein Brain-Computer Interface (BCI)?", optionen: ["Ein Videospiel", "Eine Verbindung zwischen Gehirn und Computer", "Ein Hörgerät", "Eine Brille"], antwort: 1, erklärung: "Ein BCI verbindet das Gehirn direkt mit Computersystemen." },
-      { frage: "Wie schnell ist die DNA-Sequenzierung heute vs. 2001?", optionen: ["Gleich schnell", "10x schneller", "Millionen mal schneller", "1000x schneller"], antwort: 2, erklärung: "Die DNA-Sequenzierung ist heute Millionen mal schneller." },
-      { frage: "Was ist tiefe Hirnstimulation?", optionen: ["Massage", "Elektrische Stimulation von Gehirnregionen", "Gedankenlesung", "Meditation"], antwort: 1, erklärung: "Tiefe Hirnstimulation nutzt Elektroden um Gehirnfunktionen zu regulieren." },
-      { frage: "Was ist die künstliche Bauchspeicheldrüse?", optionen: ["Ein Organ-Implantat", "Ein automatisiertes System für Insulinregulation", "Ein Medikament", "Ein Sensor"], antwort: 1, erklärung: "Die künstliche Bauchspeicheldrüse ist ein vollständig automatisiertes Insulin-System." }
-    ]
-  },
-  zukunft: {
-    type: 'multiple-choice',
-    fragen: [
-      { frage: "Was ist Nanomedizin?", optionen: ["Homöopathie", "Sehr kleine Partikel für Medizin", "Eine alternative Medizin", "Ein altes Konzept"], antwort: 1, erklärung: "Nanomedizin nutzt Nanopartikel für gezielten Drug-Delivery." },
-      { frage: "Was ist ein Bio-Interface?", optionen: ["Ein Videospiel-Controller", "Eine Schnittstelle zwischen Biologie und Technologie", "Ein Medikament", "Eine Prothese"], antwort: 1, erklärung: "Bio-Interfaces verbinden biologische Systeme mit technologischen Komponenten." },
-      { frage: "Welches Problem soll nicht-invasive Glukosemessung lösen?", optionen: ["Zu hohe Kosten", "Zu viele Nadeln", "Zu langsam", "Zu unpräzise"], antwort: 1, erklärung: "Nicht-invasive CGM-Sensoren sollen ohne Nadeln messen." },
-      { frage: "Was ist Präzisionsmedizin?", optionen: ["Allgemeine Behandlung", "Personalisierte Behandlung basierend auf Genetik", "Alte Medizin", "Naturheilkunde"], antwort: 1, erklärung: "Präzisionsmedizin nutzt genetische Daten für individualisierte Behandlungen." },
-      { frage: "Was könnte bidirektionale Neural-Recording ermöglichen?", optionen: ["Bessere Hörgeräte", "Lesen UND Schreiben von Hirnsignalen", "Mehr Speicher", "Schnelleres Internet"], antwort: 1, erklärung: "Bidirektionale Neural-Recording würde Gedankenlesung ermöglichen." }
-    ]
-  },
+constàQUIZ_DATABASEà=à{
+ààdiagnostik:à{
+ààààtype:à'multiple-choice',
+ààààfragen:à[
+àààààà{àfrage:à"WelchesàVerfahrenàmisstàkontinuierlichàdenàBlutzucker?",àoptionen:à["EKG",à"CGMà(ContinuousàGlucoseàMonitoring)",à"Röntgen",à"MRT"],àantwort:à1,àerklärung:à"CGMàmisstàdieàGlukoseàinterstitiellàalleà5àMinuten."à},
+àààààà{àfrage:à"WasàistàeinàPrick-Test?",àoptionen:à["Blutabnahme",à"Allergie-TestàmitàHautreaktion",à"Atemtest",à"Urintest"],àantwort:à1,àerklärung:à"EinàPrick-TestàkratztàdieàHautàmitàAllergenenàundàbeobachtetàdieàReaktionànachà15àMin."à},
+àààààà{àfrage:à"WelcheàBildgebungànutztàMagnetfelder?",àoptionen:à["Röntgen",à"CT",à"MRT",à"Ultraschall"],àantwort:à2,àerklärung:à"MRTànutztàstarkeàMagnetfelderàundàRadiowellen."à},
+àààààà{àfrage:à"WasàmisstàeinàEKG?",àoptionen:à["Blutdruck",à"ElektrischeàHerzaktivität",à"Sauerstoff",à"Temperatur"],àantwort:à1,àerklärung:à"DasàElektrokardiogrammàregistriertàdieàelektrischenàSignaleàdesàHerzens."à},
+àààààà{àfrage:à"Wieàhei—tàderàSchnelltestindexàfüràAllergie-Bluttest?",àoptionen:à["CAP-FEIA",à"ELISA",à"PCR",à"WesternàBlot"],àantwort:à0,àerklärung:à"CAP-FEIAàistàderàStandardàfüràIgE-Bestimmung."à}
+àààà]
+àà},
+ààtherapie:à{
+ààààtype:à'multiple-choice',
+ààààfragen:à[
+àààààà{àfrage:à"WasàistàeineàInsulinpumpe?",àoptionen:à["EinàBeatmungsgerät",à"EinàtragbaresàGerätàfüràkontinuierlicheàInsulinabgabe",à"EinàDialysegerät",à"EinàInfusionsständer"],àantwort:à1,àerklärung:à"EineàInsulinpumpeàgibtàkontinuierlichàInsulinàabàüberàeinenàsubcutanenàKatheter."à},
+àààààà{àfrage:à"WasàistàeinàHybrid-Closed-LoopàSystem?",àoptionen:à["CGMà+àPumpeà+àAlgorithmusàautomatischàverbunden",à"ZweiàInsulinpumpen",à"EinàaltesàSystem",à"EinàmanuellesàSystem"],àantwort:à0,àerklärung:à"Hybrid-Closed-LoopàverbindetàSensor,àPumpeàundàAlgorithmusàfüràautomatischeàKontrolle."à},
+àààààà{àfrage:à"WasàistàeinàExoskelett?",àoptionen:à["Eineàäu—ereàStützstrukturàfüràBewegungen",à"EinàimplantierbaresàGerät",à"EinàMedikament",à"EineàProthese"],àantwort:à0,àerklärung:à"EinàExoskelettàistàeineàmechanischeàStruktur,àdieàBewegungenàverstärktàoderàunterstützt."à},
+àààààà{àfrage:à"WasàistàHyposensibilisierung?",àoptionen:à["BlockierenàvonàAllergenen",à"SchrittweiseàGewöhnungàdesàImmunsystems",à"MedikamentàgegenàAllergie",à"ChirurgischeràEingriff"],àantwort:à1,àerklärung:à"HyposensibilisierungàgewöhntàdasàImmunsystemàschrittweiseàanàdasàAllergen."à},
+àààààà{àfrage:à"WasàistàeinàSchrittmacher?",àoptionen:à["EinàMedikament",à"EinàimplantierbaresàHerzgerätàfüràRhythmusstabilität",à"EinàSensor",à"EineàSoftware"],àantwort:à1,àerklärung:à"EinàSchrittmacheràreguliertàdenàHerzrhythmusàdurchàelektrischeàImpulse."à}
+àààà]
+àà},
+ààforschung:à{
+ààààtype:à'multiple-choice',
+ààààfragen:à[
+àààààà{àfrage:à"WasàistàCRISPR?",àoptionen:à["EineàKamera",à"EinàGeneditierungs-Tool",à"EineàKrankheit",à"EinàProtein"],àantwort:à1,àerklärung:à"CRISPRàistàeinàmolekularesàWerkzeugàzuràpräzisenàDNA-Bearbeitung."à},
+àààààà{àfrage:à"WasàistàeinàBrain-ComputeràInterfaceà(BCI)?",àoptionen:à["EinàVideospiel",à"EineàVerbindungàzwischenàGehirnàundàComputer",à"EinàHörgerät",à"EineàBrille"],àantwort:à1,àerklärung:à"EinàBCIàverbindetàdasàGehirnàdirektàmitàComputersystemen."à},
+àààààà{àfrage:à"WieàschnellàistàdieàDNA-Sequenzierungàheuteàvs.à2001?",àoptionen:à["Gleichàschnell",à"10xàschneller",à"Millionenàmalàschneller",à"1000xàschneller"],àantwort:à2,àerklärung:à"DieàDNA-SequenzierungàistàheuteàMillionenàmalàschneller."à},
+àààààà{àfrage:à"WasàistàtiefeàHirnstimulation?",àoptionen:à["Massage",à"ElektrischeàStimulationàvonàGehirnregionen",à"Gedankenlesung",à"Meditation"],àantwort:à1,àerklärung:à"TiefeàHirnstimulationànutztàElektrodenàumàGehirnfunktionenàzuàregulieren."à},
+àààààà{àfrage:à"WasàistàdieàkünstlicheàBauchspeicheldrüse?",àoptionen:à["EinàOrgan-Implantat",à"EinàautomatisiertesàSystemàfüràInsulinregulation",à"EinàMedikament",à"EinàSensor"],àantwort:à1,àerklärung:à"DieàkünstlicheàBauchspeicheldrüseàistàeinàvollständigàautomatisiertesàInsulin-System."à}
+àààà]
+àà},
+ààzukunft:à{
+ààààtype:à'multiple-choice',
+ààààfragen:à[
+àààààà{àfrage:à"WasàistàNanomedizin?",àoptionen:à["Homöopathie",à"SehràkleineàPartikelàfüràMedizin",à"EineàalternativeàMedizin",à"EinàaltesàKonzept"],àantwort:à1,àerklärung:à"NanomedizinànutztàNanopartikelàfüràgezieltenàDrug-Delivery."à},
+àààààà{àfrage:à"WasàistàeinàBio-Interface?",àoptionen:à["EinàVideospiel-Controller",à"EineàSchnittstelleàzwischenàBiologieàundàTechnologie",à"EinàMedikament",à"EineàProthese"],àantwort:à1,àerklärung:à"Bio-InterfacesàverbindenàbiologischeàSystemeàmitàtechnologischenàKomponenten."à},
+àààààà{àfrage:à"WelchesàProblemàsollànicht-invasiveàGlukosemessungàlösen?",àoptionen:à["ZuàhoheàKosten",à"ZuàvieleàNadeln",à"Zuàlangsam",à"Zuàunpräzise"],àantwort:à1,àerklärung:à"Nicht-invasiveàCGM-SensorenàsollenàohneàNadelnàmessen."à},
+àààààà{àfrage:à"WasàistàPräzisionsmedizin?",àoptionen:à["AllgemeineàBehandlung",à"PersonalisierteàBehandlungàbasierendàaufàGenetik",à"AlteàMedizin",à"Naturheilkunde"],àantwort:à1,àerklärung:à"PräzisionsmedizinànutztàgenetischeàDatenàfüràindividualisierteàBehandlungen."à},
+àààààà{àfrage:à"WasàkönnteàbidirektionaleàNeural-Recordingàermöglichen?",àoptionen:à["BessereàHörgeräte",à"LesenàUNDàSchreibenàvonàHirnsignalen",à"MehràSpeicher",à"SchnelleresàInternet"],àantwort:à1,àerklärung:à"BidirektionaleàNeural-RecordingàwürdeàGedankenlesungàermöglichen."à}
+àààà]
+àà},
 
-  depression: {
-    type: 'likert',
-    name: '–° Depressions-Screening (PHQ-9)',
-    beschreibung: 'Wissenschaftlich validierter Test zur Früherkennung',
-    warnung: 'â –¯¸ Ersatz nicht für ärztliche Diagnose. Konsultieren Sie bei Bedarf einen Arzt.',
-    fragen: [
-      { frage: "Wenig Interesse oder Freude an seinen Tätigkeiten", skala: ["Gar nicht", "An mehreren Tagen", "An mehr als der Hälfte der Tage", "Fast jeden Tag"] },
-      { frage: "Niedergeschlagenheit, Schwermut oder Hoffnungslosigkeit", skala: ["Gar nicht", "An mehreren Tagen", "An mehr als der Hälfte der Tage", "Fast jeden Tag"] },
-      { frage: "Schwierigkeiten ein- oder durchzuschlafen", skala: ["Gar nicht", "An mehreren Tagen", "An mehr als der Hälfte der Tage", "Fast jeden Tag"] },
-      { frage: "Müdigkeit oder Mangel an Energie", skala: ["Gar nicht", "An mehreren Tagen", "An mehr als der Hälfte der Tage", "Fast jeden Tag"] },
-      { frage: "Verminderter Appetit oder –beressen", skala: ["Gar nicht", "An mehreren Tagen", "An mehr als der Hälfte der Tage", "Fast jeden Tag"] },
-      { frage: "Negative Gefühle sich selbst gegenüber", skala: ["Gar nicht", "An mehreren Tagen", "An mehr als der Hälfte der Tage", "Fast jeden Tag"] },
-      { frage: "Schwierigkeiten sich zu konzentrieren", skala: ["Gar nicht", "An mehreren Tagen", "An mehr als der Hälfte der Tage", "Fast jeden Tag"] },
-      { frage: "Verlangsamt oder beschleunigt sich in Bewegungen", skala: ["Gar nicht", "An mehreren Tagen", "An mehr als der Hälfte der Tage", "Fast jeden Tag"] },
-      { frage: "Gedanken, besser tot zu sein", skala: ["Gar nicht", "An mehreren Tagen", "An mehr als der Hälfte der Tage", "Fast jeden Tag"] }
-    ],
-    interpretation: {
-      0: { label: "Keine Depression", description: "Ergebnisse deuten nicht auf Depression hin." },
-      5: { label: "Leichte Depression", description: "Sie zeigen einige depressive Symptome." },
-      10: { label: "Moderate Depression", description: "Fachberatung wird empfohlen." },
-      15: { label: "Schwere Depression", description: "â –¯¸ Konsultieren Sie dringend einen Psychologen." }
-    }
-  },
+ààdepression:à{
+ààààtype:à'likert',
+ààààname:à'°àDepressions-Screeningà(PHQ-9)',
+ààààbeschreibung:à'WissenschaftlichàvalidierteràTestàzuràFrüherkennung',
+ààààwarnung:à' —¯¸àErsatzànichtàfüràärztlicheàDiagnose.àKonsultierenàSieàbeiàBedarfàeinenàArzt.',
+ààààfragen:à[
+àààààà{àfrage:à"WenigàInteresseàoderàFreudeàanàseinenàTätigkeiten",àskala:à["Garànicht",à"AnàmehrerenàTagen",à"AnàmehràalsàderàHälfteàderàTage",à"FastàjedenàTag"]à},
+àààààà{àfrage:à"Niedergeschlagenheit,àSchwermutàoderàHoffnungslosigkeit",àskala:à["Garànicht",à"AnàmehrerenàTagen",à"AnàmehràalsàderàHälfteàderàTage",à"FastàjedenàTag"]à},
+àààààà{àfrage:à"Schwierigkeitenàein-àoderàdurchzuschlafen",àskala:à["Garànicht",à"AnàmehrerenàTagen",à"AnàmehràalsàderàHälfteàderàTage",à"FastàjedenàTag"]à},
+àààààà{àfrage:à"MüdigkeitàoderàMangelàanàEnergie",àskala:à["Garànicht",à"AnàmehrerenàTagen",à"AnàmehràalsàderàHälfteàderàTage",à"FastàjedenàTag"]à},
+àààààà{àfrage:à"VerminderteràAppetitàoderà—beressen",àskala:à["Garànicht",à"AnàmehrerenàTagen",à"AnàmehràalsàderàHälfteàderàTage",à"FastàjedenàTag"]à},
+àààààà{àfrage:à"NegativeàGefühleàsichàselbstàgegenüber",àskala:à["Garànicht",à"AnàmehrerenàTagen",à"AnàmehràalsàderàHälfteàderàTage",à"FastàjedenàTag"]à},
+àààààà{àfrage:à"Schwierigkeitenàsichàzuàkonzentrieren",àskala:à["Garànicht",à"AnàmehrerenàTagen",à"AnàmehràalsàderàHälfteàderàTage",à"FastàjedenàTag"]à},
+àààààà{àfrage:à"VerlangsamtàoderàbeschleunigtàsichàinàBewegungen",àskala:à["Garànicht",à"AnàmehrerenàTagen",à"AnàmehràalsàderàHälfteàderàTage",à"FastàjedenàTag"]à},
+àààààà{àfrage:à"Gedanken,àbesseràtotàzuàsein",àskala:à["Garànicht",à"AnàmehrerenàTagen",à"AnàmehràalsàderàHälfteàderàTage",à"FastàjedenàTag"]à}
+àààà],
+ààààinterpretation:à{
+àààààà0:à{àlabel:à"KeineàDepression",àdescription:à"ErgebnisseàdeutenànichtàaufàDepressionàhin."à},
+àààààà5:à{àlabel:à"LeichteàDepression",àdescription:à"SieàzeigenàeinigeàdepressiveàSymptome."à},
+àààààà10:à{àlabel:à"ModerateàDepression",àdescription:à"Fachberatungàwirdàempfohlen."à},
+àààààà15:à{àlabel:à"SchwereàDepression",àdescription:à" —¯¸àKonsultierenàSieàdringendàeinenàPsychologen."à}
+àààà}
+àà},
 
-  adhs: {
-    type: 'likert',
-    name: '–°§  ADHS-Screening (ASRS v1.1)',
-    beschreibung: 'Professioneller ADHS-Screening-Test',
-    warnung: 'â –¯¸ Ersatz nicht für ärztliche Diagnose. Konsultieren Sie einen Spezialisten.',
-    fragen: [
-      { frage: "Wie oft vergessen Sie Termine oder Aufgaben?", skala: ["Nie/selten", "Manchmal", "Oft", "Sehr oft", "Immer"] },
-      { frage: "Wie oft fällt es Ihnen schwer bei Details?", skala: ["Nie/selten", "Manchmal", "Oft", "Sehr oft", "Immer"] },
-      { frage: "Wie oft fällt es Ihnen schwer sich zu konzentrieren?", skala: ["Nie/selten", "Manchmal", "Oft", "Sehr oft", "Immer"] },
-      { frage: "Wie oft zappeln Sie herum?", skala: ["Nie/selten", "Manchmal", "Oft", "Sehr oft", "Immer"] },
-      { frage: "Wie oft fällt es Ihnen schwer zu warten?", skala: ["Nie/selten", "Manchmal", "Oft", "Sehr oft", "Immer"] },
-      { frage: "Wie oft unterbrechen oder stören Sie andere?", skala: ["Nie/selten", "Manchmal", "Oft", "Sehr oft", "Immer"] }
-    ],
-    interpretation: {
-      0: { label: "Niedrige ADHS-Merkmale", description: "Keine signifikanten Anzeichen erkannt." },
-      10: { label: "Mögliche ADHS", description: "Weitere Evaluation empfohlen." },
-      15: { label: "Wahrscheinlich ADHS", description: "â –¯¸ Fachliche Bewertung wird empfohlen." }
-    }
-  },
+ààadhs:à{
+ààààtype:à'likert',
+ààààname:à'°ç àADHS-Screeningà(ASRSàv1.1)',
+ààààbeschreibung:à'ProfessionelleràADHS-Screening-Test',
+ààààwarnung:à' —¯¸àErsatzànichtàfüràärztlicheàDiagnose.àKonsultierenàSieàeinenàSpezialisten.',
+ààààfragen:à[
+àààààà{àfrage:à"WieàoftàvergessenàSieàTermineàoderàAufgaben?",àskala:à["Nie/selten",à"Manchmal",à"Oft",à"Sehràoft",à"Immer"]à},
+àààààà{àfrage:à"WieàoftàfälltàesàIhnenàschweràbeiàDetails?",àskala:à["Nie/selten",à"Manchmal",à"Oft",à"Sehràoft",à"Immer"]à},
+àààààà{àfrage:à"WieàoftàfälltàesàIhnenàschweràsichàzuàkonzentrieren?",àskala:à["Nie/selten",à"Manchmal",à"Oft",à"Sehràoft",à"Immer"]à},
+àààààà{àfrage:à"WieàoftàzappelnàSieàherum?",àskala:à["Nie/selten",à"Manchmal",à"Oft",à"Sehràoft",à"Immer"]à},
+àààààà{àfrage:à"WieàoftàfälltàesàIhnenàschweràzuàwarten?",àskala:à["Nie/selten",à"Manchmal",à"Oft",à"Sehràoft",à"Immer"]à},
+àààààà{àfrage:à"WieàoftàunterbrechenàoderàstörenàSieàandere?",àskala:à["Nie/selten",à"Manchmal",à"Oft",à"Sehràoft",à"Immer"]à}
+àààà],
+ààààinterpretation:à{
+àààààà0:à{àlabel:à"NiedrigeàADHS-Merkmale",àdescription:à"KeineàsignifikantenàAnzeichenàerkannt."à},
+àààààà10:à{àlabel:à"MöglicheàADHS",àdescription:à"WeitereàEvaluationàempfohlen."à},
+àààààà15:à{àlabel:à"WahrscheinlichàADHS",àdescription:à" —¯¸àFachlicheàBewertungàwirdàempfohlen."à}
+àààà}
+àà},
 
-  persoenlichkeit: {
-    type: 'bigfive',
-    name: '–° Big-Five Persönlichkeitstest (ENTF)',
-    beschreibung: 'Wissenschaftlich validierter Test der fünf Persönlichkeitsfaktoren',
-    dimensionen: {
-      O: "Offenheit - Kreativität & Neugier",
-      C: "Gewissenhaftigkeit - Ordnung & Pünktlichkeit",
-      E: "Extraversion - Geselligkeit & Aktivität",
-      A: "Verträglichkeit - Kooperation & Empathie",
-      N: "Neurotizismus - Emotionale Stabilität"
-    },
-    fragen: [
-      { frage: "Ich bin das Leben der Gruppe", dimension: "E" },
-      { frage: "Ich bin geordnet und pünktlich", dimension: "C" },
-      { frage: "Ich interessiere mich für abstrakte Ideen", dimension: "O" },
-      { frage: "Ich bin einfühlsam und interessiere mich für andere", dimension: "A" },
-      { frage: "Ich mache mir oft Sorgen über verschiedene Dinge", dimension: "N" },
-      { frage: "Ich bin spontan und kontaktfreudig", dimension: "E" },
-      { frage: "Ich achte auf die Ordnung in meinem Umfeld", dimension: "C" },
-      { frage: "Ich bin offen für neue und ungewöhnliche Erfahrungen", dimension: "O" },
-      { frage: "Ich beschäftige mich gerne mit anderen Menschen", dimension: "A" },
-      { frage: "Ich bin eher reizbar und gestresst", dimension: "N" },
-      { frage: "Ich bin eine dynamische und energische Person", dimension: "E" },
-      { frage: "Ich bin sorgfältig in meiner Arbeit", dimension: "C" },
-      { frage: "Ich habe viele kreative Ideen", dimension: "O" },
-      { frage: "Ich versuche, harmonisch mit anderen auszukommen", dimension: "A" },
-      { frage: "Ich bin leicht angespannt oder nervös", dimension: "N" },
-      { frage: "Ich spreche gerne mit vielen verschiedenen Menschen", dimension: "E" },
-      { frage: "Ich bin gründlich bei meinen Aufgaben", dimension: "C" },
-      { frage: "Ich denke gerne über Philosophie und Bedeutung nach", dimension: "O" },
-      { frage: "Ich bin verständnisvoll und nachsichtig", dimension: "A" },
-      { frage: "Ich bin empfindlich gegenüber Kritik", dimension: "N" }
-    ]
-  }
+ààpersoenlichkeit:à{
+ààààtype:à'bigfive',
+ààààname:à'°àBig-FiveàPersönlichkeitstestà(ENTF)',
+ààààbeschreibung:à'WissenschaftlichàvalidierteràTestàderàfünfàPersönlichkeitsfaktoren',
+ààààdimensionen:à{
+ààààààO:à"Offenheità-àKreativitätà&àNeugier",
+ààààààC:à"Gewissenhaftigkeità-àOrdnungà&àPünktlichkeit",
+ààààààE:à"Extraversionà-àGeselligkeità&àAktivität",
+ààààààA:à"Verträglichkeità-àKooperationà&àEmpathie",
+ààààààN:à"Neurotizismusà-àEmotionaleàStabilität"
+àààà},
+ààààfragen:à[
+àààààà{àfrage:à"IchàbinàdasàLebenàderàGruppe",àdimension:à"E"à},
+àààààà{àfrage:à"Ichàbinàgeordnetàundàpünktlich",àdimension:à"C"à},
+àààààà{àfrage:à"IchàinteressiereàmichàfüràabstrakteàIdeen",àdimension:à"O"à},
+àààààà{àfrage:à"Ichàbinàeinfühlsamàundàinteressiereàmichàfüràandere",àdimension:à"A"à},
+àààààà{àfrage:à"IchàmacheàmiràoftàSorgenàüberàverschiedeneàDinge",àdimension:à"N"à},
+àààààà{àfrage:à"Ichàbinàspontanàundàkontaktfreudig",àdimension:à"E"à},
+àààààà{àfrage:à"IchàachteàaufàdieàOrdnungàinàmeinemàUmfeld",àdimension:à"C"à},
+àààààà{àfrage:à"IchàbinàoffenàfüràneueàundàungewöhnlicheàErfahrungen",àdimension:à"O"à},
+àààààà{àfrage:à"IchàbeschäftigeàmichàgerneàmitàanderenàMenschen",àdimension:à"A"à},
+àààààà{àfrage:à"Ichàbinàeheràreizbaràundàgestresst",àdimension:à"N"à},
+àààààà{àfrage:à"IchàbinàeineàdynamischeàundàenergischeàPerson",àdimension:à"E"à},
+àààààà{àfrage:à"IchàbinàsorgfältigàinàmeineràArbeit",àdimension:à"C"à},
+àààààà{àfrage:à"IchàhabeàvieleàkreativeàIdeen",àdimension:à"O"à},
+àààààà{àfrage:à"Ichàversuche,àharmonischàmitàanderenàauszukommen",àdimension:à"A"à},
+àààààà{àfrage:à"Ichàbinàleichtàangespanntàoderànervös",àdimension:à"N"à},
+àààààà{àfrage:à"IchàsprecheàgerneàmitàvielenàverschiedenenàMenschen",àdimension:à"E"à},
+àààààà{àfrage:à"IchàbinàgründlichàbeiàmeinenàAufgaben",àdimension:à"C"à},
+àààààà{àfrage:à"IchàdenkeàgerneàüberàPhilosophieàundàBedeutungànach",àdimension:à"O"à},
+àààààà{àfrage:à"Ichàbinàverständnisvollàundànachsichtig",àdimension:à"A"à},
+àààààà{àfrage:à"IchàbinàempfindlichàgegenüberàKritik",àdimension:à"N"à}
+àààà]
+àà}
 };
 
-// ===================================================================
-// –°Â® UTILITY FUNCTIONS
-// ===================================================================
+//à===================================================================
+//à°®àUTILITYàFUNCTIONS
+//à===================================================================
 
-function shuffleArray(array) {
-  const shuffled = [...array];
-  for (let i = shuffled.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-  }
-  return shuffled;
+functionàshuffleArray(array)à{
+ààconstàshuffledà=à[...array];
+ààforà(letàià=àshuffled.lengthà-à1;àià>à0;ài--)à{
+ààààconstàjà=àMath.floor(Math.random()à*à(ià+à1));
+àààà[shuffled[i],àshuffled[j]]à=à[shuffled[j],àshuffled[i]];
+àà}
+ààreturnàshuffled;
 }
 
-function getRandomizedQuestions(kategorie) {
-  const data = QUIZ_DATABASE[kategorie];
-  if (data.type === 'multiple-choice') {
-    return shuffleArray(data.fragen).map(f => ({
-      ...f,
-      optionen: shuffleArray([...f.optionen])
-    }));
-  }
-  return data.fragen;
+functionàgetRandomizedQuestions(kategorie)à{
+ààconstàdataà=àQUIZ_DATABASE[kategorie];
+ààifà(data.typeà===à'multiple-choice')à{
+ààààreturnàshuffleArray(data.fragen).map(fà=>à({
+àààààà...f,
+ààààààoptionen:àshuffleArray([...f.optionen])
+àààà}));
+àà}
+ààreturnàdata.fragen;
 }
 
-// ===================================================================
-// –°Â® QUIZ STATE & LOGIC
-// ===================================================================
+//à===================================================================
+//à°®àQUIZàSTATEà&àLOGIC
+//à===================================================================
 
-let quizState = {
-  aktiv: false,
-  kategorie: null,
-  testType: null,
-  aktuelleFrageIndex: 0,
-  punkte: 0,
-  antworten: [],
-  maxPunkte: 0,
-  scores: {}
+letàquizStateà=à{
+ààaktiv:àfalse,
+ààkategorie:ànull,
+ààtestType:ànull,
+ààaktuelleFrageIndex:à0,
+ààpunkte:à0,
+ààantworten:à[],
+ààmaxPunkte:à0,
+ààscores:à{}
 };
 
-function startQuiz(kategorie) {
-  if (!QUIZ_DATABASE[kategorie]) {
-    console.warn('Kategorie nicht gefunden:', kategorie);
-    return;
-  }
+functionàstartQuiz(kategorie)à{
+ààifà(!QUIZ_DATABASE[kategorie])à{
+ààààconsole.warn('Kategorieànichtàgefunden:',àkategorie);
+ààààreturn;
+àà}
 
-  const dbEntry = QUIZ_DATABASE[kategorie];
-  quizState = {
-    aktiv: true,
-    kategorie: kategorie,
-    testType: dbEntry.type,
-    aktuelleFrageIndex: 0,
-    punkte: 0,
-    antworten: [],
-    maxPunkte: dbEntry.fragen.length,
-    scores: dbEntry.type === 'bigfive' ? { O: 0, C: 0, E: 0, A: 0, N: 0 } : {}
-  };
+ààconstàdbEntryà=àQUIZ_DATABASE[kategorie];
+ààquizStateà=à{
+ààààaktiv:àtrue,
+ààààkategorie:àkategorie,
+ààààtestType:àdbEntry.type,
+ààààaktuelleFrageIndex:à0,
+ààààpunkte:à0,
+ààààantworten:à[],
+ààààmaxPunkte:àdbEntry.fragen.length,
+ààààscores:àdbEntry.typeà===à'bigfive'à?à{àO:à0,àC:à0,àE:à0,àA:à0,àN:à0à}à:à{}
+àà};
 
-  showQuizUI();
-  displayQuizFrage();
+ààshowQuizUI();
+ààdisplayQuizFrage();
 }
 
-function nextQuizFrage(antwortIndex) {
-  const kategorie = quizState.kategorie;
-  const dbEntry = QUIZ_DATABASE[kategorie];
-  const fragen = dbEntry.fragen;
-  const aktuelleFrage = fragen[quizState.aktuelleFrageIndex];
+functionànextQuizFrage(antwortIndex)à{
+ààconstàkategorieà=àquizState.kategorie;
+ààconstàdbEntryà=àQUIZ_DATABASE[kategorie];
+ààconstàfragenà=àdbEntry.fragen;
+ààconstàaktuelleFrageà=àfragen[quizState.aktuelleFrageIndex];
 
-  if (dbEntry.type === 'multiple-choice') {
-    const isKorrekt = antwortIndex === aktuelleFrage.antwort;
-    quizState.antworten.push({
-      frage: aktuelleFrage.frage,
-      selected: antwortIndex,
-      korrekt: aktuelleFrage.antwort,
-      isKorrekt: isKorrekt
-    });
-    if (isKorrekt) quizState.punkte++;
-  } else if (dbEntry.type === 'likert') {
-    quizState.antworten.push({
-      frage: aktuelleFrage.frage,
-      score: antwortIndex
-    });
-    quizState.punkte += antwortIndex;
-  } else if (dbEntry.type === 'bigfive') {
-    const dimension = aktuelleFrage.dimension;
-    quizState.scores[dimension] += antwortIndex;
-    quizState.antworten.push({
-      frage: aktuelleFrage.frage,
-      dimension: dimension,
-      score: antwortIndex
-    });
-  }
+ààifà(dbEntry.typeà===à'multiple-choice')à{
+ààààconstàisKorrektà=àantwortIndexà===àaktuelleFrage.antwort;
+ààààquizState.antworten.push({
+ààààààfrage:àaktuelleFrage.frage,
+ààààààselected:àantwortIndex,
+ààààààkorrekt:àaktuelleFrage.antwort,
+ààààààisKorrekt:àisKorrekt
+àààà});
+ààààifà(isKorrekt)àquizState.punkte++;
+àà}àelseàifà(dbEntry.typeà===à'likert')à{
+ààààquizState.antworten.push({
+ààààààfrage:àaktuelleFrage.frage,
+ààààààscore:àantwortIndex
+àààà});
+ààààquizState.punkteà+=àantwortIndex;
+àà}àelseàifà(dbEntry.typeà===à'bigfive')à{
+ààààconstàdimensionà=àaktuelleFrage.dimension;
+ààààquizState.scores[dimension]à+=àantwortIndex;
+ààààquizState.antworten.push({
+ààààààfrage:àaktuelleFrage.frage,
+ààààààdimension:àdimension,
+ààààààscore:àantwortIndex
+àààà});
+àà}
 
-  quizState.aktuelleFrageIndex++;
+ààquizState.aktuelleFrageIndex++;
 
-  if (quizState.aktuelleFrageIndex < fragen.length) {
-    displayQuizFrage();
-  } else {
-    showQuizErgebnis();
-  }
+ààifà(quizState.aktuelleFrageIndexà<àfragen.length)à{
+ààààdisplayQuizFrage();
+àà}àelseà{
+ààààshowQuizErgebnis();
+àà}
 }
 
-function displayQuizFrage() {
-  const kategorie = quizState.kategorie;
-  const dbEntry = QUIZ_DATABASE[kategorie];
-  const fragen = dbEntry.fragen;
-  const frage = fragen[quizState.aktuelleFrageIndex];
-  const container = document.getElementById('quiz-container');
+functionàdisplayQuizFrage()à{
+ààconstàkategorieà=àquizState.kategorie;
+ààconstàdbEntryà=àQUIZ_DATABASE[kategorie];
+ààconstàfragenà=àdbEntry.fragen;
+ààconstàfrageà=àfragen[quizState.aktuelleFrageIndex];
+ààconstàcontainerà=àdocument.getElementById('quiz-container');
 
-  if (!container) return;
+ààifà(!container)àreturn;
 
-  const progressProzent = ((quizState.aktuelleFrageIndex + 1) / fragen.length) * 100;
+ààconstàprogressProzentà=à((quizState.aktuelleFrageIndexà+à1)à/àfragen.length)à*à100;
 
-  let html = `
-    <div class="quiz-question">
-      <div class="quiz-progress">
-        <div class="quiz-progress-bar" style="width: ${progressProzent}%"></div>
-        <div class="quiz-progress-text">
-          Frage ${quizState.aktuelleFrageIndex + 1} von ${fragen.length}
-        </div>
-      </div>
-      
-      <h2>${frage.frage}</h2>
-  `;
+ààletàhtmlà=à`
+àààà<divàclass="quiz-question">
+àààààà<divàclass="quiz-progress">
+àààààààà<divàclass="quiz-progress-bar"àstyle="width:à${progressProzent}%"></div>
+àààààààà<divàclass="quiz-progress-text">
+ààààààààààFrageà${quizState.aktuelleFrageIndexà+à1}àvonà${fragen.length}
+àààààààà</div>
+àààààà</div>
+àààààà
+àààààà<h2>${frage.frage}</h2>
+àà`;
 
-  if (dbEntry.type === 'multiple-choice') {
-    html += `<div class="quiz-optionen">`;
-    frage.optionen.forEach((option, index) => {
-      html += `
-        <button class="quiz-option" onclick="nextQuizFrage(${index})">
-          <span class="option-letter">${String.fromCharCode(65 + index)}</span>
-          <span class="option-text">${option}</span>
-        </button>
-      `;
-    });
-    html += `</div>`;
-  } else if (dbEntry.type === 'likert') {
-    html += `<div class="likert-scale">`;
-    frage.skala.forEach((label, index) => {
-      html += `
-        <button class="likert-option" onclick="nextQuizFrage(${index})" title="${label}">
-          <span class="likert-label">${label}</span>
-        </button>
-      `;
-    });
-    html += `</div>`;
-  } else if (dbEntry.type === 'bigfive') {
-    html += `<div class="likert-scale bigfive-scale">`;
-    const labels = ["Stimme gar nicht zu", "Stimme wenig zu", "Neutral", "Stimme zu", "Stimme sehr zu"];
-    labels.forEach((label, index) => {
-      html += `
-        <button class="likert-option" onclick="nextQuizFrage(${index})" title="${label}">
-          <span class="likert-number">${index + 1}</span>
-        </button>
-      `;
-    });
-    html += `</div>`;
-  }
+ààifà(dbEntry.typeà===à'multiple-choice')à{
+ààààhtmlà+=à`<divàclass="quiz-optionen">`;
+ààààfrage.optionen.forEach((option,àindex)à=>à{
+ààààààhtmlà+=à`
+àààààààà<buttonàclass="quiz-option"àonclick="nextQuizFrage(${index})">
+àààààààààà<spanàclass="option-letter">${String.fromCharCode(65à+àindex)}</span>
+àààààààààà<spanàclass="option-text">${option}</span>
+àààààààà</button>
+àààààà`;
+àààà});
+ààààhtmlà+=à`</div>`;
+àà}àelseàifà(dbEntry.typeà===à'likert')à{
+ààààhtmlà+=à`<divàclass="likert-scale">`;
+ààààfrage.skala.forEach((label,àindex)à=>à{
+ààààààhtmlà+=à`
+àààààààà<buttonàclass="likert-option"àonclick="nextQuizFrage(${index})"àtitle="${label}">
+àààààààààà<spanàclass="likert-label">${label}</span>
+àààààààà</button>
+àààààà`;
+àààà});
+ààààhtmlà+=à`</div>`;
+àà}àelseàifà(dbEntry.typeà===à'bigfive')à{
+ààààhtmlà+=à`<divàclass="likert-scaleàbigfive-scale">`;
+ààààconstàlabelsà=à["Stimmeàgarànichtàzu",à"Stimmeàwenigàzu",à"Neutral",à"Stimmeàzu",à"Stimmeàsehràzu"];
+ààààlabels.forEach((label,àindex)à=>à{
+ààààààhtmlà+=à`
+àààààààà<buttonàclass="likert-option"àonclick="nextQuizFrage(${index})"àtitle="${label}">
+àààààààààà<spanàclass="likert-number">${indexà+à1}</span>
+àààààààà</button>
+àààààà`;
+àààà});
+ààààhtmlà+=à`</div>`;
+àà}
 
-  html += `
-      <button class="quiz-close" onclick="closeQuiz()">â Quiz beenden</button>
-    </div>
-  `;
+ààhtmlà+=à`
+àààààà<buttonàclass="quiz-close"àonclick="closeQuiz()">àQuizàbeenden</button>
+àààà</div>
+àà`;
 
-  container.innerHTML = html;
+ààcontainer.innerHTMLà=àhtml;
 }
 
-function showQuizErgebnis() {
-  const container = document.getElementById('quiz-container');
-  if (!container) return;
+functionàshowQuizErgebnis()à{
+ààconstàcontainerà=àdocument.getElementById('quiz-container');
+ààifà(!container)àreturn;
 
-  const kategorie = quizState.kategorie;
-  const dbEntry = QUIZ_DATABASE[kategorie];
-  const testType = dbEntry.type;
+ààconstàkategorieà=àquizState.kategorie;
+ààconstàdbEntryà=àQUIZ_DATABASE[kategorie];
+ààconstàtestTypeà=àdbEntry.type;
 
-  let html = `<div class="quiz-result">`;
+ààletàhtmlà=à`<divàclass="quiz-result">`;
 
-  if (testType === 'multiple-choice') {
-    const punkte = quizState.punkte;
-    const maxPunkte = quizState.maxPunkte;
-    const prozent = Math.round((punkte / maxPunkte) * 100);
-    
-    let bewertung = '';
-    let emoji = '';
-    if (prozent >= 90) {
-      bewertung = 'Ausgezeichnet! –°';
-      emoji = '–°';
-    } else if (prozent >= 80) {
-      bewertung = 'Sehr gut! –°';
-      emoji = '–°¥';
-    } else if (prozent >= 70) {
-      bewertung = 'Gut! –°';
-      emoji = '–°¥';
-    } else if (prozent >= 60) {
-      bewertung = 'Bestanden! â';
-      emoji = '–°¥';
-    } else {
-      bewertung = 'Noch etwas –ben! –°ª';
-      emoji = '–°';
-    }
+ààifà(testTypeà===à'multiple-choice')à{
+ààààconstàpunkteà=àquizState.punkte;
+ààààconstàmaxPunkteà=àquizState.maxPunkte;
+ààààconstàprozentà=àMath.round((punkteà/àmaxPunkte)à*à100);
+àààà
+ààààletàbewertungà=à'';
+ààààletàemojià=à'';
+ààààifà(prozentà>=à90)à{
+ààààààbewertungà=à'Ausgezeichnet!à°';
+ààààààemojià=à'°';
+àààà}àelseàifà(prozentà>=à80)à{
+ààààààbewertungà=à'Sehràgut!à°';
+ààààààemojià=à'°¥';
+àààà}àelseàifà(prozentà>=à70)à{
+ààààààbewertungà=à'Gut!à°';
+ààààààemojià=à'°¥';
+àààà}àelseàifà(prozentà>=à60)à{
+ààààààbewertungà=à'Bestanden!à';
+ààààààemojià=à'°¥';
+àààà}àelseà{
+ààààààbewertungà=à'Nochàetwasà—ben!à°ª';
+ààààààemojià=à'°';
+àààà}
 
-    let detailsHtml = quizState.antworten.map((a, i) => `
-      <div class="quiz-result-item ${a.isKorrekt ? 'korrekt' : 'falsch'}">
-        <h4>Frage ${i + 1}: ${a.frage}</h4>
-        <p class="status">${a.isKorrekt ? 'â Korrekt' : 'â Falsch'}</p>
-      </div>
-    `).join('');
+ààààletàdetailsHtmlà=àquizState.antworten.map((a,ài)à=>à`
+àààààà<divàclass="quiz-result-itemà${a.isKorrektà?à'korrekt'à:à'falsch'}">
+àààààààà<h4>Frageà${ià+à1}:à${a.frage}</h4>
+àààààààà<pàclass="status">${a.isKorrektà?à'àKorrekt'à:à'àFalsch'}</p>
+àààààà</div>
+àààà`).join('');
 
-    html += `
-      <div class="quiz-result-header">
-        <div class="quiz-result-emoji">${emoji}</div>
-        <h2>Quiz abgeschlossen!</h2>
-        <p class="quiz-result-rating">${bewertung}</p>
-      </div>
-      
-      <div class="quiz-result-score">
-        <div class="score-circle">
-          <div class="score-number">${punkte}/${maxPunkte}</div>
-          <div class="score-percent">${prozent}%</div>
-        </div>
-      </div>
-      
-      <div class="quiz-result-details">
-        <h3>Detailergebnisse:</h3>
-        ${detailsHtml}
-      </div>
-      
-      <div class="quiz-result-actions">
-        <button class="btn btn-primary" onclick="startQuiz('${kategorie}')">Quiz wiederholen</button>
-        <button class="btn btn-secondary" onclick="closeQuiz()">Beenden</button>
-      </div>
-    `;
-  } else if (testType === 'likert') {
-    const totalScore = quizState.punkte;
-    const maxScore = quizState.maxPunkte * 3;
-    let interpretation = dbEntry.interpretation[0];
-    
-    const scoreKeys = Object.keys(dbEntry.interpretation).sort((a, b) => b - a);
-    for (const key of scoreKeys) {
-      if (totalScore >= parseInt(key)) {
-        interpretation = dbEntry.interpretation[key];
-        break;
-      }
-    }
+ààààhtmlà+=à`
+àààààà<divàclass="quiz-result-header">
+àààààààà<divàclass="quiz-result-emoji">${emoji}</div>
+àààààààà<h2>Quizàabgeschlossen!</h2>
+àààààààà<pàclass="quiz-result-rating">${bewertung}</p>
+àààààà</div>
+àààààà
+àààààà<divàclass="quiz-result-score">
+àààààààà<divàclass="score-circle">
+àààààààààà<divàclass="score-number">${punkte}/${maxPunkte}</div>
+àààààààààà<divàclass="score-percent">${prozent}%</div>
+àààààààà</div>
+àààààà</div>
+àààààà
+àààààà<divàclass="quiz-result-details">
+àààààààà<h3>Detailergebnisse:</h3>
+àààààààà${detailsHtml}
+àààààà</div>
+àààààà
+àààààà<divàclass="quiz-result-actions">
+àààààààà<buttonàclass="btnàbtn-primary"àonclick="startQuiz('${kategorie}')">Quizàwiederholen</button>
+àààààààà<buttonàclass="btnàbtn-secondary"àonclick="closeQuiz()">Beenden</button>
+àààààà</div>
+àààà`;
+àà}àelseàifà(testTypeà===à'likert')à{
+ààààconstàtotalScoreà=àquizState.punkte;
+ààààconstàmaxScoreà=àquizState.maxPunkteà*à3;
+ààààletàinterpretationà=àdbEntry.interpretation[0];
+àààà
+ààààconstàscoreKeysà=àObject.keys(dbEntry.interpretation).sort((a,àb)à=>àbà-àa);
+ààààforà(constàkeyàofàscoreKeys)à{
+ààààààifà(totalScoreà>=àparseInt(key))à{
+ààààààààinterpretationà=àdbEntry.interpretation[key];
+ààààààààbreak;
+àààààà}
+àààà}
 
-    html += `
-      <div class="quiz-result-header">
-        <div class="quiz-result-emoji">–°</div>
-        <h2>Test abgeschlossen!</h2>
-        <p class="quiz-result-rating">${interpretation.label}</p>
-      </div>
-      
-      <div class="likert-result">
-        <div class="result-score-bar">
-          <div class="result-score-fill" style="width: ${(totalScore / maxScore) * 100}%"></div>
-        </div>
-        <p class="result-score-num">Gesamtscore: ${totalScore} / ${maxScore}</p>
-      </div>
-      
-      <div class="result-interpretation">
-        <p>${interpretation.description}</p>
-      </div>
+ààààhtmlà+=à`
+àààààà<divàclass="quiz-result-header">
+àààààààà<divàclass="quiz-result-emoji">°</div>
+àààààààà<h2>Testàabgeschlossen!</h2>
+àààààààà<pàclass="quiz-result-rating">${interpretation.label}</p>
+àààààà</div>
+àààààà
+àààààà<divàclass="likert-result">
+àààààààà<divàclass="result-score-bar">
+àààààààààà<divàclass="result-score-fill"àstyle="width:à${(totalScoreà/àmaxScore)à*à100}%"></div>
+àààààààà</div>
+àààààààà<pàclass="result-score-num">Gesamtscore:à${totalScore}à/à${maxScore}</p>
+àààààà</div>
+àààààà
+àààààà<divàclass="result-interpretation">
+àààààààà<p>${interpretation.description}</p>
+àààààà</div>
 
-      <div class="test-warnung">
-        ${dbEntry.warnung}
-      </div>
-      
-      <div class="quiz-result-actions">
-        <button class="btn btn-primary" onclick="startQuiz('${kategorie}')">Test wiederholen</button>
-        <button class="btn btn-secondary" onclick="closeQuiz()">Beenden</button>
-      </div>
-    `;
-  } else if (testType === 'bigfive') {
-    const dimensionen = { O: "Offenheit", C: "Gewissenhaftigkeit", E: "Extraversion", A: "Verträglichkeit", N: "Neurotizismus" };
-    const maxPerDimension = 20 * 5;
+àààààà<divàclass="test-warnung">
+àààààààà${dbEntry.warnung}
+àààààà</div>
+àààààà
+àààààà<divàclass="quiz-result-actions">
+àààààààà<buttonàclass="btnàbtn-primary"àonclick="startQuiz('${kategorie}')">Testàwiederholen</button>
+àààààààà<buttonàclass="btnàbtn-secondary"àonclick="closeQuiz()">Beenden</button>
+àààààà</div>
+àààà`;
+àà}àelseàifà(testTypeà===à'bigfive')à{
+ààààconstàdimensionenà=à{àO:à"Offenheit",àC:à"Gewissenhaftigkeit",àE:à"Extraversion",àA:à"Verträglichkeit",àN:à"Neurotizismus"à};
+ààààconstàmaxPerDimensionà=à20à*à5;
 
-    let resultsHtml = '';
-    for (const [dim, name] of Object.entries(dimensionen)) {
-      const score = quizState.scores[dim];
-      const percent = (score / maxPerDimension) * 100;
-      resultsHtml += `
-        <div class="bigfive-result-item">
-          <div class="bigfive-label">${dim}: ${name}</div>
-          <div class="bigfive-bar">
-            <div class="bigfive-fill" style="width: ${percent}%"></div>
-          </div>
-          <div class="bigfive-score">${score} / ${maxPerDimension}</div>
-        </div>
-      `;
-    }
+ààààletàresultsHtmlà=à'';
+ààààforà(constà[dim,àname]àofàObject.entries(dimensionen))à{
+ààààààconstàscoreà=àquizState.scores[dim];
+ààààààconstàpercentà=à(scoreà/àmaxPerDimension)à*à100;
+ààààààresultsHtmlà+=à`
+àààààààà<divàclass="bigfive-result-item">
+àààààààààà<divàclass="bigfive-label">${dim}:à${name}</div>
+àààààààààà<divàclass="bigfive-bar">
+àààààààààààà<divàclass="bigfive-fill"àstyle="width:à${percent}%"></div>
+àààààààààà</div>
+àààààààààà<divàclass="bigfive-score">${score}à/à${maxPerDimension}</div>
+àààààààà</div>
+àààààà`;
+àààà}
 
-    html += `
-      <div class="quiz-result-header">
-        <div class="quiz-result-emoji">–°</div>
-        <h2>Persönlichkeitsprofil</h2>
-        <p class="quiz-result-rating">Deine Big-Five Ergebnisse</p>
-      </div>
-      
-      <div class="bigfive-results">
-        ${resultsHtml}
-      </div>
-      
-      <div class="bigfive-info">
-        <p><strong>Offenheit:</strong> Kreativität, Neugier, Interesse an neuen Ideen</p>
-        <p><strong>Gewissenhaftigkeit:</strong> Organisiert, pünktlich, zuverlässig</p>
-        <p><strong>Extraversion:</strong> Gesellig, energisch, durchsetzungsstark</p>
-        <p><strong>Verträglichkeit:</strong> Kooperativ, verständnisvoll, einfühlsam</p>
-        <p><strong>Neurotizismus:</strong> Emotionale Stabilität oder Anfälligkeit für Stress</p>
-      </div>
-      
-      <div class="quiz-result-actions">
-        <button class="btn btn-primary" onclick="startQuiz('${kategorie}')">Test wiederholen</button>
-        <button class="btn btn-secondary" onclick="closeQuiz()">Beenden</button>
-      </div>
-    `;
-  }
+ààààhtmlà+=à`
+àààààà<divàclass="quiz-result-header">
+àààààààà<divàclass="quiz-result-emoji">°</div>
+àààààààà<h2>Persönlichkeitsprofil</h2>
+àààààààà<pàclass="quiz-result-rating">DeineàBig-FiveàErgebnisse</p>
+àààààà</div>
+àààààà
+àààààà<divàclass="bigfive-results">
+àààààààà${resultsHtml}
+àààààà</div>
+àààààà
+àààààà<divàclass="bigfive-info">
+àààààààà<p><strong>Offenheit:</strong>àKreativität,àNeugier,àInteresseàanàneuenàIdeen</p>
+àààààààà<p><strong>Gewissenhaftigkeit:</strong>àOrganisiert,àpünktlich,àzuverlässig</p>
+àààààààà<p><strong>Extraversion:</strong>àGesellig,àenergisch,àdurchsetzungsstark</p>
+àààààààà<p><strong>Verträglichkeit:</strong>àKooperativ,àverständnisvoll,àeinfühlsam</p>
+àààààààà<p><strong>Neurotizismus:</strong>àEmotionaleàStabilitätàoderàAnfälligkeitàfüràStress</p>
+àààààà</div>
+àààààà
+àààààà<divàclass="quiz-result-actions">
+àààààààà<buttonàclass="btnàbtn-primary"àonclick="startQuiz('${kategorie}')">Testàwiederholen</button>
+àààààààà<buttonàclass="btnàbtn-secondary"àonclick="closeQuiz()">Beenden</button>
+àààààà</div>
+àààà`;
+àà}
 
-  html += `</div>`;
-  container.innerHTML = html;
+ààhtmlà+=à`</div>`;
+ààcontainer.innerHTMLà=àhtml;
 }
 
-// ===================================================================
-// –°¨ UI MANAGEMENT
-// ===================================================================
+//à===================================================================
+//à°¨àUIàMANAGEMENT
+//à===================================================================
 
-function showQuizUI() {
-  let container = document.getElementById('quiz-container');
-  if (!container) {
-    container = document.createElement('div');
-    container.id = 'quiz-container';
-    container.className = 'quiz-modal';
-    document.body.appendChild(container);
-  }
-  
-  container.classList.add('quiz-active');
+functionàshowQuizUI()à{
+ààletàcontainerà=àdocument.getElementById('quiz-container');
+ààifà(!container)à{
+ààààcontainerà=àdocument.createElement('div');
+ààààcontainer.idà=à'quiz-container';
+ààààcontainer.classNameà=à'quiz-modal';
+ààààdocument.body.appendChild(container);
+àà}
+àà
+ààcontainer.classList.add('quiz-active');
 }
 
-function closeQuiz() {
-  const container = document.getElementById('quiz-container');
-  if (container) {
-    container.classList.remove('quiz-active');
-    quizState.aktiv = false;
-  }
+functionàcloseQuiz()à{
+ààconstàcontainerà=àdocument.getElementById('quiz-container');
+ààifà(container)à{
+ààààcontainer.classList.remove('quiz-active');
+ààààquizState.aktivà=àfalse;
+àà}
 }
 
-function openQuizModal) {
-  let modal = document.getElementById('quiz-modal');
-  if (!modal) {
-    modal = document.createElement('div');
-    modal.id = 'quiz-modal';
-    modal.className = 'quiz-select-modal';
-    document.body.appendChild(modal);
-  }
+functionàopenQuizModal)à{
+ààletàmodalà=àdocument.getElementById('quiz-modal');
+ààifà(!modal)à{
+ààààmodalà=àdocument.createElement('div');
+ààààmodal.idà=à'quiz-modal';
+ààààmodal.classNameà=à'quiz-select-modal';
+ààààdocument.body.appendChild(modal);
+àà}
 
-  const kategorien = [
-    { key: 'diagnostik', name: '–° Diagnostik', desc: 'Testverfahren und Mess-Instrumente', type: 'medical' },
-    { key: 'therapie', name: '–° Therapie', desc: 'Behandlungs-Geräte', type: 'medical' },
-    { key: 'forschung', name: '–°" Forschung', desc: 'Neue Technologien', type: 'medical' },
-    { key: 'zukunft', name: '–° Zukunft', desc: 'Kommende Innovationen', type: 'medical' },
-    { key: 'depression', name: '–° Depression', desc: 'PHQ-9 Screening', type: 'psychology' },
-    { key: 'adhs', name: '–°§  ADHS', desc: 'ASRS Screening', type: 'psychology' },
-    { key: 'persoenlichkeit', name: '–° Persönlichkeit', desc: 'Big-Five Test', type: 'psychology' }
-  ];
+ààconstàkategorienà=à[
+àààà{àkey:à'diagnostik',àname:à'°àDiagnostik',àdesc:à'TestverfahrenàundàMess-Instrumente',àtype:à'medical'à},
+àààà{àkey:à'therapie',àname:à'°àTherapie',àdesc:à'Behandlungs-Geräte',àtype:à'medical'à},
+àààà{àkey:à'forschung',àname:à'°"àForschung',àdesc:à'NeueàTechnologien',àtype:à'medical'à},
+àààà{àkey:à'zukunft',àname:à'°àZukunft',àdesc:à'KommendeàInnovationen',àtype:à'medical'à},
+àààà{àkey:à'depression',àname:à'°àDepression',àdesc:à'PHQ-9àScreening',àtype:à'psychology'à},
+àààà{àkey:à'adhs',àname:à'°ç àADHS',àdesc:à'ASRSàScreening',àtype:à'psychology'à},
+àààà{àkey:à'persoenlichkeit',àname:à'°àPersönlichkeit',àdesc:à'Big-FiveàTest',àtype:à'psychology'à}
+àà];
 
-  let html = `
-    <div class="quiz-modal-overlay" onclick="closeQuizModal)"></div>
-    <div class="quiz-modal-content">
-      <button class="modal-close" onclick="closeQuizModal)">â</button>
-      <h2>Wähle einen Test</h2>
-      <p class="quiz-modal-subtitle">Medizintechnik Quiz oder psychologische Tests</p>
-      
-      <div class="quiz-kategorie-gruppe">
-        <h3 class="kategorie-gruppe-titel">–° Medizintechnik</h3>
-        <div class="quiz-kategorien-grid">
-  `;
+ààletàhtmlà=à`
+àààà<divàclass="quiz-modal-overlay"àonclick="closeQuizModal)"></div>
+àààà<divàclass="quiz-modal-content">
+àààààà<buttonàclass="modal-close"àonclick="closeQuizModal)"></button>
+àààààà<h2>WähleàeinenàTest</h2>
+àààààà<pàclass="quiz-modal-subtitle">MedizintechnikàQuizàoderàpsychologischeàTests</p>
+àààààà
+àààààà<divàclass="quiz-kategorie-gruppe">
+àààààààà<h3àclass="kategorie-gruppe-titel">°àMedizintechnik</h3>
+àààààààà<divàclass="quiz-kategorien-grid">
+àà`;
 
-  kategorien.filter(k => k.type === 'medical').forEach(kat => {
-    const dbEntry = QUIZ_DATABASE[kat.key];
-    html += `
-      <button class="quiz-kategorie-btn" onclick="startQuiz('${kat.key}')">
-        <div class="kategorie-icon">${kat.name.split(' ')[0]}</div>
-        <div class="kategorie-name">${kat.name.split(' ').slice(1).join(' ')}</div>
-        <div class="kategorie-desc">${kat.desc}</div>
-        <div class="kategorie-fragen">${dbEntry.fragen.length} Fragen</div>
-      </button>
-    `;
-  });
+ààkategorien.filter(kà=>àk.typeà===à'medical').forEach(katà=>à{
+ààààconstàdbEntryà=àQUIZ_DATABASE[kat.key];
+ààààhtmlà+=à`
+àààààà<buttonàclass="quiz-kategorie-btn"àonclick="startQuiz('${kat.key}')">
+àààààààà<divàclass="kategorie-icon">${kat.name.split('à')[0]}</div>
+àààààààà<divàclass="kategorie-name">${kat.name.split('à').slice(1).join('à')}</div>
+àààààààà<divàclass="kategorie-desc">${kat.desc}</div>
+àààààààà<divàclass="kategorie-fragen">${dbEntry.fragen.length}àFragen</div>
+àààààà</button>
+àààà`;
+àà});
 
-  html += `
-        </div>
-      </div>
+ààhtmlà+=à`
+àààààààà</div>
+àààààà</div>
 
-      <div class="quiz-kategorie-gruppe">
-        <h3 class="kategorie-gruppe-titel">–°§  Psychologische Tests</h3>
-        <div class="quiz-kategorien-grid">
-  `;
+àààààà<divàclass="quiz-kategorie-gruppe">
+àààààààà<h3àclass="kategorie-gruppe-titel">°ç àPsychologischeàTests</h3>
+àààààààà<divàclass="quiz-kategorien-grid">
+àà`;
 
-  kategorien.filter(k => k.type === 'psychology').forEach(kat => {
-    const dbEntry = QUIZ_DATABASE[kat.key];
-    const name = dbEntry.name || kat.name;
-    html += `
-      <button class="quiz-kategorie-btn psychology" onclick="startQuiz('${kat.key}')">
-        <div class="kategorie-icon">${kat.name.split(' ')[0]}</div>
-        <div class="kategorie-name">${name}</div>
-        <div class="kategorie-desc">${kat.desc}</div>
-        <div class="kategorie-fragen">${dbEntry.fragen.length} Fragen</div>
-      </button>
-    `;
-  });
+ààkategorien.filter(kà=>àk.typeà===à'psychology').forEach(katà=>à{
+ààààconstàdbEntryà=àQUIZ_DATABASE[kat.key];
+ààààconstànameà=àdbEntry.nameà||àkat.name;
+ààààhtmlà+=à`
+àààààà<buttonàclass="quiz-kategorie-btnàpsychology"àonclick="startQuiz('${kat.key}')">
+àààààààà<divàclass="kategorie-icon">${kat.name.split('à')[0]}</div>
+àààààààà<divàclass="kategorie-name">${name}</div>
+àààààààà<divàclass="kategorie-desc">${kat.desc}</div>
+àààààààà<divàclass="kategorie-fragen">${dbEntry.fragen.length}àFragen</div>
+àààààà</button>
+àààà`;
+àà});
 
-  html += `
-        </div>
-      </div>
-    </div>
-  `;
+ààhtmlà+=à`
+àààààààà</div>
+àààààà</div>
+àààà</div>
+àà`;
 
-  modal.innerHTML = html;
-  modal.classList.add('quiz-modal-active');
+ààmodal.innerHTMLà=àhtml;
+ààmodal.classList.add('quiz-modal-active');
 }
 
-function closeQuizModal) {
-  const modal = document.getElementById('quiz-modal');
-  if (modal) {
-    modal.classList.remove('quiz-modal-active');
-  }
+functionàcloseQuizModal)à{
+ààconstàmodalà=àdocument.getElementById('quiz-modal');
+ààifà(modal)à{
+ààààmodal.classList.remove('quiz-modal-active');
+àà}
 }
 
-// ===================================================================
-// –° INITIALIZATION
-// ===================================================================
+//à===================================================================
+//à°àINITIALIZATION
+//à===================================================================
 
-function initQuizSystem() {
-  console.log('â Quiz System v2.0 initialisiert (mit psychologischen Tests)');
-  
-  const quizBtn = document.querySelector('[data-quiz-button]');
-  if (quizBtn) {
-    quizBtn.addEventListener('click', openQuizModal);
-  }
+functionàinitQuizSystem()à{
+ààconsole.log('àQuizàSystemàv2.0àinitialisiertà(mitàpsychologischenàTests)');
+àà
+ààconstàquizBtnà=àdocument.querySelector('[data-quiz-button]');
+ààifà(quizBtn)à{
+ààààquizBtn.addEventListener('click',àopenQuizModal);
+àà}
 }
 
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initQuizSystem);
-} else {
-  initQuizSystem();
+ifà(document.readyStateà===à'loading')à{
+ààdocument.addEventListener('DOMContentLoaded',àinitQuizSystem);
+}àelseà{
+ààinitQuizSystem();
 }
 
-if (typeof module !== 'undefined' && module.exports) {
-  module.exports = {
-    startQuiz,
-    openQuizModal,
-    closeQuiz,
-    closeQuizModal,
-    QUIZ_DATABASE,
-    getRandomizedQuestions
-  };
+ifà(typeofàmoduleà!==à'undefined'à&&àmodule.exports)à{
+ààmodule.exportsà=à{
+ààààstartQuiz,
+ààààopenQuizModal,
+ààààcloseQuiz,
+ààààcloseQuizModal,
+ààààQUIZ_DATABASE,
+ààààgetRandomizedQuestions
+àà};
 }

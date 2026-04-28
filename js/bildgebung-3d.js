@@ -1,540 +1,540 @@
-import * as THREE from 'three';
-import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+importà*àasàTHREEàfromà'three';
+importà{àOrbitControlsà}àfromà'three/addons/controls/OrbitControls.js';
+importà{àGLTFLoaderà}àfromà'three/addons/loaders/GLTFLoader.js';
 
-const viewer = document.getElementById('imaging3DViewer');
-const statusEl = document.getElementById('glbStatus');
-const modelSelect = document.getElementById('glbModelSelect');
-const modelScaleRange = document.getElementById('modelScaleRange');
-const btnLoadModel = document.getElementById('btnLoadModel');
-const btnResetCamera = document.getElementById('btnResetCamera');
-const btnToggleAutoRotate = document.getElementById('btnToggleAutoRotate');
-const btnToggleWireframe = document.getElementById('btnToggleWireframe');
-const btnTogglePulse = document.getElementById('btnTogglePulse');
+constàviewerà=àdocument.getElementById('imaging3DViewer');
+constàstatusElà=àdocument.getElementById('glbStatus');
+constàmodelSelectà=àdocument.getElementById('glbModelSelect');
+constàmodelScaleRangeà=àdocument.getElementById('modelScaleRange');
+constàbtnLoadModelà=àdocument.getElementById('btnLoadModel');
+constàbtnResetCameraà=àdocument.getElementById('btnResetCamera');
+constàbtnToggleAutoRotateà=àdocument.getElementById('btnToggleAutoRotate');
+constàbtnToggleWireframeà=àdocument.getElementById('btnToggleWireframe');
+constàbtnTogglePulseà=àdocument.getElementById('btnTogglePulse');
 
-const manifestPath = 'data/models/manifest.json';
+constàmanifestPathà=à'data/models/manifest.json';
 
-if (!viewer) {
-  throw new Error('3D viewer container not found.');
+ifà(!viewer)à{
+ààthrowànewàError('3Dàvieweràcontainerànotàfound.');
 }
 
-const scene = new THREE.Scene();
-scene.background = new THREE.Color(0xf4f9ff);
+constàsceneà=ànewàTHREE.Scene();
+scene.backgroundà=ànewàTHREE.Color(0xf4f9ff);
 
-const camera = new THREE.PerspectiveCamera(55, 1, 0.1, 200);
-camera.position.set(2.2, 1.4, 3.3);
+constàcameraà=ànewàTHREE.PerspectiveCamera(55,à1,à0.1,à200);
+camera.position.set(2.2,à1.4,à3.3);
 
-const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
-renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-renderer.outputColorSpace = THREE.SRGBColorSpace;
-renderer.toneMapping = THREE.ACESFilmicToneMapping;
+constàrendererà=ànewàTHREE.WebGLRenderer({àantialias:àtrue,àalpha:àfalseà});
+renderer.setPixelRatio(Math.min(window.devicePixelRatio,à2));
+renderer.outputColorSpaceà=àTHREE.SRGBColorSpace;
+renderer.toneMappingà=àTHREE.ACESFilmicToneMapping;
 viewer.appendChild(renderer.domElement);
 
-const controls = new OrbitControls(camera, renderer.domElement);
-controls.enableDamping = true;
-controls.dampingFactor = 0.06;
-controls.minDistance = 0.8;
-controls.maxDistance = 12;
-controls.target.set(0, 0.8, 0);
+constàcontrolsà=ànewàOrbitControls(camera,àrenderer.domElement);
+controls.enableDampingà=àtrue;
+controls.dampingFactorà=à0.06;
+controls.minDistanceà=à0.8;
+controls.maxDistanceà=à12;
+controls.target.set(0,à0.8,à0);
 
-const ambientLight = new THREE.HemisphereLight(0xffffff, 0xb3d7ff, 1.1);
+constàambientLightà=ànewàTHREE.HemisphereLight(0xffffff,à0xb3d7ff,à1.1);
 scene.add(ambientLight);
 
-const keyLight = new THREE.DirectionalLight(0xffffff, 1.25);
-keyLight.position.set(4, 7, 4);
+constàkeyLightà=ànewàTHREE.DirectionalLight(0xffffff,à1.25);
+keyLight.position.set(4,à7,à4);
 scene.add(keyLight);
 
-const rimLight = new THREE.DirectionalLight(0x88bfff, 0.6);
-rimLight.position.set(-5, 3, -4);
+constàrimLightà=ànewàTHREE.DirectionalLight(0x88bfff,à0.6);
+rimLight.position.set(-5,à3,à-4);
 scene.add(rimLight);
 
-const ground = new THREE.Mesh(
-  new THREE.CircleGeometry(3, 64),
-  new THREE.MeshStandardMaterial({ color: 0xd8e8fb, roughness: 0.95, metalness: 0.0 })
+constàgroundà=ànewàTHREE.Mesh(
+àànewàTHREE.CircleGeometry(3,à64),
+àànewàTHREE.MeshStandardMaterial({àcolor:à0xd8e8fb,àroughness:à0.95,àmetalness:à0.0à})
 );
-ground.rotation.x = -Math.PI / 2;
-ground.position.y = -0.01;
+ground.rotation.xà=à-Math.PIà/à2;
+ground.position.yà=à-0.01;
 scene.add(ground);
 
-let currentModel = null;
-let baseScale = 1;
-let pulseEnabled = false;
-let wireframeEnabled = false;
-let currentModelConfig = null;
+letàcurrentModelà=ànull;
+letàbaseScaleà=à1;
+letàpulseEnabledà=àfalse;
+letàwireframeEnabledà=àfalse;
+letàcurrentModelConfigà=ànull;
 
-const gltfLoader = new GLTFLoader();
+constàgltfLoaderà=ànewàGLTFLoader();
 
-const builtInModels = [
-  { id: 'ct-scanner', label: 'CT-Scanner', type: 'procedural' },
-  { id: 'mrt-scanner', label: 'MRT-Scanner', type: 'procedural' },
-  { id: 'ultraschall', label: 'Ultraschallgeraet', type: 'procedural' }
+constàbuiltInModelsà=à[
+àà{àid:à'ct-scanner',àlabel:à'CT-Scanner',àtype:à'procedural'à},
+àà{àid:à'mrt-scanner',àlabel:à'MRT-Scanner',àtype:à'procedural'à},
+àà{àid:à'ultraschall',àlabel:à'Ultraschallgeraet',àtype:à'procedural'à}
 ];
 
-const localModels = [];
+constàlocalModelsà=à[];
 
-const tempObjectRefs = {
-  movingTable: null,
-  spinningRing: null,
-  probeHead: null
+constàtempObjectRefsà=à{
+ààmovingTable:ànull,
+ààspinningRing:ànull,
+ààprobeHead:ànull
 };
 
-function makeMaterial(color, metalness = 0.25, roughness = 0.45) {
-  return new THREE.MeshStandardMaterial({ color, metalness, roughness });
+functionàmakeMaterial(color,àmetalnessà=à0.25,àroughnessà=à0.45)à{
+ààreturnànewàTHREE.MeshStandardMaterial({àcolor,àmetalness,àroughnessà});
 }
 
-function createRoundedBox(width, height, depth, radius, smoothness, material) {
-  const shape = new THREE.Shape();
-  const x = -width / 2;
-  const y = -height / 2;
-  shape.moveTo(x + radius, y);
-  shape.lineTo(x + width - radius, y);
-  shape.quadraticCurveTo(x + width, y, x + width, y + radius);
-  shape.lineTo(x + width, y + height - radius);
-  shape.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
-  shape.lineTo(x + radius, y + height);
-  shape.quadraticCurveTo(x, y + height, x, y + height - radius);
-  shape.lineTo(x, y + radius);
-  shape.quadraticCurveTo(x, y, x + radius, y);
+functionàcreateRoundedBox(width,àheight,àdepth,àradius,àsmoothness,àmaterial)à{
+ààconstàshapeà=ànewàTHREE.Shape();
+ààconstàxà=à-widthà/à2;
+ààconstàyà=à-heightà/à2;
+ààshape.moveTo(xà+àradius,ày);
+ààshape.lineTo(xà+àwidthà-àradius,ày);
+ààshape.quadraticCurveTo(xà+àwidth,ày,àxà+àwidth,àyà+àradius);
+ààshape.lineTo(xà+àwidth,àyà+àheightà-àradius);
+ààshape.quadraticCurveTo(xà+àwidth,àyà+àheight,àxà+àwidthà-àradius,àyà+àheight);
+ààshape.lineTo(xà+àradius,àyà+àheight);
+ààshape.quadraticCurveTo(x,àyà+àheight,àx,àyà+àheightà-àradius);
+ààshape.lineTo(x,àyà+àradius);
+ààshape.quadraticCurveTo(x,ày,àxà+àradius,ày);
 
-  const geometry = new THREE.ExtrudeGeometry(shape, {
-    depth,
-    bevelEnabled: true,
-    bevelSegments: smoothness,
-    steps: 1,
-    bevelSize: radius * 0.45,
-    bevelThickness: radius * 0.45,
-    curveSegments: smoothness
-  });
-  geometry.center();
-  return new THREE.Mesh(geometry, material);
+ààconstàgeometryà=ànewàTHREE.ExtrudeGeometry(shape,à{
+ààààdepth,
+ààààbevelEnabled:àtrue,
+ààààbevelSegments:àsmoothness,
+ààààsteps:à1,
+ààààbevelSize:àradiusà*à0.45,
+ààààbevelThickness:àradiusà*à0.45,
+ààààcurveSegments:àsmoothness
+àà});
+ààgeometry.center();
+ààreturnànewàTHREE.Mesh(geometry,àmaterial);
 }
 
-function createCTScannerModel) {
-  const root = new THREE.Group();
+functionàcreateCTScannerModel)à{
+ààconstàrootà=ànewàTHREE.Group();
 
-  const base = createRoundedBox(2.4, 0.28, 1.55, 0.08, 6, makeMaterial(0xe6edf8, 0.1, 0.7));
-  base.position.y = 0.14;
-  root.add(base);
+ààconstàbaseà=àcreateRoundedBox(2.4,à0.28,à1.55,à0.08,à6,àmakeMaterial(0xe6edf8,à0.1,à0.7));
+ààbase.position.yà=à0.14;
+ààroot.add(base);
 
-  const gantryOuter = new THREE.Mesh(
-    new THREE.TorusGeometry(0.78, 0.22, 22, 80),
-    makeMaterial(0xffffff, 0.05, 0.5)
-  );
-  gantryOuter.rotation.y = Math.PI / 2;
-  gantryOuter.position.set(-0.35, 0.94, 0);
-  root.add(gantryOuter);
+ààconstàgantryOuterà=ànewàTHREE.Mesh(
+àààànewàTHREE.TorusGeometry(0.78,à0.22,à22,à80),
+ààààmakeMaterial(0xffffff,à0.05,à0.5)
+àà);
+ààgantryOuter.rotation.yà=àMath.PIà/à2;
+ààgantryOuter.position.set(-0.35,à0.94,à0);
+ààroot.add(gantryOuter);
 
-  const gantryInner = new THREE.Mesh(
-    new THREE.TorusGeometry(0.5, 0.07, 20, 60),
-    makeMaterial(0x93c5fd, 0.3, 0.3)
-  );
-  gantryInner.rotation.y = Math.PI / 2;
-  gantryInner.position.copy(gantryOuter.position);
-  root.add(gantryInner);
-  tempObjectRefs.spinningRing = gantryInner;
+ààconstàgantryInnerà=ànewàTHREE.Mesh(
+àààànewàTHREE.TorusGeometry(0.5,à0.07,à20,à60),
+ààààmakeMaterial(0x93c5fd,à0.3,à0.3)
+àà);
+ààgantryInner.rotation.yà=àMath.PIà/à2;
+ààgantryInner.position.copy(gantryOuter.position);
+ààroot.add(gantryInner);
+ààtempObjectRefs.spinningRingà=àgantryInner;
 
-  const tableRail = new THREE.Mesh(
-    new THREE.BoxGeometry(1.55, 0.12, 0.38),
-    makeMaterial(0xb6c6d9, 0.2, 0.6)
-  );
-  tableRail.position.set(0.45, 0.62, 0);
-  root.add(tableRail);
+ààconstàtableRailà=ànewàTHREE.Mesh(
+àààànewàTHREE.BoxGeometry(1.55,à0.12,à0.38),
+ààààmakeMaterial(0xb6c6d9,à0.2,à0.6)
+àà);
+ààtableRail.position.set(0.45,à0.62,à0);
+ààroot.add(tableRail);
 
-  const movingTable = new THREE.Mesh(
-    createRoundedBox(0.95, 0.09, 0.42, 0.03, 4, makeMaterial(0xdce6f6, 0.05, 0.8)).geometry,
-    makeMaterial(0xdce6f6, 0.05, 0.8)
-  );
-  movingTable.position.set(0.42, 0.72, 0);
-  movingTable.userData.baseX = movingTable.position.x;
-  root.add(movingTable);
-  tempObjectRefs.movingTable = movingTable;
+ààconstàmovingTableà=ànewàTHREE.Mesh(
+ààààcreateRoundedBox(0.95,à0.09,à0.42,à0.03,à4,àmakeMaterial(0xdce6f6,à0.05,à0.8)).geometry,
+ààààmakeMaterial(0xdce6f6,à0.05,à0.8)
+àà);
+ààmovingTable.position.set(0.42,à0.72,à0);
+ààmovingTable.userData.baseXà=àmovingTable.position.x;
+ààroot.add(movingTable);
+ààtempObjectRefs.movingTableà=àmovingTable;
 
-  root.position.y = 0.02;
-  return root;
+ààroot.position.yà=à0.02;
+ààreturnàroot;
 }
 
-function createMRTScannerModel) {
-  const root = new THREE.Group();
+functionàcreateMRTScannerModel)à{
+ààconstàrootà=ànewàTHREE.Group();
 
-  const body = createRoundedBox(2.3, 1.4, 1.55, 0.18, 8, makeMaterial(0xf8fafc, 0.05, 0.7));
-  body.position.set(0, 0.76, 0);
-  root.add(body);
+ààconstàbodyà=àcreateRoundedBox(2.3,à1.4,à1.55,à0.18,à8,àmakeMaterial(0xf8fafc,à0.05,à0.7));
+ààbody.position.set(0,à0.76,à0);
+ààroot.add(body);
 
-  const tunnel = new THREE.Mesh(
-    new THREE.CylinderGeometry(0.47, 0.47, 1.7, 48),
-    makeMaterial(0xe2e8f0, 0.05, 0.6)
-  );
-  tunnel.rotation.z = Math.PI / 2;
-  tunnel.position.set(-0.1, 0.78, 0);
-  root.add(tunnel);
+ààconstàtunnelà=ànewàTHREE.Mesh(
+àààànewàTHREE.CylinderGeometry(0.47,à0.47,à1.7,à48),
+ààààmakeMaterial(0xe2e8f0,à0.05,à0.6)
+àà);
+ààtunnel.rotation.zà=àMath.PIà/à2;
+ààtunnel.position.set(-0.1,à0.78,à0);
+ààroot.add(tunnel);
 
-  const tunnelGlow = new THREE.Mesh(
-    new THREE.CylinderGeometry(0.37, 0.37, 1.72, 48),
-    makeMaterial(0x60a5fa, 0.55, 0.25)
-  );
-  tunnelGlow.rotation.z = Math.PI / 2;
-  tunnelGlow.position.copy(tunnel.position);
-  root.add(tunnelGlow);
-  tempObjectRefs.spinningRing = tunnelGlow;
+ààconstàtunnelGlowà=ànewàTHREE.Mesh(
+àààànewàTHREE.CylinderGeometry(0.37,à0.37,à1.72,à48),
+ààààmakeMaterial(0x60a5fa,à0.55,à0.25)
+àà);
+ààtunnelGlow.rotation.zà=àMath.PIà/à2;
+ààtunnelGlow.position.copy(tunnel.position);
+ààroot.add(tunnelGlow);
+ààtempObjectRefs.spinningRingà=àtunnelGlow;
 
-  const bed = new THREE.Mesh(
-    new THREE.BoxGeometry(1.35, 0.1, 0.48),
-    makeMaterial(0xc7d2fe, 0.1, 0.65)
-  );
-  bed.position.set(0.65, 0.57, 0);
-  bed.userData.baseX = bed.position.x;
-  root.add(bed);
-  tempObjectRefs.movingTable = bed;
+ààconstàbedà=ànewàTHREE.Mesh(
+àààànewàTHREE.BoxGeometry(1.35,à0.1,à0.48),
+ààààmakeMaterial(0xc7d2fe,à0.1,à0.65)
+àà);
+ààbed.position.set(0.65,à0.57,à0);
+ààbed.userData.baseXà=àbed.position.x;
+ààroot.add(bed);
+ààtempObjectRefs.movingTableà=àbed;
 
-  return root;
+ààreturnàroot;
 }
 
-function createUltrasoundModel) {
-  const root = new THREE.Group();
+functionàcreateUltrasoundModel)à{
+ààconstàrootà=ànewàTHREE.Group();
 
-  const cartBase = new THREE.Mesh(
-    new THREE.BoxGeometry(1.05, 0.95, 0.62),
-    makeMaterial(0xf1f5f9, 0.08, 0.65)
-  );
-  cartBase.position.set(0, 0.54, 0);
-  root.add(cartBase);
+ààconstàcartBaseà=ànewàTHREE.Mesh(
+àààànewàTHREE.BoxGeometry(1.05,à0.95,à0.62),
+ààààmakeMaterial(0xf1f5f9,à0.08,à0.65)
+àà);
+ààcartBase.position.set(0,à0.54,à0);
+ààroot.add(cartBase);
 
-  const screen = new THREE.Mesh(
-    createRoundedBox(0.66, 0.42, 0.05, 0.05, 6, makeMaterial(0x1e293b, 0.35, 0.2)).geometry,
-    makeMaterial(0x1e293b, 0.35, 0.2)
-  );
-  screen.position.set(0, 1.23, -0.06);
-  screen.rotation.x = -0.2;
-  root.add(screen);
+ààconstàscreenà=ànewàTHREE.Mesh(
+ààààcreateRoundedBox(0.66,à0.42,à0.05,à0.05,à6,àmakeMaterial(0x1e293b,à0.35,à0.2)).geometry,
+ààààmakeMaterial(0x1e293b,à0.35,à0.2)
+àà);
+ààscreen.position.set(0,à1.23,à-0.06);
+ààscreen.rotation.xà=à-0.2;
+ààroot.add(screen);
 
-  const screenGlow = new THREE.Mesh(
-    new THREE.PlaneGeometry(0.54, 0.29),
-    new THREE.MeshStandardMaterial({ color: 0x38bdf8, emissive: 0x0ea5e9, emissiveIntensity: 0.5, metalness: 0.1, roughness: 0.3 })
-  );
-  screenGlow.position.set(0, 1.23, -0.035);
-  screenGlow.rotation.x = -0.2;
-  root.add(screenGlow);
+ààconstàscreenGlowà=ànewàTHREE.Mesh(
+àààànewàTHREE.PlaneGeometry(0.54,à0.29),
+àààànewàTHREE.MeshStandardMaterial({àcolor:à0x38bdf8,àemissive:à0x0ea5e9,àemissiveIntensity:à0.5,àmetalness:à0.1,àroughness:à0.3à})
+àà);
+ààscreenGlow.position.set(0,à1.23,à-0.035);
+ààscreenGlow.rotation.xà=à-0.2;
+ààroot.add(screenGlow);
 
-  const arm = new THREE.Mesh(
-    new THREE.CylinderGeometry(0.04, 0.04, 0.52, 24),
-    makeMaterial(0x94a3b8, 0.25, 0.4)
-  );
-  arm.position.set(0.38, 1.08, 0.05);
-  arm.rotation.z = 0.55;
-  root.add(arm);
+ààconstàarmà=ànewàTHREE.Mesh(
+àààànewàTHREE.CylinderGeometry(0.04,à0.04,à0.52,à24),
+ààààmakeMaterial(0x94a3b8,à0.25,à0.4)
+àà);
+ààarm.position.set(0.38,à1.08,à0.05);
+ààarm.rotation.zà=à0.55;
+ààroot.add(arm);
 
-  const probe = new THREE.Mesh(
-    new THREE.CapsuleGeometry(0.09, 0.28, 6, 18),
-    makeMaterial(0x2563eb, 0.2, 0.35)
-  );
-  probe.position.set(0.55, 0.9, 0.18);
-  probe.rotation.set(0.8, 0.4, 0.2);
-  root.add(probe);
-  tempObjectRefs.probeHead = probe;
+ààconstàprobeà=ànewàTHREE.Mesh(
+àààànewàTHREE.CapsuleGeometry(0.09,à0.28,à6,à18),
+ààààmakeMaterial(0x2563eb,à0.2,à0.35)
+àà);
+ààprobe.position.set(0.55,à0.9,à0.18);
+ààprobe.rotation.set(0.8,à0.4,à0.2);
+ààroot.add(probe);
+ààtempObjectRefs.probeHeadà=àprobe;
 
-  const wheelGeometry = new THREE.CylinderGeometry(0.08, 0.08, 0.04, 22);
-  const wheelMaterial = makeMaterial(0x111827, 0.15, 0.8);
-  const wheelPositions = [
-    [-0.4, 0.08, -0.25],
-    [0.4, 0.08, -0.25],
-    [-0.4, 0.08, 0.25],
-    [0.4, 0.08, 0.25]
-  ];
-  wheelPositions.forEach((pos) => {
-    const wheel = new THREE.Mesh(wheelGeometry, wheelMaterial);
-    wheel.position.set(pos[0], pos[1], pos[2]);
-    wheel.rotation.z = Math.PI / 2;
-    root.add(wheel);
-  });
+ààconstàwheelGeometryà=ànewàTHREE.CylinderGeometry(0.08,à0.08,à0.04,à22);
+ààconstàwheelMaterialà=àmakeMaterial(0x111827,à0.15,à0.8);
+ààconstàwheelPositionsà=à[
+àààà[-0.4,à0.08,à-0.25],
+àààà[0.4,à0.08,à-0.25],
+àààà[-0.4,à0.08,à0.25],
+àààà[0.4,à0.08,à0.25]
+àà];
+ààwheelPositions.forEach((pos)à=>à{
+ààààconstàwheelà=ànewàTHREE.Mesh(wheelGeometry,àwheelMaterial);
+ààààwheel.position.set(pos[0],àpos[1],àpos[2]);
+ààààwheel.rotation.zà=àMath.PIà/à2;
+ààààroot.add(wheel);
+àà});
 
-  return root;
+ààreturnàroot;
 }
 
-const modelFactories = {
-  'ct-scanner': createCTScannerModel,
-  'mrt-scanner': createMRTScannerModel,
-  ultraschall: createUltrasoundModel
+constàmodelFactoriesà=à{
+àà'ct-scanner':àcreateCTScannerModel,
+àà'mrt-scanner':àcreateMRTScannerModel,
+ààultraschall:àcreateUltrasoundModel
 };
 
-function getAllModels() {
-  return [...localModels, ...builtInModels];
+functionàgetAllModels()à{
+ààreturnà[...localModels,à...builtInModels];
 }
 
-function getModelConfig(modelId) {
-  return getAllModels().find((model) => model.id === modelId) || null;
+functionàgetModelConfig(modelId)à{
+ààreturnàgetAllModels().find((model)à=>àmodel.idà===àmodelId)à||ànull;
 }
 
-function populateModelSelect() {
-  if (!modelSelect) return;
+functionàpopulateModelSelect()à{
+ààifà(!modelSelect)àreturn;
 
-  modelSelect.innerHTML = '';
+ààmodelSelect.innerHTMLà=à'';
 
-  getAllModels().forEach((model) => {
-    const option = document.createElement('option');
-    option.value = model.id;
-    option.textContent = model.type === 'glb' ? `${model.label} (GLB)` : model.label;
-    modelSelect.appendChild(option);
-  });
+ààgetAllModels().forEach((model)à=>à{
+ààààconstàoptionà=àdocument.createElement('option');
+ààààoption.valueà=àmodel.id;
+ààààoption.textContentà=àmodel.typeà===à'glb'à?à`${model.label}à(GLB)`à:àmodel.label;
+ààààmodelSelect.appendChild(option);
+àà});
 }
 
-async function loadModelManifest() {
-  try {
-    const response = await fetch(manifestPath, { cache: 'no-store' });
-    if (!response.ok) {
-      return;
-    }
+asyncàfunctionàloadModelManifest()à{
+ààtryà{
+ààààconstàresponseà=àawaitàfetch(manifestPath,à{àcache:à'no-store'à});
+ààààifà(!response.ok)à{
+ààààààreturn;
+àààà}
 
-    const manifest = await response.json();
-    if (!Array.isArray(manifest.models)) {
-      return;
-    }
+ààààconstàmanifestà=àawaitàresponse.json();
+ààààifà(!Array.isArray(manifest.models))à{
+ààààààreturn;
+àààà}
 
-    manifest.models.forEach((model) => {
-      if (!model || !model.id || !model.path || !model.label) {
-        return;
-      }
+ààààmanifest.models.forEach((model)à=>à{
+ààààààifà(!modelà||à!model.idà||à!model.pathà||à!model.label)à{
+ààààààààreturn;
+àààààà}
 
-      localModels.push({
-        id: model.id,
-        label: model.label,
-        path: model.path,
-        type: 'glb'
-      });
-    });
-  } catch {
-    setStatus('Manifest fuer lokale GLB-Dateien nicht geladen. Programmierte Modelle bleiben aktiv.');
-  }
+ààààààlocalModels.push({
+ààààààààid:àmodel.id,
+ààààààààlabel:àmodel.label,
+ààààààààpath:àmodel.path,
+ààààààààtype:à'glb'
+àààààà});
+àààà});
+àà}àcatchà{
+ààààsetStatus('ManifestàfueràlokaleàGLB-Dateienànichtàgeladen.àProgrammierteàModelleàbleibenàaktiv.');
+àà}
 }
 
-function setStatus(text, isError = false) {
-  if (!statusEl) return;
-  statusEl.textContent = text;
-  statusEl.style.color = isError ? '#b91c1c' : '#1f2937';
+functionàsetStatus(text,àisErrorà=àfalse)à{
+ààifà(!statusEl)àreturn;
+ààstatusEl.textContentà=àtext;
+ààstatusEl.style.colorà=àisErrorà?à'#b91c1c'à:à'#1f2937';
 }
 
-function resizeRenderer() {
-  const width = viewer.clientWidth;
-  const height = viewer.clientHeight;
-  renderer.setSize(width, height);
-  camera.aspect = width / height;
-  camera.updateProjectionMatrix();
+functionàresizeRenderer()à{
+ààconstàwidthà=àviewer.clientWidth;
+ààconstàheightà=àviewer.clientHeight;
+ààrenderer.setSize(width,àheight);
+ààcamera.aspectà=àwidthà/àheight;
+ààcamera.updateProjectionMatrix();
 }
 
-function setWireframe(enabled) {
-  if (!currentModel) return;
+functionàsetWireframe(enabled)à{
+ààifà(!currentModel)àreturn;
 
-  currentModel.traverse((obj) => {
-    if (obj.isMesh && obj.material) {
-      if (Array.isArray(obj.material)) {
-        obj.material.forEach((material) => {
-          material.wireframe = enabled;
-          material.needsUpdate = true;
-        });
-      } else {
-        obj.material.wireframe = enabled;
-        obj.material.needsUpdate = true;
-      }
-    }
-  });
+ààcurrentModel.traverse((obj)à=>à{
+ààààifà(obj.isMeshà&&àobj.material)à{
+ààààààifà(Array.isArray(obj.material))à{
+ààààààààobj.material.forEach((material)à=>à{
+ààààààààààmaterial.wireframeà=àenabled;
+ààààààààààmaterial.needsUpdateà=àtrue;
+àààààààà});
+àààààà}àelseà{
+ààààààààobj.material.wireframeà=àenabled;
+ààààààààobj.material.needsUpdateà=àtrue;
+àààààà}
+àààà}
+àà});
 }
 
-function fitCameraToObject(rootObject) {
-  const box = new THREE.Box3().setFromObject(rootObject);
-  const size = box.getSize(new THREE.Vector3());
-  const center = box.getCenter(new THREE.Vector3());
+functionàfitCameraToObject(rootObject)à{
+ààconstàboxà=ànewàTHREE.Box3().setFromObject(rootObject);
+ààconstàsizeà=àbox.getSize(newàTHREE.Vector3());
+ààconstàcenterà=àbox.getCenter(newàTHREE.Vector3());
 
-  const maxDim = Math.max(size.x, size.y, size.z) || 1;
-  const fov = camera.fov * (Math.PI / 180);
-  const distance = Math.abs((maxDim / 2) / Math.tan(fov / 2)) * 1.65;
+ààconstàmaxDimà=àMath.max(size.x,àsize.y,àsize.z)à||à1;
+ààconstàfovà=àcamera.fovà*à(Math.PIà/à180);
+ààconstàdistanceà=àMath.abs((maxDimà/à2)à/àMath.tan(fovà/à2))à*à1.65;
 
-  camera.position.set(center.x + distance * 0.5, center.y + distance * 0.3, center.z + distance);
-  controls.target.copy(center);
-  controls.update();
+ààcamera.position.set(center.xà+àdistanceà*à0.5,àcenter.yà+àdistanceà*à0.3,àcenter.zà+àdistance);
+ààcontrols.target.copy(center);
+ààcontrols.update();
 }
 
-function updateModelScale() {
-  if (!currentModel) return;
-  currentModel.scale.setScalar(baseScale);
+functionàupdateModelScale()à{
+ààifà(!currentModel)àreturn;
+ààcurrentModel.scale.setScalar(baseScale);
 }
 
-function applyCurrentModelFeatures() {
-  updateModelScale();
-  setWireframe(wireframeEnabled);
-  fitCameraToObject(currentModel);
+functionàapplyCurrentModelFeatures()à{
+ààupdateModelScale();
+ààsetWireframe(wireframeEnabled);
+ààfitCameraToObject(currentModel);
 }
 
-function removeCurrentModel) {
-  if (!currentModel) return;
-  scene.remove(currentModel);
-  currentModel.traverse((obj) => {
-    if (obj.isMesh) {
-      obj.geometry.dispose();
-      if (Array.isArray(obj.material)) {
-        obj.material.forEach((material) => material.dispose());
-      } else if (obj.material) {
-        obj.material.dispose();
-      }
-    }
-  });
-  currentModel = null;
-  currentModelConfig = null;
-  tempObjectRefs.movingTable = null;
-  tempObjectRefs.spinningRing = null;
-  tempObjectRefs.probeHead = null;
+functionàremoveCurrentModel)à{
+ààifà(!currentModel)àreturn;
+ààscene.remove(currentModel);
+ààcurrentModel.traverse((obj)à=>à{
+ààààifà(obj.isMesh)à{
+ààààààobj.geometry.dispose();
+ààààààifà(Array.isArray(obj.material))à{
+ààààààààobj.material.forEach((material)à=>àmaterial.dispose());
+àààààà}àelseàifà(obj.material)à{
+ààààààààobj.material.dispose();
+àààààà}
+àààà}
+àà});
+ààcurrentModelà=ànull;
+ààcurrentModelConfigà=ànull;
+ààtempObjectRefs.movingTableà=ànull;
+ààtempObjectRefs.spinningRingà=ànull;
+ààtempObjectRefs.probeHeadà=ànull;
 }
 
-function loadProceduralModel(modelKey) {
-  if (!modelKey || !modelFactories[modelKey]) return;
+functionàloadProceduralModel(modelKey)à{
+ààifà(!modelKeyà||à!modelFactories[modelKey])àreturn;
 
-  setStatus('3D-Modell wird im Code erzeugt...');
-  removeCurrentModel);
-  try {
-    currentModelConfig = getModelConfig(modelKey);
-    currentModel = modelFactories[modelKey]();
-    currentModel.position.set(0, 0, 0);
-    scene.add(currentModel);
+ààsetStatus('3D-ModellàwirdàimàCodeàerzeugt...');
+ààremoveCurrentModel);
+ààtryà{
+ààààcurrentModelConfigà=àgetModelConfig(modelKey);
+ààààcurrentModelà=àmodelFactories[modelKey]();
+ààààcurrentModel.position.set(0,à0,à0);
+ààààscene.add(currentModel);
 
-    applyCurrentModelFeatures();
-    setStatus(`${currentModelConfig?.label || 'Modell'} erstellt. Du kannst jetzt drehen und zoomen.`);
-  } catch {
-    setStatus('Fehler beim Erzeugen des Modells.', true);
-  }
+ààààapplyCurrentModelFeatures();
+ààààsetStatus(`${currentModelConfig?.labelà||à'Modell'}àerstellt.àDuàkannstàjetztàdrehenàundàzoomen.`);
+àà}àcatchà{
+ààààsetStatus('FehleràbeimàErzeugenàdesàModells.',àtrue);
+àà}
 }
 
-function loadGlbModel(modelConfig) {
-  setStatus(`GLB wird geladen: ${modelConfig.label}...`);
-  removeCurrentModel);
+functionàloadGlbModel(modelConfig)à{
+ààsetStatus(`GLBàwirdàgeladen:à${modelConfig.label}...`);
+ààremoveCurrentModel);
 
-  gltfLoader.load(
-    modelConfig.path,
-    (gltf) => {
-      currentModelConfig = modelConfig;
-      currentModel = gltf.scene;
-      currentModel.position.set(0, 0, 0);
-      scene.add(currentModel);
+ààgltfLoader.load(
+ààààmodelConfig.path,
+àààà(gltf)à=>à{
+ààààààcurrentModelConfigà=àmodelConfig;
+ààààààcurrentModelà=àgltf.scene;
+ààààààcurrentModel.position.set(0,à0,à0);
+ààààààscene.add(currentModel);
 
-      applyCurrentModelFeatures();
-      setStatus(`${modelConfig.label} geladen. Du kannst jetzt drehen und zoomen.`);
-    },
-    undefined,
-    () => {
-      setStatus(`GLB konnte nicht geladen werden: ${modelConfig.path}`, true);
-    }
-  );
+ààààààapplyCurrentModelFeatures();
+ààààààsetStatus(`${modelConfig.label}àgeladen.àDuàkannstàjetztàdrehenàundàzoomen.`);
+àààà},
+ààààundefined,
+àààà()à=>à{
+ààààààsetStatus(`GLBàkonnteànichtàgeladenàwerden:à${modelConfig.path}`,àtrue);
+àààà}
+àà);
 }
 
-function loadModel(modelId) {
-  const modelConfig = getModelConfig(modelId);
-  if (!modelConfig) {
-    setStatus('Ausgewaehltes Modell wurde nicht gefunden.', true);
-    return;
-  }
+functionàloadModel(modelId)à{
+ààconstàmodelConfigà=àgetModelConfig(modelId);
+ààifà(!modelConfig)à{
+ààààsetStatus('AusgewaehltesàModellàwurdeànichtàgefunden.',àtrue);
+ààààreturn;
+àà}
 
-  if (modelConfig.type === 'glb') {
-    loadGlbModel(modelConfig);
-    return;
-  }
+ààifà(modelConfig.typeà===à'glb')à{
+ààààloadGlbModel(modelConfig);
+ààààreturn;
+àà}
 
-  loadProceduralModel(modelId);
+ààloadProceduralModel(modelId);
 }
 
-function resetCamera() {
-  if (currentModel) {
-    fitCameraToObject(currentModel);
-    return;
-  }
+functionàresetCamera()à{
+ààifà(currentModel)à{
+ààààfitCameraToObject(currentModel);
+ààààreturn;
+àà}
 
-  camera.position.set(2.2, 1.4, 3.3);
-  controls.target.set(0, 0.8, 0);
-  controls.update();
+ààcamera.position.set(2.2,à1.4,à3.3);
+ààcontrols.target.set(0,à0.8,à0);
+ààcontrols.update();
 }
 
-function updateToggleButton(button, enabled, onText, offText) {
-  if (!button) return;
-  button.setAttribute('aria-pressed', enabled ? 'true' : 'false');
-  button.textContent = enabled ? onText : offText;
+functionàupdateToggleButton(button,àenabled,àonText,àoffText)à{
+ààifà(!button)àreturn;
+ààbutton.setAttribute('aria-pressed',àenabledà?à'true'à:à'false');
+ààbutton.textContentà=àenabledà?àonTextà:àoffText;
 }
 
-function animate(timeMs) {
-  requestAnimationFrame(animate);
+functionàanimate(timeMs)à{
+ààrequestAnimationFrame(animate);
 
-  const time = timeMs * 0.001;
+ààconstàtimeà=àtimeMsà*à0.001;
 
-  if (tempObjectRefs.spinningRing) {
-    tempObjectRefs.spinningRing.rotation.z = Math.sin(time * 1.25) * 0.35;
-  }
+ààifà(tempObjectRefs.spinningRing)à{
+ààààtempObjectRefs.spinningRing.rotation.zà=àMath.sin(timeà*à1.25)à*à0.35;
+àà}
 
-  if (tempObjectRefs.movingTable) {
-    const baseX = tempObjectRefs.movingTable.userData.baseX || 0;
-    tempObjectRefs.movingTable.position.x = baseX + Math.sin(time * 1.1) * 0.08;
-  }
+ààifà(tempObjectRefs.movingTable)à{
+ààààconstàbaseXà=àtempObjectRefs.movingTable.userData.baseXà||à0;
+ààààtempObjectRefs.movingTable.position.xà=àbaseXà+àMath.sin(timeà*à1.1)à*à0.08;
+àà}
 
-  if (tempObjectRefs.probeHead) {
-    tempObjectRefs.probeHead.rotation.y = Math.sin(time * 2.0) * 0.45;
-  }
+ààifà(tempObjectRefs.probeHead)à{
+ààààtempObjectRefs.probeHead.rotation.yà=àMath.sin(timeà*à2.0)à*à0.45;
+àà}
 
-  if (currentModel && pulseEnabled) {
-    const pulseScale = baseScale * (1 + Math.sin(time * 2.4) * 0.03);
-    currentModel.scale.setScalar(pulseScale);
-  }
+ààifà(currentModelà&&àpulseEnabled)à{
+ààààconstàpulseScaleà=àbaseScaleà*à(1à+àMath.sin(timeà*à2.4)à*à0.03);
+ààààcurrentModel.scale.setScalar(pulseScale);
+àà}
 
-  controls.update();
-  renderer.render(scene, camera);
+ààcontrols.update();
+ààrenderer.render(scene,àcamera);
 }
 
-modelScaleRange?.addEventListener('input', (event) => {
-  baseScale = Number(event.target.value);
-  if (!pulseEnabled) {
-    updateModelScale();
-  }
+modelScaleRange?.addEventListener('input',à(event)à=>à{
+ààbaseScaleà=àNumber(event.target.value);
+ààifà(!pulseEnabled)à{
+ààààupdateModelScale();
+àà}
 });
 
-btnLoadModel?.addEventListener('click', () => {
-  loadModel(modelSelect?.value);
+btnLoadModel?.addEventListener('click',à()à=>à{
+ààloadModel(modelSelect?.value);
 });
 
-modelSelect?.addEventListener('change', () => {
-  loadModel(modelSelect.value);
+modelSelect?.addEventListener('change',à()à=>à{
+ààloadModel(modelSelect.value);
 });
 
-btnResetCamera?.addEventListener('click', () => {
-  resetCamera();
+btnResetCamera?.addEventListener('click',à()à=>à{
+ààresetCamera();
 });
 
-btnToggleAutoRotate?.addEventListener('click', () => {
-  controls.autoRotate = !controls.autoRotate;
-  controls.autoRotateSpeed = 1.3;
-  updateToggleButton(btnToggleAutoRotate, controls.autoRotate, 'Auto-Rotate an', 'Auto-Rotate aus');
+btnToggleAutoRotate?.addEventListener('click',à()à=>à{
+ààcontrols.autoRotateà=à!controls.autoRotate;
+ààcontrols.autoRotateSpeedà=à1.3;
+ààupdateToggleButton(btnToggleAutoRotate,àcontrols.autoRotate,à'Auto-Rotateàan',à'Auto-Rotateàaus');
 });
 
-btnToggleWireframe?.addEventListener('click', () => {
-  wireframeEnabled = !wireframeEnabled;
-  setWireframe(wireframeEnabled);
-  updateToggleButton(btnToggleWireframe, wireframeEnabled, 'Wireframe an', 'Wireframe aus');
+btnToggleWireframe?.addEventListener('click',à()à=>à{
+ààwireframeEnabledà=à!wireframeEnabled;
+ààsetWireframe(wireframeEnabled);
+ààupdateToggleButton(btnToggleWireframe,àwireframeEnabled,à'Wireframeàan',à'Wireframeàaus');
 });
 
-btnTogglePulse?.addEventListener('click', () => {
-  pulseEnabled = !pulseEnabled;
-  if (!pulseEnabled) {
-    updateModelScale();
-  }
-  updateToggleButton(btnTogglePulse, pulseEnabled, 'Pulse an', 'Pulse aus');
+btnTogglePulse?.addEventListener('click',à()à=>à{
+ààpulseEnabledà=à!pulseEnabled;
+ààifà(!pulseEnabled)à{
+ààààupdateModelScale();
+àà}
+ààupdateToggleButton(btnTogglePulse,àpulseEnabled,à'Pulseàan',à'Pulseàaus');
 });
 
-window.addEventListener('resize', resizeRenderer);
+window.addEventListener('resize',àresizeRenderer);
 
-async function initViewer() {
-  await loadModelManifest();
-  populateModelSelect();
-  resizeRenderer();
+asyncàfunctionàinitViewer()à{
+ààawaitàloadModelManifest();
+ààpopulateModelSelect();
+ààresizeRenderer();
 
-  if (modelSelect?.value) {
-    loadModel(modelSelect.value);
-  } else if (builtInModels[0]) {
-    loadModel(builtInModels[0].id);
-  }
+ààifà(modelSelect?.value)à{
+ààààloadModel(modelSelect.value);
+àà}àelseàifà(builtInModels[0])à{
+ààààloadModel(builtInModels[0].id);
+àà}
 
-  animate(0);
+ààanimate(0);
 }
 
 initViewer();

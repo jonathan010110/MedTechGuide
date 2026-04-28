@@ -1,739 +1,739 @@
 /**
- * MEDTECHGUIDE - REFACTORED JAVASCRIPT ARCHITECTURE
- * Modular, Vanilla JS. Kein Framework. Sauber strukturiert.
- * Jede Funktion ist unabhängig initialisierbar.
- */
+à*àMEDTECHGUIDEà-àREFACTOREDàJAVASCRIPTàARCHITECTURE
+à*àModular,àVanillaàJS.àKeinàFramework.àSauberàstrukturiert.
+à*àJedeàFunktionàistàunabhängigàinitialisierbar.
+à*/
 
-// ================================================================
-// –°¾ UTILITY FUNCTIONS
-// ================================================================
-
-/**
- * Debounce/Throttle für Performance-optimierte Events
- * @param {Function} func - Zu throttleinde Funktion
- * @param {number} delay - ms Verzögerung
- * @returns {Function} Throttled Funktion
- */
-function throttle(func, delay) {
-  let lastCall = 0;
-  return function(...args) {
-    const now = Date.now();
-    if (now - lastCall >= delay) {
-      lastCall = now;
-      return func(...args);
-    }
-  };
-}
+//à================================================================
+//à°¾àUTILITYàFUNCTIONS
+//à================================================================
 
 /**
- * Normalisiert Text für Suche (lowercase, Umlaute, etc.)
- * @param {string} text - Text zum normalisieren
- * @returns {string} Normalisierter Text
- */
-function normalizeText(text) {
-  return text.toLowerCase()
-    .replace(/ä/g, 'a').replace(/ö/g, 'o').replace(/ü/g, 'u')
-    .replace(/–/g, 'ss').trim();
+à*àDebounce/ThrottleàfüràPerformance-optimierteàEvents
+à*à@paramà{Function}àfuncà-àZuàthrottleindeàFunktion
+à*à@paramà{number}àdelayà-àmsàVerzögerung
+à*à@returnsà{Function}àThrottledàFunktion
+à*/
+functionàthrottle(func,àdelay)à{
+ààletàlastCallà=à0;
+ààreturnàfunction(...args)à{
+ààààconstànowà=àDate.now();
+ààààifà(nowà-àlastCallà>=àdelay)à{
+ààààààlastCallà=ànow;
+ààààààreturnàfunc(...args);
+àààà}
+àà};
 }
 
 /**
- * Entfernt alte Highlights sicher
- * @param {HTMLElement} container - Container mit Highlights
- */
-function removeHighlights(container) {
-  if (!container) return;
-  const highlights = container.querySelectorAll'span.highlight');
-  highlights.forEach(span => {
-    const parent = span.parentNode;
-    if (parent) {
-      while (span.firstChild) {
-        parent.insertBefore(span.firstChild, span);
-      }
-      parent.removeChild(span);
-    }
-  });
-}
-
-// ================================================================
-// –° 1. LOADER - HIDDEN ON PAGE LOAD (with fallback)
-// ================================================================
-
-function initLoader() {
-  // Fallback: Loader per DOMContentLoaded verstecken
-  // (wird auch in HTML mit inline script gemacht)
-  window.addEventListener('load', () => {
-    const loader = document.getElementById('loader');
-    if (!loader) return;
-    
-    loader.classList.add('hidden');
-    setTimeout(() => {
-      loader.style.display = 'none';
-    }, 500);
-  });
-}
-
-// ================================================================
-// –°± MOBILE NAVIGATION - RESPONSIVE LAYOUT (ohne Hamburger Toggle)
-// ================================================================
-// â ANGEPASST: Navigation ist jetzt voll responsive mit Flexbox
-// Toggle-Button wird NICHT mehr benötigt, da alle Navigation Elemente
-// immer angezeigt werden und responsive mit CSS reagieren
-// (siehe .nav-links flex-wrap und Media Queries in style.css)
-
-function initMobileNav() {
-  // Navigation ist jetzt vollständig CSS-responsive
-  // Diese Funktion kann leer sein oder nur Debugging Zwecke
-  console.log('â Responsive Navigation aktiv (kein Toggle Button benötigt)');
-  
-  // Navigation Links - Active Manager
-  const navLinks = document.querySelector('.nav-links');
-  if (!navLinks) return;
-
-  // Close menu-like behavior wenn auf Link geklickt wird (für UX)
-  // Kann auf zukünftige Erweiterungen vorbereitet sein
-  navLinks.querySelectorAll'a').forEach(link => {
-    link.addEventListener('click', () => {
-      // Optional: Kann zukünftig für weitere Funktionalität genutzt werden
-    });
-  });
-}
-
-// ================================================================
-
-function initActiveNav() {
-  // Defensive checks
-  const navLinks = document.querySelectorAll'.main-nav a');
-  if (!navLinks.length) return;
-  
-  // Get aktuellen Page basierend auf pathname
-  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-  
-  navLinks.forEach(link => {
-    const href = link.getAttribute('href');
-    // Exakte oder relative Matching
-    if (href === currentPage || 
-        (currentPage === '' && href === 'index.html')) {
-      link.classList.add('active');
-    } else {
-      link.classList.remove('active');
-    }
-  });
-}
-
-// ================================================================
-// â"–¯¸ 3. SCROLL TO TOP BUTTON - Performance optimiert
-// ================================================================
-
-function initScrollToTop() {
-  const scrollBtn = document.getElementById('scrollToTopBtn');
-  const navbar = document.querySelector('.main-nav');
-  if (!scrollBtn) return;
-  
-  // Wichtig: Scroll-Event geführt mit throttle um Performance zu sparen
-  const handleScroll = throttle(() => {
-    if (window.pageYOffset > 300) {
-      scrollBtn.classList.add('show');
-    } else {
-      scrollBtn.classList.remove('show');
-    }
-    
-    // Add shadow to navbar when scrolled
-    if (navbar && window.pageYOffset > 50) {
-      navbar.classList.add('scrolled');
-    } else if (navbar) {
-      navbar.classList.remove('scrolled');
-    }
-  }, 100);
-  
-  window.addEventListener('scroll', handleScroll, { passive: true });
-  
-  // Click Handler für Button
-  scrollBtn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-}
-
-
-
-// ================================================================
-// â¨ 5. SECTION FADE-IN ANIMATIONS mit IntersectionObserver
-// ================================================================
-
-function initSectionAnimations() {
-  const sections = document.querySelectorAll'.section-card');
-  if (!sections.length) return;
-  
-  // IntersectionObserver ist performance-optimiert
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        // Fade in beim Sichtbarwerden
-        entry.target.classList.add('fade-in-visible');
-        // Wichtig: Observer entfernen nach Animation (memory leak prevention)
-        observer.unobserve(entry.target);
-      }
-    });
-  }, {
-    threshold: 0.1, // Triggert wenn 10% sichtbar
-    rootMargin: '0px 0px -50px 0px' // Etwas früher triggern
-  });
-  
-  sections.forEach(section => {
-    // Initial state: invisible
-    section.classList.add('fade-in');
-    observer.observe(section);
-  });
-}
-
-// ================================================================
-// –° 6. GLOBAL SEARCH FUNCTION
-// ================================================================
-
-function initSearch() {
-  // Element check
-  const searchInput = document.getElementById('globalSearch');
-  if (!searchInput) return;
-  
-  const searchResults = document.getElementById('searchResults');
-  
-  searchInput.addEventListener('input', (e) => {
-    const query = e.target.value.trim();
-    
-    // Reset wenn empty
-    if (!query) {
-      if (searchResults) searchResults.innerHTML = '';
-      removeHighlights(document.body);
-      return;
-    }
-    
-    const normalizedQuery = normalizeText(query);
-    const searchable = document.querySelectorAll'h1, h2, h3, h4, p, li');
-    
-    let hitCount = 0;
-    let firstHit = null;
-    
-    // Durchsuche alle Elemente
-    searchable.forEach(element => {
-      const text = element.textContent;
-      const normalizedText = normalizeText(text);
-      
-      if (normalizedText.includes(normalizedQuery)) {
-        // Importante: Nur EINMAL pro Element machen
-        removeHighlights(element);
-        
-        if (!firstHit) firstHit = element;
-        hitCount++;
-        
-        // Highlight hinzufügen (safe)
-        const regex = new RegExp(`(${query})`, 'gi');
-        element.innerHTML = text.replace(regex, '<span class="highlight">$1</span>');
-      } else {
-        removeHighlights(element);
-      }
-    });
-    
-    // Scroll zum ersten Hit
-    if (firstHit) {
-      firstHit.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }
-    
-    // Show Hit Count
-    if (searchResults) {
-      searchResults.textContent = hitCount > 0 
-        ? `${hitCount} Treffer gefunden` 
-        : 'Keine Treffer gefunden';
-    }
-  });
-}
-
-// ================================================================
-// –°¨ 7. FILTER SYSTEM (für device-cards auf index.html)
-// ================================================================
-
-function initFilters() {
-  const filterBtns = document.querySelectorAll'[data-filter]');
-  const deviceCards = document.querySelectorAll'.device-card');
-  
-  if (!filterBtns.length || !deviceCards.length) return;
-  
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const filterValue = btn.getAttribute('data-filter');
-      
-      // Update active button
-      filterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      
-      // Filter cards smooth
-      deviceCards.forEach(card => {
-        const cardCategory = card.getAttribute('data-category');
-        const shouldShow = filterValue === 'all' || cardCategory === filterValue;
-        
-        card.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
-        card.style.opacity = shouldShow ? '1' : '0.3';
-        card.style.pointerEvents = shouldShow ? 'auto' : 'none';
-      });
-    });
-  });
-}
-
-// ================================================================
-// â–¯¸ 8. DEVICE COMPARISON MODAL SYSTEM
-// ================================================================
-
-function initCompareSystem() {
-  const compareToggle = document.getElementById('compareToggle');
-  const compareCheckboxes = document.querySelectorAll'[data-compare-checkbox]');
-  const compareBtn = document.getElementById('compareBtn');
-  
-  if (!compareCheckboxes.length) return;
-  
-  // State tracking
-  let selectedDevices = [];
-  const MAX_COMPARE = 2;
-  let compareModeActive = false;
-  
-  // Toggle Compare Mode
-  if (compareToggle) {
-    compareToggle.addEventListener('change', (e) => {
-      compareModeActive = e.target.checked;
-      
-      compareCheckboxes.forEach(checkbox => {
-        checkbox.style.display = compareModeActive ? 'block' : 'none';
-      });
-      
-      if (!compareModeActive) {
-        // Reset checkboxes wenn mode ausgeschaltet
-        compareCheckboxes.forEach(cb => cb.checked = false);
-        selectedDevices = [];
-        if (compareBtn) compareBtn.disabled = true;
-      }
-    });
-  }
-  
-  compareCheckboxes.forEach(checkbox => {
-    checkbox.addEventListener('change', (e) => {
-      const deviceName = e.target.getAttribute('data-compare-device');
-      
-      if (e.target.checked) {
-        // Limit to 2
-        if (selectedDevices.length >= MAX_COMPARE) {
-          e.target.checked = false;
-          alert('Maximal 2 Geräte zum Vergleichen auswählbar');
-          return;
-        }
-        selectedDevices.push(deviceName);
-      } else {
-        selectedDevices = selectedDevices.filter(d => d !== deviceName);
-      }
-      
-      // Update Button
-      if (compareBtn) {
-        compareBtn.disabled = selectedDevices.length < 2;
-        compareBtn.textContent = selectedDevices.length === 2 
-          ? 'Vergleichen' 
-          : `Vergleichen (${selectedDevices.length}/2)`;
-      }
-    });
-  });
-  
-  // Compare Button Handler
-  if (compareBtn) {
-    compareBtn.addEventListener('click', () => {
-      if (selectedDevices.length === 2) {
-        openCompareModal(selectedDevices);
-      }
-    });
-  }
+à*àNormalisiertàTextàfüràSucheà(lowercase,àUmlaute,àetc.)
+à*à@paramà{string}àtextà-àTextàzumànormalisieren
+à*à@returnsà{string}àNormalisierteràText
+à*/
+functionànormalizeText(text)à{
+ààreturnàtext.toLowerCase()
+àààà.replace(/ä/g,à'a').replace(/ö/g,à'o').replace(/ü/g,à'u')
+àààà.replace(/—/g,à'ss').trim();
 }
 
 /**
- * Device Datenbank für Vergleiche
- */
-const DEVICE_DATABASE = {
-  'Diabetes-Technologien': {
-    kategorie: 'Therapie & Monitoring',
-    beschreibung: 'Sensoren, CGM-Systeme, Insulinpumpen',
-    anwendung: 'Diabetes-Management',
-    verfügbarkeit: 'Weit verbreitet',
-    kosten: 'Moderat bis Hoch',
-    zukunft: 'Künstliche Bauchspeicheldrüse'
-  },
-  'Allergiediagnostik': {
-    kategorie: 'Diagnostik',
-    beschreibung: 'Prick-Tests, IgE-Bestimmung, Molekulardiagnostik',
-    anwendung: 'Allergie-Erkennung',
-    verfügbarkeit: 'Standard in Kliniken',
-    kosten: 'Niedrig bis Mittel',
-    zukunft: 'Epikutantests & Component-Diagnostik'
-  },
-  'Herz-Kreislauf': {
-    kategorie: 'Diagnostik & Therapie',
-    beschreibung: 'EKG, Blutdruckmessung, Schrittmacher',
-    anwendung: 'Herz-Kreislauf-Monitoring',
-    verfügbarkeit: 'Sehr verbreitet',
-    kosten: 'Variabel (niedrig bis sehr hoch)',
-    zukunft: 'Drahtlose Implantate'
-  },
-  'Bildgebung': {
-    kategorie: 'Diagnostik',
-    beschreibung: 'Röntgen, CT, MRT, Ultraschall',
-    anwendung: 'Bildgebendes Verfahren',
-    verfügbarkeit: 'In allen Kliniken',
-    kosten: 'Hoch (MRT/CT)',
-    zukunft: 'Hochauflösungs-KI-Analyse'
-  },
-  'Neurochips': {
-    kategorie: 'Forschung & Therapie',
-    beschreibung: 'Brain-Computer Interfaces, tiefe Hirnstimulation',
-    anwendung: 'Neuromodulation',
-    verfügbarkeit: 'Experimental / Begrenzt',
-    kosten: 'Sehr Hoch',
-    zukunft: 'Bidirektionale Neural-Recording'
-  },
-  'Exoskelette': {
-    kategorie: 'Therapie & Rehabilitation',
-    beschreibung: 'Roboterassistenz in Bewegung',
-    anwendung: 'Rehabilitation, Industrie',
-    verfügbarkeit: 'Zunehmend in Kliniken',
-    kosten: 'Hoch',
-    zukunft: 'Brain-gesteuerte Exoskelette'
-  },
-  'Genetik': {
-    kategorie: 'Forschung & Therapie',
-    beschreibung: 'CRISPR, DNA-Sequenzierung',
-    anwendung: 'Genanalyse & Gentherapie',
-    verfügbarkeit: 'Begrenzt auf spezialisierte Zentren',
-    kosten: 'Sinkend (Sequenzierung)',
-    zukunft: 'In-vivo CRISPR-Therapien'
-  },
-  'KI-Diagnose': {
-    kategorie: 'Zukunftstechnologie',
-    beschreibung: 'Künstliche Intelligenz für Analyse',
-    anwendung: 'Bildanalyse, Diagnostik',
-    verfügbarkeit: 'Zunehmend in Radiologie',
-    kosten: 'Variable',
-    zukunft: 'Vollautomatisierte Diagnose'
-  },
-  'Zukunftstechnologien': {
-    kategorie: 'Forschung',
-    beschreibung: 'Nano-Medizin, Bio-Interfaces',
-    anwendung: 'Experimentell',
-    verfügbarkeit: 'Nicht i.d.R. verfügbar',
-    kosten: 'R&D Phase',
-    zukunft: 'Körpereigene Nanotechnik'
-  }
+à*àEntferntàalteàHighlightsàsicher
+à*à@paramà{HTMLElement}àcontainerà-àContaineràmitàHighlights
+à*/
+functionàremoveHighlights(container)à{
+ààifà(!container)àreturn;
+ààconstàhighlightsà=àcontainer.querySelectorAll'span.highlight');
+ààhighlights.forEach(spanà=>à{
+ààààconstàparentà=àspan.parentNode;
+ààààifà(parent)à{
+ààààààwhileà(span.firstChild)à{
+ààààààààparent.insertBefore(span.firstChild,àspan);
+àààààà}
+ààààààparent.removeChild(span);
+àààà}
+àà});
+}
+
+//à================================================================
+//à°à1.àLOADERà-àHIDDENàONàPAGEàLOADà(withàfallback)
+//à================================================================
+
+functionàinitLoader()à{
+àà//àFallback:àLoaderàperàDOMContentLoadedàverstecken
+àà//à(wirdàauchàinàHTMLàmitàinlineàscriptàgemacht)
+ààwindow.addEventListener('load',à()à=>à{
+ààààconstàloaderà=àdocument.getElementById('loader');
+ààààifà(!loader)àreturn;
+àààà
+ààààloader.classList.add('hidden');
+ààààsetTimeout(()à=>à{
+ààààààloader.style.displayà=à'none';
+àààà},à500);
+àà});
+}
+
+//à================================================================
+//à°±àMOBILEàNAVIGATIONà-àRESPONSIVEàLAYOUTà(ohneàHamburgeràToggle)
+//à================================================================
+//ààANGEPASST:àNavigationàistàjetztàvollàresponsiveàmitàFlexbox
+//àToggle-ButtonàwirdàNICHTàmehràbenötigt,àdaàalleàNavigationàElemente
+//àimmeràangezeigtàwerdenàundàresponsiveàmitàCSSàreagieren
+//à(sieheà.nav-linksàflex-wrapàundàMediaàQueriesàinàstyle.css)
+
+functionàinitMobileNav()à{
+àà//àNavigationàistàjetztàvollständigàCSS-responsive
+àà//àDieseàFunktionàkannàleeràseinàoderànuràDebuggingàZwecke
+ààconsole.log('àResponsiveàNavigationàaktivà(keinàToggleàButtonàbenötigt)');
+àà
+àà//àNavigationàLinksà-àActiveàManager
+ààconstànavLinksà=àdocument.querySelector('.nav-links');
+ààifà(!navLinks)àreturn;
+
+àà//àCloseàmenu-likeàbehavioràwennàaufàLinkàgeklicktàwirdà(füràUX)
+àà//àKannàaufàzukünftigeàErweiterungenàvorbereitetàsein
+àànavLinks.querySelectorAll'a').forEach(linkà=>à{
+ààààlink.addEventListener('click',à()à=>à{
+àààààà//àOptional:àKannàzukünftigàfüràweitereàFunktionalitätàgenutztàwerden
+àààà});
+àà});
+}
+
+//à================================================================
+
+functionàinitActiveNav()à{
+àà//àDefensiveàchecks
+ààconstànavLinksà=àdocument.querySelectorAll'.main-navàa');
+ààifà(!navLinks.length)àreturn;
+àà
+àà//àGetàaktuellenàPageàbasierendàaufàpathname
+ààconstàcurrentPageà=àwindow.location.pathname.split('/').pop()à||à'index.html';
+àà
+àànavLinks.forEach(linkà=>à{
+ààààconstàhrefà=àlink.getAttribute('href');
+àààà//àExakteàoderàrelativeàMatching
+ààààifà(hrefà===àcurrentPageà||à
+àààààààà(currentPageà===à''à&&àhrefà===à'index.html'))à{
+ààààààlink.classList.add('active');
+àààà}àelseà{
+ààààààlink.classList.remove('active');
+àààà}
+àà});
+}
+
+//à================================================================
+//à"—¯¸à3.àSCROLLàTOàTOPàBUTTONà-àPerformanceàoptimiert
+//à================================================================
+
+functionàinitScrollToTop()à{
+ààconstàscrollBtnà=àdocument.getElementById('scrollToTopBtn');
+ààconstànavbarà=àdocument.querySelector('.main-nav');
+ààifà(!scrollBtn)àreturn;
+àà
+àà//àWichtig:àScroll-EventàgeführtàmitàthrottleàumàPerformanceàzuàsparen
+ààconstàhandleScrollà=àthrottle(()à=>à{
+ààààifà(window.pageYOffsetà>à300)à{
+ààààààscrollBtn.classList.add('show');
+àààà}àelseà{
+ààààààscrollBtn.classList.remove('show');
+àààà}
+àààà
+àààà//àAddàshadowàtoànavbaràwhenàscrolled
+ààààifà(navbarà&&àwindow.pageYOffsetà>à50)à{
+àààààànavbar.classList.add('scrolled');
+àààà}àelseàifà(navbar)à{
+àààààànavbar.classList.remove('scrolled');
+àààà}
+àà},à100);
+àà
+ààwindow.addEventListener('scroll',àhandleScroll,à{àpassive:àtrueà});
+àà
+àà//àClickàHandleràfüràButton
+ààscrollBtn.addEventListener('click',à()à=>à{
+ààààwindow.scrollTo({àtop:à0,àbehavior:à'smooth'à});
+àà});
+}
+
+
+
+//à================================================================
+//à¨à5.àSECTIONàFADE-INàANIMATIONSàmitàIntersectionObserver
+//à================================================================
+
+functionàinitSectionAnimations()à{
+ààconstàsectionsà=àdocument.querySelectorAll'.section-card');
+ààifà(!sections.length)àreturn;
+àà
+àà//àIntersectionObserveràistàperformance-optimiert
+ààconstàobserverà=ànewàIntersectionObserver((entries)à=>à{
+ààààentries.forEach(entryà=>à{
+ààààààifà(entry.isIntersecting)à{
+àààààààà//àFadeàinàbeimàSichtbarwerden
+ààààààààentry.target.classList.add('fade-in-visible');
+àààààààà//àWichtig:àObserveràentfernenànachàAnimationà(memoryàleakàprevention)
+ààààààààobserver.unobserve(entry.target);
+àààààà}
+àààà});
+àà},à{
+ààààthreshold:à0.1,à//àTriggertàwennà10%àsichtbar
+ààààrootMargin:à'0pxà0pxà-50pxà0px'à//àEtwasàfrüheràtriggern
+àà});
+àà
+ààsections.forEach(sectionà=>à{
+àààà//àInitialàstate:àinvisible
+ààààsection.classList.add('fade-in');
+ààààobserver.observe(section);
+àà});
+}
+
+//à================================================================
+//à°à6.àGLOBALàSEARCHàFUNCTION
+//à================================================================
+
+functionàinitSearch()à{
+àà//àElementàcheck
+ààconstàsearchInputà=àdocument.getElementById('globalSearch');
+ààifà(!searchInput)àreturn;
+àà
+ààconstàsearchResultsà=àdocument.getElementById('searchResults');
+àà
+ààsearchInput.addEventListener('input',à(e)à=>à{
+ààààconstàqueryà=àe.target.value.trim();
+àààà
+àààà//àResetàwennàempty
+ààààifà(!query)à{
+ààààààifà(searchResults)àsearchResults.innerHTMLà=à'';
+ààààààremoveHighlights(document.body);
+ààààààreturn;
+àààà}
+àààà
+ààààconstànormalizedQueryà=ànormalizeText(query);
+ààààconstàsearchableà=àdocument.querySelectorAll'h1,àh2,àh3,àh4,àp,àli');
+àààà
+ààààletàhitCountà=à0;
+ààààletàfirstHità=ànull;
+àààà
+àààà//àDurchsucheàalleàElemente
+ààààsearchable.forEach(elementà=>à{
+ààààààconstàtextà=àelement.textContent;
+ààààààconstànormalizedTextà=ànormalizeText(text);
+àààààà
+ààààààifà(normalizedText.includes(normalizedQuery))à{
+àààààààà//àImportante:àNuràEINMALàproàElementàmachen
+ààààààààremoveHighlights(element);
+àààààààà
+ààààààààifà(!firstHit)àfirstHità=àelement;
+ààààààààhitCount++;
+àààààààà
+àààààààà//àHighlightàhinzufügenà(safe)
+ààààààààconstàregexà=ànewàRegExp(`(${query})`,à'gi');
+ààààààààelement.innerHTMLà=àtext.replace(regex,à'<spanàclass="highlight">$1</span>');
+àààààà}àelseà{
+ààààààààremoveHighlights(element);
+àààààà}
+àààà});
+àààà
+àààà//àScrollàzumàerstenàHit
+ààààifà(firstHit)à{
+ààààààfirstHit.scrollIntoView({àbehavior:à'smooth',àblock:à'center'à});
+àààà}
+àààà
+àààà//àShowàHitàCount
+ààààifà(searchResults)à{
+ààààààsearchResults.textContentà=àhitCountà>à0à
+àààààààà?à`${hitCount}àTrefferàgefunden`à
+àààààààà:à'KeineàTrefferàgefunden';
+àààà}
+àà});
+}
+
+//à================================================================
+//à°¨à7.àFILTERàSYSTEMà(füràdevice-cardsàaufàindex.html)
+//à================================================================
+
+functionàinitFilters()à{
+ààconstàfilterBtnsà=àdocument.querySelectorAll'[data-filter]');
+ààconstàdeviceCardsà=àdocument.querySelectorAll'.device-card');
+àà
+ààifà(!filterBtns.lengthà||à!deviceCards.length)àreturn;
+àà
+ààfilterBtns.forEach(btnà=>à{
+ààààbtn.addEventListener('click',à()à=>à{
+ààààààconstàfilterValueà=àbtn.getAttribute('data-filter');
+àààààà
+àààààà//àUpdateàactiveàbutton
+ààààààfilterBtns.forEach(bà=>àb.classList.remove('active'));
+ààààààbtn.classList.add('active');
+àààààà
+àààààà//àFilteràcardsàsmooth
+ààààààdeviceCards.forEach(cardà=>à{
+ààààààààconstàcardCategoryà=àcard.getAttribute('data-category');
+ààààààààconstàshouldShowà=àfilterValueà===à'all'à||àcardCategoryà===àfilterValue;
+àààààààà
+ààààààààcard.style.transitionà=à'opacityà0.3sàease,àtransformà0.3sàease';
+ààààààààcard.style.opacityà=àshouldShowà?à'1'à:à'0.3';
+ààààààààcard.style.pointerEventsà=àshouldShowà?à'auto'à:à'none';
+àààààà});
+àààà});
+àà});
+}
+
+//à================================================================
+//à—¯¸à8.àDEVICEàCOMPARISONàMODALàSYSTEM
+//à================================================================
+
+functionàinitCompareSystem()à{
+ààconstàcompareToggleà=àdocument.getElementById('compareToggle');
+ààconstàcompareCheckboxesà=àdocument.querySelectorAll'[data-compare-checkbox]');
+ààconstàcompareBtnà=àdocument.getElementById('compareBtn');
+àà
+ààifà(!compareCheckboxes.length)àreturn;
+àà
+àà//àStateàtracking
+ààletàselectedDevicesà=à[];
+ààconstàMAX_COMPAREà=à2;
+ààletàcompareModeActiveà=àfalse;
+àà
+àà//àToggleàCompareàMode
+ààifà(compareToggle)à{
+ààààcompareToggle.addEventListener('change',à(e)à=>à{
+ààààààcompareModeActiveà=àe.target.checked;
+àààààà
+ààààààcompareCheckboxes.forEach(checkboxà=>à{
+ààààààààcheckbox.style.displayà=àcompareModeActiveà?à'block'à:à'none';
+àààààà});
+àààààà
+ààààààifà(!compareModeActive)à{
+àààààààà//àResetàcheckboxesàwennàmodeàausgeschaltet
+ààààààààcompareCheckboxes.forEach(cbà=>àcb.checkedà=àfalse);
+ààààààààselectedDevicesà=à[];
+ààààààààifà(compareBtn)àcompareBtn.disabledà=àtrue;
+àààààà}
+àààà});
+àà}
+àà
+ààcompareCheckboxes.forEach(checkboxà=>à{
+ààààcheckbox.addEventListener('change',à(e)à=>à{
+ààààààconstàdeviceNameà=àe.target.getAttribute('data-compare-device');
+àààààà
+ààààààifà(e.target.checked)à{
+àààààààà//àLimitàtoà2
+ààààààààifà(selectedDevices.lengthà>=àMAX_COMPARE)à{
+ààààààààààe.target.checkedà=àfalse;
+ààààààààààalert('Maximalà2àGeräteàzumàVergleichenàauswählbar');
+ààààààààààreturn;
+àààààààà}
+ààààààààselectedDevices.push(deviceName);
+àààààà}àelseà{
+ààààààààselectedDevicesà=àselectedDevices.filter(dà=>àdà!==àdeviceName);
+àààààà}
+àààààà
+àààààà//àUpdateàButton
+ààààààifà(compareBtn)à{
+ààààààààcompareBtn.disabledà=àselectedDevices.lengthà<à2;
+ààààààààcompareBtn.textContentà=àselectedDevices.lengthà===à2à
+àààààààààà?à'Vergleichen'à
+àààààààààà:à`Vergleichenà(${selectedDevices.length}/2)`;
+àààààà}
+àààà});
+àà});
+àà
+àà//àCompareàButtonàHandler
+ààifà(compareBtn)à{
+ààààcompareBtn.addEventListener('click',à()à=>à{
+ààààààifà(selectedDevices.lengthà===à2)à{
+ààààààààopenCompareModal(selectedDevices);
+àààààà}
+àààà});
+àà}
+}
+
+/**
+à*àDeviceàDatenbankàfüràVergleiche
+à*/
+constàDEVICE_DATABASEà=à{
+àà'Diabetes-Technologien':à{
+ààààkategorie:à'Therapieà&àMonitoring',
+ààààbeschreibung:à'Sensoren,àCGM-Systeme,àInsulinpumpen',
+ààààanwendung:à'Diabetes-Management',
+ààààverfügbarkeit:à'Weitàverbreitet',
+ààààkosten:à'ModeratàbisàHoch',
+ààààzukunft:à'KünstlicheàBauchspeicheldrüse'
+àà},
+àà'Allergiediagnostik':à{
+ààààkategorie:à'Diagnostik',
+ààààbeschreibung:à'Prick-Tests,àIgE-Bestimmung,àMolekulardiagnostik',
+ààààanwendung:à'Allergie-Erkennung',
+ààààverfügbarkeit:à'StandardàinàKliniken',
+ààààkosten:à'NiedrigàbisàMittel',
+ààààzukunft:à'Epikutantestsà&àComponent-Diagnostik'
+àà},
+àà'Herz-Kreislauf':à{
+ààààkategorie:à'Diagnostikà&àTherapie',
+ààààbeschreibung:à'EKG,àBlutdruckmessung,àSchrittmacher',
+ààààanwendung:à'Herz-Kreislauf-Monitoring',
+ààààverfügbarkeit:à'Sehràverbreitet',
+ààààkosten:à'Variabelà(niedrigàbisàsehràhoch)',
+ààààzukunft:à'DrahtloseàImplantate'
+àà},
+àà'Bildgebung':à{
+ààààkategorie:à'Diagnostik',
+ààààbeschreibung:à'Röntgen,àCT,àMRT,àUltraschall',
+ààààanwendung:à'BildgebendesàVerfahren',
+ààààverfügbarkeit:à'InàallenàKliniken',
+ààààkosten:à'Hochà(MRT/CT)',
+ààààzukunft:à'Hochauflösungs-KI-Analyse'
+àà},
+àà'Neurochips':à{
+ààààkategorie:à'Forschungà&àTherapie',
+ààààbeschreibung:à'Brain-ComputeràInterfaces,àtiefeàHirnstimulation',
+ààààanwendung:à'Neuromodulation',
+ààààverfügbarkeit:à'Experimentalà/àBegrenzt',
+ààààkosten:à'SehràHoch',
+ààààzukunft:à'BidirektionaleàNeural-Recording'
+àà},
+àà'Exoskelette':à{
+ààààkategorie:à'Therapieà&àRehabilitation',
+ààààbeschreibung:à'RoboterassistenzàinàBewegung',
+ààààanwendung:à'Rehabilitation,àIndustrie',
+ààààverfügbarkeit:à'ZunehmendàinàKliniken',
+ààààkosten:à'Hoch',
+ààààzukunft:à'Brain-gesteuerteàExoskelette'
+àà},
+àà'Genetik':à{
+ààààkategorie:à'Forschungà&àTherapie',
+ààààbeschreibung:à'CRISPR,àDNA-Sequenzierung',
+ààààanwendung:à'Genanalyseà&àGentherapie',
+ààààverfügbarkeit:à'BegrenztàaufàspezialisierteàZentren',
+ààààkosten:à'Sinkendà(Sequenzierung)',
+ààààzukunft:à'In-vivoàCRISPR-Therapien'
+àà},
+àà'KI-Diagnose':à{
+ààààkategorie:à'Zukunftstechnologie',
+ààààbeschreibung:à'KünstlicheàIntelligenzàfüràAnalyse',
+ààààanwendung:à'Bildanalyse,àDiagnostik',
+ààààverfügbarkeit:à'ZunehmendàinàRadiologie',
+ààààkosten:à'Variable',
+ààààzukunft:à'VollautomatisierteàDiagnose'
+àà},
+àà'Zukunftstechnologien':à{
+ààààkategorie:à'Forschung',
+ààààbeschreibung:à'Nano-Medizin,àBio-Interfaces',
+ààààanwendung:à'Experimentell',
+ààààverfügbarkeit:à'Nichtài.d.R.àverfügbar',
+ààààkosten:à'R&DàPhase',
+ààààzukunft:à'KörpereigeneàNanotechnik'
+àà}
 };
 
 /**
- * Öffnet Modal mit Vergleich zweier Geräte
- * @param {Array} devices - zwei zu vergleichende Geräte
- */
-function openCompareModal(devices) {
-  // Stelle sicher dass beide Geräte existieren
-  const device1 = DEVICE_DATABASE[devices[0]];
-  const device2 = DEVICE_DATABASE[devices[1]];
-  
-  if (!device1 || !device2) {
-    console.warn('Ein oder beide Geräte nicht in Datenbank gefunden');
-    return;
-  }
-  
-  // Erstelle Vergleichstabelle
-  const tableHTML = `
-    <table class="device-comparison-table">
-      <thead>
-        <tr>
-          <th>Eigenschaft</th>
-          <th>${devices[0]}</th>
-          <th>${devices[1]}</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Kategorie</strong></td>
-          <td>${device1.kategorie}</td>
-          <td>${device2.kategorie}</td>
-        </tr>
-        <tr>
-          <td><strong>Beschreibung</strong></td>
-          <td>${device1.beschreibung}</td>
-          <td>${device2.beschreibung}</td>
-        </tr>
-        <tr>
-          <td><strong>Anwendungsgebiet</strong></td>
-          <td>${device1.anwendung}</td>
-          <td>${device2.anwendung}</td>
-        </tr>
-        <tr>
-          <td><strong>Verfügbarkeit</strong></td>
-          <td>${device1.verfügbarkeit}</td>
-          <td>${device2.verfügbarkeit}</td>
-        </tr>
-        <tr>
-          <td><strong>Kostenbereich</strong></td>
-          <td>${device1.kosten}</td>
-          <td>${device2.kosten}</td>
-        </tr>
-        <tr>
-          <td><strong>Zukunftsperspektive</strong></td>
-          <td>${device1.zukunft}</td>
-          <td>${device2.zukunft}</td>
-        </tr>
-      </tbody>
-    </table>
-  `;
-  
-  // Erstelle Modal
-  const modal = document.createElement('div');
-  modal.className = 'compare-modal';
-  modal.setAttribute('aria-hidden', 'false');
-  modal.setAttribute('role', 'dialog');
-  
-  modal.innerHTML = `
-    <div class="compare-modal-overlay"></div>
-    <div class="compare-modal-content">
-      <button class="modal-close" aria-label="Modal schlie–en">â</button>
-      <h2>Vergleich: ${devices[0]} vs ${devices[1]}</h2>
-      <div class="compare-table">
-        ${tableHTML}
-      </div>
-    </div>
-  `;
-  
-  document.body.appendChild(modal);
-  
-  // Close Handler
-  const closeBtn = modal.querySelector('.modal-close');
-  const overlay = modal.querySelector('.compare-modal-overlay');
-  
-  const closeModal = () => {
-    modal.classList.add('fade-out');
-    setTimeout(() => modal.remove(), 300);
-  };
-  
-  closeBtn.addEventListener('click', closeModal);
-  overlay.addEventListener('click', closeModal);
-  
-  // ESC key zum Schlie–en
-  const handleEsc = (e) => {
-    if (e.key === 'Escape') {
-      closeModal);
-      document.removeEventListener('keydown', handleEsc);
-    }
-  };
-  document.addEventListener('keydown', handleEsc);
+à*àÖffnetàModalàmitàVergleichàzweieràGeräte
+à*à@paramà{Array}àdevicesà-àzweiàzuàvergleichendeàGeräte
+à*/
+functionàopenCompareModal(devices)à{
+àà//àStelleàsicheràdassàbeideàGeräteàexistieren
+ààconstàdevice1à=àDEVICE_DATABASE[devices[0]];
+ààconstàdevice2à=àDEVICE_DATABASE[devices[1]];
+àà
+ààifà(!device1à||à!device2)à{
+ààààconsole.warn('EinàoderàbeideàGeräteànichtàinàDatenbankàgefunden');
+ààààreturn;
+àà}
+àà
+àà//àErstelleàVergleichstabelle
+ààconstàtableHTMLà=à`
+àààà<tableàclass="device-comparison-table">
+àààààà<thead>
+àààààààà<tr>
+àààààààààà<th>Eigenschaft</th>
+àààààààààà<th>${devices[0]}</th>
+àààààààààà<th>${devices[1]}</th>
+àààààààà</tr>
+àààààà</thead>
+àààààà<tbody>
+àààààààà<tr>
+àààààààààà<td><strong>Kategorie</strong></td>
+àààààààààà<td>${device1.kategorie}</td>
+àààààààààà<td>${device2.kategorie}</td>
+àààààààà</tr>
+àààààààà<tr>
+àààààààààà<td><strong>Beschreibung</strong></td>
+àààààààààà<td>${device1.beschreibung}</td>
+àààààààààà<td>${device2.beschreibung}</td>
+àààààààà</tr>
+àààààààà<tr>
+àààààààààà<td><strong>Anwendungsgebiet</strong></td>
+àààààààààà<td>${device1.anwendung}</td>
+àààààààààà<td>${device2.anwendung}</td>
+àààààààà</tr>
+àààààààà<tr>
+àààààààààà<td><strong>Verfügbarkeit</strong></td>
+àààààààààà<td>${device1.verfügbarkeit}</td>
+àààààààààà<td>${device2.verfügbarkeit}</td>
+àààààààà</tr>
+àààààààà<tr>
+àààààààààà<td><strong>Kostenbereich</strong></td>
+àààààààààà<td>${device1.kosten}</td>
+àààààààààà<td>${device2.kosten}</td>
+àààààààà</tr>
+àààààààà<tr>
+àààààààààà<td><strong>Zukunftsperspektive</strong></td>
+àààààààààà<td>${device1.zukunft}</td>
+àààààààààà<td>${device2.zukunft}</td>
+àààààààà</tr>
+àààààà</tbody>
+àààà</table>
+àà`;
+àà
+àà//àErstelleàModal
+ààconstàmodalà=àdocument.createElement('div');
+ààmodal.classNameà=à'compare-modal';
+ààmodal.setAttribute('aria-hidden',à'false');
+ààmodal.setAttribute('role',à'dialog');
+àà
+ààmodal.innerHTMLà=à`
+àààà<divàclass="compare-modal-overlay"></div>
+àààà<divàclass="compare-modal-content">
+àààààà<buttonàclass="modal-close"àaria-label="Modalàschlie—en"></button>
+àààààà<h2>Vergleich:à${devices[0]}àvsà${devices[1]}</h2>
+àààààà<divàclass="compare-table">
+àààààààà${tableHTML}
+àààààà</div>
+àààà</div>
+àà`;
+àà
+ààdocument.body.appendChild(modal);
+àà
+àà//àCloseàHandler
+ààconstàcloseBtnà=àmodal.querySelector('.modal-close');
+ààconstàoverlayà=àmodal.querySelector('.compare-modal-overlay');
+àà
+ààconstàcloseModalà=à()à=>à{
+ààààmodal.classList.add('fade-out');
+ààààsetTimeout(()à=>àmodal.remove(),à300);
+àà};
+àà
+ààcloseBtn.addEventListener('click',àcloseModal);
+ààoverlay.addEventListener('click',àcloseModal);
+àà
+àà//àESCàkeyàzumàSchlie—en
+ààconstàhandleEscà=à(e)à=>à{
+ààààifà(e.keyà===à'Escape')à{
+ààààààcloseModal);
+ààààààdocument.removeEventListener('keydown',àhandleEsc);
+àààà}
+àà};
+ààdocument.addEventListener('keydown',àhandleEsc);
 }
 
-// ================================================================
-// –°§  9. GLOSSARY TOOLTIP SYSTEM (Automatisch)
-// ================================================================
+//à================================================================
+//à°ç à9.àGLOSSARYàTOOLTIPàSYSTEMà(Automatisch)
+//à================================================================
 
-function initGlossaryTooltips() {
-  const glossaryTerms = document.querySelectorAll'.glossar-term dt');
-  if (!glossaryTerms.length) return;
-  
-  // Sammle alle Glossar-Begriffe
-  const glossaryData = {};
-  glossaryTerms.forEach(dt => {
-    const term = dt.textContent.trim();
-    const definition = dt.nextElementSibling?.textContent?.trim() || '';
-    glossaryData[term] = definition;
-  });
-  
-  // Durchsuche Seite nach Glossar-Begriffen
-  const walker = document.createTreeWalker(
-    document.body,
-    NodeFilter.SHOW_TEXT,
-    null,
-    false
-  );
-  
-  const nodesToReplace = [];
-  let node;
-  
-  while (node = walker.nextNode()) {
-    nodesToReplace.push(node);
-  }
-  
-  nodesToReplace.forEach(textNode => {
-    let content = textNode.textContent;
-    let hasMatch = false;
-    
-    Object.keys(glossaryData).forEach(term => {
-      if (content.toLowerCase().includes(term.toLowerCase())) {
-        hasMatch = true;
-        const regex = new RegExp(`\\b${term}\\b`, 'gi');
-        content = content.replace(regex, `<span class="glossary-link" data-term="${term}">$&</span>`);
-      }
-    });
-    
-    if (hasMatch) {
-      const span = document.createElement('span');
-      span.innerHTML = content;
-      textNode.parentNode.replaceChild(span, textNode);
-    }
-  });
-  
-  // Event Handler für Tooltips
-  document.addEventListener('mouseenter', (e) => {
-    if (e.target.classList.contains('glossary-link')) {
-      const term = e.target.getAttribute('data-term');
-      const definition = glossaryData[term];
-      
-      showGlossaryTooltip(e.target, definition);
-    }
-  }, true);
+functionàinitGlossaryTooltips()à{
+ààconstàglossaryTermsà=àdocument.querySelectorAll'.glossar-termàdt');
+ààifà(!glossaryTerms.length)àreturn;
+àà
+àà//àSammleàalleàGlossar-Begriffe
+ààconstàglossaryDataà=à{};
+ààglossaryTerms.forEach(dtà=>à{
+ààààconstàtermà=àdt.textContent.trim();
+ààààconstàdefinitionà=àdt.nextElementSibling?.textContent?.trim()à||à'';
+ààààglossaryData[term]à=àdefinition;
+àà});
+àà
+àà//àDurchsucheàSeiteànachàGlossar-Begriffen
+ààconstàwalkerà=àdocument.createTreeWalker(
+ààààdocument.body,
+ààààNodeFilter.SHOW_TEXT,
+àààànull,
+ààààfalse
+àà);
+àà
+ààconstànodesToReplaceà=à[];
+ààletànode;
+àà
+ààwhileà(nodeà=àwalker.nextNode())à{
+àààànodesToReplace.push(node);
+àà}
+àà
+àànodesToReplace.forEach(textNodeà=>à{
+ààààletàcontentà=àtextNode.textContent;
+ààààletàhasMatchà=àfalse;
+àààà
+ààààObject.keys(glossaryData).forEach(termà=>à{
+ààààààifà(content.toLowerCase().includes(term.toLowerCase()))à{
+ààààààààhasMatchà=àtrue;
+ààààààààconstàregexà=ànewàRegExp(`\\b${term}\\b`,à'gi');
+ààààààààcontentà=àcontent.replace(regex,à`<spanàclass="glossary-link"àdata-term="${term}">$&</span>`);
+àààààà}
+àààà});
+àààà
+ààààifà(hasMatch)à{
+ààààààconstàspanà=àdocument.createElement('span');
+ààààààspan.innerHTMLà=àcontent;
+ààààààtextNode.parentNode.replaceChild(span,àtextNode);
+àààà}
+àà});
+àà
+àà//àEventàHandleràfüràTooltips
+ààdocument.addEventListener('mouseenter',à(e)à=>à{
+ààààifà(e.target.classList.contains('glossary-link'))à{
+ààààààconstàtermà=àe.target.getAttribute('data-term');
+ààààààconstàdefinitionà=àglossaryData[term];
+àààààà
+ààààààshowGlossaryTooltip(e.target,àdefinition);
+àààà}
+àà},àtrue);
 }
 
 /**
- * Zeigt Glossar-Tooltip an
- * @param {Element} element - Element mit Tooltip
- * @param {string} definition - Definition zum Anzeigen
- */
-function showGlossaryTooltip(element, definition) {
-  // Old Tooltip entfernen
-  const oldTooltip = document.querySelector('.glossary-tooltip');
-  if (oldTooltip) oldTooltip.remove();
-  
-  const tooltip = document.createElement('div');
-  tooltip.className = 'glossary-tooltip';
-  tooltip.textContent = definition;
-  tooltip.setAttribute('role', 'tooltip');
-  
-  document.body.appendChild(tooltip);
-  
-  // Position Tooltip
-  const rect = element.getBoundingClientRect();
-  tooltip.style.top = (rect.top - tooltip.offsetHeight - 10) + 'px';
-  tooltip.style.left = (rect.left + rect.width / 2 - tooltip.offsetWidth / 2) + 'px';
-  
-  // Remove on mouseleave
-  element.addEventListener('mouseleave', () => {
-    tooltip.remove();
-  }, { once: true });
+à*àZeigtàGlossar-Tooltipàan
+à*à@paramà{Element}àelementà-àElementàmitàTooltip
+à*à@paramà{string}àdefinitionà-àDefinitionàzumàAnzeigen
+à*/
+functionàshowGlossaryTooltip(element,àdefinition)à{
+àà//àOldàTooltipàentfernen
+ààconstàoldTooltipà=àdocument.querySelector('.glossary-tooltip');
+ààifà(oldTooltip)àoldTooltip.remove();
+àà
+ààconstàtooltipà=àdocument.createElement('div');
+ààtooltip.classNameà=à'glossary-tooltip';
+ààtooltip.textContentà=àdefinition;
+ààtooltip.setAttribute('role',à'tooltip');
+àà
+ààdocument.body.appendChild(tooltip);
+àà
+àà//àPositionàTooltip
+ààconstàrectà=àelement.getBoundingClientRect();
+ààtooltip.style.topà=à(rect.topà-àtooltip.offsetHeightà-à10)à+à'px';
+ààtooltip.style.leftà=à(rect.leftà+àrect.widthà/à2à-àtooltip.offsetWidthà/à2)à+à'px';
+àà
+àà//àRemoveàonàmouseleave
+ààelement.addEventListener('mouseleave',à()à=>à{
+ààààtooltip.remove();
+àà},à{àonce:àtrueà});
 }
 
-// ================================================================
-// –° INITIALIZATION - Document Ready Event
-// ================================================================
+//à================================================================
+//à°àINITIALIZATIONà-àDocumentàReadyàEvent
+//à================================================================
 
-// Related Links Data (für Themenseiten)
-const relatedLinksData = {
-  diabetes: [
-    ["International Diabetes Federation", "https://idf.org/"],
-    ["Deutsche Diabetes Gesellschaft", "https://www.deutsche-diabetes-gesellschaft.de/"],
-    ["American Diabetes Association", "https://www.diabetes.org/"],
-    ["WHO - Diabetes", "https://www.who.int/health-topics/diabetes"],
-    ["CDC - Diabetes", "https://www.cdc.gov/diabetes/"],
-    ["NIH - Diabetes Research", "https://www.niddk.nih.gov/"]
-  ],
-  allergie: [
-    ["Österreichische Gesellschaft für Allergologie", "https://www.oegaai.at/"],
-    ["Deutsche Gesellschaft für Allergologie und klinische Immunologie", "https://www.dgaki.de/"],
-    ["American Academy of Allergy, Asthma & Immunology", "https://www.aaaai.org/"],
-    ["WHO - Allergies", "https://www.who.int/"],
-    ["Pollenwarndienst Europa", "https://www.pollenwarndienst.at/"],
-    ["Allergy & Asthma Network", "https://www.allergyasthmanetwork.org/"]
-  ],
-  herz: [
-    ["Deutsche Herzstiftung", "https://www.herzstiftung.de/"],
-    ["American Heart Association", "https://www.heart.org/"],
-    ["European Heart Rhythm Association", "https://www.ehra.org/"],
-    ["British Heart Foundation", "https://www.bhf.org.uk/"],
-    ["Mayo Clinic - Heart Diseases", "https://www.mayoclinic.org/diseases-conditions/heart-disease/"],
-    ["NIH - Heart Institute", "https://www.nhlbi.nih.gov/"]
-  ],
-  bildgebung: [
-    ["Radiopaedia - Medical Imaging", "https://radiopaedia.org/"],
-    ["European Society of Radiology", "https://www.myesr.org/"],
-    ["American College of Radiology", "https://www.acr.org/"],
-    ["MRI Explained", "https://mriexplained.com/"],
-    ["FDA - Medical Imaging", "https://www.fda.gov/radiation-emitting-products/"],
-    ["Nature - Medical Imaging Research", "https://www.nature.com/"]
-  ],
-  neurochips: [
-    ["BCI Society", "https://www.bci-info.org/"],
-    ["Neuralink Public Information", "https://neuralink.com/"],
-    ["Brain-Computer Interfaces - TU Graz", "https://bci.tugraz.at/"],
-    ["Frontiers in Neuroscience", "https://www.frontiersin.org/journals/neuroscience/"],
-    ["NINDS - Brain Research", "https://www.ninds.nih.gov/"],
-    ["Nature Neuroscience", "https://www.nature.com/articles/s41593-021-00928-z"]
-  ],
-  exoskelette: [
-    ["Exoskeleton Report", "https://exoskeletonreport.com/"],
-    ["ReWalk Robotics", "https://rewalk.com/"],
-    ["Ekso Bionics", "https://eksobionics.com/"],
-    ["ScienceDirect - Exoskeletons", "https://www.sciencedirect.com/topics/engineering/exoskeleton"],
-    ["IEEE - Robotics & Automation", "https://www.ieee.org/"],
-    ["Wearable Robotics - Research", "https://www.frontiersin.org/"]
-  ],
-  genetik: [
-    ["Genome.gov - NIH", "https://www.genome.gov/"],
-    ["Learn Genetics - University of Utah", "https://learn.genetics.utah.edu/"],
-    ["YourGenome - Wellcome Sanger Institute", "https://www.yourgenome.org/"],
-    ["Nature Genetics", "https://www.nature.com/subjects/genetics"],
-    ["CRISPR Gene Editing Database", "https://www.ebi.ac.uk/"],
-    ["American Society of Human Genetics", "https://www.ashg.org/"]
-  ],
-  ki: [
-    ["AI in Healthcare - Stanford", "https://aihealth.stanford.edu/"],
-    ["WHO - AI Guidelines for Health", "https://www.who.int/publications/i/item/9789240029200"],
-    ["Nature Machine Intelligence", "https://www.nature.com/subjects/machine-learning"],
-    ["OpenAI - Research on AI Safety", "https://openai.com/research/"],
-    ["MIT - AI for Healthcare", "https://dspace.mit.edu/"],
-    ["IEEE Xplore - AI in Medicine", "https://ieeexplore.ieee.org/"]
-  ],
-  zukunft: [
-    ["MIT Technology Review - Healthcare", "https://www.technologyreview.com/topic/health/"],
-    ["WHO - Digital Health", "https://www.who.int/health-topics/digital-health"],
-    ["Nature - Medical Research", "https://www.nature.com/subjects/medical-research"],
-    ["NIH - Medical Research", "https://www.nih.gov/"],
-    ["EU Digital Health Policy", "https://ec.europa.eu/health/"],
-    ["Sciencedaily - Medical News", "https://www.sciencedaily.com/"]
-  ]
+//àRelatedàLinksàDataà(füràThemenseiten)
+constàrelatedLinksDataà=à{
+ààdiabetes:à[
+àààà["InternationalàDiabetesàFederation",à"https://idf.org/"],
+àààà["DeutscheàDiabetesàGesellschaft",à"https://www.deutsche-diabetes-gesellschaft.de/"],
+àààà["AmericanàDiabetesàAssociation",à"https://www.diabetes.org/"],
+àààà["WHOà-àDiabetes",à"https://www.who.int/health-topics/diabetes"],
+àààà["CDCà-àDiabetes",à"https://www.cdc.gov/diabetes/"],
+àààà["NIHà-àDiabetesàResearch",à"https://www.niddk.nih.gov/"]
+àà],
+ààallergie:à[
+àààà["ÖsterreichischeàGesellschaftàfüràAllergologie",à"https://www.oegaai.at/"],
+àààà["DeutscheàGesellschaftàfüràAllergologieàundàklinischeàImmunologie",à"https://www.dgaki.de/"],
+àààà["AmericanàAcademyàofàAllergy,àAsthmaà&àImmunology",à"https://www.aaaai.org/"],
+àààà["WHOà-àAllergies",à"https://www.who.int/"],
+àààà["PollenwarndienstàEuropa",à"https://www.pollenwarndienst.at/"],
+àààà["Allergyà&àAsthmaàNetwork",à"https://www.allergyasthmanetwork.org/"]
+àà],
+ààherz:à[
+àààà["DeutscheàHerzstiftung",à"https://www.herzstiftung.de/"],
+àààà["AmericanàHeartàAssociation",à"https://www.heart.org/"],
+àààà["EuropeanàHeartàRhythmàAssociation",à"https://www.ehra.org/"],
+àààà["BritishàHeartàFoundation",à"https://www.bhf.org.uk/"],
+àààà["MayoàClinicà-àHeartàDiseases",à"https://www.mayoclinic.org/diseases-conditions/heart-disease/"],
+àààà["NIHà-àHeartàInstitute",à"https://www.nhlbi.nih.gov/"]
+àà],
+ààbildgebung:à[
+àààà["Radiopaediaà-àMedicalàImaging",à"https://radiopaedia.org/"],
+àààà["EuropeanàSocietyàofàRadiology",à"https://www.myesr.org/"],
+àààà["AmericanàCollegeàofàRadiology",à"https://www.acr.org/"],
+àààà["MRIàExplained",à"https://mriexplained.com/"],
+àààà["FDAà-àMedicalàImaging",à"https://www.fda.gov/radiation-emitting-products/"],
+àààà["Natureà-àMedicalàImagingàResearch",à"https://www.nature.com/"]
+àà],
+ààneurochips:à[
+àààà["BCIàSociety",à"https://www.bci-info.org/"],
+àààà["NeuralinkàPublicàInformation",à"https://neuralink.com/"],
+àààà["Brain-ComputeràInterfacesà-àTUàGraz",à"https://bci.tugraz.at/"],
+àààà["FrontiersàinàNeuroscience",à"https://www.frontiersin.org/journals/neuroscience/"],
+àààà["NINDSà-àBrainàResearch",à"https://www.ninds.nih.gov/"],
+àààà["NatureàNeuroscience",à"https://www.nature.com/articles/s41593-021-00928-z"]
+àà],
+ààexoskelette:à[
+àààà["ExoskeletonàReport",à"https://exoskeletonreport.com/"],
+àààà["ReWalkàRobotics",à"https://rewalk.com/"],
+àààà["EksoàBionics",à"https://eksobionics.com/"],
+àààà["ScienceDirectà-àExoskeletons",à"https://www.sciencedirect.com/topics/engineering/exoskeleton"],
+àààà["IEEEà-àRoboticsà&àAutomation",à"https://www.ieee.org/"],
+àààà["WearableàRoboticsà-àResearch",à"https://www.frontiersin.org/"]
+àà],
+ààgenetik:à[
+àààà["Genome.govà-àNIH",à"https://www.genome.gov/"],
+àààà["LearnàGeneticsà-àUniversityàofàUtah",à"https://learn.genetics.utah.edu/"],
+àààà["YourGenomeà-àWellcomeàSangeràInstitute",à"https://www.yourgenome.org/"],
+àààà["NatureàGenetics",à"https://www.nature.com/subjects/genetics"],
+àààà["CRISPRàGeneàEditingàDatabase",à"https://www.ebi.ac.uk/"],
+àààà["AmericanàSocietyàofàHumanàGenetics",à"https://www.ashg.org/"]
+àà],
+ààki:à[
+àààà["AIàinàHealthcareà-àStanford",à"https://aihealth.stanford.edu/"],
+àààà["WHOà-àAIàGuidelinesàforàHealth",à"https://www.who.int/publications/i/item/9789240029200"],
+àààà["NatureàMachineàIntelligence",à"https://www.nature.com/subjects/machine-learning"],
+àààà["OpenAIà-àResearchàonàAIàSafety",à"https://openai.com/research/"],
+àààà["MITà-àAIàforàHealthcare",à"https://dspace.mit.edu/"],
+àààà["IEEEàXploreà-àAIàinàMedicine",à"https://ieeexplore.ieee.org/"]
+àà],
+ààzukunft:à[
+àààà["MITàTechnologyàReviewà-àHealthcare",à"https://www.technologyreview.com/topic/health/"],
+àààà["WHOà-àDigitalàHealth",à"https://www.who.int/health-topics/digital-health"],
+àààà["Natureà-àMedicalàResearch",à"https://www.nature.com/subjects/medical-research"],
+àààà["NIHà-àMedicalàResearch",à"https://www.nih.gov/"],
+àààà["EUàDigitalàHealthàPolicy",à"https://ec.europa.eu/health/"],
+àààà["Sciencedailyà-àMedicalàNews",à"https://www.sciencedaily.com/"]
+àà]
 };
 
 /**
- * Setter für Related Links (für Themenseiten)
- * @param {string} topic - Topic Key (z.B. 'diabetes')
- */
-function setRelatedLinks(topic) {
-  const links = relatedLinksData[topic];
-  const relatedLinksContainer = document.getElementById('related-links');
-  
-  if (!links || !relatedLinksContainer) return;
-  
-  relatedLinksContainer.innerHTML = '';
-  
-  links.forEach(([title, url]) => {
-    const li = document.createElement('li');
-    const a = document.createElement('a');
-    a.href = url;
-    a.textContent = title;
-    a.target = '_blank';
-    a.rel = 'noopener noreferrer';
-    li.appendChild(a);
-    relatedLinksContainer.appendChild(li);
-  });
+à*àSetteràfüràRelatedàLinksà(füràThemenseiten)
+à*à@paramà{string}àtopicà-àTopicàKeyà(z.B.à'diabetes')
+à*/
+functionàsetRelatedLinks(topic)à{
+ààconstàlinksà=àrelatedLinksData[topic];
+ààconstàrelatedLinksContainerà=àdocument.getElementById('related-links');
+àà
+ààifà(!linksà||à!relatedLinksContainer)àreturn;
+àà
+ààrelatedLinksContainer.innerHTMLà=à'';
+àà
+ààlinks.forEach(([title,àurl])à=>à{
+ààààconstàlià=àdocument.createElement('li');
+ààààconstàaà=àdocument.createElement('a');
+ààààa.hrefà=àurl;
+ààààa.textContentà=àtitle;
+ààààa.targetà=à'_blank';
+ààààa.relà=à'noopenerànoreferrer';
+ààààli.appendChild(a);
+ààààrelatedLinksContainer.appendChild(li);
+àà});
 }
 
 /**
- * Backward Compatibility Alias für alte Code
- */
-function setActiveNavLink() {
-  initActiveNav();
+à*àBackwardàCompatibilityàAliasàfüràalteàCode
+à*/
+functionàsetActiveNavLink()à{
+ààinitActiveNav();
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  // Initialisiere alle Module der Reihe nach
-  initLoader();        // Loader verstecken
-  initMobileNav();     // Mobile Menü
-  initActiveNav();     // Navigation highlighting
-  initScrollToTop();   // Scroll to Top Button
-  initSectionAnimations(); // Fade-In Animations
-  initSearch();        // Globale Suche
-  initFilters();       // Filter System
-  initCompareSystem(); // Vergleich Modal
-  initGlossaryTooltips(); // Glossar Tooltips
+document.addEventListener('DOMContentLoaded',à()à=>à{
+àà//àInitialisiereàalleàModuleàderàReiheànach
+ààinitLoader();àààààààà//àLoaderàverstecken
+ààinitMobileNav();ààààà//àMobileàMenü
+ààinitActiveNav();ààààà//àNavigationàhighlighting
+ààinitScrollToTop();ààà//àScrollàtoàTopàButton
+ààinitSectionAnimations();à//àFade-InàAnimations
+ààinitSearch();àààààààà//àGlobaleàSuche
+ààinitFilters();ààààààà//àFilteràSystem
+ààinitCompareSystem();à//àVergleichàModal
+ààinitGlossaryTooltips();à//àGlossaràTooltips
 });

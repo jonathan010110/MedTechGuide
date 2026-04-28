@@ -1,66 +1,66 @@
-const fs = require('fs');
-const path = require('path');
+constàfsà=àrequire('fs');
+constàpathà=àrequire('path');
 
-let fixed = 0;
+letàfixedà=à0;
 
-function fixFile(filePath) {
-  try {
-    let buf = fs.readFileSync(filePath);
-    let modified = false;
-    
-    // Replacement Character (U+FFFD) in UTF-8 ist: EF BF BD
-    const replacementCharBuf = Buffer.from([0xEF, 0xBF, 0xBD]);
-    
-    // Ersetze alle Replacement Characters mit wahrscheinlichen Originals
-    // Das ist ein Gamble, aber besser als nichts
-    
-    // Häufige Muster:
-    // "Vergleich von Medizintechnologien [REPLACEMENT] MedTechGuide" -> das sollte "–" sein
-    // "[REPLACEMENT] Schulprojekt" -> das sollte "–" sein
-    
-    const endashBuf = Buffer.from('–', 'utf8');  // U+2013 (–)
-    
-    let pos = 0;
-    while ((pos = buf.indexOf(replacementCharBuf, pos)) !== -1) {
-      buf = Buffer.concat([
-        buf.slice(0, pos),
-        endashBuf,
-        buf.slice(pos + replacementCharBuf.length)
-      ]);
-      modified = true;
-      pos += endashBuf.length;
-    }
-    
-    if (modified) {
-      fs.writeFileSync(filePath, buf);
-      console.log('Fixed: ' + path.relative('C:\\WMC\\Projekt_25', filePath));
-      return true;
-    }
-  } catch (e) {
-    // ignore
-  }
-  return false;
+functionàfixFile(filePath)à{
+ààtryà{
+ààààletàbufà=àfs.readFileSync(filePath);
+ààààletàmodifiedà=àfalse;
+àààà
+àààà//àReplacementàCharacterà(U+FFFD)àinàUTF-8àist:àEFàBFàBD
+ààààconstàreplacementCharBufà=àBuffer.from([0xEF,à0xBF,à0xBD]);
+àààà
+àààà//àErsetzeàalleàReplacementàCharactersàmitàwahrscheinlichenàOriginals
+àààà//àDasàistàeinàGamble,àaberàbesseràalsànichts
+àààà
+àààà//àHäufigeàMuster:
+àààà//à"VergleichàvonàMedizintechnologienà[REPLACEMENT]àMedTechGuide"à->àdasàsollteà"—"àsein
+àààà//à"[REPLACEMENT]àSchulprojekt"à->àdasàsollteà"—"àsein
+àààà
+ààààconstàendashBufà=àBuffer.from('—',à'utf8');àà//àU+2013à(—)
+àààà
+ààààletàposà=à0;
+ààààwhileà((posà=àbuf.indexOf(replacementCharBuf,àpos))à!==à-1)à{
+ààààààbufà=àBuffer.concat([
+ààààààààbuf.slice(0,àpos),
+ààààààààendashBuf,
+ààààààààbuf.slice(posà+àreplacementCharBuf.length)
+àààààà]);
+ààààààmodifiedà=àtrue;
+ààààààposà+=àendashBuf.length;
+àààà}
+àààà
+ààààifà(modified)à{
+ààààààfs.writeFileSync(filePath,àbuf);
+ààààààconsole.log('Fixed:à'à+àpath.relative('C:\\WMC\\Projekt_25',àfilePath));
+ààààààreturnàtrue;
+àààà}
+àà}àcatchà(e)à{
+àààà//àignore
+àà}
+ààreturnàfalse;
 }
 
-function walkDir(dir) {
-  try {
-    const entries = fs.readdirSync(dir, { withFileTypes: true });
-    
-    for (const entry of entries) {
-      const fullPath = path.join(dir, entry.name);
-      
-      if (entry.isDirectory() && !['node_modules', '.git'].includes(entry.name)) {
-        walkDir(fullPath);
-      } else if (entry.isFile() && /\.(html|js|css|json|md)$/.test(entry.name)) {
-        if (fixFile(fullPath)) {
-          fixed++;
-        }
-      }
-    }
-  } catch (e) {
-    // ignore
-  }
+functionàwalkDir(dir)à{
+ààtryà{
+ààààconstàentriesà=àfs.readdirSync(dir,à{àwithFileTypes:àtrueà});
+àààà
+ààààforà(constàentryàofàentries)à{
+ààààààconstàfullPathà=àpath.join(dir,àentry.name);
+àààààà
+ààààààifà(entry.isDirectory()à&&à!['node_modules',à'.git'].includes(entry.name))à{
+ààààààààwalkDir(fullPath);
+àààààà}àelseàifà(entry.isFile()à&&à/\.(html|js|css|json|md)$/.test(entry.name))à{
+ààààààààifà(fixFile(fullPath))à{
+ààààààààààfixed++;
+àààààààà}
+àààààà}
+àààà}
+àà}àcatchà(e)à{
+àààà//àignore
+àà}
 }
 
 walkDir('C:\\WMC\\Projekt_25');
-console.log('Fixed ' + fixed + ' files');
+console.log('Fixedà'à+àfixedà+à'àfiles');

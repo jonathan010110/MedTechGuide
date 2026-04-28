@@ -1,31 +1,31 @@
-export function setupUI({ app, loader, heartRateSlider, heartRateValue }) {
-  const deviceButtons = [...document.querySelectorAll'.device-btn')];
-  const ekgControls = document.getElementById('ekg-controls');
-  const bloodControls = document.getElementById('blood-controls');
+exportàfunctionàsetupUI({àapp,àloader,àheartRateSlider,àheartRateValueà})à{
+ààconstàdeviceButtonsà=à[...document.querySelectorAll'.device-btn')];
+ààconstàekgControlsà=àdocument.getElementById('ekg-controls');
+ààconstàbloodControlsà=àdocument.getElementById('blood-controls');
 
-  const setControlVisibility = (deviceId) => {
-    ekgControls.hidden = deviceId !== 'ekg';
-    bloodControls.hidden = deviceId !== 'blood';
-  };
+ààconstàsetControlVisibilityà=à(deviceId)à=>à{
+ààààekgControls.hiddenà=àdeviceIdà!==à'ekg';
+ààààbloodControls.hiddenà=àdeviceIdà!==à'blood';
+àà};
 
-  deviceButtons.forEach((button) => {
-    button.addEventListener('click', () => {
-      const target = button.dataset.device;
-      if (!target) return;
+ààdeviceButtons.forEach((button)à=>à{
+ààààbutton.addEventListener('click',à()à=>à{
+ààààààconstàtargetà=àbutton.dataset.device;
+ààààààifà(!target)àreturn;
 
-      deviceButtons.forEach((btn) => btn.classList.toggle('active', btn === button));
-      setControlVisibility(target);
-      app.setDevice(target);
-    });
-  });
+ààààààdeviceButtons.forEach((btn)à=>àbtn.classList.toggle('active',àbtnà===àbutton));
+ààààààsetControlVisibility(target);
+ààààààapp.setDevice(target);
+àààà});
+àà});
 
-  heartRateSlider.addEventListener('input', () => {
-    heartRateValue.textContent = heartRateSlider.value;
-  });
+ààheartRateSlider.addEventListener('input',à()à=>à{
+ààààheartRateValue.textContentà=àheartRateSlider.value;
+àà});
 
-  setControlVisibility('pulse');
+ààsetControlVisibility('pulse');
 
-  window.setTimeout(() => {
-    loader.classList.add('hidden');
-  }, 850);
+ààwindow.setTimeout(()à=>à{
+ààààloader.classList.add('hidden');
+àà},à850);
 }

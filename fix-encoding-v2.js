@@ -1,79 +1,79 @@
-const fs = require('fs');
-const path = require('path');
+constàfsà=àrequire('fs');
+constàpathà=àrequire('path');
 
-// Einfacherer Ansatz: Direkt die fehlerhaften Strings erkennen und ersetzen
-const replacements = [
-  // Umlaute
-  ['ü', 'ü'], ['ö', 'ö'], ['ä', 'ä'],
-  ['é', 'é'], ['à', 'à'], ['ç', 'ç'],
-  ['–––¡', 'á'], ['–––­', 'í'], ['–––³', 'ó'],
-  ['–––¹', 'ù'], ['–––•', '–•'], ['–â•', '–'],
-  ['–â', 'Ö'], ['–â', 'Ä'],
-  
-  // Bindestriche und Anführungszeichen
-  ['â', 'â'], ['â', 'â'], ['–•â–"–', '"'], ['–•â–"\u009d', '"'],
-  ['–•â–"â•', "'"], ['–•â–"–', "'"],
-  
-  // Ellipsis und spezielle Zeichen
-  ['–•â–"––¦', '...'], ['–•â–"––¹', '<'], ['–•â–"––º', '>'],
-  
-  // Guillemets
-  ['«', '«'], ['»', '»'],
-  
-  // Degree und andere
-  ['°', '°'], ['–•â––•', 'TM'],
-  
-  // Emojis - diese mit Unicode-Escape-Sequenzen
-  // Stattdessen: Die fehlerhaften Sequenzen direkt finden
-  ['–°–¸–Â½––¯', 'EMOJI_DARTBOARD'],
-  ['–°–¸––§ ', 'EMOJI_BRAIN'],
-  ['–°–¸'––¾', 'EMOJI_DISKETTE'],
-  ['–°–¸"– ', 'EMOJI_CHART'],
-  ['–°–¸––©––º', 'EMOJI_STETHOSCOPE'],
-  ['–°–¸"––§', 'EMOJI_WRENCH'],
-  ['–°–¸––§––"', 'EMOJI_MICROSCOPE'],
-  ['–°–¸––¤â', 'EMOJI_ROBOT'],
-  ['–°–¸'', 'EMOJI_LIGHTBULB'],
-  ['–•–â¦', 'CHECK'],
-  ['–•âº"', 'CROSS'],
+//àEinfachereràAnsatz:àDirektàdieàfehlerhaftenàStringsàerkennenàundàersetzen
+constàreplacementsà=à[
+àà//àUmlaute
+àà['ü',à'ü'],à['ö',à'ö'],à['ä',à'ä'],
+àà['é',à'é'],à['à',à'à'],à['ç',à'ç'],
+àà['———¡',à'á'],à['———­',à'í'],à['———³',à'ó'],
+àà['———¹',à'ù'],à['———•',à'—•'],à['—•',à'—'],
+àà['—',à'Ö'],à['—',à'Ä'],
+àà
+àà//àBindestricheàundàAnführungszeichen
+àà['',à''],à['',à''],à['—•—"—',à'"'],à['—•—"\u009d',à'"'],
+àà['—•—"•',à"'"],à['—•—"—',à"'"],
+àà
+àà//àEllipsisàundàspezielleàZeichen
+àà['—•—"——¦',à'...'],à['—•—"——¹',à'<'],à['—•—"——º',à'>'],
+àà
+àà//àGuillemets
+àà['«',à'«'],à['»',à'»'],
+àà
+àà//àDegreeàundàandere
+àà['°',à'°'],à['—•——•',à'TM'],
+àà
+àà//àEmojisà-àdieseàmitàUnicode-Escape-Sequenzen
+àà//àStattdessen:àDieàfehlerhaftenàSequenzenàdirektàfinden
+àà['—°—¸—½——¯',à'EMOJI_DARTBOARD'],
+àà['—°—¸——çà',à'EMOJI_BRAIN'],
+àà['—°—¸'——¾',à'EMOJI_DISKETTE'],
+àà['—°—¸"— ',à'EMOJI_CHART'],
+àà['—°—¸——é——º',à'EMOJI_STETHOSCOPE'],
+àà['—°—¸"——ç',à'EMOJI_WRENCH'],
+àà['—°—¸——ç——"',à'EMOJI_MICROSCOPE'],
+àà['—°—¸——ä',à'EMOJI_ROBOT'],
+àà['—°—¸'',à'EMOJI_LIGHTBULB'],
+àà['—•—¦',à'CHECK'],
+àà['—•º"',à'CROSS'],
 ];
 
-function fixFile(filePath) {
-  try {
-    let content = fs.readFileSync(filePath, 'utf8');
-    let modified = false;
-    
-    for (const [wrong, correct] of replacements) {
-      if (content.includes(wrong)) {
-        content = content.split(wrong).join(correct);
-        modified = true;
-      }
-    }
-    
-    if (modified) {
-      fs.writeFileSync(filePath, content, 'utf8');
-      console.log('Fixed: ' + path.relative(process.cwd(), filePath));
-      return true;
-    }
-    return false;
-  } catch (e) {
-    console.error('Error in ' + filePath + ': ' + e.message);
-    return false;
-  }
+functionàfixFile(filePath)à{
+ààtryà{
+ààààletàcontentà=àfs.readFileSync(filePath,à'utf8');
+ààààletàmodifiedà=àfalse;
+àààà
+ààààforà(constà[wrong,àcorrect]àofàreplacements)à{
+ààààààifà(content.includes(wrong))à{
+ààààààààcontentà=àcontent.split(wrong).join(correct);
+ààààààààmodifiedà=àtrue;
+àààààà}
+àààà}
+àààà
+ààààifà(modified)à{
+ààààààfs.writeFileSync(filePath,àcontent,à'utf8');
+ààààààconsole.log('Fixed:à'à+àpath.relative(process.cwd(),àfilePath));
+ààààààreturnàtrue;
+àààà}
+ààààreturnàfalse;
+àà}àcatchà(e)à{
+ààààconsole.error('Erroràinà'à+àfilePathà+à':à'à+àe.message);
+ààààreturnàfalse;
+àà}
 }
 
-function walk(dir) {
-  let count = 0;
-  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
-    const full = path.join(dir, entry.name);
-    if (entry.isDirectory() && !['node_modules', '.git'].includes(entry.name)) {
-      count += walk(full);
-    } else if (entry.isFile() && /\.(html|js|css|json)$/i.test(entry.name)) {
-      if (fixFile(full)) count++;
-    }
-  }
-  return count;
+functionàwalk(dir)à{
+ààletàcountà=à0;
+ààforà(constàentryàofàfs.readdirSync(dir,à{àwithFileTypes:àtrueà}))à{
+ààààconstàfullà=àpath.join(dir,àentry.name);
+ààààifà(entry.isDirectory()à&&à!['node_modules',à'.git'].includes(entry.name))à{
+ààààààcountà+=àwalk(full);
+àààà}àelseàifà(entry.isFile()à&&à/\.(html|js|css|json)$/i.test(entry.name))à{
+ààààààifà(fixFile(full))àcount++;
+àààà}
+àà}
+ààreturnàcount;
 }
 
-const fixed = walk('.');
-console.log('\nEncoding-Reparatur abgeschlossen: ' + fixed + ' Dateien repariert');
+constàfixedà=àwalk('.');
+console.log('\nEncoding-Reparaturàabgeschlossen:à'à+àfixedà+à'àDateienàrepariert');

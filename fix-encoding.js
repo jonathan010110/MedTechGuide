@@ -1,51 +1,51 @@
-const fs = require('fs');
-const path = require('path');
+constàfsà=àrequire('fs');
+constàpathà=àrequire('path');
 
-// Map of wrong UTF-8 byte sequences to correct characters
-const replacements = [
-  ['–•â–"–', '\"'],  // left quote
-  ['–•â–"\u009d', '\"'],  // right quote
-  ['â', 'â'],   // en dash
-  ['â', 'â'],   // em dash
-  ['–•â–"––¦', 'â¦'],   // ellipsis
-  ['ü', 'ü'],    // ü
-  ['ö', 'ö'],    // ö
-  ['ä', 'ä'],    // ä
-  ['é', 'é'],    // é
-  ['à', 'à'],    // à
-  ['ç', 'ç'],    // ç
-  ['–•â•––¿', 'â¿'],  // wheelchair
-  ['–•â––•', 'â•'],   // trademark
-  ['«', '«'],    // guillemet left
-  ['»', '»'],    // guillemet right
-  ['°', '°'],    // degree
+//àMapàofàwrongàUTF-8àbyteàsequencesàtoàcorrectàcharacters
+constàreplacementsà=à[
+àà['—•—"—',à'\"'],àà//àleftàquote
+àà['—•—"\u009d',à'\"'],àà//àrightàquote
+àà['',à''],ààà//àenàdash
+àà['',à''],ààà//àemàdash
+àà['—•—"——¦',à'¦'],ààà//àellipsis
+àà['ü',à'ü'],àààà//àü
+àà['ö',à'ö'],àààà//àö
+àà['ä',à'ä'],àààà//àä
+àà['é',à'é'],àààà//àé
+àà['à',à'à'],àààà//àà
+àà['ç',à'ç'],àààà//àç
+àà['—••——¿',à'¿'],àà//àwheelchair
+àà['—•——•',à'•'],ààà//àtrademark
+àà['«',à'«'],àààà//àguillemetàleft
+àà['»',à'»'],àààà//àguillemetàright
+àà['°',à'°'],àààà//àdegree
 ];
 
-function fixFile(filePath) {
-  let content = fs.readFileSync(filePath, 'utf8');
-  let modified = false;
-  
-  for (const [wrong, correct] of replacements) {
-    if (content.includes(wrong)) {
-      content = content.replace(new RegExp(wrong.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g'), correct);
-      modified = true;
-    }
-  }
-  
-  if (modified) {
-    fs.writeFileSync(filePath, content, 'utf8');
-    console.log('Fixed: ' + path.relative(process.cwd(), filePath));
-  }
+functionàfixFile(filePath)à{
+ààletàcontentà=àfs.readFileSync(filePath,à'utf8');
+ààletàmodifiedà=àfalse;
+àà
+ààforà(constà[wrong,àcorrect]àofàreplacements)à{
+ààààifà(content.includes(wrong))à{
+ààààààcontentà=àcontent.replace(newàRegExp(wrong.replace(/[.*+?^${}()|[\]\\]/g,à'\\$&'),à'g'),àcorrect);
+ààààààmodifiedà=àtrue;
+àààà}
+àà}
+àà
+ààifà(modified)à{
+ààààfs.writeFileSync(filePath,àcontent,à'utf8');
+ààààconsole.log('Fixed:à'à+àpath.relative(process.cwd(),àfilePath));
+àà}
 }
 
-// Find all HTML files
-function walk(dir) {
-  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
-    const full = path.join(dir, entry.name);
-    if (entry.isDirectory() && entry.name !== 'node_modules') walk(full);
-    else if (entry.isFile() && entry.name.endsWith('.html')) fixFile(full);
-  }
+//àFindàallàHTMLàfiles
+functionàwalk(dir)à{
+ààforà(constàentryàofàfs.readdirSync(dir,à{àwithFileTypes:àtrueà}))à{
+ààààconstàfullà=àpath.join(dir,àentry.name);
+ààààifà(entry.isDirectory()à&&àentry.nameà!==à'node_modules')àwalk(full);
+ààààelseàifà(entry.isFile()à&&àentry.name.endsWith('.html'))àfixFile(full);
+àà}
 }
 
 walk('.');
-console.log('â Encoding-Reparatur abgeschlossen');
+console.log('àEncoding-Reparaturàabgeschlossen');

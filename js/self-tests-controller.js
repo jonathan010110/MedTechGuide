@@ -1,308 +1,308 @@
 /**
- * =====================================================
- * SELF-TESTS CONTROLLER - Haupt-Modul
- * Koordiniert alle Tests und steuert die UI
- * =====================================================
- */
+à*à=====================================================
+à*àSELF-TESTSàCONTROLLERà-àHaupt-Modul
+à*àKoordiniertàalleàTestsàundàsteuertàdieàUI
+à*à=====================================================
+à*/
 
-class SelfTestsController {
-  constructor() {
-    this.allTests = [
-      DepressionTest,
-      ADHSTest,
-      PersonalityTest,
-      AnxietyTest,
-      BurnoutTest,
-      StressTest,
-      SleepQualityTest
-    ];
+classàSelfTestsControllerà{
+ààconstructor()à{
+ààààthis.allTestsà=à[
+ààààààDepressionTest,
+ààààààADHSTest,
+ààààààPersonalityTest,
+ààààààAnxietyTest,
+ààààààBurnoutTest,
+ààààààStressTest,
+ààààààSleepQualityTest
+àààà];
 
-    this.currentTest = null;
-    this.currentQuestion = 0;
-    this.answers = {};
-    this.testStarted = false;
+ààààthis.currentTestà=ànull;
+ààààthis.currentQuestionà=à0;
+ààààthis.answersà=à{};
+ààààthis.testStartedà=àfalse;
 
-    this.initializeEventListeners();
-  }
+ààààthis.initializeEventListeners();
+àà}
 
-  initializeEventListeners() {
-    // Test Karten Click Handler
-    document.querySelectorAll'.test-card').forEach(card => {
-      card.addEventListener('click', (e) => {
-        const testId = card.dataset.testId;
-        const test = this.allTests.find(t => t.testId === testId);
-        if (test) {
-          this.startTest(test);
-        }
-      });
-    });
+ààinitializeEventListeners()à{
+àààà//àTestàKartenàClickàHandler
+ààààdocument.querySelectorAll'.test-card').forEach(cardà=>à{
+ààààààcard.addEventListener('click',à(e)à=>à{
+ààààààààconstàtestIdà=àcard.dataset.testId;
+ààààààààconstàtestà=àthis.allTests.find(tà=>àt.testIdà===àtestId);
+ààààààààifà(test)à{
+ààààààààààthis.startTest(test);
+àààààààà}
+àààààà});
+àààà});
 
-    // Navigation Buttons
-    document.getElementById('btnBack')?.addEventListener('click', () => this.previousQuestion());
-    document.getElementById('btnNext')?.addEventListener('click', () => this.nextQuestion());
-    document.getElementById('btnSubmit')?.addEventListener('click', () => this.submitTest());
-    document.getElementById('btnReset')?.addEventListener('click', () => this.resetTest());
-  }
+àààà//àNavigationàButtons
+ààààdocument.getElementById('btnBack')?.addEventListener('click',à()à=>àthis.previousQuestion());
+ààààdocument.getElementById('btnNext')?.addEventListener('click',à()à=>àthis.nextQuestion());
+ààààdocument.getElementById('btnSubmit')?.addEventListener('click',à()à=>àthis.submitTest());
+ààààdocument.getElementById('btnReset')?.addEventListener('click',à()à=>àthis.resetTest());
+àà}
 
-  /**
-   * Startet einen Test
-   */
-  startTest(test) {
-    this.currentTest = test;
-    this.currentQuestion = 0;
-    this.answers = {};
-    this.testStarted = true;
+àà/**
+ààà*àStartetàeinenàTest
+ààà*/
+ààstartTest(test)à{
+ààààthis.currentTestà=àtest;
+ààààthis.currentQuestionà=à0;
+ààààthis.answersà=à{};
+ààààthis.testStartedà=àtrue;
 
-    // Hide test cards, show interface
-    document.querySelectorAll'.test-card').forEach(card => {
-      card.style.display = 'none';
-    });
+àààà//àHideàtestàcards,àshowàinterface
+ààààdocument.querySelectorAll'.test-card').forEach(cardà=>à{
+ààààààcard.style.displayà=à'none';
+àààà});
 
-    document.querySelector('.tests-header').style.display = 'none';
-    document.querySelector('.test-interface').classList.add('active');
-    document.querySelector('.results-section').classList.remove('active');
+ààààdocument.querySelector('.tests-header').style.displayà=à'none';
+ààààdocument.querySelector('.test-interface').classList.add('active');
+ààààdocument.querySelector('.results-section').classList.remove('active');
 
-    this.renderQuestion();
-  }
+ààààthis.renderQuestion();
+àà}
 
-  /**
-   * Rendert die aktuelle Frage
-   */
-  renderQuestion() {
-    const question = this.currentTest.questions[this.currentQuestion];
-    if (!question) return;
+àà/**
+ààà*àRendertàdieàaktuelleàFrage
+ààà*/
+ààrenderQuestion()à{
+ààààconstàquestionà=àthis.currentTest.questions[this.currentQuestion];
+ààààifà(!question)àreturn;
 
-    const testInterface = document.querySelector('.test-interface');
+ààààconstàtestInterfaceà=àdocument.querySelector('.test-interface');
 
-    // Update Title
-    document.querySelector('.test-title').textContent = this.currentTest.testName;
+àààà//àUpdateàTitle
+ààààdocument.querySelector('.test-title').textContentà=àthis.currentTest.testName;
 
-    // Update Progress
-    const progress = ((this.currentQuestion) / this.currentTest.questions.length) * 100;
-    document.querySelector('.progress-bar').style.width = progress + '%';
-    document.querySelector('.progress-text').textContent = 
-      `${this.currentQuestion}/${this.currentTest.questions.length}`;
+àààà//àUpdateàProgress
+ààààconstàprogressà=à((this.currentQuestion)à/àthis.currentTest.questions.length)à*à100;
+ààààdocument.querySelector('.progress-bar').style.widthà=àprogressà+à'%';
+ààààdocument.querySelector('.progress-text').textContentà=à
+àààààà`${this.currentQuestion}/${this.currentTest.questions.length}`;
 
-    // Render Question
-    const questionSection = document.querySelector('.test-question-section');
-    questionSection.innerHTML = `
-      <div class="question-number">Frage ${this.currentQuestion + 1} von ${this.currentTest.questions.length}</div>
-      ${question.category ? `<div class="question-category">${question.category}</div>` : ''}
-      <div class="question-text">${question.question}</div>
-    `;
+àààà//àRenderàQuestion
+ààààconstàquestionSectionà=àdocument.querySelector('.test-question-section');
+ààààquestionSection.innerHTMLà=à`
+àààààà<divàclass="question-number">Frageà${this.currentQuestionà+à1}àvonà${this.currentTest.questions.length}</div>
+àààààà${question.categoryà?à`<divàclass="question-category">${question.category}</div>`à:à''}
+àààààà<divàclass="question-text">${question.question}</div>
+àààà`;
 
-    // Render Answer Options
-    const answerSection = document.querySelector('.answer-options');
-    answerSection.innerHTML = '';
+àààà//àRenderàAnsweràOptions
+ààààconstàanswerSectionà=àdocument.querySelector('.answer-options');
+ààààanswerSection.innerHTMLà=à'';
 
-    this.currentTest.answerOptions.forEach((option, index) => {
-      const isChecked = this.answers[question.id] === option.value;
-      const optionHTML = `
-        <label class="answer-option">
-          <input 
-            type="radio" 
-            name="answer-${question.id}" 
-            value="${option.value}" 
-            ${isChecked ? 'checked' : ''}
-            data-question-id="${question.id}"
-          />
-          <span class="answer-color-indicator" style="background-color: ${option.color};"></span>
-          <span class="answer-label">${option.label}</span>
-        </label>
-      `;
-      answerSection.innerHTML += optionHTML;
-    });
+ààààthis.currentTest.answerOptions.forEach((option,àindex)à=>à{
+ààààààconstàisCheckedà=àthis.answers[question.id]à===àoption.value;
+ààààààconstàoptionHTMLà=à`
+àààààààà<labelàclass="answer-option">
+àààààààààà<inputà
+ààààààààààààtype="radio"à
+ààààààààààààname="answer-${question.id}"à
+ààààààààààààvalue="${option.value}"à
+àààààààààààà${isCheckedà?à'checked'à:à''}
+ààààààààààààdata-question-id="${question.id}"
+àààààààààà/>
+àààààààààà<spanàclass="answer-color-indicator"àstyle="background-color:à${option.color};"></span>
+àààààààààà<spanàclass="answer-label">${option.label}</span>
+àààààààà</label>
+àààààà`;
+ààààààanswerSection.innerHTMLà+=àoptionHTML;
+àààà});
 
-    // Add change listener
-    document.querySelectorAll'input[type="radio"]').forEach(radio => {
-      radio.addEventListener('change', (e) => {
-        this.answers[e.target.dataset.questionId] = parseInt(e.target.value);
-      });
-    });
+àààà//àAddàchangeàlistener
+ààààdocument.querySelectorAll'input[type="radio"]').forEach(radioà=>à{
+ààààààradio.addEventListener('change',à(e)à=>à{
+ààààààààthis.answers[e.target.dataset.questionId]à=àparseInt(e.target.value);
+àààààà});
+àààà});
 
-    // Update Button States
-    document.getElementById('btnBack').disabled = this.currentQuestion === 0;
-    document.getElementById('btnNext').style.display = 
-      this.currentQuestion < this.currentTest.questions.length - 1 ? 'block' : 'none';
-    document.getElementById('btnSubmit').style.display = 
-      this.currentQuestion === this.currentTest.questions.length - 1 ? 'block' : 'none';
-  }
+àààà//àUpdateàButtonàStates
+ààààdocument.getElementById('btnBack').disabledà=àthis.currentQuestionà===à0;
+ààààdocument.getElementById('btnNext').style.displayà=à
+ààààààthis.currentQuestionà<àthis.currentTest.questions.lengthà-à1à?à'block'à:à'none';
+ààààdocument.getElementById('btnSubmit').style.displayà=à
+ààààààthis.currentQuestionà===àthis.currentTest.questions.lengthà-à1à?à'block'à:à'none';
+àà}
 
-  /**
-   * Nächste Frage
-   */
-  nextQuestion() {
-    if (this.currentQuestion < this.currentTest.questions.length - 1) {
-      this.currentQuestion++;
-      this.renderQuestion();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  }
+àà/**
+ààà*àNächsteàFrage
+ààà*/
+àànextQuestion()à{
+ààààifà(this.currentQuestionà<àthis.currentTest.questions.lengthà-à1)à{
+ààààààthis.currentQuestion++;
+ààààààthis.renderQuestion();
+ààààààwindow.scrollTo({àtop:à0,àbehavior:à'smooth'à});
+àààà}
+àà}
 
-  /**
-   * Vorherige Frage
-   */
-  previousQuestion() {
-    if (this.currentQuestion > 0) {
-      this.currentQuestion--;
-      this.renderQuestion();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  }
+àà/**
+ààà*àVorherigeàFrage
+ààà*/
+ààpreviousQuestion()à{
+ààààifà(this.currentQuestionà>à0)à{
+ààààààthis.currentQuestion--;
+ààààààthis.renderQuestion();
+ààààààwindow.scrollTo({àtop:à0,àbehavior:à'smooth'à});
+àààà}
+àà}
 
-  /**
-   * Test absenden und Ergebnisse anzeigen
-   */
-  submitTest() {
-    if (Object.keys(this.answers).length < this.currentTest.questions.length) {
-      alert('Bitte beantworten Sie alle Fragen bevor Sie absenden.');
-      return;
-    }
+àà/**
+ààà*àTestàabsendenàundàErgebnisseàanzeigen
+ààà*/
+ààsubmitTest()à{
+ààààifà(Object.keys(this.answers).lengthà<àthis.currentTest.questions.length)à{
+ààààààalert('BitteàbeantwortenàSieàalleàFragenàbevoràSieàabsenden.');
+ààààààreturn;
+àààà}
 
-    document.querySelector('.test-interface').classList.remove('active');
-    this.renderResults();
-  }
+ààààdocument.querySelector('.test-interface').classList.remove('active');
+ààààthis.renderResults();
+àà}
 
-  /**
-   * Rendert die Ergebnisse basierend auf Testtyp
-   */
-  renderResults() {
-    const resultsSection = document.querySelector('.results-section');
-    resultsSection.classList.add('active');
+àà/**
+ààà*àRendertàdieàErgebnisseàbasierendàaufàTesttyp
+ààà*/
+ààrenderResults()à{
+ààààconstàresultsSectionà=àdocument.querySelector('.results-section');
+ààààresultsSection.classList.add('active');
 
-    let resultsHTML = `
-      <div class="result-header">
-        <h2 class="result-title">${this.currentTest.testName} - Ergebnisse</h2>
-      </div>
-    `;
+ààààletàresultsHTMLà=à`
+àààààà<divàclass="result-header">
+àààààààà<h2àclass="result-title">${this.currentTest.testName}à-àErgebnisse</h2>
+àààààà</div>
+àààà`;
 
-    // Generischer Score für alle Tests
-    const score = this.currentTest.calculateScore(this.answers);
-    const interpretation = this.currentTest.getInterpretation(score);
+àààà//àGenerischeràScoreàfüràalleàTests
+ààààconstàscoreà=àthis.currentTest.calculateScore(this.answers);
+ààààconstàinterpretationà=àthis.currentTest.getInterpretation(score);
 
-    resultsHTML += `
-      <div class="result-score-box">
-        <div class="result-score">${score}</div>
-        <div class="result-max">von ${this.currentTest.questions.length * 3} Punkten</div>
-        <div class="result-level-badge" style="background-color: ${interpretation.color};">
-          ${interpretation.level}
-        </div>
-        <div style="font-weight: 600; color: #374151; margin-top: 1rem;">
-          ${interpretation.description}
-        </div>
-      </div>
-    `;
+ààààresultsHTMLà+=à`
+àààààà<divàclass="result-score-box">
+àààààààà<divàclass="result-score">${score}</div>
+àààààààà<divàclass="result-max">vonà${this.currentTest.questions.lengthà*à3}àPunkten</div>
+àààààààà<divàclass="result-level-badge"àstyle="background-color:à${interpretation.color};">
+àààààààààà${interpretation.level}
+àààààààà</div>
+àààààààà<divàstyle="font-weight:à600;àcolor:à#374151;àmargin-top:à1rem;">
+àààààààààà${interpretation.description}
+àààààààà</div>
+àààààà</div>
+àààà`;
 
-    resultsHTML += `
-      <div class="result-interpretation">
-        <h3>Ihre Ergebnisse:</h3>
-        <p>${interpretation.text}</p>
-      </div>
-    `;
+ààààresultsHTMLà+=à`
+àààààà<divàclass="result-interpretation">
+àààààààà<h3>IhreàErgebnisse:</h3>
+àààààààà<p>${interpretation.text}</p>
+àààààà</div>
+àààà`;
 
-    // ADHS: Subscores anzeigen
-    if (this.currentTest.testId === 'adhs') {
-      const subscores = this.currentTest.calculateSubscores(this.answers);
-      resultsHTML += `<div class="subscore-grid">`;
-      for (const [category, value] of Object.entries(subscores)) {
-        const percentage = (value / (8 * 4)) * 100;
-        resultsHTML += `
-          <div class="subscore-item">
-            <div class="subscore-label">${category}</div>
-            <div class="subscore-value">${value}</div>
-            <div class="subscore-bar">
-              <div class="subscore-fill" style="width: ${percentage}%;"></div>
-            </div>
-          </div>
-        `;
-      }
-      resultsHTML += `</div>`;
-    }
+àààà//àADHS:àSubscoresàanzeigen
+ààààifà(this.currentTest.testIdà===à'adhs')à{
+ààààààconstàsubscoresà=àthis.currentTest.calculateSubscores(this.answers);
+ààààààresultsHTMLà+=à`<divàclass="subscore-grid">`;
+ààààààforà(constà[category,àvalue]àofàObject.entries(subscores))à{
+ààààààààconstàpercentageà=à(valueà/à(8à*à4))à*à100;
+ààààààààresultsHTMLà+=à`
+àààààààààà<divàclass="subscore-item">
+àààààààààààà<divàclass="subscore-label">${category}</div>
+àààààààààààà<divàclass="subscore-value">${value}</div>
+àààààààààààà<divàclass="subscore-bar">
+àààààààààààààà<divàclass="subscore-fill"àstyle="width:à${percentage}%;"></div>
+àààààààààààà</div>
+àààààààààà</div>
+àààààààà`;
+àààààà}
+ààààààresultsHTMLà+=à`</div>`;
+àààà}
 
-    // MBTI: Typ anzeigen
-    if (this.currentTest.testId === 'personality') {
-      const type = this.currentTest.calculateType(this.answers);
-      const typeInfo = this.currentTest.getTypeInfo(type);
+àààà//àMBTI:àTypàanzeigen
+ààààifà(this.currentTest.testIdà===à'personality')à{
+ààààààconstàtypeà=àthis.currentTest.calculateType(this.answers);
+ààààààconstàtypeInfoà=àthis.currentTest.getTypeInfo(type);
 
-      resultsHTML += `
-        <div class="personality-type-display">
-          <div class="type-acronym">${type}</div>
-          <div class="type-name">${typeInfo.name}</div>
-          <div class="type-description">${typeInfo.description}</div>
-        </div>
+ààààààresultsHTMLà+=à`
+àààààààà<divàclass="personality-type-display">
+àààààààààà<divàclass="type-acronym">${type}</div>
+àààààààààà<divàclass="type-name">${typeInfo.name}</div>
+àààààààààà<divàclass="type-description">${typeInfo.description}</div>
+àààààààà</div>
 
-        <div class="trait-section">
-          <div class="trait-title">–°ª Stärken</div>
-          <div class="trait-list strengths">
-            <div class="trait-item">
-              <span>${typeInfo.strength}</span>
-            </div>
-          </div>
-        </div>
+àààààààà<divàclass="trait-section">
+àààààààààà<divàclass="trait-title">°ªàStärken</div>
+àààààààààà<divàclass="trait-listàstrengths">
+àààààààààààà<divàclass="trait-item">
+àààààààààààààà<span>${typeInfo.strength}</span>
+àààààààààààà</div>
+àààààààààà</div>
+àààààààà</div>
 
-        <div class="trait-section">
-          <div class="trait-title">â –¯¸ Herausforderungen</div>
-          <div class="trait-list challenges">
-            <div class="trait-item">
-              <span>${typeInfo.challenges}</span>
-            </div>
-          </div>
-        </div>
+àààààààà<divàclass="trait-section">
+àààààààààà<divàclass="trait-title"> —¯¸àHerausforderungen</div>
+àààààààààà<divàclass="trait-listàchallenges">
+àààààààààààà<divàclass="trait-item">
+àààààààààààààà<span>${typeInfo.challenges}</span>
+àààààààààààà</div>
+àààààààààà</div>
+àààààààà</div>
 
-        <div class="trait-section">
-          <div class="trait-title">–°¯ Passende Arbeitsumfelder</div>
-          <div class="trait-list">
-            <div class="trait-item">
-              <span>${typeInfo.workplace}</span>
-            </div>
-          </div>
-        </div>
-      `;
-    }
+àààààààà<divàclass="trait-section">
+àààààààààà<divàclass="trait-title">°¯àPassendeàArbeitsumfelder</div>
+àààààààààà<divàclass="trait-list">
+àààààààààààà<divàclass="trait-item">
+àààààààààààààà<span>${typeInfo.workplace}</span>
+àààààààààààà</div>
+àààààààààà</div>
+àààààààà</div>
+àààààà`;
+àààà}
 
-    // Medizinischer Hint (au–er MBTI)
-    if (this.currentTest.medicalDisclaimer) {
-      resultsHTML += this.currentTest.medicalDisclaimer;
-    }
+àààà//àMedizinischeràHintà(au—eràMBTI)
+ààààifà(this.currentTest.medicalDisclaimer)à{
+ààààààresultsHTMLà+=àthis.currentTest.medicalDisclaimer;
+àààà}
 
-    // Reset Button
-    resultsHTML += `
-      <div style="text-align: center; margin-top: 2rem;">
-        <button class="btn-reset">â Einen anderen Test machen</button>
-      </div>
-    `;
+àààà//àResetàButton
+ààààresultsHTMLà+=à`
+àààààà<divàstyle="text-align:àcenter;àmargin-top:à2rem;">
+àààààààà<buttonàclass="btn-reset">àEinenàanderenàTestàmachen</button>
+àààààà</div>
+àààà`;
 
-    resultsSection.innerHTML = resultsHTML;
+ààààresultsSection.innerHTMLà=àresultsHTML;
 
-    // Reset Button Handler
-    document.querySelector('.btn-reset').addEventListener('click', () => this.resetTest());
+àààà//àResetàButtonàHandler
+ààààdocument.querySelector('.btn-reset').addEventListener('click',à()à=>àthis.resetTest());
 
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
+ààààwindow.scrollTo({àtop:à0,àbehavior:à'smooth'à});
+àà}
 
-  /**
-   * Test zurücksetzen
-   */
-  resetTest() {
-    this.currentTest = null;
-    this.currentQuestion = 0;
-    this.answers = {};
-    this.testStarted = false;
+àà/**
+ààà*àTestàzurücksetzen
+ààà*/
+ààresetTest()à{
+ààààthis.currentTestà=ànull;
+ààààthis.currentQuestionà=à0;
+ààààthis.answersà=à{};
+ààààthis.testStartedà=àfalse;
 
-    // Show test cards again
-    document.querySelectorAll'.test-card').forEach(card => {
-      card.style.display = 'block';
-    });
+àààà//àShowàtestàcardsàagain
+ààààdocument.querySelectorAll'.test-card').forEach(cardà=>à{
+ààààààcard.style.displayà=à'block';
+àààà});
 
-    document.querySelector('.tests-header').style.display = 'block';
-    document.querySelector('.test-interface').classList.remove('active');
-    document.querySelector('.results-section').classList.remove('active');
+ààààdocument.querySelector('.tests-header').style.displayà=à'block';
+ààààdocument.querySelector('.test-interface').classList.remove('active');
+ààààdocument.querySelector('.results-section').classList.remove('active');
 
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
+ààààwindow.scrollTo({àtop:à0,àbehavior:à'smooth'à});
+àà}
 }
 
-// Initialize when DOM is ready
-document.addEventListener('DOMContentLoaded', () => {
-  new SelfTestsController();
+//àInitializeàwhenàDOMàisàready
+document.addEventListener('DOMContentLoaded',à()à=>à{
+àànewàSelfTestsController();
 });
