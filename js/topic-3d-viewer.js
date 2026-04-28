@@ -4,6 +4,227 @@ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
 const loader = new GLTFLoader();
 
+const HOTSPOT_DEFINITIONS = {
+  'insulin-pump': [
+    {
+      id: 'display',
+      name: 'Display',
+      position: [0, 0.95, 0.2],
+      size: [0.45, 0.28, 0.2],
+      infoText: 'Das Display zeigt Glukosewerte, Trends und Therapiehinweise in Echtzeit.'
+    },
+    {
+      id: 'cartridge',
+      name: 'Insulinpatrone',
+      position: [0.55, 0.8, 0],
+      size: [0.25, 0.25, 0.8],
+      infoText: 'In der Patrone wird das Insulin gespeichert und zur Abgabe bereitgestellt.'
+    }
+  ],
+  heart: [
+    {
+      id: 'ventricle',
+      name: 'Herzkammer',
+      position: [0, 0.7, 0.06],
+      size: [0.6, 0.6, 0.55],
+      infoText: 'Die Herzkammer pumpt sauerstoffreiches Blut in den Koerperkreislauf.'
+    },
+    {
+      id: 'vessels',
+      name: 'Grosse Gefaesse',
+      position: [0, 1.45, 0],
+      size: [0.5, 0.45, 0.4],
+      infoText: 'Hier verlaufen zentrale Gefaesse wie Aorta und Pulmonalarterie.'
+    }
+  ],
+  neurochip: [
+    {
+      id: 'chip-core',
+      name: 'Chip-Kern',
+      position: [0, 1.15, 0.26],
+      size: [0.38, 0.28, 0.18],
+      infoText: 'Der Chip-Kern verarbeitet Signale und ermoeglicht neuronale Schnittstellen.'
+    },
+    {
+      id: 'brain-interface',
+      name: 'Neuronale Kontaktflaeche',
+      position: [0, 0.95, 0.05],
+      size: [0.95, 0.6, 0.8],
+      infoText: 'Diese Region steht stellvertretend fuer die Kopplung mit Hirngewebe.'
+    }
+  ],
+  'dna-helix': [
+    {
+      id: 'strand-a',
+      name: 'DNA-Strang',
+      position: [0.25, 1.0, 0],
+      size: [0.35, 1.9, 0.35],
+      infoText: 'Ein DNA-Strang traegt die Basensequenz als genetische Information.'
+    },
+    {
+      id: 'base-pairs',
+      name: 'Basenpaare',
+      position: [0, 1.0, 0],
+      size: [0.55, 1.9, 0.55],
+      infoText: 'Basenpaare verbinden beide Straenge und codieren Erbinformationen.'
+    }
+  ],
+  bmw: [
+    {
+      id: 'vehicle-body',
+      name: 'Fahrzeugkarosserie',
+      position: [0, 0.58, 0],
+      size: [1.8, 0.75, 0.95],
+      infoText: 'Die Karosserie steht fuer die mechanische Struktur des Modells.'
+    }
+  ],
+  'ct-scanner': [
+    {
+      id: 'gantry',
+      name: 'CT-Gantry',
+      position: [-0.3, 0.95, 0],
+      size: [1.15, 1.15, 0.6],
+      infoText: 'Die Gantry enthaelt Roentgenroehre und Detektoren fuer Schnittbilder.'
+    },
+    {
+      id: 'patient-table',
+      name: 'Patiententisch',
+      position: [0.5, 0.72, 0],
+      size: [1.1, 0.18, 0.5],
+      infoText: 'Der Tisch positioniert die Patientin oder den Patienten praezise im Scanner.'
+    }
+  ],
+  'mrt-scanner': [
+    {
+      id: 'mrt-tunnel',
+      name: 'MRT-Tunnel',
+      position: [-0.1, 0.78, 0],
+      size: [1.8, 0.95, 0.95],
+      infoText: 'Im Tunnel befindet sich das starke Magnetfeld fuer die Bildgebung.'
+    },
+    {
+      id: 'mrt-bed',
+      name: 'Patientenliege',
+      position: [0.66, 0.57, 0],
+      size: [1.4, 0.2, 0.55],
+      infoText: 'Die Liege faehrt in den Magneten und bestimmt die exakte Lage der Aufnahme.'
+    }
+  ],
+  ultraschall: [
+    {
+      id: 'ultrasound-probe',
+      name: 'Ultraschallsonde',
+      position: [0.56, 0.9, 0.18],
+      size: [0.35, 0.35, 0.35],
+      infoText: 'Die Sonde sendet Schallwellen aus und empfaengt Echos fuer das Bild.'
+    },
+    {
+      id: 'ultrasound-screen',
+      name: 'Monitor',
+      position: [0, 1.23, -0.05],
+      size: [0.65, 0.4, 0.2],
+      infoText: 'Der Monitor visualisiert die rekonstruierten Ultraschallsignale.'
+    }
+  ]
+};
+
+function normalizeHotspotEntry(entry, modelKey) {
+  return {
+    id: entry.id,
+    name: entry.name,
+    position: new THREE.Vector3(...entry.position),
+    size: new THREE.Vector3(...entry.size),
+    modelKey,
+    infoText: entry.infoText
+  };
+}
+
+function getHotspotDefinitions(modelKey) {
+  const definitions = HOTSPOT_DEFINITIONS[modelKey] || [];
+  return definitions.map((entry) => normalizeHotspotEntry(entry, modelKey));
+}
+
+function createHotspotMesh(hotspot, modelRef, modelLabel, debugVisible) {
+  const geometry = new THREE.BoxGeometry(hotspot.size.x, hotspot.size.y, hotspot.size.z);
+  const material = new THREE.MeshBasicMaterial({
+    color: 0xf97316,
+    transparent: true,
+    opacity: debugVisible ? 0.25 : 0,
+    depthWrite: false,
+    visible: true
+  });
+
+  const mesh = new THREE.Mesh(geometry, material);
+  mesh.position.copy(hotspot.position);
+  mesh.name = `hotspot-${hotspot.id}`;
+  mesh.renderOrder = 999;
+  mesh.userData.hotspot = {
+    id: hotspot.id,
+    name: hotspot.name,
+    modelKey: hotspot.modelKey,
+    modelLabel,
+    modelRef,
+    infoText: hotspot.infoText
+  };
+  return mesh;
+}
+
+function createHotspotInfoBox(section) {
+  const panel = document.createElement('div');
+  panel.className = 'imaging-hotspot-info';
+  panel.style.position = 'absolute';
+  panel.style.left = '16px';
+  panel.style.bottom = '16px';
+  panel.style.maxWidth = '320px';
+  panel.style.padding = '10px 12px';
+  panel.style.borderRadius = '10px';
+  panel.style.background = 'rgba(15, 23, 42, 0.88)';
+  panel.style.color = '#f8fafc';
+  panel.style.fontFamily = '"Segoe UI", Tahoma, sans-serif';
+  panel.style.fontSize = '0.92rem';
+  panel.style.lineHeight = '1.4';
+  panel.style.boxShadow = '0 10px 24px rgba(2, 6, 23, 0.25)';
+  panel.style.pointerEvents = 'none';
+  panel.style.zIndex = '5';
+  panel.style.display = 'none';
+
+  const title = document.createElement('strong');
+  title.style.display = 'block';
+  title.style.marginBottom = '4px';
+  panel.appendChild(title);
+
+  const body = document.createElement('span');
+  panel.appendChild(body);
+
+  section.style.position = section.style.position || 'relative';
+  section.appendChild(panel);
+
+  return {
+    show(textTitle, textBody) {
+      title.textContent = textTitle;
+      body.textContent = textBody;
+      panel.style.display = 'block';
+    },
+    hide() {
+      panel.style.display = 'none';
+    }
+  };
+}
+
+function createHotspotDebugButton(section) {
+  const controls = section.querySelector('.imaging-3d-controls');
+  if (!controls) return null;
+
+  const button = document.createElement('button');
+  button.type = 'button';
+  button.dataset.action = 'toggle-hotspots';
+  button.setAttribute('aria-pressed', 'false');
+  button.textContent = 'Hotspots Debug aus';
+  controls.appendChild(button);
+
+  return button;
+}
+
 function makeMaterial(color, metalness = 0.2, roughness = 0.5, emissive = 0x000000, emissiveIntensity = 0) {
   return new THREE.MeshStandardMaterial({ color, metalness, roughness, emissive, emissiveIntensity });
 }
@@ -500,6 +721,80 @@ function buildViewer(section) {
   let currentModel = null;
   let autoRotate = false;
   let pulseEnabled = false;
+  let hotspotMeshes = [];
+  let hotspotLookup = new Map();
+  let hotspotDebugVisible = false;
+
+  const raycaster = new THREE.Raycaster();
+  const pointer = new THREE.Vector2();
+  let hoveredHotspot = null;
+
+  const infoBox = createHotspotInfoBox(section);
+  const btnHotspotDebug = createHotspotDebugButton(section);
+
+  function toggleHotspotDebug(visible) {
+    hotspotDebugVisible = visible;
+    hotspotMeshes.forEach((mesh) => {
+      if (!mesh.material) return;
+      mesh.material.opacity = hotspotDebugVisible ? 0.25 : 0;
+      mesh.material.needsUpdate = true;
+    });
+
+    if (btnHotspotDebug) {
+      btnHotspotDebug.setAttribute('aria-pressed', hotspotDebugVisible ? 'true' : 'false');
+      btnHotspotDebug.textContent = hotspotDebugVisible ? 'Hotspots Debug an' : 'Hotspots Debug aus';
+    }
+  }
+
+  function clearHotspots() {
+    hoveredHotspot = null;
+    hotspotLookup = new Map();
+    hotspotMeshes = [];
+    renderer.domElement.style.cursor = 'grab';
+    infoBox.hide();
+  }
+
+  function attachHotspots(modelRoot, modelKey) {
+    clearHotspots();
+
+    const definitions = getHotspotDefinitions(modelKey);
+    if (!definitions.length) return;
+
+    const hotspotLayer = new THREE.Group();
+    hotspotLayer.name = 'hotspot-layer';
+
+    definitions.forEach((hotspot) => {
+      const mesh = createHotspotMesh(hotspot, modelRoot, title, hotspotDebugVisible);
+      hotspotLayer.add(mesh);
+      hotspotMeshes.push(mesh);
+      hotspotLookup.set(mesh.uuid, mesh.userData.hotspot);
+    });
+
+    modelRoot.add(hotspotLayer);
+  }
+
+  function setPointerFromEvent(event) {
+    const bounds = renderer.domElement.getBoundingClientRect();
+    pointer.x = ((event.clientX - bounds.left) / bounds.width) * 2 - 1;
+    pointer.y = -((event.clientY - bounds.top) / bounds.height) * 2 + 1;
+  }
+
+  function getHotspotHit(event) {
+    if (!hotspotMeshes.length) return null;
+
+    setPointerFromEvent(event);
+    raycaster.setFromCamera(pointer, camera);
+    const hits = raycaster.intersectObjects(hotspotMeshes, false);
+    if (!hits.length) return null;
+
+    const hotspot = hotspotLookup.get(hits[0].object.uuid);
+    if (!hotspot) return null;
+
+    return {
+      hotspot,
+      object: hits[0].object
+    };
+  }
 
   function setStatus(text, isError = false) {
     if (!statusEl) return;
@@ -517,6 +812,7 @@ function buildViewer(section) {
 
   function replaceModel(nextModel) {
     if (currentModel) {
+      clearHotspots();
       scene.remove(currentModel);
       disposeModel(currentModel);
     }
@@ -524,6 +820,7 @@ function buildViewer(section) {
     normalizeModel(nextModel, targetSize, yOffset);
     currentModel = nextModel;
     scene.add(currentModel);
+    attachHotspots(currentModel, fallbackKey);
     fitCameraToObject(camera, controls, currentModel);
   }
 
@@ -595,6 +892,33 @@ function buildViewer(section) {
     btnRotate.textContent = autoRotate ? 'Rotation an' : 'Rotation aus';
   });
 
+  btnHotspotDebug?.addEventListener('click', () => {
+    toggleHotspotDebug(!hotspotDebugVisible);
+  });
+
+  renderer.domElement.addEventListener('pointermove', (event) => {
+    const hit = getHotspotHit(event);
+    hoveredHotspot = hit?.hotspot || null;
+    renderer.domElement.style.cursor = hoveredHotspot ? 'pointer' : 'grab';
+  });
+
+  renderer.domElement.addEventListener('pointerleave', () => {
+    hoveredHotspot = null;
+    renderer.domElement.style.cursor = 'grab';
+  });
+
+  renderer.domElement.addEventListener('click', (event) => {
+    const hit = getHotspotHit(event);
+    if (!hit) {
+      infoBox.hide();
+      return;
+    }
+
+    const heading = `${hit.hotspot.modelLabel}: ${hit.hotspot.name}`;
+    const text = `${hit.hotspot.infoText} (Hotspot: ${hit.hotspot.id}, Modell: ${hit.hotspot.modelKey})`;
+    infoBox.show(heading, text);
+  });
+
   const animate = (timeMs) => {
     requestAnimationFrame(animate);
     const time = timeMs * 0.001;
@@ -648,6 +972,7 @@ function buildViewer(section) {
 
   window.addEventListener('resize', resize);
   resize();
+  toggleHotspotDebug(false);
   loadModel();
   animate(0);
 }
