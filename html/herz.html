@@ -1,225 +1,225 @@
-<!DOCTYPEàhtml>
-<htmlàlang="de">
+<!DOCTYPE html>
+<html lang="de">
 <head>
-àà<metaàcharset="utf-8"à/>
-àà<title>Herz-Kreislauf-Technologieà—•—""àMedTechGuide</title>
-àà<metaàname="viewport"àcontent="width=device-width,àinitial-scale=1.0"à/>
-àà<baseàhref="../"à/>
-àà<linkàrel="stylesheet"àhref="css/style.css"à/>
-àà<scriptàtype="importmap">{"imports":{"three":"https://unpkg.com/three@0.163.0/build/three.module.js","three/addons/":"https://unpkg.com/three@0.163.0/examples/jsm/"}}</script>
+  <meta charset="utf-8" />
+  <title>Herz-Kreislauf-Technologie  – • – "" MedTechGuide</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <base href="../" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.163.0/build/three.module.js","three/addons/":"https://unpkg.com/three@0.163.0/examples/jsm/"}}</script>
 </head>
 <body>
-àà<!--à¿àACCESSIBILITY:àSkipàtoàContentàLinkà-->
-àà<aàhref="#main-content"àclass="skip-to-content">ZumàInhaltàspringen</a>
-àà
-àà<divàid="loader"><divàclass="spinner"></div><p>Seiteàwirdàgeladen¦</p></div>
+  <!-- ¿ ACCESSIBILITY: Skip to Content Link -->
+  <a href="#main-content" class="skip-to-content">Zum Inhalt springen</a>
+  
+  <div id="loader"><div class="spinner"></div><p>Seite wird geladen¦</p></div>
 
-àà<headeràclass="site-header">
-àààà<divàclass="container">
-àààààà<h1>Herz-Kreislauf-Technologie</h1>
-àààààà<pàclass="subtitle">EKG,àBlutdruck,àSchrittmacheràundàDefibrillatoren</p>
-àààà</div>
-àà</header>
+  <header class="site-header">
+    <div class="container">
+      <h1>Herz-Kreislauf-Technologie</h1>
+      <p class="subtitle">EKG, Blutdruck, Schrittmacher und Defibrillatoren</p>
+    </div>
+  </header>
 
-àà<navàclass="main-nav">
-àààà<divàclass="nav-container">
-àààààà<divàclass="nav-links">
-àààààààà<aàhref="index.html">Start</a>
-àààààààà<aàhref="html/diabetes.html">Diabetes</a>
-àààààààà<aàhref="html/allergie.html">Allergien</a>
-àààààààà<aàhref="html/herz.html"àclass="active">Herz</a>
-àààààààà<aàhref="html/bildgebung.html">Bildgebung</a>
-àààààààà<aàhref="html/neurochips.html">Neurochips</a>
-àààààààà<aàhref="html/exoskelette.html">Exoskelette</a>
-àààààààà<aàhref="html/genetik.html">Genetik</a>
-àààààààà<aàhref="html/ki-diagnose.html">KI-Diagnose</a>
-àààààààà<aàhref="html/zukunft.html">Zukunft</a>
-àààààààà<aàhref="html/quiz.html"àstyle="background:àlinear-gradient(135deg,à#1e40afà0%,à#0f766eà100%);àcolor:àwhite;àfont-weight:à700;">—°—¸—½——¯àQuiz</a>
-àààààààà<aàhref="html/self-tests.html"àstyle="background:àlinear-gradient(135deg,à#7c3aedà0%,à#ec4899à100%);àcolor:àwhite;àfont-weight:à700;">—°—¸——ç—— àTests</a>
-àààààààà<aàhref="html/quellen.html">Quellen</a>
-àààààà</div>
-àààààà<divàclass="nav-search">
-àààààààà<inputàtype="text"àid="globalSearch"àplaceholder="Suche¦"àaria-label="GlobaleàSuche">
-àààààààà<spanàid="searchResults"àclass="search-results"></span>
-àààààà</div>
-àààà</div>
-àà</nav>
+  <nav class="main-nav">
+    <div class="nav-container">
+      <div class="nav-links">
+        <a href="index.html">Start</a>
+        <a href="html/diabetes.html">Diabetes</a>
+        <a href="html/allergie.html">Allergien</a>
+        <a href="html/herz.html" class="active">Herz</a>
+        <a href="html/bildgebung.html">Bildgebung</a>
+        <a href="html/neurochips.html">Neurochips</a>
+        <a href="html/exoskelette.html">Exoskelette</a>
+        <a href="html/genetik.html">Genetik</a>
+        <a href="html/ki-diagnose.html">KI-Diagnose</a>
+        <a href="html/zukunft.html">Zukunft</a>
+        <a href="html/quiz.html" style="background: linear-gradient(135deg, #1e40af 0%, #0f766e 100%); color: white; font-weight: 700;"> – ° – ¸ – ½ – ¯ Quiz</a>
+        <a href="html/self-tests.html" style="background: linear-gradient(135deg, #7c3aed 0%, #ec4899 100%); color: white; font-weight: 700;"> – ° – ¸ – ç –   Tests</a>
+        <a href="html/quellen.html">Quellen</a>
+      </div>
+      <div class="nav-search">
+        <input type="text" id="globalSearch" placeholder="Suche¦" aria-label="Globale Suche">
+        <span id="searchResults" class="search-results"></span>
+      </div>
+    </div>
+  </nav>
 
-àà<mainàclass="container"àid="main-content">
-àààà<sectionàclass="section-card">
-àààààà<h2>Einführung</h2>
-àààààà<p>DasàHerz-Kreislauf-SystemàistàdasàwichtigsteàOrgansystemàdesàKörpers.àEineàFehlfunktionàführtàzuàschwerwiegendenàErkrankungenàwieàMyokardinfarkt,àArrhythmienàundàHerzinsuffizienz.àModerneàMedizintechnikàermöglichtàpräziseàDiagnostikàundàlebensrettendeàTherapieàdurchàEKG,àBlutdruckmessung,àSchrittmacheràundàimplantierbareàDefibrillatorenà(ICD).</p>
-àààààà<p>Herz-Kreislauf-ErkrankungenàsindàweltweitàdieàNummer-1-Todesursache.</p>
-àààà</section>
+  <main class="container" id="main-content">
+    <section class="section-card">
+      <h2>Einführung</h2>
+      <p>Das Herz-Kreislauf-System ist das wichtigste Organsystem des Körpers. Eine Fehlfunktion führt zu schwerwiegenden Erkrankungen wie Myokardinfarkt, Arrhythmien und Herzinsuffizienz. Moderne Medizintechnik ermöglicht präzise Diagnostik und lebensrettende Therapie durch EKG, Blutdruckmessung, Schrittmacher und implantierbare Defibrillatoren (ICD).</p>
+      <p>Herz-Kreislauf-Erkrankungen sind weltweit die Nummer-1-Todesursache.</p>
+    </section>
 
-àààà<sectionàclass="section-card">
-àààààà<h2>Kurzàerklärt</h2>
-àààààà<p><strong>Diagnostik:</strong>àEKGàmisstàelektrischeàAktivitätàdesàHerzens.àBlutdruckgeräteàerfassenàsystolischenàundàdiastolischenàDruck.à<strong>Therapie:</strong>àSchrittmacheràstimulierenàdasàHerzàelektrisch.àICDsàdetektierenàgefährlicheàArrhythmienàundàgebenàSchocksàab.àAllàdieseàGeräteàbasierenàaufàElektrik,àSignalverarbeitungàundàAlgorithmen.</p>
-àààà</section>
+    <section class="section-card">
+      <h2>Kurz erklärt</h2>
+      <p><strong>Diagnostik:</strong> EKG misst elektrische Aktivität des Herzens. Blutdruckgeräte erfassen systolischen und diastolischen Druck. <strong>Therapie:</strong> Schrittmacher stimulieren das Herz elektrisch. ICDs detektieren gefährliche Arrhythmien und geben Schocks ab. All diese Geräte basieren auf Elektrik, Signalverarbeitung und Algorithmen.</p>
+    </section>
 
-àààà<sectionàclass="section-cardàimaging-3d-card"àdata-three-vieweràdata-model-label="Herz"àdata-model-path="data/models/herz.glb"àdata-fallback-model="heart"àdata-target-size="1.75">
-àààààà<h2>3D-Modell:àHerz</h2>
-àààààà<pàclass="imaging-3d-model-caption">Eineàklareà3D-AnsichtàdesàHerzensàmitàseinemàgrundlegendenàAufbau.</p>
-àààààà<divàclass="imaging-3d-controls"àrole="group"àaria-label="Steuerungàfueràdasà3D-ModellàdesàHerzens">
-àààààààà<buttonàtype="button"àdata-action="reload">Modellàneuàladen</button>
-àààààààà<buttonàtype="button"àdata-action="reset">Ansichtàzurücksetzen</button>
-àààààààà<buttonàtype="button"àdata-action="autorotate"àaria-pressed="false">Rotationàaus</button>
-àààààà</div>
-àààààà<pàclass="imaging-3d-status"àaria-live="polite">Modellàwirdàgeladen...</p>
-àààààà<divàclass="imaging-3d-viewer"àaria-label="Interaktiverà3D-VieweràfueràHerz"></div>
-àààààà<pàclass="imaging-3d-hint">
-àààààààà<spanàclass="imaging-hint-desktop">Steuerung:àLinkeàMaustasteàdrehen,àMausradàzoomen,àrechteàMaustasteàverschieben.</span>
-àààààààà<spanàclass="imaging-hint-mobile">Handy:àMitàeinemàFingeràdrehen,àmitàzweiàFingernàzoomenàundàverschieben.</span>
-àààààà</p>
-àààà</section>
+    <section class="section-card imaging-3d-card" data-three-viewer data-model-label="Herz" data-model-path="data/models/herz.glb" data-fallback-model="heart" data-target-size="1.75">
+      <h2>3D-Modell: Herz</h2>
+      <p class="imaging-3d-model-caption">Eine klare 3D-Ansicht des Herzens mit seinem grundlegenden Aufbau.</p>
+      <div class="imaging-3d-controls" role="group" aria-label="Steuerung fuer das 3D-Modell des Herzens">
+        <button type="button" data-action="reload">Modell neu laden</button>
+        <button type="button" data-action="reset">Ansicht zurücksetzen</button>
+        <button type="button" data-action="autorotate" aria-pressed="false">Rotation aus</button>
+      </div>
+      <p class="imaging-3d-status" aria-live="polite">Modell wird geladen...</p>
+      <div class="imaging-3d-viewer" aria-label="Interaktiver 3D-Viewer fuer Herz"></div>
+      <p class="imaging-3d-hint">
+        <span class="imaging-hint-desktop">Steuerung: Linke Maustaste drehen, Mausrad zoomen, rechte Maustaste verschieben.</span>
+        <span class="imaging-hint-mobile">Handy: Mit einem Finger drehen, mit zwei Fingern zoomen und verschieben.</span>
+      </p>
+    </section>
 
-àààà<!--àIMAGE:àHerz-Kreislaufà-->
-àààà<figureàclass="section-image">
-àààààà<imgàsrc="images/herz-1.jpg"àalt="EKG-GerätàundàSchrittmacheràTechnologie"à/>
-àààààà<figcaption>KardialeàDiagnostikàundàTherapie:àEKG-GeräteàüberwachenàdieàHerzaktivität,àSchrittmacheràstabilisierenàdenàHerzrhythmus</figcaption>
-àààà</figure>
+    <!-- IMAGE: Herz-Kreislauf -->
+    <figure class="section-image">
+      <img src="images/herz-1.jpg" alt="EKG-Gerät und Schrittmacher Technologie" />
+      <figcaption>Kardiale Diagnostik und Therapie: EKG-Geräte überwachen die Herzaktivität, Schrittmacher stabilisieren den Herzrhythmus</figcaption>
+    </figure>
 
-àààà<sectionàclass="section-card">
-àààààà<h2>TechnischeàFunktionsweise</h2>
-àààààà<h3>Elektrokardiogrammà(EKG)</h3>
-àààààà<p>DasàHerzàerzeugtàbeimàSchlagàelektrischeàPotenziale.àElektrodenàaufàderàHautoberflächeàmessenàdieseàSpannungsunterschiede.àEinàEKG-GerätàverstärktàdasàSignal,àfiltertàRauschenàundàzeigtàesàaufàeinemàDisplayàoderàPapierstreifen.àDieàKurveàzeigtàP-Welleà(Vorhofkontraktion),àQRS-Komplexà(Kammern)àundàT-Welleà(Kammerrepolarisation).</p>
-àààààà<h3>Blutdruckmessung</h3>
-àààààà<p><strong>Manuellà(auskultatorisch):</strong>àOberarmmanschetteàwirdàaufgeblasen,àbisàBlutflussàgestoppt.àBeimàAblassenàwirdàdieàManschetteàmitàStethoskopàüberwacht.àSystolischeràDruckàistàderàPunkt,àwoàKorotkoff-Töneàhörbaràwerden,àdiastolischeràderàPunkt,àwoàsieàverschwinden.</p>
-àààààà<p><strong>Oszillometrischà(automatisch):</strong>àManschetteàmisstàDruckoszillationen.àEinàAlgorithmusàerrechnetàsystolischenàundàdiastolischenàDruckàausàderàPulskurve.</p>
-àààààà<h3>Schrittmacher</h3>
-àààààà<p>EinàimplantierbareràStimulatoràmitàeineràBatterieàundàElektroden.àEràüberwachtàdieàHerzfrequenz.àFälltàdieseàunteràeinenàSchwellwert,àgibtàderàSchrittmacheràelektrischeàImpulseàab,àumàdasàHerzàzuàreizen.</p>
-àààààà<h3>ImplantierbareràCardioverter-Defibrillatorà(ICD)</h3>
-àààààà<p>—hnlichàwieàSchrittmacher,àaberàmitàzusätzlicheràFunktion:àEràdetektiertàgefährlicheàschnelleàHerzrhythmenà(Kammertachykardie,àKammerflimmern)àundàgibtàeinenàsynchronisiertenàelektrischenàSto——¸àab,àumàdenàRhythmusàzuànormalisieren.</p>
-àààà</section>
+    <section class="section-card">
+      <h2>Technische Funktionsweise</h2>
+      <h3>Elektrokardiogramm (EKG)</h3>
+      <p>Das Herz erzeugt beim Schlag elektrische Potenziale. Elektroden auf der Hautoberfläche messen diese Spannungsunterschiede. Ein EKG-Gerät verstärkt das Signal, filtert Rauschen und zeigt es auf einem Display oder Papierstreifen. Die Kurve zeigt P-Welle (Vorhofkontraktion), QRS-Komplex (Kammern) und T-Welle (Kammerrepolarisation).</p>
+      <h3>Blutdruckmessung</h3>
+      <p><strong>Manuell (auskultatorisch):</strong> Oberarmmanschette wird aufgeblasen, bis Blutfluss gestoppt. Beim Ablassen wird die Manschette mit Stethoskop überwacht. Systolischer Druck ist der Punkt, wo Korotkoff-Töne hörbar werden, diastolischer der Punkt, wo sie verschwinden.</p>
+      <p><strong>Oszillometrisch (automatisch):</strong> Manschette misst Druckoszillationen. Ein Algorithmus errechnet systolischen und diastolischen Druck aus der Pulskurve.</p>
+      <h3>Schrittmacher</h3>
+      <p>Ein implantierbarer Stimulator mit einer Batterie und Elektroden. Er überwacht die Herzfrequenz. Fällt diese unter einen Schwellwert, gibt der Schrittmacher elektrische Impulse ab, um das Herz zu reizen.</p>
+      <h3>Implantierbarer Cardioverter-Defibrillator (ICD)</h3>
+      <p> – hnlich wie Schrittmacher, aber mit zusätzlicher Funktion: Er detektiert gefährliche schnelle Herzrhythmen (Kammertachykardie, Kammerflimmern) und gibt einen synchronisierten elektrischen Sto –  – ¸ ab, um den Rhythmus zu normalisieren.</p>
+    </section>
 
-àààà<sectionàclass="section-card">
-àààààà<h3>Vergleichstabelle:àKardialeàTechnologien</h3>
-àààààà<table>
-àààààààà<thead><tr><th>Gerät</th><th>Funktion</th><th>Invasivität</th><th>Batterielebensdauer</th><th>Indikation</th></tr></thead>
-àààààààà<tbody>
-àààààààààà<tr><td>EKG</td><td>ElektrischeàAufzeichnung</td><td>Non-invasiv</td><td>Keine</td><td>Rhythmusstörungen,àIschämie</td></tr>
-àààààààààà<tr><td>Holter-Monitor</td><td>24-hàEKG</td><td>Ambulant</td><td>Keine</td><td>IntermittierendeàArrhythmien</td></tr>
-àààààààààà<tr><td>Blutdruckmessgerät</td><td>Druckmessung</td><td>Non-invasiv</td><td>Batterie/Netzteil</td><td>Routinekontrolle</td></tr>
-àààààààààà<tr><td>Schrittmacher</td><td>Stimulation</td><td>Implantiert</td><td>7—•—""10àJahre</td><td>Bradykardie,àAV-Block</td></tr>
-àààààààààà<tr><td>ICD</td><td>Stimulationà&àDefibrillation</td><td>Implantiert</td><td>5—•—""7àJahre</td><td>Hochrisikoarrhythmien</td></tr>
-àààààààà</tbody>
-àààààà</table>
-àààà</section>
+    <section class="section-card">
+      <h3>Vergleichstabelle: Kardiale Technologien</h3>
+      <table>
+        <thead><tr><th>Gerät</th><th>Funktion</th><th>Invasivität</th><th>Batterielebensdauer</th><th>Indikation</th></tr></thead>
+        <tbody>
+          <tr><td>EKG</td><td>Elektrische Aufzeichnung</td><td>Non-invasiv</td><td>Keine</td><td>Rhythmusstörungen, Ischämie</td></tr>
+          <tr><td>Holter-Monitor</td><td>24-h EKG</td><td>Ambulant</td><td>Keine</td><td>Intermittierende Arrhythmien</td></tr>
+          <tr><td>Blutdruckmessgerät</td><td>Druckmessung</td><td>Non-invasiv</td><td>Batterie/Netzteil</td><td>Routinekontrolle</td></tr>
+          <tr><td>Schrittmacher</td><td>Stimulation</td><td>Implantiert</td><td>7 – • – ""10 Jahre</td><td>Bradykardie, AV-Block</td></tr>
+          <tr><td>ICD</td><td>Stimulation & Defibrillation</td><td>Implantiert</td><td>5 – • – ""7 Jahre</td><td>Hochrisikoarrhythmien</td></tr>
+        </tbody>
+      </table>
+    </section>
 
-àààà<sectionàclass="section-card">
-àààààà<h2>Anwendungsbeispiel</h2>
-àààààà<p>Hans,à68àJahre,àTyp-2-Diabetes,àwirdàinàderàNotaufnahmeàmitàBrustschmerzenàeingeliefert.àEinàEKGàzeigtàST-Streckenhebungà—•—""àZeichenàeinesàMyokardinfarkts.àDieàKardiologenàveranlassenàeineàKoronarangiographieàundàimplantierenàeinenàStent.àNachà6àMonatenàzeigtàsichàeineàunregelmä——¸igeàKammerarrhythmie.àEinàICDàwirdàimplantiert.à2àWochenàspäteràdetektiertàderàICDàeineàKammertachykardieàundàgibtàeinenàSchockà—•—""àHansàüberlebtàdankàderàTechnik.</p>
-àààà</section>
+    <section class="section-card">
+      <h2>Anwendungsbeispiel</h2>
+      <p>Hans, 68 Jahre, Typ-2-Diabetes, wird in der Notaufnahme mit Brustschmerzen eingeliefert. Ein EKG zeigt ST-Streckenhebung  – • – "" Zeichen eines Myokardinfarkts. Die Kardiologen veranlassen eine Koronarangiographie und implantieren einen Stent. Nach 6 Monaten zeigt sich eine unregelmä –  – ¸ige Kammerarrhythmie. Ein ICD wird implantiert. 2 Wochen später detektiert der ICD eine Kammertachykardie und gibt einen Schock  – • – "" Hans überlebt dank der Technik.</p>
+    </section>
 
-àààà<sectionàclass="section-card">
-àààààà<h2>VorteileàundàGrenzen</h2>
-àààààà<h3>Vorteile</h3>
-àààààà<ul>
-àààààààà<li>LebensrettendeàInterventionenàinàEchtzeit</li>
-àààààààà<li>Non-invasiveàDiagnostikà(EKG,àBlutdruck)</li>
-àààààààà<li>Langfristigeà——berwachungàdurchàimplantierteàGeräte</li>
-àààààààà<li>Komplikationenàdeutlichàreduziert</li>
-àààààà</ul>
-àààààà<h3>Grenzen</h3>
-àààààà<ul>
-àààààààà<li>Batterielebensdaueràbegrenzt;àErsatzàerforderlich</li>
-àààààààà<li>ImplantationàbirgtàInfektionsrisiko</li>
-àààààààà<li>Kostenàsehràhoch</li>
-àààààààà<li>MRT-SicherheitàbeiàälterenàModellenàfraglich</li>
-àààààà</ul>
-àààà</section>
+    <section class="section-card">
+      <h2>Vorteile und Grenzen</h2>
+      <h3>Vorteile</h3>
+      <ul>
+        <li>Lebensrettende Interventionen in Echtzeit</li>
+        <li>Non-invasive Diagnostik (EKG, Blutdruck)</li>
+        <li>Langfristige  –  – berwachung durch implantierte Geräte</li>
+        <li>Komplikationen deutlich reduziert</li>
+      </ul>
+      <h3>Grenzen</h3>
+      <ul>
+        <li>Batterielebensdauer begrenzt; Ersatz erforderlich</li>
+        <li>Implantation birgt Infektionsrisiko</li>
+        <li>Kosten sehr hoch</li>
+        <li>MRT-Sicherheit bei älteren Modellen fraglich</li>
+      </ul>
+    </section>
 
-àààà<sectionàclass="section-card">
-àààààà<h2>GesellschaftlicheàRelevanz</h2>
-àààààà<p>Herz-Kreislauf-ErkrankungenàkostenàGesundheitssystemeàHunderteàMilliardenàEuroàproàJahr.àBessereàTechnologienàkönntenàMillionenàLebenàretten.àAllerdingsàgibtàesàZugangsungleichgewichte:àInàwohlhabendenàLändernàistàZugangàgro——¸,àinàSchwellenländernàminimal.</p>
-àààà</section>
+    <section class="section-card">
+      <h2>Gesellschaftliche Relevanz</h2>
+      <p>Herz-Kreislauf-Erkrankungen kosten Gesundheitssysteme Hunderte Milliarden Euro pro Jahr. Bessere Technologien könnten Millionen Leben retten. Allerdings gibt es Zugangsungleichgewichte: In wohlhabenden Ländern ist Zugang gro –  – ¸, in Schwellenländern minimal.</p>
+    </section>
 
-àààà<sectionàclass="section-card">
-àààààà<h2>Zukunftsperspektiven</h2>
-àààààà<p><strong>InduktivesàLaden:</strong>àDrahtloseàEnergieübertragungàkönnteàBatterienàüberflüssigàmachen.à<strong>KI-Analyse:</strong>àMachineàLearningàkönnteàArrhythmienàfrüheràerkennen.à<strong>RegenerativeàTherapie:</strong>àStammzellenàkönntenàbeschädigteàHerzmuskulaturàregenerieren.</p>
-àààà</section>
+    <section class="section-card">
+      <h2>Zukunftsperspektiven</h2>
+      <p><strong>Induktives Laden:</strong> Drahtlose Energieübertragung könnte Batterien überflüssig machen. <strong>KI-Analyse:</strong> Machine Learning könnte Arrhythmien früher erkennen. <strong>Regenerative Therapie:</strong> Stammzellen könnten beschädigte Herzmuskulatur regenerieren.</p>
+    </section>
 
-àààà<sectionàclass="section-cardàtech-challenges">
-àààààà<h2>TechnischeàHerausforderungen</h2>
-àààààà<divàclass="challenge-item">
-àààààààà<h4>Datenschutz</h4>
-àààààààà<p>HerzfrequenzvaràiationàzeigtàStresslevel,àmentalenàZustand.àHochsensitiveàDaten.</p>
-àààààà</div>
-àààààà<divàclass="challenge-item">
-àààààààà<h4>Echtzeit-Verarbeitung</h4>
-àààààààà<p>Arrhythmia-ErkennungàmussàinàMillisekundenàerfolgenà—•—""àkeineàVerzögerungàerlaubt.</p>
-àààààà</div>
-àààààà<divàclass="challenge-item">
-àààààààà<h4>Zuverlässigkeit</h4>
-àààààààà<p>FehlerhafteàRhythmenerkennungàkannàzuàunnötigenàSchocksàoderàNicht-Interventionàführen.</p>
-àààààà</div>
-àààààà<divàclass="challenge-item">
-àààààààà<h4>Energieeffizienz</h4>
-àààààààà<p>ImplantierteàGeräteàmüssenà5—•—""10àJahreàohneàAustauschàlaufenà—•—""àEnergie-Optimierungàkritisch.</p>
-àààààà</div>
-àààààà<divàclass="challenge-item">
-àààààààà<h4>ElektromagnetischeàVerträglichkeit</h4>
-àààààààà<p>ExterneàEMIà(z.B.àMikrowellen,àMRT)àkönnteàGeräteàstören.</p>
-àààààà</div>
-àààà</section>
+    <section class="section-card tech-challenges">
+      <h2>Technische Herausforderungen</h2>
+      <div class="challenge-item">
+        <h4>Datenschutz</h4>
+        <p>Herzfrequenzvar iation zeigt Stresslevel, mentalen Zustand. Hochsensitive Daten.</p>
+      </div>
+      <div class="challenge-item">
+        <h4>Echtzeit-Verarbeitung</h4>
+        <p>Arrhythmia-Erkennung muss in Millisekunden erfolgen  – • – "" keine Verzögerung erlaubt.</p>
+      </div>
+      <div class="challenge-item">
+        <h4>Zuverlässigkeit</h4>
+        <p>Fehlerhafte Rhythmenerkennung kann zu unnötigen Schocks oder Nicht-Intervention führen.</p>
+      </div>
+      <div class="challenge-item">
+        <h4>Energieeffizienz</h4>
+        <p>Implantierte Geräte müssen 5 – • – ""10 Jahre ohne Austausch laufen  – • – "" Energie-Optimierung kritisch.</p>
+      </div>
+      <div class="challenge-item">
+        <h4>Elektromagnetische Verträglichkeit</h4>
+        <p>Externe EMI (z.B. Mikrowellen, MRT) könnte Geräte stören.</p>
+      </div>
+    </section>
 
-àààà<sectionàclass="section-cardàglossar">
-àààààà<h2>Glossar</h2>
-àààààà<divàclass="glossar-term">
-àààààààà<dt>Arrhythmie</dt>
-àààààààà<dd>Unregelmä——¸igeràHerzschlag;àkannàgefährlichàseinà(Kammertachykardie,àKammerflimmern)àoderàharmlosà(Extrasystolen).</dd>
-àààààà</div>
-àààààà<divàclass="glossar-term">
-àààààààà<dt>Ejektionsfraktion</dt>
-àààààààà<dd>ProzentsatzàdesàBlutvolumens,àdasàdasàHerzàmitàjedemàSchlagàauswirft.àNormal:à50—•—""70%.àUnterà40%àdeutetàaufàHerzinsuffizienz.</dd>
-àààààà</div>
-àààààà<divàclass="glossar-term">
-àààààààà<dt>Defibrillation</dt>
-àààààààà<dd>ElektrischeràSchock,àumàdasàchaotischeàKammerflimmernàinàeinenànormalenàRhythmusàzuàkonvertieren.</dd>
-àààààà</div>
-àààààà<divàclass="glossar-term">
-àààààààà<dt>Myokardinfarkt</dt>
-àààààààà<dd>Herzinfarkt;àHerzmuskelgewebeàstirbtàabàdurchàMangelàanàBlutversorgung.</dd>
-àààààà</div>
-àààààà<divàclass="glossar-term">
-àààààààà<dt>AV-Block</dt>
-àààààààà<dd>Störungàinàderà——bertragungàelektrischeràImpulseàvomàVorhofàzuràKammer.àGradàIIIàistàeinàkompletteràBlock.</dd>
-àààààà</div>
-àààà</section>
+    <section class="section-card glossar">
+      <h2>Glossar</h2>
+      <div class="glossar-term">
+        <dt>Arrhythmie</dt>
+        <dd>Unregelmä –  – ¸iger Herzschlag; kann gefährlich sein (Kammertachykardie, Kammerflimmern) oder harmlos (Extrasystolen).</dd>
+      </div>
+      <div class="glossar-term">
+        <dt>Ejektionsfraktion</dt>
+        <dd>Prozentsatz des Blutvolumens, das das Herz mit jedem Schlag auswirft. Normal: 50 – • – ""70%. Unter 40% deutet auf Herzinsuffizienz.</dd>
+      </div>
+      <div class="glossar-term">
+        <dt>Defibrillation</dt>
+        <dd>Elektrischer Schock, um das chaotische Kammerflimmern in einen normalen Rhythmus zu konvertieren.</dd>
+      </div>
+      <div class="glossar-term">
+        <dt>Myokardinfarkt</dt>
+        <dd>Herzinfarkt; Herzmuskelgewebe stirbt ab durch Mangel an Blutversorgung.</dd>
+      </div>
+      <div class="glossar-term">
+        <dt>AV-Block</dt>
+        <dd>Störung in der  –  – bertragung elektrischer Impulse vom Vorhof zur Kammer. Grad III ist ein kompletter Block.</dd>
+      </div>
+    </section>
 
-àààà<sectionàclass="section-card">
-àààààà<h2>Informatik-Reflexion</h2>
-àààààà<p>KardialeàMedizintechnikàzeigtàdieàKritikalitätàvonàEmbedded-Systems:à<strong>Echtzeit-Verarbeitung</strong>àistàobligatorisch,à<strong>Zuverlässigkeit</strong>à(keineàAusfallzeitenàerlaubt),à<strong>Cybersecurity</strong>à(drahtlosàverbundeneàGeräteàanfällig),à<strong>Algorithmen-Verifikation</strong>à(medizinischeàStandardsàwieàIECà60601).</p>
-àààà</section>
+    <section class="section-card">
+      <h2>Informatik-Reflexion</h2>
+      <p>Kardiale Medizintechnik zeigt die Kritikalität von Embedded-Systems: <strong>Echtzeit-Verarbeitung</strong> ist obligatorisch, <strong>Zuverlässigkeit</strong> (keine Ausfallzeiten erlaubt), <strong>Cybersecurity</strong> (drahtlos verbundene Geräte anfällig), <strong>Algorithmen-Verifikation</strong> (medizinische Standards wie IEC 60601).</p>
+    </section>
 
-àààà<sectionàclass="section-cardàrelated-links">
-àààààà<h2>WeiterführendeàLinksà&àQuellen</h2>
-àààààà<ulàid="related-links"></ul>
-àààà</section>
+    <section class="section-card related-links">
+      <h2>Weiterführende Links & Quellen</h2>
+      <ul id="related-links"></ul>
+    </section>
 
-àààà<divàclass="privacy-notice">
-àààààà<p><strong>Datenschutz:</strong>àDieseàWebsiteàspeichertàkeineàDaten.àKeineàCookiesàoderàTracking-Tools.</p>
-àààà</div>
-àà</main>
+    <div class="privacy-notice">
+      <p><strong>Datenschutz:</strong> Diese Website speichert keine Daten. Keine Cookies oder Tracking-Tools.</p>
+    </div>
+  </main>
 
-àà<footeràclass="site-footer">
-àààà<divàclass="container">
-àààààà<p>&copy;à2026àMedTechGuideà—àSchulprojektàHTLàInformatik</p>
-àààààà<p><aàhref="html/quellen.html">——beràdieàwissenschaftlichenàQuellen</a></p>
-àààà</div>
-àà</footer>
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 MedTechGuide  –  Schulprojekt HTL Informatik</p>
+      <p><a href="html/quellen.html"> –  – ber die wissenschaftlichen Quellen</a></p>
+    </div>
+  </footer>
 
-àà<buttonàclass="scroll-to-top"àid="scrollToTopBtn"àaria-label="Nachàobenàscrollen">—• '</button>
-àà<scriptàtype="module"àsrc="js/topic-3d-viewer.js"></script>
-àà<scriptàsrc="js/script.js"></script>
-ààà<scriptàsrc="js/search.js"></script>
-àà<script>
-ààààwindow.addEventListener("load",à()à=>à{
-ààààààconstàloaderà=àdocument.getElementById("loader");
-ààààààifà(loader)à{àloader.classList.add("hidden");àsetTimeout(()à=>à{àloader.style.displayà=à"none";à},à500);à}
-ààààààsetActiveNavLink();
-ààààààsetRelatedLinks('herz');
-àààà});
-àà</script>
+  <button class="scroll-to-top" id="scrollToTopBtn" aria-label="Nach oben scrollen"> – • '</button>
+  <script type="module" src="js/topic-3d-viewer.js"></script>
+  <script src="js/script.js"></script>
+   <script src="js/search.js"></script>
+  <script>
+    window.addEventListener("load", () => {
+      const loader = document.getElementById("loader");
+      if (loader) { loader.classList.add("hidden"); setTimeout(() => { loader.style.display = "none"; }, 500); }
+      setActiveNavLink();
+      setRelatedLinks('herz');
+    });
+  </script>
 </body>
 </html>
