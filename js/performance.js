@@ -1,6 +1,6 @@
 /**
  * ===================================================================
- * âÂÂÂÂ¡ MEDTECHGUIDE - PERFORMANCE OPTIMIZATIONS
+ * â¡ MEDTECHGUIDE - PERFORMANCE OPTIMIZATIONS
  * ===================================================================
  * Features:
  * - Lazy Loading für Bilder
@@ -10,7 +10,7 @@
  */
 
 // ===================================================================
-// –°ÂÂÂÂÂÂ¼–Â¯ÂÂ¸ÂÂ LAZY LOADING FOR IMAGES
+// –°¼–¯¸ LAZY LOADING FOR IMAGES
 // ===================================================================
 
 /**
@@ -36,7 +36,7 @@ function initLazyLoading() {
     });
   }
   
-  console.log('âÂÂÂÂ Lazy Loading initialisiert');
+  console.log('â Lazy Loading initialisiert');
 }
 
 /**
@@ -64,7 +64,7 @@ function initIntersectionObserver(img) {
 }
 
 // ===================================================================
-// –°ÂÂÂÂÂÂ PERFORMANCE MONITORING (optional)
+// –° PERFORMANCE MONITORING (optional)
 // ===================================================================
 
 /**
@@ -87,7 +87,7 @@ function logPerformanceMetrics() {
     
     // Log nur wenn nicht in production
     if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-      console.group('–°ÂÂÂÂÂÂ Performance Metrics');
+      console.group('–° Performance Metrics');
       Object.entries(metrics).forEach(([label, ms]) => {
         console.log(`${label}: ${ms}ms`);
       });
@@ -111,7 +111,7 @@ function logPerformanceMetrics() {
 }
 
 // ===================================================================
-// –°ÂÂÂÂÂÂ± SERVICE WORKER REGISTRATION (optional, für offline support)
+// –°± SERVICE WORKER REGISTRATION (optional, für offline support)
 // ===================================================================
 
 /**
@@ -122,16 +122,16 @@ function registerServiceWorker() {
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('service-worker.js')
       .then(registration => {
-        console.log('âÂÂÂÂ Service Worker registered:', registration);
+        console.log('â Service Worker registered:', registration);
       })
       .catch(error => {
-        console.log('âÂÂÂÂ –Â¯ÂÂ¸ÂÂ Service Worker registration failed:', error);
+        console.log('â –¯¸ Service Worker registration failed:', error);
       });
   }
 }
 
 // ===================================================================
-// âÂÂÂÂ¡ RESOURCE PRIORITIZATION
+// â¡ RESOURCE PRIORITIZATION
 // ===================================================================
 
 /**
@@ -154,7 +154,7 @@ function addResourceHints() {
 }
 
 // ===================================================================
-// –°ÂÂÂÂÂÂ INITIALIZATION
+// –° INITIALIZATION
 // ===================================================================
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -180,7 +180,7 @@ if (document.readyState === 'loading') {
 }
 
 // ===================================================================
-// –°ÂÂÂÂÂÂ EXPORT
+// –° EXPORT
 // ===================================================================
 
 if (typeof module !== 'undefined' && module.exports) {

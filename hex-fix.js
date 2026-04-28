@@ -24,7 +24,7 @@ function fixFile(filePath) {
     // Allgemeiner Ansatz: Ersetze "C3 83" (which is UTF8 encoding of "Ã") mit "C3" (UTF8 for single byte char)
     // Das ist kompliziert, also nutze String-Patterns
     
-    // Pattern wie "ÃÂÃÂ..." sind Zeichen, die mehrfach fehlerhaft kodiert sind
+    // Pattern wie "..." sind Zeichen, die mehrfach fehlerhaft kodiert sind
     // Versuche diese direkt zu erkennen
     const hexPatterns = [
       { hex: 'c383c283c382c283c383c282c382c2a2c383c2a2c383c282c382c282c383c282c382c2ac', text: '–' },

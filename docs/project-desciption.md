@@ -56,25 +56,25 @@ Interaktiver Geräte-Vergleich mit:
 
 ```
 Projekt_25/
-âÂÂÂÂâÂÂÂÂâÂÂÂÂ index.html              # Startseite
-âÂÂÂÂâÂÂÂÂâÂÂÂÂ [kategorie].html        # Kategorieseiten (10 Stück)
-âÂÂÂÂâÂÂÂÂâÂÂÂÂ comparison.html         # Gerätevergleich
-âÂÂÂÂâÂÂÂÂâÂÂÂÂ quellen.html            # Quellenverzeichnis
-âÂÂÂÂâÂÂÂÂâÂÂÂÂ style.css               # Globales Stylesheet
-âÂÂÂÂâÂÂÂÂâÂÂÂÂ script.js               # Hauptlogik (Suche, Filter)
-âÂÂÂÂâÂÂÂÂâÂÂÂÂ search.js               # Suchmodul
-âÂÂÂÂâÂÂÂÂâÂÂÂÂ search-index.json       # Suchindex aller Geräte
-âÂÂÂÂâÂÂÂÂâÂÂÂÂ css/
-âÂÂÂÂ–   âÂÂÂÂâÂÂÂÂâÂÂÂÂ comparison.css      # Styles für den Vergleichsmodus
-âÂÂÂÂâÂÂÂÂâÂÂÂÂ js/
-âÂÂÂÂ–   âÂÂÂÂâÂÂÂÂâÂÂÂÂ comparison-module.js
-âÂÂÂÂ–   âÂÂÂÂâÂÂÂÂâÂÂÂÂ comparison-ui.js
-âÂÂÂÂâÂÂÂÂâÂÂÂÂ docs/                   # Dokumentation
+âââ index.html              # Startseite
+âââ [kategorie].html        # Kategorieseiten (10 Stück)
+âââ comparison.html         # Gerätevergleich
+âââ quellen.html            # Quellenverzeichnis
+âââ style.css               # Globales Stylesheet
+âââ script.js               # Hauptlogik (Suche, Filter)
+âââ search.js               # Suchmodul
+âââ search-index.json       # Suchindex aller Geräte
+âââ css/
+â–   âââ comparison.css      # Styles für den Vergleichsmodus
+âââ js/
+â–   âââ comparison-module.js
+â–   âââ comparison-ui.js
+âââ docs/                   # Dokumentation
 ```
 
 ## Design
 
-- Ruhiges, seriöses Farbschema (Blau/Wei–ÂÂÂ/Grau)
+- Ruhiges, seriöses Farbschema (Blau/Wei–/Grau)
 - Responsives Layout für Desktop und Mobile
 - Klare Typografie für medizinisch-technische Inhalte
 

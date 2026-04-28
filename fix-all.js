@@ -45,7 +45,7 @@ function fixFile(filePath) {
     content = content.split('\u00c3\u00b1').join('ñ');
     content = content.split('\u00c3\u0084').join('Ä');
     content = content.split('\u00c3\u0096').join('Ö');
-    content = content.split('\u00c3\u0099').join('–ÂÂÂ');
+    content = content.split('\u00c3\u0099').join('–');
     
     if (content !== original) {
       fs.writeFileSync(filePath, content, 'utf8');

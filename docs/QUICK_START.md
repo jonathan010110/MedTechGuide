@@ -1,35 +1,35 @@
-# –°ÂÂÂÂÂÂ Quick Start - Neue Quiz & Ordner-Struktur
+# –° Quick Start - Neue Quiz & Ordner-Struktur
 
-## âÂÂÂÂ Was wurde hinzugefügt?
+## â Was wurde hinzugefügt?
 
-### 1. –°ÂÂÂÂÂÂ¯ **Quiz-System**
+### 1. –°¯ **Quiz-System**
 - **20 interaktive Fragen** in 4 Kategorien
-  - –°ÂÂÂÂÂÂ Diagnostik (5 Fragen)
-  - –°ÂÂÂÂÂÂ Therapie (5 Fragen)
-  - –°ÂÂÂÂÂÂ¬ Forschung (5 Fragen)
-  - –°ÂÂÂÂÂÂ Zukunft (5 Fragen)
+  - –° Diagnostik (5 Fragen)
+  - –° Therapie (5 Fragen)
+  - –°" Forschung (5 Fragen)
+  - –° Zukunft (5 Fragen)
 - **Scoring & Ergebnisse** mit detaillierter Auswertung
 - **Responsive Design** für Mobile & Desktop
 
-### 2. –°ÂÂÂÂÂÂ **Ordnerstruktur**
+### 2. –° **Ordnerstruktur**
 ```
 Projekt_25/
-âÂÂÂÂâÂÂÂÂâÂÂÂÂ /css/              âÂÂÂÂ CSS-Module (quiz.css)
-âÂÂÂÂâÂÂÂÂâÂÂÂÂ /js/               âÂÂÂÂ JavaScript-Module (quiz.js)
-âÂÂÂÂâÂÂÂÂâÂÂÂÂ /html/             âÂÂÂÂ Content-Seiten (quiz.html + andere)
-âÂÂÂÂâÂÂÂÂâÂÂÂÂ /data/             âÂÂÂÂ Datenbanken & Config
-âÂÂÂÂâÂÂÂÂâÂÂÂÂ /images/           âÂÂÂÂ Bilder (existiert schon)
-âÂÂÂÂâÂÂÂÂâÂÂÂÂ /docs/             âÂÂÂÂ Dokumentation (STRUKTUR.md)
+âââ /css/              â CSS-Module (quiz.css)
+âââ /js/               â JavaScript-Module (quiz.js)
+âââ /html/             â Content-Seiten (quiz.html + andere)
+âââ /data/             â Datenbanken & Config
+âââ /images/           â Bilder (existiert schon)
+âââ /docs/             â Dokumentation (STRUKTUR.md)
 ```
 
-### 3. –°ÂÂÂÂÂÂ **Verbesserte Suche**
+### 3. –° **Verbesserte Suche**
 - Funktioniert bereits vollständig
 - Durchsucht alle 10 Seiten
 - Auto-Highlighting auf Zielseite
 
 ---
 
-## –°ÂÂÂÂÂÂ DATEIEN-–ÂÂÂBERSICHT
+## –° DATEIEN-–BERSICHT
 
 ### Neue Dateien erstellt:
 | Datei | Beschreibung |
@@ -37,25 +37,25 @@ Projekt_25/
 | `js/quiz.js` | Quiz-Engine (600+ Zeilen) |
 | `css/quiz.css` | Quiz-Styling (350+ Zeilen) |
 | `html/quiz.html` | Quiz-Landingpage |
-| `docs/STRUKTUR.md` | Projekt-–ÂÂÂbersicht |
+| `docs/STRUKTUR.md` | Projekt-–bersicht |
 | `docs/QUICK_START.md` | Diese Datei |
 
 ### Aktualisierte Dateien:
 | Datei | Änderung |
 |-------|---------|
 | `index.html` | +Quiz-Link, +CSS-Import, +Info-Box |
-| `style.css` | âÂÂÂÂ Unverändert (alle Styles schon vorhanden) |
-| `script.js` | âÂÂÂÂ Unverändert (Mobile-Nav schon enthalten) |
+| `style.css` | â Unverändert (alle Styles schon vorhanden) |
+| `script.js` | â Unverändert (Mobile-Nav schon enthalten) |
 
 ---
 
-## –°ÂÂÂÂÂ® WIE NUTZEN
+## –°Â® WIE NUTZEN
 
 ### Quiz aufrufen:
 
-**Option 1: –ÂÂÂber Navigation**
-- Oben in der Navbar: "–°ÂÂÂÂÂÂ¯ Quiz" Button (neu hinzugefügt)
-- Klick âÂÂÂÂ öffnet `html/quiz.html`
+**Option 1: –ber Navigation**
+- Oben in der Navbar: "–°¯ Quiz" Button (neu hinzugefügt)
+- Klick â öffnet `html/quiz.html`
 
 **Option 2: Direkt-Link**
 ```
@@ -63,7 +63,7 @@ Projekt_25/
 ```
 
 **Option 3: Von Startseite**
-- Blauer Button: "Quiz starten âÂÂÂÂ"
+- Blauer Button: "Quiz starten â"
 
 ### Quiz spielen:
 ```
@@ -76,14 +76,14 @@ Projekt_25/
 
 ---
 
-## –°ÂÂÂÂÂÂ¨ STYLING HIGHLIGHTS
+## –°¨ STYLING HIGHLIGHTS
 
 ### Quiz-Komponenten:
-- âÂÂÂÂ¨ **Modal-Dialoge** mit Blur-Backdrop
-- –°ÂÂÂÂÂÂ **Progress-Bar** für Fortschritt
-- –°ÂÂÂÂÂÂ¯ **Score-Circle** mit animiertem Bounce
-- –°ÂÂÂÂÂÂ **Ergebnis-Anzeige** mit Emoji & Bewertung
-- –°ÂÂÂÂÂÂ± **Vollständig responsive**
+- â¨ **Modal-Dialoge** mit Blur-Backdrop
+- –° **Progress-Bar** für Fortschritt
+- –°¯ **Score-Circle** mit animiertem Bounce
+- –° **Ergebnis-Anzeige** mit Emoji & Bewertung
+- –°± **Vollständig responsive**
 
 ### CSS-Klassen:
 ```css
@@ -96,7 +96,7 @@ Projekt_25/
 
 ---
 
-## –°ÂÂÂÂÂÂ§ TECHNISCHE DETAILS
+## –°§ TECHNISCHE DETAILS
 
 ### Quiz-Datenbank:
 ```javascript
@@ -133,7 +133,7 @@ quizState = {
 
 ---
 
-## –°ÂÂÂÂÂÂ± RESPONSIVE BREAKPOINTS
+## –°± RESPONSIVE BREAKPOINTS
 
 - **Desktop** (>768px): Vollständige Layout
 - **Tablet** (768px): Optimiert
@@ -144,9 +144,9 @@ quizState = {
 
 ---
 
-## –°ÂÂÂÂÂÂ DATENSCHUTZ
+## –° DATENSCHUTZ
 
-âÂÂÂÂ **Keine externe Daten-Speicherung**
+â **Keine externe Daten-Speicherung**
 - Quiz-Ergebnisse nur lokal im Browser
 - Keine Cookies oder Tracking
 - Keine Cloud-Verbindung
@@ -154,7 +154,7 @@ quizState = {
 
 ---
 
-## âÂÂÂÂ BEKANNTE LIMITATIONEN
+## â BEKANNTE LIMITATIONEN
 
 - Quiz-Daten sind hardcoded (können aber in JSON ausgelagert werden)
 - Keine Datenspeicherung zwischen Sessions
@@ -163,7 +163,7 @@ quizState = {
 
 ---
 
-## âÂÂÂÂ¨ NÄCHSTE MÖGLICHE FEATURES
+## â¨ NÄCHSTE MÖGLICHE FEATURES
 
 ### Einfach zu implementieren:
 - [ ] Quiz-Kategorien im HTML als Daten
@@ -186,7 +186,7 @@ quizState = {
 
 ---
 
-## –°ÂÂÂÂÂÂ INSTALLATION
+## –° INSTALLATION
 
 ### 1. Dateien kopieren:
 ```bash
@@ -204,13 +204,13 @@ cp -r js/ html/ css/ data/ docs/ /path/to/projekt
 
 ### 3. Testen:
 - Öffne `index.html`
-- Klick auf "–°ÂÂÂÂÂÂ¯ Quiz" Button
+- Klick auf "–°¯ Quiz" Button
 - Wähle Kategorie
 - Beantworte Fragen
 
 ---
 
-## –°ÂÂÂÂÂÂ TROUBLESHOOTING
+## –° TROUBLESHOOTING
 
 ### Quiz lädt nicht?
 ```
@@ -223,7 +223,7 @@ cp -r js/ html/ css/ data/ docs/ /path/to/projekt
 ### Styling bricht?
 ```
 1. Prüf dass css/quiz.css geladen wird
-2. Inspect Element (F12) âÂÂÂÂ Console
+2. Inspect Element (F12) â Console
 3. Validiere CSS Syntax
 ```
 
@@ -236,17 +236,17 @@ cp -r js/ html/ css/ data/ docs/ /path/to/projekt
 
 ---
 
-## –°ÂÂÂÂÂÂ SUPPORT
+## –° SUPPORT
 
 Falls Fragen:
-1. Lies STRUKTUR.md für –ÂÂÂberblick
+1. Lies STRUKTUR.md für –berblick
 2. Check js/quiz.js für Quellcode-Kommentare
 3. Validiere mit VS Code Linter
 4. Teste in Chrome DevTools
 
 ---
 
-## –°ÂÂÂÂÂÂ LERN-RESSOURCEN
+## –° LERN-RESSOURCEN
 
 - [MDN: JavaScript Modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)
 - [CSS Grid Documentation](https://css-tricks.com/snippets/css/complete-guide-grid/)
@@ -255,7 +255,7 @@ Falls Fragen:
 
 ---
 
-**Genie–ÂÂÂt das Quiz! –°ÂÂÂÂÂÂ¯**
+**Genie–t das Quiz! –°¯**
 
 Version: 2.1 | Release: 24.02.2026
 

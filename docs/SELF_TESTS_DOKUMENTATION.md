@@ -1,6 +1,6 @@
-# –°ÂÂÂÂ§ÂÂ  Selbsttests â MedTechGuide
+# –°§  Selbsttests â MedTechGuide
 
-## –ÂÂÂberblick
+## –berblick
 
 Das Selbsttest-System bietet 7 wissenschaftlich strukturierte psychologische und gesundheitsbezogene Selbsttests mit insgesamt **280+ Fragen**.
 
@@ -71,15 +71,15 @@ Das Selbsttest-System bietet 7 wissenschaftlich strukturierte psychologische und
 
 ```
 self-tests/
-âÂÂÂÂâÂÂÂÂâÂÂÂÂ self-tests.html              (Hauptdatei - Start-Screen + Test-Interface)
-âÂÂÂÂâÂÂÂÂâÂÂÂÂ css/
-âÂÂÂÂ–   âÂÂÂÂâÂÂÂÂâÂÂÂÂ self-tests.css          (UI-Styling für alle Tests)
-âÂÂÂÂâÂÂÂÂâÂÂÂÂ js/
-    âÂÂÂÂâÂÂÂÂâÂÂÂÂ test-depression.js      (Depression Test: 40 Fragen + Scoring)
-    âÂÂÂÂâÂÂÂÂâÂÂÂÂ test-adhs.js           (ADHS Test: 40 Fragen + Subscores)
-    âÂÂÂÂâÂÂÂÂâÂÂÂÂ test-personality.js     (MBTI Test: 40 Fragen + Typsystem)
-    âÂÂÂÂâÂÂÂÂâÂÂÂÂ test-others.js         (Angst, Burnout, Stress, Schlaf: 160 Fragen gesamt)
-    âÂÂÂÂâÂÂÂÂâÂÂÂÂ self-tests-controller.js (Master-Controller für alle Tests)
+âââ self-tests.html              (Hauptdatei - Start-Screen + Test-Interface)
+âââ css/
+â–   âââ self-tests.css          (UI-Styling für alle Tests)
+âââ js/
+    âââ test-depression.js      (Depression Test: 40 Fragen + Scoring)
+    âââ test-adhs.js           (ADHS Test: 40 Fragen + Subscores)
+    âââ test-personality.js     (MBTI Test: 40 Fragen + Typsystem)
+    âââ test-others.js         (Angst, Burnout, Stress, Schlaf: 160 Fragen gesamt)
+    âââ self-tests-controller.js (Master-Controller für alle Tests)
 ```
 
 ### Modul-Struktur
@@ -122,29 +122,29 @@ const TestName = {
 
 ## Features
 
-### âÂÂÂÂ Benutzerfreundlichkeit
+### â Benutzerfreundlichkeit
 - **Start-Screen:** Alle 7 Tests auf Karten-Grid
 - **Fortschrittsanzeige:** Prozentuelle Progress Bar + Frage-Zähler
 - **Dezente Navigation:** Zurück/Weiter-Buttons
 - **Automatische Speicherung:** Antworten werden lokal gespeichert
 - **Vollständigkeits-Check:** Muss alle Fragen beantworten vor Submit
 
-### âÂÂÂÂ Ergebnisanzeige
-- **Score-Display:** Gro–ÂÂÂer, visueller Score mit Farbcodierung
+### â Ergebnisanzeige
+- **Score-Display:** Gro–er, visueller Score mit Farbcodierung
 - **Interpretation:** Klare Beschreibung der Score-Bedeutung
 - **ADHS-Specifics:** Subscore-Tabelle für detaillierte Analyse
 - **MBTI-Specifics:** Automatische Typ-Berechnung mit Profil
 - **Medical Disclaimer:** Pflicht-Warnung für seriöse Tests
 - **One-Click Reset:** Zurück zur Test-Selection
 
-### âÂÂÂÂ Design & Accessibility
-- **Mobil-optimiert:** Responsive Design für alle Bildschirmgrö–ÂÂÂen
+### â Design & Accessibility
+- **Mobil-optimiert:** Responsive Design für alle Bildschirmgrö–en
 - **Farb-kodiert:** Antwort-Optionen mit visueller Farbcodierung
 - **Kontrast:** WCAG-konform Kontrast-Verhältnisse
 - **Keyboard-Navigation:** Vollständig mit Tab/Enter navigierbar
 - **Focus-Styling:** Klare Focus-Indikatoren für Accessibility
 
-### âÂÂÂÂ Design-Konsistenz
+### â Design-Konsistenz
 - Integriert mit dem bestehenden MedTechGuide-CSS-System
 - Verwendet gleiche Farb-Variablen und Theming
 - Einheitliche Font-Familien und Abstände
@@ -186,10 +186,10 @@ this.allTests = [
 3. **Fügen Sie eine Test-Card in HTML hinzu:**
 ```html
 <div class="test-card" data-test-id="my-test">
-  <div class="test-card-icon">–°ÂÂÂÂÂÂ¯</div>
+  <div class="test-card-icon">–°¯</div>
   <h2 class="test-card-title">Mein Test</h2>
   <p class="test-card-description">Beschreibung</p>
-  <button class="test-card-button">Test starten âÂÂÂÂ</button>
+  <button class="test-card-button">Test starten â</button>
 </div>
 ```
 
@@ -200,7 +200,7 @@ this.allTests = [
 - **An einzelnen Tagen:** 1 Punkt
 - **An mehr als der Hälfte der Tage:** 2 Punkte
 - **Fast täglich:** 3 Punkte
-- **Max:** 40 Fragen –ÂÂÂ 3 = 120 Punkte
+- **Max:** 40 Fragen – 3 = 120 Punkte
 
 ### ADHS-Scores
 - **Nie:** 0 Punkte
@@ -208,7 +208,7 @@ this.allTests = [
 - **Manchmal:** 2 Punkte
 - **Häufig:** 3 Punkte
 - **Sehr häufig:** 4 Punkte
-- **Max:** 40 Fragen –ÂÂÂ 4 = 160 Punkte
+- **Max:** 40 Fragen – 4 = 160 Punkte
 
 ### MBTI-Scores
 - **Likert-Skala:** -2 bis +2
@@ -217,14 +217,14 @@ this.allTests = [
 
 ## Wichtige Hinweise
 
-### âÂÂÂÂ –Â¯ÂÂ¸ÂÂ Rechtliche/Ethische Aspekte
+### â –¯¸ Rechtliche/Ethische Aspekte
 - **Alle medizinischen Tests zeigen Disclaimer** am Ende
 - MBTI ist nicht medizinisch und hat keinen Disclaimer
 - Tests ersetzen NICHT professionelle Diagnose
 - Keine Datenspeicherung - Antworten sind lokal/temporär
 - DSGVO-konform: Keine externe API-Aufrufe
 
-### –°ÂÂÂÂÂÂ Frage-Qualität
+### –° Frage-Qualität
 - Alle 280+ Fragen sind wissenschaftlich recherchiert
 - Orientierung an valdidierten Screening-Tools (PHQ-9, DSM-5, MBTI)
 - Sensible Themen (Suizid) sind human formuliert

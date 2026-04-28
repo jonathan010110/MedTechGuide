@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 // Definiere die fehlerhaften Byte-Sequenzen
-// Zum Beispiel: "–ÂÂÂ–Â–ÂÂ¼" ist eigentlich "C3 BC" (UTF-8 für "ü" fehlinterpretiert als Latin1)
+// Zum Beispiel: "–––¼" ist eigentlich "C3 BC" (UTF-8 für "ü" fehlinterpretiert als Latin1)
 
 let fixed = 0;
 
@@ -16,12 +16,12 @@ function fixFile(filePath) {
     // Liste von fehlerhaften Byte-Sequenzen
     const badSequences = [
       // Umlaute und Sonderzeichen die doppelt-kodiert sind
-      { find: Buffer.from([0xC3, 0xBC]), replace: Buffer.from('ü', 'utf8') },  // –ÂÂÂ–Â–ÂÂ¼ -> ü
-      { find: Buffer.from([0xC3, 0xB6]), replace: Buffer.from('ö', 'utf8') },  // –ÂÂÂ–Â–ÂÂ¶ -> ö
-      { find: Buffer.from([0xC3, 0xA4]), replace: Buffer.from('ä', 'utf8') },  // –ÂÂÂ–Â–ÂÂ¤ -> ä
-      { find: Buffer.from([0xC3, 0xA9]), replace: Buffer.from('é', 'utf8') },  // –ÂÂÂ–Â–Â© -> é
-      { find: Buffer.from([0xC3, 0xA0]), replace: Buffer.from('à', 'utf8') },  // –ÂÂÂ  -> à
-      { find: Buffer.from([0xC3, 0xA7]), replace: Buffer.from('ç', 'utf8') },  // –ÂÂÂ–Â–ÂÂ§ -> ç
+      { find: Buffer.from([0xC3, 0xBC]), replace: Buffer.from('ü', 'utf8') },  // –––¼ -> ü
+      { find: Buffer.from([0xC3, 0xB6]), replace: Buffer.from('ö', 'utf8') },  // –––¶ -> ö
+      { find: Buffer.from([0xC3, 0xA4]), replace: Buffer.from('ä', 'utf8') },  // –––¤ -> ä
+      { find: Buffer.from([0xC3, 0xA9]), replace: Buffer.from('é', 'utf8') },  // –––© -> é
+      { find: Buffer.from([0xC3, 0xA0]), replace: Buffer.from('à', 'utf8') },  // –  -> à
+      { find: Buffer.from([0xC3, 0xA7]), replace: Buffer.from('ç', 'utf8') },  // –––§ -> ç
       // Bindestriche
       { find: Buffer.from([0xE2, 0x80, 0x93]), replace: Buffer.from('â', 'utf8') },  // â (en-dash)
       { find: Buffer.from([0xE2, 0x80, 0x94]), replace: Buffer.from('â', 'utf8') },  // â (em-dash)

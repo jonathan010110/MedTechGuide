@@ -1,6 +1,6 @@
 /**
  * ===================================================================
- * –°ÂÂÂÂÂÂ MEDTECHGUIDE - GLOBAL SEARCH SYSTEM (Refactored)
+ * –° MEDTECHGUIDE - GLOBAL SEARCH SYSTEM (Refactored)
  * ===================================================================
  * Funktionen:
  * - Globale Suche über alle Seiten (via search-index.json)
@@ -12,7 +12,7 @@
  */
 
 // ===================================================================
-// –°ÂÂÂÂÂÂ¦ SEARCH INDEX - wird asynchron geladen
+// –°¦ SEARCH INDEX - wird asynchron geladen
 // ===================================================================
 
 let SEARCH_INDEX = null;
@@ -28,16 +28,16 @@ async function loadSearchIndex() {
     const response = await fetch('search-index.json');
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     SEARCH_INDEX = await response.json();
-    console.log('âÂÂÂÂ Search Index geladen:', SEARCH_INDEX.pages.length, 'Seiten');
+    console.log('â Search Index geladen:', SEARCH_INDEX.pages.length, 'Seiten');
     return SEARCH_INDEX;
   } catch (error) {
-    console.warn('âÂÂÂÂ –Â¯ÂÂ¸ÂÂ Search Index konnte nicht geladen werden:', error);
+    console.warn('â –¯¸ Search Index konnte nicht geladen werden:', error);
     return null;
   }
 }
 
 // ===================================================================
-// –°ÂÂÂÂÂÂ –Â¯ÂÂ¸ÂÂ UTILITY FUNCTIONS
+// –° –¯¸ UTILITY FUNCTIONS
 // ===================================================================
 
 /**
@@ -50,7 +50,7 @@ function normalizeSearchText(text) {
     .replace(/ä/g, 'a')
     .replace(/ö/g, 'o')
     .replace(/ü/g, 'u')
-    .replace(/–ÂÂÂ/g, 'ss')
+    .replace(/–/g, 'ss')
     .trim();
 }
 
@@ -89,7 +89,7 @@ function highlightSearchTerm(text, searchTerm) {
 }
 
 // ===================================================================
-// –°ÂÂÂÂÂÂ SEARCH FUNCTION
+// –° SEARCH FUNCTION
 // ===================================================================
 
 /**
@@ -166,7 +166,7 @@ function performSearch(query) {
 }
 
 // ===================================================================
-// –°ÂÂÂÂÂÂ¨ UI RENDERING
+// –°¨ UI RENDERING
 // ===================================================================
 
 /**
@@ -184,7 +184,7 @@ function renderSearchResults(results, searchTerm) {
     const emptyState = document.createElement('div');
     emptyState.className = 'search-empty-state';
     emptyState.innerHTML = `
-      <div class="search-empty-icon">–°ÂÂÂÂÂÂ</div>
+      <div class="search-empty-icon">–°</div>
       <p class="search-empty-text">Keine Ergebnisse für "${searchTerm}"</p>
       <p class="search-empty-hint">Versuche andere Begriffe oder durchsuche die Seite manuell</p>
     `;
@@ -214,7 +214,7 @@ function renderSearchResults(results, searchTerm) {
         <div class="search-result-title">${highlightSearchTerm(result.page, searchTerm)}</div>
         <div class="search-result-preview">${result.preview}</div>
       </div>
-      <div class="search-result-arrow">âÂÂÂÂ</div>
+      <div class="search-result-arrow">â</div>
     `;
 
     resultsList.appendChild(resultItem);
@@ -230,7 +230,7 @@ function renderSearchResults(results, searchTerm) {
 }
 
 // ===================================================================
-// âÂÂÂÂ±–Â¯ÂÂ¸ÂÂ DEBOUNCE SEARCH
+// â±–¯¸ DEBOUNCE SEARCH
 // ===================================================================
 
 let searchTimeout;
@@ -249,7 +249,7 @@ function debouncedSearch(query) {
   // Zeige Loading State
   const resultsContainer = document.getElementById('searchResults');
   if (resultsContainer) {
-    resultsContainer.innerHTML = '<div class="search-loading">–°ÂÂÂÂÂÂ Suche läuft...</div>';
+    resultsContainer.innerHTML = '<div class="search-loading">–° Suche läuft...</div>';
   }
 
   searchTimeout = setTimeout(() => {
@@ -259,7 +259,7 @@ function debouncedSearch(query) {
 }
 
 // ===================================================================
-// –°ÂÂÂÂÂÂ¬ HIGHLIGHTING AUF ZIELSEITE
+// –°" HIGHLIGHTING AUF ZIELSEITE
 // ===================================================================
 
 /**
@@ -303,7 +303,7 @@ function highlightOnPageIfNeeded() {
 }
 
 // ===================================================================
-// –°ÂÂÂÂÂÂ INITIALIZATION
+// –° INITIALIZATION
 // ===================================================================
 
 function initGlobalSearch() {
@@ -318,7 +318,7 @@ function initGlobalSearch() {
     debouncedSearch(e.target.value);
   });
 
-  // Close dropdown bei Click au–ÂÂÂerhalb
+  // Close dropdown bei Click au–erhalb
   document.addEventListener('click', (e) => {
     if (!e.target.closest('.nav-search')) {
       document.getElementById('searchResults')?.innerHTML = '';
@@ -330,7 +330,7 @@ function initGlobalSearch() {
 }
 
 // ===================================================================
-// –°ÂÂÂÂÂÂ EXPORT für externe Nutzung (optional)
+// –° EXPORT für externe Nutzung (optional)
 // ===================================================================
 
 if (typeof module !== 'undefined' && module.exports) {

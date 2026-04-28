@@ -12,12 +12,12 @@ const MedicalDevicesDatabase = {
       id: 'cgm-sensor',
       name: 'CGM-Sensor (Continuous Glucose Monitoring)',
       category: 'Diabetes',
-      icon: '–°ÂÂÂÂÂÂ',
-      description: 'Kontinuierliche Glukose-–ÂÂÂberwachung für Diabetes-Management',
+      icon: '–°',
+      description: 'Kontinuierliche Glukose-–berwachung für Diabetes-Management',
       
       metrics: {
         accuracy: 95,           // 0-100 Prozent
-        cost: 45,               // âÂÂ–ÂÂ¬ pro Monat (0-100 relative Skala)
+        cost: 45,               // â–" pro Monat (0-100 relative Skala)
         risk: 15,               // Komplikationen/Fehlerr (0-100)
         usability: 85,          // Bedienungsfreundlichkeit (0-100)
         effectiveness: 90       // Therapeutische Effektivität (0-100)
@@ -25,7 +25,7 @@ const MedicalDevicesDatabase = {
 
       details: {
         principle: 'Enzymatische Glukose-Oxidase-Methode',
-        accuracy_range: '–Â–ÂÂ±15%',
+        accuracy_range: '––±15%',
         battery_life: '14 Tage',
         measurement_frequency: 'Alle 15 Sekunden',
         connectivity: 'Bluetooth LE',
@@ -65,7 +65,7 @@ const MedicalDevicesDatabase = {
       id: 'insulin-pump',
       name: 'Insulinpumpe (CSII)',
       category: 'Diabetes',
-      icon: '–°ÂÂÂÂÂÂ',
+      icon: '–°',
       description: 'Tragbare programmierbare Insulinabgabesystem',
 
       metrics: {
@@ -119,7 +119,7 @@ const MedicalDevicesDatabase = {
       id: 'ct-scan',
       name: 'CT-Scan (Computertomographie)',
       category: 'Bildgebung',
-      icon: '–°ÂÂÂÂÂÂ¥–Â¯ÂÂ¸ÂÂ',
+      icon: '–°¥–¯¸',
       description: 'Schichtbildverfahren mit Röntgenstrahlung',
 
       metrics: {
@@ -160,7 +160,7 @@ const MedicalDevicesDatabase = {
         'Strahlenbelastung',
         'Kontrastmittel-Nebenwirkungen',
         'Hohe Kosten',
-        '–ÂÂÂberdiagnose möglich'
+        '–berdiagnose möglich'
       ],
 
       alternatives: ['MRT', 'Röntgen', 'Ultraschall'],
@@ -172,7 +172,7 @@ const MedicalDevicesDatabase = {
       id: 'mri-scan',
       name: 'MRT (Magnetresonanztomographie)',
       category: 'Bildgebung',
-      icon: '–°ÂÂÂÂ§ÂÂ²',
+      icon: '–°§²',
       description: 'Magnetfeld-basierte hochauflösende Bildgebung',
 
       metrics: {
@@ -226,8 +226,8 @@ const MedicalDevicesDatabase = {
       id: 'ekg-monitor',
       name: 'EKG-Monitor (Elektrokardiogramm)',
       category: 'Kardiologie',
-      icon: 'âÂÂÂÂ¤–Â¯ÂÂ¸ÂÂ',
-      description: 'Tragbare kontinuierliche Herzrhythmus-–ÂÂÂberwachung',
+      icon: 'â¤–¯¸',
+      description: 'Tragbare kontinuierliche Herzrhythmus-–berwachung',
 
       metrics: {
         accuracy: 94,
@@ -279,7 +279,7 @@ const MedicalDevicesDatabase = {
       id: 'pacemaker',
       name: 'Schrittmacher (Pacemaker)',
       category: 'Kardiologie',
-      icon: '–°ÂÂÂÂÂÂ',
+      icon: '–°',
       description: 'Implantiertes elektronisches Gerät zur Herzfrequenz-Regelung',
 
       metrics: {
@@ -319,7 +319,7 @@ const MedicalDevicesDatabase = {
       disadvantages: [
         'Invasive Implantation',
         'MRT-Kontraindikation',
-        'Batterie-Verschlei–ÂÂÂ',
+        'Batterie-Verschlei–',
         'Infektionsrisiko'
       ],
 
@@ -333,7 +333,7 @@ const MedicalDevicesDatabase = {
       id: 'eeg-headset',
       name: 'EEG-Headset (Elektroenzephalogramm)',
       category: 'Neurologie',
-      icon: '–°ÂÂÂÂ§ÂÂ ',
+      icon: '–°§ ',
       description: 'Tragare Gehirnaktivitäts-Messung',
 
       metrics: {
@@ -387,7 +387,7 @@ const MedicalDevicesDatabase = {
       id: 'exoskeleton',
       name: 'Exoskelett (Motorisiert)',
       category: 'Orthopädie',
-      icon: '–°ÂÂÂÂ¦ÂÂ¾',
+      icon: '–°¦¾',
       description: 'Tragbare Robotik zur Bewegungsunterstützung',
 
       metrics: {
@@ -441,7 +441,7 @@ const MedicalDevicesDatabase = {
       id: 'intraoral-scanner',
       name: 'Intraoral-Scanner',
       category: 'Zahnmedizin',
-      icon: '–°ÂÂÂÂ¦ÂÂ·',
+      icon: '–°¦·',
       description: 'Digitale 3D-Zahnabformung',
 
       metrics: {
@@ -454,7 +454,7 @@ const MedicalDevicesDatabase = {
 
       details: {
         principle: 'Struktuiertes-Licht 3D-Scanning',
-        accuracy_range: '–Â–ÂÂ±10 –Â–ÂÂµm',
+        accuracy_range: '––±10 ––µm',
         scan_time: '2-5 Minuten',
         data_format: 'STL, OBJ',
         connectivity: 'USB, Wireless',

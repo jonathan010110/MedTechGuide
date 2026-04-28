@@ -63,7 +63,7 @@ function fixFile(filePath) {
     content = content.split('\u00e2\u0099\u00bf').join('â¿');  // â¿ wheelchair
     content = content.split('\u00e2\u009a\u0096').join('âï¸ïÂ¸Â');  // âï¸ïÂ¸Â scale
     
-    // Spezielle "–ÂÂÂ¢äÂÂ¬" Sequenzen (3-Byte UTF-8 falsch gelesen)
+    // Spezielle "–•ä"" Sequenzen (3-Byte UTF-8 falsch gelesen)
     content = content.split('\u00c3\u00a2\u00e2\u0080').join('â');
     content = content.split('\u00c3\u00a2\u00e2\u0081').join('â');
     

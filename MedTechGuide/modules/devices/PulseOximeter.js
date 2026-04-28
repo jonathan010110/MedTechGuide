@@ -63,7 +63,7 @@ export function createPulseOximeter() {
     {
       mesh: led,
       title: 'Pulsoximeter LED',
-      text: 'Die rote LED sendet Licht durch den Finger. Aus der Abschwächung wird die Sauerstoffsättigung (SpOâÂÂ–ÂÂ–) bestimmt.',
+      text: 'Die rote LED sendet Licht durch den Finger. Aus der Abschwächung wird die Sauerstoffsättigung (SpOâ––) bestimmt.',
       action: 'explain-led',
     },
   ];
@@ -80,7 +80,7 @@ export function createPulseOximeter() {
     root,
     interactive,
     description:
-      'Clip-Design mit LED-Lichtquelle und Display. Das Display zeigt animierte SpOâÂÂ–ÂÂ–-Werte und eine Pulswelle.',
+      'Clip-Design mit LED-Lichtquelle und Display. Das Display zeigt animierte SpOâ––-Werte und eine Pulswelle.',
     onActivate() {},
     onDeactivate() {},
     update(delta, elapsed) {

@@ -15,8 +15,8 @@ function fixFile(filePath) {
     const asUTF8 = correctBytes.toString('utf8');
     
     // Wenn das Ergebnis besser aussieht (weniger fehlerhafte Zeichen), schreib es zurück
-    const errorChars = (asUTF8.match(/[ÃÂâðŸ«»°©®½¤\ufffd]/g) || []).length;
-    const originalErrors = (asLatin1.match(/[ÃÂâðŸ«»°©®½¤\ufffd]/g) || []).length;
+    const errorChars = (asUTF8.match(/[âðŸ«»°©®½¤\ufffd]/g) || []).length;
+    const originalErrors = (asLatin1.match(/[âðŸ«»°©®½¤\ufffd]/g) || []).length;
     
     if (errorChars < originalErrors || (errorChars === 0 && originalErrors > 0)) {
       fs.writeFileSync(filePath, asUTF8, 'utf8');

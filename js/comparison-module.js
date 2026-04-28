@@ -192,13 +192,13 @@ class ComparisonModule {
         
         <div class="device-highlights">
           <div class="highlight-section">
-            <h4>âÂÂÂÂ Vorteile:</h4>
+            <h4>â Vorteile:</h4>
             <ul>
               ${device.advantages.map(a => `<li>${a}</li>`).join('')}
             </ul>
           </div>
           <div class="highlight-section">
-            <h4>âÂÂÂÂ –Â¯ÂÂ¸ÂÂ Nachteile:</h4>
+            <h4>â –¯¸ Nachteile:</h4>
             <ul>
               ${device.disadvantages.map(d => `<li>${d}</li>`).join('')}
             </ul>
@@ -289,7 +289,7 @@ class ComparisonModule {
 
     return `
       <div class="suitability-section">
-        <h3>–°ÂÂÂÂÂÂ¦ Eignung & Indikationen</h3>
+        <h3>–°¦ Eignung & Indikationen</h3>
         
         <div class="suitability-grid">
           ${categories.map(cat => `
@@ -313,7 +313,7 @@ class ComparisonModule {
     if (isApplicable === undefined || isApplicable === null) {
       return `
         <div class="indicator-wrapper na">
-          <span class="indicator-icon">âÂÂÂÂª</span>
+          <span class="indicator-icon">âª</span>
           <span class="indicator-text">Keine Daten</span>
         </div>
       `;
@@ -322,14 +322,14 @@ class ComparisonModule {
     if (isApplicable) {
       return `
         <div class="indicator-wrapper yes">
-          <span class="indicator-icon">–°ÂÂÂÂÂÂ¢</span>
+          <span class="indicator-icon">–°•</span>
           <span class="indicator-text">Geeignet</span>
         </div>
       `;
     } else {
       return `
         <div class="indicator-wrapper no">
-          <span class="indicator-icon">–°ÂÂÂÂÂÂ´</span>
+          <span class="indicator-icon">–°´</span>
           <span class="indicator-text">Nicht geeignet</span>
         </div>
       `;
@@ -342,7 +342,7 @@ class ComparisonModule {
   renderDetailsComparison() {
     return `
       <div class="details-section">
-        <h3>–°ÂÂÂÂÂÂ Technische Details</h3>
+        <h3>–° Technische Details</h3>
         
         <div class="details-grid">
           <div class="detail-column">
@@ -395,7 +395,7 @@ class ComparisonModule {
   }
 
   /**
-   * Schlie–ÂÂÂe Vergleichs-Modal
+   * Schlie–e Vergleichs-Modal
    */
   closeComparison() {
     this.modalElement.classList.remove('active');
