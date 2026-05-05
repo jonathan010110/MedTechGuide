@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <title>Herz-Kreislauf-Technologie – MedTechGuide</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="../css/style.css" />
   <script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.163.0/build/three.module.js","three/addons/":"https://unpkg.com/three@0.163.0/examples/jsm/"}}</script>
 </head>
 <body>
@@ -33,7 +33,7 @@
         <a href="genetik.html">Genetik</a>
         <a href="ki-diagnose.html">KI-Diagnose</a>
         <a href="zukunft.html">Zukunft</a>
-        <a href="html/quiz.html" style="background: linear-gradient(135deg, #1e40af 0%, #0f766e 100%); color: white; font-weight: 700;">🎯 Quiz</a>
+        <a href="quiz.html" style="background: linear-gradient(135deg, #1e40af 0%, #0f766e 100%); color: white; font-weight: 700;">🎯 Quiz</a>
         <a href="self-tests.html" style="background: linear-gradient(135deg, #7c3aed 0%, #ec4899 100%); color: white; font-weight: 700;">🧠 Tests</a>
         <a href="quellen.html">Quellen</a>
       </div>
@@ -56,7 +56,7 @@
       <p><strong>Diagnostik:</strong> EKG misst elektrische Aktivität des Herzens. Blutdruckgeräte erfassen systolischen und diastolischen Druck. <strong>Therapie:</strong> Schrittmacher stimulieren das Herz elektrisch. ICDs detektieren gefährliche Arrhythmien und geben Schocks ab. All diese Geräte basieren auf Elektrik, Signalverarbeitung und Algorithmen.</p>
     </section>
 
-    <section class="section-card imaging-3d-card" data-three-viewer data-model-label="Herz" data-model-path="data/models/herz.glb" data-fallback-model="heart" data-target-size="1.75">
+    <section class="section-card imaging-3d-card" data-three-viewer data-model-label="Herz" data-model-path="../data/models/herz.glb" data-fallback-model="heart" data-target-size="1.75">
       <h2>3D-Modell: Herz</h2>
       <p class="imaging-3d-model-caption">Eine klare 3D-Ansicht des Herzens mit seinem grundlegenden Aufbau.</p>
       <div class="imaging-3d-controls" role="group" aria-label="Steuerung fuer das 3D-Modell des Herzens">
@@ -209,9 +209,9 @@
   </footer>
 
   <button class="scroll-to-top" id="scrollToTopBtn" aria-label="Nach oben scrollen">↑</button>
-  <script type="module" src="js/topic-3d-viewer.js"></script>
-  <script src="script.js"></script>
-  <script src="search.js"></script>
+  <script type="module" src="../js/topic-3d-viewer.js"></script>
+  <script src="../js/script.js"></script>
+  <script src="../js/search.js"></script>
   <script>
     window.addEventListener("load", () => {
       const loader = document.getElementById("loader");

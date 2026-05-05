@@ -5,8 +5,7 @@ Lege deine `.glb` Dateien direkt in diesen Ordner.
 Beispiel:
 
 - `data/models/ct-scanner.glb`
-- `data/models/mrt-geraet.glb`
-- `data/models/ultraschall-sonde.glb`
+- `data/models/ct-scanner.glb`
 - `data/models/insulinpumpe.glb`
 - `data/models/herz.glb`
 - `data/models/neurochip.glb`
@@ -15,8 +14,7 @@ Beispiel:
 Im Projekt sind bereits drei vorbereitete Manifest-Eintraege vorhanden. Wenn du die Dateien mit diesen Namen in diesen Ordner legst, erscheinen sie automatisch im Viewer:
 
 - `data/models/ct-scanner.glb`
-- `data/models/mrt-geraet.glb`
-- `data/models/ultraschall-sonde.glb`
+- `data/models/ct-scanner.glb`
 
 Du kannst die Liste in `data/models/manifest.json` jederzeit erweitern oder anpassen.
 
@@ -33,9 +31,9 @@ Beispiel:
       "path": "data/models/ct-scanner.glb"
     },
     {
-      "id": "mrt-geraet-glb",
-      "label": "MRT-Geraet Realistisch",
-      "path": "data/models/mrt-geraet.glb"
+      "id": "ct-scanner-glb",
+      "label": "CT-Scanner Realistisch",
+      "path": "data/models/ct-scanner.glb"
     }
   ]
 }

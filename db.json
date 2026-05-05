@@ -1,0 +1,24 @@
+{
+  "quizResults": [
+    {
+      "name": "Jonathan",
+      "punkte": 1,
+      "datum": "2026-05-05T11:13:17.273Z",
+      "maxPunkte": 5,
+      "prozent": 20,
+      "kategorie": "diagnostik",
+      "testType": "multiple-choice",
+      "id": 1
+    },
+    {
+      "name": "Jonathan",
+      "punkte": 0,
+      "datum": "2026-05-05T11:13:34.797Z",
+      "maxPunkte": 5,
+      "prozent": 0,
+      "kategorie": "diagnostik",
+      "testType": "multiple-choice",
+      "id": 2
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="de">
-<head><meta charset="utf-8" /><title>Genetik & CRISPR – MedTechGuide</title><meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="stylesheet" href="style.css" /><script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.163.0/build/three.module.js","three/addons/":"https://unpkg.com/three@0.163.0/examples/jsm/"}}</script></head>
+<head><meta charset="utf-8" /><title>Genetik & CRISPR – MedTechGuide</title><meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="stylesheet" href="../css/style.css" /><script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.163.0/build/three.module.js","three/addons/":"https://unpkg.com/three@0.163.0/examples/jsm/"}}</script></head>
 <body>
   <!-- ♿ ACCESSIBILITY: Skip to Content Link -->
   <a href="#main-content" class="skip-to-content">Zum Inhalt springen</a>
@@ -20,7 +20,7 @@
         <a href="genetik.html" class="active">Genetik</a>
         <a href="ki-diagnose.html">KI-Diagnose</a>
         <a href="zukunft.html">Zukunft</a>
-        <a href="html/quiz.html" style="background: linear-gradient(135deg, #1e40af 0%, #0f766e 100%); color: white; font-weight: 700;">🎯 Quiz</a>
+        <a href="quiz.html" style="background: linear-gradient(135deg, #1e40af 0%, #0f766e 100%); color: white; font-weight: 700;">🎯 Quiz</a>
         <a href="self-tests.html" style="background: linear-gradient(135deg, #7c3aed 0%, #ec4899 100%); color: white; font-weight: 700;">🧠 Tests</a>
         <a href="quellen.html">Quellen</a>
       </div>
@@ -39,7 +39,7 @@
       <h2>Kurz erklärt</h2>
       <p><strong>DNA-Sequenzierung:</strong> Liest die Abfolge von Basenpaaren (A, T, G, C). <strong>Genotypisierung:</strong> Sucht bekannte Mutationen. <strong>CRISPR:</strong> Ein "Schere" dass DNA schneiden kann. <strong>Gentherapie:</strong> Fügt fehlerhafte Gene ein oder repariert sie. Alle basieren auf Biologie + Informatik.</p>
     </section>
-    <section class="section-card imaging-3d-card" data-three-viewer data-model-label="DNA-Doppelhelix" data-model-path="data/models/dna_double_helix.glb" data-fallback-model="dna-helix" data-target-size="2.2">
+    <section class="section-card imaging-3d-card" data-three-viewer data-model-label="DNA-Doppelhelix" data-model-path="../data/models/dna_double_helix.glb" data-fallback-model="dna-helix" data-target-size="2.2">
       <h2>3D-Modell: DNA-Doppelhelix</h2>
       <p class="imaging-3d-model-caption">Eine klare 3D-Ansicht der DNA-Doppelhelix als Basis genetischer Information.</p>
       <div class="imaging-3d-controls" role="group" aria-label="Steuerung fuer das 3D-Modell der DNA-Doppelhelix">
@@ -126,8 +126,8 @@
   </main>
   <footer class="site-footer"><div class="container"><p>&copy; 2026 MedTechGuide – Schulprojekt HTL Informatik</p><p><a href="quellen.html">Über die wissenschaftlichen Quellen</a></p></div></footer>
   <button class="scroll-to-top" id="scrollToTopBtn" aria-label="Nach oben scrollen">↑</button>
-  <script type="module" src="js/topic-3d-viewer.js"></script>
-  <script src="script.js"></script>
+  <script type="module" src="../js/topic-3d-viewer.js"></script>
+  <script src="../js/script.js"></script>
   <script>window.addEventListener("load", () => { const loader = document.getElementById("loader"); if (loader) { loader.classList.add("hidden"); setTimeout(() => { loader.style.display = "none"; }, 500); } setActiveNavLink(); setRelatedLinks('genetik'); });</script>
 </body>
 </html>

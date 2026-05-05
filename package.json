@@ -1,0 +1,11 @@
+{
+  "name": "projekt-25",
+  "private": true,
+  "scripts": {
+    "json-server": "json-server --watch db.json --port 3001",
+    "start:api": "npm run json-server"
+  },
+  "devDependencies": {
+    "json-server": "^0.17.4"
+  }
+}

@@ -6,16 +6,6 @@
       "path": "data/models/ct-scanner.glb"
     },
     {
-      "id": "mrt-geraet-glb",
-      "label": "MRT-Geraet Realistisch",
-      "path": "data/models/mrt-geraet.glb"
-    },
-    {
-      "id": "ultraschall-sonde-glb",
-      "label": "Ultraschallsonde Realistisch",
-      "path": "data/models/ultraschall-sonde.glb"
-    },
-    {
       "id": "insulinpumpe-glb",
       "label": "Insulinpumpe",
       "path": "data/models/insulinpumpe.glb"

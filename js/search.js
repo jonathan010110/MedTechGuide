@@ -24,12 +24,21 @@ let searchCache = {}; // Cache für häufige Suchen
 async function loadSearchIndex() {
   if (SEARCH_INDEX) return SEARCH_INDEX; // Cache
 
+  const indexCandidates = [
+    '../data/models/search-index.json',
+    'data/models/search-index.json',
+    'search-index.json'
+  ];
+
   try {
-    const response = await fetch('search-index.json');
-    if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    SEARCH_INDEX = await response.json();
-    console.log('✅ Search Index geladen:', SEARCH_INDEX.pages.length, 'Seiten');
-    return SEARCH_INDEX;
+    for (const candidate of indexCandidates) {
+      const response = await fetch(candidate);
+      if (!response.ok) continue;
+      SEARCH_INDEX = await response.json();
+      console.log('✅ Search Index geladen:', SEARCH_INDEX.pages.length, 'Seiten');
+      return SEARCH_INDEX;
+    }
+    throw new Error('Search index not reachable from known paths');
   } catch (error) {
     console.warn('⚠️ Search Index konnte nicht geladen werden:', error);
     return null;

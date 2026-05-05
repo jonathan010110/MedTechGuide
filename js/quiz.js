@@ -132,6 +132,70 @@ const QUIZ_DATABASE = {
   }
 };
 
+const QUIZ_API_BASE_URL = 'http://localhost:3001';
+const QUIZ_RESULTS_ENDPOINT = `${QUIZ_API_BASE_URL}/quizResults`;
+
+function sanitizePlayerName(rawName) {
+  const trimmed = (rawName || '').trim();
+  return trimmed.length > 0 ? trimmed.slice(0, 50) : 'Gast';
+}
+
+async function saveQuizResultToServer({ name, punkte, maxPunkte, kategorie, testType }) {
+  const payload = {
+    name: sanitizePlayerName(name),
+    punkte,
+    datum: new Date().toISOString(),
+    maxPunkte,
+    prozent: Math.round((punkte / maxPunkte) * 100),
+    kategorie,
+    testType
+  };
+
+  const response = await fetch(QUIZ_RESULTS_ENDPOINT, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(payload)
+  });
+
+  if (!response.ok) {
+    throw new Error(`Speichern fehlgeschlagen: HTTP ${response.status}`);
+  }
+
+  return response.json();
+}
+
+async function saveQuizResultFromUI(kategorie, punkte, maxPunkte, testType) {
+  const nameInput = document.getElementById('quiz-player-name');
+  const saveStatus = document.getElementById('quiz-save-status');
+  const saveButton = document.getElementById('quiz-save-button');
+
+  if (!saveStatus || !saveButton) return;
+
+  const playerName = sanitizePlayerName(nameInput ? nameInput.value : '');
+  localStorage.setItem('quizPlayerName', playerName);
+
+  saveButton.disabled = true;
+  saveStatus.textContent = 'Speichere Ergebnis...';
+
+  try {
+    await saveQuizResultToServer({
+      name: playerName,
+      punkte,
+      maxPunkte,
+      kategorie,
+      testType
+    });
+    saveStatus.textContent = 'Ergebnis gespeichert.';
+  } catch (error) {
+    console.error(error);
+    saveStatus.textContent = 'Speichern fehlgeschlagen. Ist der JSON-Server gestartet?';
+  } finally {
+    saveButton.disabled = false;
+  }
+}
+
 // ===================================================================
 // 🎮 UTILITY FUNCTIONS
 // ===================================================================
@@ -339,6 +403,8 @@ function showQuizErgebnis() {
       </div>
     `).join('');
 
+    const gespeicherterName = localStorage.getItem('quizPlayerName') || '';
+
     html += `
       <div class="quiz-result-header">
         <div class="quiz-result-emoji">${emoji}</div>
@@ -356,6 +422,14 @@ function showQuizErgebnis() {
       <div class="quiz-result-details">
         <h3>Detailergebnisse:</h3>
         ${detailsHtml}
+      </div>
+
+      <div class="quiz-result-save" style="margin: 1rem 0; padding: 1rem; border: 1px solid rgba(30, 64, 175, 0.2); border-radius: 12px;">
+        <h3>Ergebnis speichern</h3>
+        <label for="quiz-player-name" style="display:block; margin-bottom: 0.4rem;">Name</label>
+        <input id="quiz-player-name" type="text" maxlength="50" placeholder="Dein Name" value="${gespeicherterName}" style="width:100%; padding: 0.6rem; border-radius: 8px; border: 1px solid #d1d5db;" />
+        <button id="quiz-save-button" class="btn btn-primary" style="margin-top: 0.8rem;" onclick="saveQuizResultFromUI('${kategorie}', ${punkte}, ${maxPunkte}, '${testType}')">Ergebnis an Server senden</button>
+        <p id="quiz-save-status" style="margin-top: 0.6rem; font-size: 0.95rem;"></p>
       </div>
       
       <div class="quiz-result-actions">
@@ -584,6 +658,7 @@ if (typeof module !== 'undefined' && module.exports) {
     closeQuiz,
     closeQuizModal,
     QUIZ_DATABASE,
-    getRandomizedQuestions
+    getRandomizedQuestions,
+    saveQuizResultToServer
   };
 }
