@@ -3,9 +3,12 @@
   "private": true,
   "scripts": {
     "json-server": "json-server --watch db.json --port 3001",
-    "start:api": "npm run json-server"
+    "start:api": "npm run json-server",
+    "http-server": "http-server -p 8080 -c-1",
+    "start:web": "npm run http-server"
   },
   "devDependencies": {
-    "json-server": "^0.17.4"
+    "json-server": "^0.17.4",
+    "http-server": "^14.1.1"
   }
 }

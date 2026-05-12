@@ -134,6 +134,7 @@ const QUIZ_DATABASE = {
 
 const QUIZ_API_BASE_URL = 'http://localhost:3001';
 const QUIZ_RESULTS_ENDPOINT = `${QUIZ_API_BASE_URL}/quizResults`;
+let lastScoreSummary = null;
 
 function sanitizePlayerName(rawName) {
   const trimmed = (rawName || '').trim();
@@ -194,6 +195,11 @@ async function saveQuizResultFromUI(kategorie, punkte, maxPunkte, testType) {
   } finally {
     saveButton.disabled = false;
   }
+}
+
+function openScoreWindow() {
+  // Navigiere zur Score-Seite
+  window.location.href = 'score.html';
 }
 
 // ===================================================================
@@ -404,6 +410,14 @@ function showQuizErgebnis() {
     `).join('');
 
     const gespeicherterName = localStorage.getItem('quizPlayerName') || '';
+    lastScoreSummary = {
+      kategorie,
+      punkte,
+      maxPunkte,
+      prozent,
+      bewertung,
+      datumISO: new Date().toISOString()
+    };
 
     html += `
       <div class="quiz-result-header">
@@ -434,6 +448,7 @@ function showQuizErgebnis() {
       
       <div class="quiz-result-actions">
         <button class="btn btn-primary" onclick="startQuiz('${kategorie}')">Quiz wiederholen</button>
+        <button class="btn btn-secondary" onclick="openScoreWindow()">Your score</button>
         <button class="btn btn-secondary" onclick="closeQuiz()">Beenden</button>
       </div>
     `;
@@ -659,6 +674,7 @@ if (typeof module !== 'undefined' && module.exports) {
     closeQuizModal,
     QUIZ_DATABASE,
     getRandomizedQuestions,
-    saveQuizResultToServer
+    saveQuizResultToServer,
+    openScoreWindow
   };
 }

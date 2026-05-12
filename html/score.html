@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <title>Your Score – MedTechGuide</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Übersicht aller deine Quiz-Ergebnisse mit Filterung und Statistiken." />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .score-container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .filter-section {
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .filter-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .filter-group label {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: #1f2937;
+    }
+
+    .filter-group select,
+    .filter-group input {
+      padding: 0.6rem;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      background: white;
+    }
+
+    .filter-group select:focus,
+    .filter-group input:focus {
+      outline: none;
+      border-color: #1e40af;
+      box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
+    }
+
+    .filter-actions {
+      display: flex;
+      gap: 0.5rem;
+      align-items: flex-end;
+    }
+
+    .filter-actions button {
+      flex: 1;
+      padding: 0.6rem 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.25s ease;
+    }
+
+    .btn-filter {
+      background: #1e40af;
+      color: white;
+    }
+
+    .btn-filter:hover {
+      background: #1e3a8a;
+    }
+
+    .btn-reset {
+      background: #e5e7eb;
+      color: #1f2937;
+    }
+
+    .btn-reset:hover {
+      background: #d1d5db;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .stat-card {
+      background: linear-gradient(135deg, #1e40af 0%, #0f766e 100%);
+      color: white;
+      padding: 1.2rem;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 4px 16px rgba(30, 64, 175, 0.15);
+    }
+
+    .stat-value {
+      font-size: 1.8rem;
+      font-weight: bold;
+      margin-bottom: 0.3rem;
+    }
+
+    .stat-label {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+
+    .results-container {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .results-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+    }
+
+    .results-table thead {
+      background: #f3f4f6;
+      border-bottom: 2px solid #e5e7eb;
+    }
+
+    .results-table th {
+      padding: 1rem;
+      text-align: left;
+      font-weight: 600;
+      color: #1f2937;
+    }
+
+    .results-table td {
+      padding: 1rem;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .results-table tbody tr:hover {
+      background: #f9fafb;
+    }
+
+    .score-badge {
+      display: inline-block;
+      padding: 0.4rem 0.8rem;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      text-align: center;
+      min-width: 60px;
+    }
+
+    .score-excellent {
+      background: #d1fae5;
+      color: #065f46;
+    }
+
+    .score-good {
+      background: #dbeafe;
+      color: #1e40af;
+    }
+
+    .score-ok {
+      background: #fef3c7;
+      color: #92400e;
+    }
+
+    .score-poor {
+      background: #fee2e2;
+      color: #991b1b;
+    }
+
+    .empty-state {
+      text-align: center;
+      padding: 3rem 1rem;
+      color: #6b7280;
+    }
+
+    .empty-state-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .empty-state-text {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .empty-state-hint {
+      font-size: 0.95rem;
+      color: #9ca3af;
+    }
+
+    .loading {
+      text-align: center;
+      padding: 2rem;
+      color: #6b7280;
+    }
+
+    .error {
+      background: #fee2e2;
+      border: 1px solid #fca5a5;
+      color: #991b1b;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      .filter-section {
+        grid-template-columns: 1fr;
+      }
+
+      .results-table {
+        font-size: 0.85rem;
+      }
+
+      .results-table th,
+      .results-table td {
+        padding: 0.75rem 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-to-content">Zum Inhalt springen</a>
+
+  <div id="loader">
+    <div class="spinner"></div>
+    <p>Your Score wird geladen…</p>
+  </div>
+
+  <header class="site-header">
+    <div class="container">
+      <h1>Your Score</h1>
+      <p class="subtitle">Übersicht deiner Quiz-Ergebnisse</p>
+    </div>
+  </header>
+
+  <nav class="main-nav">
+    <div class="nav-container">
+      <div class="nav-links">
+        <a href="index.html">Start</a>
+        <a href="diabetes.html">Diabetes</a>
+        <a href="allergie.html">Allergien</a>
+        <a href="herz.html">Herz</a>
+        <a href="bildgebung.html">Bildgebung</a>
+        <a href="neurochips.html">Neurochips</a>
+        <a href="exoskelette.html">Exoskelette</a>
+        <a href="genetik.html">Genetik</a>
+        <a href="ki-diagnose.html">KI-Diagnose</a>
+        <a href="zukunft.html">Zukunft</a>
+        <a href="quiz.html" style="background: linear-gradient(135deg, #1e40af 0%, #0f766e 100%); color: white; font-weight: 700;">🎯 Quiz</a>
+        <a href="self-tests.html" style="background: linear-gradient(135deg, #7c3aed 0%, #ec4899 100%); color: white; font-weight: 700;">🧠 Tests</a>
+        <a href="quellen.html">Quellen</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container score-container" id="main-content">
+    <div id="error-message"></div>
+
+    <section class="filter-section">
+      <div class="filter-group">
+        <label for="filter-kategorie">Kategorie</label>
+        <select id="filter-kategorie">
+          <option value="">Alle Kategorien</option>
+          <option value="diagnostik">Diagnostik</option>
+          <option value="therapie">Therapie</option>
+          <option value="forschung">Forschung</option>
+          <option value="zukunft">Zukunft</option>
+          <option value="depression">Depression</option>
+          <option value="adhs">ADHS</option>
+          <option value="persoenlichkeit">Persönlichkeit</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label for="filter-name">Name</label>
+        <input type="text" id="filter-name" placeholder="z.B. Max Mustermann">
+      </div>
+
+      <div class="filter-group">
+        <label for="filter-min-score">Min. Prozent</label>
+        <input type="number" id="filter-min-score" min="0" max="100" placeholder="0">
+      </div>
+
+      <div class="filter-group">
+        <label for="filter-date">Datum (von)</label>
+        <input type="date" id="filter-date">
+      </div>
+
+      <div class="filter-actions">
+        <button class="btn-filter" onclick="applyFilters()">Filter anwenden</button>
+        <button class="btn-reset" onclick="resetFilters()">Zurücksetzen</button>
+      </div>
+    </section>
+
+    <div id="stats-section" class="stats-grid"></div>
+
+    <div id="results-section" class="results-container"></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 MedTechGuide – Schulprojekt HTL Informatik</p>
+      <p><a href="quellen.html">Über die wissenschaftlichen Quellen</a></p>
+    </div>
+  </footer>
+
+  <button class="scroll-to-top" id="scrollToTopBtn" aria-label="Nach oben scrollen">↑</button>
+
+  <script src="../js/script.js"></script>
+  <script src="../js/score.js"></script>
+  <script>
+    window.addEventListener("load", () => {
+      const loader = document.getElementById("loader");
+      if (loader) {
+        loader.classList.add("hidden");
+        setTimeout(() => { loader.style.display = "none"; }, 500);
+      }
+      setActiveNavLink();
+      initScorePage();
+    });
+  </script>
+</body>
+</html>

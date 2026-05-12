@@ -19,6 +19,26 @@
       "kategorie": "diagnostik",
       "testType": "multiple-choice",
       "id": 2
+    },
+    {
+      "name": "Jonathan",
+      "punkte": 0,
+      "datum": "2026-05-05T11:29:59.321Z",
+      "maxPunkte": 5,
+      "prozent": 0,
+      "kategorie": "diagnostik",
+      "testType": "multiple-choice",
+      "id": 3
+    },
+    {
+      "name": "Jonathan",
+      "punkte": 1,
+      "datum": "2026-05-05T11:31:09.036Z",
+      "maxPunkte": 5,
+      "prozent": 20,
+      "kategorie": "diagnostik",
+      "testType": "multiple-choice",
+      "id": 4
     }
   ]
 }
