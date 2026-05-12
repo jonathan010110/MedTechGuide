@@ -611,7 +611,7 @@ function fitCameraToObject(camera, controls, object) {
   const maxDimension = Math.max(size.x, size.y, size.z) || 1;
   const distance = Math.abs((maxDimension / 2) / Math.tan((camera.fov * Math.PI) / 360)) * 1.8;
 
-  camera.position.set(center.x + distance * 0.45, center.y + distance * 0.25, center.z + distance);
+  camera.position.set(center.x, center.y, center.z + distance);
   controls.target.copy(center);
   controls.update();
 }
