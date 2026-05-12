@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SPÖGL - Elegante Hybrid-Smartwatch mit intelligenter Gesundheitsanalyse">
+    <meta name="theme-color" content="#0a0e27">
+    <title>SPÖGL - Hybrid-Smartwatch | MedTechGuide</title>
+    <link rel="stylesheet" href="css/spoegl.css">
+</head>
+<body>
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">MedTechGuide</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#hero">Startseite</a></li>
+                <li><a href="#dashboard">Dashboard</a></li>
+                <li><a href="#technology">Technologie</a></li>
+                <li><a href="#sleep">Schlafanalyse</a></li>
+                <li><a href="#sports">Sport</a></li>
+                <li><a href="#cloud">Cloud</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero">
+        <div class="hero-animated-bg">
+            <div class="particle" style="--delay: 0s;"></div>
+            <div class="particle" style="--delay: 1s;"></div>
+            <div class="particle" style="--delay: 2s;"></div>
+            <div class="particle" style="--delay: 3s;"></div>
+            <div class="particle" style="--delay: 4s;"></div>
+        </div>
+        
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">SPÖGL</h1>
+                <p class="hero-subtitle">Klassisches Design. Intelligente Gesundheit.</p>
+                <p class="hero-description">Die Hybrid-Smartwatch, die Eleganz mit präziser Gesundheitsanalyse verbindet.</p>
+                
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="scrollToSection('dashboard')">
+                        <span>Live Daten ansehen</span>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor">
+                            <path d="M10 5v10M15 10H5"/>
+                        </svg>
+                    </button>
+                    <button class="btn btn-secondary" onclick="scrollToSection('technology')">
+                        <span>Technologie entdecken</span>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor">
+                            <path d="M8 5l7 7-7 7"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                <div class="watch-preview">
+                    <svg viewBox="0 0 200 200" class="watch-svg">
+                        <!-- Uhrengehäuse -->
+                        <circle cx="100" cy="100" r="95" fill="#1a1f3a" stroke="#00d4ff" stroke-width="2"/>
+                        <circle cx="100" cy="100" r="90" fill="url(#watchGradient)" stroke="#00d4ff" stroke-width="1" opacity="0.3"/>
+                        
+                        <!-- Zifferblatt mit Zahlen -->
+                        <circle cx="100" cy="100" r="85" fill="#0d1117" stroke="none"/>
+                        
+                        <!-- Uhrzahlen -->
+                        <text x="100" y="25" text-anchor="middle" font-size="12" fill="#00d4ff" font-weight="bold">12</text>
+                        <text x="175" y="105" text-anchor="middle" font-size="12" fill="#00d4ff" font-weight="bold">3</text>
+                        <text x="100" y="180" text-anchor="middle" font-size="12" fill="#00d4ff" font-weight="bold">6</text>
+                        <text x="25" y="105" text-anchor="middle" font-size="12" fill="#00d4ff" font-weight="bold">9</text>
+                        
+                        <!-- Pulssensor Visualisierung -->
+                        <circle cx="100" cy="100" r="75" fill="none" stroke="#ff006e" stroke-width="0.5" opacity="0.3"/>
+                        <circle cx="100" cy="100" r="65" fill="none" stroke="#ff006e" stroke-width="0.5" opacity="0.2"/>
+                        
+                        <!-- Zeiger (animiert) -->
+                        <g id="handGroup">
+                            <!-- Stundenzeiger -->
+                            <line x1="100" y1="100" x2="100" y2="50" stroke="#00d4ff" stroke-width="4" stroke-linecap="round" stroke-dasharray="50" stroke-dashoffset="0" class="hour-hand"/>
+                            <!-- Minutenzeiger -->
+                            <line x1="100" y1="100" x2="100" y2="35" stroke="#00d4ff" stroke-width="3" stroke-linecap="round" class="minute-hand"/>
+                            <!-- Sekundenzeiger -->
+                            <circle cx="100" cy="100" r="3" fill="#ff006e"/>
+                        </g>
+                        
+                        <!-- Zentrum -->
+                        <circle cx="100" cy="100" r="5" fill="#00d4ff"/>
+                        
+                        <!-- Gradient Definition -->
+                        <defs>
+                            <radialGradient id="watchGradient">
+                                <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:0.2" />
+                                <stop offset="100%" style="stop-color:#1a1f3a;stop-opacity:0" />
+                            </radialGradient>
+                        </defs>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LIVE DASHBOARD -->
+    <section id="dashboard" class="section dashboard-section">
+        <div class="container">
+            <h2 class="section-title">Live Dashboard</h2>
+            <p class="section-subtitle">Echtzeit-Daten von deiner SPÖGL</p>
+            
+            <div class="dashboard-grid">
+                <!-- Herzfrequenz -->
+                <div class="dashboard-card glass-card">
+                    <div class="card-icon heart-pulse">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                        </svg>
+                    </div>
+                    <h3 class="card-title">Herzfrequenz</h3>
+                    <div class="card-value" id="heartRate">-- <span class="unit">bpm</span></div>
+                    <div class="card-status" id="heartStatus">Wird geladen...</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 65%"></div>
+                    </div>
+                </div>
+
+                <!-- Schritte -->
+                <div class="dashboard-card glass-card">
+                    <div class="card-icon steps-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M7.5 1C6.12 1 5 2.12 5 3.5S6.12 6 7.5 6 10 4.88 10 3.5 8.88 1 7.5 1m11 3c-1.38 0-2.5 1.12-2.5 2.5s1.12 2.5 2.5 2.5 2.5-1.12 2.5-2.5-1.12-2.5-2.5-2.5m-11 5c-.82 0-1.5.68-1.5 1.5V23h3V10.5c0-.82-.68-1.5-1.5-1.5m10 0c-.82 0-1.5.68-1.5 1.5V23h3V10.5c0-.82-.68-1.5-1.5-1.5m5 0c-.82 0-1.5.68-1.5 1.5V23h3V10.5c0-.82-.68-1.5-1.5-1.5"/>
+                        </svg>
+                    </div>
+                    <h3 class="card-title">Schritte</h3>
+                    <div class="card-value" id="stepsCount">-- <span class="unit">Schritte</span></div>
+                    <div class="card-status" id="stepsStatus">Ziel: 10.000</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="stepsProgress" style="width: 45%"></div>
+                    </div>
+                </div>
+
+                <!-- Schlaf -->
+                <div class="dashboard-card glass-card">
+                    <div class="card-icon sleep-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12.5 2c-5.33 4.55-8 6.75-8 11.5 0 5.05 3.41 9.5 8 9.5s8-4.45 8-9.5c0-4.75-2.67-6.95-8-11.5z"/>
+                        </svg>
+                    </div>
+                    <h3 class="card-title">Schlaf</h3>
+                    <div class="card-value" id="sleepDuration">-- <span class="unit">Stunden</span></div>
+                    <div class="card-status" id="sleepStatus">Sehr gut</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 80%; background: linear-gradient(90deg, #a78bfa, #7c3aed);"></div>
+                    </div>
+                </div>
+
+                <!-- Stress Level -->
+                <div class="dashboard-card glass-card">
+                    <div class="card-icon stress-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm-4-9h8v2h-8zm0-3h8v2h-8z"/>
+                        </svg>
+                    </div>
+                    <h3 class="card-title">Stresslevel</h3>
+                    <div class="card-value" id="stressLevel">-- <span class="unit">%</span></div>
+                    <div class="card-status" id="stressStatus">Niedrig</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="stressProgress" style="width: 25%; background: linear-gradient(90deg, #34d399, #10b981);"></div>
+                    </div>
+                </div>
+
+                <!-- Kalorien -->
+                <div class="dashboard-card glass-card">
+                    <div class="card-icon calories-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                    </div>
+                    <h3 class="card-title">Kalorien</h3>
+                    <div class="card-value" id="calories">-- <span class="unit">kcal</span></div>
+                    <div class="card-status" id="caloriesStatus">Ziel: 2.500 kcal</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="caloriesProgress" style="width: 55%;"></div>
+                    </div>
+                </div>
+
+                <!-- Recovery Score -->
+                <div class="dashboard-card glass-card highlight-card">
+                    <div class="card-icon recovery-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                    </div>
+                    <h3 class="card-title">Recovery Score</h3>
+                    <div class="card-value" id="recoveryScore">-- <span class="unit">%</span></div>
+                    <div class="card-status recovery-optimal" id="recoveryStatus">Optimal</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="recoveryProgress" style="width: 88%; background: linear-gradient(90deg, #00d4ff, #0099ff);"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI Analyse -->
+            <div class="ai-analysis glass-card">
+                <div class="analysis-header">
+                    <svg class="ai-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <circle cx="12" cy="12" r="1" stroke-width="2"/>
+                        <circle cx="12" cy="5" r="1" stroke-width="2"/>
+                        <circle cx="19" cy="12" r="1" stroke-width="2"/>
+                        <circle cx="12" cy="19" r="1" stroke-width="2"/>
+                        <circle cx="5" cy="12" r="1" stroke-width="2"/>
+                        <path d="M12 6v12M5 12h14" stroke-width="1.5"/>
+                    </svg>
+                    <h3>KI-Analyse</h3>
+                </div>
+                <p id="aiAnalysis">Ihre Regeneration ist optimal. Sie haben ausreichend Schlaf bekommen und Ihr Stresslevel ist niedrig.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TECHNOLOGIE SECTION -->
+    <section id="technology" class="section tech-section">
+        <div class="container">
+            <h2 class="section-title">Intelligente Sensortechnologie</h2>
+            <p class="section-subtitle">Präzision bis zum kleinsten Detail</p>
+            
+            <div class="tech-grid">
+                <!-- PPG Sensor -->
+                <div class="tech-card glass-card">
+                    <div class="tech-icon ppg-icon">
+                        <svg viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 45 Q 25 35 30 25 Q 35 15 40 10"/>
+                            <circle cx="30" cy="30" r="20" opacity="0.3"/>
+                        </svg>
+                    </div>
+                    <h3>PPG-Sensoren</h3>
+                    <p>Photoplethysmografie für präzise Herzfrequenzmessung durch Lichtwellenerkennung.</p>
+                </div>
+
+                <!-- Beschleunigungssensor -->
+                <div class="tech-card glass-card">
+                    <div class="tech-icon accel-icon">
+                        <svg viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="15" y="15" width="30" height="30" rx="4"/>
+                            <path d="M30 25V35M25 30H35"/>
+                        </svg>
+                    </div>
+                    <h3>Beschleunigungssensor</h3>
+                    <p>3-Achsen-Messung für präzises Schrittzählen und Bewegungserkennung.</p>
+                </div>
+
+                <!-- Gyroskop -->
+                <div class="tech-card glass-card">
+                    <div class="tech-icon gyro-icon">
+                        <svg viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="30" cy="30" r="15"/>
+                            <circle cx="30" cy="30" r="10"/>
+                            <path d="M30 20V40M20 30H40"/>
+                        </svg>
+                    </div>
+                    <h3>Gyroskop</h3>
+                    <p>Präzise Winkelmessung für Sportmodi-Erkennung und Bewegungsverfolgung.</p>
+                </div>
+
+                <!-- Bluetooth -->
+                <div class="tech-card glass-card">
+                    <div class="tech-icon bt-icon">
+                        <svg viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M30 15L45 30L30 45M30 15L15 30L30 45"/>
+                            <circle cx="30" cy="30" r="20" opacity="0.2"/>
+                        </svg>
+                    </div>
+                    <h3>Bluetooth 5.0</h3>
+                    <p>Sichere und schnelle Synchronisation mit deinem Smartphone in Echtzeit.</p>
+                </div>
+
+                <!-- Cloud -->
+                <div class="tech-card glass-card">
+                    <div class="tech-icon cloud-icon">
+                        <svg viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 35C15 35 12 32 12 28C12 24 15 22 18 22C18 16 22 12 28 12C33 12 37 16 37 22C41 22 45 25 45 30C45 35 41 38 36 38"/>
+                        </svg>
+                    </div>
+                    <h3>Cloud-Verarbeitung</h3>
+                    <p>Deine Daten werden verschlüsselt in der Cloud verarbeitet und analysiert.</p>
+                </div>
+
+                <!-- ML -->
+                <div class="tech-card glass-card">
+                    <div class="tech-icon ml-icon">
+                        <svg viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="15" y="20" width="8" height="20" rx="1"/>
+                            <rect x="26" y="15" width="8" height="25" rx="1"/>
+                            <rect x="37" y="25" width="8" height="15" rx="1"/>
+                        </svg>
+                    </div>
+                    <h3>Machine Learning</h3>
+                    <p>Intelligente Algorithmen lernen deine Muster und optimieren die Analyse.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SCHLAFANALYSE -->
+    <section id="sleep" class="section sleep-section">
+        <div class="container">
+            <h2 class="section-title">Erweiterte Schlafanalyse</h2>
+            <p class="section-subtitle">Verstehe deine Schlafmuster</p>
+            
+            <div class="sleep-content">
+                <div class="sleep-chart glass-card">
+                    <h3>Schlafphasen Nacht</h3>
+                    <div class="chart-container">
+                        <canvas id="sleepChart"></canvas>
+                    </div>
+                    <div class="sleep-stats">
+                        <div class="stat-item">
+                            <span class="stat-label">Wachphase</span>
+                            <span class="stat-value" id="awakeTime">--</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Leichtschlaf</span>
+                            <span class="stat-value" id="lightSleep">--</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Tiefschlaf</span>
+                            <span class="stat-value" id="deepSleep">--</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">REM</span>
+                            <span class="stat-value" id="remSleep">--</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sleep-insights glass-card">
+                    <h3>Schlaf-Erkenntnisse</h3>
+                    <div class="insight-item">
+                        <div class="insight-icon">🎯</div>
+                        <div>
+                            <h4>Sleep Score</h4>
+                            <p id="sleepScore">--/100</p>
+                        </div>
+                    </div>
+                    <div class="insight-item">
+                        <div class="insight-icon">⏰</div>
+                        <div>
+                            <h4>Durchschnittliche Einschlafzeit</h4>
+                            <p id="fallAsleepTime">-- Min</p>
+                        </div>
+                    </div>
+                    <div class="insight-item">
+                        <div class="insight-icon">🌙</div>
+                        <div>
+                            <h4>Empfohlene Schlafenszeit</h4>
+                            <p id="recommendedBedtime">Wird analysiert...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SPORTMODUS -->
+    <section id="sports" class="section sports-section">
+        <div class="container">
+            <h2 class="section-title">Sportmodi & Aktivitäten</h2>
+            <p class="section-subtitle">Verfolge deine Leistung präzise</p>
+            
+            <div class="sports-grid">
+                <div class="sport-card glass-card">
+                    <div class="sport-header">
+                        <span class="sport-icon">🏃</span>
+                        <h3>Laufen</h3>
+                    </div>
+                    <div class="sport-data">
+                        <div class="data-row">
+                            <span>Distanz:</span>
+                            <strong id="runDistance">-- km</strong>
+                        </div>
+                        <div class="data-row">
+                            <span>Durchschn. Pace:</span>
+                            <strong id="runPace">-- min/km</strong>
+                        </div>
+                        <div class="data-row">
+                            <span>Durchschn. HR:</span>
+                            <strong id="runHR">-- bpm</strong>
+                        </div>
+                        <div class="data-row">
+                            <span>Kalorieverbrauch:</span>
+                            <strong id="runCalories">-- kcal</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sport-card glass-card">
+                    <div class="sport-header">
+                        <span class="sport-icon">🚴</span>
+                        <h3>Radfahren</h3>
+                    </div>
+                    <div class="sport-data">
+                        <div class="data-row">
+                            <span>Distanz:</span>
+                            <strong id="bikeDistance">-- km</strong>
+                        </div>
+                        <div class="data-row">
+                            <span>Durchschn. Geschwindigkeit:</span>
+                            <strong id="bikeSpeed">-- km/h</strong>
+                        </div>
+                        <div class="data-row">
+                            <span>Höhenmeter:</span>
+                            <strong id="bikeElevation">-- m</strong>
+                        </div>
+                        <div class="data-row">
+                            <span>Dauer:</span>
+                            <strong id="bikeDuration">-- min</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sport-card glass-card">
+                    <div class="sport-header">
+                        <span class="sport-icon">💪</span>
+                        <h3>Fitness</h3>
+                    </div>
+                    <div class="sport-data">
+                        <div class="data-row">
+                            <span>Trainingstyp:</span>
+                            <strong id="fitnesType">Kraft & Ausdauer</strong>
+                        </div>
+                        <div class="data-row">
+                            <span>Dauer:</span>
+                            <strong id="fitnessDuration">-- min</strong>
+                        </div>
+                        <div class="data-row">
+                            <span>Durchschn. HR:</span>
+                            <strong id="fitnessHR">-- bpm</strong>
+                        </div>
+                        <div class="data-row">
+                            <span>Kalorieverbrauch:</span>
+                            <strong id="fitnessCalories">-- kcal</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="heart-zones glass-card">
+                <h3>Pulszonen Analyse</h3>
+                <div class="zones-container">
+                    <div class="zone zone-1">
+                        <span class="zone-name">Zone 1</span>
+                        <span class="zone-time" id="zone1Time">--</span>
+                    </div>
+                    <div class="zone zone-2">
+                        <span class="zone-name">Zone 2</span>
+                        <span class="zone-time" id="zone2Time">--</span>
+                    </div>
+                    <div class="zone zone-3">
+                        <span class="zone-name">Zone 3</span>
+                        <span class="zone-time" id="zone3Time">--</span>
+                    </div>
+                    <div class="zone zone-4">
+                        <span class="zone-name">Zone 4</span>
+                        <span class="zone-time" id="zone4Time">--</span>
+                    </div>
+                    <div class="zone zone-5">
+                        <span class="zone-name">Zone 5</span>
+                        <span class="zone-time" id="zone5Time">--</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CLOUD & WEB APP -->
+    <section id="cloud" class="section cloud-section">
+        <div class="container">
+            <h2 class="section-title">Cloud Synchronisation & Web App</h2>
+            <p class="section-subtitle">Deine Daten überall verfügbar</p>
+            
+            <div class="cloud-diagram">
+                <div class="cloud-flow">
+                    <div class="flow-item watch-flow">
+                        <div class="icon-box">⌚</div>
+                        <p>SPÖGL<br>Smartwatch</p>
+                    </div>
+                    <div class="flow-arrow">→</div>
+                    <div class="flow-item phone-flow">
+                        <div class="icon-box">📱</div>
+                        <p>Smartphone<br>App</p>
+                    </div>
+                    <div class="flow-arrow">→</div>
+                    <div class="flow-item cloud-flow">
+                        <div class="icon-box">☁️</div>
+                        <p>Cloud<br>Server</p>
+                    </div>
+                    <div class="flow-arrow">→</div>
+                    <div class="flow-item web-flow">
+                        <div class="icon-box">🌐</div>
+                        <p>Web<br>Dashboard</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cloud-features">
+                <div class="feature-row">
+                    <div class="feature glass-card">
+                        <h4>🔒 Datensicherheit</h4>
+                        <p>End-to-End Verschlüsselung (AES-256) aller Daten. Deine Privatsphäre ist garantiert.</p>
+                    </div>
+                    <div class="feature glass-card">
+                        <h4>⚡ Echtzeit-Sync</h4>
+                        <p>Deine Gesundheitsdaten werden in Echtzeit synchronisiert. Immer aktuell.</p>
+                    </div>
+                </div>
+                <div class="feature-row">
+                    <div class="feature glass-card">
+                        <h4>🤖 KI-Analyse</h4>
+                        <p>Machine Learning Algorithmen analysieren deine Daten und geben personalisierte Empfehlungen.</p>
+                    </div>
+                    <div class="feature glass-card">
+                        <h4>📊 Detaillierte Reports</h4>
+                        <p>Wöchentliche und monatliche Reports mit Trends und Vergleichen zur Vorwoche.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="data-flow glass-card">
+                <h3>Datenverarbeitung</h3>
+                <div class="data-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-text">
+                            <h4>Erfassung</h4>
+                            <p>Sensoren erfassen Daten alle 5 Sekunden</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-text">
+                            <h4>Verarbeitung</h4>
+                            <p>Lokale Vorverarbeitung auf der Uhr</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-text">
+                            <h4>Synchronisation</h4>
+                            <p>Sichere Übertragung zum Cloud-Server</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-text">
+                            <h4>Analyse</h4>
+                            <p>KI-Modelle analysieren die Daten</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">5</div>
+                        <div class="step-text">
+                            <h4>Insights</h4>
+                            <p>Personalisierte Erkenntnisse für dich</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2026 SPÖGL. Eine innovative Hybrid-Smartwatch mit intelligenter Gesundheitsanalyse.</p>
+                <p><a href="index.html">← Zurück zu MedTechGuide</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/spoegl.js"></script>
+</body>
+</html>

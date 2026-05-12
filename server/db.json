@@ -1,0 +1,91 @@
+{
+  "data": {
+    "heartRate": 72,
+    "steps": 6847,
+    "sleepDuration": 7.5,
+    "stressLevel": 28,
+    "calories": 1847,
+    "recoveryScore": 86,
+    "sleepPhases": {
+      "awake": 23,
+      "light": 145,
+      "deep": 98,
+      "rem": 94
+    },
+    "sleepScore": 82,
+    "fallAsleepTime": 8,
+    "recommendedBedtime": "22:45",
+    "sports": {
+      "running": {
+        "distance": 8.7,
+        "pace": 5.45,
+        "avgHR": 142,
+        "calories": 721
+      },
+      "cycling": {
+        "distance": 24.3,
+        "speed": 26.5,
+        "elevation": 187,
+        "duration": 55
+      },
+      "fitness": {
+        "type": "Kraft & Ausdauer",
+        "duration": 42,
+        "avgHR": 135,
+        "calories": 385
+      }
+    },
+    "heartZones": {
+      "zone1": 15,
+      "zone2": 68,
+      "zone3": 32,
+      "zone4": 18,
+      "zone5": 7
+    },
+    "weeklyStats": {
+      "totalSteps": 67543,
+      "averageHeartRate": 71,
+      "totalSleepHours": 52.3,
+      "totalCalories": 15234,
+      "averageRecovery": 82
+    },
+    "monthlyStats": {
+      "totalSteps": 287564,
+      "averageHeartRate": 70,
+      "totalSleepHours": 223,
+      "totalCalories": 64892,
+      "averageRecovery": 79
+    },
+    "deviceInfo": {
+      "name": "SPÖGL",
+      "model": "Hybrid-Smartwatch v2",
+      "serialNumber": "SPO-2026-001-A",
+      "firmwareVersion": "2.1.4",
+      "batteryLevel": 87,
+      "lastSync": "2026-05-12T14:32:00Z",
+      "connectionStatus": "Connected"
+    },
+    "userProfile": {
+      "name": "Max Mustermann",
+      "age": 32,
+      "weight": 75,
+      "height": 182,
+      "gender": "male",
+      "timezone": "Europe/Berlin",
+      "language": "de"
+    },
+    "goals": {
+      "dailySteps": 10000,
+      "dailyCalories": 2500,
+      "sleepTarget": 8,
+      "stressTargetMax": 50,
+      "recoveryTarget": 80
+    },
+    "recommendations": {
+      "activity": "Heute sollten Sie noch etwa 3.200 Schritte mehr gehen, um Ihr Ziel zu erreichen.",
+      "sleep": "Sie haben ausreichend geschlafen. Halten Sie diesen Rhythmus bei!",
+      "stress": "Ihr Stresslevel ist niedrig. Das ist großartig für Ihre Gesundheit.",
+      "recovery": "Ihre Erholung ist optimal. Sie können heute trainieren."
+    }
+  }
+}
