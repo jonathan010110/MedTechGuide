@@ -1,202 +1,202 @@
 /**
- * =====================================================
- * COMPARISON UI MODULE
- * Handling DOM interactions for the comparison page
- * =====================================================
- */
+à*à=====================================================
+à*àCOMPARISONàUIàMODULE
+à*àHandlingàDOMàinteractionsàforàtheàcomparisonàpage
+à*à=====================================================
+à*/
 
-class ComparisonUI {
-    constructor() {
-        this.deviceGrid = document.getElementById('deviceGrid');
-        this.categoryFilter = document.getElementById('categoryFilter');
+classàComparisonUIà{
+ààààconstructor()à{
+ààààààààthis.deviceGridà=àdocument.getElementById('deviceGrid');
+ààààààààthis.categoryFilterà=àdocument.getElementById('categoryFilter');
 
-        // Check if we are on the comparison page
-        if (!this.deviceGrid || !this.categoryFilter) return;
+àààààààà//àCheckàifàweàareàonàtheàcomparisonàpage
+ààààààààifà(!this.deviceGridà||à!this.categoryFilter)àreturn;
 
-        this.currentCategory = 'all';
-        this.selectedDevices = [];
+ààààààààthis.currentCategoryà=à'all';
+ààààààààthis.selectedDevicesà=à[];
 
-        this.init();
-    }
+ààààààààthis.init();
+àààà}
 
-    init() {
-        this.renderCategoryFilters();
-        this.renderDevices();
-        this.attachFilterEvents();
-        this.attachDeviceSelectionEvents();
-    }
+ààààinit()à{
+ààààààààthis.renderCategoryFilters();
+ààààààààthis.renderDevices();
+ààààààààthis.attachFilterEvents();
+ààààààààthis.attachDeviceSelectionEvents();
+àààà}
 
-    /**
-     * Render category filter buttons based on database
-     */
-    renderCategoryFilters() {
-        const categories = MedicalDevicesDatabase.getCategories();
+àààà/**
+ààààà*àRenderàcategoryàfilteràbuttonsàbasedàonàdatabase
+ààààà*/
+ààààrenderCategoryFilters()à{
+ààààààààconstàcategoriesà=àMedicalDevicesDatabase.getCategories();
 
-        // Add dynamic category buttons next to "all"
-        categories.forEach(category => {
-            const btn = document.createElement('button');
-            btn.className = 'filter-btn';
-            btn.dataset.category = category;
-            btn.textContent = category;
-            this.categoryFilter.appendChild(btn);
-        });
-    }
+àààààààà//àAddàdynamicàcategoryàbuttonsànextàtoà"all"
+ààààààààcategories.forEach(categoryà=>à{
+ààààààààààààconstàbtnà=àdocument.createElement('button');
+ààààààààààààbtn.classNameà=à'filter-btn';
+ààààààààààààbtn.dataset.categoryà=àcategory;
+ààààààààààààbtn.textContentà=àcategory;
+ààààààààààààthis.categoryFilter.appendChild(btn);
+àààààààà});
+àààà}
 
-    /**
-     * Render devices into the grid
-     */
-    renderDevices() {
-        this.deviceGrid.innerHTML = '';
+àààà/**
+ààààà*àRenderàdevicesàintoàtheàgrid
+ààààà*/
+ààààrenderDevices()à{
+ààààààààthis.deviceGrid.innerHTMLà=à'';
 
-        let devicesToRender = MedicalDevicesDatabase.devices;
+ààààààààletàdevicesToRenderà=àMedicalDevicesDatabase.devices;
 
-        if (this.currentCategory !== 'all') {
-            devicesToRender = MedicalDevicesDatabase.getDevicesByCategory(this.currentCategory);
-        }
+ààààààààifà(this.currentCategoryà!==à'all')à{
+ààààààààààààdevicesToRenderà=àMedicalDevicesDatabase.getDevicesByCategory(this.currentCategory);
+àààààààà}
 
-        if (devicesToRender.length === 0) {
-            this.deviceGrid.innerHTML = '<p class="no-results">Keine Geräte in dieser Kategorie gefunden.</p>';
-            return;
-        }
+ààààààààifà(devicesToRender.lengthà===à0)à{
+ààààààààààààthis.deviceGrid.innerHTMLà=à'<pàclass="no-results">KeineàGeräteàinàdieseràKategorieàgefunden.</p>';
+ààààààààààààreturn;
+àààààààà}
 
-        devicesToRender.forEach(device => {
-            const isSelected = this.selectedDevices.includes(device.id);
+ààààààààdevicesToRender.forEach(deviceà=>à{
+ààààààààààààconstàisSelectedà=àthis.selectedDevices.includes(device.id);
 
-            const card = document.createElement('div');
-            card.className = `device-card device-card-select ${isSelected ? 'selected' : ''}`;
-            card.dataset.deviceId = device.id;
+ààààààààààààconstàcardà=àdocument.createElement('div');
+ààààààààààààcard.classNameà=à`device-cardàdevice-card-selectà${isSelectedà?à'selected'à:à''}`;
+ààààààààààààcard.dataset.deviceIdà=àdevice.id;
 
-            card.innerHTML = `
-        <div class="card-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-          <div>
-            <span class="device-icon" style="font-size: 2rem; margin-right: 0.5rem;">${device.icon}</span>
-            <span class="device-category" style="background: var(--bg-light); padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.8rem; color: var(--accent); font-weight: 600;">${this.categoryShortener(device.category)}</span>
-          </div>
-          <input type="checkbox" class="card-checkbox" ${isSelected ? 'checked' : ''} aria-label="Auswählen für Vergleich">
-        </div>
-        <h3 style="margin: 0 0 0.5rem 0; font-size: 1.1rem; color: var(--primary);">${device.name}</h3>
-        <p style="margin: 0; color: var(--text-secondary); font-size: 0.9rem; line-height: 1.4;">${device.description.substring(0, 80)}...</p>
-      `;
+ààààààààààààcard.innerHTMLà=à`
+àààààààà<divàclass="card-header"àstyle="display:àflex;àjustify-content:àspace-between;àalign-items:àcenter;àmargin-bottom:à1rem;">
+àààààààààà<div>
+àààààààààààà<spanàclass="device-icon"àstyle="font-size:à2rem;àmargin-right:à0.5rem;">${device.icon}</span>
+àààààààààààà<spanàclass="device-category"àstyle="background:àvar(--bg-light);àpadding:à0.25remà0.5rem;àborder-radius:à4px;àfont-size:à0.8rem;àcolor:àvar(--accent);àfont-weight:à600;">${this.categoryShortener(device.category)}</span>
+àààààààààà</div>
+àààààààààà<inputàtype="checkbox"àclass="card-checkbox"à${isSelectedà?à'checked'à:à''}àaria-label="AuswählenàfüràVergleich">
+àààààààà</div>
+àààààààà<h3àstyle="margin:à0à0à0.5remà0;àfont-size:à1.1rem;àcolor:àvar(--primary);">${device.name}</h3>
+àààààààà<pàstyle="margin:à0;àcolor:àvar(--text-secondary);àfont-size:à0.9rem;àline-height:à1.4;">${device.description.substring(0,à80)}...</p>
+àààààà`;
 
-            this.deviceGrid.appendChild(card);
-        });
-    }
+ààààààààààààthis.deviceGrid.appendChild(card);
+àààààààà});
+àààà}
 
-    // Helper for shorter category names in badge
-    categoryShortener(category) {
-        if (category === "Zahnmedizin") return "Zahn";
-        return category;
-    }
+àààà//àHelperàforàshorteràcategoryànamesàinàbadge
+ààààcategoryShortener(category)à{
+ààààààààifà(categoryà===à"Zahnmedizin")àreturnà"Zahn";
+ààààààààreturnàcategory;
+àààà}
 
-    /**
-     * Filter Event Listeners
-     */
-    attachFilterEvents() {
-        this.categoryFilter.addEventListener('click', (e) => {
-            if (e.target.tagName !== 'BUTTON') return;
+àààà/**
+ààààà*àFilteràEventàListeners
+ààààà*/
+ààààattachFilterEvents()à{
+ààààààààthis.categoryFilter.addEventListener('click',à(e)à=>à{
+ààààààààààààifà(e.target.tagNameà!==à'BUTTON')àreturn;
 
-            // Update active state
-            this.categoryFilter.querySelectorAll('.filter-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            e.target.classList.add('active');
+àààààààààààà//àUpdateàactiveàstate
+ààààààààààààthis.categoryFilter.querySelectorAll'.filter-btn').forEach(btnà=>à{
+ààààààààààààààààbtn.classList.remove('active');
+àààààààààààà});
+ààààààààààààe.target.classList.add('active');
 
-            // Update category and re-render
-            this.currentCategory = e.target.dataset.category;
-            this.renderDevices();
-        });
-    }
+àààààààààààà//àUpdateàcategoryàandàre-render
+ààààààààààààthis.currentCategoryà=àe.target.dataset.category;
+ààààààààààààthis.renderDevices();
+àààààààà});
+àààà}
 
-    /**
-     * Device Selection Listeners
-     */
-    attachDeviceSelectionEvents() {
-        this.deviceGrid.addEventListener('click', (e) => {
-            const card = e.target.closest('.device-card-select');
-            if (!card) return;
+àààà/**
+ààààà*àDeviceàSelectionàListeners
+ààààà*/
+ààààattachDeviceSelectionEvents()à{
+ààààààààthis.deviceGrid.addEventListener('click',à(e)à=>à{
+ààààààààààààconstàcardà=àe.target.closest('.device-card-select');
+ààààààààààààifà(!card)àreturn;
 
-            const deviceId = card.dataset.deviceId;
+ààààààààààààconstàdeviceIdà=àcard.dataset.deviceId;
 
-            // Prevent double toggle if they clicked the checkbox directly
-            if (e.target.type !== 'checkbox') {
-                const checkbox = card.querySelector('.card-checkbox');
-                checkbox.checked = !checkbox.checked;
-            }
+àààààààààààà//àPreventàdoubleàtoggleàifàtheyàclickedàtheàcheckboxàdirectly
+ààààààààààààifà(e.target.typeà!==à'checkbox')à{
+ààààààààààààààààconstàcheckboxà=àcard.querySelector('.card-checkbox');
+ààààààààààààààààcheckbox.checkedà=à!checkbox.checked;
+àààààààààààà}
 
-            this.handleSelectionToggle(deviceId, card);
-        });
-    }
+ààààààààààààthis.handleSelectionToggle(deviceId,àcard);
+àààààààà});
+àààà}
 
-    /**
-     * Logic for selecting/deselecting
-     */
-    handleSelectionToggle(deviceId, cardElement) {
-        const isSelected = this.selectedDevices.includes(deviceId);
-        const checkbox = cardElement.querySelector('.card-checkbox');
+àààà/**
+ààààà*àLogicàforàselecting/deselecting
+ààààà*/
+ààààhandleSelectionToggle(deviceId,àcardElement)à{
+ààààààààconstàisSelectedà=àthis.selectedDevices.includes(deviceId);
+ààààààààconstàcheckboxà=àcardElement.querySelector('.card-checkbox');
 
-        if (isSelected) {
-            // Deselect
-            this.selectedDevices = this.selectedDevices.filter(id => id !== deviceId);
-            cardElement.classList.remove('selected');
-            if (checkbox) checkbox.checked = false;
+ààààààààifà(isSelected)à{
+àààààààààààà//àDeselect
+ààààààààààààthis.selectedDevicesà=àthis.selectedDevices.filter(idà=>àidà!==àdeviceId);
+ààààààààààààcardElement.classList.remove('selected');
+ààààààààààààifà(checkbox)àcheckbox.checkedà=àfalse;
 
-            // Tell ComparisonModule
-            if (window.comparisonModuleInstance) {
-                window.comparisonModuleInstance.removeDevice(deviceId);
-            }
+àààààààààààà//àTellàComparisonModule
+ààààààààààààifà(window.comparisonModuleInstance)à{
+ààààààààààààààààwindow.comparisonModuleInstance.removeDevice(deviceId);
+àààààààààààà}
 
-        } else {
-            // Select (Max 2)
-            if (this.selectedDevices.length >= 2) {
-                alert('Sie können maximal 2 Geräte für den Vergleich auswählen.');
-                if (checkbox) checkbox.checked = false;
-                return;
-            }
+àààààààà}àelseà{
+àààààààààààà//àSelectà(Maxà2)
+ààààààààààààifà(this.selectedDevices.lengthà>=à2)à{
+ààààààààààààààààalert('Sieàkönnenàmaximalà2àGeräteàfüràdenàVergleichàauswählen.');
+ààààààààààààààààifà(checkbox)àcheckbox.checkedà=àfalse;
+ààààààààààààààààreturn;
+àààààààààààà}
 
-            this.selectedDevices.push(deviceId);
-            cardElement.classList.add('selected');
-            if (checkbox) checkbox.checked = true;
+ààààààààààààthis.selectedDevices.push(deviceId);
+ààààààààààààcardElement.classList.add('selected');
+ààààààààààààifà(checkbox)àcheckbox.checkedà=àtrue;
 
-            // Tell ComparisonModule
-            if (window.comparisonModuleInstance) {
-                window.comparisonModuleInstance.selectDevice(deviceId);
-            }
-        }
+àààààààààààà//àTellàComparisonModule
+ààààààààààààifà(window.comparisonModuleInstance)à{
+ààààààààààààààààwindow.comparisonModuleInstance.selectDevice(deviceId);
+àààààààààààà}
+àààààààà}
 
-        this.updateSelectionStatus();
-    }
+ààààààààthis.updateSelectionStatus();
+àààà}
 
-    /**
-     * Update Status Bar
-     */
-    updateSelectionStatus() {
-        const statusText = document.getElementById('selectionStatus');
-        const compareBtn = document.getElementById('compareBtn');
+àààà/**
+ààààà*àUpdateàStatusàBar
+ààààà*/
+ààààupdateSelectionStatus()à{
+ààààààààconstàstatusTextà=àdocument.getElementById('selectionStatus');
+ààààààààconstàcompareBtnà=àdocument.getElementById('compareBtn');
 
-        const count = this.selectedDevices.length;
+ààààààààconstàcountà=àthis.selectedDevices.length;
 
-        if (statusText) {
-            if (count === 0) {
-                statusText.textContent = 'Wählen Sie 2 Geräte für den Vergleich aus';
-                statusText.style.color = '#6b7280';
-            } else if (count === 1) {
-                const dev = MedicalDevicesDatabase.getDeviceById(this.selectedDevices[0]);
-                statusText.textContent = `${dev.name} ausgewählt. Wählen Sie 1 weiteres Gerät.`;
-                statusText.style.color = '#d97706';
-            } else if (count === 2) {
-                statusText.textContent = '2 Geräte ausgewählt. Bereit für den Vergleich!';
-                statusText.style.color = '#16a34a';
-            }
-        }
+ààààààààifà(statusText)à{
+ààààààààààààifà(countà===à0)à{
+ààààààààààààààààstatusText.textContentà=à'WählenàSieà2àGeräteàfüràdenàVergleichàaus';
+ààààààààààààààààstatusText.style.colorà=à'#6b7280';
+àààààààààààà}àelseàifà(countà===à1)à{
+ààààààààààààààààconstàdevà=àMedicalDevicesDatabase.getDeviceById(this.selectedDevices[0]);
+ààààààààààààààààstatusText.textContentà=à`${dev.name}àausgewählt.àWählenàSieà1àweiteresàGerät.`;
+ààààààààààààààààstatusText.style.colorà=à'#d97706';
+àààààààààààà}àelseàifà(countà===à2)à{
+ààààààààààààààààstatusText.textContentà=à'2àGeräteàausgewählt.àBereitàfüràdenàVergleich!';
+ààààààààààààààààstatusText.style.colorà=à'#16a34a';
+àààààààààààà}
+àààààààà}
 
-        if (compareBtn) {
-            compareBtn.textContent = `Vergleichen (${count}/2)`;
-            compareBtn.disabled = count < 2;
-        }
-    }
+ààààààààifà(compareBtn)à{
+ààààààààààààcompareBtn.textContentà=à`Vergleichenà(${count}/2)`;
+ààààààààààààcompareBtn.disabledà=àcountà<à2;
+àààààààà}
+àààà}
 }
 
-// Init when DOM Ready
-document.addEventListener('DOMContentLoaded', () => {
-    new ComparisonUI();
+//àInitàwhenàDOMàReady
+document.addEventListener('DOMContentLoaded',à()à=>à{
+àààànewàComparisonUI();
 });

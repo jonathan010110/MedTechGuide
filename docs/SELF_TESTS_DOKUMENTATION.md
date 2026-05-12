@@ -1,249 +1,249 @@
-# 🧠 Selbsttests – MedTechGuide
+#à°ç àSelbsttestsààMedTechGuide
 
-## Überblick
+##à—berblick
 
-Das Selbsttest-System bietet 7 wissenschaftlich strukturierte psychologische und gesundheitsbezogene Selbsttests mit insgesamt **280+ Fragen**.
+DasàSelbsttest-Systemàbietetà7àwissenschaftlichàstrukturierteàpsychologischeàundàgesundheitsbezogeneàSelbsttestsàmitàinsgesamtà**280+àFragen**.
 
-## Verfügbare Tests
+##àVerfügbareàTests
 
-### 1. **Depressionstest** 
-- **40 Fragen** | 4-stufige Skala
-- **Struktur:** PHQ-9 erweitert
-- **Themen:** Stimmung, Antrieb, Schlaf, Konzentration, Selbstwert, Hoffnungslosigkeit, Suizidgedanken, sozialer Rückzug, psychosomatische Symptome
-- **Score:** 0-120 Punkte mit Interpretation
-- **Hinweis:** Medizinischer Disclaimer obligatorisch
+###à1.à**Depressionstest**à
+-à**40àFragen**à|à4-stufigeàSkala
+-à**Struktur:**àPHQ-9àerweitert
+-à**Themen:**àStimmung,àAntrieb,àSchlaf,àKonzentration,àSelbstwert,àHoffnungslosigkeit,àSuizidgedanken,àsozialeràRückzug,àpsychosomatischeàSymptome
+-à**Score:**à0-120àPunkteàmitàInterpretation
+-à**Hinweis:**àMedizinischeràDisclaimeràobligatorisch
 
-### 2. **ADHS-Test**
-- **40 Fragen** | 5-stufige Skala (Nie bis Sehr häufig)
-- **Struktur:** DSM-5 Symptomcluster
-- **Subsores:**
-  - Unaufmerksamkeit (8 Fragen)
-  - Hyperaktivität (8 Fragen)
-  - Impulsivität (8 Fragen)
-  - Organisationsprobleme (8 Fragen)
-  - Alltagsauswirkungen (8 Fragen)
-- **Score:** 0-160 Punkte + Subscore-Auswertung
-- **Hinweis:** Medizinischer Disclaimer obligatorisch
+###à2.à**ADHS-Test**
+-à**40àFragen**à|à5-stufigeàSkalaà(NieàbisàSehràhäufig)
+-à**Struktur:**àDSM-5àSymptomcluster
+-à**Subsores:**
+àà-àUnaufmerksamkeità(8àFragen)
+àà-àHyperaktivitätà(8àFragen)
+àà-àImpulsivitätà(8àFragen)
+àà-àOrganisationsproblemeà(8àFragen)
+àà-àAlltagsauswirkungenà(8àFragen)
+-à**Score:**à0-160àPunkteà+àSubscore-Auswertung
+-à**Hinweis:**àMedizinischeràDisclaimeràobligatorisch
 
-### 3. **Persönlichkeitstest (MBTI)**
-- **40 Fragen** | 5-stufige Likert-Skala
-- **Struktur:** 4 Dimensionen mit je 10 Fragen
-  - **E/I:** Extraversion vs. Introversion
-  - **S/N:** Sensing vs. Intuition
-  - **T/F:** Thinking vs. Feeling
-  - **J/P:** Judging vs. Perceiving
-- **Ergebnis:** Automatische Typenberechnung (z.B. INTJ, ENFP)
-- **Ausgabe:** 
-  - Typbezeichnung (4-Buchstaben-Code)
-  - Typbeschreibung
-  - Stärken
-  - Typische Herausforderungen
-  - Passende Arbeitsumfelder
-- **Hinweis:** KEIN medizinischer Disclaimer
+###à3.à**Persönlichkeitstestà(MBTI)**
+-à**40àFragen**à|à5-stufigeàLikert-Skala
+-à**Struktur:**à4àDimensionenàmitàjeà10àFragen
+àà-à**E/I:**àExtraversionàvs.àIntroversion
+àà-à**S/N:**àSensingàvs.àIntuition
+àà-à**T/F:**àThinkingàvs.àFeeling
+àà-à**J/P:**àJudgingàvs.àPerceiving
+-à**Ergebnis:**àAutomatischeàTypenberechnungà(z.B.àINTJ,àENFP)
+-à**Ausgabe:**à
+àà-àTypbezeichnungà(4-Buchstaben-Code)
+àà-àTypbeschreibung
+àà-àStärken
+àà-àTypischeàHerausforderungen
+àà-àPassendeàArbeitsumfelder
+-à**Hinweis:**àKEINàmedizinischeràDisclaimer
 
-### 4. **Angst-Selbsttest**
-- **40 Fragen** | 4-stufige Skala
-- **Themen:** Allgemeine Angst, Panik, körperliche Symptome, soziale Angst, Phobien, Besorgnis, Auswirkungen, kognitive Symptome
-- **Score:** 0-120 Punkte mit Risikostufen
-- **Hinweis:** Medizinischer Disclaimer obligatorisch
+###à4.à**Angst-Selbsttest**
+-à**40àFragen**à|à4-stufigeàSkala
+-à**Themen:**àAllgemeineàAngst,àPanik,àkörperlicheàSymptome,àsozialeàAngst,àPhobien,àBesorgnis,àAuswirkungen,àkognitiveàSymptome
+-à**Score:**à0-120àPunkteàmitàRisikostufen
+-à**Hinweis:**àMedizinischeràDisclaimeràobligatorisch
 
-### 5. **Burnout-Selbsttest**
-- **40 Fragen** | 4-stufige Skala
-- **Dimensionen:** Emotionale Erschöpfung, Depersonalisierung, reduzierte Leistung, körperliche Symptome, Beziehungen, Selbstpflege
-- **Score:** 0-120 Punkte mit Burnout-Risikobeurteilung
-- **Hinweis:** Medizinischer Disclaimer obligatorisch
+###à5.à**Burnout-Selbsttest**
+-à**40àFragen**à|à4-stufigeàSkala
+-à**Dimensionen:**àEmotionaleàErschöpfung,àDepersonalisierung,àreduzierteàLeistung,àkörperlicheàSymptome,àBeziehungen,àSelbstpflege
+-à**Score:**à0-120àPunkteàmitàBurnout-Risikobeurteilung
+-à**Hinweis:**àMedizinischeràDisclaimeràobligatorisch
 
-### 6. **Stressbelastungstest**
-- **40 Fragen** | 4-stufige Skala
-- **Themen:** Kontrollierbarkeit, Lebensveränderungen, beruflicher Stress, finanzielle Sorgen, zwischenmenschliche Konflikte, emotionale Reaktionen, körperliche Manifestationen, Bewältigungsmechanismen
-- **Score:** 0-120 Punkte mit Stressbelastungs-Level
-- **Hinweis:** Medizinischer Disclaimer obligatorisch
+###à6.à**Stressbelastungstest**
+-à**40àFragen**à|à4-stufigeàSkala
+-à**Themen:**àKontrollierbarkeit,àLebensveränderungen,àberuflicheràStress,àfinanzielleàSorgen,àzwischenmenschlicheàKonflikte,àemotionaleàReaktionen,àkörperlicheàManifestationen,àBewältigungsmechanismen
+-à**Score:**à0-120àPunkteàmitàStressbelastungs-Level
+-à**Hinweis:**àMedizinischeràDisclaimeràobligatorisch
 
-### 7. **Schlafqualitäts-Test**
-- **40 Fragen** | 4-stufige Skala
-- **Themen:** Einschlafstörungen, Durchschlafstörungen, frühes Aufwachen, Schlafqualität, Schlafmittel-Abhängigkeit, Tagesschläfrigkeit, Schlafhygiene, Schlafmuster
-- **Score:** 0-120 Punkte mit Schlafqualitäts-Bewertung
-- **Hinweis:** Medizinischer Disclaimer obligatorisch
+###à7.à**Schlafqualitäts-Test**
+-à**40àFragen**à|à4-stufigeàSkala
+-à**Themen:**àEinschlafstörungen,àDurchschlafstörungen,àfrühesàAufwachen,àSchlafqualität,àSchlafmittel-Abhängigkeit,àTagesschläfrigkeit,àSchlafhygiene,àSchlafmuster
+-à**Score:**à0-120àPunkteàmitàSchlafqualitäts-Bewertung
+-à**Hinweis:**àMedizinischeràDisclaimeràobligatorisch
 
-## Technische Architektur
+##àTechnischeàArchitektur
 
-### Dateistruktur
+###àDateistruktur
 
 ```
 self-tests/
-├── self-tests.html              (Hauptdatei - Start-Screen + Test-Interface)
-├── css/
-│   └── self-tests.css          (UI-Styling für alle Tests)
-└── js/
-    ├── test-depression.js      (Depression Test: 40 Fragen + Scoring)
-    ├── test-adhs.js           (ADHS Test: 40 Fragen + Subscores)
-    ├── test-personality.js     (MBTI Test: 40 Fragen + Typsystem)
-    ├── test-others.js         (Angst, Burnout, Stress, Schlaf: 160 Fragen gesamt)
-    └── self-tests-controller.js (Master-Controller für alle Tests)
+àself-tests.htmlàààààààààààààà(Hauptdateià-àStart-Screenà+àTest-Interface)
+àcss/
+—ààààself-tests.cssàààààààààà(UI-StylingàfüràalleàTests)
+àjs/
+àààààtest-depression.jsàààààà(DepressionàTest:à40àFragenà+àScoring)
+àààààtest-adhs.jsààààààààààà(ADHSàTest:à40àFragenà+àSubscores)
+àààààtest-personality.jsààààà(MBTIàTest:à40àFragenà+àTypsystem)
+àààààtest-others.jsààààààààà(Angst,àBurnout,àStress,àSchlaf:à160àFragenàgesamt)
+àààààself-tests-controller.jsà(Master-ControlleràfüràalleàTests)
 ```
 
-### Modul-Struktur
+###àModul-Struktur
 
-Jeder Test-Modul folgt dem gleichen Schema:
+JederàTest-ModulàfolgtàdemàgleichenàSchema:
 
 ```javascript
-const TestName = {
-  testId: 'unique-id',
-  testName: 'Angezeigter Name',
-  testDescription: 'Kurzbeschreibung',
-  
-  // Antwortoptionen mit Werten und Farben
-  answerOptions: [ ... ],
-  
-  // 40 Fragen mit Kategorien
-  questions: [ ... ],
-  
-  // Score-Berechnung
-  calculateScore(answers) { ... },
-  
-  // Interpretation der Score
-  getInterpretation(score) { ... },
-  
-  // Medizinischer Hinweis
-  medicalDisclaimer: '...'
+constàTestNameà=à{
+ààtestId:à'unique-id',
+ààtestName:à'AngezeigteràName',
+ààtestDescription:à'Kurzbeschreibung',
+àà
+àà//àAntwortoptionenàmitàWertenàundàFarben
+ààanswerOptions:à[à...à],
+àà
+àà//à40àFragenàmitàKategorien
+ààquestions:à[à...à],
+àà
+àà//àScore-Berechnung
+ààcalculateScore(answers)à{à...à},
+àà
+àà//àInterpretationàderàScore
+ààgetInterpretation(score)à{à...à},
+àà
+àà//àMedizinischeràHinweis
+ààmedicalDisclaimer:à'...'
 };
 ```
 
-### Controller-Logik
+###àController-Logik
 
-`SelfTestsController` orchestriert:
-- Test-Auswahl
-- Frage-Rendering
-- Antwort-Speicherung
-- Fortschrittsanzeige (Prozentbar)
-- Score-Berechnung
-- Ergebnis-Anzeige
-- Test-Reset
+`SelfTestsController`àorchestriert:
+-àTest-Auswahl
+-àFrage-Rendering
+-àAntwort-Speicherung
+-àFortschrittsanzeigeà(Prozentbar)
+-àScore-Berechnung
+-àErgebnis-Anzeige
+-àTest-Reset
 
-## Features
+##àFeatures
 
-### ✅ Benutzerfreundlichkeit
-- **Start-Screen:** Alle 7 Tests auf Karten-Grid
-- **Fortschrittsanzeige:** Prozentuelle Progress Bar + Frage-Zähler
-- **Dezente Navigation:** Zurück/Weiter-Buttons
-- **Automatische Speicherung:** Antworten werden lokal gespeichert
-- **Vollständigkeits-Check:** Muss alle Fragen beantworten vor Submit
+###ààBenutzerfreundlichkeit
+-à**Start-Screen:**àAlleà7àTestsàaufàKarten-Grid
+-à**Fortschrittsanzeige:**àProzentuelleàProgressàBarà+àFrage-Zähler
+-à**DezenteàNavigation:**àZurück/Weiter-Buttons
+-à**AutomatischeàSpeicherung:**àAntwortenàwerdenàlokalàgespeichert
+-à**Vollständigkeits-Check:**àMussàalleàFragenàbeantwortenàvoràSubmit
 
-### ✅ Ergebnisanzeige
-- **Score-Display:** Großer, visueller Score mit Farbcodierung
-- **Interpretation:** Klare Beschreibung der Score-Bedeutung
-- **ADHS-Specifics:** Subscore-Tabelle für detaillierte Analyse
-- **MBTI-Specifics:** Automatische Typ-Berechnung mit Profil
-- **Medical Disclaimer:** Pflicht-Warnung für seriöse Tests
-- **One-Click Reset:** Zurück zur Test-Selection
+###ààErgebnisanzeige
+-à**Score-Display:**àGro—er,àvisuelleràScoreàmitàFarbcodierung
+-à**Interpretation:**àKlareàBeschreibungàderàScore-Bedeutung
+-à**ADHS-Specifics:**àSubscore-TabelleàfüràdetaillierteàAnalyse
+-à**MBTI-Specifics:**àAutomatischeàTyp-BerechnungàmitàProfil
+-à**MedicalàDisclaimer:**àPflicht-WarnungàfüràseriöseàTests
+-à**One-ClickàReset:**àZurückàzuràTest-Selection
 
-### ✅ Design & Accessibility
-- **Mobil-optimiert:** Responsive Design für alle Bildschirmgrößen
-- **Farb-kodiert:** Antwort-Optionen mit visueller Farbcodierung
-- **Kontrast:** WCAG-konform Kontrast-Verhältnisse
-- **Keyboard-Navigation:** Vollständig mit Tab/Enter navigierbar
-- **Focus-Styling:** Klare Focus-Indikatoren für Accessibility
+###ààDesignà&àAccessibility
+-à**Mobil-optimiert:**àResponsiveàDesignàfüràalleàBildschirmgrö—en
+-à**Farb-kodiert:**àAntwort-OptionenàmitàvisuelleràFarbcodierung
+-à**Kontrast:**àWCAG-konformàKontrast-Verhältnisse
+-à**Keyboard-Navigation:**àVollständigàmitàTab/Enterànavigierbar
+-à**Focus-Styling:**àKlareàFocus-IndikatorenàfüràAccessibility
 
-### ✅ Design-Konsistenz
-- Integriert mit dem bestehenden MedTechGuide-CSS-System
-- Verwendet gleiche Farb-Variablen und Theming
-- Einheitliche Font-Familien und Abstände
-- Konsistente Button-Stile und Animationen
+###ààDesign-Konsistenz
+-àIntegriertàmitàdemàbestehendenàMedTechGuide-CSS-System
+-àVerwendetàgleicheàFarb-VariablenàundàTheming
+-àEinheitlicheàFont-FamilienàundàAbstände
+-àKonsistenteàButton-StileàundàAnimationen
 
-## Verwendung
+##àVerwendung
 
-### Für Benutzer
-1. Navigieren Sie zu `self-tests.html`
-2. Wählen Sie einen Test aus
-3. Beantworten Sie alle 40 Fragen
-4. Erhalten Sie sofortige Ergebnisse und Interpretation
-5. Wählen Sie einen anderen Test oder zurück zur Startseite
+###àFüràBenutzer
+1.àNavigierenàSieàzuà`self-tests.html`
+2.àWählenàSieàeinenàTestàaus
+3.àBeantwortenàSieàalleà40àFragen
+4.àErhaltenàSieàsofortigeàErgebnisseàundàInterpretation
+5.àWählenàSieàeinenàanderenàTestàoderàzurückàzuràStartseite
 
-### Für Entwickler - Neuen Test Hinzufügen
+###àFüràEntwicklerà-àNeuenàTestàHinzufügen
 
-1. **Erstellen Sie ein neues JS-Modul:**
+1.à**ErstellenàSieàeinàneuesàJS-Modul:**
 ```javascript
-const MyTest = {
-  testId: 'my-test',
-  testName: 'Mein Test',
-  testDescription: 'Beschreibung',
-  answerOptions: [ ... ],
-  questions: [ ... ],
-  calculateScore(answers) { ... },
-  getInterpretation(score) { ... },
-  medicalDisclaimer: '...'
+constàMyTestà=à{
+ààtestId:à'my-test',
+ààtestName:à'MeinàTest',
+ààtestDescription:à'Beschreibung',
+ààanswerOptions:à[à...à],
+ààquestions:à[à...à],
+ààcalculateScore(answers)à{à...à},
+ààgetInterpretation(score)à{à...à},
+ààmedicalDisclaimer:à'...'
 };
 ```
 
-2. **Registrieren Sie es im Controller:**
+2.à**RegistrierenàSieàesàimàController:**
 ```javascript
-this.allTests = [
-  // ... bestehende
-  MyTest  // Neu hinzufügt
+this.allTestsà=à[
+àà//à...àbestehende
+ààMyTestàà//àNeuàhinzufügt
 ];
 ```
 
-3. **Fügen Sie eine Test-Card in HTML hinzu:**
+3.à**FügenàSieàeineàTest-CardàinàHTMLàhinzu:**
 ```html
-<div class="test-card" data-test-id="my-test">
-  <div class="test-card-icon">🎯</div>
-  <h2 class="test-card-title">Mein Test</h2>
-  <p class="test-card-description">Beschreibung</p>
-  <button class="test-card-button">Test starten →</button>
+<divàclass="test-card"àdata-test-id="my-test">
+àà<divàclass="test-card-icon">°¯</div>
+àà<h2àclass="test-card-title">MeinàTest</h2>
+àà<pàclass="test-card-description">Beschreibung</p>
+àà<buttonàclass="test-card-button">Testàstartenà</button>
 </div>
 ```
 
-## Score-Systeme
+##àScore-Systeme
 
-### Standard-Scores (Depression, Angst, etc.)
-- **Nie:** 0 Punkte
-- **An einzelnen Tagen:** 1 Punkt
-- **An mehr als der Hälfte der Tage:** 2 Punkte
-- **Fast täglich:** 3 Punkte
-- **Max:** 40 Fragen × 3 = 120 Punkte
+###àStandard-Scoresà(Depression,àAngst,àetc.)
+-à**Nie:**à0àPunkte
+-à**AnàeinzelnenàTagen:**à1àPunkt
+-à**AnàmehràalsàderàHälfteàderàTage:**à2àPunkte
+-à**Fastàtäglich:**à3àPunkte
+-à**Max:**à40àFragenà—à3à=à120àPunkte
 
-### ADHS-Scores
-- **Nie:** 0 Punkte
-- **Selten:** 1 Punkt
-- **Manchmal:** 2 Punkte
-- **Häufig:** 3 Punkte
-- **Sehr häufig:** 4 Punkte
-- **Max:** 40 Fragen × 4 = 160 Punkte
+###àADHS-Scores
+-à**Nie:**à0àPunkte
+-à**Selten:**à1àPunkt
+-à**Manchmal:**à2àPunkte
+-à**Häufig:**à3àPunkte
+-à**Sehràhäufig:**à4àPunkte
+-à**Max:**à40àFragenà—à4à=à160àPunkte
 
-### MBTI-Scores
-- **Likert-Skala:** -2 bis +2
-- **Keine numerischer Score, nur Typ-Berechnung**
-- **Resultat:** 4-Buchstaben-Code (z.B. INTJ)
+###àMBTI-Scores
+-à**Likert-Skala:**à-2àbisà+2
+-à**KeineànumerischeràScore,ànuràTyp-Berechnung**
+-à**Resultat:**à4-Buchstaben-Codeà(z.B.àINTJ)
 
-## Wichtige Hinweise
+##àWichtigeàHinweise
 
-### ⚠️ Rechtliche/Ethische Aspekte
-- **Alle medizinischen Tests zeigen Disclaimer** am Ende
-- MBTI ist nicht medizinisch und hat keinen Disclaimer
-- Tests ersetzen NICHT professionelle Diagnose
-- Keine Datenspeicherung - Antworten sind lokal/temporär
-- DSGVO-konform: Keine externe API-Aufrufe
+###à —¯¸àRechtliche/EthischeàAspekte
+-à**AlleàmedizinischenàTestsàzeigenàDisclaimer**àamàEnde
+-àMBTIàistànichtàmedizinischàundàhatàkeinenàDisclaimer
+-àTestsàersetzenàNICHTàprofessionelleàDiagnose
+-àKeineàDatenspeicherungà-àAntwortenàsindàlokal/temporär
+-àDSGVO-konform:àKeineàexterneàAPI-Aufrufe
 
-### 📝 Frage-Qualität
-- Alle 280+ Fragen sind wissenschaftlich recherchiert
-- Orientierung an valdidierten Screening-Tools (PHQ-9, DSM-5, MBTI)
-- Sensible Themen (Suizid) sind human formuliert
-- Mehrersprachige Struktur (derzeit Deutsch)
+###à°àFrage-Qualität
+-àAlleà280+àFragenàsindàwissenschaftlichàrecherchiert
+-àOrientierungàanàvaldidiertenàScreening-Toolsà(PHQ-9,àDSM-5,àMBTI)
+-àSensibleàThemenà(Suizid)àsindàhumanàformuliert
+-àMehrersprachigeàStrukturà(derzeitàDeutsch)
 
-## Weitere Entwicklungsmöglichkeiten
+##àWeitereàEntwicklungsmöglichkeiten
 
-- [ ] Exportfunktion (PDF-Report)
-- [ ] Vergleich von Test-Ergebnissen über Zeit
-- [ ] Kategorie-basierte Filter/Anzeige
-- [ ] Weitere Sprachen
-- [ ] Mobile App Version
-- [ ] Detaillierte Empfehlungen nach Test
-- [ ] Verknüpfung mit Ressourcen/Hilfehotlines
+-à[à]àExportfunktionà(PDF-Report)
+-à[à]àVergleichàvonàTest-ErgebnissenàüberàZeit
+-à[à]àKategorie-basierteàFilter/Anzeige
+-à[à]àWeitereàSprachen
+-à[à]àMobileàAppàVersion
+-à[à]àDetaillierteàEmpfehlungenànachàTest
+-à[à]àVerknüpfungàmitàRessourcen/Hilfehotlines
 
-## Kontakt & Support
+##àKontaktà&àSupport
 
-Bei Fragen oder Verbesserungsvorschlägen wenden Sie sich bitte an das MedTechGuide-Team.
+BeiàFragenàoderàVerbesserungsvorschlägenàwendenàSieàsichàbitteàanàdasàMedTechGuide-Team.
 
 ---
 
-**Version:** 1.0 | **Datum:** Februar 2026 | **Status:** Productionsbereit
+**Version:**à1.0à|à**Datum:**àFebruarà2026à|à**Status:**àProductionsbereit

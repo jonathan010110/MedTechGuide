@@ -1,261 +1,261 @@
-# 🚀 Quick Start - Neue Quiz & Ordner-Struktur
+#à°àQuickàStartà-àNeueàQuizà&àOrdner-Struktur
 
-## ✅ Was wurde hinzugefügt?
+##ààWasàwurdeàhinzugefügt?
 
-### 1. 🎯 **Quiz-System**
-- **20 interaktive Fragen** in 4 Kategorien
-  - 🔍 Diagnostik (5 Fragen)
-  - 💊 Therapie (5 Fragen)
-  - 🔬 Forschung (5 Fragen)
-  - 🚀 Zukunft (5 Fragen)
-- **Scoring & Ergebnisse** mit detaillierter Auswertung
-- **Responsive Design** für Mobile & Desktop
+###à1.à°¯à**Quiz-System**
+-à**20àinteraktiveàFragen**àinà4àKategorien
+àà-à°àDiagnostikà(5àFragen)
+àà-à°àTherapieà(5àFragen)
+àà-à°"àForschungà(5àFragen)
+àà-à°àZukunftà(5àFragen)
+-à**Scoringà&àErgebnisse**àmitàdetaillierteràAuswertung
+-à**ResponsiveàDesign**àfüràMobileà&àDesktop
 
-### 2. 📁 **Ordnerstruktur**
+###à2.à°à**Ordnerstruktur**
 ```
 Projekt_25/
-├── /css/              ← CSS-Module (quiz.css)
-├── /js/               ← JavaScript-Module (quiz.js)
-├── /html/             ← Content-Seiten (quiz.html + andere)
-├── /data/             ← Datenbanken & Config
-├── /images/           ← Bilder (existiert schon)
-└── /docs/             ← Dokumentation (STRUKTUR.md)
+à/css/àààààààààààààààCSS-Moduleà(quiz.css)
+à/js/ààààààààààààààààJavaScript-Moduleà(quiz.js)
+à/html/ààààààààààààààContent-Seitenà(quiz.htmlà+àandere)
+à/data/ààààààààààààààDatenbankenà&àConfig
+à/images/ààààààààààààBilderà(existiertàschon)
+à/docs/ààààààààààààààDokumentationà(STRUKTUR.md)
 ```
 
-### 3. 🔍 **Verbesserte Suche**
-- Funktioniert bereits vollständig
-- Durchsucht alle 10 Seiten
-- Auto-Highlighting auf Zielseite
+###à3.à°à**VerbesserteàSuche**
+-àFunktioniertàbereitsàvollständig
+-àDurchsuchtàalleà10àSeiten
+-àAuto-HighlightingàaufàZielseite
 
 ---
 
-## 📊 DATEIEN-ÜBERSICHT
+##à°àDATEIEN-—BERSICHT
 
-### Neue Dateien erstellt:
-| Datei | Beschreibung |
+###àNeueàDateienàerstellt:
+|àDateià|àBeschreibungà|
 |-------|-------------|
-| `js/quiz.js` | Quiz-Engine (600+ Zeilen) |
-| `css/quiz.css` | Quiz-Styling (350+ Zeilen) |
-| `html/quiz.html` | Quiz-Landingpage |
-| `docs/STRUKTUR.md` | Projekt-Übersicht |
-| `docs/QUICK_START.md` | Diese Datei |
+|à`js/quiz.js`à|àQuiz-Engineà(600+àZeilen)à|
+|à`css/quiz.css`à|àQuiz-Stylingà(350+àZeilen)à|
+|à`html/quiz.html`à|àQuiz-Landingpageà|
+|à`docs/STRUKTUR.md`à|àProjekt-—bersichtà|
+|à`docs/QUICK_START.md`à|àDieseàDateià|
 
-### Aktualisierte Dateien:
-| Datei | Änderung |
+###àAktualisierteàDateien:
+|àDateià|àÄnderungà|
 |-------|---------|
-| `index.html` | +Quiz-Link, +CSS-Import, +Info-Box |
-| `style.css` | ✓ Unverändert (alle Styles schon vorhanden) |
-| `script.js` | ✓ Unverändert (Mobile-Nav schon enthalten) |
+|à`index.html`à|à+Quiz-Link,à+CSS-Import,à+Info-Boxà|
+|à`style.css`à|ààUnverändertà(alleàStylesàschonàvorhanden)à|
+|à`script.js`à|ààUnverändertà(Mobile-Navàschonàenthalten)à|
 
 ---
 
-## 🎮 WIE NUTZEN
+##à°®àWIEàNUTZEN
 
-### Quiz aufrufen:
+###àQuizàaufrufen:
 
-**Option 1: Über Navigation**
-- Oben in der Navbar: "🎯 Quiz" Button (neu hinzugefügt)
-- Klick → öffnet `html/quiz.html`
+**Optionà1:à—beràNavigation**
+-àObenàinàderàNavbar:à"°¯àQuiz"àButtonà(neuàhinzugefügt)
+-àKlickààöffnetà`html/quiz.html`
 
-**Option 2: Direkt-Link**
+**Optionà2:àDirekt-Link**
 ```
 ../html/quiz.html
 ```
 
-**Option 3: Von Startseite**
-- Blauer Button: "Quiz starten →"
+**Optionà3:àVonàStartseite**
+-àBlaueràButton:à"Quizàstartenà"
 
-### Quiz spielen:
+###àQuizàspielen:
 ```
-1. Kategorie wählen (Diagnostik / Therapie / Forschung / Zukunft)
-2. 5 Multiple-Choice Fragen beantworten
-3. Score sehen (0-100%)
-4. Detaillierte Auswertung
-5. Wiederholen oder andere Kategorie
+1.àKategorieàwählenà(Diagnostikà/àTherapieà/àForschungà/àZukunft)
+2.à5àMultiple-ChoiceàFragenàbeantworten
+3.àScoreàsehenà(0-100%)
+4.àDetaillierteàAuswertung
+5.àWiederholenàoderàandereàKategorie
 ```
 
 ---
 
-## 🎨 STYLING HIGHLIGHTS
+##à°¨àSTYLINGàHIGHLIGHTS
 
-### Quiz-Komponenten:
-- ✨ **Modal-Dialoge** mit Blur-Backdrop
-- 📊 **Progress-Bar** für Fortschritt
-- 🎯 **Score-Circle** mit animiertem Bounce
-- 🏆 **Ergebnis-Anzeige** mit Emoji & Bewertung
-- 📱 **Vollständig responsive**
+###àQuiz-Komponenten:
+-à¨à**Modal-Dialoge**àmitàBlur-Backdrop
+-à°à**Progress-Bar**àfüràFortschritt
+-à°¯à**Score-Circle**àmitàanimiertemàBounce
+-à°à**Ergebnis-Anzeige**àmitàEmojià&àBewertung
+-à°±à**Vollständigàresponsive**
 
-### CSS-Klassen:
+###àCSS-Klassen:
 ```css
-.quiz-modal              /* Main Quiz Container */
-.quiz-question          /* Frage-Anzeige */
-.quiz-option           /* Antwort-Buttons */
-.quiz-result           /* Ergebnis-Seite */
-.quiz-kategorie-btn    /* Kategorie-Buttons */
+.quiz-modalàààààààààààààà/*àMainàQuizàContainerà*/
+.quiz-questionàààààààààà/*àFrage-Anzeigeà*/
+.quiz-optionààààààààààà/*àAntwort-Buttonsà*/
+.quiz-resultààààààààààà/*àErgebnis-Seiteà*/
+.quiz-kategorie-btnàààà/*àKategorie-Buttonsà*/
 ```
 
 ---
 
-## 🔧 TECHNISCHE DETAILS
+##à°çàTECHNISCHEàDETAILS
 
-### Quiz-Datenbank:
+###àQuiz-Datenbank:
 ```javascript
-QUIZ_DATABASE = {
-  diagnostik: [
-    {
-      frage: "...",
-      optionen: ["A", "B", "C", "D"],
-      antwort: 1,  // Index der richtigen Antwort
-      erklärung: "..."
-    }
-  ]
+QUIZ_DATABASEà=à{
+ààdiagnostik:à[
+àààà{
+ààààààfrage:à"...",
+ààààààoptionen:à["A",à"B",à"C",à"D"],
+ààààààantwort:à1,àà//àIndexàderàrichtigenàAntwort
+ààààààerklärung:à"..."
+àààà}
+àà]
 }
 ```
 
-### Quiz-State:
+###àQuiz-State:
 ```javascript
-quizState = {
-  aktiv: boolean,
-  kategorie: string,
-  aktuelleFrageIndex: number,
-  punkte: number,
-  antworten: Array,
-  maxPunkte: number
+quizStateà=à{
+ààaktiv:àboolean,
+ààkategorie:àstring,
+ààaktuelleFrageIndex:ànumber,
+ààpunkte:ànumber,
+ààantworten:àArray,
+ààmaxPunkte:ànumber
 }
 ```
 
-### Haupt-Funktionen:
-- `startQuiz(kategorie)` - Quiz starten
-- `nextQuizFrage(antwortIndex)` - Nächste Frage
-- `showQuizErgebnis()` - Ergebnis anzeigen
-- `openQuizModal()` - Kategorie-Wahl
-- `closeQuiz()` - Quiz beenden
+###àHaupt-Funktionen:
+-à`startQuiz(kategorie)`à-àQuizàstarten
+-à`nextQuizFrage(antwortIndex)`à-àNächsteàFrage
+-à`showQuizErgebnis()`à-àErgebnisàanzeigen
+-à`openQuizModal)`à-àKategorie-Wahl
+-à`closeQuiz()`à-àQuizàbeenden
 
 ---
 
-## 📱 RESPONSIVE BREAKPOINTS
+##à°±àRESPONSIVEàBREAKPOINTS
 
-- **Desktop** (>768px): Vollständige Layout
-- **Tablet** (768px): Optimiert
-- **Mobile** (<600px):
-  - 2-spaltig Grid bei Kategorien
-  - Kleinere Buttons
-  - Gestaffelte Animationen
-
----
-
-## 🔐 DATENSCHUTZ
-
-✅ **Keine externe Daten-Speicherung**
-- Quiz-Ergebnisse nur lokal im Browser
-- Keine Cookies oder Tracking
-- Keine Cloud-Verbindung
-- 100% Datenschutz
+-à**Desktop**à(>768px):àVollständigeàLayout
+-à**Tablet**à(768px):àOptimiert
+-à**Mobile**à(<600px):
+àà-à2-spaltigàGridàbeiàKategorien
+àà-àKleinereàButtons
+àà-àGestaffelteàAnimationen
 
 ---
 
-## ❌ BEKANNTE LIMITATIONEN
+##à°àDATENSCHUTZ
 
-- Quiz-Daten sind hardcoded (können aber in JSON ausgelagert werden)
-- Keine Datenspeicherung zwischen Sessions
-- Keine Quiz-Verwaltung im Frontend
-- Keine Statistiken über mehrere Sessions
-
----
-
-## ✨ NÄCHSTE MÖGLICHE FEATURES
-
-### Einfach zu implementieren:
-- [ ] Quiz-Kategorien im HTML als Daten
-- [ ] Ergebnisse in LocalStorage speichern
-- [ ] Quiz-Statistiken-Dashboard
-- [ ] Question Timer (30sec pro Frage)
-- [ ] Shuffle Questions & Answers
-
-### Mittelschwer:
-- [ ] Admin-Panel für Quiz-Verwaltung
-- [ ] Ergebnisse exportieren (PDF)
-- [ ] Leaderboard-System
-- [ ] Quiz-Creator (Fragen-Editor)
-
-### Komplex:
-- [ ] Backend Integration
-- [ ] User-Accounts
-- [ ] Social Features
-- [ ] Mobile App
+à**KeineàexterneàDaten-Speicherung**
+-àQuiz-ErgebnisseànuràlokalàimàBrowser
+-àKeineàCookiesàoderàTracking
+-àKeineàCloud-Verbindung
+-à100%àDatenschutz
 
 ---
 
-## 📝 INSTALLATION
+##ààBEKANNTEàLIMITATIONEN
 
-### 1. Dateien kopieren:
+-àQuiz-Datenàsindàhardcodedà(könnenàaberàinàJSONàausgelagertàwerden)
+-àKeineàDatenspeicherungàzwischenàSessions
+-àKeineàQuiz-VerwaltungàimàFrontend
+-àKeineàStatistikenàüberàmehrereàSessions
+
+---
+
+##à¨àNÄCHSTEàMÖGLICHEàFEATURES
+
+###àEinfachàzuàimplementieren:
+-à[à]àQuiz-KategorienàimàHTMLàalsàDaten
+-à[à]àErgebnisseàinàLocalStorageàspeichern
+-à[à]àQuiz-Statistiken-Dashboard
+-à[à]àQuestionàTimerà(30secàproàFrage)
+-à[à]àShuffleàQuestionsà&àAnswers
+
+###àMittelschwer:
+-à[à]àAdmin-PanelàfüràQuiz-Verwaltung
+-à[à]àErgebnisseàexportierenà(PDF)
+-à[à]àLeaderboard-System
+-à[à]àQuiz-Creatorà(Fragen-Editor)
+
+###àKomplex:
+-à[à]àBackendàIntegration
+-à[à]àUser-Accounts
+-à[à]àSocialàFeatures
+-à[à]àMobileàApp
+
+---
+
+##à°àINSTALLATION
+
+###à1.àDateienàkopieren:
 ```bash
-cp -r js/ html/ css/ data/ docs/ /path/to/projekt
+cpà-ràjs/àhtml/àcss/àdata/àdocs/à/path/to/projekt
 ```
 
-### 2. In HTML laden:
+###à2.àInàHTMLàladen:
 ```html
-<!-- In <head> -->
-<link rel="stylesheet" href="css/quiz.css">
+<!--àInà<head>à-->
+<linkàrel="stylesheet"àhref="css/quiz.css">
 
-<!-- Vor </body> -->
-<script src="js/quiz.js"></script>
+<!--àVorà</body>à-->
+<scriptàsrc="js/quiz.js"></script>
 ```
 
-### 3. Testen:
-- Öffne `index.html`
-- Klick auf "🎯 Quiz" Button
-- Wähle Kategorie
-- Beantworte Fragen
+###à3.àTesten:
+-àÖffneà`index.html`
+-àKlickàaufà"°¯àQuiz"àButton
+-àWähleàKategorie
+-àBeantworteàFragen
 
 ---
 
-## 🐛 TROUBLESHOOTING
+##à°àTROUBLESHOOTING
 
-### Quiz lädt nicht?
+###àQuizàlädtànicht?
 ```
-1. Prüfe Browser Console (F12)
-2. Stelle sicher js/quiz.js existiert
-3. Prüfe CSS-Import in index.html
-4. Cache leeren (Ctrl+Shift+Delete)
-```
-
-### Styling bricht?
-```
-1. Prüf dass css/quiz.css geladen wird
-2. Inspect Element (F12) → Console
-3. Validiere CSS Syntax
+1.àPrüfeàBrowseràConsoleà(F12)
+2.àStelleàsicheràjs/quiz.jsàexistiert
+3.àPrüfeàCSS-Importàinàindex.html
+4.àCacheàleerenà(Ctrl+Shift+Delete)
 ```
 
-### Fragen erscheinen nicht?
+###àStylingàbricht?
 ```
-1. Prüf QUIZ_DATABASE in js/quiz.js
-2. Validiere JSON Syntax
-3. Prüf Browser Console auf Errors
+1.àPrüfàdassàcss/quiz.cssàgeladenàwird
+2.àInspectàElementà(F12)ààConsole
+3.àValidiereàCSSàSyntax
+```
+
+###àFragenàerscheinenànicht?
+```
+1.àPrüfàQUIZ_DATABASEàinàjs/quiz.js
+2.àValidiereàJSONàSyntax
+3.àPrüfàBrowseràConsoleàaufàErrors
 ```
 
 ---
 
-## 📞 SUPPORT
+##à°àSUPPORT
 
-Falls Fragen:
-1. Lies STRUKTUR.md für Überblick
-2. Check js/quiz.js für Quellcode-Kommentare
-3. Validiere mit VS Code Linter
-4. Teste in Chrome DevTools
-
----
-
-## 🎓 LERN-RESSOURCEN
-
-- [MDN: JavaScript Modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)
-- [CSS Grid Documentation](https://css-tricks.com/snippets/css/complete-guide-grid/)
-- [Web Accessibility Guidelines](https://www.w3.org/WAI/WCAG21/quickref/)
-- [Performance Best Practices](https://web.dev/performance/)
+FallsàFragen:
+1.àLiesàSTRUKTUR.mdàfürà—berblick
+2.àCheckàjs/quiz.jsàfüràQuellcode-Kommentare
+3.àValidiereàmitàVSàCodeàLinter
+4.àTesteàinàChromeàDevTools
 
 ---
 
-**Genießt das Quiz! 🎯**
+##à°àLERN-RESSOURCEN
 
-Version: 2.1 | Release: 24.02.2026
+-à[MDN:àJavaScriptàModules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)
+-à[CSSàGridàDocumentation](https://css-tricks.com/snippets/css/complete-guide-grid/)
+-à[WebàAccessibilityàGuidelines](https://www.w3.org/WAI/WCAG21/quickref/)
+-à[PerformanceàBestàPractices](https://web.dev/performance/)
+
+---
+
+**Genie—tàdasàQuiz!à°¯**
+
+Version:à2.1à|àRelease:à24.02.2026
 

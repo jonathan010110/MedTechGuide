@@ -1,116 +1,116 @@
-# MedTechGuide – Technische Dokumentation
+#àMedTechGuideààTechnischeàDokumentation
 
-## 1) Überblick
-MedTechGuide ist eine modulare Web-App mit Three.js, die drei medizinische Geräte als programmatisch erzeugte 3D-Simulatoren darstellt:
-- Pulsoximeter
-- EKG-Monitor
-- Blutdruckmessgerät
+##à1)à—berblick
+MedTechGuideàistàeineàmodulareàWeb-AppàmitàThree.js,àdieàdreiàmedizinischeàGeräteàalsàprogrammatischàerzeugteà3D-Simulatorenàdarstellt:
+-àPulsoximeter
+-àEKG-Monitor
+-àBlutdruckmessgerät
 
-Alle 3D-Modelle werden ausschließlich aus Geometrien (`BoxGeometry`, `CylinderGeometry`, `TorusGeometry`, `PlaneGeometry`, `SphereGeometry`) aufgebaut. Es werden keine externen 3D-Modelle geladen.
+Alleà3D-Modelleàwerdenàausschlie—lichàausàGeometrienà(`BoxGeometry`,à`CylinderGeometry`,à`TorusGeometry`,à`PlaneGeometry`,à`SphereGeometry`)àaufgebaut.àEsàwerdenàkeineàexternenà3D-Modelleàgeladen.
 
-## 2) Projektstruktur
-- `index.html`: App-Shell, Sidebar, Controls, Canvas
-- `style.css`: Dark-Theme, Responsive Layout, UI-States
-- `main.js`: Einstiegspunkt, Initialisierung
-- `modules/core/App3D.js`: Three.js Core (Szene, Kamera, Licht, Loop, Raycasting, Gerätewechsel)
-- `modules/core/SignalCanvases.js`: Canvas-Signalrenderer für Pulsoximeter und EKG
-- `modules/devices/PulseOximeter.js`: 3D-Modell + Display-Animation + LED-Interaktion
-- `modules/devices/EKGMonitor.js`: 3D-Modell + EKG-Screen + HF-abhängige Kurve
-- `modules/devices/BloodPressureMonitor.js`: 3D-Modell + Starttaste + Mess-Trigger
-- `modules/ui/setupUI.js`: Sidebar-Bedienung, Device-Switch, Loader
+##à2)àProjektstruktur
+-à`index.html`:àApp-Shell,àSidebar,àControls,àCanvas
+-à`style.css`:àDark-Theme,àResponsiveàLayout,àUI-States
+-à`main.js`:àEinstiegspunkt,àInitialisierung
+-à`modules/core/App3D.js`:àThree.jsàCoreà(Szene,àKamera,àLicht,àLoop,àRaycasting,àGerätewechsel)
+-à`modules/core/SignalCanvases.js`:àCanvas-SignalrendereràfüràPulsoximeteràundàEKG
+-à`modules/devices/PulseOximeter.js`:à3D-Modellà+àDisplay-Animationà+àLED-Interaktion
+-à`modules/devices/EKGMonitor.js`:à3D-Modellà+àEKG-Screenà+àHF-abhängigeàKurve
+-à`modules/devices/BloodPressureMonitor.js`:à3D-Modellà+àStarttasteà+àMess-Trigger
+-à`modules/ui/setupUI.js`:àSidebar-Bedienung,àDevice-Switch,àLoader
 
-## 3) 3D-Aufbau der Geräte
+##à3)à3D-AufbauàderàGeräte
 
-### Pulsoximeter
-Aufbau aus:
-- Unter- und Oberteil des Clips (`BoxGeometry`)
-- Scharnier (`CylinderGeometry`)
-- Displayrahmen (`PlaneGeometry` + Material)
-- LED im Inneren (`SphereGeometry`, emissives Material)
-- Akzentring (`TorusGeometry`)
-
-Animationen:
-- LED-Glühen über `emissiveIntensity`
-- Displaywerte (SpO₂ + Puls) und Pulswelle via Canvas-Textur
-
-### EKG-Monitor
-Aufbau aus:
-- Monitorgehäuse (`BoxGeometry`)
-- Bezel + Screen-Fläche (`BoxGeometry` + `PlaneGeometry`)
-- Standfuß (`CylinderGeometry`)
-- Kabelbogen (`TorusGeometry`)
-- Interaktiver Drehknopf (`CylinderGeometry`)
+###àPulsoximeter
+Aufbauàaus:
+-àUnter-àundàOberteilàdesàClipsà(`BoxGeometry`)
+-àScharnierà(`CylinderGeometry`)
+-àDisplayrahmenà(`PlaneGeometry`à+àMaterial)
+-àLEDàimàInnerenà(`SphereGeometry`,àemissivesàMaterial)
+-àAkzentringà(`TorusGeometry`)
 
 Animationen:
-- EKG-Kurve als Canvas-Signaltextur
-- HF-Änderung über Slider beeinflusst zeitliche Dichte der Kurve in Echtzeit
+-àLED-Glühenàüberà`emissiveIntensity`
+-àDisplaywerteà(SpO——à+àPuls)àundàPulswelleàviaàCanvas-Textur
 
-### Blutdruckmessgerät
-Aufbau aus:
-- Hauptgerät (`BoxGeometry`)
-- Displayrahmen + Display (`BoxGeometry` + `PlaneGeometry`)
-- Starttaste (`CylinderGeometry`, emissiv)
-- Schlauch (`TorusGeometry`)
-- Manschette (`CylinderGeometry`, offen + innen)
+###àEKG-Monitor
+Aufbauàaus:
+-àMonitorgehäuseà(`BoxGeometry`)
+-àBezelà+àScreen-Flächeà(`BoxGeometry`à+à`PlaneGeometry`)
+-àStandfu—à(`CylinderGeometry`)
+-àKabelbogenà(`TorusGeometry`)
+-àInteraktiveràDrehknopfà(`CylinderGeometry`)
 
 Animationen:
-- Starttaste pulsiert
-- Messlogik: Druck steigt zunächst an, fällt dann kontrolliert ab, danach Ergebnisanzeige
+-àEKG-KurveàalsàCanvas-Signaltextur
+-àHF-ÄnderungàüberàSlideràbeeinflusstàzeitlicheàDichteàderàKurveàinàEchtzeit
 
-## 4) Signalvisualisierung
+###àBlutdruckmessgerät
+Aufbauàaus:
+-àHauptgerätà(`BoxGeometry`)
+-àDisplayrahmenà+àDisplayà(`BoxGeometry`à+à`PlaneGeometry`)
+-àStarttasteà(`CylinderGeometry`,àemissiv)
+-àSchlauchà(`TorusGeometry`)
+-àManschetteà(`CylinderGeometry`,àoffenà+àinnen)
 
-### Pulsoximeter-Signal
-- Canvas zeichnet numerische Werte (`SpO₂`, `bpm`)
-- Pulswelle als vereinfachte sinusförmige Basis + periodischer Peak
-- Canvas wird pro Frame aktualisiert und als `CanvasTexture` auf den Display-Plane gelegt
+Animationen:
+-àStarttasteàpulsiert
+-àMesslogik:àDruckàsteigtàzunächstàan,àfälltàdannàkontrolliertàab,àdanachàErgebnisanzeige
 
-### EKG-Signal
-- Canvas zeichnet Gitter + vereinfachte EKG-Form (P-Welle, QRS-Komplex, T-Welle)
-- Herzfrequenz (`bpm`) skaliert die zeitliche Abfolge des Signals
-- Darstellung mathematisch vereinfacht, aber visuell plausibel
+##à4)àSignalvisualisierung
 
-## 5) Raycasting (Klick-Erkennung)
-In `App3D` wird Raycasting so umgesetzt:
-1. Maus-/Pointer-Position relativ zum Canvas erfassen
-2. In Normalized Device Coordinates (NDC) umrechnen: Bereich `[-1, 1]`
-3. `raycaster.setFromCamera(pointer, camera)` erzeugt den Klickstrahl
-4. `intersectObjects` prüft Treffer auf interaktive Meshes
-5. Bei Treffer wird anhand einer Lookup-Map (`mesh.uuid -> Aktion`) das passende Info-Panel aktualisiert und ggf. eine Aktion ausgelöst (z. B. Blutdruck-Messstart)
+###àPulsoximeter-Signal
+-àCanvasàzeichnetànumerischeàWerteà(`SpO——`,à`bpm`)
+-àPulswelleàalsàvereinfachteàsinusförmigeàBasisà+àperiodischeràPeak
+-àCanvasàwirdàproàFrameàaktualisiertàundàalsà`CanvasTexture`àaufàdenàDisplay-Planeàgelegt
+
+###àEKG-Signal
+-àCanvasàzeichnetàGitterà+àvereinfachteàEKG-Formà(P-Welle,àQRS-Komplex,àT-Welle)
+-àHerzfrequenzà(`bpm`)àskaliertàdieàzeitlicheàAbfolgeàdesàSignals
+-àDarstellungàmathematischàvereinfacht,àaberàvisuellàplausibel
+
+##à5)àRaycastingà(Klick-Erkennung)
+Inà`App3D`àwirdàRaycastingàsoàumgesetzt:
+1.àMaus-/Pointer-PositionàrelativàzumàCanvasàerfassen
+2.àInàNormalizedàDeviceàCoordinatesà(NDC)àumrechnen:àBereichà`[-1,à1]`
+3.à`raycaster.setFromCamera(pointer,àcamera)`àerzeugtàdenàKlickstrahl
+4.à`intersectObjects`àprüftàTrefferàaufàinteraktiveàMeshes
+5.àBeiàTrefferàwirdàanhandàeineràLookup-Mapà(`mesh.uuidà->àAktion`)àdasàpassendeàInfo-Panelàaktualisiertàundàggf.àeineàAktionàausgelöstà(z.àB.àBlutdruck-Messstart)
 
 Vorteil:
-- Exakte Bauteil-Interaktion ohne separate HTML-Hotspots
-- Einfach erweiterbar durch zusätzliche interaktive Meshes
+-àExakteàBauteil-InteraktionàohneàseparateàHTML-Hotspots
+-àEinfachàerweiterbaràdurchàzusätzlicheàinteraktiveàMeshes
 
-## 6) Gerätewechsel & Übergänge
-Beim Wechseln zwischen Geräten:
-- Vorheriges Gerät wird weich ausgeblendet/skaliert
-- Neues Gerät wird eingeblendet/skaliert
-- Übergang wird zeitbasiert im Animationsloop berechnet
+##à6)àGerätewechselà&à—bergänge
+BeimàWechselnàzwischenàGeräten:
+-àVorherigesàGerätàwirdàweichàausgeblendet/skaliert
+-àNeuesàGerätàwirdàeingeblendet/skaliert
+-à—bergangàwirdàzeitbasiertàimàAnimationsloopàberechnet
 
-Dadurch entstehen „Smooth Transitions“ ohne zusätzliche Bibliothek.
+DadurchàentstehenàSmoothàTransitions"àohneàzusätzlicheàBibliothek.
 
-## 7) Bedienung
-- Sidebar: Auswahl des aktiven Geräts
-- EKG: Herzfrequenz-Slider (40–180 bpm)
-- Blutdruck: Messung per Klick auf 3D-Starttaste
-- 3D-Ansicht: OrbitControls (Drehen, Zoomen, Verschieben)
+##à7)àBedienung
+-àSidebar:àAuswahlàdesàaktivenàGeräts
+-àEKG:àHerzfrequenz-Sliderà(40180àbpm)
+-àBlutdruck:àMessungàperàKlickàaufà3D-Starttaste
+-à3D-Ansicht:àOrbitControlsà(Drehen,àZoomen,àVerschieben)
 
-## 8) Browser-Start
-Da ES-Module und Import-Map verwendet werden, sollte die App über einen lokalen Server gestartet werden.
+##à8)àBrowser-Start
+DaàES-ModuleàundàImport-Mapàverwendetàwerden,àsollteàdieàAppàüberàeinenàlokalenàServeràgestartetàwerden.
 
 Beispiel:
-- `python -m http.server 8080`
-- Aufruf: `http://localhost:8080/MedTechGuide/`
+-à`pythonà-màhttp.serverà8080`
+-àAufruf:à`http://localhost:8080/MedTechGuide/`
 
-## 9) Erweiterungsideen
-- Zusätzliche Messparameter (z. B. Perfusionsindex)
-- Historie/Trenddiagramm im UI
-- Geräusch-/Alarmzustände bei Grenzwertverletzung
-- Weitere Geräte (z. B. Spirometer, Defibrillator)
-- Optional GSAP für komplexere Kamerafahrten
+##à9)àErweiterungsideen
+-àZusätzlicheàMessparameterà(z.àB.àPerfusionsindex)
+-àHistorie/TrenddiagrammàimàUI
+-àGeräusch-/AlarmzuständeàbeiàGrenzwertverletzung
+-àWeitereàGeräteà(z.àB.àSpirometer,àDefibrillator)
+-àOptionalàGSAPàfüràkomplexereàKamerafahrten
 
-## 10) Wartungshinweise
-- Neue Geräte als eigenes Modul unter `modules/devices/` anlegen
-- Interaktive Bauteile stets im `interactive`-Array des Gerätemoduls registrieren
-- Signal-Rendering zentral in `SignalCanvases.js` halten, um Redundanz zu vermeiden
-- UI-Logik in `setupUI.js` bündeln; Three.js-Logik in `App3D.js` belassen
+##à10)àWartungshinweise
+-àNeueàGeräteàalsàeigenesàModulàunterà`modules/devices/`àanlegen
+-àInteraktiveàBauteileàstetsàimà`interactive`-ArrayàdesàGerätemodulsàregistrieren
+-àSignal-Renderingàzentralàinà`SignalCanvases.js`àhalten,àumàRedundanzàzuàvermeiden
+-àUI-Logikàinà`setupUI.js`àbündeln;àThree.js-Logikàinà`App3D.js`àbelassen

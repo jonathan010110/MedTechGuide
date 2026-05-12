@@ -1,438 +1,438 @@
-# 🎯 Quiz System v2.0 - Neue Features & Updates
+#à°¯àQuizàSystemàv2.0à-àNeueàFeaturesà&àUpdates
 
-**Release Date:** 24.02.2026  
-**Version:** 2.0  
-**Status:** ✅ Vollständig implementiert
+**ReleaseàDate:**à24.02.2026àà
+**Version:**à2.0àà
+**Status:**ààVollständigàimplementiert
 
 ---
 
-## 📋 Überblick der Änderungen
+##à°à—berblickàderàÄnderungen
 
-Das Quiz-System wurde komplett überarbeitet und erweitert:
+DasàQuiz-Systemàwurdeàkomplettàüberarbeitetàundàerweitert:
 
-### ✨ Neue Features
+###à¨àNeueàFeatures
 
-#### 1. **Randomisierte Fragen** 🔀
-- Alle Fragen werden zufällig sortiert (Fisher-Yates Shuffle)
-- Multiple-Choice Antworten werden ebenfalls randomisiert
-- Jeder Quiz-Test ist unterschiedlich
-- **Funktion:** `getRandomizedQuestions(kategorie)`
+####à1.à**RandomisierteàFragen**à°
+-àAlleàFragenàwerdenàzufälligàsortiertà(Fisher-YatesàShuffle)
+-àMultiple-ChoiceàAntwortenàwerdenàebenfallsàrandomisiert
+-àJederàQuiz-Testàistàunterschiedlich
+-à**Funktion:**à`getRandomizedQuestions(kategorie)`
 
-#### 2. **Drei Psychologische Tests** 🧠
+####à2.à**DreiàPsychologischeàTests**à°ç 
 
-##### 🔴 Depression-Screening (PHQ-9)
-- **Basis:** Patient Health Questionnaire-9 (wissenschaftlich validiert)
-- **Fragen:** 9 Fragen zu depressiven Symptomen
-- **Skala:** 0-3 (Gar nicht bis Fast jeden Tag)
-- **Interpretation:** 
-  - 0-4: Keine Depression
-  - 5-9: Leichte Depression
-  - 10-14: Moderate Depression
-  - 15+: Schwere Depression
-- **Warnung:** ⚠️ Kein Ersatz für ärztliche Diagnose
+#####à°´àDepression-Screeningà(PHQ-9)
+-à**Basis:**àPatientàHealthàQuestionnaire-9à(wissenschaftlichàvalidiert)
+-à**Fragen:**à9àFragenàzuàdepressivenàSymptomen
+-à**Skala:**à0-3à(GarànichtàbisàFastàjedenàTag)
+-à**Interpretation:**à
+àà-à0-4:àKeineàDepression
+àà-à5-9:àLeichteàDepression
+àà-à10-14:àModerateàDepression
+àà-à15+:àSchwereàDepression
+-à**Warnung:**à —¯¸àKeinàErsatzàfüràärztlicheàDiagnose
 
-##### 🧠 ADHS-Screening (ASRS v1.1)
-- **Basis:** Adult ADHD Self-Report Scale (professionell validiert)
-- **Fragen:** 6 Hauptfragen zu ADHS-Symptomen
-- **Skala:** 0-4 (Nie/selten bis Immer)
-- **Interpretation:**
-  - 0-6: Niedrige ADHS-Merkmale
-  - 7-12: Mögliche ADHS
-  - 13+: Wahrscheinlich ADHS
-- **Warnung:** ⚠️ Weitere Evaluation empfohlen
+#####à°ç àADHS-Screeningà(ASRSàv1.1)
+-à**Basis:**àAdultàADHDàSelf-ReportàScaleà(professionellàvalidiert)
+-à**Fragen:**à6àHauptfragenàzuàADHS-Symptomen
+-à**Skala:**à0-4à(Nie/seltenàbisàImmer)
+-à**Interpretation:**
+àà-à0-6:àNiedrigeàADHS-Merkmale
+àà-à7-12:àMöglicheàADHS
+àà-à13+:àWahrscheinlichàADHS
+-à**Warnung:**à —¯¸àWeitereàEvaluationàempfohlen
 
-##### 🌟 Big-Five Persönlichkeitstest (ENTF)
-- **Basis:** Five Factor Model (international standardisiert)
-- **Dimensionen (ENTF):**
-  - **O** = Offenheit (Openness) - Kreativität, Neugier
-  - **E** = Extraversion (Extraversion) - Geselligkeit, Energie
-  - **N** = Neurotizismus (Neuroticism) - Emotionale Stabilität
-  - **F** = Verträglichkeit (Friendliness/Agreeableness) - Kooperation
-  - **C** = Gewissenhaftigkeit (Conscientiousness) - Ordnung
-- **Fragen:** 20 Fragen (4 pro Dimension)
-- **Skala:** 1-5 (Stimme gar nicht zu bis Stimme sehr zu)
-- **Ergebnis:** Profil mit Score pro Dimension
-- **Interpretation:** Detaillierte Erklärungen für jede Dimension
+#####à°àBig-FiveàPersönlichkeitstestà(ENTF)
+-à**Basis:**àFiveàFactoràModelà(internationalàstandardisiert)
+-à**Dimensionenà(ENTF):**
+àà-à**O**à=àOffenheità(Openness)à-àKreativität,àNeugier
+àà-à**E**à=àExtraversionà(Extraversion)à-àGeselligkeit,àEnergie
+àà-à**N**à=àNeurotizismusà(Neuroticism)à-àEmotionaleàStabilität
+àà-à**F**à=àVerträglichkeità(Friendliness/Agreeableness)à-àKooperation
+àà-à**C**à=àGewissenhaftigkeità(Conscientiousness)à-àOrdnung
+-à**Fragen:**à20àFragenà(4àproàDimension)
+-à**Skala:**à1-5à(StimmeàgarànichtàzuàbisàStimmeàsehràzu)
+-à**Ergebnis:**àProfilàmitàScoreàproàDimension
+-à**Interpretation:**àDetaillierteàErklärungenàfüràjedeàDimension
 
-#### 3. **Mobile Hochformat-Optimierung** 📱
+####à3.à**MobileàHochformat-Optimierung**à°±
 
 **Breakpoints:**
-- **768px & darunter:** Tablet Portrait
-- **480px & darunter:** Small Phone Portrait
-- **Landscape:** Spezial-Optimierung
+-à**768pxà&àdarunter:**àTabletàPortrait
+-à**480pxà&àdarunter:**àSmallàPhoneàPortrait
+-à**Landscape:**àSpezial-Optimierung
 
 **Optimierungen:**
-- ✅ Reduzierte Padding/Margin für kleine Screens
-- ✅ Improved Touch-Targets (min 44px)
-- ✅ Better Typography für Mobile
-- ✅ Flexibles Grid Layout
-- ✅ Landscape Mode Support
-- ✅ Hochformat-spezialisiert
+-ààReduzierteàPadding/MarginàfüràkleineàScreens
+-ààImprovedàTouch-Targetsà(minà44px)
+-ààBetteràTypographyàfüràMobile
+-ààFlexiblesàGridàLayout
+-ààLandscapeàModeàSupport
+-ààHochformat-spezialisiert
 
-#### 4. **Verbesserte UI/UX** 🎨
+####à4.à**VerbesserteàUI/UX**à°¨
 
-**Multiple Choice:**
-- Größere Touch-Ziele auf Mobile
-- Bessere Hover-Effekte
-- Klarere Visualisierung
+**MultipleàChoice:**
+-àGrö—ereàTouch-ZieleàaufàMobile
+-àBessereàHover-Effekte
+-àKlarereàVisualisierung
 
 **Likert-Skalen:**
-- Vertikal auf Mobile (einfacher)
-- Horizontal auf Desktop
-- Big-Five speziales Layout
+-àVertikalàaufàMobileà(einfacher)
+-àHorizontalàaufàDesktop
+-àBig-FiveàspezialesàLayout
 
 **Ergebnisse:**
-- Animierte Fortschrittsbalken
-- Farbcodierte Ergebnisse
-- Detaillierte Interpretationen
-- Warnhinweise für psychologische Tests
+-àAnimierteàFortschrittsbalken
+-àFarbcodierteàErgebnisse
+-àDetaillierteàInterpretationen
+-àWarnhinweiseàfüràpsychologischeàTests
 
 ---
 
-## 🎮 Neue Testtypen
+##à°®àNeueàTesttypen
 
-### Datenstruktur v2.0
+###àDatenstrukturàv2.0
 
 ```javascript
-// Multiple Choice (alt)
+//àMultipleàChoiceà(alt)
 {
-  frage: "...",
-  optionen: ["A", "B", "C", "D"],
-  antwort: 1,
-  erklärung: "..."
+ààfrage:à"...",
+ààoptionen:à["A",à"B",à"C",à"D"],
+ààantwort:à1,
+ààerklärung:à"..."
 }
 
-// Likert Scale (neu)
+//àLikertàScaleà(neu)
 {
-  frage: "...",
-  skala: ["Opt1", "Opt2", "Opt3", "Opt4"]
+ààfrage:à"...",
+ààskala:à["Opt1",à"Opt2",à"Opt3",à"Opt4"]
 }
 
-// Big Five (neu)
+//àBigàFiveà(neu)
 {
-  frage: "...",
-  dimension: "O" | "C" | "E" | "A" | "N"
+ààfrage:à"...",
+ààdimension:à"O"à|à"C"à|à"E"à|à"A"à|à"N"
 }
 ```
 
-### Quiz State Enhancement
+###àQuizàStateàEnhancement
 
 ```javascript
-quizState = {
-  aktiv: false,
-  kategorie: null,
-  testType: 'multiple-choice' | 'likert' | 'bigfive',
-  aktuelleFrageIndex: 0,
-  punkte: 0,
-  antworten: [],
-  maxPunkte: 0,
-  scores: {} // Für Big Five: {O: 0, C: 0, E: 0, A: 0, N: 0}
+quizStateà=à{
+ààaktiv:àfalse,
+ààkategorie:ànull,
+ààtestType:à'multiple-choice'à|à'likert'à|à'bigfive',
+ààaktuelleFrageIndex:à0,
+ààpunkte:à0,
+ààantworten:à[],
+ààmaxPunkte:à0,
+ààscores:à{}à//àFüràBigàFive:à{O:à0,àC:à0,àE:à0,àA:à0,àN:à0}
 }
 ```
 
 ---
 
-## 🔧 Technische Änderungen
+##à°çàTechnischeàÄnderungen
 
-### Neue Funktionen
+###àNeueàFunktionen
 
-#### `shuffleArray(array)`
+####à`shuffleArray(array)`
 ```javascript
-const shuffled = shuffleArray(questions);
-// Randomisiert Array nach Fisher-Yates Algorithmus
+constàshuffledà=àshuffleArray(questions);
+//àRandomisiertàArrayànachàFisher-YatesàAlgorithmus
 ```
 
-#### `getRandomizedQuestions(kategorie)`
+####à`getRandomizedQuestions(kategorie)`
 ```javascript
-const randomFragen = getRandomizedQuestions('diagnostik');
-// Gibt randomisierte Fragen zurück
-// Bei Multiple Choice: auch Optionen randomisiert
+constàrandomFragenà=àgetRandomizedQuestions('diagnostik');
+//àGibtàrandomisierteàFragenàzurück
+//àBeiàMultipleàChoice:àauchàOptionenàrandomisiert
 ```
 
-### Geänderte Funktionen
+###àGeänderteàFunktionen
 
-#### `startQuiz(kategorie)` - Enhanced
-- Erkennt jetzt automatisch Test-Typ
-- Initialisiert `scores` für Big Five
-- Setzt `testType` basierend auf Kategorie
+####à`startQuiz(kategorie)`à-àEnhanced
+-àErkenntàjetztàautomatischàTest-Typ
+-àInitialisiertà`scores`àfüràBigàFive
+-àSetztà`testType`àbasierendàaufàKategorie
 
-#### `nextQuizFrage(antwortIndex)` - Enhanced
-- Multiple Choice: wie vorher
-- Likert: speichert Score (0-3 oder 0-4)
-- Big Five: aggregiert nach Dimensionen
+####à`nextQuizFrage(antwortIndex)`à-àEnhanced
+-àMultipleàChoice:àwieàvorher
+-àLikert:àspeichertàScoreà(0-3àoderà0-4)
+-àBigàFive:àaggregiertànachàDimensionen
 
-#### `displayQuizFrage()` - Enhanced
-- Rendert verschiedene UI je nach `testType`
-- Multiple Choice: Buttons A/B/C/D
-- Likert: Vertikale Skala
-- Big Five: 1-5 Skala
+####à`displayQuizFrage()`à-àEnhanced
+-àRendertàverschiedeneàUIàjeànachà`testType`
+-àMultipleàChoice:àButtonsàA/B/C/D
+-àLikert:àVertikaleàSkala
+-àBigàFive:à1-5àSkala
 
-#### `showQuizErgebnis()` - Enhanced
-- Multiple Choice: Score + Details
-- Likert: Interpretation + Warnung
-- Big Five: Profil + Dimensionen-Erklärung
+####à`showQuizErgebnis()`à-àEnhanced
+-àMultipleàChoice:àScoreà+àDetails
+-àLikert:àInterpretationà+àWarnung
+-àBigàFive:àProfilà+àDimensionen-Erklärung
 
-### UI & Modal - Enhanced
+###àUIà&àModalà-àEnhanced
 
 ```javascript
-// Neue Kategorienngruppe in Modal
-<div class="quiz-kategorie-gruppe">
-  <h3>🧠 Psychologische Tests</h3>
-  // Psychology-Kategorie werden separiert
+//àNeueàKategorienngruppeàinàModal
+<divàclass="quiz-kategorie-gruppe">
+àà<h3>°ç àPsychologischeàTests</h3>
+àà//àPsychology-Kategorieàwerdenàsepariert
 </div>
 ```
 
 ---
 
-## 🎯 CSS Changes
+##à°¯àCSSàChanges
 
-### Neue Klassen
+###àNeueàKlassen
 
 ```css
-.likert-scale          /* Likert-Skalen Container */
-.likert-option         /* Likert-Button */
-.likert-label          /* Likert-Label Text */
-.likert-number         /* Likert 1-5 Number */
+.likert-scaleàààààààààà/*àLikert-SkalenàContainerà*/
+.likert-optionààààààààà/*àLikert-Buttonà*/
+.likert-labelàààààààààà/*àLikert-LabelàTextà*/
+.likert-numberààààààààà/*àLikertà1-5àNumberà*/
 
-.bigfive-scale         /* Big Five speziales Layout */
-.bigfive-results       /* Results Container */
-.bigfive-result-item   /* Dimension Result Row */
-.bigfive-bar           /* Progress Bar für Dimension */
-.bigfive-score         /* Score Text */
-.bigfive-info          /* Info Text */
+.bigfive-scaleààààààààà/*àBigàFiveàspezialesàLayoutà*/
+.bigfive-resultsààààààà/*àResultsàContainerà*/
+.bigfive-result-itemààà/*àDimensionàResultàRowà*/
+.bigfive-barààààààààààà/*àProgressàBaràfüràDimensionà*/
+.bigfive-scoreààààààààà/*àScoreàTextà*/
+.bigfive-infoàààààààààà/*àInfoàTextà*/
 
-.likert-result         /* Likert Result Container */
-.result-score-bar      /* Score Fortschritt */
-.result-score-fill     /* Gefüllter Teil */
-.result-score-num      /* Score Nummer */
+.likert-resultààààààààà/*àLikertàResultàContainerà*/
+.result-score-baràààààà/*àScoreàFortschrittà*/
+.result-score-fillààààà/*àGefüllteràTeilà*/
+.result-score-numàààààà/*àScoreàNummerà*/
 
-.result-interpretation /* Interpretation Text */
-.test-warnung          /* Warning/Disclaimer */
+.result-interpretationà/*àInterpretationàTextà*/
+.test-warnungàààààààààà/*àWarning/Disclaimerà*/
 
-.quiz-kategorie-gruppe /* Kategorie Sektion */
-.kategorie-gruppe-titel /* Sektion Titel */
+.quiz-kategorie-gruppeà/*àKategorieàSektionà*/
+.kategorie-gruppe-titelà/*àSektionàTitelà*/
 ```
 
-### Mobile Optimization
+###àMobileàOptimization
 
 ```css
-/* 768px - Tablet Portrait */
-@media (max-width: 768px) {
-  /* Reduzierte Größen, Spacing */
+/*à768pxà-àTabletàPortraità*/
+@mediaà(max-width:à768px)à{
+àà/*àReduzierteàGrö—en,àSpacingà*/
 }
 
-/* 480px - Small Phone */
-@media (max-width: 480px) {
-  /* Noch weitere Optimierungen */
-  /* Kategorien als Row Layout */
+/*à480pxà-àSmallàPhoneà*/
+@mediaà(max-width:à480px)à{
+àà/*àNochàweitereàOptimierungenà*/
+àà/*àKategorienàalsàRowàLayoutà*/
 }
 
-/* Landscape */
-@media (max-height: 600px) and (orientation: landscape) {
-  /* Optimiert für breite, kurze Screens */
+/*àLandscapeà*/
+@mediaà(max-height:à600px)àandà(orientation:àlandscape)à{
+àà/*àOptimiertàfüràbreite,àkurzeàScreensà*/
 }
 ```
 
 ---
 
-## 📊 QUIZ_DATABASE Struktur v2.0
+##à°àQUIZ_DATABASEàStrukturàv2.0
 
 ```javascript
-QUIZ_DATABASE = {
-  // Medizintechnik (Multiple Choice)
-  diagnostik: {
-    type: 'multiple-choice',
-    fragen: [...]
-  },
-  therapie: { type: 'multiple-choice', fragen: [...] },
-  forschung: { type: 'multiple-choice', fragen: [...] },
-  zukunft: { type: 'multiple-choice', fragen: [...] },
+QUIZ_DATABASEà=à{
+àà//àMedizintechnikà(MultipleàChoice)
+ààdiagnostik:à{
+ààààtype:à'multiple-choice',
+ààààfragen:à[...]
+àà},
+ààtherapie:à{àtype:à'multiple-choice',àfragen:à[...]à},
+ààforschung:à{àtype:à'multiple-choice',àfragen:à[...]à},
+ààzukunft:à{àtype:à'multiple-choice',àfragen:à[...]à},
 
-  // Psychologie (Likert Scale)
-  depression: {
-    type: 'likert',
-    name: '😔 Depressions-Screening',
-    beschreibung: '...',
-    warnung: '⚠️ ...',
-    fragen: [...],
-    interpretation: { 0: {...}, 5: {...}, ... }
-  },
-  adhs: {
-    type: 'likert',
-    name: '🧠 ADHS-Screening',
-    // ...
-  },
+àà//àPsychologieà(LikertàScale)
+ààdepression:à{
+ààààtype:à'likert',
+ààààname:à'°àDepressions-Screening',
+ààààbeschreibung:à'...',
+ààààwarnung:à' —¯¸à...',
+ààààfragen:à[...],
+ààààinterpretation:à{à0:à{...},à5:à{...},à...à}
+àà},
+ààadhs:à{
+ààààtype:à'likert',
+ààààname:à'°ç àADHS-Screening',
+àààà//à...
+àà},
 
-  // Big Five (Dimensionen)
-  persoenlichkeit: {
-    type: 'bigfive',
-    name: '🌟 Big-Five Test',
-    dimensionen: { O: '...', C: '...', ... },
-    fragen: [...]
-  }
+àà//àBigàFiveà(Dimensionen)
+ààpersoenlichkeit:à{
+ààààtype:à'bigfive',
+ààààname:à'°àBig-FiveàTest',
+ààààdimensionen:à{àO:à'...',àC:à'...',à...à},
+ààààfragen:à[...]
+àà}
 }
 ```
 
 ---
 
-## 🚀 Verwendung
+##à°àVerwendung
 
-### Alle Tests starten
+###àAlleàTestsàstarten
 
 ```javascript
-// Option 1: Modal öffnen
-openQuizModal();
+//àOptionà1:àModalàöffnen
+openQuizModal);
 
-// Option 2: Direktes Quiz
+//àOptionà2:àDirektesàQuiz
 startQuiz('diagnostik');
 startQuiz('therapie');
-startQuiz('depression');   // NEU
-startQuiz('adhs');         // NEU
-startQuiz('persoenlichkeit'); // NEU
+startQuiz('depression');ààà//àNEU
+startQuiz('adhs');ààààààààà//àNEU
+startQuiz('persoenlichkeit');à//àNEU
 ```
 
-### Randomisierte Fragen
+###àRandomisierteàFragen
 
 ```javascript
-// Nur für Multiple Choice
-const randomizedQuestions = getRandomizedQuestions('diagnostik');
-// Gibt Array mit randomisierten Fragen UND Optionen zurück
+//àNuràfüràMultipleàChoice
+constàrandomizedQuestionsà=àgetRandomizedQuestions('diagnostik');
+//àGibtàArrayàmitàrandomisiertenàFragenàUNDàOptionenàzurück
 ```
 
 ---
 
-## ✅ Browser Kompatibilität
+##ààBrowseràKompatibilität
 
-- ✅ Chrome 85+
-- ✅ Firefox 78+
-- ✅ Safari 14+
-- ✅ Edge 85+
-- ✅ Mobile Chrome
-- ✅ Mobile Safari
-
----
-
-## 🔐 Datenschutz
-
-✅ **Vollständig lokal:**
-- Keine externe Datenübertragun
-- Keine Speicherung auf Server
-- Keine Cookies
-- Keine User-Tracking
-- Ergebnisse nur im Browser (SessionStorage)
+-ààChromeà85+
+-ààFirefoxà78+
+-ààSafarià14+
+-ààEdgeà85+
+-ààMobileàChrome
+-ààMobileàSafari
 
 ---
 
-## ⚖️ Psychologische Tests - Disclaimer
+##à°àDatenschutz
 
-### ⚠️ WICHTIG
-
-Diese Tests sind **KEINE medizinische Diagnose**. Sie dienen nur zu:
-- Grundlegendem Screening
-- Selbst-Evaluierung
-- Bewusstseinsfindung
-- Zur Vorbereitung für professionelle Beratung
-
-### Bei Bedenken:
-1. Konsultieren Sie einen **qualifizierten Psychologen**
-2. Suchen Sie **ärztliche Fachberatung**
-3. Kontaktieren Sie **Krisenhotlines** bei ernsthafte Gedanken
-4. Zögern Sie nicht, **Hilfe zu suchen**
+à**Vollständigàlokal:**
+-àKeineàexterneàDatenübertragun
+-àKeineàSpeicherungàaufàServer
+-àKeineàCookies
+-àKeineàUser-Tracking
+-àErgebnisseànuràimàBrowserà(SessionStorage)
 
 ---
 
-## 🐛 Bekannte Limitationen
+##à—¯¸àPsychologischeàTestsà-àDisclaimer
 
-- ❌ Keine Test-Verlauf Speicherung zwischen Sessions
-- ❌ Keine Mehrfach-Versuche Tracking
-- ❌ Keine Export-Funktion
-- ❌ Keine Leaderboard
-- ❌ Keine Benachrichtigungen
+###à —¯¸àWICHTIG
 
----
+DieseàTestsàsindà**KEINEàmedizinischeàDiagnose**.àSieàdienenànuràzu:
+-àGrundlegendemàScreening
+-àSelbst-Evaluierung
+-àBewusstseinsfindung
+-àZuràVorbereitungàfüràprofessionelleàBeratung
 
-## 🔮 Geplante Features v2.1
-
-- [ ] Ergebnisse als PDF exportieren
-- [ ] History/Verlauf speichern
-- [ ] Schwierigkeitsstufen für Multiple Choice
-- [ ] Zeitlimit pro Frage (optional)
-- [ ] Quiz-Statistiken Dashboard
-- [ ] Mehr Fragen pro Kategorie
-- [ ] Mehrsprachiger Support
+###àBeiàBedenken:
+1.àKonsultierenàSieàeinenà**qualifiziertenàPsychologen**
+2.àSuchenàSieà**ärztlicheàFachberatung**
+3.àKontaktierenàSieà**Krisenhotlines**àbeiàernsthafteàGedanken
+4.àZögernàSieànicht,à**Hilfeàzuàsuchen**
 
 ---
 
-## 📱 Mobile-First Design Prinzipien
+##à°àBekannteàLimitationen
 
-1. **Touch-Friendly:** Alle Buttons 44px+ (Apple)
-2. **Performance:** Schnelle Interaktion auch auf 3G
-3. **Responsive:** Funktioniert auf 320px - 2560px
-4. **Accessible:** WCAG AA Standard
-5. **Offline:** Vollständig funktional ohne Internet
-
----
-
-## 🎓 Wissenschaftliche Basis
-
-**Depression (PHQ-9):**
-- Entwickelt von Pfizer, frei verwendbar
-- Länder-spezifisch validiert
-- Etwa 10 Minuten Beantwortungszeit
-- Weltheit verwendet in klinischer Praxis
-
-**ADHS (ASRS v1.1):**
-- WHO (World Health Organization) entwickelt
-- Free screening tool
-- 5 Minuten schnelle Version
-- Über 100.000 mal validiert
-
-**Big Five:**
-- International standardisiert
-- Über 50 Jahre Forschung
-- Used by HR, Universities, Researchers
-- Basis für viele Personality Tests
+-ààKeineàTest-VerlaufàSpeicherungàzwischenàSessions
+-ààKeineàMehrfach-VersucheàTracking
+-ààKeineàExport-Funktion
+-ààKeineàLeaderboard
+-ààKeineàBenachrichtigungen
 
 ---
 
-## 🛠️ Technische Spezifikationen
+##à°®àGeplanteàFeaturesàv2.1
 
-| Aspekt | Details |
+-à[à]àErgebnisseàalsàPDFàexportieren
+-à[à]àHistory/Verlaufàspeichern
+-à[à]àSchwierigkeitsstufenàfüràMultipleàChoice
+-à[à]àZeitlimitàproàFrageà(optional)
+-à[à]àQuiz-StatistikenàDashboard
+-à[à]àMehràFragenàproàKategorie
+-à[à]àMehrsprachigeràSupport
+
+---
+
+##à°±àMobile-FirstàDesignàPrinzipien
+
+1.à**Touch-Friendly:**àAlleàButtonsà44px+à(Apple)
+2.à**Performance:**àSchnelleàInteraktionàauchàaufà3G
+3.à**Responsive:**àFunktioniertàaufà320pxà-à2560px
+4.à**Accessible:**àWCAGàAAàStandard
+5.à**Offline:**àVollständigàfunktionalàohneàInternet
+
+---
+
+##à°àWissenschaftlicheàBasis
+
+**Depressionà(PHQ-9):**
+-àEntwickeltàvonàPfizer,àfreiàverwendbar
+-àLänder-spezifischàvalidiert
+-àEtwaà10àMinutenàBeantwortungszeit
+-àWeltheitàverwendetàinàklinischeràPraxis
+
+**ADHSà(ASRSàv1.1):**
+-àWHOà(WorldàHealthàOrganization)àentwickelt
+-àFreeàscreeningàtool
+-à5àMinutenàschnelleàVersion
+-à—berà100.000àmalàvalidiert
+
+**BigàFive:**
+-àInternationalàstandardisiert
+-à—berà50àJahreàForschung
+-àUsedàbyàHR,àUniversities,àResearchers
+-àBasisàfüràvieleàPersonalityàTests
+
+---
+
+##à° —¯¸àTechnischeàSpezifikationen
+
+|àAspektà|àDetailsà|
 |--------|---------|
-| **JavaScript** | Vanilla ES6+ (keine Frameworks) |
-| **Größe** | quiz.js: ~45KB, quiz.css: ~35KB |
-| **Dependencies** | Keine (vollständig independent) |
-| **Performance** | < 100ms für Quiz-Start |
-| **Memory** | < 5MB für vollständigen Session |
-| **Bundling** | Nicht erforderlich |
-| **Transpilation** | Nicht erforderlich (ES6) |
+|à**JavaScript**à|àVanillaàES6+à(keineàFrameworks)à|
+|à**Grö—e**à|àquiz.js:à~45KB,àquiz.css:à~35KBà|
+|à**Dependencies**à|àKeineà(vollständigàindependent)à|
+|à**Performance**à|à<à100msàfüràQuiz-Startà|
+|à**Memory**à|à<à5MBàfüràvollständigenàSessionà|
+|à**Bundling**à|àNichtàerforderlichà|
+|à**Transpilation**à|àNichtàerforderlichà(ES6)à|
 
 ---
 
-## 📞 Support & Testing
+##à°àSupportà&àTesting
 
-### Testen
+###àTesten
 ```
-1. Öffne index.html
-2. Klick auf "🎯 Quiz" 
-3. Wähle einen Test
-4. Beantworte alle Fragen
-5. Schaue Ergebnisse an
+1.àÖffneàindex.html
+2.àKlickàaufà"°¯àQuiz"à
+3.àWähleàeinenàTest
+4.àBeantworteàalleàFragen
+5.àSchaueàErgebnisseàan
 ```
 
-### Fehlerbehandlung
-Falls Quiz nicht funktioniert:
-1. Prüf Browser Console (F12)
-2. Checkliste:
-   - ✅ quiz.js geladen?
-   - ✅ quiz.css geladen?
-   - ✅ No JavaScript Fehler?
-   - ✅ Cache geleert?
-3. Versuche anderen Browser
+###àFehlerbehandlung
+FallsàQuizànichtàfunktioniert:
+1.àPrüfàBrowseràConsoleà(F12)
+2.àCheckliste:
+ààà-ààquiz.jsàgeladen?
+ààà-ààquiz.cssàgeladen?
+ààà-ààNoàJavaScriptàFehler?
+ààà-ààCacheàgeleert?
+3.àVersucheàanderenàBrowser
 
 ---
 
-**Viel Spaß mit dem neuen Quiz System 2.0! 🎯🚀**
+**VielàSpa—àmitàdemàneuenàQuizàSystemà2.0!à°¯°**
 
-Version: 2.0 | Last Updated: 24.02.2026
+Version:à2.0à|àLastàUpdated:à24.02.2026
 

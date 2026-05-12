@@ -1,90 +1,90 @@
-# Projekt: MedTechGuide – Medizinische Geräte verständlich erklärt
+#àProjekt:àMedTechGuideààMedizinischeàGeräteàverständlichàerklärt
 
-## Projektidee
+##àProjektidee
 
-MedTechGuide ist eine interaktive Website, die **medizintechnische Geräte** übersichtlich, verständlich und ansprechend für Laien präsentiert. Von Blutzuckermessgeräten über EKG-Systeme bis hin zu Neurochips und KI-gestützten Diagnosewerkzeugen – das Projekt deckt ein breites Spektrum moderner Medizintechnik ab und erklärt Funktion, Einsatzgebiet sowie Vor- und Nachteile jedes Geräts.
+MedTechGuideàistàeineàinteraktiveàWebsite,àdieà**medizintechnischeàGeräte**àübersichtlich,àverständlichàundàansprechendàfüràLaienàpräsentiert.àVonàBlutzuckermessgerätenàüberàEKG-SystemeàbisàhinàzuàNeurochipsàundàKI-gestütztenàDiagnosewerkzeugenààdasàProjektàdecktàeinàbreitesàSpektrumàmoderneràMedizintechnikàabàundàerklärtàFunktion,àEinsatzgebietàsowieàVor-àundàNachteileàjedesàGeräts.
 
-## Projektstatus
+##àProjektstatus
 
-Das Projekt ist weitgehend fertiggestellt. Alle geplanten Kernfunktionen sind implementiert.
+DasàProjektàistàweitgehendàfertiggestellt.àAlleàgeplantenàKernfunktionenàsindàimplementiert.
 
-## Umgesetzte Funktionen
+##àUmgesetzteàFunktionen
 
-### Kategorieseiten
+###àKategorieseiten
 
-Jede Kategorie hat eine eigene, vollständig ausgebaute HTML-Seite:
+JedeàKategorieàhatàeineàeigene,àvollständigàausgebauteàHTML-Seite:
 
-- **Diabetes** – Blutzuckermessgeräte, Insulinpumpen, CGM-Systeme
-- **Allergie** – Allergie-Testgeräte und -Therapiehilfen
-- **Herz-Kreislauf** – EKG, Blutdruckmessung, Herzschrittmacher
-- **Bildgebung** – MRT, CT, Ultraschall, Röntgen
-- **Genetik** – Gensequenzierung, DNA-Diagnostik
-- **Neurochips** – Gehirn-Computer-Schnittstellen, neuronale Implantate
-- **Exoskelette** – Rehabilitationsroboter und Bewegungsunterstützung
-- **KI-Diagnose** – KI-gestützte Bildanalyse und Diagnostiksysteme
-- **Zukunftstechnologien** – Nanobots, Smart Implants, digitale Zwillinge
-- **Selbsttests** – Heim-Diagnosetests und Wearables
+-à**Diabetes**ààBlutzuckermessgeräte,àInsulinpumpen,àCGM-Systeme
+-à**Allergie**ààAllergie-Testgeräteàundà-Therapiehilfen
+-à**Herz-Kreislauf**ààEKG,àBlutdruckmessung,àHerzschrittmacher
+-à**Bildgebung**ààMRT,àCT,àUltraschall,àRöntgen
+-à**Genetik**ààGensequenzierung,àDNA-Diagnostik
+-à**Neurochips**ààGehirn-Computer-Schnittstellen,àneuronaleàImplantate
+-à**Exoskelette**ààRehabilitationsroboteràundàBewegungsunterstützung
+-à**KI-Diagnose**ààKI-gestützteàBildanalyseàundàDiagnostiksysteme
+-à**Zukunftstechnologien**ààNanobots,àSmartàImplants,àdigitaleàZwillinge
+-à**Selbsttests**ààHeim-DiagnosetestsàundàWearables
 
-### Vergleichsmodus (`comparison.html`)
+###àVergleichsmodusà(`comparison.html`)
 
-Interaktiver Geräte-Vergleich mit:
+InteraktiveràGeräte-Vergleichàmit:
 
-- Side-by-Side-Auswahl von zwei Geräten
-- Bewertungsbalken für Kennzahlen (Genauigkeit, Kosten, Benutzerfreundlichkeit u.a.)
-- Visuelle Ampeldarstellung für Eignung in verschiedenen Szenarien
-- Modular aufgebaut via `comparison-module.js` und `comparison-ui.js`
+-àSide-by-Side-AuswahlàvonàzweiàGeräten
+-àBewertungsbalkenàfüràKennzahlenà(Genauigkeit,àKosten,àBenutzerfreundlichkeitàu.a.)
+-àVisuelleàAmpeldarstellungàfüràEignungàinàverschiedenenàSzenarien
+-àModularàaufgebautàviaà`comparison-module.js`àundà`comparison-ui.js`
 
-### Suche & Filter
+###àSucheà&àFilter
 
-- Volltext-Suchfunktion über alle Geräte (`search.js`, `search-index.json`)
-- Filterung nach Kategorie via JavaScript (`script.js`)
+-àVolltext-SuchfunktionàüberàalleàGeräteà(`search.js`,à`search-index.json`)
+-àFilterungànachàKategorieàviaàJavaScriptà(`script.js`)
 
-### Quellen & Glossar
+###àQuellenà&àGlossar
 
-- Eigene Quellenseite (`quellen.html`) mit Verweisen auf offizielle Hersteller- und Gesundheitsportale
+-àEigeneàQuellenseiteà(`quellen.html`)àmitàVerweisenàaufàoffizielleàHersteller-àundàGesundheitsportale
 
-## Technologiestack
+##àTechnologiestack
 
-| Technologie                          | Einsatz                                              |
-| ------------------------------------ | ---------------------------------------------------- |
-| HTML5                                | Struktur aller Seiten                                |
-| CSS3 (`style.css`, `comparison.css`) | Layout, responsives Design, medizinisches Farbschema |
-| JavaScript (ES6+)                    | Suche, Filter, Vergleichslogik, Animationen          |
-| JSON (`search-index.json`)           | Suchindex für alle Geräte                            |
+|àTechnologieàààààààààààààààààààààààààà|àEinsatzàààààààààààààààààààààààààààààààààààààààààààààà|
+|à------------------------------------à|à----------------------------------------------------à|
+|àHTML5àààààààààààààààààààààààààààààààà|àStrukturàalleràSeitenàààààààààààààààààààààààààààààààà|
+|àCSS3à(`style.css`,à`comparison.css`)à|àLayout,àresponsivesàDesign,àmedizinischesàFarbschemaà|
+|àJavaScriptà(ES6+)àààààààààààààààààààà|àSuche,àFilter,àVergleichslogik,àAnimationenàààààààààà|
+|àJSONà(`search-index.json`)ààààààààààà|àSuchindexàfüràalleàGeräteàààààààààààààààààààààààààààà|
 
-## Projektstruktur
+##àProjektstruktur
 
 ```
 Projekt_25/
-├── index.html              # Startseite
-├── [kategorie].html        # Kategorieseiten (10 Stück)
-├── comparison.html         # Gerätevergleich
-├── quellen.html            # Quellenverzeichnis
-├── style.css               # Globales Stylesheet
-├── script.js               # Hauptlogik (Suche, Filter)
-├── search.js               # Suchmodul
-├── search-index.json       # Suchindex aller Geräte
-├── css/
-│   └── comparison.css      # Styles für den Vergleichsmodus
-├── js/
-│   ├── comparison-module.js
-│   └── comparison-ui.js
-└── docs/                   # Dokumentation
+àindex.htmlàààààààààààààà#àStartseite
+à[kategorie].htmlàààààààà#àKategorieseitenà(10àStück)
+àcomparison.htmlààààààààà#àGerätevergleich
+àquellen.htmlàààààààààààà#àQuellenverzeichnis
+àstyle.cssààààààààààààààà#àGlobalesàStylesheet
+àscript.jsààààààààààààààà#àHauptlogikà(Suche,àFilter)
+àsearch.jsààààààààààààààà#àSuchmodul
+àsearch-index.jsonààààààà#àSuchindexàalleràGeräte
+àcss/
+—ààààcomparison.cssàààààà#àStylesàfüràdenàVergleichsmodus
+àjs/
+—ààààcomparison-module.js
+—ààààcomparison-ui.js
+àdocs/ààààààààààààààààààà#àDokumentation
 ```
 
-## Design
+##àDesign
 
-- Ruhiges, seriöses Farbschema (Blau/Weiß/Grau)
-- Responsives Layout für Desktop und Mobile
-- Klare Typografie für medizinisch-technische Inhalte
+-àRuhiges,àseriösesàFarbschemaà(Blau/Wei—/Grau)
+-àResponsivesàLayoutàfüràDesktopàundàMobile
+-àKlareàTypografieàfüràmedizinisch-technischeàInhalte
 
-## Mögliche Erweiterungen
+##àMöglicheàErweiterungen
 
-- Dark Mode
-- Farbliche Markierung nach Risikoklasse (z.B. ISO 14971)
-- Interaktives Glossar mit medizinischen Fachbegriffen
-- Mehrsprachigkeit (Deutsch / Englisch)
+-àDarkàMode
+-àFarblicheàMarkierungànachàRisikoklasseà(z.B.àISOà14971)
+-àInteraktivesàGlossaràmitàmedizinischenàFachbegriffen
+-àMehrsprachigkeità(Deutschà/àEnglisch)
 
-## Fazit
+##àFazit
 
-MedTechGuide demonstriert den kompetenten Einsatz von HTML, CSS und JavaScript zur Erstellung einer strukturierten, informativen und interaktiven Website. Das Projekt zeigt nicht nur technisches Know-how, sondern auch die Fähigkeit, komplexe medizinische Themen verständlich aufzubereiten und nutzerfreundlich zu präsentieren.
+MedTechGuideàdemonstriertàdenàkompetentenàEinsatzàvonàHTML,àCSSàundàJavaScriptàzuràErstellungàeineràstrukturierten,àinformativenàundàinteraktivenàWebsite.àDasàProjektàzeigtànichtànuràtechnischesàKnow-how,àsondernàauchàdieàFähigkeit,àkomplexeàmedizinischeàThemenàverständlichàaufzubereitenàundànutzerfreundlichàzuàpräsentieren.

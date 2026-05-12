@@ -1,296 +1,296 @@
-# 🚀 MedTechGuide Website Refactoring & Upgrade
+#à°àMedTechGuideàWebsiteàRefactoringà&àUpgrade
 
-## Übersicht der Implementierten Verbesserungen
+##à—bersichtàderàImplementiertenàVerbesserungen
 
-Dieses Projekt wurde umfassend aufgewertet mit modernen Web-Standards für **Performance, Accessibility, UX/UI** und **Interaktivität**.
-
----
-
-## 📋 1. GLOBALE SUCHFUNKTION (Vollständig neu implementiert)
-
-### Was wurde verbessert?
-- ✅ **Globale Suche** über ALLE Seiten der Website (nicht nur aktuell)
-- ✅ **Search Index System** via `search-index.json`
-- ✅ **Live-Suche** mit Debouncing für bessere Performance
-- ✅ **Intelligentes Ranking** nach Relevanz/Score
-- ✅ **Dropdown-UI** mit Seitennamen und Preview-Text
-- ✅ **Highlight auf Zielseite** wenn Suchlink angeklickt wird
-- ✅ **Leere-Zustand-Anzeige** ("Keine Ergebnisse gefunden")
-- ✅ **Keyboard-Support** & Accessibility
-
-### Neue Dateien:
-- **`search.js`** - Vollständiger Suchmotor mit globalen Features
-- **`search-index.json`** - Zentrale Datenbank aller Seiten-Inhalte
-
-### Neue CSS-Features:
-- `.search-results` - Styled Dropdown mit Animationen
-- `.search-result-item` - Einzelne Suchergebnisse mit Ranking-Nummer
-- `.search-empty-state` - Anzeige wenn keine Treffer
-- `.search-highlight` - Highlight markierter Text auf Zielseite
-
-### Technische Details:
-- **Normalisierung**: Umlaute (ä→a), Groß/Kleinschreibung
-- **Scoring-System**: Titel (4 Punkte) > Keywords (2) > Content (1)
-- **Performance**: Debounce 150ms, max 10 Ergebnisse
-- **Memory**: SessionStorage für Highlighting nach Navigation
+DiesesàProjektàwurdeàumfassendàaufgewertetàmitàmodernenàWeb-Standardsàfürà**Performance,àAccessibility,àUX/UI**àundà**Interaktivität**.
 
 ---
 
-## 🧭 2. NAVIGATION & UX - STARK VERBESSERT
+##à°à1.àGLOBALEàSUCHFUNKTIONà(Vollständigàneuàimplementiert)
 
-### Was wurde verbessert?
-- ✅ **Mobile Hamburger-Menü** (automatisch auf <768px)
-- ✅ **Sticky Navbar** beim Scrollen mit Shadow
-- ✅ **Aktive Seite visuell hervorheben** 
-- ✅ **Bessere Hover-Effekte** mit Animationen
-- ✅ **Responsive Design** für alle Screen-Größen
-- ✅ **Touch-freundliche Links** (mindestens 44x44px)
+###àWasàwurdeàverbessert?
+-àà**GlobaleàSuche**àüberàALLEàSeitenàderàWebsiteà(nichtànuràaktuell)
+-àà**SearchàIndexàSystem**àviaà`search-index.json`
+-àà**Live-Suche**àmitàDebouncingàfüràbessereàPerformance
+-àà**IntelligentesàRanking**ànachàRelevanz/Score
+-àà**Dropdown-UI**àmitàSeitennamenàundàPreview-Text
+-àà**HighlightàaufàZielseite**àwennàSuchlinkàangeklicktàwird
+-àà**Leere-Zustand-Anzeige**à("KeineàErgebnisseàgefunden")
+-àà**Keyboard-Support**à&àAccessibility
 
-### Mobile Menü Features:
-- **Hamburger Button** wird automatisch generiert via JavaScript
-- **Animated Toggle** mit Rotation-Effekt (☰ → ✕)
-- **Auto-Close** bei Link-Klick oder Click außerhalb
-- **Smooth Transitions** für alle Animationen
+###àNeueàDateien:
+-à**`search.js`**à-àVollständigeràSuchmotoràmitàglobalenàFeatures
+-à**`search-index.json`**à-àZentraleàDatenbankàalleràSeiten-Inhalte
 
-### Navigation CSS Updates:
+###àNeueàCSS-Features:
+-à`.search-results`à-àStyledàDropdownàmitàAnimationen
+-à`.search-result-item`à-àEinzelneàSuchergebnisseàmitàRanking-Nummer
+-à`.search-empty-state`à-àAnzeigeàwennàkeineàTreffer
+-à`.search-highlight`à-àHighlightàmarkierteràTextàaufàZielseite
+
+###àTechnischeàDetails:
+-à**Normalisierung**:àUmlauteà(äa),àGro—/Kleinschreibung
+-à**Scoring-System**:àTitelà(4àPunkte)à>àKeywordsà(2)à>àContentà(1)
+-à**Performance**:àDebounceà150ms,àmaxà10àErgebnisse
+-à**Memory**:àSessionStorageàfüràHighlightingànachàNavigation
+
+---
+
+##à°ç­à2.àNAVIGATIONà&àUXà-àSTARKàVERBESSERT
+
+###àWasàwurdeàverbessert?
+-àà**MobileàHamburger-Menü**à(automatischàaufà<768px)
+-àà**StickyàNavbar**àbeimàScrollenàmitàShadow
+-àà**AktiveàSeiteàvisuellàhervorheben**à
+-àà**BessereàHover-Effekte**àmitàAnimationen
+-àà**ResponsiveàDesign**àfüràalleàScreen-Grö—en
+-àà**Touch-freundlicheàLinks**à(mindestensà44x44px)
+
+###àMobileàMenüàFeatures:
+-à**HamburgeràButton**àwirdàautomatischàgeneriertàviaàJavaScript
+-à**AnimatedàToggle**àmitàRotation-Effektà(°àà)
+-à**Auto-Close**àbeiàLink-KlickàoderàClickàau—erhalb
+-à**SmoothàTransitions**àfüràalleàAnimationen
+
+###àNavigationàCSSàUpdates:
 ```css
-.nav-toggle           // Hamburger Button
-.nav-links.mobile-visible  // Offenes Mobile-Menü
-.nav-links a.active   // Aktive Seite Styling
+.nav-toggleààààààààààà//àHamburgeràButton
+.nav-links.mobile-visibleàà//àOffenesàMobile-Menü
+.nav-linksàa.activeààà//àAktiveàSeiteàStyling
 ```
 
-### Hero-Section & Card Verbesserungen:
-- `.intro-card` - Hero-Bereich mit Gradient
-- `.section-card` - Moderne Cards mit Hover-Lift
-- `.device-card` - Produkt-Cards mit farbigem Top-Border Animation
-- Alle Cards: Fade-In Animationen, Schatten-Effekte, Hover-Transitions
+###àHero-Sectionà&àCardàVerbesserungen:
+-à`.intro-card`à-àHero-BereichàmitàGradient
+-à`.section-card`à-àModerneàCardsàmitàHover-Lift
+-à`.device-card`à-àProdukt-CardsàmitàfarbigemàTop-BorderàAnimation
+-àAlleàCards:àFade-InàAnimationen,àSchatten-Effekte,àHover-Transitions
 
 ---
 
-## ⚡ 3. PERFORMANCE-OPTIMIERUNGEN
+##à¡à3.àPERFORMANCE-OPTIMIERUNGEN
 
-### Was wurde implementiert?
-- ✅ **Lazy Loading** für Bilder (native + Fallback)
-- ✅ **Deferred Script Loading** (search, performance)
-- ✅ **Optimierte CSS** (minimal external dependencies)
-- ✅ **Performance Monitoring** (Dev Console Logs)
-- ✅ **Resource Hints** Infrastruktur (DNS Prefetch, Preload)
+###àWasàwurdeàimplementiert?
+-àà**LazyàLoading**àfüràBilderà(nativeà+àFallback)
+-àà**DeferredàScriptàLoading**à(search,àperformance)
+-àà**OptimierteàCSS**à(minimalàexternalàdependencies)
+-àà**PerformanceàMonitoring**à(DevàConsoleàLogs)
+-àà**ResourceàHints**àInfrastrukturà(DNSàPrefetch,àPreload)
 
-### Neue Datei:
-- **`performance.js`** - Lazy Loading, Monitoring, ResourceHints
+###àNeueàDatei:
+-à**`performance.js`**à-àLazyàLoading,àMonitoring,àResourceHints
 
-### Lazy Loading Details:
-- Nutzt natives `loading="lazy"` Attribut
-- **Fallback**: IntersectionObserver für alte Browser
-- **Margin**: 50px rootMargin für frühes Laden
-- **Decoding**: async für nicht-blocking Image Decodierung
+###àLazyàLoadingàDetails:
+-àNutztànativesà`loading="lazy"`àAttribut
+-à**Fallback**:àIntersectionObserveràfüràalteàBrowser
+-à**Margin**:à50pxàrootMarginàfüràfrühesàLaden
+-à**Decoding**:àasyncàfürànicht-blockingàImageàDecodierung
 
-### Performance Monitoring:
+###àPerformanceàMonitoring:
 ```javascript
-initLazyLoading()        // Auto auf allen <img> Tags
-logPerformanceMetrics()  // Dev-only Console Logs (localhost nur)
+initLazyLoading()àààààààà//àAutoàaufàallenà<img>àTags
+logPerformanceMetrics()àà//àDev-onlyàConsoleàLogsà(localhostànur)
 ```
 
 ---
 
-## ♿ 4. ACCESSIBILITY-VERBESSERUNGEN
+##à¿à4.àACCESSIBILITY-VERBESSERUNGEN
 
-### Was wurde implementiert?
-- ✅ **Verbesserte Focus-Zustände** (3px solid outline)
-- ✅ **Skip-to-Content Link** (visible on focus)
-- ✅ **ARIA Labels** auf allen Buttons
-- ✅ **Besserer Link-Text** (underline, visited colors)
-- ✅ **Mindest-Touch-Targets** 44x44px
-- ✅ **Prefers-Reduced-Motion** Unterstützung
-- ✅ **Semantic HTML** (Header, Nav, Main, Footer immer)
-- ✅ **Color Contrast** WCAG AAA Standard
+###àWasàwurdeàimplementiert?
+-àà**VerbesserteàFocus-Zustände**à(3pxàsolidàoutline)
+-àà**Skip-to-ContentàLink**à(visibleàonàfocus)
+-àà**ARIAàLabels**àaufàallenàButtons
+-àà**BessereràLink-Text**à(underline,àvisitedàcolors)
+-àà**Mindest-Touch-Targets**à44x44px
+-àà**Prefers-Reduced-Motion**àUnterstützung
+-àà**SemanticàHTML**à(Header,àNav,àMain,àFooteràimmer)
+-àà**ColoràContrast**àWCAGàAAAàStandard
 
-### CSS Accessibility Features:
+###àCSSàAccessibilityàFeatures:
 ```css
-*:focus-visible         // Sichtbare Focus-Indikatoren
-a:visited               // Besuchte Links in Violet
-@media (prefers-reduced-motion: reduce)  // Respect User Preferences
-code, pre               // Bessere Code-Lesbarkeit
-input:focus-visible     // Form Inputs mit großem Focus-Ring
+*:focus-visibleààààààààà//àSichtbareàFocus-Indikatoren
+a:visitedààààààààààààààà//àBesuchteàLinksàinàViolet
+@mediaà(prefers-reduced-motion:àreduce)àà//àRespectàUseràPreferences
+code,àpreààààààààààààààà//àBessereàCode-Lesbarkeit
+input:focus-visibleààààà//àFormàInputsàmitàgro—emàFocus-Ring
 ```
 
-### Best Practices implementiert:
-- **Heading Hierarchy**: H1 (nur Seiten-Titel), H2 (Sections), H3 (Subsections)
-- **Labels**: `aria-label` auf Icons, `aria-hidden="true"` auf Deco-Elementen
-- **Form Accessibility**: `<label>` mit Input verbunden
-- **Keyboard Navigation**: Tab-Order, Enter/Space auf Buttons
+###àBestàPracticesàimplementiert:
+-à**HeadingàHierarchy**:àH1à(nuràSeiten-Titel),àH2à(Sections),àH3à(Subsections)
+-à**Labels**:à`aria-label`àaufàIcons,à`aria-hidden="true"`àaufàDeco-Elementen
+-à**FormàAccessibility**:à`<label>`àmitàInputàverbunden
+-à**KeyboardàNavigation**:àTab-Order,àEnter/SpaceàaufàButtons
 
 ---
 
-## ✨ 5. INTERAKTIVITÄT & MODERNE UI
+##à¨à5.àINTERAKTIVITÄTà&àMODERNEàUI
 
-### Neue Animationen & Transitions:
+###àNeueàAnimationenà&àTransitions:
 ```css
-@keyframes fadeInUp       // Cards erscheinen von unten
-@keyframes fadeInScale    // Scale + Opacity
-@keyframes slideInLeft    // Links einfahren
-@keyframes slideInRight   // Rechts einfahren
-@keyframes pulse          // Pulsierender Loading-Effekt
-@keyframes shimmer        // Shimmer-Loading (Skeleton)
-@keyframes ripple         // Button Ripple-Effekt (Material Design)
+@keyframesàfadeInUpààààààà//àCardsàerscheinenàvonàunten
+@keyframesàfadeInScaleàààà//àScaleà+àOpacity
+@keyframesàslideInLeftàààà//àLinksàeinfahren
+@keyframesàslideInRightààà//àRechtsàeinfahren
+@keyframesàpulseàààààààààà//àPulsierenderàLoading-Effekt
+@keyframesàshimmeràààààààà//àShimmer-Loadingà(Skeleton)
+@keyframesàrippleààààààààà//àButtonàRipple-Effektà(MaterialàDesign)
 ```
 
-### Interactive Elements:
-- **Buttons**: Ripple-Effekt, Hover-Lift, Active-Press Feedback
-- **Cards**: Hover-Transformationen, Border-Top Animation
-- **Links**: Smooth Color-Transitions, Underline-Animation
-- **Search Results**: Staggered Animation (0.05s Delay pro Item)
-- **Tooltips**: Fade-In Scale Animation
+###àInteractiveàElements:
+-à**Buttons**:àRipple-Effekt,àHover-Lift,àActive-PressàFeedback
+-à**Cards**:àHover-Transformationen,àBorder-TopàAnimation
+-à**Links**:àSmoothàColor-Transitions,àUnderline-Animation
+-à**SearchàResults**:àStaggeredàAnimationà(0.05sàDelayàproàItem)
+-à**Tooltips**:àFade-InàScaleàAnimation
 
-### UX Details:
-- **Hover-Scale Klasse**: Cards vergrößern sich um 5%
-- **Hover-Lift Klasse**: Cards heben sich um 8px
-- **Button Feedback**: Visual auf Click, Disabled State Gray
-- **Color Transitions**: Fast (150ms) für responsives Gefühl
+###àUXàDetails:
+-à**Hover-ScaleàKlasse**:àCardsàvergrö—ernàsichàumà5%
+-à**Hover-LiftàKlasse**:àCardsàhebenàsichàumà8px
+-à**ButtonàFeedback**:àVisualàaufàClick,àDisabledàStateàGray
+-à**ColoràTransitions**:àFastà(150ms)àfüràresponsivesàGefühl
 
 ---
 
-## 📊 6. ERWEITERTE FEATURES
+##à°à6.àERWEITERTEàFEATURES
 
-### Filter-System:
-- Kategorie-Buttons (Alle, Diagnostik, Therapie, etc.)
-- Smooth Filter-Animationen
-- State Persistence (active Button highlighting)
+###àFilter-System:
+-àKategorie-Buttonsà(Alle,àDiagnostik,àTherapie,àetc.)
+-àSmoothàFilter-Animationen
+-àStateàPersistenceà(activeàButtonàhighlighting)
 
-### Vergleichs-Modal:
-- Wähle bis zu 2 Devices zum Vergleich
-- Tabelle mit Specs
-- ESC zum Schließen
-- Backdrop-Blur für Fokus
+###àVergleichs-Modal:
+-àWähleàbisàzuà2àDevicesàzumàVergleich
+-àTabelleàmitàSpecs
+-àESCàzumàSchlie—en
+-àBackdrop-BluràfüràFokus
 
-### Glossar-Tooltips:
-- Auto-Detection von Glossar-Begriffen
-- Hover-Tooltips mit Definitionen
-- Smooth Positioning
+###àGlossar-Tooltips:
+-àAuto-DetectionàvonàGlossar-Begriffen
+-àHover-TooltipsàmitàDefinitionen
+-àSmoothàPositioning
 
-### Related Links:
-- Ein Dataset pro Seite (`relatedLinksData`)
-- Dynamisch gefüllt via `setRelatedLinks()`
+###àRelatedàLinks:
+-àEinàDatasetàproàSeiteà(`relatedLinksData`)
+-àDynamischàgefülltàviaà`setRelatedLinks()`
 
 ---
 
-## 🔧 TECHNISCHE IMPLEMENTIERUNG
+##à°çàTECHNISCHEàIMPLEMENTIERUNG
 
-### JavaScript Module:
+###àJavaScriptàModule:
 ```
-script.js           // Haupt-Funktionen (Nav, Filter, Modal, Glossar)
-search.js           // Globale Suche (NEW)
-performance.js      // Lazy Loading & Monitoring (NEW)
+script.jsààààààààààà//àHaupt-Funktionenà(Nav,àFilter,àModal,àGlossar)
+search.jsààààààààààà//àGlobaleàSucheà(NEW)
+performance.jsàààààà//àLazyàLoadingà&àMonitoringà(NEW)
 ```
 
-### CSS & Design System:
+###àCSSà&àDesignàSystem:
 ```css
-:root {
-  --primary: #1e40af;              // Blau
-  --accent: #0f766e;               // Teal
-  --success, --warning, --danger   // Status-Farben
-  --shadow-sm, --md, --lg, --xl    // Schatten-Stufen
-  --radius-sm, --md, --lg          // Border-Radius
-  --transition, --transition-fast  // Animation-Timing
+:rootà{
+àà--primary:à#1e40af;àààààààààààààà//àBlau
+àà--accent:à#0f766e;ààààààààààààààà//àTeal
+àà--success,à--warning,à--dangerààà//àStatus-Farben
+àà--shadow-sm,à--md,à--lg,à--xlàààà//àSchatten-Stufen
+àà--radius-sm,à--md,à--lgàààààààààà//àBorder-Radius
+àà--transition,à--transition-fastàà//àAnimation-Timing
 }
 ```
 
-### Responsive Breakpoints:
-- **768px**: Tablet-Größe (Mobile Menu aktiviert)
-- **480px**: Small Mobile (Font-Sizing angepasst)
-- **1200px**: Desktop max-width
+###àResponsiveàBreakpoints:
+-à**768px**:àTablet-Grö—eà(MobileàMenuàaktiviert)
+-à**480px**:àSmallàMobileà(Font-Sizingàangepasst)
+-à**1200px**:àDesktopàmax-width
 
 ---
 
-## 📝 FILE-STRUKTUR
+##à°àFILE-STRUKTUR
 
 ```
 c:\WMC\Projekt_25\
-├── index.html                    // Updated mit search.js, performance.js
-├── diabetes.html, allergie.html, ... // Themenseiten
-├── quellen.html
-├── style.css                     // 1600+ Zeilen, alle Features enthalten
-├── script.js                     // Erweitert mit Mobile Nav
-├── search.js                     // NEU - Globale Suchfunktion
-├── search-index.json             // NEU - Search Index
-├── performance.js                // NEU - Lazy Loading & Monitoring
-├── images/                       // Bilder (Lazy Loading ready)
-└── README.md, REFACTORING_DOKUMENTATION.md
+àindex.htmlàààààààààààààààààààà//àUpdatedàmitàsearch.js,àperformance.js
+àdiabetes.html,àallergie.html,à...à//àThemenseiten
+àquellen.html
+àstyle.cssààààààààààààààààààààà//à1600+àZeilen,àalleàFeaturesàenthalten
+àscript.jsààààààààààààààààààààà//àErweitertàmitàMobileàNav
+àsearch.jsààààààààààààààààààààà//àNEUà-àGlobaleàSuchfunktion
+àsearch-index.jsonààààààààààààà//àNEUà-àSearchàIndex
+àperformance.jsàààààààààààààààà//àNEUà-àLazyàLoadingà&àMonitoring
+àimages/ààààààààààààààààààààààà//àBilderà(LazyàLoadingàready)
+àREADME.md,àREFACTORING_DOKUMENTATION.md
 ```
 
 ---
 
-## 🚀 HOW TO USE
+##à°àHOWàTOàUSE
 
-### Für die Entwickler:
-1. **Suche testen**: Schreib in die Search Box auf jeder Seite
-2. **Mobile Menu**: Resize zu <768px um Hamburger zu sehen
-3. **Performance**: Öffne DevTools → Performance Tab → Reload
-4. **Accessibility**: Drücke `Tab` mehrmals um Focus-States zu sehen
+###àFüràdieàEntwickler:
+1.à**Sucheàtesten**:àSchreibàinàdieàSearchàBoxàaufàjederàSeite
+2.à**MobileàMenu**:àResizeàzuà<768pxàumàHamburgeràzuàsehen
+3.à**Performance**:àÖffneàDevToolsààPerformanceàTabààReload
+4.à**Accessibility**:àDrückeà`Tab`àmehrmalsàumàFocus-Statesàzuàsehen
 
-### Für End-User:
-- **Suche**: Typ einfach Begriffe (z.B. "Diabetes", "Sensor", "CGM") ein
-- **Navigation**: Klick auf Theme-Links oder Browse über Categories
-- **Mobile**: Full-featured on small screens mit Hamburger
-- **Keyboard**: Nutze Tab/Shift+Tab zum Navigieren
-
----
-
-## 🔬 TESTING-CHECKLIST
-
-- [ ] Suche funktioniert auf allen 10 Seiten
-- [ ] Hamburger-Menü erscheint auf Mobile (<768px)
-- [ ] Tab-Navigation funktioniert auf allen Links/Buttons
-- [ ] Focus-States sind sichtbar
-- [ ] Alle Cards haben Hover-Effekte
-- [ ] Images laden lazy
-- [ ] Modal Fokus-Trapping funktioniert
-- [ ] Gelingt auf langsamen Connections gut
-- [ ] Keine Console Errors
+###àFüràEnd-User:
+-à**Suche**:àTypàeinfachàBegriffeà(z.B.à"Diabetes",à"Sensor",à"CGM")àein
+-à**Navigation**:àKlickàaufàTheme-LinksàoderàBrowseàüberàCategories
+-à**Mobile**:àFull-featuredàonàsmallàscreensàmitàHamburger
+-à**Keyboard**:àNutzeàTab/Shift+TabàzumàNavigieren
 
 ---
 
-## 📱 BROWSER-KOMPATIBILITÄT
+##à°"àTESTING-CHECKLIST
 
-- ✅ Chrome/Edge 90+
-- ✅ Firefox 88+
-- ✅ Safari 14+
-- ✅ Mobile Safari (iOS 14+)
-- ⚠️ IE11: Teilweise Support (keine native Lazy Loading)
-
----
-
-## 🎯 PERFORMANCE TARGETS
-
-- **First Contentful Paint**: < 1.5s
-- **Largest Contentful Paint**: < 2.5s
-- **Cumulative Layout Shift**: < 0.1
-- **Time to Interactive**: < 3s
-- **Lighthouse Score**: 85+ (mit optimierten Images)
+-à[à]àSucheàfunktioniertàaufàallenà10àSeiten
+-à[à]àHamburger-MenüàerscheintàaufàMobileà(<768px)
+-à[à]àTab-NavigationàfunktioniertàaufàallenàLinks/Buttons
+-à[à]àFocus-Statesàsindàsichtbar
+-à[à]àAlleàCardsàhabenàHover-Effekte
+-à[à]àImagesàladenàlazy
+-à[à]àModalàFokus-Trappingàfunktioniert
+-à[à]àGelingtàaufàlangsamenàConnectionsàgut
+-à[à]àKeineàConsoleàErrors
 
 ---
 
-## 📞 SUPPORT & FEEDBACK
+##à°±àBROWSER-KOMPATIBILITÄT
 
-Falls Probleme auftreten:
-1. Öffne DevTools (F12) und schau auf Console Errors
-2. Teste mit einem anderen Browser
-3. Lösch Browser Cache (Ctrl+Shift+Delete)
-4. Starte den lokalen Server neu
-
----
-
-## 📄 Lizenz & Attribution
-
-**MedTechGuide** verfügt über:
-- 🔓 Vollständig **lizenzfrei**, offene Quellen
-- 📚 Wissensbasis auf wissenschaftlichen Quellen
-- 🎓 Schulprojekt HTL Informatik 2026
-- ♻️ Open for Educational Reuse
+-ààChrome/Edgeà90+
+-ààFirefoxà88+
+-ààSafarià14+
+-ààMobileàSafarià(iOSà14+)
+-à —¯¸àIE11:àTeilweiseàSupportà(keineànativeàLazyàLoading)
 
 ---
 
-**Letztes Update**: 24.02.2026  
-**Entwickler**: AI-Assisted Refactoring  
-**Version**: 2.0 (Major Upgrade)
+##à°¯àPERFORMANCEàTARGETS
+
+-à**FirstàContentfulàPaint**:à<à1.5s
+-à**LargestàContentfulàPaint**:à<à2.5s
+-à**CumulativeàLayoutàShift**:à<à0.1
+-à**TimeàtoàInteractive**:à<à3s
+-à**LighthouseàScore**:à85+à(mitàoptimiertenàImages)
+
+---
+
+##à°àSUPPORTà&àFEEDBACK
+
+FallsàProblemeàauftreten:
+1.àÖffneàDevToolsà(F12)àundàschauàaufàConsoleàErrors
+2.àTesteàmitàeinemàanderenàBrowser
+3.àLöschàBrowseràCacheà(Ctrl+Shift+Delete)
+4.àStarteàdenàlokalenàServeràneu
+
+---
+
+##à°àLizenzà&àAttribution
+
+**MedTechGuide**àverfügtàüber:
+-à°àVollständigà**lizenzfrei**,àoffeneàQuellen
+-à°àWissensbasisàaufàwissenschaftlichenàQuellen
+-à°àSchulprojektàHTLàInformatikà2026
+-à»—¯¸àOpenàforàEducationalàReuse
+
+---
+
+**LetztesàUpdate**:à24.02.2026àà
+**Entwickler**:àAI-AssistedàRefactoringàà
+**Version**:à2.0à(MajoràUpgrade)
 

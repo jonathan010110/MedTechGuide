@@ -1,275 +1,275 @@
-import * as THREE from 'three';
-import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-import { createPulseOximeter } from '../devices/PulseOximeter.js';
-import { createEKGMonitor } from '../devices/EKGMonitor.js';
-import { createBloodPressureMonitor } from '../devices/BloodPressureMonitor.js';
+importà*àasàTHREEàfromà'three';
+importà{àOrbitControlsà}àfromà'three/addons/controls/OrbitControls.js';
+importà{àcreatePulseOximeterà}àfromà'../devices/PulseOximeter.js';
+importà{àcreateEKGMonitorà}àfromà'../devices/EKGMonitor.js';
+importà{àcreateBloodPressureMonitorà}àfromà'../devices/BloodPressureMonitor.js';
 
-export class App3D {
-  constructor({ canvas, infoPanel, infoText, heartRateSlider, pressureFill, bpResult }) {
-    this.canvas = canvas;
-    this.infoPanel = infoPanel;
-    this.infoText = infoText;
-    this.heartRateSlider = heartRateSlider;
-    this.pressureFill = pressureFill;
-    this.bpResult = bpResult;
+exportàclassàApp3Dà{
+ààconstructor({àcanvas,àinfoPanel,àinfoText,àheartRateSlider,àpressureFill,àbpResultà})à{
+ààààthis.canvasà=àcanvas;
+ààààthis.infoPanelà=àinfoPanel;
+ààààthis.infoTextà=àinfoText;
+ààààthis.heartRateSliderà=àheartRateSlider;
+ààààthis.pressureFillà=àpressureFill;
+ààààthis.bpResultà=àbpResult;
 
-    this.scene = new THREE.Scene();
-    this.scene.background = new THREE.Color('#070d1c');
+ààààthis.sceneà=ànewàTHREE.Scene();
+ààààthis.scene.backgroundà=ànewàTHREE.Color('#070d1c');
 
-    this.camera = new THREE.PerspectiveCamera(45, 1, 0.1, 100);
-    this.camera.position.set(5.6, 3.4, 6.3);
+ààààthis.cameraà=ànewàTHREE.PerspectiveCamera(45,à1,à0.1,à100);
+ààààthis.camera.position.set(5.6,à3.4,à6.3);
 
-    this.renderer = new THREE.WebGLRenderer({ canvas: this.canvas, antialias: true });
-    this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-    this.renderer.outputColorSpace = THREE.SRGBColorSpace;
+ààààthis.rendererà=ànewàTHREE.WebGLRenderer({àcanvas:àthis.canvas,àantialias:àtrueà});
+ààààthis.renderer.setPixelRatio(Math.min(window.devicePixelRatio,à2));
+ààààthis.renderer.outputColorSpaceà=àTHREE.SRGBColorSpace;
 
-    this.clock = new THREE.Clock();
+ààààthis.clockà=ànewàTHREE.Clock();
 
-    this.controls = null;
-    this.raycaster = new THREE.Raycaster();
-    this.pointer = new THREE.Vector2();
+ààààthis.controlsà=ànull;
+ààààthis.raycasterà=ànewàTHREE.Raycaster();
+ààààthis.pointerà=ànewàTHREE.Vector2();
 
-    this.devices = new Map();
-    this.activeDeviceId = 'pulse';
-    this.activeDevice = null;
-    this.deviceSwap = null;
+ààààthis.devicesà=ànewàMap();
+ààààthis.activeDeviceIdà=à'pulse';
+ààààthis.activeDeviceà=ànull;
+ààààthis.deviceSwapà=ànull;
 
-    this.interactiveLookup = new Map();
+ààààthis.interactiveLookupà=ànewàMap();
 
-    this.bpSim = {
-      running: false,
-      progress: 0,
-      resultShown: false,
-    };
-  }
+ààààthis.bpSimà=à{
+ààààààrunning:àfalse,
+ààààààprogress:à0,
+ààààààresultShown:àfalse,
+àààà};
+àà}
 
-  init() {
-    this.setupLights();
-    this.setupEnvironment();
-    this.setupControls();
-    this.setupDevices();
-    this.bindEvents();
-    this.onResize();
-    this.setDevice('pulse', true);
-    this.animate();
-  }
+ààinit()à{
+ààààthis.setupLights();
+ààààthis.setupEnvironment();
+ààààthis.setupControls();
+ààààthis.setupDevices();
+ààààthis.bindEvents();
+ààààthis.onResize();
+ààààthis.setDevice('pulse',àtrue);
+ààààthis.animate();
+àà}
 
-  setupLights() {
-    const ambient = new THREE.AmbientLight('#b7d0ff', 0.55);
-    this.scene.add(ambient);
+ààsetupLights()à{
+ààààconstàambientà=ànewàTHREE.AmbientLight('#b7d0ff',à0.55);
+ààààthis.scene.add(ambient);
 
-    const key = new THREE.DirectionalLight('#d7e8ff', 1.2);
-    key.position.set(4, 8, 6);
-    this.scene.add(key);
+ààààconstàkeyà=ànewàTHREE.DirectionalLight('#d7e8ff',à1.2);
+ààààkey.position.set(4,à8,à6);
+ààààthis.scene.add(key);
 
-    const fill = new THREE.PointLight('#65a9ff', 1.4, 30);
-    fill.position.set(-5, 2, 4);
-    this.scene.add(fill);
+ààààconstàfillà=ànewàTHREE.PointLight('#65a9ff',à1.4,à30);
+ààààfill.position.set(-5,à2,à4);
+ààààthis.scene.add(fill);
 
-    const rim = new THREE.PointLight('#4af7b2', 0.45, 20);
-    rim.position.set(0, 2, -6);
-    this.scene.add(rim);
-  }
+ààààconstàrimà=ànewàTHREE.PointLight('#4af7b2',à0.45,à20);
+ààààrim.position.set(0,à2,à-6);
+ààààthis.scene.add(rim);
+àà}
 
-  setupEnvironment() {
-    const floor = new THREE.Mesh(
-      new THREE.CircleGeometry(7.5, 80),
-      new THREE.MeshStandardMaterial({
-        color: '#0f1930',
-        roughness: 0.82,
-        metalness: 0.05,
-      })
-    );
-    floor.rotation.x = -Math.PI / 2;
-    floor.position.y = -1.25;
-    this.scene.add(floor);
+ààsetupEnvironment()à{
+ààààconstàfloorà=ànewàTHREE.Mesh(
+àààààànewàTHREE.CircleGeometry(7.5,à80),
+àààààànewàTHREE.MeshStandardMaterial({
+ààààààààcolor:à'#0f1930',
+ààààààààroughness:à0.82,
+ààààààààmetalness:à0.05,
+àààààà})
+àààà);
+ààààfloor.rotation.xà=à-Math.PIà/à2;
+ààààfloor.position.yà=à-1.25;
+ààààthis.scene.add(floor);
 
-    const ring = new THREE.Mesh(
-      new THREE.TorusGeometry(3.8, 0.04, 10, 120),
-      new THREE.MeshStandardMaterial({ color: '#244270', emissive: '#10233f', emissiveIntensity: 0.4 })
-    );
-    ring.rotation.x = -Math.PI / 2;
-    ring.position.y = -1.22;
-    this.scene.add(ring);
-  }
+ààààconstàringà=ànewàTHREE.Mesh(
+àààààànewàTHREE.TorusGeometry(3.8,à0.04,à10,à120),
+àààààànewàTHREE.MeshStandardMaterial({àcolor:à'#244270',àemissive:à'#10233f',àemissiveIntensity:à0.4à})
+àààà);
+ààààring.rotation.xà=à-Math.PIà/à2;
+ààààring.position.yà=à-1.22;
+ààààthis.scene.add(ring);
+àà}
 
-  setupControls() {
-    this.controls = new OrbitControls(this.camera, this.renderer.domElement);
-    this.controls.enableDamping = true;
-    this.controls.dampingFactor = 0.08;
-    this.controls.target.set(0, 0.2, 0);
-    this.controls.minDistance = 3.5;
-    this.controls.maxDistance = 11.5;
-  }
+ààsetupControls()à{
+ààààthis.controlsà=ànewàOrbitControls(this.camera,àthis.renderer.domElement);
+ààààthis.controls.enableDampingà=àtrue;
+ààààthis.controls.dampingFactorà=à0.08;
+ààààthis.controls.target.set(0,à0.2,à0);
+ààààthis.controls.minDistanceà=à3.5;
+ààààthis.controls.maxDistanceà=à11.5;
+àà}
 
-  setupDevices() {
-    const pulse = createPulseOximeter();
-    const ekg = createEKGMonitor(() => Number(this.heartRateSlider.value));
-    const blood = createBloodPressureMonitor(() => this.startBloodPressureSimulation());
+ààsetupDevices()à{
+ààààconstàpulseà=àcreatePulseOximeter();
+ààààconstàekgà=àcreateEKGMonitor(()à=>àNumber(this.heartRateSlider.value));
+ààààconstàbloodà=àcreateBloodPressureMonitor(()à=>àthis.startBloodPressureSimulation());
 
-    [pulse, ekg, blood].forEach((device) => {
-      device.root.visible = false;
-      device.root.position.y = 0.15;
-      device.root.scale.set(0.96, 0.96, 0.96);
-      this.scene.add(device.root);
-      this.devices.set(device.id, device);
+àààà[pulse,àekg,àblood].forEach((device)à=>à{
+ààààààdevice.root.visibleà=àfalse;
+ààààààdevice.root.position.yà=à0.15;
+ààààààdevice.root.scale.set(0.96,à0.96,à0.96);
+ààààààthis.scene.add(device.root);
+ààààààthis.devices.set(device.id,àdevice);
 
-      device.interactive.forEach((entry) => {
-        this.interactiveLookup.set(entry.mesh.uuid, { ...entry, deviceId: device.id });
-      });
-    });
-  }
+ààààààdevice.interactive.forEach((entry)à=>à{
+ààààààààthis.interactiveLookup.set(entry.mesh.uuid,à{à...entry,àdeviceId:àdevice.idà});
+àààààà});
+àààà});
+àà}
 
-  bindEvents() {
-    window.addEventListener('resize', () => this.onResize());
+ààbindEvents()à{
+ààààwindow.addEventListener('resize',à()à=>àthis.onResize());
 
-    this.canvas.addEventListener('pointerdown', (event) => {
-      const bounds = this.canvas.getBoundingClientRect();
-      this.pointer.x = ((event.clientX - bounds.left) / bounds.width) * 2 - 1;
-      this.pointer.y = -((event.clientY - bounds.top) / bounds.height) * 2 + 1;
+ààààthis.canvas.addEventListener('pointerdown',à(event)à=>à{
+ààààààconstàboundsà=àthis.canvas.getBoundingClientRect();
+ààààààthis.pointer.xà=à((event.clientXà-àbounds.left)à/àbounds.width)à*à2à-à1;
+ààààààthis.pointer.yà=à-((event.clientYà-àbounds.top)à/àbounds.height)à*à2à+à1;
 
-      this.raycaster.setFromCamera(this.pointer, this.camera);
-      const clickableMeshes = [...this.interactiveLookup.values()].map((entry) => entry.mesh);
-      const hits = this.raycaster.intersectObjects(clickableMeshes, false);
+ààààààthis.raycaster.setFromCamera(this.pointer,àthis.camera);
+ààààààconstàclickableMeshesà=à[...this.interactiveLookup.values()].map((entry)à=>àentry.mesh);
+ààààààconstàhitsà=àthis.raycaster.intersectObjects(clickableMeshes,àfalse);
 
-      if (!hits.length) return;
+ààààààifà(!hits.length)àreturn;
 
-      const target = this.interactiveLookup.get(hits[0].object.uuid);
-      if (!target || target.deviceId !== this.activeDeviceId) return;
+ààààààconstàtargetà=àthis.interactiveLookup.get(hits[0].object.uuid);
+ààààààifà(!targetà||àtarget.deviceIdà!==àthis.activeDeviceId)àreturn;
 
-      this.setInfo(target.title, target.text);
+ààààààthis.setInfo(target.title,àtarget.text);
 
-      if (target.action === 'start-bp') {
-        const blood = this.devices.get('blood');
-        blood?.triggerStart();
-      }
-    });
-  }
+ààààààifà(target.actionà===à'start-bp')à{
+ààààààààconstàbloodà=àthis.devices.get('blood');
+ààààààààblood?.triggerStart();
+àààààà}
+àààà});
+àà}
 
-  onResize() {
-    const rect = this.canvas.getBoundingClientRect();
-    this.camera.aspect = rect.width / rect.height;
-    this.camera.updateProjectionMatrix();
-    this.renderer.setSize(rect.width, rect.height, false);
-  }
+ààonResize()à{
+ààààconstàrectà=àthis.canvas.getBoundingClientRect();
+ààààthis.camera.aspectà=àrect.widthà/àrect.height;
+ààààthis.camera.updateProjectionMatrix();
+ààààthis.renderer.setSize(rect.width,àrect.height,àfalse);
+àà}
 
-  setDevice(deviceId, immediate = false) {
-    if (this.activeDeviceId === deviceId && this.activeDevice) return;
+ààsetDevice(deviceId,àimmediateà=àfalse)à{
+ààààifà(this.activeDeviceIdà===àdeviceIdà&&àthis.activeDevice)àreturn;
 
-    const next = this.devices.get(deviceId);
-    if (!next) return;
+ààààconstànextà=àthis.devices.get(deviceId);
+ààààifà(!next)àreturn;
 
-    const prev = this.activeDevice;
+ààààconstàprevà=àthis.activeDevice;
 
-    if (prev) {
-      prev.onDeactivate?.();
-    }
+ààààifà(prev)à{
+ààààààprev.onDeactivate?.();
+àààà}
 
-    next.root.visible = true;
-    next.root.scale.set(0.92, 0.92, 0.92);
-    next.root.position.y = -0.05;
+àààànext.root.visibleà=àtrue;
+àààànext.root.scale.set(0.92,à0.92,à0.92);
+àààànext.root.position.yà=à-0.05;
 
-    this.deviceSwap = {
-      from: prev,
-      to: next,
-      progress: immediate ? 1 : 0,
-      duration: immediate ? 0.001 : 0.42,
-    };
+ààààthis.deviceSwapà=à{
+ààààààfrom:àprev,
+ààààààto:ànext,
+ààààààprogress:àimmediateà?à1à:à0,
+ààààààduration:àimmediateà?à0.001à:à0.42,
+àààà};
 
-    this.activeDevice = next;
-    this.activeDeviceId = deviceId;
+ààààthis.activeDeviceà=ànext;
+ààààthis.activeDeviceIdà=àdeviceId;
 
-    if (deviceId !== 'blood') {
-      this.pressureFill.style.width = '0%';
-      this.bpResult.textContent = 'Warte auf Messung...';
-    }
+ààààifà(deviceIdà!==à'blood')à{
+ààààààthis.pressureFill.style.widthà=à'0%';
+ààààààthis.bpResult.textContentà=à'WarteàaufàMessung...';
+àààà}
 
-    this.setInfo(next.name, next.description);
-    next.onActivate?.();
-  }
+ààààthis.setInfo(next.name,ànext.description);
+àààànext.onActivate?.();
+àà}
 
-  startBloodPressureSimulation() {
-    if (this.activeDeviceId !== 'blood') return;
-    if (this.bpSim.running) return;
+ààstartBloodPressureSimulation()à{
+ààààifà(this.activeDeviceIdà!==à'blood')àreturn;
+ààààifà(this.bpSim.running)àreturn;
 
-    this.bpSim.running = true;
-    this.bpSim.progress = 0;
-    this.bpSim.resultShown = false;
+ààààthis.bpSim.runningà=àtrue;
+ààààthis.bpSim.progressà=à0;
+ààààthis.bpSim.resultShownà=àfalse;
 
-    this.pressureFill.style.width = '0%';
-    this.bpResult.textContent = 'Messung läuft...';
-    this.setInfo('Messung gestartet', 'Die Manschette wird aufgepumpt und der Druckverlauf wird ausgewertet.');
-  }
+ààààthis.pressureFill.style.widthà=à'0%';
+ààààthis.bpResult.textContentà=à'Messungàläuft...';
+ààààthis.setInfo('Messungàgestartet',à'DieàManschetteàwirdàaufgepumptàundàderàDruckverlaufàwirdàausgewertet.');
+àà}
 
-  updateBloodPressure(delta) {
-    if (!this.bpSim.running) return;
+ààupdateBloodPressure(delta)à{
+ààààifà(!this.bpSim.running)àreturn;
 
-    this.bpSim.progress += delta;
-    const cycle = 6.2;
-    const t = Math.min(this.bpSim.progress / cycle, 1);
+ààààthis.bpSim.progressà+=àdelta;
+ààààconstàcycleà=à6.2;
+ààààconstàtà=àMath.min(this.bpSim.progressà/àcycle,à1);
 
-    let pressure;
-    if (t < 0.45) {
-      pressure = (t / 0.45) * 100;
-    } else {
-      pressure = ((1 - t) / 0.55) * 100;
-    }
+ààààletàpressure;
+ààààifà(tà<à0.45)à{
+ààààààpressureà=à(tà/à0.45)à*à100;
+àààà}àelseà{
+ààààààpressureà=à((1à-àt)à/à0.55)à*à100;
+àààà}
 
-    this.pressureFill.style.width = `${Math.max(0, Math.min(100, pressure)).toFixed(1)}%`;
+ààààthis.pressureFill.style.widthà=à`${Math.max(0,àMath.min(100,àpressure)).toFixed(1)}%`;
 
-    if (t >= 1 && !this.bpSim.resultShown) {
-      const syst = 116 + Math.round(Math.random() * 8);
-      const diast = 74 + Math.round(Math.random() * 7);
-      this.bpResult.textContent = `Ergebnis: ${syst}/${diast} mmHg`;
-      this.setInfo('Blutdruck Ergebnis', `Messung abgeschlossen: ${syst}/${diast} mmHg bei ruhigem Signalverlauf.`);
+ààààifà(tà>=à1à&&à!this.bpSim.resultShown)à{
+ààààààconstàsystà=à116à+àMath.round(Math.random()à*à8);
+ààààààconstàdiastà=à74à+àMath.round(Math.random()à*à7);
+ààààààthis.bpResult.textContentà=à`Ergebnis:à${syst}/${diast}àmmHg`;
+ààààààthis.setInfo('BlutdruckàErgebnis',à`Messungàabgeschlossen:à${syst}/${diast}àmmHgàbeiàruhigemàSignalverlauf.`);
 
-      this.bpSim.resultShown = true;
-      this.bpSim.running = false;
-    }
-  }
+ààààààthis.bpSim.resultShownà=àtrue;
+ààààààthis.bpSim.runningà=àfalse;
+àààà}
+àà}
 
-  updateTransitions(delta) {
-    if (!this.deviceSwap) return;
+ààupdateTransitions(delta)à{
+ààààifà(!this.deviceSwap)àreturn;
 
-    this.deviceSwap.progress = Math.min(1, this.deviceSwap.progress + delta / this.deviceSwap.duration);
-    const p = this.deviceSwap.progress;
+ààààthis.deviceSwap.progressà=àMath.min(1,àthis.deviceSwap.progressà+àdeltaà/àthis.deviceSwap.duration);
+ààààconstàpà=àthis.deviceSwap.progress;
 
-    if (this.deviceSwap.from) {
-      const from = this.deviceSwap.from.root;
-      from.scale.setScalar(1 - p * 0.1);
-      from.position.y = 0.15 - p * 0.2;
-      from.visible = p < 1;
-    }
+ààààifà(this.deviceSwap.from)à{
+ààààààconstàfromà=àthis.deviceSwap.from.root;
+ààààààfrom.scale.setScalar(1à-àpà*à0.1);
+ààààààfrom.position.yà=à0.15à-àpà*à0.2;
+ààààààfrom.visibleà=àpà<à1;
+àààà}
 
-    if (this.deviceSwap.to) {
-      const to = this.deviceSwap.to.root;
-      to.scale.setScalar(0.92 + p * 0.08);
-      to.position.y = -0.05 + p * 0.2;
-      to.visible = true;
-    }
+ààààifà(this.deviceSwap.to)à{
+ààààààconstàtoà=àthis.deviceSwap.to.root;
+ààààààto.scale.setScalar(0.92à+àpà*à0.08);
+ààààààto.position.yà=à-0.05à+àpà*à0.2;
+ààààààto.visibleà=àtrue;
+àààà}
 
-    if (p >= 1) {
-      this.deviceSwap = null;
-    }
-  }
+ààààifà(pà>=à1)à{
+ààààààthis.deviceSwapà=ànull;
+àààà}
+àà}
 
-  setInfo(title, text) {
-    this.infoPanel.querySelector('h2').textContent = title;
-    this.infoText.textContent = text;
-  }
+ààsetInfo(title,àtext)à{
+ààààthis.infoPanel.querySelector('h2').textContentà=àtitle;
+ààààthis.infoText.textContentà=àtext;
+àà}
 
-  animate() {
-    requestAnimationFrame(() => this.animate());
+ààanimate()à{
+ààààrequestAnimationFrame(()à=>àthis.animate());
 
-    const delta = this.clock.getDelta();
-    const elapsed = this.clock.elapsedTime;
+ààààconstàdeltaà=àthis.clock.getDelta();
+ààààconstàelapsedà=àthis.clock.elapsedTime;
 
-    this.controls.update();
-    this.updateTransitions(delta);
-    this.updateBloodPressure(delta);
+ààààthis.controls.update();
+ààààthis.updateTransitions(delta);
+ààààthis.updateBloodPressure(delta);
 
-    this.activeDevice?.update(delta, elapsed);
+ààààthis.activeDevice?.update(delta,àelapsed);
 
-    this.renderer.render(this.scene, this.camera);
-  }
+ààààthis.renderer.render(this.scene,àthis.camera);
+àà}
 }

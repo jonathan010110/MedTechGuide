@@ -1,0 +1,270 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <title>Wissenschaftliche Quellen ÃƒÂ¢Ã¢Â‚Â¬" MedTechGuide</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ÃƒÂƒÃ…Â“bersicht und ErklÃ¤rung der wissenschaftlichen Quellen und ihre SeriositÃ¤t." />
+  <base href="../" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- Ã¢Â™Â¿ ACCESSIBILITY: Skip to Content Link -->
+  <a href="#main-content" class="skip-to-content">Zum Inhalt springen</a>
+  
+  <div id="loader">
+    <div class="spinner"></div>
+    <p>Seite wird geladenâ€¦</p>
+  </div>
+
+  <header class="site-header">
+    <div class="container">
+      <h1>Wissenschaftliche Quellen</h1>
+      <p class="subtitle">Warum diese Quellen seriÃ¶s sind</p>
+    </div>
+  </header>
+
+  <nav class="main-nav">
+    <div class="nav-container">
+      <div class="nav-links">
+        <a href="index.html">Start</a>
+        <a href="html/diabetes.html">Diabetes</a>
+        <a href="html/allergie.html">Allergien</a>
+        <a href="html/herz.html">Herz</a>
+        <a href="html/bildgebung.html">Bildgebung</a>
+        <a href="html/neurochips.html">Neurochips</a>
+        <a href="html/exoskelette.html">Exoskelette</a>
+        <a href="html/genetik.html">Genetik</a>
+        <a href="html/ki-diagnose.html">KI-Diagnose</a>
+        <a href="html/zukunft.html">Zukunft</a>
+        <a href="html/quiz.html" style="background: linear-gradient(135deg, #1e40af 0%, #0f766e 100%); color: white; font-weight: 700;">ÃƒÂ°Ã…Â¸Ã…Â½Ã‚Â¯ Quiz</a>
+        <a href="html/self-tests.html" style="background: linear-gradient(135deg, #7c3aed 0%, #ec4899 100%); color: white; font-weight: 700;">ÃƒÂ°Ã…Â¸Ã‚Â§Ã‚Â  Tests</a>
+        <a href="html/quellen.html" class="active">Quellen</a>
+      </div>
+      <div class="nav-search">
+        <input type="text" id="globalSearch" placeholder="Sucheâ€¦" aria-label="Globale Suche">
+        <span id="searchResults" class="search-results"></span>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container" id="main-content">
+    <section class="section-card">
+      <h2>ÃƒÂƒÃ…Â“ber MedTechGuide und die Quellen</h2>
+      <p>
+        MedTechGuide ist ein Schulprojekt der HTL Informatik, das medizinische Technologien verstÃ¤ndlich erklÃ¤rt. 
+        Alle Inhalte basieren auf wissenschaftlich geprÃ¼ften Quellen von anerkannten Institutionen, Forschungsorganisationen und BehÃ¶rden.
+      </p>
+      <p>
+        Diese Seite erklÃ¤rt, warum die Quellen seriÃ¶s sind und wie du sie fÃ¼r weitere Recherchen nutzen kannst.
+      </p>
+    </section>
+
+    <section class="section-card">
+      <h2>Kategorien von Quellen</h2>
+      
+      <h3>1. Internationale Gesundheitsorganisationen</h3>
+      <p>
+        <strong>Beispiele:</strong> WHO (World Health Organization), CDC (Centers for Disease Control), NIH (National Institutes of Health), NIDDK (National Institute of Diabetes)
+      </p>
+      <p>
+        <strong>Warum seriÃ¶s:</strong> Diese Organisationen sind von Regierungen gegrÃ¼ndet, unterliegen strikter wissenschaftlicher QualitÃ¤tskontrolle 
+        und haben Millionen von Expert:innen. Alle Daten werden peer-reviewed und regelmÃ¤ÃƒÂƒÃ…Â¸ig aktualisiert.
+      </p>
+      <p>
+        <strong>Beispiel:</strong> Die CDC hat Ã¼ber 15.000 Mitarbeiter:innen und arbeitet mit epidemiologischen Methoden, die weltweit anerkannt sind.
+      </p>
+    </section>
+
+    <section class="section-card">
+      <h2>2. Nationale Fachgesellschaften</h2>
+      <p>
+        <strong>Beispiele:</strong> Deutsche Diabetesgesellschaft, ÃƒÂƒâ€“sterreichische Gesellschaft fÃ¼r Allergologie, American Heart Association, 
+        Deutsche Herzstiftung, European Society of Radiology
+      </p>
+      <p>
+        <strong>Warum seriÃ¶s:</strong> Diese Gesellschaften setzen sich aus ÃƒÂƒÃ¢Â€Âžrzt:innen, Forscher:innen und Kliniker:innen zusammen. 
+        Sie erstellen Leitlinien, die dem Standard of Care entsprechen. Mitgliedschaft erfordert akademische Qualifikation.
+      </p>
+      <p>
+        <strong>Beispiel:</strong> Die Deutsche Herzstiftung hat Ã¼ber 100.000 Mitglieder und gibt evidenzbasierte Empfehlungen heraus.
+      </p>
+    </section>
+
+    <section class="section-card">
+      <h2>3. Wissenschaftliche Zeitschriften & Datenbanken</h2>
+      <p>
+        <strong>Beispiele:</strong> Nature, Science, Lancet, JAMA, IEEE Xplore, PubMed, ScienceDirect
+      </p>
+      <p>
+        <strong>Warum seriÃ¶s:</strong> Publikationen durchlaufen ein Peer-Review-Verfahren: 2ÃƒÂ¢Ã¢Â‚Â¬"3 anonyme Expert:innen prÃ¼fen die Arbeit kritisch. 
+        Fehler werden oft vor der VerÃ¶ffentlichung entdeckt. Retraktionen (RÃ¼ckzug fehlerhafter Artikel) sind mÃ¶glich.
+      </p>
+      <p>
+        <strong>Beispiel:</strong> Nature publiziert nur etwa 7% der eingereichten Arbeiten ÃƒÂ¢Ã¢Â‚Â¬" extrem hohe Standards.
+      </p>
+    </section>
+
+    <section class="section-card">
+      <h2>4. UniversitÃ¤ten & Forschungsinstitute</h2>
+      <p>
+        <strong>Beispiele:</strong> Stanford, MIT, ETH ZÃ¼rich, TU Graz, Wellcome Sanger Institute, Max-Planck-Institut
+      </p>
+      <p>
+        <strong>Warum seriÃ¶s:</strong> UniversitÃ¤ten haben Reputation zu verlieren. Forschung wird intern Ã¼berprÃ¼ft. 
+        FakultÃ¤tsmitglieder haben Tenure (Anstellung auf Lebenszeit) nur, wenn ihre Forschung hochwertig ist.
+      </p>
+      <p>
+        <strong>Beispiel:</strong> Die TU Graz ist ein Zentrum fÃ¼r Brain-Computer-Interface-Forschung mit weltweiter Anerkennung.
+      </p>
+    </section>
+
+    <section class="section-card">
+      <h2>5. Regulatorische BehÃ¶rden</h2>
+      <p>
+        <strong>Beispiele:</strong> FDA (USA), EMA (Europa), Swissmedic (Schweiz)
+      </p>
+      <p>
+        <strong>Warum seriÃ¶s:</strong> Diese BehÃ¶rden prÃ¼fen medizinische GerÃ¤te und Medikamente vor Zulassung. 
+        Sie basieren auf klinischen Studien mit stringenten Standards (GCP, Good Clinical Practice).
+      </p>
+      <p>
+        <strong>Beispiel:</strong> Bevor ein Diabetes-GerÃ¤t in der EU verkauft werden darf, muss es Jahre von klinischen Tests durchlaufen.
+      </p>
+    </section>
+
+    <section class="section-card">
+      <h2>Kriterien fÃ¼r seriÃ¶se Quellen</h2>
+      <p>Nutze diese Checkliste um Quellen zu bewerten:</p>
+      <ul>
+        <li><strong>Autorenschaft:</strong> Sind die Autoren sichtbar? Haben sie Qualifikationen?</li>
+        <li><strong>Institution:</strong> Kommt die Quelle von einer anerkannten Organisation?</li>
+        <li><strong>AktualitÃ¤t:</strong> Wann wurde die Information zuletzt aktualisiert?</li>
+        <li><strong>Referenzen:</strong> Zitiert die Quelle andere wissenschaftliche Arbeiten?</li>
+        <li><strong>Finanzierung:</strong> Gibt es Interessenskonflikte? (z.B. eine Pharma-Firma, die ihre eigene Technologie bewirbt?)</li>
+        <li><strong>Skeptischer Blick:</strong> Wirkt die Aussage Ã¼bertrieben? Zu sensationell?</li>
+      </ul>
+    </section>
+
+    <section class="section-card">
+      <h2>Was MedTechGuide NICHT verwendet</h2>
+      <ul>
+        <li><strong>Wikipedia:</strong> Nicht direkt zitiert, aber als Einstiegspunkt okay (selbst hat aber Fehler)</li>
+        <li><strong>Blogs & Foren:</strong> Nicht Ã¼berprÃ¼ft, Fehler mÃ¶glich</li>
+        <li><strong>Pharma-Marketing:</strong> Einseitig, Bias wahrscheinlich</li>
+        <li><strong>Unsignierte Artikel:</strong> Keine Autorenschaft = keine Verantwortung</li>
+        <li><strong>Alte Quellen:</strong> Medizin Ã¤ndert sich; 10+ Jahre alte Publikationen sollten validiert werden</li>
+      </ul>
+    </section>
+
+    <section class="section-card">
+      <h2>Quellen nach Thema</h2>
+      
+      <h3>Diabetes</h3>
+      <p>
+        Hauptquellen: International Diabetes Federation (IDF), American Diabetes Association (ADA), 
+        Deutsche Diabetesgesellschaft, CDC Diabetes Data & Statistics, NIH NIDDK
+      </p>
+      <p>
+        <em>Besonderheit:</em> CGM-Daten basieren auf klinischen Studien von GerÃ¤teherstellern (Dexcom, Abbott FreeStyle).
+      </p>
+
+      <h3>Allergologie</h3>
+      <p>
+        Hauptquellen: ÃƒÂƒâ€“sterreichische Gesellschaft fÃ¼r Allergologie, American Academy of Allergy, Asthma & Immunology, 
+        European Academy of Allergy and Clinical Immunology, WHO Allergen Database
+      </p>
+
+      <h3>Kardiologie</h3>
+      <p>
+        Hauptquellen: American Heart Association, European Society of Cardiology, Deutsche Herzstiftung, 
+        Mayo Clinic Cardiology, NIH National Heart Institute
+      </p>
+
+      <h3>Medizinische Bildgebung</h3>
+      <p>
+        Hauptquellen: Radiopaedia (frei zugÃ¤ngliche Bildgebungs-Referenz), European Society of Radiology, 
+        American College of Radiology, FDA Medical Device Guidelines, Nature Radiology
+      </p>
+
+      <h3>Neurochips & BCIs</h3>
+      <p>
+        Hauptquellen: BCI Society, Brain-Computer Interfaces Lab TU Graz, Frontiers in Neuroscience, 
+        NIH NINDS (National Institute of Neurological Disorders and Stroke), IEEE Biomedical Engineering
+      </p>
+
+      <h3>Exoskelette</h3>
+      <p>
+        Hauptquellen: Exoskeleton Report, ReWalk Robotics (klinische Studien), Ekso Bionics, 
+        ScienceDirect Robotics, IEEE Robotics & Automation
+      </p>
+
+      <h3>Genetik & CRISPR</h3>
+      <p>
+        Hauptquellen: Genome.gov (NIH), EMBL European Bioinformatics Institute, Nature Genetics, 
+        Broad Institute CRISPR Research, American Society of Human Genetics
+      </p>
+
+      <h3>KI in der Medizin</h3>
+      <p>
+        Hauptquellen: Stanford AI in Healthcare, WHO AI Guidelines, Nature Machine Intelligence, 
+        OpenAI Research, IEEE Computer Society, MIT Media Lab Health
+      </p>
+    </section>
+
+    <section class="section-card">
+      <h2>Wie du selbst recherchierst</h2>
+      <p>FÃ¼r eigene Projekte empfehlen wir diese Strategien:</p>
+      <ol>
+        <li><strong>Google Scholar (scholar.google.com):</strong> Durchsucht wissenschaftliche Literatur</li>
+        <li><strong>PubMed (pubmed.ncbi.nlm.nih.gov):</strong> 35 Millionen medizinische Artikel</li>
+        <li><strong>ResearchGate & Academia.edu:</strong> Forscher:innen teilen ihre Arbeiten</li>
+        <li><strong>Offizielle Websites:</strong> FDA.gov, WHO.int, EMA.europa.eu haben ausgezeichnete Ressourcen</li>
+        <li><strong>Systematische Reviews:</strong> Zusammenfassungen von hunderten Studien (besonders zuverlÃ¤ssig)</li>
+      </ol>
+    </section>
+
+    <section class="section-card">
+      <h2>Transparenzhinweis</h2>
+      <p>
+        MedTechGuide wird von SchÃ¼lern der HTL Informatik ohne finanzielle UnterstÃ¼tzung erstellt. 
+        Es gibt keinen Interessenskonflikt mit MedizingerÃ¤teherstellern. 
+        Die Website speichert keine Daten und hat keine Werbung.
+      </p>
+      <p>
+        Fehler sind mÃ¶glich ÃƒÂ¢Ã¢Â‚Â¬" Hinweise sind willkommen! (Obwohl wir keine Kontaktform haben, kannst du Fehler deinem/deiner Lehrer:in mitteilen.)
+      </p>
+    </section>
+
+    <div class="privacy-notice">
+      <p>
+        <strong>Datenschutz:</strong> Diese Website speichert keine Daten Ã¼ber dich. 
+        Es werden keine Cookies oder Tracking-Tools verwendet.
+      </p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 MedTechGuide ÃƒÂ¢Ã¢Â‚Â¬" Schulprojekt HTL Informatik</p>
+    </div>
+  </footer>
+
+  <button class="scroll-to-top" id="scrollToTopBtn" aria-label="Nach oben scrollen">ÃƒÂ¢Ã¢Â€Â '</button>
+
+  <script src="js/script.js"></script>
+  <script>
+    window.addEventListener("load", () => {
+      const loader = document.getElementById("loader");
+      if (loader) {
+        loader.classList.add("hidden");
+        setTimeout(() => {
+          loader.style.display = "none";
+        }, 500);
+      }
+      setActiveNavLink();
+    });
+  </script>
+</body>
+</html>
+

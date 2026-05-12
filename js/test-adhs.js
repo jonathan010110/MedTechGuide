@@ -1,143 +1,143 @@
 /**
- * =====================================================
- * ADHS-TEST - Modul
- * Strukturierter ADHS-Screening-Test (Jugendliche & Erwachsene)
- * Orientierung: DSM-5-Symptomcluster
- * =====================================================
- */
+à*à=====================================================
+à*àADHS-TESTà-àModul
+à*àStrukturierteràADHS-Screening-Testà(Jugendlicheà&àErwachsene)
+à*àOrientierung:àDSM-5-Symptomcluster
+à*à=====================================================
+à*/
 
-const ADHSTest = {
-  testId: 'adhs',
-  testName: 'ADHS-Test',
-  testDescription: 'ADHS-Screening für Jugendliche & Erwachsene (40 Fragen)',
+constàADHSTestà=à{
+ààtestId:à'adhs',
+ààtestName:à'ADHS-Test',
+ààtestDescription:à'ADHS-ScreeningàfüràJugendlicheà&àErwachseneà(40àFragen)',
 
-  // 5-stufige Antwortskala für mehr Differenzierung
-  answerOptions: [
-    { value: 0, label: 'Nie', color: '#22c55e' },
-    { value: 1, label: 'Selten', color: '#84cc16' },
-    { value: 2, label: 'Manchmal', color: '#f59e0b' },
-    { value: 3, label: 'Häufig', color: '#f97316' },
-    { value: 4, label: 'Sehr häufig', color: '#ef4444' }
-  ],
+àà//à5-stufigeàAntwortskalaàfüràmehràDifferenzierung
+ààanswerOptions:à[
+àààà{àvalue:à0,àlabel:à'Nie',àcolor:à'#22c55e'à},
+àààà{àvalue:à1,àlabel:à'Selten',àcolor:à'#84cc16'à},
+àààà{àvalue:à2,àlabel:à'Manchmal',àcolor:à'#f59e0b'à},
+àààà{àvalue:à3,àlabel:à'Häufig',àcolor:à'#f97316'à},
+àààà{àvalue:à4,àlabel:à'Sehràhäufig',àcolor:à'#ef4444'à}
+àà],
 
-  // 40 Fragen zu den 5 Problembereichen (8 pro Bereich)
-  questions: [
-    // === UNAUFMERKSAMKEIT (8 Fragen) ===
-    { id: 1, category: 'Unaufmerksamkeit', subcategory: 'Unaufmerksamkeit', question: 'Ich habe Schwierigkeiten, auf Details zu achten.' },
-    { id: 2, category: 'Unaufmerksamkeit', subcategory: 'Unaufmerksamkeit', question: 'Mir fällt es schwer, mich über längere Zeit auf Aufgaben zu konzentrieren.' },
-    { id: 3, category: 'Unaufmerksamkeit', subcategory: 'Unaufmerksamkeit', question: 'Ich verliere leicht den Faden bei Gesprächen oder beim Lesen.' },
-    { id: 4, category: 'Unaufmerksamkeit', subcategory: 'Unaufmerksamkeit', question: 'Wichtige Aufgaben bleiben unvollständig, weil ich mich nicht konzentrieren kann.' },
-    { id: 5, category: 'Unaufmerksamkeit', subcategory: 'Unaufmerksamkeit', question: 'Ich werde leicht durch äußere Reize abgelenkt.' },
-    { id: 6, category: 'Unaufmerksamkeit', subcategory: 'Unaufmerksamkeit', question: 'Mir ist es schwer, Anweisungen zu folgen.' },
-    { id: 7, category: 'Unaufmerksamkeit', subcategory: 'Unaufmerksamkeit', question: 'Ich vergesse häufig alltägliche Aufgaben oder Verpflichtungen.' },
-    { id: 8, category: 'Unaufmerksamkeit', subcategory: 'Unaufmerksamkeit', question: 'Ich mache Flüchtigkeitsfehler bei der Arbeit oder in der Schule.' },
+àà//à40àFragenàzuàdenà5àProblembereichenà(8àproàBereich)
+ààquestions:à[
+àààà//à===àUNAUFMERKSAMKEITà(8àFragen)à===
+àààà{àid:à1,àcategory:à'Unaufmerksamkeit',àsubcategory:à'Unaufmerksamkeit',àquestion:à'IchàhabeàSchwierigkeiten,àaufàDetailsàzuàachten.'à},
+àààà{àid:à2,àcategory:à'Unaufmerksamkeit',àsubcategory:à'Unaufmerksamkeit',àquestion:à'Miràfälltàesàschwer,àmichàüberàlängereàZeitàaufàAufgabenàzuàkonzentrieren.'à},
+àààà{àid:à3,àcategory:à'Unaufmerksamkeit',àsubcategory:à'Unaufmerksamkeit',àquestion:à'IchàverliereàleichtàdenàFadenàbeiàGesprächenàoderàbeimàLesen.'à},
+àààà{àid:à4,àcategory:à'Unaufmerksamkeit',àsubcategory:à'Unaufmerksamkeit',àquestion:à'WichtigeàAufgabenàbleibenàunvollständig,àweilàichàmichànichtàkonzentrierenàkann.'à},
+àààà{àid:à5,àcategory:à'Unaufmerksamkeit',àsubcategory:à'Unaufmerksamkeit',àquestion:à'Ichàwerdeàleichtàdurchàäu—ereàReizeàabgelenkt.'à},
+àààà{àid:à6,àcategory:à'Unaufmerksamkeit',àsubcategory:à'Unaufmerksamkeit',àquestion:à'Miràistàesàschwer,àAnweisungenàzuàfolgen.'à},
+àààà{àid:à7,àcategory:à'Unaufmerksamkeit',àsubcategory:à'Unaufmerksamkeit',àquestion:à'IchàvergesseàhäufigàalltäglicheàAufgabenàoderàVerpflichtungen.'à},
+àààà{àid:à8,àcategory:à'Unaufmerksamkeit',àsubcategory:à'Unaufmerksamkeit',àquestion:à'IchàmacheàFlüchtigkeitsfehleràbeiàderàArbeitàoderàinàderàSchule.'à},
 
-    // === HYPERAKTIVITÄT (8 Fragen) ===
-    { id: 9, category: 'Hyperaktivität', subcategory: 'Hyperaktivität', question: 'Ich bin ständig in Bewegung oder kann schwer stillsitzen.' },
-    { id: 10, category: 'Hyperaktivität', subcategory: 'Hyperaktivität', question: 'Ich zappele mit meinen Händen oder Füßen.' },
-    { id: 11, category: 'Hyperaktivität', subcategory: 'Hyperaktivität', question: 'Ich verlasse oft meinen Sitz, wenn ich sitzen sollte.' },
-    { id: 12, category: 'Hyperaktivität', subcategory: 'Hyperaktivität', question: 'Ich kann schwer ruhige Aktivitäten ausführen.' },
-    { id: 13, category: 'Hyperaktivität', subcategory: 'Hyperaktivität', question: 'Ich fühle mich innere Unruhe oder Rastlosigkeit.' },
-    { id: 14, category: 'Hyperaktivität', subcategory: 'Hyperaktivität', question: 'Ich rede mehr als andere oder es fällt mir schwer zu schweigen.' },
-    { id: 15, category: 'Hyperaktivität', subcategory: 'Hyperaktivität', question: 'Ich bin impulsiv dabei, mich auf Aktivitäten einzulassen.' },
-    { id: 16, category: 'Hyperaktivität', subcategory: 'Hyperaktivität', question: 'Ich bin ständig "in Aktion" oder "auf Sparflammen".' },
+àààà//à===àHYPERAKTIVITÄTà(8àFragen)à===
+àààà{àid:à9,àcategory:à'Hyperaktivität',àsubcategory:à'Hyperaktivität',àquestion:à'IchàbinàständigàinàBewegungàoderàkannàschweràstillsitzen.'à},
+àààà{àid:à10,àcategory:à'Hyperaktivität',àsubcategory:à'Hyperaktivität',àquestion:à'IchàzappeleàmitàmeinenàHändenàoderàFü—en.'à},
+àààà{àid:à11,àcategory:à'Hyperaktivität',àsubcategory:à'Hyperaktivität',àquestion:à'IchàverlasseàoftàmeinenàSitz,àwennàichàsitzenàsollte.'à},
+àààà{àid:à12,àcategory:à'Hyperaktivität',àsubcategory:à'Hyperaktivität',àquestion:à'IchàkannàschweràruhigeàAktivitätenàausführen.'à},
+àààà{àid:à13,àcategory:à'Hyperaktivität',àsubcategory:à'Hyperaktivität',àquestion:à'IchàfühleàmichàinnereàUnruheàoderàRastlosigkeit.'à},
+àààà{àid:à14,àcategory:à'Hyperaktivität',àsubcategory:à'Hyperaktivität',àquestion:à'Ichàredeàmehràalsàandereàoderàesàfälltàmiràschweràzuàschweigen.'à},
+àààà{àid:à15,àcategory:à'Hyperaktivität',àsubcategory:à'Hyperaktivität',àquestion:à'Ichàbinàimpulsivàdabei,àmichàaufàAktivitätenàeinzulassen.'à},
+àààà{àid:à16,àcategory:à'Hyperaktivität',àsubcategory:à'Hyperaktivität',àquestion:à'Ichàbinàständigà"inàAktion"àoderà"aufàSparflammen".'à},
 
-    // === IMPULSIVITÄT (8 Fragen) ===
-    { id: 17, category: 'Impulsivität', subcategory: 'Impulsivität', question: 'Ich sage oder mache Dinge, ohne nachzudenken.' },
-    { id: 18, category: 'Impulsivität', subcategory: 'Impulsivität', question: 'Ich schneide anderen im Gespräch das Wort ab.' },
-    { id: 19, category: 'Impulsivität', subcategory: 'Impulsivität', question: 'Ich habe Schwierigkeiten, zu warten, bis ich dran bin.' },
-    { id: 20, category: 'Impulsivität', subcategory: 'Impulsivität', question: 'Ich treffe ich schnelle Entscheidungen, die ich später bereue.' },
-    { id: 21, category: 'Impulsivität', subcategory: 'Impulsivität', question: 'Ich bin leicht reizbar oder temperamentvoll.' },
-    { id: 22, category: 'Impulsivität', subcategory: 'Impulsivität', question: 'Ich handle ohne die Konsequenzen zu bedenken.' },
-    { id: 23, category: 'Impulsivität', subcategory: 'Impulsivität', question: 'Meine Stimmung wechselt schnell und heftig.' },
-    { id: 24, category: 'Impulsivität', subcategory: 'Impulsivität', question: 'Ich platze oft mit Antworten heraus, ohne abzuwarten.' },
+àààà//à===àIMPULSIVITÄTà(8àFragen)à===
+àààà{àid:à17,àcategory:à'Impulsivität',àsubcategory:à'Impulsivität',àquestion:à'IchàsageàoderàmacheàDinge,àohneànachzudenken.'à},
+àààà{àid:à18,àcategory:à'Impulsivität',àsubcategory:à'Impulsivität',àquestion:à'IchàschneideàanderenàimàGesprächàdasàWortàab.'à},
+àààà{àid:à19,àcategory:à'Impulsivität',àsubcategory:à'Impulsivität',àquestion:à'IchàhabeàSchwierigkeiten,àzuàwarten,àbisàichàdranàbin.'à},
+àààà{àid:à20,àcategory:à'Impulsivität',àsubcategory:à'Impulsivität',àquestion:à'IchàtreffeàichàschnelleàEntscheidungen,àdieàichàspäteràbereue.'à},
+àààà{àid:à21,àcategory:à'Impulsivität',àsubcategory:à'Impulsivität',àquestion:à'Ichàbinàleichtàreizbaràoderàtemperamentvoll.'à},
+àààà{àid:à22,àcategory:à'Impulsivität',àsubcategory:à'Impulsivität',àquestion:à'IchàhandleàohneàdieàKonsequenzenàzuàbedenken.'à},
+àààà{àid:à23,àcategory:à'Impulsivität',àsubcategory:à'Impulsivität',àquestion:à'MeineàStimmungàwechseltàschnellàundàheftig.'à},
+àààà{àid:à24,àcategory:à'Impulsivität',àsubcategory:à'Impulsivität',àquestion:à'IchàplatzeàoftàmitàAntwortenàheraus,àohneàabzuwarten.'à},
 
-    // === ORGANISATIONSPROBLEME (8 Fragen) ===
-    { id: 25, category: 'Organisation', subcategory: 'Organisationsprobleme', question: 'Mir fällt es schwer, zu planen und zu organisieren.' },
-    { id: 26, category: 'Organisation', subcategory: 'Organisationsprobleme', question: 'Ich verliere häufig wichtige Gegenstände (Schlüssel, Dokumente, etc.).' },
-    { id: 27, category: 'Organisation', subcategory: 'Organisationsprobleme', question: 'Mein Arbeitsplatz oder Zimmer ist chaotisch und unorganisiert.' },
-    { id: 28, category: 'Organisation', subcategory: 'Organisationsprobleme', question: 'Mir fällt es schwer, Fristen einzuhalten.' },
-    { id: 29, category: 'Organisation', subcategory: 'Organisationsprobleme', question: 'Ich vergesse Termine und Verpflichtungen.' },
-    { id: 30, category: 'Organisation', subcategory: 'Organisationsprobleme', question: 'Ich habe Schwierigkeiten, mehrstufige Aufgaben zu strukturieren.' },
-    { id: 31, category: 'Organisation', subcategory: 'Organisationsprobleme', question: 'Ich prokrastiniere häufig.' },
-    { id: 32, category: 'Organisation', subcategory: 'Organisationsprobleme', question: 'Ich kann keine Prioritäten setzen.' },
+àààà//à===àORGANISATIONSPROBLEMEà(8àFragen)à===
+àààà{àid:à25,àcategory:à'Organisation',àsubcategory:à'Organisationsprobleme',àquestion:à'Miràfälltàesàschwer,àzuàplanenàundàzuàorganisieren.'à},
+àààà{àid:à26,àcategory:à'Organisation',àsubcategory:à'Organisationsprobleme',àquestion:à'IchàverliereàhäufigàwichtigeàGegenständeà(Schlüssel,àDokumente,àetc.).'à},
+àààà{àid:à27,àcategory:à'Organisation',àsubcategory:à'Organisationsprobleme',àquestion:à'MeinàArbeitsplatzàoderàZimmeràistàchaotischàundàunorganisiert.'à},
+àààà{àid:à28,àcategory:à'Organisation',àsubcategory:à'Organisationsprobleme',àquestion:à'Miràfälltàesàschwer,àFristenàeinzuhalten.'à},
+àààà{àid:à29,àcategory:à'Organisation',àsubcategory:à'Organisationsprobleme',àquestion:à'IchàvergesseàTermineàundàVerpflichtungen.'à},
+àààà{àid:à30,àcategory:à'Organisation',àsubcategory:à'Organisationsprobleme',àquestion:à'IchàhabeàSchwierigkeiten,àmehrstufigeàAufgabenàzuàstrukturieren.'à},
+àààà{àid:à31,àcategory:à'Organisation',àsubcategory:à'Organisationsprobleme',àquestion:à'Ichàprokrastiniereàhäufig.'à},
+àààà{àid:à32,àcategory:à'Organisation',àsubcategory:à'Organisationsprobleme',àquestion:à'IchàkannàkeineàPrioritätenàsetzen.'à},
 
-    // === ALLTAGSBEEINTRÄCHTIGUNG (8 Fragen) ===
-    { id: 33, category: 'Alltagsauswirkungen', subcategory: 'Alltagsbeeinträchtigung', question: 'Diese Symptome beeinträchtigen meine schulische oder berufliche Leistung.' },
-    { id: 34, category: 'Alltagsauswirkungen', subcategory: 'Alltagsbeeinträchtigung', question: 'Diese Symptome beeinträchtigen meine sozialen Beziehungen.' },
-    { id: 35, category: 'Alltagsauswirkungen', subcategory: 'Alltagsbeeinträchtigung', question: 'Diese Symptome beeinträchtigen meine Familie und mein Zuhause.' },
-    { id: 36, category: 'Alltagsauswirkungen', subcategory: 'Alltagsbeeinträchtigung', question: 'Diese Symptome beeinträchtigen meine Freizeit und Hobbys.' },
-    { id: 37, category: 'Alltagsauswirkungen', subcategory: 'Alltagsbeeinträchtigung', question: 'Ich fühle mich in meinen Fähigkeiten beeinträchtigt.' },
-    { id: 38, category: 'Alltagsauswirkungen', subcategory: 'Alltagsbeeinträchtigung', question: 'Mein Selbstvertrauen leidet unter diesen Symptomen.' },
-    { id: 39, category: 'Alltagsauswirkungen', subcategory: 'Alltagsbeeinträchtigung', question: 'Ich vermute, dass diese Symptome vermutlich schon seit meiner Kindheit bestehen.' },
-    { id: 40, category: 'Alltagsauswirkungen', subcategory: 'Alltagsbeeinträchtigung', question: 'Meine Familie oder enge Personen haben mir schon gesagt, dass ich diese Symptome zeige.' }
-  ],
+àààà//à===àALLTAGSBEEINTRÄCHTIGUNGà(8àFragen)à===
+àààà{àid:à33,àcategory:à'Alltagsauswirkungen',àsubcategory:à'Alltagsbeeinträchtigung',àquestion:à'DieseàSymptomeàbeeinträchtigenàmeineàschulischeàoderàberuflicheàLeistung.'à},
+àààà{àid:à34,àcategory:à'Alltagsauswirkungen',àsubcategory:à'Alltagsbeeinträchtigung',àquestion:à'DieseàSymptomeàbeeinträchtigenàmeineàsozialenàBeziehungen.'à},
+àààà{àid:à35,àcategory:à'Alltagsauswirkungen',àsubcategory:à'Alltagsbeeinträchtigung',àquestion:à'DieseàSymptomeàbeeinträchtigenàmeineàFamilieàundàmeinàZuhause.'à},
+àààà{àid:à36,àcategory:à'Alltagsauswirkungen',àsubcategory:à'Alltagsbeeinträchtigung',àquestion:à'DieseàSymptomeàbeeinträchtigenàmeineàFreizeitàundàHobbys.'à},
+àààà{àid:à37,àcategory:à'Alltagsauswirkungen',àsubcategory:à'Alltagsbeeinträchtigung',àquestion:à'IchàfühleàmichàinàmeinenàFähigkeitenàbeeinträchtigt.'à},
+àààà{àid:à38,àcategory:à'Alltagsauswirkungen',àsubcategory:à'Alltagsbeeinträchtigung',àquestion:à'MeinàSelbstvertrauenàleidetàunteràdiesenàSymptomen.'à},
+àààà{àid:à39,àcategory:à'Alltagsauswirkungen',àsubcategory:à'Alltagsbeeinträchtigung',àquestion:à'Ichàvermute,àdassàdieseàSymptomeàvermutlichàschonàseitàmeineràKindheitàbestehen.'à},
+àààà{àid:à40,àcategory:à'Alltagsauswirkungen',àsubcategory:à'Alltagsbeeinträchtigung',àquestion:à'MeineàFamilieàoderàengeàPersonenàhabenàmiràschonàgesagt,àdassàichàdieseàSymptomeàzeige.'à}
+àà],
 
-  /**
-   * Berechnet Subscores für jede Kategorie
-   */
-  calculateSubscores(answers) {
-    const categories = {};
-    this.questions.forEach(q => {
-      if (!categories[q.subcategory]) {
-        categories[q.subcategory] = 0;
-      }
-      categories[q.subcategory] += answers[q.id] || 0;
-    });
-    return categories;
-  },
+àà/**
+ààà*àBerechnetàSubscoresàfüràjedeàKategorie
+ààà*/
+ààcalculateSubscores(answers)à{
+ààààconstàcategoriesà=à{};
+ààààthis.questions.forEach(qà=>à{
+ààààààifà(!categories[q.subcategory])à{
+ààààààààcategories[q.subcategory]à=à0;
+àààààà}
+ààààààcategories[q.subcategory]à+=àanswers[q.id]à||à0;
+àààà});
+ààààreturnàcategories;
+àà},
 
-  /**
-   * Berechnet Gesamtscore (0-160)
-   */
-  calculateScore(answers) {
-    return Object.values(answers).reduce((sum, val) => sum + (val || 0), 0);
-  },
+àà/**
+ààà*àBerechnetàGesamtscoreà(0-160)
+ààà*/
+ààcalculateScore(answers)à{
+ààààreturnàObject.values(answers).reduce((sum,àval)à=>àsumà+à(valà||à0),à0);
+àà},
 
-  /**
-   * Liefert die Interpretation des Scores
-   */
-  getInterpretation(score) {
-    if (score <= 32) {
-      return {
-        level: 'Gering',
-        color: '#22c55e',
-        description: 'Geringe Symptomausprägung',
-        text: 'Ihre Antworten deuten auf geringe ADHS-Symptome hin.'
-      };
-    } else if (score <= 64) {
-      return {
-        level: 'Leicht-Moderat',
-        color: '#f59e0b',
-        description: 'Leicht bis moderate Symptomausprägung',
-        text: 'Sie zeigen leicht bis mäßig ausgeprägte ADHS-Symptome. Professionelle Evaluation wird empfohlen.'
-      };
-    } else if (score <= 96) {
-      return {
-        level: 'Moderat-Schwer',
-        color: '#f97316',
-        description: 'Mäßig bis schwere Symptomausprägung',
-        text: 'Ihre Symptome sind deutlich. Professionelle Unterstützung wird dringend empfohlen.'
-      };
-    } else {
-      return {
-        level: 'Schwer',
-        color: '#ef4444',
-        description: 'Schwere Symptomausprägung',
-        text: 'Sie zeigen erhebliche ADHS-Symptome. Eine psychiatrische Bewertung durch einen Fachmann wird dringend empfohlen.'
-      };
-    }
-  },
+àà/**
+ààà*àLiefertàdieàInterpretationàdesàScores
+ààà*/
+ààgetInterpretation(score)à{
+ààààifà(scoreà<=à32)à{
+ààààààreturnà{
+ààààààààlevel:à'Gering',
+ààààààààcolor:à'#22c55e',
+ààààààààdescription:à'GeringeàSymptomausprägung',
+ààààààààtext:à'IhreàAntwortenàdeutenàaufàgeringeàADHS-Symptomeàhin.'
+àààààà};
+àààà}àelseàifà(scoreà<=à64)à{
+ààààààreturnà{
+ààààààààlevel:à'Leicht-Moderat',
+ààààààààcolor:à'#f59e0b',
+ààààààààdescription:à'LeichtàbisàmoderateàSymptomausprägung',
+ààààààààtext:à'Sieàzeigenàleichtàbisàmä—igàausgeprägteàADHS-Symptome.àProfessionelleàEvaluationàwirdàempfohlen.'
+àààààà};
+àààà}àelseàifà(scoreà<=à96)à{
+ààààààreturnà{
+ààààààààlevel:à'Moderat-Schwer',
+ààààààààcolor:à'#f97316',
+ààààààààdescription:à'Mä—igàbisàschwereàSymptomausprägung',
+ààààààààtext:à'IhreàSymptomeàsindàdeutlich.àProfessionelleàUnterstützungàwirdàdringendàempfohlen.'
+àààààà};
+àààà}àelseà{
+ààààààreturnà{
+ààààààààlevel:à'Schwer',
+ààààààààcolor:à'#ef4444',
+ààààààààdescription:à'SchwereàSymptomausprägung',
+ààààààààtext:à'SieàzeigenàerheblicheàADHS-Symptome.àEineàpsychiatrischeàBewertungàdurchàeinenàFachmannàwirdàdringendàempfohlen.'
+àààààà};
+àààà}
+àà},
 
-  /**
-   * Medizinischer Hinweis
-   */
-  medicalDisclaimer: `
-    <div style="background: #fef2f2; border-left: 4px solid #ef4444; padding: 1rem; margin-top: 2rem; border-radius: 8px;">
-      <p style="margin: 0; font-weight: 600; color: #7f1d1d;">⚠️ Wichtiger Hinweis:</p>
-      <p style="margin: 0.5rem 0 0 0; color: #5f3738; font-size: 0.95rem;">
-        Dieser Test dient nur zur groben Orientierung und ersetzt keine medizinische Diagnose. Bei anhaltenden oder belastenden Beschwerden wenden Sie sich bitte an eine Ärztin, einen Arzt oder eine psychologische Fachperson.
-      </p>
-    </div>
-  `
+àà/**
+ààà*àMedizinischeràHinweis
+ààà*/
+ààmedicalDisclaimer:à`
+àààà<divàstyle="background:à#fef2f2;àborder-left:à4pxàsolidà#ef4444;àpadding:à1rem;àmargin-top:à2rem;àborder-radius:à8px;">
+àààààà<pàstyle="margin:à0;àfont-weight:à600;àcolor:à#7f1d1d;"> —¯¸àWichtigeràHinweis:</p>
+àààààà<pàstyle="margin:à0.5remà0à0à0;àcolor:à#5f3738;àfont-size:à0.95rem;">
+ààààààààDieseràTestàdientànuràzuràgrobenàOrientierungàundàersetztàkeineàmedizinischeàDiagnose.àBeiàanhaltendenàoderàbelastendenàBeschwerdenàwendenàSieàsichàbitteàanàeineàÄrztin,àeinenàArztàoderàeineàpsychologischeàFachperson.
+àààààà</p>
+àààà</div>
+àà`
 };
