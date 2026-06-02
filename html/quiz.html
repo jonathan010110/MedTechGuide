@@ -1,26 +1,30 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="de">
 <head>
   <meta charset="utf-8" />
-  <title>Quiz – MedTechGuide</title>
+  <title>Quiz - Teste dein Medizintechnik-Wissen | MedTechGuide</title>
+  <meta name="description" content="Interaktives Quiz über Medizintechnologie mit Kategorien: Diagnostik, Therapie, Forschung, Zukunft. Teste dein Wissen und erhalte detaillierte Auswertungen." />
+  <meta name="keywords" content="Quiz, Medizintechnik, Wissenstest, Lernspiel" />
+  <meta property="og:title" content="MedTechGuide Quiz - Wissenstest" />
+  <meta property="og:description" content="Interaktives Quiz über Medizintechnologie mit sofortiger Auswertung." />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Interaktives Quiz über Medizintechnologie mit Kategorien: Diagnostik, Therapie, Forschung, Zukunft." />
+  <meta name="description" content="Interaktives Quiz Ã¼ber Medizintechnologie mit Kategorien: Diagnostik, Therapie, Forschung, Zukunft." />
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="stylesheet" href="../css/quiz.css" />
 </head>
 <body>
-  <!-- ♿ ACCESSIBILITY: Skip to Content Link -->
+  <!-- â™¿ ACCESSIBILITY: Skip to Content Link -->
   <a href="#main-content" class="skip-to-content">Zum Inhalt springen</a>
   
   <div id="loader">
     <div class="spinner"></div>
-    <p>Quiz wird geladen…</p>
+    <p>Quiz wird geladenâ€¦</p>
   </div>
 
   <header class="site-header">
     <div class="container">
       <h1>MedTechGuide Quiz</h1>
-      <p class="subtitle">Test dein Wissen über Medizintechnik</p>
+      <p class="subtitle">Test dein Wissen Ã¼ber Medizintechnik</p>
     </div>
   </header>
 
@@ -37,12 +41,12 @@
         <a href="genetik.html">Genetik</a>
         <a href="ki-diagnose.html">KI-Diagnose</a>
         <a href="zukunft.html">Zukunft</a>
-        <a href="quiz.html" class="active" style="background: linear-gradient(135deg, #1e40af 0%, #0f766e 100%); color: white; font-weight: 700;">🎯 Quiz</a>
-        <a href="self-tests.html" style="background: linear-gradient(135deg, #7c3aed 0%, #ec4899 100%); color: white; font-weight: 700;">🧠 Tests</a>
+        <a href="quiz.html" class="active" style="background: linear-gradient(135deg, #1e40af 0%, #0f766e 100%); color: white; font-weight: 700;">ðŸŽ¯ Quiz</a>
+        <a href="self-tests.html" style="background: linear-gradient(135deg, #7c3aed 0%, #ec4899 100%); color: white; font-weight: 700;">ðŸ§  Tests</a>
         <a href="quellen.html">Quellen</a>
       </div>
       <div class="nav-search">
-        <input type="text" id="globalSearch" placeholder="Suche…" aria-label="Globale Suche">
+        <input type="text" id="globalSearch" placeholder="Sucheâ€¦" aria-label="Globale Suche">
         <span id="searchResults" class="search-results"></span>
       </div>
     </div>
@@ -50,42 +54,42 @@
 
   <main class="container" id="main-content">
     <div class="intro-card">
-      <h2>🎯 Wissens-Quiz</h2>
+      <h2>ðŸŽ¯ Wissens-Quiz</h2>
       <p>
-        Teste dein Verständnis von medizintechnologischen Konzepten!
-        Wähle eine Kategorie und beantworte 5 spannende Fragen.
-        Du erhältst am Ende eine detaillierte Auswertung.
+        Teste dein VerstÃ¤ndnis von medizintechnologischen Konzepten!
+        WÃ¤hle eine Kategorie und beantworte 5 spannende Fragen.
+        Du erhÃ¤ltst am Ende eine detaillierte Auswertung.
       </p>
     </div>
 
     <section class="section-card">
       <h2>Quiz-Kategorien</h2>
-      <p>Jede Kategorie enthält 5 Fragen mit Multiple-Choice Antworten.</p>
+      <p>Jede Kategorie enthÃ¤lt 5 Fragen mit Multiple-Choice Antworten.</p>
       
       <div class="quiz-kategorien-grid" style="margin-top: 2rem;">
-        <button class="quiz-kategorie-btn" onclick="startQuiz('diagnostik')">
-          <div class="kategorie-icon">🔍</div>
+        <button class="quiz-kategorie-btn" data-quiz-category="diagnostik" aria-label="Quiz starten: Diagnostik">
+          <div class="kategorie-icon">ðŸ”</div>
           <div class="kategorie-name">Diagnostik</div>
           <div class="kategorie-desc">Testverfahren und Mess-Instrumente</div>
           <div class="kategorie-fragen">5 Fragen</div>
         </button>
 
-        <button class="quiz-kategorie-btn" onclick="startQuiz('therapie')">
-          <div class="kategorie-icon">💊</div>
+        <button class="quiz-kategorie-btn" data-quiz-category="therapie" aria-label="Quiz starten: Therapie">
+          <div class="kategorie-icon">ðŸ’Š</div>
           <div class="kategorie-name">Therapie</div>
-          <div class="kategorie-desc">Behandlungs-Geräte und -Systeme</div>
+          <div class="kategorie-desc">Behandlungs-GerÃ¤te und -Systeme</div>
           <div class="kategorie-fragen">5 Fragen</div>
         </button>
 
-        <button class="quiz-kategorie-btn" onclick="startQuiz('forschung')">
-          <div class="kategorie-icon">🔬</div>
+        <button class="quiz-kategorie-btn" data-quiz-category="forschung" aria-label="Quiz starten: Forschung">
+          <div class="kategorie-icon">ðŸ”¬</div>
           <div class="kategorie-name">Forschung</div>
           <div class="kategorie-desc">Neue Technologien in Entwicklung</div>
           <div class="kategorie-fragen">5 Fragen</div>
         </button>
 
-        <button class="quiz-kategorie-btn" onclick="startQuiz('zukunft')">
-          <div class="kategorie-icon">🚀</div>
+        <button class="quiz-kategorie-btn" data-quiz-category="zukunft" aria-label="Quiz starten: Zukunft">
+          <div class="kategorie-icon">ðŸš€</div>
           <div class="kategorie-name">Zukunft</div>
           <div class="kategorie-desc">Kommende Innovationen</div>
           <div class="kategorie-fragen">5 Fragen</div>
@@ -96,7 +100,7 @@
     <section class="section-card">
       <h2>Wie funktioniert das Quiz?</h2>
       <ol>
-        <li><strong>Kategorie wählen:</strong> Klick auf eine der 4 Kategorien oben</li>
+        <li><strong>Kategorie wÃ¤hlen:</strong> Klick auf eine der 4 Kategorien oben</li>
         <li><strong>Fragen beantworten:</strong> Beantworte 5 Multiple-Choice Fragen</li>
         <li><strong>Ergebnis sehen:</strong> Erhalte eine Auswertung mit deiner Quote</li>
         <li><strong>Detailansicht:</strong> Siehe welche Fragen richtig/falsch waren</li>
@@ -107,11 +111,11 @@
     <section class="section-card">
       <h2>Tipps zum Lernen</h2>
       <ul>
-        <li>📖 Lese die Themenseiten durch, bevor du das Quiz machst</li>
-        <li>💭 Denke kritisch über die Antworten nach</li>
-        <li>🔄 Wiederhole Kategorien, in denen du nicht so gut warst</li>
-        <li>📚 Nutze das Glossar auf den Themenseiten für komplexe Begriffe</li>
-        <li>⏱️ Nimm dir Zeit für jede Frage</li>
+        <li>ðŸ“– Lese die Themenseiten durch, bevor du das Quiz machst</li>
+        <li>ðŸ’­ Denke kritisch Ã¼ber die Antworten nach</li>
+        <li>ðŸ”„ Wiederhole Kategorien, in denen du nicht so gut warst</li>
+        <li>ðŸ“š Nutze das Glossar auf den Themenseiten fÃ¼r komplexe Begriffe</li>
+        <li>â±ï¸ Nimm dir Zeit fÃ¼r jede Frage</li>
       </ul>
     </section>
 
@@ -125,25 +129,26 @@
 
   <footer class="site-footer">
     <div class="container">
-      <p>&copy; 2026 MedTechGuide – Schulprojekt HTL Informatik</p>
-      <p><a href="quellen.html">Über die wissenschaftlichen Quellen</a></p>
+      <p>&copy; 2026 MedTechGuide â€“ Schulprojekt HTL Informatik</p>
+      <p><a href="quellen.html">Ãœber die wissenschaftlichen Quellen</a></p>
     </div>
   </footer>
 
-  <button class="scroll-to-top" id="scrollToTopBtn" aria-label="Nach oben scrollen">↑</button>
+  <button class="scroll-to-top" id="scrollToTopBtn" aria-label="Nach oben scrollen">â†‘</button>
 
   <script src="../js/script.js"></script>
   <script src="../js/search.js"></script>
   <script src="../js/quiz.js"></script>
   <script>
-    window.addEventListener("load", () => {
+    function initializeQuizButtons() { const categoryButtons = document.querySelectorAll("[data-quiz-category]"); categoryButtons.forEach(button => { button.addEventListener("click", () => { const category = button.getAttribute("data-quiz-category"); if (typeof startQuiz === "function") startQuiz(category); }); }); } window.addEventListener("load", () => {
       const loader = document.getElementById("loader");
       if (loader) { 
         loader.classList.add("hidden"); 
         setTimeout(() => { loader.style.display = "none"; }, 500); 
       }
-      setActiveNavLink();
+      setActiveNavLink(); initializeQuizButtons();
     });
   </script>
 </body>
 </html>
+
