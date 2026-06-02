@@ -1,0 +1,32 @@
+# EditorConfig ist hilfreich für die Wartung konsistenter Codingstile
+# für mehrere Entwickler, die an demselben Projekt arbeiten,
+# über verschiedene Editoren und IDEs hinweg.
+# https://editorconfig.org
+
+root = true
+
+# Alle Dateien
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# JavaScript/TypeScript-Dateien
+[*.{js,jsx,ts,tsx}]
+indent_style = space
+indent_size = 2
+
+# JSON-Dateien
+[*.json]
+indent_style = space
+indent_size = 2
+
+# HTML/CSS-Dateien
+[*.{html,css,scss}]
+indent_style = space
+indent_size = 2
+
+# Markdown-Dateien
+[*.md]
+trim_trailing_whitespace = false
