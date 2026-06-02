@@ -1,20 +1,20 @@
 /**
-à*àMEDTECHGUIDEà-àREFACTOREDàJAVASCRIPTàARCHITECTURE
-à*àModular,àVanillaàJS.àKeinàFramework.àSauberàstrukturiert.
-à*àJedeàFunktionàistàunabhängigàinitialisierbar.
-à*/
+ * MEDTECHGUIDE - REFACTORED JAVASCRIPT ARCHITECTURE
+ * Modular, Vanilla JS. Kein Framework. Sauber strukturiert.
+ * Jede Funktion ist unabhängig initialisierbar.
+ */
 
-//à================================================================
-//à°¾àUTILITYàFUNCTIONS
-//à================================================================
+// ================================================================
+// UTILITY FUNCTIONS
+// ================================================================
 
 /**
-à*àDebounce/ThrottleàfüràPerformance-optimierteàEvents
-à*à@paramà{Function}àfuncà-àZuàthrottleindeàFunktion
-à*à@paramà{number}àdelayà-àmsàVerzögerung
-à*à@returnsà{Function}àThrottledàFunktion
-à*/
-functionàthrottle(func,àdelay)à{
+ * Debounce/Throttle für Performance-optimierte Events
+ * @param {Function} func - Zu throttleindeà Funktion
+ * @param {number} delay - ms Verzögerung
+ * @returns {Function} Throttled Funktion
+ */
+function throttle(func, delay) {
 ààletàlastCallà=à0;
 ààreturnàfunction(...args)à{
 ààààconstànowà=àDate.now();
@@ -26,32 +26,32 @@ functionàthrottle(func,àdelay)à{
 }
 
 /**
-à*àNormalisiertàTextàfüràSucheà(lowercase,àUmlaute,àetc.)
-à*à@paramà{string}àtextà-àTextàzumànormalisieren
-à*à@returnsà{string}àNormalisierteràText
-à*/
-functionànormalizeText(text)à{
-ààreturnàtext.toLowerCase()
-àààà.replace(/ä/g,à'a').replace(/ö/g,à'o').replace(/ü/g,à'u')
-àààà.replace(/—/g,à'ss').trim();
+ * Normalisiert Text für Suche (lowercase, Umlaute, etc.)
+ * @param {string} text - Text zum normalisieren
+ * @returns {string} Normalisierter Text
+ */
+function normalizeText(text) {
+  return text.toLowerCase()
+    .replace(/ä/g, 'a').replace(/ö/g, 'o').replace(/ü/g, 'u')
+    .replace(/ß/g, 'ss').trim();
 }
 
 /**
-à*àEntferntàalteàHighlightsàsicher
-à*à@paramà{HTMLElement}àcontainerà-àContaineràmitàHighlights
-à*/
-functionàremoveHighlights(container)à{
-ààifà(!container)àreturn;
-ààconstàhighlightsà=àcontainer.querySelectorAll'span.highlight');
-ààhighlights.forEach(spanà=>à{
-ààààconstàparentà=àspan.parentNode;
-ààààifà(parent)à{
-ààààààwhileà(span.firstChild)à{
-ààààààààparent.insertBefore(span.firstChild,àspan);
-àààààà}
-ààààààparent.removeChild(span);
-àààà}
-àà});
+ * Entfernt alte Highlights sicher
+ * @param {HTMLElement} container - Container mit Highlights
+ */
+function removeHighlights(container) {
+  if (!container) return;
+  const highlights = container.querySelectorAll('span.highlight');
+  highlights.forEach(span => {
+    const parent = span.parentNode;
+    if (parent) {
+      while (span.firstChild) {
+        parent.insertBefore(span.firstChild, span);
+      }
+      parent.removeChild(span);
+    }
+  });
 }
 
 //à================================================================

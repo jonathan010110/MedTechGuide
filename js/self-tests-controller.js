@@ -1,21 +1,21 @@
 /**
-à*à=====================================================
-à*àSELF-TESTSàCONTROLLERà-àHaupt-Modul
-à*àKoordiniertàalleàTestsàundàsteuertàdieàUI
-à*à=====================================================
-à*/
+ * =====================================================
+ * SELF-TESTS CONTROLLER - Haupt-Modul
+ * Koordiniert alle Tests und steuert die UI
+ * =====================================================
+ */
 
-classàSelfTestsControllerà{
-ààconstructor()à{
-ààààthis.allTestsà=à[
-ààààààDepressionTest,
-ààààààADHSTest,
-ààààààPersonalityTest,
-ààààààAnxietyTest,
-ààààààBurnoutTest,
-ààààààStressTest,
-ààààààSleepQualityTest
-àààà];
+class SelfTestsController {
+  constructor() {
+    this.allTests = [
+      DepressionTest,
+      ADHSTest,
+      PersonalityTest,
+      AnxietyTest,
+      BurnoutTest,
+      StressTest,
+      SleepQualityTest
+    ];
 
 ààààthis.currentTestà=ànull;
 ààààthis.currentQuestionà=à0;
@@ -25,9 +25,9 @@ classàSelfTestsControllerà{
 ààààthis.initializeEventListeners();
 àà}
 
-ààinitializeEventListeners()à{
-àààà//àTestàKartenàClickàHandler
-ààààdocument.querySelectorAll'.test-card').forEach(cardà=>à{
+  initializeEventListeners() {
+    // Test Karten Click Handler
+    document.querySelectorAll('.test-card').forEach(card => {
 ààààààcard.addEventListener('click',à(e)à=>à{
 ààààààààconstàtestIdà=àcard.dataset.testId;
 ààààààààconstàtestà=àthis.allTests.find(tà=>àt.testIdà===àtestId);
@@ -37,11 +37,11 @@ classàSelfTestsControllerà{
 àààààà});
 àààà});
 
-àààà//àNavigationàButtons
-ààààdocument.getElementById('btnBack')?.addEventListener('click',à()à=>àthis.previousQuestion());
-ààààdocument.getElementById('btnNext')?.addEventListener('click',à()à=>àthis.nextQuestion());
-ààààdocument.getElementById('btnSubmit')?.addEventListener('click',à()à=>àthis.submitTest());
-ààààdocument.getElementById('btnReset')?.addEventListener('click',à()à=>àthis.resetTest());
+    // Navigation Buttons
+    document.getElementById('btnBack')?.addEventListener('click', () => this.previousQuestion());
+    document.getElementById('btnNext')?.addEventListener('click', () => this.nextQuestion());
+    document.getElementById('btnSubmit')?.addEventListener('click', () => this.submitTest());
+    document.getElementById('btnReset')?.addEventListener('click', () => this.resetTest());
 àà}
 
 àà/**
