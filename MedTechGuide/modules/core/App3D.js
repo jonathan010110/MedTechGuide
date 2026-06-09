@@ -1,103 +1,103 @@
-importà*àasàTHREEàfromà'three';
-importà{àOrbitControlsà}àfromà'three/addons/controls/OrbitControls.js';
-importà{àcreatePulseOximeterà}àfromà'../devices/PulseOximeter.js';
-importà{àcreateEKGMonitorà}àfromà'../devices/EKGMonitor.js';
-importà{àcreateBloodPressureMonitorà}àfromà'../devices/BloodPressureMonitor.js';
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { createPulseOximeter } from '../devices/PulseOximeter.js';
+import { createEKGMonitor } from '../devices/EKGMonitor.js';
+import { createBloodPressureMonitor } from '../devices/BloodPressureMonitor.js';
 
-exportàclassàApp3Dà{
-ààconstructor({àcanvas,àinfoPanel,àinfoText,àheartRateSlider,àpressureFill,àbpResultà})à{
-ààààthis.canvasà=àcanvas;
-ààààthis.infoPanelà=àinfoPanel;
-ààààthis.infoTextà=àinfoText;
-ààààthis.heartRateSliderà=àheartRateSlider;
-ààààthis.pressureFillà=àpressureFill;
-ààààthis.bpResultà=àbpResult;
+export class App3D {
+  constructor({ canvas, infoPanel, infoText, heartRateSlider, pressureFill, bpResult }) {
+    this.canvas = canvas;
+    this.infoPanel = infoPanel;
+    this.infoText = infoText;
+    this.heartRateSlider = heartRateSlider;
+    this.pressureFill = pressureFill;
+    this.bpResult = bpResult;
 
-ààààthis.sceneà=ànewàTHREE.Scene();
-ààààthis.scene.backgroundà=ànewàTHREE.Color('#070d1c');
+    this.scene = new THREE.Scene();
+    this.scene.background = new THREE.Color('#070d1c');
 
-ààààthis.cameraà=ànewàTHREE.PerspectiveCamera(45,à1,à0.1,à100);
-ààààthis.camera.position.set(5.6,à3.4,à6.3);
+    this.camera = new THREE.PerspectiveCamera(45, 1, 0.1, 100);
+    this.camera.position.set(5.6, 3.4, 6.3);
 
-ààààthis.rendererà=ànewàTHREE.WebGLRenderer({àcanvas:àthis.canvas,àantialias:àtrueà});
-ààààthis.renderer.setPixelRatio(Math.min(window.devicePixelRatio,à2));
-ààààthis.renderer.outputColorSpaceà=àTHREE.SRGBColorSpace;
+    this.renderer = new THREE.WebGLRenderer({ canvas: this.canvas, antialias: true });
+    this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    this.renderer.outputColorSpace = THREE.SRGBColorSpace;
 
-ààààthis.clockà=ànewàTHREE.Clock();
+    this.clock = new THREE.Clock();
 
-ààààthis.controlsà=ànull;
-ààààthis.raycasterà=ànewàTHREE.Raycaster();
-ààààthis.pointerà=ànewàTHREE.Vector2();
+    this.controls = null;
+    this.raycaster = new THREE.Raycaster();
+    this.pointer = new THREE.Vector2();
 
-ààààthis.devicesà=ànewàMap();
-ààààthis.activeDeviceIdà=à'pulse';
-ààààthis.activeDeviceà=ànull;
-ààààthis.deviceSwapà=ànull;
+    this.devices = new Map();
+    this.activeDeviceId = 'pulse';
+    this.activeDevice = null;
+    this.deviceSwap = null;
 
-ààààthis.interactiveLookupà=ànewàMap();
+    this.interactiveLookup = new Map();
 
-ààààthis.bpSimà=à{
-ààààààrunning:àfalse,
-ààààààprogress:à0,
-ààààààresultShown:àfalse,
-àààà};
-àà}
+    this.bpSim = {
+      running: false,
+      progress: 0,
+      resultShown: false,
+    };
+  }
 
-ààinit()à{
-ààààthis.setupLights();
-ààààthis.setupEnvironment();
-ààààthis.setupControls();
-ààààthis.setupDevices();
-ààààthis.bindEvents();
-ààààthis.onResize();
-ààààthis.setDevice('pulse',àtrue);
-ààààthis.animate();
-àà}
+  init() {
+    this.setupLights();
+    this.setupEnvironment();
+    this.setupControls();
+    this.setupDevices();
+    this.bindEvents();
+    this.onResize();
+    this.setDevice('pulse', true);
+    this.animate();
+  }
 
-ààsetupLights()à{
-ààààconstàambientà=ànewàTHREE.AmbientLight('#b7d0ff',à0.55);
-ààààthis.scene.add(ambient);
+  setupLights() {
+    const ambient = new THREE.AmbientLight('#b7d0ff', 0.55);
+    this.scene.add(ambient);
 
-ààààconstàkeyà=ànewàTHREE.DirectionalLight('#d7e8ff',à1.2);
-ààààkey.position.set(4,à8,à6);
-ààààthis.scene.add(key);
+    const key = new THREE.DirectionalLight('#d7e8ff', 1.2);
+    key.position.set(4, 8, 6);
+    this.scene.add(key);
 
-ààààconstàfillà=ànewàTHREE.PointLight('#65a9ff',à1.4,à30);
-ààààfill.position.set(-5,à2,à4);
-ààààthis.scene.add(fill);
+    const fill = new THREE.PointLight('#65a9ff', 1.4, 30);
+    fill.position.set(-5, 2, 4);
+    this.scene.add(fill);
 
-ààààconstàrimà=ànewàTHREE.PointLight('#4af7b2',à0.45,à20);
-ààààrim.position.set(0,à2,à-6);
-ààààthis.scene.add(rim);
-àà}
+    const rim = new THREE.PointLight('#4af7b2', 0.45, 20);
+    rim.position.set(0, 2, -6);
+    this.scene.add(rim);
+  }
 
-ààsetupEnvironment()à{
-ààààconstàfloorà=ànewàTHREE.Mesh(
-àààààànewàTHREE.CircleGeometry(7.5,à80),
-àààààànewàTHREE.MeshStandardMaterial({
-ààààààààcolor:à'#0f1930',
-ààààààààroughness:à0.82,
-ààààààààmetalness:à0.05,
-àààààà})
-àààà);
-ààààfloor.rotation.xà=à-Math.PIà/à2;
-ààààfloor.position.yà=à-1.25;
-ààààthis.scene.add(floor);
+  setupEnvironment() {
+    const floor = new THREE.Mesh(
+      new THREE.CircleGeometry(7.5, 80),
+      new THREE.MeshStandardMaterial({
+        color: '#0f1930',
+        roughness: 0.82,
+        metalness: 0.05,
+      })
+    );
+    floor.rotation.x = -Math.PI / 2;
+    floor.position.y = -1.25;
+    this.scene.add(floor);
 
-ààààconstàringà=ànewàTHREE.Mesh(
-àààààànewàTHREE.TorusGeometry(3.8,à0.04,à10,à120),
-àààààànewàTHREE.MeshStandardMaterial({àcolor:à'#244270',àemissive:à'#10233f',àemissiveIntensity:à0.4à})
-àààà);
-ààààring.rotation.xà=à-Math.PIà/à2;
-ààààring.position.yà=à-1.22;
-ààààthis.scene.add(ring);
-àà}
+    const ring = new THREE.Mesh(
+      new THREE.TorusGeometry(3.8, 0.04, 10, 120),
+      new THREE.MeshStandardMaterial({ color: '#244270', emissive: '#10233f', emissiveIntensity: 0.4 })
+    );
+    ring.rotation.x = -Math.PI / 2;
+    ring.position.y = -1.22;
+    this.scene.add(ring);
+  }
 
-ààsetupControls()à{
-ààààthis.controlsà=ànewàOrbitControls(this.camera,àthis.renderer.domElement);
-ààààthis.controls.enableDampingà=àtrue;
-ààààthis.controls.dampingFactorà=à0.08;
-ààààthis.controls.target.set(0,à0.2,à0);
+  setupControls() {
+    this.controls = new OrbitControls(this.camera, this.renderer.domElement);
+    this.controls.enableDamping = true;
+    this.controls.dampingFactor = 0.08;
+    this.controls.target.set(0, 0.2, 0);
 ààààthis.controls.minDistanceà=à3.5;
 ààààthis.controls.maxDistanceà=à11.5;
 àà}

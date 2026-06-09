@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <title>404 - Seite nicht gefunden | MedTechGuide</title>
+  <meta name="description" content="Die angeforderte Seite konnte nicht gefunden werden." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .error-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 60vh;
+      text-align: center;
+      padding: 2rem;
+    }
+    .error-code {
+      font-size: 6rem;
+      font-weight: 700;
+      color: var(--primary, #1e40af);
+      margin: 0;
+    }
+    .error-message {
+      font-size: 1.5rem;
+      margin: 1rem 0;
+      color: var(--text, #1f2937);
+    }
+    .error-description {
+      color: var(--text-secondary, #6b7280);
+      margin: 1rem 0 2rem 0;
+      max-width: 500px;
+    }
+    .error-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .error-actions a {
+      padding: 0.75rem 1.5rem;
+      background: var(--primary, #1e40af);
+      color: white;
+      text-decoration: none;
+      border-radius: 0.5rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .error-actions a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(30, 64, 175, 0.3);
+    }
+    .error-actions a.secondary {
+      background: var(--accent, #0f766e);
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>Fehler</h1>
+    </div>
+  </header>
+
+  <nav class="main-nav">
+    <div class="nav-container">
+      <div class="nav-links">
+        <a href="../index.html">Start</a>
+        <a href="diabetes.html">Diabetes</a>
+        <a href="allergie.html">Allergien</a>
+        <a href="herz.html">Herz</a>
+        <a href="bildgebung.html">Bildgebung</a>
+        <a href="neurochips.html">Neurochips</a>
+        <a href="exoskelette.html">Exoskelette</a>
+        <a href="genetik.html">Genetik</a>
+        <a href="ki-diagnose.html">KI-Diagnose</a>
+        <a href="zukunft.html">Zukunft</a>
+        <a href="quiz.html">Quiz</a>
+        <a href="self-tests.html">Tests</a>
+        <a href="quellen.html">Quellen</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container" id="main-content">
+    <div class="error-container">
+      <h1 class="error-code">404</h1>
+      <h2 class="error-message">Seite nicht gefunden</h2>
+      <p class="error-description">
+        Die Seite, die du aufrufen möchtest, existiert nicht oder wurde verschoben.
+      </p>
+      <div class="error-actions">
+        <a href="../index.html">Zur Startseite</a>
+        <a href="javascript:history.back()" class="secondary">Zurück</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 MedTechGuide – Schulprojekt HTL Informatik</p>
+      <p><a href="quellen.html">Über die wissenschaftlichen Quellen</a></p>
+    </div>
+  </footer>
+
+  <script src="../js/script.js"></script>
+</body>
+</html>
