@@ -14,6 +14,51 @@ const CONFIG = {
     ANIMATION_DURATION: 800,
 };
 
+const MOCK_DATA_STORAGE_KEY = 'spoegl-demo-mock-data';
+const DEFAULT_MOCK_DATA = {
+    heartRate: 74,
+    steps: 6842,
+    sleepDuration: '7.4',
+    stressLevel: 38,
+    calories: 1780,
+    recoveryScore: 84,
+    sleepPhases: {
+        awake: 18,
+        light: 112,
+        deep: 74,
+        rem: 61
+    },
+    sleepScore: 82,
+    fallAsleepTime: 12,
+    sports: {
+        running: {
+            distance: '6.8',
+            pace: '5.8',
+            avgHR: 141,
+            calories: 512
+        },
+        cycling: {
+            distance: '18.4',
+            speed: '24.6',
+            elevation: 134,
+            duration: 58
+        },
+        fitness: {
+            type: 'Kraft & Ausdauer',
+            duration: 42,
+            avgHR: 128,
+            calories: 338
+        }
+    },
+    heartZones: {
+        zone1: 22,
+        zone2: 41,
+        zone3: 19,
+        zone4: 12,
+        zone5: 6
+    }
+};
+
 // ========================================
 // UTILITY FUNCTIONS
 // ========================================
@@ -73,28 +118,28 @@ function animateProgressBar(element, target) {
  * Get heart rate status
  */
 function getHeartRateStatus(bpm) {
-    if (bpm < 60) return 'Niedrig';
+    if (bpm < 60) return 'Locker';
     if (bpm < 100) return 'Normal';
-    if (bpm < 130) return 'Erhöht';
-    return 'Hohe Belastung';
+    if (bpm < 130) return 'Aktiv';
+    return 'Sehr aktiv';
 }
 
 /**
  * Get sleep status
  */
 function getSleepStatus(hours) {
-    if (hours < 6) return 'Unzureichend';
-    if (hours < 7) return 'Gut';
-    if (hours <= 9) return 'Sehr gut';
-    return 'Zu viel';
+    if (hours < 6) return 'Kurz';
+    if (hours < 7) return 'Okay';
+    if (hours <= 9) return 'Gut';
+    return 'Lang';
 }
 
 /**
  * Get stress status
  */
 function getStressStatus(level) {
-    if (level < 30) return 'Niedrig';
-    if (level < 60) return 'Moderat';
+    if (level < 30) return 'Ruhig';
+    if (level < 60) return 'Mittel';
     return 'Hoch';
 }
 
@@ -103,68 +148,28 @@ function getStressStatus(level) {
 // ========================================
 
 /**
- * Fetch health data from backend
+ * Fetch health data for the demo UI
  */
 async function fetchHealthData() {
-    try {
-        // Try to fetch from backend
-        const response = await fetch(CONFIG.API_URL);
-        if (!response.ok) throw new Error('Network response was not ok');
-        const data = await response.json();
-        return data;
-    } catch (error) {
-        console.warn('Backend not available, using mock data:', error.message);
-        return generateMockData();
-    }
+    return generateMockData();
 }
 
 /**
- * Generate mock data (fallback)
+ * Return stable mock data for the demo UI
  */
 function generateMockData() {
-    return {
-        heartRate: Math.floor(Math.random() * 40 + 60),
-        steps: Math.floor(Math.random() * 8000 + 2000),
-        sleepDuration: (Math.random() * 3 + 6).toFixed(1),
-        stressLevel: Math.floor(Math.random() * 50 + 15),
-        calories: Math.floor(Math.random() * 1500 + 1000),
-        recoveryScore: Math.floor(Math.random() * 20 + 70),
-        sleepPhases: {
-            awake: Math.floor(Math.random() * 30 + 10),
-            light: Math.floor(Math.random() * 100 + 80),
-            deep: Math.floor(Math.random() * 80 + 60),
-            rem: Math.floor(Math.random() * 70 + 50)
-        },
-        sleepScore: Math.floor(Math.random() * 25 + 75),
-        fallAsleepTime: Math.floor(Math.random() * 10 + 5),
-        sports: {
-            running: {
-                distance: (Math.random() * 5 + 5).toFixed(1),
-                pace: (Math.random() * 4 + 5).toFixed(1),
-                avgHR: Math.floor(Math.random() * 30 + 130),
-                calories: Math.floor(Math.random() * 300 + 400)
-            },
-            cycling: {
-                distance: (Math.random() * 20 + 10).toFixed(1),
-                speed: (Math.random() * 10 + 20).toFixed(1),
-                elevation: Math.floor(Math.random() * 200 + 50),
-                duration: Math.floor(Math.random() * 30 + 45)
-            },
-            fitness: {
-                type: 'Kraft & Ausdauer',
-                duration: Math.floor(Math.random() * 20 + 30),
-                avgHR: Math.floor(Math.random() * 30 + 120),
-                calories: Math.floor(Math.random() * 250 + 250)
-            }
-        },
-        heartZones: {
-            zone1: Math.floor(Math.random() * 20 + 10),
-            zone2: Math.floor(Math.random() * 30 + 40),
-            zone3: Math.floor(Math.random() * 25 + 20),
-            zone4: Math.floor(Math.random() * 15 + 10),
-            zone5: Math.floor(Math.random() * 10 + 5)
+    try {
+        const storedData = localStorage.getItem(MOCK_DATA_STORAGE_KEY);
+        if (storedData) {
+            return JSON.parse(storedData);
         }
-    };
+
+        localStorage.setItem(MOCK_DATA_STORAGE_KEY, JSON.stringify(DEFAULT_MOCK_DATA));
+    } catch (error) {
+        console.warn('Using in-memory demo data only:', error.message);
+    }
+
+    return DEFAULT_MOCK_DATA;
 }
 
 // ========================================
@@ -244,23 +249,23 @@ function updateAIAnalysis(data) {
     const analyses = [];
 
     if (data.recoveryScore > 80) {
-        analyses.push('Ihre Regeneration ist optimal.');
+        analyses.push('Heute ist eine gute Basis für Training und Konzentration da.');
     } else if (data.recoveryScore > 60) {
-        analyses.push('Ihre Regeneration ist gut. Etwas mehr Ruhe könnte hilfreich sein.');
+        analyses.push('Der Tag wirkt solide. Für harte Einheiten lohnt sich ein ruhiger Start.');
     } else {
-        analyses.push('Sie sollten mehr auf Ihre Erholung achten. Mehr Schlaf empfohlen.');
+        analyses.push('Heute besser locker planen und zwischendurch Pausen einbauen.');
     }
 
     if (data.sleepDuration >= 7) {
-        analyses.push('Sie haben ausreichend Schlaf bekommen.');
+        analyses.push('Der Schlaf war ausreichend für einen klaren Start.');
     } else {
-        analyses.push('Versuchen Sie, mehr Schlaf zu bekommen.');
+        analyses.push('Mehr Schlaf würde den nächsten Tag entspannter machen.');
     }
 
     if (data.stressLevel < 40) {
-        analyses.push('Ihr Stresslevel ist niedrig - entspannen Sie sich.');
+        analyses.push('Die Belastung ist niedrig und gut für Fokusaufgaben.');
     } else if (data.stressLevel > 70) {
-        analyses.push('Ihr Stresslevel ist erhöht. Versuchen Sie zu entspannen.');
+        analyses.push('Die Belastung ist hoch. Ein ruhiger Abschnitt wäre sinnvoll.');
     }
 
     const analysisEl = document.getElementById('aiAnalysis');
@@ -274,6 +279,14 @@ function updateAIAnalysis(data) {
  */
 function updateSleepData(data) {
     const phases = data.sleepPhases;
+    const bedtimeEstimate = 23 - (data.sleepDuration / 2);
+    let bedtimeHours = Math.floor(bedtimeEstimate);
+    let bedtimeMinutes = Math.round((bedtimeEstimate - bedtimeHours) * 60);
+
+    if (bedtimeMinutes === 60) {
+        bedtimeHours += 1;
+        bedtimeMinutes = 0;
+    }
     
     document.getElementById('awakeTime').textContent = phases.awake + ' min';
     document.getElementById('lightSleep').textContent = phases.light + ' min';
@@ -282,7 +295,7 @@ function updateSleepData(data) {
     
     document.getElementById('sleepScore').textContent = data.sleepScore + '/100';
     document.getElementById('fallAsleepTime').textContent = data.fallAsleepTime + ' Min';
-    document.getElementById('recommendedBedtime').textContent = (23 - (data.sleepDuration / 2)) + ':00 Uhr';
+    document.getElementById('recommendedBedtime').textContent = `${String(bedtimeHours).padStart(2, '0')}:${String(bedtimeMinutes).padStart(2, '0')} Uhr`;
 
     // Draw sleep chart
     drawSleepChart(phases);
@@ -400,8 +413,8 @@ function updateWatchClock() {
     const hourHand = document.querySelector('.hour-hand');
 
     if (minuteHand && hourHand) {
-        minuteHand.style.transform = `rotate(${minuteDegrees}deg)`;
-        hourHand.style.transform = `rotate(${hourDegrees}deg)`;
+        minuteHand.setAttribute('transform', `rotate(${minuteDegrees} 100 100)`);
+        hourHand.setAttribute('transform', `rotate(${hourDegrees} 100 100)`);
     }
 
     requestAnimationFrame(updateWatchClock);
@@ -459,14 +472,16 @@ function updateLiveTime() {
 async function initSPOGL() {
     console.log('Initializing SPÖGL...');
 
+    // Render the clock immediately so a refresh does not show the default 12 o'clock state.
+    updateWatchClock();
+    updateLiveTime();
+    setInterval(updateLiveTime, 1000);
+
     // Update dashboard on page load
     await updateDashboard();
 
     // Update every 5 seconds
     setInterval(updateDashboard, CONFIG.UPDATE_INTERVAL);
-
-    // Update watch clock
-    updateWatchClock();
 
     // Observe elements for scroll animations
     observeElements();

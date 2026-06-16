@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="SPÖGL - Elegante Hybrid-Smartwatch mit intelligenter Gesundheitsanalyse">
+    <meta name="description" content="SPÖGL - Nutzeroberfläche für Training, Alltag und Schulprojekt mit klaren Daten auf einen Blick.">
     <meta name="theme-color" content="#0a0e27">
-    <title>SPÖGL - Hybrid-Smartwatch | MedTechGuide</title>
+    <title>SPÖGL - Hybrid Watch UI | MedTechGuide</title>
     <link rel="stylesheet" href="css/spoegl.css">
 </head>
 <body>
@@ -17,11 +17,11 @@
             </div>
             <ul class="nav-menu">
                 <li><a href="#hero">Startseite</a></li>
-                <li><a href="#dashboard">Dashboard</a></li>
-                <li><a href="#technology">Technologie</a></li>
-                <li><a href="#sleep">Schlafanalyse</a></li>
+                <li><a href="#dashboard">Status</a></li>
+                <li><a href="#technology">Alltag</a></li>
+                <li><a href="#sleep">Erholung</a></li>
                 <li><a href="#sports">Sport</a></li>
-                <li><a href="#cloud">Cloud</a></li>
+                <li><a href="#training">Training</a></li>
             </ul>
         </div>
     </nav>
@@ -39,18 +39,17 @@
         <div class="hero-content">
             <div class="hero-text">
                 <h1 class="hero-title">SPÖGL</h1>
-                <p class="hero-subtitle">Klassisches Design. Intelligente Gesundheit.</p>
-                <p class="hero-description">Die Hybrid-Smartwatch, die Eleganz mit präziser Gesundheitsanalyse verbindet.</p>
+                   <p class="hero-subtitle">Hybrid Watch UI für Sport, Training und Leistung.</p>
                 
                 <div class="hero-buttons">
                     <button class="btn btn-primary" onclick="scrollToSection('dashboard')">
-                        <span>Live Daten ansehen</span>
+                        <span>Zum Status</span>
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor">
                             <path d="M10 5v10M15 10H5"/>
                         </svg>
                     </button>
                     <button class="btn btn-secondary" onclick="scrollToSection('technology')">
-                        <span>Technologie entdecken</span>
+                        <span>Zur Nutzer-UI</span>
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor">
                             <path d="M8 5l7 7-7 7"/>
                         </svg>
@@ -60,45 +59,56 @@
             
             <div class="hero-visual">
                 <div class="watch-preview">
-                    <svg viewBox="0 0 200 200" class="watch-svg">
-                        <!-- Uhrengehäuse -->
-                        <circle cx="100" cy="100" r="95" fill="#1a1f3a" stroke="#00d4ff" stroke-width="2"/>
-                        <circle cx="100" cy="100" r="90" fill="url(#watchGradient)" stroke="#00d4ff" stroke-width="1" opacity="0.3"/>
-                        
-                        <!-- Zifferblatt mit Zahlen -->
-                        <circle cx="100" cy="100" r="85" fill="#0d1117" stroke="none"/>
-                        
-                        <!-- Uhrzahlen -->
-                        <text x="100" y="25" text-anchor="middle" font-size="12" fill="#00d4ff" font-weight="bold">12</text>
-                        <text x="175" y="105" text-anchor="middle" font-size="12" fill="#00d4ff" font-weight="bold">3</text>
-                        <text x="100" y="180" text-anchor="middle" font-size="12" fill="#00d4ff" font-weight="bold">6</text>
-                        <text x="25" y="105" text-anchor="middle" font-size="12" fill="#00d4ff" font-weight="bold">9</text>
-                        
-                        <!-- Pulssensor Visualisierung -->
-                        <circle cx="100" cy="100" r="75" fill="none" stroke="#ff006e" stroke-width="0.5" opacity="0.3"/>
-                        <circle cx="100" cy="100" r="65" fill="none" stroke="#ff006e" stroke-width="0.5" opacity="0.2"/>
-                        
-                        <!-- Zeiger (animiert) -->
-                        <g id="handGroup">
-                            <!-- Stundenzeiger -->
-                            <line x1="100" y1="100" x2="100" y2="50" stroke="#00d4ff" stroke-width="4" stroke-linecap="round" stroke-dasharray="50" stroke-dashoffset="0" class="hour-hand"/>
-                            <!-- Minutenzeiger -->
-                            <line x1="100" y1="100" x2="100" y2="35" stroke="#00d4ff" stroke-width="3" stroke-linecap="round" class="minute-hand"/>
-                            <!-- Sekundenzeiger -->
-                            <circle cx="100" cy="100" r="3" fill="#ff006e"/>
+                    <svg viewBox="0 0 200 200" class="watch-svg" aria-label="Analoge Uhr mit Live-Zeit">
+                        <circle cx="100" cy="100" r="95" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+                        <circle cx="100" cy="100" r="90" fill="url(#watchGradient)" stroke="#94a3b8" stroke-width="1" opacity="0.75"/>
+                        <circle cx="100" cy="100" r="82" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/>
+
+                        <g class="watch-ticks" stroke="#94a3b8" stroke-linecap="round">
+                            <line x1="100" y1="20" x2="100" y2="30" stroke-width="2.4"/>
+                            <line x1="100" y1="170" x2="100" y2="180" stroke-width="2.4"/>
+                            <line x1="20" y1="100" x2="30" y2="100" stroke-width="2.4"/>
+                            <line x1="170" y1="100" x2="180" y2="100" stroke-width="2.4"/>
+
+                            <line x1="56" y1="36" x2="61" y2="44" stroke-width="1.6" opacity="0.8"/>
+                            <line x1="144" y1="36" x2="139" y2="44" stroke-width="1.6" opacity="0.8"/>
+                            <line x1="36" y1="56" x2="44" y2="61" stroke-width="1.6" opacity="0.8"/>
+                            <line x1="164" y1="56" x2="156" y2="61" stroke-width="1.6" opacity="0.8"/>
+                            <line x1="36" y1="144" x2="44" y2="139" stroke-width="1.6" opacity="0.8"/>
+                            <line x1="164" y1="144" x2="156" y2="139" stroke-width="1.6" opacity="0.8"/>
+                            <line x1="56" y1="164" x2="61" y2="156" stroke-width="1.6" opacity="0.8"/>
+                            <line x1="144" y1="164" x2="139" y2="156" stroke-width="1.6" opacity="0.8"/>
                         </g>
-                        
-                        <!-- Zentrum -->
-                        <circle cx="100" cy="100" r="5" fill="#00d4ff"/>
-                        
-                        <!-- Gradient Definition -->
+
+                        <circle cx="100" cy="100" r="70" fill="none" stroke="#e2e8f0" stroke-width="0.9" opacity="0.95"/>
+                        <circle cx="100" cy="100" r="58" fill="none" stroke="#e2e8f0" stroke-width="0.7" opacity="0.95"/>
+
+                        <g id="handGroup">
+                            <line x1="100" y1="100" x2="100" y2="56" stroke="#334155" stroke-width="4.5" stroke-linecap="round" stroke-dasharray="50" stroke-dashoffset="0" class="hour-hand"/>
+                            <line x1="100" y1="100" x2="100" y2="34" stroke="#475569" stroke-width="2.8" stroke-linecap="round" class="minute-hand"/>
+                            <line x1="100" y1="100" x2="100" y2="28" stroke="#94a3b8" stroke-width="1.2" stroke-linecap="round" opacity="0.7"/>
+                            <circle cx="100" cy="100" r="4.5" fill="#334155"/>
+                        </g>
+
+                        <text x="100" y="30" text-anchor="middle" font-size="14" fill="#111827" font-weight="800" paint-order="stroke fill" stroke="#f8fafc" stroke-width="2.5">12</text>
+                        <text x="170" y="105" text-anchor="middle" font-size="14" fill="#111827" font-weight="800" paint-order="stroke fill" stroke="#f8fafc" stroke-width="2.5">3</text>
+                        <text x="100" y="176" text-anchor="middle" font-size="14" fill="#111827" font-weight="800" paint-order="stroke fill" stroke="#f8fafc" stroke-width="2.5">6</text>
+                        <text x="30" y="105" text-anchor="middle" font-size="14" fill="#111827" font-weight="800" paint-order="stroke fill" stroke="#f8fafc" stroke-width="2.5">9</text>
+
+                        <circle cx="100" cy="100" r="6.5" fill="#111827"/>
+                        <circle cx="100" cy="100" r="2.2" fill="#f8fafc"/>
+
                         <defs>
                             <radialGradient id="watchGradient">
-                                <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:0.2" />
-                                <stop offset="100%" style="stop-color:#1a1f3a;stop-opacity:0" />
+                                <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#cbd5e1;stop-opacity:0.15" />
                             </radialGradient>
                         </defs>
                     </svg>
+                    <div class="watch-time-label">
+                        <span class="watch-time-caption">Gerätezeit</span>
+                        <span class="watch-time-value" data-live-time>--:--:--</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -107,8 +117,8 @@
     <!-- LIVE DASHBOARD -->
     <section id="dashboard" class="section dashboard-section">
         <div class="container">
-            <h2 class="section-title">Live Dashboard</h2>
-            <p class="section-subtitle">Echtzeit-Daten von deiner SPÖGL</p>
+            <h2 class="section-title">Tagesstatus</h2>
+               <p class="section-subtitle">Die wichtigsten Werte für einen Trainiertag oder Schultag auf einen Blick</p>
             
             <div class="dashboard-grid">
                 <!-- Herzfrequenz -->
@@ -118,7 +128,7 @@
                             <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
                         </svg>
                     </div>
-                    <h3 class="card-title">Herzfrequenz</h3>
+                    <h3 class="card-title">Tageszustand</h3>
                     <div class="card-value" id="heartRate">-- <span class="unit">bpm</span></div>
                     <div class="card-status" id="heartStatus">Wird geladen...</div>
                     <div class="progress-bar">
@@ -129,11 +139,20 @@
                 <!-- Schritte -->
                 <div class="dashboard-card glass-card">
                     <div class="card-icon steps-icon">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M7.5 1C6.12 1 5 2.12 5 3.5S6.12 6 7.5 6 10 4.88 10 3.5 8.88 1 7.5 1m11 3c-1.38 0-2.5 1.12-2.5 2.5s1.12 2.5 2.5 2.5 2.5-1.12 2.5-2.5-1.12-2.5-2.5-2.5m-11 5c-.82 0-1.5.68-1.5 1.5V23h3V10.5c0-.82-.68-1.5-1.5-1.5m10 0c-.82 0-1.5.68-1.5 1.5V23h3V10.5c0-.82-.68-1.5-1.5-1.5m5 0c-.82 0-1.5.68-1.5 1.5V23h3V10.5c0-.82-.68-1.5-1.5-1.5"/>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <circle cx="17.5" cy="5.5" r="1.8" fill="currentColor" stroke="none"/>
+                            <path d="M15.3 9.2 12 10.2l-2.2 3.8"/>
+                            <path d="M12 10.2 10 8.4 7.2 8.8"/>
+                            <path d="M10 8.4 12.2 7l2.2 1.4 2.1 2.2"/>
+                            <path d="M12 13l2.8 1.8 2.2 4.2"/>
+                            <path d="M7.5 20.4 10 16.6l2.2 1.2"/>
+                            <path d="M4.5 20.5h15"/>
+                            <path d="M5.3 14.8h2.9"/>
+                            <path d="M6.4 11.8h2.8"/>
+                            <path d="M7.5 8.9h2.6"/>
                         </svg>
                     </div>
-                    <h3 class="card-title">Schritte</h3>
+                    <h3 class="card-title">Bewegung</h3>
                     <div class="card-value" id="stepsCount">-- <span class="unit">Schritte</span></div>
                     <div class="card-status" id="stepsStatus">Ziel: 10.000</div>
                     <div class="progress-bar">
@@ -144,11 +163,13 @@
                 <!-- Schlaf -->
                 <div class="dashboard-card glass-card">
                     <div class="card-icon sleep-icon">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12.5 2c-5.33 4.55-8 6.75-8 11.5 0 5.05 3.41 9.5 8 9.5s8-4.45 8-9.5c0-4.75-2.67-6.95-8-11.5z"/>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <circle cx="12" cy="12" r="4.5"/>
+                            <path d="M12 3.5v2.2M12 18.3v2.2M3.5 12h2.2M18.3 12h2.2"/>
+                            <path d="M6.1 6.1l1.6 1.6M16.3 16.3l1.6 1.6M17.9 6.1l-1.6 1.6M7.7 16.3l-1.6 1.6"/>
                         </svg>
                     </div>
-                    <h3 class="card-title">Schlaf</h3>
+                    <h3 class="card-title">Erholung</h3>
                     <div class="card-value" id="sleepDuration">-- <span class="unit">Stunden</span></div>
                     <div class="card-status" id="sleepStatus">Sehr gut</div>
                     <div class="progress-bar">
@@ -159,11 +180,16 @@
                 <!-- Stress Level -->
                 <div class="dashboard-card glass-card">
                     <div class="card-icon stress-icon">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm-4-9h8v2h-8zm0-3h8v2h-8z"/>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <circle cx="6.4" cy="6.2" r="1.8" fill="currentColor" stroke="none"/>
+                            <path d="M10.5 11.5 8.2 8.9 6.3 10.2l2.2 3.5"/>
+                            <path d="M10.4 11.4 14 12.3l2.8-5.2 3.3 1.2"/>
+                            <path d="M14.2 12.4 12 15.7l-3.6 3.2"/>
+                            <path d="M11.1 8.7 13.6 6.5 16.3 8.2"/>
+                            <path d="M5.1 20.4h14.1"/>
                         </svg>
                     </div>
-                    <h3 class="card-title">Stresslevel</h3>
+                    <h3 class="card-title">Belastung</h3>
                     <div class="card-value" id="stressLevel">-- <span class="unit">%</span></div>
                     <div class="card-status" id="stressStatus">Niedrig</div>
                     <div class="progress-bar">
@@ -178,7 +204,7 @@
                             <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
                         </svg>
                     </div>
-                    <h3 class="card-title">Kalorien</h3>
+                    <h3 class="card-title">Energieverbrauch</h3>
                     <div class="card-value" id="calories">-- <span class="unit">kcal</span></div>
                     <div class="card-status" id="caloriesStatus">Ziel: 2.500 kcal</div>
                     <div class="progress-bar">
@@ -193,7 +219,7 @@
                             <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
                         </svg>
                     </div>
-                    <h3 class="card-title">Recovery Score</h3>
+                    <h3 class="card-title">Bereitschaft</h3>
                     <div class="card-value" id="recoveryScore">-- <span class="unit">%</span></div>
                     <div class="card-status recovery-optimal" id="recoveryStatus">Optimal</div>
                     <div class="progress-bar">
@@ -213,9 +239,9 @@
                         <circle cx="5" cy="12" r="1" stroke-width="2"/>
                         <path d="M12 6v12M5 12h14" stroke-width="1.5"/>
                     </svg>
-                    <h3>KI-Analyse</h3>
+                    <h3>Tageshinweis</h3>
                 </div>
-                <p id="aiAnalysis">Ihre Regeneration ist optimal. Sie haben ausreichend Schlaf bekommen und Ihr Stresslevel ist niedrig.</p>
+                    <p id="aiAnalysis">Dein Tag startet sportlich: Die Oberfläche zeigt dir Trainingshinweise, Leistungs‑ und Erholungs‑Tipps auf einen Blick.</p>
             </div>
         </div>
     </section>
@@ -223,11 +249,10 @@
     <!-- TECHNOLOGIE SECTION -->
     <section id="technology" class="section tech-section">
         <div class="container">
-            <h2 class="section-title">Intelligente Sensortechnologie</h2>
-            <p class="section-subtitle">Präzision bis zum kleinsten Detail</p>
+            <h2 class="section-title">Was die UI zeigt</h2>
+               <p class="section-subtitle">Neutrale Bereiche für Alltag, Training und Projektarbeit</p>
             
             <div class="tech-grid">
-                <!-- PPG Sensor -->
                 <div class="tech-card glass-card">
                     <div class="tech-icon ppg-icon">
                         <svg viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="2">
@@ -235,11 +260,10 @@
                             <circle cx="30" cy="30" r="20" opacity="0.3"/>
                         </svg>
                     </div>
-                    <h3>PPG-Sensoren</h3>
-                    <p>Photoplethysmografie für präzise Herzfrequenzmessung durch Lichtwellenerkennung.</p>
+                          <h3>Tagesübersicht</h3>
+                              <p>Zeigt dir die wichtigsten Werte gesammelt an, damit du nicht zwischen vielen Menüs springen musst.</p>
                 </div>
 
-                <!-- Beschleunigungssensor -->
                 <div class="tech-card glass-card">
                     <div class="tech-icon accel-icon">
                         <svg viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="2">
@@ -247,11 +271,10 @@
                             <path d="M30 25V35M25 30H35"/>
                         </svg>
                     </div>
-                    <h3>Beschleunigungssensor</h3>
-                    <p>3-Achsen-Messung für präzises Schrittzählen und Bewegungserkennung.</p>
+                          <h3>Training & Fokus</h3>
+                              <p>Hilft dir, Training, Hausaufgaben und Pausen in einer klaren Reihenfolge zu planen.</p>
                 </div>
 
-                <!-- Gyroskop -->
                 <div class="tech-card glass-card">
                     <div class="tech-icon gyro-icon">
                         <svg viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="2">
@@ -260,11 +283,10 @@
                             <path d="M30 20V40M20 30H40"/>
                         </svg>
                     </div>
-                    <h3>Gyroskop</h3>
-                    <p>Präzise Winkelmessung für Sportmodi-Erkennung und Bewegungsverfolgung.</p>
+                          <h3>Erholung</h3>
+                              <p>Macht sichtbar, ob heute eher eine harte Einheit oder ein ruhiger Tag sinnvoll ist.</p>
                 </div>
 
-                <!-- Bluetooth -->
                 <div class="tech-card glass-card">
                     <div class="tech-icon bt-icon">
                         <svg viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="2">
@@ -272,22 +294,20 @@
                             <circle cx="30" cy="30" r="20" opacity="0.2"/>
                         </svg>
                     </div>
-                    <h3>Bluetooth 5.0</h3>
-                    <p>Sichere und schnelle Synchronisation mit deinem Smartphone in Echtzeit.</p>
+                          <h3>Benachrichtigungen</h3>
+                              <p>Platz für Hinweise wie Startzeit, Trinkpause, Training oder Lernplan.</p>
                 </div>
 
-                <!-- Cloud -->
                 <div class="tech-card glass-card">
                     <div class="tech-icon cloud-icon">
                         <svg viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M20 35C15 35 12 32 12 28C12 24 15 22 18 22C18 16 22 12 28 12C33 12 37 16 37 22C41 22 45 25 45 30C45 35 41 38 36 38"/>
                         </svg>
                     </div>
-                    <h3>Cloud-Verarbeitung</h3>
-                    <p>Deine Daten werden verschlüsselt in der Cloud verarbeitet und analysiert.</p>
+                          <h3>Verlauf</h3>
+                              <p>Vergleicht Tage und Wochen, damit du Entwicklungen schnell erkennst.</p>
                 </div>
 
-                <!-- ML -->
                 <div class="tech-card glass-card">
                     <div class="tech-icon ml-icon">
                         <svg viewBox="0 0 60 60" fill="none" stroke="currentColor" stroke-width="2">
@@ -296,8 +316,8 @@
                             <rect x="37" y="25" width="8" height="15" rx="1"/>
                         </svg>
                     </div>
-                    <h3>Machine Learning</h3>
-                    <p>Intelligente Algorithmen lernen deine Muster und optimieren die Analyse.</p>
+                    <h3>Schulprojekt</h3>
+                       <p>Eignet sich für eine Präsentation mit UI, Beispieldaten, Prototypen und klarer Erklärung.</p>
                 </div>
             </div>
         </div>
@@ -306,12 +326,12 @@
     <!-- SCHLAFANALYSE -->
     <section id="sleep" class="section sleep-section">
         <div class="container">
-            <h2 class="section-title">Erweiterte Schlafanalyse</h2>
-            <p class="section-subtitle">Verstehe deine Schlafmuster</p>
+            <h2 class="section-title">Erholung & Ruhe</h2>
+               <p class="section-subtitle">Werte, die für Training und Konzentration wichtig sind</p>
             
             <div class="sleep-content">
                 <div class="sleep-chart glass-card">
-                    <h3>Schlafphasen Nacht</h3>
+                    <h3>Ruheverteilung</h3>
                     <div class="chart-container">
                         <canvas id="sleepChart"></canvas>
                     </div>
@@ -336,25 +356,25 @@
                 </div>
 
                 <div class="sleep-insights glass-card">
-                    <h3>Schlaf-Erkenntnisse</h3>
+                    <h3>Erholungsnotizen</h3>
                     <div class="insight-item">
                         <div class="insight-icon">🎯</div>
                         <div>
-                            <h4>Sleep Score</h4>
+                            <h4>Ruhewert</h4>
                             <p id="sleepScore">--/100</p>
                         </div>
                     </div>
                     <div class="insight-item">
                         <div class="insight-icon">⏰</div>
                         <div>
-                            <h4>Durchschnittliche Einschlafzeit</h4>
+                            <h4>Zeit bis Ruhe</h4>
                             <p id="fallAsleepTime">-- Min</p>
                         </div>
                     </div>
                     <div class="insight-item">
                         <div class="insight-icon">🌙</div>
                         <div>
-                            <h4>Empfohlene Schlafenszeit</h4>
+                            <h4>Plan für morgen</h4>
                             <p id="recommendedBedtime">Wird analysiert...</p>
                         </div>
                     </div>
@@ -366,8 +386,8 @@
     <!-- SPORTMODUS -->
     <section id="sports" class="section sports-section">
         <div class="container">
-            <h2 class="section-title">Sportmodi & Aktivitäten</h2>
-            <p class="section-subtitle">Verfolge deine Leistung präzise</p>
+            <h2 class="section-title">Training & Leistung</h2>
+               <p class="section-subtitle">Für Läufe, Radfahrten und Krafttraining in einer Oberfläche</p>
             
             <div class="sports-grid">
                 <div class="sport-card glass-card">
@@ -389,7 +409,7 @@
                             <strong id="runHR">-- bpm</strong>
                         </div>
                         <div class="data-row">
-                            <span>Kalorieverbrauch:</span>
+                            <span>Energie:</span>
                             <strong id="runCalories">-- kcal</strong>
                         </div>
                     </div>
@@ -423,11 +443,11 @@
                 <div class="sport-card glass-card">
                     <div class="sport-header">
                         <span class="sport-icon">💪</span>
-                        <h3>Fitness</h3>
+                        <h3>Krafttraining</h3>
                     </div>
                     <div class="sport-data">
                         <div class="data-row">
-                            <span>Trainingstyp:</span>
+                            <span>Schwerpunkt:</span>
                             <strong id="fitnesType">Kraft & Ausdauer</strong>
                         </div>
                         <div class="data-row">
@@ -447,7 +467,7 @@
             </div>
 
             <div class="heart-zones glass-card">
-                <h3>Pulszonen Analyse</h3>
+                <h3>Belastungszonen</h3>
                 <div class="zones-container">
                     <div class="zone zone-1">
                         <span class="zone-name">Zone 1</span>
@@ -474,95 +494,85 @@
         </div>
     </section>
 
-    <!-- CLOUD & WEB APP -->
-    <section id="cloud" class="section cloud-section">
+    <!-- TRAINING & PERFORMANCE -->
+    <section id="training" class="section training-section">
         <div class="container">
-            <h2 class="section-title">Cloud Synchronisation & Web App</h2>
-            <p class="section-subtitle">Deine Daten überall verfügbar</p>
+            <h2 class="section-title">Training & Performance</h2>
+               <p class="section-subtitle">Trainingspläne, Intervalle, Leistungsanalysen und Live‑Metriken für Sportuhren.</p>
             
-            <div class="cloud-diagram">
-                <div class="cloud-flow">
-                    <div class="flow-item watch-flow">
-                        <div class="icon-box">⌚</div>
-                        <p>SPÖGL<br>Smartwatch</p>
+            <div class="training-overview">
+                <div class="training-grid">
+                    <div class="training-card glass-card">
+                        <h4>Trainingspläne</h4>
+                        <p>Erstelle individuelle Pläne: Intervall-, Dauer- und Belastungssteuerung mit Zielvorgaben.</p>
                     </div>
-                    <div class="flow-arrow">→</div>
-                    <div class="flow-item phone-flow">
-                        <div class="icon-box">📱</div>
-                        <p>Smartphone<br>App</p>
+                    <div class="training-card glass-card">
+                        <h4>Live Metriken</h4>
+                        <p>Echtzeit-Puls, Pace, Distanz und Trittfrequenz — optimiert für geringe Latenz.</p>
                     </div>
-                    <div class="flow-arrow">→</div>
-                    <div class="flow-item cloud-flow">
-                        <div class="icon-box">☁️</div>
-                        <p>Cloud<br>Server</p>
+                    <div class="training-card glass-card">
+                        <h4>Leistungsanalyse</h4>
+                        <p>VO2‑Schätzung, Trainingseffekt und Herzfrequenzzonen für gezielte Verbesserung.</p>
                     </div>
-                    <div class="flow-arrow">→</div>
-                    <div class="flow-item web-flow">
-                        <div class="icon-box">🌐</div>
-                        <p>Web<br>Dashboard</p>
+                    <div class="training-card glass-card">
+                        <h4>Export & Sync</h4>
+                        <p>GPX/TCX Export, Cloud‑Sync und Integration mit Trainingsplattformen.</p>
                     </div>
                 </div>
             </div>
 
-            <div class="cloud-features">
+            <div class="training-features">
                 <div class="feature-row">
                     <div class="feature glass-card">
-                        <h4>🔒 Datensicherheit</h4>
-                        <p>End-to-End Verschlüsselung (AES-256) aller Daten. Deine Privatsphäre ist garantiert.</p>
+                                <h4>⚙️ Konfigurierbar</h4>
+                                    <p>Intervallparameter, Zielzonen und Alarme lassen sich direkt anpassen.</p>
                     </div>
                     <div class="feature glass-card">
-                        <h4>⚡ Echtzeit-Sync</h4>
-                        <p>Deine Gesundheitsdaten werden in Echtzeit synchronisiert. Immer aktuell.</p>
+                                <h4>📈 Visualisiert</h4>
+                                    <p>Leistungsdiagramme und Wochenübersichten erleichtern die Analyse.</p>
                     </div>
                 </div>
                 <div class="feature-row">
                     <div class="feature glass-card">
-                        <h4>🤖 KI-Analyse</h4>
-                        <p>Machine Learning Algorithmen analysieren deine Daten und geben personalisierte Empfehlungen.</p>
+                                <h4>🔋 Energieoptimiert</h4>
+                                    <p>Adaptive Update‑Raten schonen Akku und liefern dennoch relevante Daten.</p>
                     </div>
                     <div class="feature glass-card">
-                        <h4>📊 Detaillierte Reports</h4>
-                        <p>Wöchentliche und monatliche Reports mit Trends und Vergleichen zur Vorwoche.</p>
+                                <h4>🔗 Kompatibel</h4>
+                                    <p>Standardisierte Formate und API‑Endpunkte für einfache Integration.</p>
                     </div>
                 </div>
             </div>
 
             <div class="data-flow glass-card">
-                <h3>Datenverarbeitung</h3>
+                <h3>Beispiel-Workflow</h3>
                 <div class="data-steps">
                     <div class="step">
                         <div class="step-number">1</div>
                         <div class="step-text">
-                            <h4>Erfassung</h4>
-                            <p>Sensoren erfassen Daten alle 5 Sekunden</p>
+                            <h4>Plan definieren</h4>
+                            <p>Ziele, Zonen und Dauer für die Einheit festlegen.</p>
                         </div>
                     </div>
                     <div class="step">
                         <div class="step-number">2</div>
                         <div class="step-text">
-                            <h4>Verarbeitung</h4>
-                            <p>Lokale Vorverarbeitung auf der Uhr</p>
+                            <h4>Training ausführen</h4>
+                               <p>Live‑Metriken begleiten dich, Trainingsansagen werden über die Uhr gesteuert.</p>
                         </div>
                     </div>
                     <div class="step">
                         <div class="step-number">3</div>
                         <div class="step-text">
-                            <h4>Synchronisation</h4>
-                            <p>Sichere Übertragung zum Cloud-Server</p>
+                            <h4>Analyse</h4>
+                               <p>Trainingseffekt, Herzfrequenzzonen und Erholungsempfehlungen werden berechnet.</p>
                         </div>
                     </div>
                     <div class="step">
                         <div class="step-number">4</div>
                         <div class="step-text">
-                            <h4>Analyse</h4>
-                            <p>KI-Modelle analysieren die Daten</p>
-                        </div>
-                    </div>
-                    <div class="step">
-                        <div class="step-number">5</div>
-                        <div class="step-text">
-                            <h4>Insights</h4>
-                            <p>Personalisierte Erkenntnisse für dich</p>
+                            <h4>Sync & Export</h4>
+                               <p>Einfacher Export für Trainingstagebücher und weitere Tools.</p>
                         </div>
                     </div>
                 </div>
@@ -574,7 +584,7 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <p>&copy; 2026 SPÖGL. Eine innovative Hybrid-Smartwatch mit intelligenter Gesundheitsanalyse.</p>
+                   <p>&copy; 2026 SPÖGL. Demo-UI für Sportuhren, Training und Leistungsanalyse.</p>
                 <p><a href="index.html">← Zurück zu MedTechGuide</a></p>
             </div>
         </div>

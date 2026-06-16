@@ -17,6 +17,8 @@ const PORT = process.env.PORT || 3000;
 // Middleware
 app.use(cors());
 app.use(express.json());
+// Serve static files from project root so GET / returns the frontend (index.html)
+app.use(express.static(path.join(__dirname, '..')));
 
 // Load database
 let db = {};
